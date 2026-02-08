@@ -1,0 +1,36 @@
+# `codex-rs/app-server-protocol/schema/json/v2/TurnInterruptParams.json`
+
+## Identity
+- kind: `config`
+- ext: `.json`
+- size_bytes: `278`
+- sha256: `6dff382dae73d1dbc58406ed045605f647e7a49660e2540fbd2c6c24d60c5f2b`
+- generated_utc: `2026-02-03T16:08:28Z`
+
+## Purpose (Why)
+Configuration file for build/tooling/runtime.
+
+## Interfaces (Inputs/Outputs)
+### Inputs
+- filesystem: `codex-rs/app-server-protocol/schema/json/v2/TurnInterruptParams.json` (read)
+
+### Outputs / Side Effects
+- none (file is declarative: doc/config/test/asset)
+
+## Public Surface (auto)
+- (none detected)
+
+## Definitions (auto, per-file)
+- (not extracted)
+
+## Dependencies (auto sample)
+### Imports / Includes
+- (none detected)
+### Referenced env vars
+- (none detected)
+
+## Error Handling / Edge Cases
+- (none detected)
+
+## Spec Links
+- (none; see `09_Verification/CODE_TO_SPEC_MAP.md`)

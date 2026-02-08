@@ -1,0 +1,259 @@
+# `codex-rs/tui/src/history_cell.rs`
+
+## Identity
+- kind: `source`
+- ext: `.rs`
+- size_bytes: `118851`
+- sha256: `d33c9cff152a41f59270616a5ac66d77961356f9bb2fc94632a29f319aad0216`
+- generated_utc: `2026-02-03T16:08:30Z`
+
+## Purpose (Why)
+Source file implementing exported/public items listed below.
+
+## Interfaces (Inputs/Outputs)
+### Inputs
+- filesystem: `codex-rs/tui/src/history_cell.rs` (read)
+
+### Outputs / Side Effects
+- (no obvious side effects detected by heuristic)
+
+## Public Surface (auto)
+- `pub fn new_approval_decision_cell(`
+- `pub struct SessionInfoCell(CompositeHistoryCell);`
+- `pub struct FinalMessageSeparator {`
+
+## Definitions (auto, per-file)
+- `use` `codex-rs/tui/src/history_cell.rs:13` `use crate::diff_render::create_diff_summary;`
+- `use` `codex-rs/tui/src/history_cell.rs:14` `use crate::diff_render::display_path_for;`
+- `use` `codex-rs/tui/src/history_cell.rs:15` `use crate::exec_cell::CommandOutput;`
+- `use` `codex-rs/tui/src/history_cell.rs:16` `use crate::exec_cell::OutputLinesParams;`
+- `use` `codex-rs/tui/src/history_cell.rs:17` `use crate::exec_cell::TOOL_CALL_MAX_LINES;`
+- `use` `codex-rs/tui/src/history_cell.rs:18` `use crate::exec_cell::output_lines;`
+- `use` `codex-rs/tui/src/history_cell.rs:19` `use crate::exec_cell::spinner;`
+- `use` `codex-rs/tui/src/history_cell.rs:20` `use crate::exec_command::relativize_to_home;`
+- `use` `codex-rs/tui/src/history_cell.rs:21` `use crate::exec_command::strip_bash_lc_and_escape;`
+- `use` `codex-rs/tui/src/history_cell.rs:22` `use crate::live_wrap::take_prefix_by_width;`
+- `use` `codex-rs/tui/src/history_cell.rs:23` `use crate::markdown::append_markdown;`
+- `use` `codex-rs/tui/src/history_cell.rs:24` `use crate::render::line_utils::line_to_static;`
+- `use` `codex-rs/tui/src/history_cell.rs:25` `use crate::render::line_utils::prefix_lines;`
+- `use` `codex-rs/tui/src/history_cell.rs:26` `use crate::render::line_utils::push_owned_lines;`
+- `use` `codex-rs/tui/src/history_cell.rs:27` `use crate::render::renderable::Renderable;`
+- `use` `codex-rs/tui/src/history_cell.rs:28` `use crate::style::proposed_plan_style;`
+- `use` `codex-rs/tui/src/history_cell.rs:29` `use crate::style::user_message_style;`
+- `use` `codex-rs/tui/src/history_cell.rs:30` `use crate::text_formatting::format_and_truncate_tool_result;`
+- `use` `codex-rs/tui/src/history_cell.rs:31` `use crate::text_formatting::truncate_text;`
+- `use` `codex-rs/tui/src/history_cell.rs:32` `use crate::tooltips;`
+- `use` `codex-rs/tui/src/history_cell.rs:33` `use crate::ui_consts::LIVE_PREFIX_COLS;`
+- `use` `codex-rs/tui/src/history_cell.rs:34` `use crate::update_action::UpdateAction;`
+- `use` `codex-rs/tui/src/history_cell.rs:35` `use crate::version::CODEX_CLI_VERSION;`
+- `use` `codex-rs/tui/src/history_cell.rs:36` `use crate::wrapping::RtOptions;`
+- `use` `codex-rs/tui/src/history_cell.rs:37` `use crate::wrapping::word_wrap_line;`
+- `use` `codex-rs/tui/src/history_cell.rs:38` `use crate::wrapping::word_wrap_lines;`
+- `use` `codex-rs/tui/src/history_cell.rs:39` `use base64::Engine;`
+- `use` `codex-rs/tui/src/history_cell.rs:40` `use codex_common::format_env_display::format_env_display;`
+- `use` `codex-rs/tui/src/history_cell.rs:41` `use codex_core::config::Config;`
+- `use` `codex-rs/tui/src/history_cell.rs:42` `use codex_core::config::types::McpServerTransportConfig;`
+- `use` `codex-rs/tui/src/history_cell.rs:43` `use codex_core::protocol::FileChange;`
+- `use` `codex-rs/tui/src/history_cell.rs:44` `use codex_core::protocol::McpAuthStatus;`
+- `use` `codex-rs/tui/src/history_cell.rs:45` `use codex_core::protocol::McpInvocation;`
+- `use` `codex-rs/tui/src/history_cell.rs:46` `use codex_core::protocol::SessionConfiguredEvent;`
+- `use` `codex-rs/tui/src/history_cell.rs:47` `use codex_core::web_search::web_search_detail;`
+- `use` `codex-rs/tui/src/history_cell.rs:48` `use codex_otel::RuntimeMetricsSummary;`
+- `use` `codex-rs/tui/src/history_cell.rs:49` `use codex_protocol::account::PlanType;`
+- `use` `codex-rs/tui/src/history_cell.rs:50` `use codex_protocol::mcp::Resource;`
+- `use` `codex-rs/tui/src/history_cell.rs:51` `use codex_protocol::mcp::ResourceTemplate;`
+- `use` `codex-rs/tui/src/history_cell.rs:52` `use codex_protocol::models::WebSearchAction;`
+- `use` `codex-rs/tui/src/history_cell.rs:53` `use codex_protocol::openai_models::ReasoningEffort as ReasoningEffortConfig;`
+- `use` `codex-rs/tui/src/history_cell.rs:54` `use codex_protocol::plan_tool::PlanItemArg;`
+- `use` `codex-rs/tui/src/history_cell.rs:55` `use codex_protocol::plan_tool::StepStatus;`
+- `use` `codex-rs/tui/src/history_cell.rs:56` `use codex_protocol::plan_tool::UpdatePlanArgs;`
+- `use` `codex-rs/tui/src/history_cell.rs:57` `use codex_protocol::request_user_input::RequestUserInputAnswer;`
+- `use` `codex-rs/tui/src/history_cell.rs:58` `use codex_protocol::request_user_input::RequestUserInputQuestion;`
+- `use` `codex-rs/tui/src/history_cell.rs:59` `use codex_protocol::user_input::TextElement;`
+- `use` `codex-rs/tui/src/history_cell.rs:60` `use image::DynamicImage;`
+- `use` `codex-rs/tui/src/history_cell.rs:61` `use image::ImageReader;`
+- `use` `codex-rs/tui/src/history_cell.rs:62` `use ratatui::prelude::*;`
+- `use` `codex-rs/tui/src/history_cell.rs:63` `use ratatui::style::Color;`
+- `use` `codex-rs/tui/src/history_cell.rs:64` `use ratatui::style::Modifier;`
+- `use` `codex-rs/tui/src/history_cell.rs:65` `use ratatui::style::Style;`
+- `use` `codex-rs/tui/src/history_cell.rs:66` `use ratatui::style::Styled;`
+- `use` `codex-rs/tui/src/history_cell.rs:67` `use ratatui::style::Stylize;`
+- `use` `codex-rs/tui/src/history_cell.rs:68` `use ratatui::widgets::Paragraph;`
+- `use` `codex-rs/tui/src/history_cell.rs:69` `use ratatui::widgets::Wrap;`
+- `use` `codex-rs/tui/src/history_cell.rs:70` `use std::any::Any;`
+- `use` `codex-rs/tui/src/history_cell.rs:71` `use std::collections::HashMap;`
+- `use` `codex-rs/tui/src/history_cell.rs:72` `use std::io::Cursor;`
+- `use` `codex-rs/tui/src/history_cell.rs:73` `use std::path::Path;`
+- `use` `codex-rs/tui/src/history_cell.rs:74` `use std::path::PathBuf;`
+- `use` `codex-rs/tui/src/history_cell.rs:75` `use std::time::Duration;`
+- `use` `codex-rs/tui/src/history_cell.rs:76` `use std::time::Instant;`
+- `use` `codex-rs/tui/src/history_cell.rs:77` `use tracing::error;`
+- `use` `codex-rs/tui/src/history_cell.rs:78` `use unicode_segmentation::UnicodeSegmentation;`
+- `use` `codex-rs/tui/src/history_cell.rs:79` `use unicode_width::UnicodeWidthStr;`
+- `fn` `codex-rs/tui/src/history_cell.rs:85` `fn display_lines(&self, width: u16) -> Vec<Line<'static>>;`
+- `fn` `codex-rs/tui/src/history_cell.rs:87` `fn desired_height(&self, width: u16) -> u16 {`
+- `fn` `codex-rs/tui/src/history_cell.rs:95` `fn transcript_lines(&self, width: u16) -> Vec<Line<'static>> {`
+- `fn` `codex-rs/tui/src/history_cell.rs:99` `fn desired_transcript_height(&self, width: u16) -> u16 {`
+- `fn` `codex-rs/tui/src/history_cell.rs:118` `fn is_stream_continuation(&self) -> bool {`
+- `fn` `codex-rs/tui/src/history_cell.rs:132` `fn transcript_animation_tick(&self) -> Option<u64> {`
+- `impl` `codex-rs/tui/src/history_cell.rs:137` `impl Renderable for Box<dyn HistoryCell> {`
+- `fn` `codex-rs/tui/src/history_cell.rs:138` `fn render(&self, area: Rect, buf: &mut Buffer) {`
+- `fn` `codex-rs/tui/src/history_cell.rs:150` `fn desired_height(&self, width: u16) -> u16 {`
+- `impl` `codex-rs/tui/src/history_cell.rs:155` `impl dyn HistoryCell {`
+- `fn` `codex-rs/tui/src/history_cell.rs:177` `fn build_user_message_lines_with_elements(`
+- `impl` `codex-rs/tui/src/history_cell.rs:239` `impl HistoryCell for UserHistoryCell {`
+- `fn` `codex-rs/tui/src/history_cell.rs:240` `fn display_lines(&self, width: u16) -> Vec<Line<'static>> {`
+- `impl` `codex-rs/tui/src/history_cell.rs:287` `impl ReasoningSummaryCell {`
+- `fn` `codex-rs/tui/src/history_cell.rs:296` `fn lines(&self, width: u16) -> Vec<Line<'static>> {`
+- `impl` `codex-rs/tui/src/history_cell.rs:325` `impl HistoryCell for ReasoningSummaryCell {`
+- `fn` `codex-rs/tui/src/history_cell.rs:326` `fn display_lines(&self, width: u16) -> Vec<Line<'static>> {`
+- `fn` `codex-rs/tui/src/history_cell.rs:334` `fn desired_height(&self, width: u16) -> u16 {`
+- `fn` `codex-rs/tui/src/history_cell.rs:342` `fn transcript_lines(&self, width: u16) -> Vec<Line<'static>> {`
+- `fn` `codex-rs/tui/src/history_cell.rs:346` `fn desired_transcript_height(&self, width: u16) -> u16 {`
+- `impl` `codex-rs/tui/src/history_cell.rs:357` `impl AgentMessageCell {`
+- `impl` `codex-rs/tui/src/history_cell.rs:366` `impl HistoryCell for AgentMessageCell {`
+- `fn` `codex-rs/tui/src/history_cell.rs:367` `fn display_lines(&self, width: u16) -> Vec<Line<'static>> {`
+- `fn` `codex-rs/tui/src/history_cell.rs:380` `fn is_stream_continuation(&self) -> bool {`
+- `impl` `codex-rs/tui/src/history_cell.rs:390` `impl PlainHistoryCell {`
+- `impl` `codex-rs/tui/src/history_cell.rs:396` `impl HistoryCell for PlainHistoryCell {`
+- `fn` `codex-rs/tui/src/history_cell.rs:397` `fn display_lines(&self, _width: u16) -> Vec<Line<'static>> {`
+- `impl` `codex-rs/tui/src/history_cell.rs:410` `impl UpdateAvailableHistoryCell {`
+- `impl` `codex-rs/tui/src/history_cell.rs:419` `impl HistoryCell for UpdateAvailableHistoryCell {`
+- `fn` `codex-rs/tui/src/history_cell.rs:420` `fn display_lines(&self, width: u16) -> Vec<Line<'static>> {`
+- `use` `codex-rs/tui/src/history_cell.rs:421` `use ratatui_macros::line;`
+- `use` `codex-rs/tui/src/history_cell.rs:422` `use ratatui_macros::text;`
+- `impl` `codex-rs/tui/src/history_cell.rs:463` `impl PrefixedWrappedHistoryCell {`
+- `impl` `codex-rs/tui/src/history_cell.rs:477` `impl HistoryCell for PrefixedWrappedHistoryCell {`
+- `fn` `codex-rs/tui/src/history_cell.rs:478` `fn display_lines(&self, width: u16) -> Vec<Line<'static>> {`
+- `fn` `codex-rs/tui/src/history_cell.rs:491` `fn desired_height(&self, width: u16) -> u16 {`
+- `impl` `codex-rs/tui/src/history_cell.rs:502` `impl UnifiedExecInteractionCell {`
+- `impl` `codex-rs/tui/src/history_cell.rs:511` `impl HistoryCell for UnifiedExecInteractionCell {`
+- `fn` `codex-rs/tui/src/history_cell.rs:512` `fn display_lines(&self, width: u16) -> Vec<Line<'static>> {`
+- `fn` `codex-rs/tui/src/history_cell.rs:550` `fn desired_height(&self, width: u16) -> u16 {`
+- `struct` `codex-rs/tui/src/history_cell.rs:563` `struct UnifiedExecProcessesCell {`
+- `impl` `codex-rs/tui/src/history_cell.rs:567` `impl UnifiedExecProcessesCell {`
+- `fn` `codex-rs/tui/src/history_cell.rs:568` `fn new(processes: Vec<UnifiedExecProcessDetails>) -> Self {`
+- `impl` `codex-rs/tui/src/history_cell.rs:579` `impl HistoryCell for UnifiedExecProcessesCell {`
+- `fn` `codex-rs/tui/src/history_cell.rs:580` `fn display_lines(&self, width: u16) -> Vec<Line<'static>> {`
+- `fn` `codex-rs/tui/src/history_cell.rs:684` `fn desired_height(&self, width: u16) -> u16 {`
+- `fn` `codex-rs/tui/src/history_cell.rs:697` `fn truncate_exec_snippet(full_cmd: &str) -> String {`
+- `fn` `codex-rs/tui/src/history_cell.rs:706` `fn exec_snippet(command: &[String]) -> String {`
+- `fn` `codex-rs/tui/src/history_cell.rs:711` `pub fn new_approval_decision_cell(`
+- `use` `codex-rs/tui/src/history_cell.rs:715` `use codex_core::protocol::ReviewDecision::*;`
+- `impl` `codex-rs/tui/src/history_cell.rs:804` `impl HistoryCell for PatchHistoryCell {`
+- `fn` `codex-rs/tui/src/history_cell.rs:805` `fn display_lines(&self, width: u16) -> Vec<Line<'static>> {`
+- `struct` `codex-rs/tui/src/history_cell.rs:811` `struct CompletedMcpToolCallWithImageOutput {`
+- `impl` `codex-rs/tui/src/history_cell.rs:814` `impl HistoryCell for CompletedMcpToolCallWithImageOutput {`
+- `fn` `codex-rs/tui/src/history_cell.rs:815` `fn display_lines(&self, _width: u16) -> Vec<Line<'static>> {`
+- `fn` `codex-rs/tui/src/history_cell.rs:847` `fn with_border_internal(`
+- `struct` `codex-rs/tui/src/history_cell.rs:897` `struct TooltipHistoryCell {`
+- `impl` `codex-rs/tui/src/history_cell.rs:901` `impl TooltipHistoryCell {`
+- `fn` `codex-rs/tui/src/history_cell.rs:902` `fn new(tip: String) -> Self {`
+- `impl` `codex-rs/tui/src/history_cell.rs:907` `impl HistoryCell for TooltipHistoryCell {`
+- `fn` `codex-rs/tui/src/history_cell.rs:908` `fn display_lines(&self, width: u16) -> Vec<Line<'static>> {`
+- `struct` `codex-rs/tui/src/history_cell.rs:926` `pub struct SessionInfoCell(CompositeHistoryCell);`
+- `impl` `codex-rs/tui/src/history_cell.rs:928` `impl HistoryCell for SessionInfoCell {`
+- `fn` `codex-rs/tui/src/history_cell.rs:929` `fn display_lines(&self, width: u16) -> Vec<Line<'static>> {`
+- `fn` `codex-rs/tui/src/history_cell.rs:933` `fn desired_height(&self, width: u16) -> u16 {`
+- `fn` `codex-rs/tui/src/history_cell.rs:937` `fn transcript_lines(&self, width: u16) -> Vec<Line<'static>> {`
+- `impl` `codex-rs/tui/src/history_cell.rs:1038` `impl SessionHeaderHistoryCell {`
+- `fn` `codex-rs/tui/src/history_cell.rs:1070` `fn format_directory(&self, max_width: Option<usize>) -> String {`
+- `fn` `codex-rs/tui/src/history_cell.rs:1074` `fn format_directory_inner(directory: &Path, max_width: Option<usize>) -> String {`
+- `fn` `codex-rs/tui/src/history_cell.rs:1097` `fn reasoning_label(&self) -> Option<&'static str> {`
+- `impl` `codex-rs/tui/src/history_cell.rs:1109` `impl HistoryCell for SessionHeaderHistoryCell {`
+- `fn` `codex-rs/tui/src/history_cell.rs:1110` `fn display_lines(&self, width: u16) -> Vec<Line<'static>> {`
+- `const` `codex-rs/tui/src/history_cell.rs:1125` `const CHANGE_MODEL_HINT_COMMAND: &str = "/model";`
+- `const` `codex-rs/tui/src/history_cell.rs:1126` `const CHANGE_MODEL_HINT_EXPLANATION: &str = " to change";`
+- `const` `codex-rs/tui/src/history_cell.rs:1127` `const DIR_LABEL: &str = "directory:";`
+- `impl` `codex-rs/tui/src/history_cell.rs:1174` `impl CompositeHistoryCell {`
+- `impl` `codex-rs/tui/src/history_cell.rs:1180` `impl HistoryCell for CompositeHistoryCell {`
+- `fn` `codex-rs/tui/src/history_cell.rs:1181` `fn display_lines(&self, width: u16) -> Vec<Line<'static>> {`
+- `impl` `codex-rs/tui/src/history_cell.rs:1208` `impl McpToolCallCell {`
+- `fn` `codex-rs/tui/src/history_cell.rs:1240` `fn success(&self) -> Option<bool> {`
+- `fn` `codex-rs/tui/src/history_cell.rs:1254` `fn render_content_block(block: &serde_json::Value, width: usize) -> String {`
+- `impl` `codex-rs/tui/src/history_cell.rs:1284` `impl HistoryCell for McpToolCallCell {`
+- `fn` `codex-rs/tui/src/history_cell.rs:1285` `fn display_lines(&self, width: u16) -> Vec<Line<'static>> {`
+- `fn` `codex-rs/tui/src/history_cell.rs:1375` `fn transcript_animation_tick(&self) -> Option<u64> {`
+- `fn` `codex-rs/tui/src/history_cell.rs:1391` `fn web_search_header(completed: bool) -> &'static str {`
+- `impl` `codex-rs/tui/src/history_cell.rs:1409` `impl WebSearchCell {`
+- `impl` `codex-rs/tui/src/history_cell.rs:1440` `impl HistoryCell for WebSearchCell {`
+- `fn` `codex-rs/tui/src/history_cell.rs:1441` `fn display_lines(&self, width: u16) -> Vec<Line<'static>> {`
+- `fn` `codex-rs/tui/src/history_cell.rs:1488` `fn try_new_completed_mcp_tool_call_with_image_output(`
+- `fn` `codex-rs/tui/src/history_cell.rs:1505` `fn decode_mcp_image(block: &serde_json::Value) -> Option<DynamicImage> {`
+- `impl` `codex-rs/tui/src/history_cell.rs:1557` `impl HistoryCell for DeprecationNoticeCell {`
+- `fn` `codex-rs/tui/src/history_cell.rs:1558` `fn display_lines(&self, width: u16) -> Vec<Line<'static>> {`
+- `impl` `codex-rs/tui/src/history_cell.rs:1787` `impl HistoryCell for RequestUserInputResultCell {`
+- `fn` `codex-rs/tui/src/history_cell.rs:1788` `fn display_lines(&self, width: u16) -> Vec<Line<'static>> {`
+- `fn` `codex-rs/tui/src/history_cell.rs:1887` `fn wrap_with_prefix(`
+- `fn` `codex-rs/tui/src/history_cell.rs:1909` `fn split_request_user_input_answer(`
+- `impl` `codex-rs/tui/src/history_cell.rs:1955` `impl HistoryCell for ProposedPlanCell {`
+- `fn` `codex-rs/tui/src/history_cell.rs:1956` `fn display_lines(&self, width: u16) -> Vec<Line<'static>> {`
+- `impl` `codex-rs/tui/src/history_cell.rs:1977` `impl HistoryCell for ProposedPlanStreamCell {`
+- `fn` `codex-rs/tui/src/history_cell.rs:1978` `fn display_lines(&self, _width: u16) -> Vec<Line<'static>> {`
+- `fn` `codex-rs/tui/src/history_cell.rs:1982` `fn is_stream_continuation(&self) -> bool {`
+- `impl` `codex-rs/tui/src/history_cell.rs:1993` `impl HistoryCell for PlanUpdateCell {`
+- `fn` `codex-rs/tui/src/history_cell.rs:1994` `fn display_lines(&self, width: u16) -> Vec<Line<'static>> {`
+- `struct` `codex-rs/tui/src/history_cell.rs:2129` `pub struct FinalMessageSeparator {`
+- `impl` `codex-rs/tui/src/history_cell.rs:2133` `impl FinalMessageSeparator {`
+- `impl` `codex-rs/tui/src/history_cell.rs:2145` `impl HistoryCell for FinalMessageSeparator {`
+- `fn` `codex-rs/tui/src/history_cell.rs:2146` `fn display_lines(&self, width: u16) -> Vec<Line<'static>> {`
+- `fn` `codex-rs/tui/src/history_cell.rs:2175` `fn runtime_metrics_label(summary: RuntimeMetricsSummary) -> Option<String> {`
+- `fn` `codex-rs/tui/src/history_cell.rs:2223` `fn format_duration_ms(duration_ms: u64) -> String {`
+- `fn` `codex-rs/tui/src/history_cell.rs:2232` `fn pluralize(count: u64, singular: &'static str, plural: &'static str) -> &'static str {`
+- `use` `codex-rs/tui/src/history_cell.rs:2259` `use super::*;`
+- `use` `codex-rs/tui/src/history_cell.rs:2260` `use crate::exec_cell::CommandOutput;`
+- `use` `codex-rs/tui/src/history_cell.rs:2261` `use crate::exec_cell::ExecCall;`
+- `use` `codex-rs/tui/src/history_cell.rs:2262` `use crate::exec_cell::ExecCell;`
+- `use` `codex-rs/tui/src/history_cell.rs:2263` `use codex_core::config::Config;`
+- `use` `codex-rs/tui/src/history_cell.rs:2264` `use codex_core::config::ConfigBuilder;`
+- `use` `codex-rs/tui/src/history_cell.rs:2265` `use codex_core::config::types::McpServerConfig;`
+- `use` `codex-rs/tui/src/history_cell.rs:2266` `use codex_core::config::types::McpServerTransportConfig;`
+- `use` `codex-rs/tui/src/history_cell.rs:2267` `use codex_core::protocol::McpAuthStatus;`
+- `use` `codex-rs/tui/src/history_cell.rs:2268` `use codex_otel::RuntimeMetricTotals;`
+- `use` `codex-rs/tui/src/history_cell.rs:2269` `use codex_otel::RuntimeMetricsSummary;`
+- `use` `codex-rs/tui/src/history_cell.rs:2270` `use codex_protocol::models::WebSearchAction;`
+- `use` `codex-rs/tui/src/history_cell.rs:2271` `use codex_protocol::parse_command::ParsedCommand;`
+- `use` `codex-rs/tui/src/history_cell.rs:2272` `use dirs::home_dir;`
+- `use` `codex-rs/tui/src/history_cell.rs:2273` `use pretty_assertions::assert_eq;`
+- `use` `codex-rs/tui/src/history_cell.rs:2274` `use serde_json::json;`
+- `use` `codex-rs/tui/src/history_cell.rs:2275` `use std::collections::HashMap;`
+- `use` `codex-rs/tui/src/history_cell.rs:2277` `use codex_core::protocol::ExecCommandSource;`
+- `use` `codex-rs/tui/src/history_cell.rs:2278` `use codex_protocol::mcp::CallToolResult;`
+- `use` `codex-rs/tui/src/history_cell.rs:2279` `use codex_protocol::mcp::Tool;`
+- `use` `codex-rs/tui/src/history_cell.rs:2280` `use rmcp::model::Content;`
+- `const` `codex-rs/tui/src/history_cell.rs:2282` `const SMALL_PNG_BASE64: &str = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4nGP4z8DwHwAFAAH/iZk9HQAAAABJRU5ErkJggg==";`
+- `fn` `codex-rs/tui/src/history_cell.rs:2283` `async fn test_config() -> Config {`
+- (… 53 more definitions omitted; see symbol indexes under `workdocjcl/spec/13_Indexes/`)
+
+## Dependencies (auto sample)
+### Imports / Includes
+- `use crate::diff_render::create_diff_summary;`
+- `use crate::diff_render::display_path_for;`
+- `use crate::exec_cell::CommandOutput;`
+- `use crate::exec_cell::OutputLinesParams;`
+- `use crate::exec_cell::TOOL_CALL_MAX_LINES;`
+- `use crate::exec_cell::output_lines;`
+- `use crate::exec_cell::spinner;`
+- `use crate::exec_command::relativize_to_home;`
+- `use crate::exec_command::strip_bash_lc_and_escape;`
+- `use crate::live_wrap::take_prefix_by_width;`
+- `use crate::markdown::append_markdown;`
+- `use crate::render::line_utils::line_to_static;`
+- `use crate::render::line_utils::prefix_lines;`
+- `use crate::render::line_utils::push_owned_lines;`
+- `use crate::render::renderable::Renderable;`
+- `use crate::style::proposed_plan_style;`
+- `use crate::style::user_message_style;`
+- `use crate::text_formatting::format_and_truncate_tool_result;`
+- `use crate::text_formatting::truncate_text;`
+- `use crate::tooltips;`
+### Referenced env vars
+- (none detected)
+
+## Error Handling / Edge Cases
+- has retry/timeout/backoff logic
+- returns structured errors (Result/ErrorKind)
+- uses Rust panic/expect/unwrap-style failure paths
+
+## Spec Links
+- `workdocjcl/spec/06_UI/TUI.md`

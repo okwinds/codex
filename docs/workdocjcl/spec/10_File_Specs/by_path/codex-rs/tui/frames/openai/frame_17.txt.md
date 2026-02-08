@@ -1,0 +1,36 @@
+# `codex-rs/tui/frames/openai/frame_17.txt`
+
+## Identity
+- kind: `unknown`
+- ext: `.txt`
+- size_bytes: `662`
+- sha256: `859e9ca912ee4d6a1dacedec770371bea342e76bcc9fee4582530da654c0219b`
+- generated_utc: `2026-02-03T16:08:30Z`
+
+## Purpose (Why)
+Repository file.
+
+## Interfaces (Inputs/Outputs)
+### Inputs
+- filesystem: `codex-rs/tui/frames/openai/frame_17.txt` (read)
+
+### Outputs / Side Effects
+- none (file is declarative: doc/config/test/asset)
+
+## Public Surface (auto)
+- (none detected)
+
+## Definitions (auto, per-file)
+- (not extracted)
+
+## Dependencies (auto sample)
+### Imports / Includes
+- (none detected)
+### Referenced env vars
+- (none detected)
+
+## Error Handling / Edge Cases
+- (none detected)
+
+## Spec Links
+- `workdocjcl/spec/06_UI/TUI.md`

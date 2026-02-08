@@ -1,0 +1,276 @@
+# `codex-rs/tui/src/bottom_pane/chat_composer.rs`
+
+## Identity
+- kind: `source`
+- ext: `.rs`
+- size_bytes: `277848`
+- sha256: `d0140a345fb2633fd140ba4cf11485353a6ae43326d45ebbd1e765d5eb61d127`
+- generated_utc: `2026-02-03T16:08:30Z`
+
+## Purpose (Why)
+Source file implementing exported/public items listed below.
+
+## Interfaces (Inputs/Outputs)
+### Inputs
+- filesystem: `codex-rs/tui/src/bottom_pane/chat_composer.rs` (read)
+
+### Outputs / Side Effects
+- (no obvious side effects detected by heuristic)
+
+## Public Surface (auto)
+- `pub enum InputResult {`
+- `pub fn new(`
+- `pub fn set_skill_mentions(&mut self, skills: Option<Vec<SkillMetadata>>) {`
+- `pub fn set_image_paste_enabled(&mut self, enabled: bool) {`
+- `pub fn set_connector_mentions(&mut self, connectors_snapshot: Option<ConnectorsSnapshot>) {`
+- `pub fn set_steer_enabled(&mut self, enabled: bool) {`
+- `pub fn set_collaboration_modes_enabled(&mut self, enabled: bool) {`
+- `pub fn set_connectors_enabled(&mut self, enabled: bool) {`
+- `pub fn set_collaboration_mode_indicator(`
+- `pub fn set_personality_command_enabled(&mut self, enabled: bool) {`
+- `pub fn set_windows_degraded_sandbox_active(&mut self, enabled: bool) {`
+- `pub fn handle_paste(&mut self, pasted: String) -> bool {`
+- `pub fn handle_paste_image_path(&mut self, pasted: String) -> bool {`
+- `pub fn attach_image(&mut self, path: PathBuf) {`
+- `pub fn take_recent_submission_images(&mut self) -> Vec<PathBuf> {`
+- `pub fn take_recent_submission_images_with_placeholders(&mut self) -> Vec<LocalImageAttachment> {`
+- `pub fn show_quit_shortcut_hint(&mut self, key: KeyBinding, has_focus: bool) {`
+- `pub fn clear_quit_shortcut_hint(&mut self, has_focus: bool) {`
+- `pub fn handle_key_event(&mut self, key_event: KeyEvent) -> (InputResult, bool) {`
+- `pub fn skills(&self) -> Option<&Vec<SkillMetadata>> {`
+- `pub fn set_task_running(&mut self, running: bool) {`
+
+## Definitions (auto, per-file)
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:85` `use crate::key_hint;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:86` `use crate::key_hint::KeyBinding;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:87` `use crate::key_hint::has_ctrl_or_alt;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:88` `use crossterm::event::KeyCode;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:89` `use crossterm::event::KeyEvent;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:90` `use crossterm::event::KeyEventKind;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:91` `use crossterm::event::KeyModifiers;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:92` `use ratatui::buffer::Buffer;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:93` `use ratatui::layout::Constraint;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:94` `use ratatui::layout::Layout;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:95` `use ratatui::layout::Margin;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:96` `use ratatui::layout::Rect;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:97` `use ratatui::style::Stylize;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:98` `use ratatui::text::Line;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:99` `use ratatui::text::Span;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:100` `use ratatui::widgets::Block;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:101` `use ratatui::widgets::StatefulWidgetRef;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:102` `use ratatui::widgets::WidgetRef;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:104` `use super::chat_composer_history::ChatComposerHistory;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:105` `use super::chat_composer_history::HistoryEntry;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:106` `use super::command_popup::CommandItem;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:107` `use super::command_popup::CommandPopup;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:108` `use super::command_popup::CommandPopupFlags;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:109` `use super::file_search_popup::FileSearchPopup;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:110` `use super::footer::CollaborationModeIndicator;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:111` `use super::footer::FooterMode;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:112` `use super::footer::FooterProps;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:113` `use super::footer::SummaryLeft;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:114` `use super::footer::can_show_left_with_context;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:115` `use super::footer::context_window_line;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:116` `use super::footer::esc_hint_mode;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:117` `use super::footer::footer_height;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:118` `use super::footer::footer_hint_items_width;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:119` `use super::footer::footer_line_width;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:120` `use super::footer::inset_footer_hint_area;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:121` `use super::footer::render_context_right;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:122` `use super::footer::render_footer_from_props;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:123` `use super::footer::render_footer_hint_items;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:124` `use super::footer::render_footer_line;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:125` `use super::footer::reset_mode_after_activity;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:126` `use super::footer::single_line_footer_layout;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:127` `use super::footer::toggle_shortcut_mode;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:128` `use super::paste_burst::CharDecision;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:129` `use super::paste_burst::PasteBurst;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:130` `use super::skill_popup::MentionItem;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:131` `use super::skill_popup::SkillPopup;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:132` `use super::slash_commands;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:133` `use crate::bottom_pane::paste_burst::FlushResult;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:134` `use crate::bottom_pane::prompt_args::expand_custom_prompt;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:135` `use crate::bottom_pane::prompt_args::expand_if_numeric_with_positional_args;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:136` `use crate::bottom_pane::prompt_args::parse_slash_name;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:137` `use crate::bottom_pane::prompt_args::prompt_argument_names;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:138` `use crate::bottom_pane::prompt_args::prompt_command_with_arg_placeholders;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:139` `use crate::bottom_pane::prompt_args::prompt_has_numeric_placeholders;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:140` `use crate::render::Insets;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:141` `use crate::render::RectExt;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:142` `use crate::render::renderable::Renderable;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:143` `use crate::slash_command::SlashCommand;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:144` `use crate::style::user_message_style;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:145` `use codex_common::fuzzy_match::fuzzy_match;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:146` `use codex_protocol::custom_prompts::CustomPrompt;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:147` `use codex_protocol::custom_prompts::PROMPTS_CMD_PREFIX;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:148` `use codex_protocol::models::local_image_label_text;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:149` `use codex_protocol::user_input::ByteRange;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:150` `use codex_protocol::user_input::TextElement;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:152` `use crate::app_event::AppEvent;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:153` `use crate::app_event::ConnectorsSnapshot;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:154` `use crate::app_event_sender::AppEventSender;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:155` `use crate::bottom_pane::LocalImageAttachment;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:156` `use crate::bottom_pane::textarea::TextArea;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:157` `use crate::bottom_pane::textarea::TextAreaState;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:158` `use crate::clipboard_paste::normalize_pasted_path;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:159` `use crate::clipboard_paste::pasted_image_format;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:160` `use crate::history_cell;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:161` `use crate::ui_consts::LIVE_PREFIX_COLS;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:162` `use codex_chatgpt::connectors;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:163` `use codex_chatgpt::connectors::AppInfo;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:164` `use codex_core::skills::model::SkillMetadata;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:165` `use codex_file_search::FileMatch;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:166` `use std::cell::RefCell;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:167` `use std::collections::HashMap;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:168` `use std::collections::HashSet;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:169` `use std::collections::VecDeque;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:170` `use std::ops::Range;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:171` `use std::path::PathBuf;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:172` `use std::time::Duration;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:173` `use std::time::Instant;`
+- `const` `codex-rs/tui/src/bottom_pane/chat_composer.rs:177` `const LARGE_PASTE_CHAR_THRESHOLD: usize = 1000;`
+- `enum` `codex-rs/tui/src/bottom_pane/chat_composer.rs:181` `pub enum InputResult {`
+- `struct` `codex-rs/tui/src/bottom_pane/chat_composer.rs:196` `struct AttachedImage {`
+- `enum` `codex-rs/tui/src/bottom_pane/chat_composer.rs:201` `enum PromptSelectionMode {`
+- `enum` `codex-rs/tui/src/bottom_pane/chat_composer.rs:206` `enum PromptSelectionAction {`
+- `impl` `codex-rs/tui/src/bottom_pane/chat_composer.rs:231` `impl Default for ChatComposerConfig {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:232` `fn default() -> Self {`
+- `impl` `codex-rs/tui/src/bottom_pane/chat_composer.rs:241` `impl ChatComposerConfig {`
+- `struct` `codex-rs/tui/src/bottom_pane/chat_composer.rs:301` `struct FooterFlash {`
+- `enum` `codex-rs/tui/src/bottom_pane/chat_composer.rs:307` `enum ActivePopup {`
+- `const` `codex-rs/tui/src/bottom_pane/chat_composer.rs:314` `const FOOTER_SPACING_HEIGHT: u16 = 0;`
+- `impl` `codex-rs/tui/src/bottom_pane/chat_composer.rs:316` `impl ChatComposer {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:317` `pub fn new(`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:393` `pub fn set_skill_mentions(&mut self, skills: Option<Vec<SkillMetadata>>) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:401` `pub fn set_image_paste_enabled(&mut self, enabled: bool) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:405` `pub fn set_connector_mentions(&mut self, connectors_snapshot: Option<ConnectorsSnapshot>) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:419` `pub fn set_steer_enabled(&mut self, enabled: bool) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:423` `pub fn set_collaboration_modes_enabled(&mut self, enabled: bool) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:427` `pub fn set_connectors_enabled(&mut self, enabled: bool) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:431` `pub fn set_collaboration_mode_indicator(`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:438` `pub fn set_personality_command_enabled(&mut self, enabled: bool) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:442` `fn popups_enabled(&self) -> bool {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:446` `fn slash_commands_enabled(&self) -> bool {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:450` `fn image_paste_enabled(&self) -> bool {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:454` `pub fn set_windows_degraded_sandbox_active(&mut self, enabled: bool) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:457` `fn layout_areas(&self, area: Rect) -> [Rect; 3] {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:480` `fn footer_spacing(footer_hint_height: u16) -> u16 {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:535` `pub fn handle_paste(&mut self, pasted: String) -> bool {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:556` `pub fn handle_paste_image_path(&mut self, pasted: String) -> bool {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:840` `fn prune_attached_images_for_submission(&mut self, text: &str, text_elements: &[TextElement]) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:853` `pub fn attach_image(&mut self, path: PathBuf) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:864` `pub fn take_recent_submission_images(&mut self) -> Vec<PathBuf> {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:869` `pub fn take_recent_submission_images_with_placeholders(&mut self) -> Vec<LocalImageAttachment> {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:931` `pub fn show_quit_shortcut_hint(&mut self, key: KeyBinding, has_focus: bool) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:941` `pub fn clear_quit_shortcut_hint(&mut self, has_focus: bool) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:957` `fn next_large_paste_placeholder(&mut self, char_count: usize) -> String {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:974` `pub fn handle_key_event(&mut self, key_event: KeyEvent) -> (InputResult, bool) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:998` `fn handle_key_event_with_slash_popup(&mut self, key_event: KeyEvent) -> (InputResult, bool) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:1188` `fn clamp_to_char_boundary(text: &str, pos: usize) -> usize {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:1216` `fn handle_non_ascii_char(&mut self, input: KeyEvent, now: Instant) -> (InputResult, bool) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:1286` `fn handle_key_event_with_file_popup(&mut self, key_event: KeyEvent) -> (InputResult, bool) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:1406` `fn handle_key_event_with_skill_popup(&mut self, key_event: KeyEvent) -> (InputResult, bool) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:1482` `fn is_image_path(path: &str) -> bool {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:1487` `fn trim_text_elements(`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:1592` `pub fn skills(&self) -> Option<&Vec<SkillMetadata>> {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:1596` `fn mentions_enabled(&self) -> bool {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:1620` `fn current_prefixed_token(`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:1718` `fn current_at_token(textarea: &TextArea) -> Option<String> {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:1722` `fn current_mention_token(&self) -> Option<String> {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:1734` `fn insert_selected_path(&mut self, path: &str) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:1781` `fn insert_selected_mention(&mut self, insert_text: &str) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:1817` `fn record_mention_path(&mut self, insert_text: &str, path: &str) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:1824` `fn mention_name_from_insert_text(insert_text: &str) -> Option<String> {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:1844` `fn prepare_submission_text(`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:1963` `fn handle_submission(&mut self, should_queue: bool) -> (InputResult, bool) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:1967` `fn handle_submission_with_time(`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:2060` `fn try_dispatch_bare_slash_command(&mut self) -> Option<InputResult> {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:2087` `fn try_dispatch_slash_command_with_args(&mut self) -> Option<InputResult> {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:2149` `fn reject_slash_command_if_unavailable(&self, cmd: SlashCommand) -> bool {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:2166` `fn slash_command_args_elements(`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:2192` `fn handle_key_event_without_popup(&mut self, key_event: KeyEvent) -> (InputResult, bool) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:2276` `fn handle_paste_burst_flush(&mut self, now: Instant) -> bool {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:2307` `fn handle_input_basic(&mut self, input: KeyEvent) -> (InputResult, bool) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:2311` `fn handle_input_basic_with_time(`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:2440` `fn reconcile_deleted_elements(&mut self, elements_before: Vec<String>) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:2466` `fn relabel_attached_images_and_update_placeholders(&mut self) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:2479` `fn handle_shortcut_overlay_key(&mut self, key_event: &KeyEvent) -> bool {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:2503` `fn footer_props(&self) -> FooterProps {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:2536` `fn footer_mode(&self) -> FooterMode {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:2559` `fn custom_footer_height(&self) -> Option<u16> {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:2568` `fn sync_popups(&mut self) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:2637` `fn sync_slash_command_elements(&mut self) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:2675` `fn slash_command_element_range(&self, first_line: &str) -> Option<Range<usize>> {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:2695` `fn is_known_slash_name(&self, name: &str) -> bool {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:2721` `fn slash_command_under_cursor(first_line: &str, cursor: usize) -> Option<(&str, &str)> {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:2749` `fn looks_like_slash_prefix(&self, name: &str, rest_after_name: &str) -> bool {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:2775` `fn sync_command_popup(&mut self, allow: bool) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:2839` `fn sync_file_search_popup(&mut self, query: String) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:2880` `fn sync_mention_popup(&mut self, query: String) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:2904` `fn mention_items(&self) -> Vec<MentionItem> {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:2952` `fn connector_brief_description(connector: &AppInfo) -> String {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:2964` `fn connector_description(connector: &AppInfo) -> Option<String> {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:2973` `fn set_has_focus(&mut self, has_focus: bool) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:2988` `pub fn set_task_running(&mut self, running: bool) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:3011` `fn skill_display_name(skill: &SkillMetadata) -> &str {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:3019` `fn skill_description(skill: &SkillMetadata) -> Option<String> {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:3030` `fn is_mention_name_char(byte: u8) -> bool {`
+- `impl` `codex-rs/tui/src/bottom_pane/chat_composer.rs:3034` `impl Renderable for ChatComposer {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:3035` `fn cursor_pos(&self, area: Rect) -> Option<(u16, u16)> {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:3045` `fn desired_height(&self, width: u16) -> u16 {`
+- `const` `codex-rs/tui/src/bottom_pane/chat_composer.rs:3052` `const COLS_WITH_MARGIN: u16 = LIVE_PREFIX_COLS + 1;`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:3064` `fn render(&self, area: Rect, buf: &mut Buffer) {`
+- `impl` `codex-rs/tui/src/bottom_pane/chat_composer.rs:3069` `impl ChatComposer {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:3260` `fn prompt_selection_action(`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:3318` `use super::*;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:3319` `use image::ImageBuffer;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:3320` `use image::Rgba;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:3321` `use pretty_assertions::assert_eq;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:3322` `use std::path::PathBuf;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:3323` `use tempfile::tempdir;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:3325` `use crate::app_event::AppEvent;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:3327` `use crate::bottom_pane::AppEventSender;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:3328` `use crate::bottom_pane::ChatComposer;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:3329` `use crate::bottom_pane::InputResult;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:3330` `use crate::bottom_pane::chat_composer::AttachedImage;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:3331` `use crate::bottom_pane::chat_composer::LARGE_PASTE_CHAR_THRESHOLD;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:3332` `use crate::bottom_pane::prompt_args::PromptArg;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:3333` `use crate::bottom_pane::prompt_args::extract_positional_args_for_prompt_line;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:3334` `use crate::bottom_pane::textarea::TextArea;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer.rs:3335` `use tokio::sync::mpsc::unbounded_channel;`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:3338` `fn footer_hint_row_is_separated_from_composer() {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:3392` `fn footer_flash_overrides_footer_hint_override() {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer.rs:3430` `fn footer_flash_expires_and_falls_back_to_hint_override() {`
+- (… 244 more definitions omitted; see symbol indexes under `workdocjcl/spec/13_Indexes/`)
+
+## Dependencies (auto sample)
+### Imports / Includes
+- `use crate::key_hint;`
+- `use crate::key_hint::KeyBinding;`
+- `use crate::key_hint::has_ctrl_or_alt;`
+- `use crossterm::event::KeyCode;`
+- `use crossterm::event::KeyEvent;`
+- `use crossterm::event::KeyEventKind;`
+- `use crossterm::event::KeyModifiers;`
+- `use ratatui::buffer::Buffer;`
+- `use ratatui::layout::Constraint;`
+- `use ratatui::layout::Layout;`
+- `use ratatui::layout::Margin;`
+- `use ratatui::layout::Rect;`
+- `use ratatui::style::Stylize;`
+- `use ratatui::text::Line;`
+- `use ratatui::text::Span;`
+- `use ratatui::widgets::Block;`
+- `use ratatui::widgets::StatefulWidgetRef;`
+- `use ratatui::widgets::WidgetRef;`
+- `use super::chat_composer_history::ChatComposerHistory;`
+- `use super::chat_composer_history::HistoryEntry;`
+### Referenced env vars
+- (none detected)
+
+## Error Handling / Edge Cases
+- has retry/timeout/backoff logic
+- uses Rust panic/expect/unwrap-style failure paths
+
+## Spec Links
+- `workdocjcl/spec/06_UI/TUI.md`

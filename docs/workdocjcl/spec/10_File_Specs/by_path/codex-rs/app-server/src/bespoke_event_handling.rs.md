@@ -1,0 +1,223 @@
+# `codex-rs/app-server/src/bespoke_event_handling.rs`
+
+## Identity
+- kind: `source`
+- ext: `.rs`
+- size_bytes: `93166`
+- sha256: `a3a2a343cc2eeded4df0acfd90a9f8842317e90fa0a50c1c82b367be1ed3abd3`
+- generated_utc: `2026-02-03T16:08:28Z`
+
+## Purpose (Why)
+Source file (no public surface detected by heuristic).
+
+## Interfaces (Inputs/Outputs)
+### Inputs
+- filesystem: `codex-rs/app-server/src/bespoke_event_handling.rs` (read)
+
+### Outputs / Side Effects
+- spawns subprocesses
+
+## Public Surface (auto)
+- (none detected)
+
+## Definitions (auto, per-file)
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1` `use crate::codex_message_processor::ApiVersion;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:2` `use crate::codex_message_processor::PendingInterrupts;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:3` `use crate::codex_message_processor::PendingRollbacks;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:4` `use crate::codex_message_processor::TurnSummary;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:5` `use crate::codex_message_processor::TurnSummaryStore;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:6` `use crate::codex_message_processor::read_event_msgs_from_rollout;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:7` `use crate::codex_message_processor::read_summary_from_rollout;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:8` `use crate::codex_message_processor::summary_to_thread;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:9` `use crate::error_code::INTERNAL_ERROR_CODE;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:10` `use crate::error_code::INVALID_REQUEST_ERROR_CODE;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:11` `use crate::outgoing_message::OutgoingMessageSender;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:12` `use codex_app_server_protocol::AccountRateLimitsUpdatedNotification;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:13` `use codex_app_server_protocol::AgentMessageDeltaNotification;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:14` `use codex_app_server_protocol::ApplyPatchApprovalParams;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:15` `use codex_app_server_protocol::ApplyPatchApprovalResponse;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:16` `use codex_app_server_protocol::CodexErrorInfo as V2CodexErrorInfo;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:17` `use codex_app_server_protocol::CollabAgentState as V2CollabAgentStatus;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:18` `use codex_app_server_protocol::CollabAgentTool;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:19` `use codex_app_server_protocol::CollabAgentToolCallStatus as V2CollabToolCallStatus;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:20` `use codex_app_server_protocol::CommandAction as V2ParsedCommand;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:21` `use codex_app_server_protocol::CommandExecutionApprovalDecision;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:22` `use codex_app_server_protocol::CommandExecutionOutputDeltaNotification;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:23` `use codex_app_server_protocol::CommandExecutionRequestApprovalParams;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:24` `use codex_app_server_protocol::CommandExecutionRequestApprovalResponse;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:25` `use codex_app_server_protocol::CommandExecutionStatus;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:26` `use codex_app_server_protocol::ContextCompactedNotification;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:27` `use codex_app_server_protocol::DeprecationNoticeNotification;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:28` `use codex_app_server_protocol::DynamicToolCallParams;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:29` `use codex_app_server_protocol::ErrorNotification;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:30` `use codex_app_server_protocol::ExecCommandApprovalParams;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:31` `use codex_app_server_protocol::ExecCommandApprovalResponse;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:32` `use codex_app_server_protocol::ExecPolicyAmendment as V2ExecPolicyAmendment;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:33` `use codex_app_server_protocol::FileChangeApprovalDecision;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:34` `use codex_app_server_protocol::FileChangeOutputDeltaNotification;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:35` `use codex_app_server_protocol::FileChangeRequestApprovalParams;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:36` `use codex_app_server_protocol::FileChangeRequestApprovalResponse;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:37` `use codex_app_server_protocol::FileUpdateChange;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:38` `use codex_app_server_protocol::InterruptConversationResponse;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:39` `use codex_app_server_protocol::ItemCompletedNotification;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:40` `use codex_app_server_protocol::ItemStartedNotification;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:41` `use codex_app_server_protocol::JSONRPCErrorError;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:42` `use codex_app_server_protocol::McpToolCallError;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:43` `use codex_app_server_protocol::McpToolCallResult;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:44` `use codex_app_server_protocol::McpToolCallStatus;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:45` `use codex_app_server_protocol::PatchApplyStatus;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:46` `use codex_app_server_protocol::PatchChangeKind as V2PatchChangeKind;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:47` `use codex_app_server_protocol::PlanDeltaNotification;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:48` `use codex_app_server_protocol::RawResponseItemCompletedNotification;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:49` `use codex_app_server_protocol::ReasoningSummaryPartAddedNotification;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:50` `use codex_app_server_protocol::ReasoningSummaryTextDeltaNotification;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:51` `use codex_app_server_protocol::ReasoningTextDeltaNotification;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:52` `use codex_app_server_protocol::ServerNotification;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:53` `use codex_app_server_protocol::ServerRequestPayload;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:54` `use codex_app_server_protocol::TerminalInteractionNotification;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:55` `use codex_app_server_protocol::ThreadItem;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:56` `use codex_app_server_protocol::ThreadNameUpdatedNotification;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:57` `use codex_app_server_protocol::ThreadRollbackResponse;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:58` `use codex_app_server_protocol::ThreadTokenUsage;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:59` `use codex_app_server_protocol::ThreadTokenUsageUpdatedNotification;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:60` `use codex_app_server_protocol::ToolRequestUserInputOption;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:61` `use codex_app_server_protocol::ToolRequestUserInputParams;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:62` `use codex_app_server_protocol::ToolRequestUserInputQuestion;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:63` `use codex_app_server_protocol::ToolRequestUserInputResponse;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:64` `use codex_app_server_protocol::Turn;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:65` `use codex_app_server_protocol::TurnCompletedNotification;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:66` `use codex_app_server_protocol::TurnDiffUpdatedNotification;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:67` `use codex_app_server_protocol::TurnError;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:68` `use codex_app_server_protocol::TurnInterruptResponse;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:69` `use codex_app_server_protocol::TurnPlanStep;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:70` `use codex_app_server_protocol::TurnPlanUpdatedNotification;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:71` `use codex_app_server_protocol::TurnStatus;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:72` `use codex_app_server_protocol::build_turns_from_event_msgs;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:73` `use codex_core::CodexThread;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:74` `use codex_core::parse_command::shlex_join;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:75` `use codex_core::protocol::ApplyPatchApprovalRequestEvent;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:76` `use codex_core::protocol::CodexErrorInfo as CoreCodexErrorInfo;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:77` `use codex_core::protocol::Event;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:78` `use codex_core::protocol::EventMsg;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:79` `use codex_core::protocol::ExecApprovalRequestEvent;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:80` `use codex_core::protocol::ExecCommandEndEvent;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:81` `use codex_core::protocol::FileChange as CoreFileChange;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:82` `use codex_core::protocol::McpToolCallBeginEvent;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:83` `use codex_core::protocol::McpToolCallEndEvent;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:84` `use codex_core::protocol::Op;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:85` `use codex_core::protocol::ReviewDecision;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:86` `use codex_core::protocol::TokenCountEvent;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:87` `use codex_core::protocol::TurnDiffEvent;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:88` `use codex_core::review_format::format_review_findings_block;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:89` `use codex_core::review_prompts;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:90` `use codex_protocol::ThreadId;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:91` `use codex_protocol::dynamic_tools::DynamicToolResponse as CoreDynamicToolResponse;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:92` `use codex_protocol::plan_tool::UpdatePlanArgs;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:93` `use codex_protocol::protocol::ReviewOutputEvent;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:94` `use codex_protocol::request_user_input::RequestUserInputAnswer as CoreRequestUserInputAnswer;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:95` `use codex_protocol::request_user_input::RequestUserInputResponse as CoreRequestUserInputResponse;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:96` `use std::collections::HashMap;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:97` `use std::convert::TryFrom;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:98` `use std::path::PathBuf;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:99` `use std::sync::Arc;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:100` `use tokio::sync::oneshot;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:101` `use tracing::error;`
+- `type` `codex-rs/app-server/src/bespoke_event_handling.rs:103` `type JsonValue = serde_json::Value;`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1152` `async fn handle_turn_diff(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1171` `async fn handle_turn_plan_update(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1196` `async fn emit_turn_completed_with_status(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1217` `async fn complete_file_change_item(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1249` `async fn complete_command_execution_item(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1281` `async fn maybe_emit_raw_response_item_completed(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1302` `async fn find_and_remove_turn_summary(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1310` `async fn handle_turn_complete(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1326` `async fn handle_turn_interrupted(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1344` `async fn handle_thread_rollback_failed(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1369` `async fn handle_token_count_event(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1397` `async fn handle_error(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1406` `async fn on_patch_approval_response(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1448` `async fn on_exec_approval_response(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1484` `async fn on_request_user_input_response(`
+- `const` `codex-rs/app-server/src/bespoke_event_handling.rs:1543` `const REVIEW_FALLBACK_MESSAGE: &str = "Reviewer failed to output a response.";`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1545` `fn render_review_output_text(output: &ReviewOutputEvent) -> String {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1565` `fn convert_patch_changes(changes: &HashMap<PathBuf, CoreFileChange>) -> Vec<FileUpdateChange> {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1578` `fn map_patch_change_kind(change: &CoreFileChange) -> V2PatchChangeKind {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1588` `fn format_file_change_diff(change: &CoreFileChange) -> String {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1605` `fn map_file_change_approval_decision(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1621` `async fn on_file_change_request_approval_response(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1679` `async fn on_command_execution_request_approval_response(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1760` `async fn construct_mcp_tool_call_notification(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1783` `async fn construct_mcp_tool_call_end_notification(`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1830` `use super::*;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1831` `use crate::CHANNEL_CAPACITY;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1832` `use crate::outgoing_message::OutgoingMessage;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1833` `use crate::outgoing_message::OutgoingMessageSender;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1834` `use anyhow::Result;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1835` `use anyhow::anyhow;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1836` `use anyhow::bail;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1837` `use codex_app_server_protocol::TurnPlanStepStatus;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1838` `use codex_core::protocol::CreditsSnapshot;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1839` `use codex_core::protocol::McpInvocation;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1840` `use codex_core::protocol::RateLimitSnapshot;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1841` `use codex_core::protocol::RateLimitWindow;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1842` `use codex_core::protocol::TokenUsage;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1843` `use codex_core::protocol::TokenUsageInfo;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1844` `use codex_protocol::mcp::CallToolResult;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1845` `use codex_protocol::plan_tool::PlanItemArg;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1846` `use codex_protocol::plan_tool::StepStatus;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1847` `use pretty_assertions::assert_eq;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1848` `use rmcp::model::Content;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1849` `use serde_json::Value as JsonValue;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1850` `use std::collections::HashMap;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1851` `use std::time::Duration;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1852` `use tokio::sync::Mutex;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1853` `use tokio::sync::mpsc;`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1855` `fn new_turn_summary_store() -> TurnSummaryStore {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1860` `fn file_change_accept_for_session_maps_to_approved_for_session() {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1868` `async fn test_handle_error_records_message() -> Result<()> {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1896` `async fn test_handle_turn_complete_emits_completed_without_error() -> Result<()> {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1928` `async fn test_handle_turn_interrupted_emits_interrupted_with_error() -> Result<()> {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1970` `async fn test_handle_turn_complete_emits_failed_with_error() -> Result<()> {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:2019` `async fn test_handle_turn_plan_update_emits_notification_for_v2() -> Result<()> {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:2069` `async fn test_handle_token_count_event_emits_usage_and_rate_limits() -> Result<()> {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:2154` `async fn test_handle_token_count_event_without_usage_info() -> Result<()> {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:2179` `async fn test_construct_mcp_tool_call_begin_notification_with_args() {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:2217` `async fn test_handle_turn_complete_emits_error_multiple_turns() -> Result<()> {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:2337` `async fn test_construct_mcp_tool_call_begin_notification_without_args() {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:2375` `async fn test_construct_mcp_tool_call_end_notification_success() {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:2429` `async fn test_construct_mcp_tool_call_end_notification_error() {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:2471` `async fn test_handle_turn_diff_emits_v2_notification() -> Result<()> {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:2507` `async fn test_handle_turn_diff_is_noop_for_v1() -> Result<()> {`
+
+## Dependencies (auto sample)
+### Imports / Includes
+- `use crate::codex_message_processor::ApiVersion;`
+- `use crate::codex_message_processor::PendingInterrupts;`
+- `use crate::codex_message_processor::PendingRollbacks;`
+- `use crate::codex_message_processor::TurnSummary;`
+- `use crate::codex_message_processor::TurnSummaryStore;`
+- `use crate::codex_message_processor::read_event_msgs_from_rollout;`
+- `use crate::codex_message_processor::read_summary_from_rollout;`
+- `use crate::codex_message_processor::summary_to_thread;`
+- `use crate::error_code::INTERNAL_ERROR_CODE;`
+- `use crate::error_code::INVALID_REQUEST_ERROR_CODE;`
+- `use crate::outgoing_message::OutgoingMessageSender;`
+- `use codex_app_server_protocol::AccountRateLimitsUpdatedNotification;`
+- `use codex_app_server_protocol::AgentMessageDeltaNotification;`
+- `use codex_app_server_protocol::ApplyPatchApprovalParams;`
+- `use codex_app_server_protocol::ApplyPatchApprovalResponse;`
+- `use codex_app_server_protocol::CodexErrorInfo as V2CodexErrorInfo;`
+- `use codex_app_server_protocol::CollabAgentState as V2CollabAgentStatus;`
+- `use codex_app_server_protocol::CollabAgentTool;`
+- `use codex_app_server_protocol::CollabAgentToolCallStatus as V2CollabToolCallStatus;`
+- `use codex_app_server_protocol::CommandAction as V2ParsedCommand;`
+### Referenced env vars
+- (none detected)
+
+## Error Handling / Edge Cases
+- has retry/timeout/backoff logic
+- returns structured errors (Result/ErrorKind)
+- uses Rust panic/expect/unwrap-style failure paths
+
+## Spec Links
+- (none; see `09_Verification/CODE_TO_SPEC_MAP.md`)

@@ -1,0 +1,259 @@
+# `codex-rs/core/src/codex.rs`
+
+## Identity
+- kind: `source`
+- ext: `.rs`
+- size_bytes: `228328`
+- sha256: `5843407dcb3ad5fdcb851d17491f9d026e695955198b8dec5b4b9bc6786adebe`
+- generated_utc: `2026-02-03T16:08:29Z`
+
+## Purpose (Why)
+Core engine turn loop and Submission/Event interface.
+
+## Interfaces (Inputs/Outputs)
+### Inputs
+- filesystem: `codex-rs/core/src/codex.rs` (read)
+
+### Outputs / Side Effects
+- spawns subprocesses
+
+## Public Surface (auto)
+- `pub struct Codex {`
+- `pub struct CodexSpawnOk {`
+- `pub fn enabled(&self, feature: Feature) -> bool {`
+
+## Definitions (auto, per-file)
+- `use` `codex-rs/core/src/codex.rs:1` `use std::collections::HashMap;`
+- `use` `codex-rs/core/src/codex.rs:2` `use std::collections::HashSet;`
+- `use` `codex-rs/core/src/codex.rs:3` `use std::fmt::Debug;`
+- `use` `codex-rs/core/src/codex.rs:4` `use std::path::PathBuf;`
+- `use` `codex-rs/core/src/codex.rs:5` `use std::sync::Arc;`
+- `use` `codex-rs/core/src/codex.rs:6` `use std::sync::atomic::AtomicBool;`
+- `use` `codex-rs/core/src/codex.rs:7` `use std::sync::atomic::AtomicU64;`
+- `use` `codex-rs/core/src/codex.rs:8` `use std::sync::atomic::Ordering;`
+- `use` `codex-rs/core/src/codex.rs:10` `use crate::AuthManager;`
+- `use` `codex-rs/core/src/codex.rs:11` `use crate::CodexAuth;`
+- `use` `codex-rs/core/src/codex.rs:12` `use crate::SandboxState;`
+- `use` `codex-rs/core/src/codex.rs:13` `use crate::agent::AgentControl;`
+- `use` `codex-rs/core/src/codex.rs:14` `use crate::agent::AgentStatus;`
+- `use` `codex-rs/core/src/codex.rs:15` `use crate::agent::MAX_THREAD_SPAWN_DEPTH;`
+- `use` `codex-rs/core/src/codex.rs:16` `use crate::agent::agent_status_from_event;`
+- `use` `codex-rs/core/src/codex.rs:17` `use crate::analytics_client::AnalyticsEventsClient;`
+- `use` `codex-rs/core/src/codex.rs:18` `use crate::analytics_client::build_track_events_context;`
+- `use` `codex-rs/core/src/codex.rs:19` `use crate::compact;`
+- `use` `codex-rs/core/src/codex.rs:20` `use crate::compact::run_inline_auto_compact_task;`
+- `use` `codex-rs/core/src/codex.rs:21` `use crate::compact::should_use_remote_compact_task;`
+- `use` `codex-rs/core/src/codex.rs:22` `use crate::compact_remote::run_inline_remote_auto_compact_task;`
+- `use` `codex-rs/core/src/codex.rs:23` `use crate::connectors;`
+- `use` `codex-rs/core/src/codex.rs:24` `use crate::exec_policy::ExecPolicyManager;`
+- `use` `codex-rs/core/src/codex.rs:25` `use crate::features::Feature;`
+- `use` `codex-rs/core/src/codex.rs:26` `use crate::features::Features;`
+- `use` `codex-rs/core/src/codex.rs:27` `use crate::features::maybe_push_unstable_features_warning;`
+- `use` `codex-rs/core/src/codex.rs:28` `use crate::models_manager::manager::ModelsManager;`
+- `use` `codex-rs/core/src/codex.rs:29` `use crate::parse_command::parse_command;`
+- `use` `codex-rs/core/src/codex.rs:30` `use crate::parse_turn_item;`
+- `use` `codex-rs/core/src/codex.rs:31` `use crate::rollout::session_index;`
+- `use` `codex-rs/core/src/codex.rs:32` `use crate::stream_events_utils::HandleOutputCtx;`
+- `use` `codex-rs/core/src/codex.rs:33` `use crate::stream_events_utils::handle_non_tool_response_item;`
+- `use` `codex-rs/core/src/codex.rs:34` `use crate::stream_events_utils::handle_output_item_done;`
+- `use` `codex-rs/core/src/codex.rs:35` `use crate::stream_events_utils::last_assistant_message_from_item;`
+- `use` `codex-rs/core/src/codex.rs:36` `use crate::terminal;`
+- `use` `codex-rs/core/src/codex.rs:37` `use crate::transport_manager::TransportManager;`
+- `use` `codex-rs/core/src/codex.rs:38` `use crate::truncate::TruncationPolicy;`
+- `use` `codex-rs/core/src/codex.rs:39` `use crate::user_notification::UserNotifier;`
+- `use` `codex-rs/core/src/codex.rs:40` `use crate::util::error_or_panic;`
+- `use` `codex-rs/core/src/codex.rs:41` `use async_channel::Receiver;`
+- `use` `codex-rs/core/src/codex.rs:42` `use async_channel::Sender;`
+- `use` `codex-rs/core/src/codex.rs:43` `use codex_protocol::ThreadId;`
+- `use` `codex-rs/core/src/codex.rs:44` `use codex_protocol::approvals::ExecPolicyAmendment;`
+- `use` `codex-rs/core/src/codex.rs:45` `use codex_protocol::config_types::ModeKind;`
+- `use` `codex-rs/core/src/codex.rs:46` `use codex_protocol::config_types::Settings;`
+- `use` `codex-rs/core/src/codex.rs:47` `use codex_protocol::config_types::WebSearchMode;`
+- `use` `codex-rs/core/src/codex.rs:48` `use codex_protocol::dynamic_tools::DynamicToolResponse;`
+- `use` `codex-rs/core/src/codex.rs:49` `use codex_protocol::dynamic_tools::DynamicToolSpec;`
+- `use` `codex-rs/core/src/codex.rs:50` `use codex_protocol::items::PlanItem;`
+- `use` `codex-rs/core/src/codex.rs:51` `use codex_protocol::items::TurnItem;`
+- `use` `codex-rs/core/src/codex.rs:52` `use codex_protocol::items::UserMessageItem;`
+- `use` `codex-rs/core/src/codex.rs:53` `use codex_protocol::mcp::CallToolResult;`
+- `use` `codex-rs/core/src/codex.rs:54` `use codex_protocol::models::BaseInstructions;`
+- `use` `codex-rs/core/src/codex.rs:55` `use codex_protocol::models::format_allow_prefixes;`
+- `use` `codex-rs/core/src/codex.rs:56` `use codex_protocol::openai_models::ModelInfo;`
+- `use` `codex-rs/core/src/codex.rs:57` `use codex_protocol::protocol::FileChange;`
+- `use` `codex-rs/core/src/codex.rs:58` `use codex_protocol::protocol::HasLegacyEvent;`
+- `use` `codex-rs/core/src/codex.rs:59` `use codex_protocol::protocol::ItemCompletedEvent;`
+- `use` `codex-rs/core/src/codex.rs:60` `use codex_protocol::protocol::ItemStartedEvent;`
+- `use` `codex-rs/core/src/codex.rs:61` `use codex_protocol::protocol::RawResponseItemEvent;`
+- `use` `codex-rs/core/src/codex.rs:62` `use codex_protocol::protocol::ReviewRequest;`
+- `use` `codex-rs/core/src/codex.rs:63` `use codex_protocol::protocol::RolloutItem;`
+- `use` `codex-rs/core/src/codex.rs:64` `use codex_protocol::protocol::SessionSource;`
+- `use` `codex-rs/core/src/codex.rs:65` `use codex_protocol::protocol::SubAgentSource;`
+- `use` `codex-rs/core/src/codex.rs:66` `use codex_protocol::protocol::TurnAbortReason;`
+- `use` `codex-rs/core/src/codex.rs:67` `use codex_protocol::protocol::TurnContextItem;`
+- `use` `codex-rs/core/src/codex.rs:68` `use codex_protocol::protocol::TurnStartedEvent;`
+- `use` `codex-rs/core/src/codex.rs:69` `use codex_protocol::request_user_input::RequestUserInputArgs;`
+- `use` `codex-rs/core/src/codex.rs:70` `use codex_protocol::request_user_input::RequestUserInputResponse;`
+- `use` `codex-rs/core/src/codex.rs:71` `use codex_rmcp_client::ElicitationResponse;`
+- `use` `codex-rs/core/src/codex.rs:72` `use codex_rmcp_client::OAuthCredentialsStoreMode;`
+- `use` `codex-rs/core/src/codex.rs:73` `use futures::future::BoxFuture;`
+- `use` `codex-rs/core/src/codex.rs:74` `use futures::prelude::*;`
+- `use` `codex-rs/core/src/codex.rs:75` `use futures::stream::FuturesOrdered;`
+- `use` `codex-rs/core/src/codex.rs:76` `use rmcp::model::ListResourceTemplatesResult;`
+- `use` `codex-rs/core/src/codex.rs:77` `use rmcp::model::ListResourcesResult;`
+- `use` `codex-rs/core/src/codex.rs:78` `use rmcp::model::PaginatedRequestParam;`
+- `use` `codex-rs/core/src/codex.rs:79` `use rmcp::model::ReadResourceRequestParam;`
+- `use` `codex-rs/core/src/codex.rs:80` `use rmcp::model::ReadResourceResult;`
+- `use` `codex-rs/core/src/codex.rs:81` `use rmcp::model::RequestId;`
+- `use` `codex-rs/core/src/codex.rs:82` `use serde_json;`
+- `use` `codex-rs/core/src/codex.rs:83` `use serde_json::Value;`
+- `use` `codex-rs/core/src/codex.rs:84` `use tokio::sync::Mutex;`
+- `use` `codex-rs/core/src/codex.rs:85` `use tokio::sync::RwLock;`
+- `use` `codex-rs/core/src/codex.rs:86` `use tokio::sync::oneshot;`
+- `use` `codex-rs/core/src/codex.rs:87` `use tokio_util::sync::CancellationToken;`
+- `use` `codex-rs/core/src/codex.rs:88` `use tracing::Instrument;`
+- `use` `codex-rs/core/src/codex.rs:89` `use tracing::debug;`
+- `use` `codex-rs/core/src/codex.rs:90` `use tracing::error;`
+- `use` `codex-rs/core/src/codex.rs:91` `use tracing::field;`
+- `use` `codex-rs/core/src/codex.rs:92` `use tracing::info;`
+- `use` `codex-rs/core/src/codex.rs:93` `use tracing::info_span;`
+- `use` `codex-rs/core/src/codex.rs:94` `use tracing::instrument;`
+- `use` `codex-rs/core/src/codex.rs:95` `use tracing::trace_span;`
+- `use` `codex-rs/core/src/codex.rs:96` `use tracing::warn;`
+- `use` `codex-rs/core/src/codex.rs:98` `use crate::ModelProviderInfo;`
+- `use` `codex-rs/core/src/codex.rs:99` `use crate::WireApi;`
+- `use` `codex-rs/core/src/codex.rs:100` `use crate::client::ModelClient;`
+- `use` `codex-rs/core/src/codex.rs:101` `use crate::client::ModelClientSession;`
+- `use` `codex-rs/core/src/codex.rs:102` `use crate::client_common::Prompt;`
+- `use` `codex-rs/core/src/codex.rs:103` `use crate::client_common::ResponseEvent;`
+- `use` `codex-rs/core/src/codex.rs:104` `use crate::codex_thread::ThreadConfigSnapshot;`
+- `use` `codex-rs/core/src/codex.rs:105` `use crate::compact::collect_user_messages;`
+- `use` `codex-rs/core/src/codex.rs:106` `use crate::config::Config;`
+- `use` `codex-rs/core/src/codex.rs:107` `use crate::config::Constrained;`
+- `use` `codex-rs/core/src/codex.rs:108` `use crate::config::ConstraintResult;`
+- `use` `codex-rs/core/src/codex.rs:109` `use crate::config::GhostSnapshotConfig;`
+- `use` `codex-rs/core/src/codex.rs:110` `use crate::config::resolve_web_search_mode_for_turn;`
+- `use` `codex-rs/core/src/codex.rs:111` `use crate::config::types::McpServerConfig;`
+- `use` `codex-rs/core/src/codex.rs:112` `use crate::config::types::ShellEnvironmentPolicy;`
+- `use` `codex-rs/core/src/codex.rs:113` `use crate::context_manager::ContextManager;`
+- `use` `codex-rs/core/src/codex.rs:114` `use crate::environment_context::EnvironmentContext;`
+- `use` `codex-rs/core/src/codex.rs:115` `use crate::error::CodexErr;`
+- `use` `codex-rs/core/src/codex.rs:116` `use crate::error::Result as CodexResult;`
+- `use` `codex-rs/core/src/codex.rs:118` `use crate::exec::StreamOutput;`
+- `use` `codex-rs/core/src/codex.rs:119` `use crate::exec_policy::ExecPolicyUpdateError;`
+- `use` `codex-rs/core/src/codex.rs:120` `use crate::feedback_tags;`
+- `use` `codex-rs/core/src/codex.rs:121` `use crate::git_info::get_git_repo_root;`
+- `use` `codex-rs/core/src/codex.rs:122` `use crate::instructions::UserInstructions;`
+- `use` `codex-rs/core/src/codex.rs:123` `use crate::mcp::CODEX_APPS_MCP_SERVER_NAME;`
+- `use` `codex-rs/core/src/codex.rs:124` `use crate::mcp::auth::compute_auth_statuses;`
+- `use` `codex-rs/core/src/codex.rs:125` `use crate::mcp::effective_mcp_servers;`
+- `use` `codex-rs/core/src/codex.rs:126` `use crate::mcp::maybe_prompt_and_install_mcp_dependencies;`
+- `use` `codex-rs/core/src/codex.rs:127` `use crate::mcp::with_codex_apps_mcp;`
+- `use` `codex-rs/core/src/codex.rs:128` `use crate::mcp_connection_manager::McpConnectionManager;`
+- `use` `codex-rs/core/src/codex.rs:129` `use crate::mentions::build_connector_slug_counts;`
+- `use` `codex-rs/core/src/codex.rs:130` `use crate::mentions::build_skill_name_counts;`
+- `use` `codex-rs/core/src/codex.rs:131` `use crate::mentions::collect_explicit_app_paths;`
+- `use` `codex-rs/core/src/codex.rs:132` `use crate::mentions::collect_tool_mentions_from_messages;`
+- `use` `codex-rs/core/src/codex.rs:133` `use crate::model_provider_info::CHAT_WIRE_API_DEPRECATION_SUMMARY;`
+- `use` `codex-rs/core/src/codex.rs:134` `use crate::project_doc::get_user_instructions;`
+- `use` `codex-rs/core/src/codex.rs:135` `use crate::proposed_plan_parser::ProposedPlanParser;`
+- `use` `codex-rs/core/src/codex.rs:136` `use crate::proposed_plan_parser::ProposedPlanSegment;`
+- `use` `codex-rs/core/src/codex.rs:137` `use crate::proposed_plan_parser::extract_proposed_plan_text;`
+- `use` `codex-rs/core/src/codex.rs:138` `use crate::protocol::AgentMessageContentDeltaEvent;`
+- `use` `codex-rs/core/src/codex.rs:139` `use crate::protocol::AgentReasoningSectionBreakEvent;`
+- `use` `codex-rs/core/src/codex.rs:140` `use crate::protocol::ApplyPatchApprovalRequestEvent;`
+- `use` `codex-rs/core/src/codex.rs:141` `use crate::protocol::AskForApproval;`
+- `use` `codex-rs/core/src/codex.rs:142` `use crate::protocol::BackgroundEventEvent;`
+- `use` `codex-rs/core/src/codex.rs:143` `use crate::protocol::DeprecationNoticeEvent;`
+- `use` `codex-rs/core/src/codex.rs:144` `use crate::protocol::ErrorEvent;`
+- `use` `codex-rs/core/src/codex.rs:145` `use crate::protocol::Event;`
+- `use` `codex-rs/core/src/codex.rs:146` `use crate::protocol::EventMsg;`
+- `use` `codex-rs/core/src/codex.rs:147` `use crate::protocol::ExecApprovalRequestEvent;`
+- `use` `codex-rs/core/src/codex.rs:148` `use crate::protocol::McpServerRefreshConfig;`
+- `use` `codex-rs/core/src/codex.rs:149` `use crate::protocol::Op;`
+- `use` `codex-rs/core/src/codex.rs:150` `use crate::protocol::PlanDeltaEvent;`
+- `use` `codex-rs/core/src/codex.rs:151` `use crate::protocol::RateLimitSnapshot;`
+- `use` `codex-rs/core/src/codex.rs:152` `use crate::protocol::ReasoningContentDeltaEvent;`
+- `use` `codex-rs/core/src/codex.rs:153` `use crate::protocol::ReasoningRawContentDeltaEvent;`
+- `use` `codex-rs/core/src/codex.rs:154` `use crate::protocol::RequestUserInputEvent;`
+- `use` `codex-rs/core/src/codex.rs:155` `use crate::protocol::ReviewDecision;`
+- `use` `codex-rs/core/src/codex.rs:156` `use crate::protocol::SandboxPolicy;`
+- `use` `codex-rs/core/src/codex.rs:157` `use crate::protocol::SessionConfiguredEvent;`
+- `use` `codex-rs/core/src/codex.rs:158` `use crate::protocol::SkillDependencies as ProtocolSkillDependencies;`
+- `use` `codex-rs/core/src/codex.rs:159` `use crate::protocol::SkillErrorInfo;`
+- `use` `codex-rs/core/src/codex.rs:160` `use crate::protocol::SkillInterface as ProtocolSkillInterface;`
+- `use` `codex-rs/core/src/codex.rs:161` `use crate::protocol::SkillMetadata as ProtocolSkillMetadata;`
+- `use` `codex-rs/core/src/codex.rs:162` `use crate::protocol::SkillToolDependency as ProtocolSkillToolDependency;`
+- `use` `codex-rs/core/src/codex.rs:163` `use crate::protocol::StreamErrorEvent;`
+- `use` `codex-rs/core/src/codex.rs:164` `use crate::protocol::Submission;`
+- `use` `codex-rs/core/src/codex.rs:165` `use crate::protocol::TokenCountEvent;`
+- `use` `codex-rs/core/src/codex.rs:166` `use crate::protocol::TokenUsage;`
+- `use` `codex-rs/core/src/codex.rs:167` `use crate::protocol::TokenUsageInfo;`
+- `use` `codex-rs/core/src/codex.rs:168` `use crate::protocol::TurnDiffEvent;`
+- `use` `codex-rs/core/src/codex.rs:169` `use crate::protocol::WarningEvent;`
+- `use` `codex-rs/core/src/codex.rs:170` `use crate::rollout::RolloutRecorder;`
+- `use` `codex-rs/core/src/codex.rs:171` `use crate::rollout::RolloutRecorderParams;`
+- `use` `codex-rs/core/src/codex.rs:172` `use crate::rollout::map_session_init_error;`
+- `use` `codex-rs/core/src/codex.rs:173` `use crate::rollout::metadata;`
+- `use` `codex-rs/core/src/codex.rs:174` `use crate::shell;`
+- `use` `codex-rs/core/src/codex.rs:175` `use crate::shell_snapshot::ShellSnapshot;`
+- `use` `codex-rs/core/src/codex.rs:176` `use crate::skills::SkillError;`
+- `use` `codex-rs/core/src/codex.rs:177` `use crate::skills::SkillInjections;`
+- `use` `codex-rs/core/src/codex.rs:178` `use crate::skills::SkillMetadata;`
+- `use` `codex-rs/core/src/codex.rs:179` `use crate::skills::SkillsManager;`
+- `use` `codex-rs/core/src/codex.rs:180` `use crate::skills::build_skill_injections;`
+- `use` `codex-rs/core/src/codex.rs:181` `use crate::skills::collect_env_var_dependencies;`
+- `use` `codex-rs/core/src/codex.rs:182` `use crate::skills::collect_explicit_skill_mentions;`
+- `use` `codex-rs/core/src/codex.rs:183` `use crate::skills::injection::ToolMentionKind;`
+- `use` `codex-rs/core/src/codex.rs:184` `use crate::skills::injection::app_id_from_path;`
+- `use` `codex-rs/core/src/codex.rs:185` `use crate::skills::injection::tool_kind_for_path;`
+- `use` `codex-rs/core/src/codex.rs:186` `use crate::skills::resolve_skill_dependencies_for_turn;`
+- `use` `codex-rs/core/src/codex.rs:187` `use crate::state::ActiveTurn;`
+- `use` `codex-rs/core/src/codex.rs:188` `use crate::state::SessionServices;`
+- `use` `codex-rs/core/src/codex.rs:189` `use crate::state::SessionState;`
+- `use` `codex-rs/core/src/codex.rs:190` `use crate::state_db;`
+- `use` `codex-rs/core/src/codex.rs:191` `use crate::tasks::GhostSnapshotTask;`
+- `use` `codex-rs/core/src/codex.rs:192` `use crate::tasks::ReviewTask;`
+- `use` `codex-rs/core/src/codex.rs:193` `use crate::tasks::SessionTask;`
+- `use` `codex-rs/core/src/codex.rs:194` `use crate::tasks::SessionTaskContext;`
+- `use` `codex-rs/core/src/codex.rs:195` `use crate::tools::ToolRouter;`
+- `use` `codex-rs/core/src/codex.rs:196` `use crate::tools::context::SharedTurnDiffTracker;`
+- `use` `codex-rs/core/src/codex.rs:197` `use crate::tools::parallel::ToolCallRuntime;`
+- `use` `codex-rs/core/src/codex.rs:198` `use crate::tools::sandboxing::ApprovalStore;`
+- `use` `codex-rs/core/src/codex.rs:199` `use crate::tools::spec::ToolsConfig;`
+- `use` `codex-rs/core/src/codex.rs:200` `use crate::tools::spec::ToolsConfigParams;`
+- `use` `codex-rs/core/src/codex.rs:201` `use crate::turn_diff_tracker::TurnDiffTracker;`
+- `use` `codex-rs/core/src/codex.rs:202` `use crate::unified_exec::UnifiedExecProcessManager;`
+- `use` `codex-rs/core/src/codex.rs:203` `use crate::user_notification::UserNotification;`
+- (… 275 more definitions omitted; see symbol indexes under `workdocjcl/spec/13_Indexes/`)
+
+## Dependencies (auto sample)
+### Imports / Includes
+- `use std::collections::HashMap;`
+- `use std::collections::HashSet;`
+- `use std::fmt::Debug;`
+- `use std::path::PathBuf;`
+- `use std::sync::Arc;`
+- `use std::sync::atomic::AtomicBool;`
+- `use std::sync::atomic::AtomicU64;`
+- `use std::sync::atomic::Ordering;`
+- `use crate::AuthManager;`
+- `use crate::CodexAuth;`
+- `use crate::SandboxState;`
+- `use crate::agent::AgentControl;`
+- `use crate::agent::AgentStatus;`
+- `use crate::agent::MAX_THREAD_SPAWN_DEPTH;`
+- `use crate::agent::agent_status_from_event;`
+- `use crate::analytics_client::AnalyticsEventsClient;`
+- `use crate::analytics_client::build_track_events_context;`
+- `use crate::compact;`
+- `use crate::compact::run_inline_auto_compact_task;`
+- `use crate::compact::should_use_remote_compact_task;`
+### Referenced env vars
+- (none detected)
+
+## Error Handling / Edge Cases
+- has retry/timeout/backoff logic
+- returns structured errors (Result/ErrorKind)
+- uses Rust panic/expect/unwrap-style failure paths
+
+## Spec Links
+- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`

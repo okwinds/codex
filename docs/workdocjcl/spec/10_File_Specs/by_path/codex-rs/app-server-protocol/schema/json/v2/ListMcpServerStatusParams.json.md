@@ -1,0 +1,36 @@
+# `codex-rs/app-server-protocol/schema/json/v2/ListMcpServerStatusParams.json`
+
+## Identity
+- kind: `config`
+- ext: `.json`
+- size_bytes: `506`
+- sha256: `d546625373be87e78b736ef947c383c707e73ffcbba0817df13cc70820617de9`
+- generated_utc: `2026-02-03T16:08:28Z`
+
+## Purpose (Why)
+Configuration file for build/tooling/runtime.
+
+## Interfaces (Inputs/Outputs)
+### Inputs
+- filesystem: `codex-rs/app-server-protocol/schema/json/v2/ListMcpServerStatusParams.json` (read)
+
+### Outputs / Side Effects
+- none (file is declarative: doc/config/test/asset)
+
+## Public Surface (auto)
+- (none detected)
+
+## Definitions (auto, per-file)
+- (not extracted)
+
+## Dependencies (auto sample)
+### Imports / Includes
+- (none detected)
+### Referenced env vars
+- (none detected)
+
+## Error Handling / Edge Cases
+- (none detected)
+
+## Spec Links
+- (none; see `09_Verification/CODE_TO_SPEC_MAP.md`)

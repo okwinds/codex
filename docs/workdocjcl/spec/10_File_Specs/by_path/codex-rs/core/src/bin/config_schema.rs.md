@@ -1,0 +1,42 @@
+# `codex-rs/core/src/bin/config_schema.rs`
+
+## Identity
+- kind: `source`
+- ext: `.rs`
+- size_bytes: `570`
+- sha256: `a26755256881f16d3fc2031ecb6cdd0486affae480cdfb9820551a37e28a95d6`
+- generated_utc: `2026-02-03T16:08:29Z`
+
+## Purpose (Why)
+Source file implementing exported/public items listed below.
+
+## Interfaces (Inputs/Outputs)
+### Inputs
+- filesystem: `codex-rs/core/src/bin/config_schema.rs` (read)
+
+### Outputs / Side Effects
+- (no obvious side effects detected by heuristic)
+
+## Public Surface (auto)
+- `fn main() -> Result<()> {`
+
+## Definitions (auto, per-file)
+- `use` `codex-rs/core/src/bin/config_schema.rs:1` `use anyhow::Result;`
+- `use` `codex-rs/core/src/bin/config_schema.rs:2` `use clap::Parser;`
+- `use` `codex-rs/core/src/bin/config_schema.rs:3` `use std::path::PathBuf;`
+- `struct` `codex-rs/core/src/bin/config_schema.rs:8` `struct Args {`
+- `fn` `codex-rs/core/src/bin/config_schema.rs:13` `fn main() -> Result<()> {`
+
+## Dependencies (auto sample)
+### Imports / Includes
+- `use anyhow::Result;`
+- `use clap::Parser;`
+- `use std::path::PathBuf;`
+### Referenced env vars
+- (none detected)
+
+## Error Handling / Edge Cases
+- returns structured errors (Result/ErrorKind)
+
+## Spec Links
+- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`

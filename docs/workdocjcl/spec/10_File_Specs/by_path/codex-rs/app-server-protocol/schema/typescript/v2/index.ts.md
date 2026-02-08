@@ -1,0 +1,225 @@
+# `codex-rs/app-server-protocol/schema/typescript/v2/index.ts`
+
+## Identity
+- kind: `source`
+- ext: `.ts`
+- size_bytes: `11665`
+- sha256: `e4618d3e7239e34843e6a9bb654ea3386466335b7f761179b988ca07d2ff0fc3`
+- generated_utc: `2026-02-03T16:08:28Z`
+
+## Purpose (Why)
+Source file (no public surface detected by heuristic).
+
+## Interfaces (Inputs/Outputs)
+### Inputs
+- filesystem: `codex-rs/app-server-protocol/schema/typescript/v2/index.ts` (read)
+
+### Outputs / Side Effects
+- (no obvious side effects detected by heuristic)
+
+## Public Surface (auto)
+- (none detected)
+
+## Definitions (auto, per-file)
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:3` `export type { Account } from "./Account";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:4` `export type { AccountLoginCompletedNotification } from "./AccountLoginCompletedNotification";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:5` `export type { AccountRateLimitsUpdatedNotification } from "./AccountRateLimitsUpdatedNotification";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:6` `export type { AccountUpdatedNotification } from "./AccountUpdatedNotification";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:7` `export type { AgentMessageDeltaNotification } from "./AgentMessageDeltaNotification";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:8` `export type { AnalyticsConfig } from "./AnalyticsConfig";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:9` `export type { AppInfo } from "./AppInfo";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:10` `export type { AppsListParams } from "./AppsListParams";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:11` `export type { AppsListResponse } from "./AppsListResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:12` `export type { AskForApproval } from "./AskForApproval";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:13` `export type { ByteRange } from "./ByteRange";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:14` `export type { CancelLoginAccountParams } from "./CancelLoginAccountParams";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:15` `export type { CancelLoginAccountResponse } from "./CancelLoginAccountResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:16` `export type { CancelLoginAccountStatus } from "./CancelLoginAccountStatus";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:17` `export type { ChatgptAuthTokensRefreshParams } from "./ChatgptAuthTokensRefreshParams";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:18` `export type { ChatgptAuthTokensRefreshReason } from "./ChatgptAuthTokensRefreshReason";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:19` `export type { ChatgptAuthTokensRefreshResponse } from "./ChatgptAuthTokensRefreshResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:20` `export type { CodexErrorInfo } from "./CodexErrorInfo";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:21` `export type { CollabAgentState } from "./CollabAgentState";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:22` `export type { CollabAgentStatus } from "./CollabAgentStatus";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:23` `export type { CollabAgentTool } from "./CollabAgentTool";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:24` `export type { CollabAgentToolCallStatus } from "./CollabAgentToolCallStatus";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:25` `export type { CommandAction } from "./CommandAction";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:26` `export type { CommandExecParams } from "./CommandExecParams";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:27` `export type { CommandExecResponse } from "./CommandExecResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:28` `export type { CommandExecutionApprovalDecision } from "./CommandExecutionApprovalDecision";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:29` `export type { CommandExecutionOutputDeltaNotification } from "./CommandExecutionOutputDeltaNotification";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:30` `export type { CommandExecutionRequestApprovalParams } from "./CommandExecutionRequestApprovalParams";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:31` `export type { CommandExecutionRequestApprovalResponse } from "./CommandExecutionRequestApprovalResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:32` `export type { CommandExecutionStatus } from "./CommandExecutionStatus";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:33` `export type { Config } from "./Config";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:34` `export type { ConfigBatchWriteParams } from "./ConfigBatchWriteParams";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:35` `export type { ConfigEdit } from "./ConfigEdit";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:36` `export type { ConfigLayer } from "./ConfigLayer";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:37` `export type { ConfigLayerMetadata } from "./ConfigLayerMetadata";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:38` `export type { ConfigLayerSource } from "./ConfigLayerSource";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:39` `export type { ConfigReadParams } from "./ConfigReadParams";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:40` `export type { ConfigReadResponse } from "./ConfigReadResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:41` `export type { ConfigRequirements } from "./ConfigRequirements";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:42` `export type { ConfigRequirementsReadResponse } from "./ConfigRequirementsReadResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:43` `export type { ConfigValueWriteParams } from "./ConfigValueWriteParams";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:44` `export type { ConfigWarningNotification } from "./ConfigWarningNotification";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:45` `export type { ConfigWriteResponse } from "./ConfigWriteResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:46` `export type { ContextCompactedNotification } from "./ContextCompactedNotification";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:47` `export type { CreditsSnapshot } from "./CreditsSnapshot";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:48` `export type { DeprecationNoticeNotification } from "./DeprecationNoticeNotification";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:49` `export type { DynamicToolCallParams } from "./DynamicToolCallParams";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:50` `export type { DynamicToolCallResponse } from "./DynamicToolCallResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:51` `export type { DynamicToolSpec } from "./DynamicToolSpec";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:52` `export type { ErrorNotification } from "./ErrorNotification";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:53` `export type { ExecPolicyAmendment } from "./ExecPolicyAmendment";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:54` `export type { FeedbackUploadParams } from "./FeedbackUploadParams";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:55` `export type { FeedbackUploadResponse } from "./FeedbackUploadResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:56` `export type { FileChangeApprovalDecision } from "./FileChangeApprovalDecision";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:57` `export type { FileChangeOutputDeltaNotification } from "./FileChangeOutputDeltaNotification";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:58` `export type { FileChangeRequestApprovalParams } from "./FileChangeRequestApprovalParams";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:59` `export type { FileChangeRequestApprovalResponse } from "./FileChangeRequestApprovalResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:60` `export type { FileUpdateChange } from "./FileUpdateChange";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:61` `export type { GetAccountParams } from "./GetAccountParams";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:62` `export type { GetAccountRateLimitsResponse } from "./GetAccountRateLimitsResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:63` `export type { GetAccountResponse } from "./GetAccountResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:64` `export type { GitInfo } from "./GitInfo";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:65` `export type { ItemCompletedNotification } from "./ItemCompletedNotification";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:66` `export type { ItemStartedNotification } from "./ItemStartedNotification";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:67` `export type { ListMcpServerStatusParams } from "./ListMcpServerStatusParams";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:68` `export type { ListMcpServerStatusResponse } from "./ListMcpServerStatusResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:69` `export type { LoginAccountParams } from "./LoginAccountParams";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:70` `export type { LoginAccountResponse } from "./LoginAccountResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:71` `export type { LogoutAccountResponse } from "./LogoutAccountResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:72` `export type { McpAuthStatus } from "./McpAuthStatus";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:73` `export type { McpServerOauthLoginCompletedNotification } from "./McpServerOauthLoginCompletedNotification";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:74` `export type { McpServerOauthLoginParams } from "./McpServerOauthLoginParams";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:75` `export type { McpServerOauthLoginResponse } from "./McpServerOauthLoginResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:76` `export type { McpServerRefreshResponse } from "./McpServerRefreshResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:77` `export type { McpServerStatus } from "./McpServerStatus";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:78` `export type { McpToolCallError } from "./McpToolCallError";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:79` `export type { McpToolCallProgressNotification } from "./McpToolCallProgressNotification";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:80` `export type { McpToolCallResult } from "./McpToolCallResult";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:81` `export type { McpToolCallStatus } from "./McpToolCallStatus";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:82` `export type { MergeStrategy } from "./MergeStrategy";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:83` `export type { Model } from "./Model";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:84` `export type { ModelListParams } from "./ModelListParams";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:85` `export type { ModelListResponse } from "./ModelListResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:86` `export type { NetworkAccess } from "./NetworkAccess";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:87` `export type { OverriddenMetadata } from "./OverriddenMetadata";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:88` `export type { PatchApplyStatus } from "./PatchApplyStatus";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:89` `export type { PatchChangeKind } from "./PatchChangeKind";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:90` `export type { PlanDeltaNotification } from "./PlanDeltaNotification";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:91` `export type { ProfileV2 } from "./ProfileV2";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:92` `export type { RateLimitSnapshot } from "./RateLimitSnapshot";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:93` `export type { RateLimitWindow } from "./RateLimitWindow";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:94` `export type { RawResponseItemCompletedNotification } from "./RawResponseItemCompletedNotification";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:95` `export type { ReasoningEffortOption } from "./ReasoningEffortOption";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:96` `export type { ReasoningSummaryPartAddedNotification } from "./ReasoningSummaryPartAddedNotification";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:97` `export type { ReasoningSummaryTextDeltaNotification } from "./ReasoningSummaryTextDeltaNotification";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:98` `export type { ReasoningTextDeltaNotification } from "./ReasoningTextDeltaNotification";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:99` `export type { ResidencyRequirement } from "./ResidencyRequirement";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:100` `export type { ReviewDelivery } from "./ReviewDelivery";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:101` `export type { ReviewStartParams } from "./ReviewStartParams";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:102` `export type { ReviewStartResponse } from "./ReviewStartResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:103` `export type { ReviewTarget } from "./ReviewTarget";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:104` `export type { SandboxMode } from "./SandboxMode";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:105` `export type { SandboxPolicy } from "./SandboxPolicy";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:106` `export type { SandboxWorkspaceWrite } from "./SandboxWorkspaceWrite";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:107` `export type { SessionSource } from "./SessionSource";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:108` `export type { SkillDependencies } from "./SkillDependencies";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:109` `export type { SkillErrorInfo } from "./SkillErrorInfo";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:110` `export type { SkillInterface } from "./SkillInterface";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:111` `export type { SkillMetadata } from "./SkillMetadata";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:112` `export type { SkillScope } from "./SkillScope";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:113` `export type { SkillToolDependency } from "./SkillToolDependency";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:114` `export type { SkillsConfigWriteParams } from "./SkillsConfigWriteParams";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:115` `export type { SkillsConfigWriteResponse } from "./SkillsConfigWriteResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:116` `export type { SkillsListEntry } from "./SkillsListEntry";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:117` `export type { SkillsListParams } from "./SkillsListParams";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:118` `export type { SkillsListResponse } from "./SkillsListResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:119` `export type { TerminalInteractionNotification } from "./TerminalInteractionNotification";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:120` `export type { TextElement } from "./TextElement";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:121` `export type { TextPosition } from "./TextPosition";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:122` `export type { TextRange } from "./TextRange";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:123` `export type { Thread } from "./Thread";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:124` `export type { ThreadArchiveParams } from "./ThreadArchiveParams";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:125` `export type { ThreadArchiveResponse } from "./ThreadArchiveResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:126` `export type { ThreadForkParams } from "./ThreadForkParams";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:127` `export type { ThreadForkResponse } from "./ThreadForkResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:128` `export type { ThreadItem } from "./ThreadItem";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:129` `export type { ThreadListParams } from "./ThreadListParams";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:130` `export type { ThreadListResponse } from "./ThreadListResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:131` `export type { ThreadLoadedListParams } from "./ThreadLoadedListParams";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:132` `export type { ThreadLoadedListResponse } from "./ThreadLoadedListResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:133` `export type { ThreadNameUpdatedNotification } from "./ThreadNameUpdatedNotification";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:134` `export type { ThreadReadParams } from "./ThreadReadParams";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:135` `export type { ThreadReadResponse } from "./ThreadReadResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:136` `export type { ThreadResumeParams } from "./ThreadResumeParams";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:137` `export type { ThreadResumeResponse } from "./ThreadResumeResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:138` `export type { ThreadRollbackParams } from "./ThreadRollbackParams";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:139` `export type { ThreadRollbackResponse } from "./ThreadRollbackResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:140` `export type { ThreadSetNameParams } from "./ThreadSetNameParams";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:141` `export type { ThreadSetNameResponse } from "./ThreadSetNameResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:142` `export type { ThreadSortKey } from "./ThreadSortKey";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:143` `export type { ThreadSourceKind } from "./ThreadSourceKind";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:144` `export type { ThreadStartParams } from "./ThreadStartParams";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:145` `export type { ThreadStartResponse } from "./ThreadStartResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:146` `export type { ThreadStartedNotification } from "./ThreadStartedNotification";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:147` `export type { ThreadTokenUsage } from "./ThreadTokenUsage";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:148` `export type { ThreadTokenUsageUpdatedNotification } from "./ThreadTokenUsageUpdatedNotification";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:149` `export type { ThreadUnarchiveParams } from "./ThreadUnarchiveParams";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:150` `export type { ThreadUnarchiveResponse } from "./ThreadUnarchiveResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:151` `export type { TokenUsageBreakdown } from "./TokenUsageBreakdown";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:152` `export type { ToolRequestUserInputAnswer } from "./ToolRequestUserInputAnswer";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:153` `export type { ToolRequestUserInputOption } from "./ToolRequestUserInputOption";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:154` `export type { ToolRequestUserInputParams } from "./ToolRequestUserInputParams";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:155` `export type { ToolRequestUserInputQuestion } from "./ToolRequestUserInputQuestion";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:156` `export type { ToolRequestUserInputResponse } from "./ToolRequestUserInputResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:157` `export type { ToolsV2 } from "./ToolsV2";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:158` `export type { Turn } from "./Turn";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:159` `export type { TurnCompletedNotification } from "./TurnCompletedNotification";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:160` `export type { TurnDiffUpdatedNotification } from "./TurnDiffUpdatedNotification";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:161` `export type { TurnError } from "./TurnError";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:162` `export type { TurnInterruptParams } from "./TurnInterruptParams";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:163` `export type { TurnInterruptResponse } from "./TurnInterruptResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:164` `export type { TurnPlanStep } from "./TurnPlanStep";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:165` `export type { TurnPlanStepStatus } from "./TurnPlanStepStatus";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:166` `export type { TurnPlanUpdatedNotification } from "./TurnPlanUpdatedNotification";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:167` `export type { TurnStartParams } from "./TurnStartParams";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:168` `export type { TurnStartResponse } from "./TurnStartResponse";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:169` `export type { TurnStartedNotification } from "./TurnStartedNotification";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:170` `export type { TurnStatus } from "./TurnStatus";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:171` `export type { UserInput } from "./UserInput";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:172` `export type { WindowsWorldWritableWarningNotification } from "./WindowsWorldWritableWarningNotification";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/index.ts:173` `export type { WriteStatus } from "./WriteStatus";`
+
+## Dependencies (auto sample)
+### Imports / Includes
+- `export type { Account } from "./Account";`
+- `export type { AccountLoginCompletedNotification } from "./AccountLoginCompletedNotification";`
+- `export type { AccountRateLimitsUpdatedNotification } from "./AccountRateLimitsUpdatedNotification";`
+- `export type { AccountUpdatedNotification } from "./AccountUpdatedNotification";`
+- `export type { AgentMessageDeltaNotification } from "./AgentMessageDeltaNotification";`
+- `export type { AnalyticsConfig } from "./AnalyticsConfig";`
+- `export type { AppInfo } from "./AppInfo";`
+- `export type { AppsListParams } from "./AppsListParams";`
+- `export type { AppsListResponse } from "./AppsListResponse";`
+- `export type { AskForApproval } from "./AskForApproval";`
+- `export type { ByteRange } from "./ByteRange";`
+- `export type { CancelLoginAccountParams } from "./CancelLoginAccountParams";`
+- `export type { CancelLoginAccountResponse } from "./CancelLoginAccountResponse";`
+- `export type { CancelLoginAccountStatus } from "./CancelLoginAccountStatus";`
+- `export type { ChatgptAuthTokensRefreshParams } from "./ChatgptAuthTokensRefreshParams";`
+- `export type { ChatgptAuthTokensRefreshReason } from "./ChatgptAuthTokensRefreshReason";`
+- `export type { ChatgptAuthTokensRefreshResponse } from "./ChatgptAuthTokensRefreshResponse";`
+- `export type { CodexErrorInfo } from "./CodexErrorInfo";`
+- `export type { CollabAgentState } from "./CollabAgentState";`
+- `export type { CollabAgentStatus } from "./CollabAgentStatus";`
+### Referenced env vars
+- (none detected)
+
+## Error Handling / Edge Cases
+- (no obvious error-handling patterns detected by heuristic)
+
+## Spec Links
+- (none; see `09_Verification/CODE_TO_SPEC_MAP.md`)

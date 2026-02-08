@@ -1,0 +1,730 @@
+{
+  "workspace_root": "/Users/okwinds/Files/工作/若凡光年/技术平台/Code/codex/codex-rs",
+  "members": [
+    {
+      "path": "codex-rs/backend-client",
+      "name": "codex-backend-client",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": false,
+      "has_main_rs": false,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/ansi-escape",
+      "name": "codex-ansi-escape",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/async-utils",
+      "name": "codex-async-utils",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/app-server",
+      "name": "codex-app-server",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": true,
+      "bins": [
+        {
+          "name": "codex-app-server",
+          "path": "src/main.rs"
+        }
+      ]
+    },
+    {
+      "path": "codex-rs/app-server-protocol",
+      "name": "codex-app-server-protocol",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/app-server-test-client",
+      "name": "codex-app-server-test-client",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": true,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/debug-client",
+      "name": "codex-debug-client",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": true,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/apply-patch",
+      "name": "codex-apply-patch",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": true,
+      "bins": [
+        {
+          "name": "apply_patch",
+          "path": "src/main.rs"
+        }
+      ]
+    },
+    {
+      "path": "codex-rs/arg0",
+      "name": "codex-arg0",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/feedback",
+      "name": "codex-feedback",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/codex-backend-openapi-models",
+      "name": "codex-backend-openapi-models",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/cloud-requirements",
+      "name": "codex-cloud-requirements",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/cloud-tasks",
+      "name": "codex-cloud-tasks",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/cloud-tasks-client",
+      "name": "codex-cloud-tasks-client",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/cli",
+      "name": "codex-cli",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": true,
+      "bins": [
+        {
+          "name": "codex",
+          "path": "src/main.rs"
+        }
+      ]
+    },
+    {
+      "path": "codex-rs/common",
+      "name": "codex-common",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/core",
+      "name": "codex-core",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": [
+        {
+          "name": "codex-write-config-schema",
+          "path": "src/bin/config_schema.rs"
+        }
+      ]
+    },
+    {
+      "path": "codex-rs/exec",
+      "name": "codex-exec",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": true,
+      "bins": [
+        {
+          "name": "codex-exec",
+          "path": "src/main.rs"
+        }
+      ]
+    },
+    {
+      "path": "codex-rs/exec-server",
+      "name": "codex-exec-server",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": [
+        {
+          "name": "codex-execve-wrapper",
+          "path": "src/bin/main_execve_wrapper.rs"
+        },
+        {
+          "name": "codex-exec-mcp-server",
+          "path": "src/bin/main_mcp_server.rs"
+        }
+      ]
+    },
+    {
+      "path": "codex-rs/execpolicy",
+      "name": "codex-execpolicy",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": true,
+      "bins": [
+        {
+          "name": "codex-execpolicy",
+          "path": "src/main.rs"
+        }
+      ]
+    },
+    {
+      "path": "codex-rs/execpolicy-legacy",
+      "name": "codex-execpolicy-legacy",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": true,
+      "bins": [
+        {
+          "name": "codex-execpolicy-legacy",
+          "path": "src/main.rs"
+        }
+      ]
+    },
+    {
+      "path": "codex-rs/keyring-store",
+      "name": "codex-keyring-store",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/file-search",
+      "name": "codex-file-search",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": true,
+      "bins": [
+        {
+          "name": "codex-file-search",
+          "path": "src/main.rs"
+        }
+      ]
+    },
+    {
+      "path": "codex-rs/linux-sandbox",
+      "name": "codex-linux-sandbox",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": true,
+      "bins": [
+        {
+          "name": "codex-linux-sandbox",
+          "path": "src/main.rs"
+        }
+      ]
+    },
+    {
+      "path": "codex-rs/lmstudio",
+      "name": "codex-lmstudio",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/login",
+      "name": "codex-login",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/mcp-server",
+      "name": "codex-mcp-server",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": true,
+      "bins": [
+        {
+          "name": "codex-mcp-server",
+          "path": "src/main.rs"
+        }
+      ]
+    },
+    {
+      "path": "codex-rs/network-proxy",
+      "name": "codex-network-proxy",
+      "edition": "2024",
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": true,
+      "bins": [
+        {
+          "name": "codex-network-proxy",
+          "path": "src/main.rs"
+        }
+      ]
+    },
+    {
+      "path": "codex-rs/ollama",
+      "name": "codex-ollama",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/process-hardening",
+      "name": "codex-process-hardening",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/protocol",
+      "name": "codex-protocol",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/rmcp-client",
+      "name": "codex-rmcp-client",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/responses-api-proxy",
+      "name": "codex-responses-api-proxy",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": true,
+      "bins": [
+        {
+          "name": "codex-responses-api-proxy",
+          "path": "src/main.rs"
+        }
+      ]
+    },
+    {
+      "path": "codex-rs/stdio-to-uds",
+      "name": "codex-stdio-to-uds",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": true,
+      "bins": [
+        {
+          "name": "codex-stdio-to-uds",
+          "path": "src/main.rs"
+        }
+      ]
+    },
+    {
+      "path": "codex-rs/otel",
+      "name": "codex-otel",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/tui",
+      "name": "codex-tui",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": true,
+      "bins": [
+        {
+          "name": "codex-tui",
+          "path": "src/main.rs"
+        }
+      ]
+    },
+    {
+      "path": "codex-rs/utils/absolute-path",
+      "name": "codex-utils-absolute-path",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/utils/cargo-bin",
+      "name": "codex-utils-cargo-bin",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/utils/git",
+      "name": "codex-git",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/utils/cache",
+      "name": "codex-utils-cache",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/utils/image",
+      "name": "codex-utils-image",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/utils/json-to-toml",
+      "name": "codex-utils-json-to-toml",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/utils/home-dir",
+      "name": "codex-utils-home-dir",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/utils/pty",
+      "name": "codex-utils-pty",
+      "edition": "2021",
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/utils/readiness",
+      "name": "codex-utils-readiness",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/utils/string",
+      "name": "codex-utils-string",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/codex-client",
+      "name": "codex-client",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/codex-api",
+      "name": "codex-api",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/state",
+      "name": "codex-state",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": []
+    },
+    {
+      "path": "codex-rs/codex-experimental-api-macros",
+      "name": "codex-experimental-api-macros",
+      "edition": {
+        "workspace": true
+      },
+      "version": {
+        "workspace": true
+      },
+      "publish": null,
+      "has_main_rs": false,
+      "bins": []
+    }
+  ]
+}

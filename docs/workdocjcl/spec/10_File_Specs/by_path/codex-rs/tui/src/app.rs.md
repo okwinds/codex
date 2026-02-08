@@ -1,0 +1,261 @@
+# `codex-rs/tui/src/app.rs`
+
+## Identity
+- kind: `source`
+- ext: `.rs`
+- size_bytes: `126865`
+- sha256: `b87bca032dd1cb1a20e7cbd3e31ceb29f19c42fca190fd1cb3d1109b9416f982`
+- generated_utc: `2026-02-03T16:08:30Z`
+
+## Purpose (Why)
+Source file implementing exported/public items listed below.
+
+## Interfaces (Inputs/Outputs)
+### Inputs
+- filesystem: `codex-rs/tui/src/app.rs` (read)
+
+### Outputs / Side Effects
+- spawns subprocesses
+- writes to filesystem
+
+## Public Surface (auto)
+- `pub struct AppExitInfo {`
+- `pub fn fatal(message: impl Into<String>) -> Self {`
+- `pub enum ExitReason {`
+- `pub fn chatwidget_init_for_forked_or_resumed_thread(`
+
+## Definitions (auto, per-file)
+- `use` `codex-rs/tui/src/app.rs:1` `use crate::app_backtrack::BacktrackState;`
+- `use` `codex-rs/tui/src/app.rs:2` `use crate::app_event::AppEvent;`
+- `use` `codex-rs/tui/src/app.rs:3` `use crate::app_event::ExitMode;`
+- `use` `codex-rs/tui/src/app.rs:5` `use crate::app_event::WindowsSandboxEnableMode;`
+- `use` `codex-rs/tui/src/app.rs:7` `use crate::app_event::WindowsSandboxFallbackReason;`
+- `use` `codex-rs/tui/src/app.rs:8` `use crate::app_event_sender::AppEventSender;`
+- `use` `codex-rs/tui/src/app.rs:9` `use crate::bottom_pane::ApprovalRequest;`
+- `use` `codex-rs/tui/src/app.rs:10` `use crate::bottom_pane::FeedbackAudience;`
+- `use` `codex-rs/tui/src/app.rs:11` `use crate::bottom_pane::SelectionItem;`
+- `use` `codex-rs/tui/src/app.rs:12` `use crate::bottom_pane::SelectionViewParams;`
+- `use` `codex-rs/tui/src/app.rs:13` `use crate::bottom_pane::popup_consts::standard_popup_hint_line;`
+- `use` `codex-rs/tui/src/app.rs:14` `use crate::chatwidget::ChatWidget;`
+- `use` `codex-rs/tui/src/app.rs:15` `use crate::chatwidget::ExternalEditorState;`
+- `use` `codex-rs/tui/src/app.rs:16` `use crate::cwd_prompt::CwdPromptAction;`
+- `use` `codex-rs/tui/src/app.rs:17` `use crate::diff_render::DiffSummary;`
+- `use` `codex-rs/tui/src/app.rs:18` `use crate::exec_command::strip_bash_lc_and_escape;`
+- `use` `codex-rs/tui/src/app.rs:19` `use crate::external_editor;`
+- `use` `codex-rs/tui/src/app.rs:20` `use crate::file_search::FileSearchManager;`
+- `use` `codex-rs/tui/src/app.rs:21` `use crate::history_cell;`
+- `use` `codex-rs/tui/src/app.rs:22` `use crate::history_cell::HistoryCell;`
+- `use` `codex-rs/tui/src/app.rs:24` `use crate::history_cell::UpdateAvailableHistoryCell;`
+- `use` `codex-rs/tui/src/app.rs:25` `use crate::model_migration::ModelMigrationOutcome;`
+- `use` `codex-rs/tui/src/app.rs:26` `use crate::model_migration::migration_copy_for_models;`
+- `use` `codex-rs/tui/src/app.rs:27` `use crate::model_migration::run_model_migration_prompt;`
+- `use` `codex-rs/tui/src/app.rs:28` `use crate::pager_overlay::Overlay;`
+- `use` `codex-rs/tui/src/app.rs:29` `use crate::render::highlight::highlight_bash_to_lines;`
+- `use` `codex-rs/tui/src/app.rs:30` `use crate::render::renderable::Renderable;`
+- `use` `codex-rs/tui/src/app.rs:31` `use crate::resume_picker::SessionSelection;`
+- `use` `codex-rs/tui/src/app.rs:32` `use crate::tui;`
+- `use` `codex-rs/tui/src/app.rs:33` `use crate::tui::TuiEvent;`
+- `use` `codex-rs/tui/src/app.rs:34` `use crate::update_action::UpdateAction;`
+- `use` `codex-rs/tui/src/app.rs:35` `use codex_ansi_escape::ansi_escape_line;`
+- `use` `codex-rs/tui/src/app.rs:36` `use codex_app_server_protocol::ConfigLayerSource;`
+- `use` `codex-rs/tui/src/app.rs:37` `use codex_core::AuthManager;`
+- `use` `codex-rs/tui/src/app.rs:38` `use codex_core::CodexAuth;`
+- `use` `codex-rs/tui/src/app.rs:39` `use codex_core::ThreadManager;`
+- `use` `codex-rs/tui/src/app.rs:40` `use codex_core::config::Config;`
+- `use` `codex-rs/tui/src/app.rs:41` `use codex_core::config::ConfigBuilder;`
+- `use` `codex-rs/tui/src/app.rs:42` `use codex_core::config::ConfigOverrides;`
+- `use` `codex-rs/tui/src/app.rs:43` `use codex_core::config::edit::ConfigEdit;`
+- `use` `codex-rs/tui/src/app.rs:44` `use codex_core::config::edit::ConfigEditsBuilder;`
+- `use` `codex-rs/tui/src/app.rs:45` `use codex_core::config_loader::ConfigLayerStackOrdering;`
+- `use` `codex-rs/tui/src/app.rs:46` `use codex_core::features::Feature;`
+- `use` `codex-rs/tui/src/app.rs:47` `use codex_core::models_manager::manager::RefreshStrategy;`
+- `use` `codex-rs/tui/src/app.rs:48` `use codex_core::models_manager::model_presets::HIDE_GPT_5_1_CODEX_MAX_MIGRATION_PROMPT_CONFIG;`
+- `use` `codex-rs/tui/src/app.rs:49` `use codex_core::models_manager::model_presets::HIDE_GPT5_1_MIGRATION_PROMPT_CONFIG;`
+- `use` `codex-rs/tui/src/app.rs:50` `use codex_core::protocol::AskForApproval;`
+- `use` `codex-rs/tui/src/app.rs:51` `use codex_core::protocol::DeprecationNoticeEvent;`
+- `use` `codex-rs/tui/src/app.rs:52` `use codex_core::protocol::Event;`
+- `use` `codex-rs/tui/src/app.rs:53` `use codex_core::protocol::EventMsg;`
+- `use` `codex-rs/tui/src/app.rs:54` `use codex_core::protocol::FinalOutput;`
+- `use` `codex-rs/tui/src/app.rs:55` `use codex_core::protocol::ListSkillsResponseEvent;`
+- `use` `codex-rs/tui/src/app.rs:56` `use codex_core::protocol::Op;`
+- `use` `codex-rs/tui/src/app.rs:57` `use codex_core::protocol::SandboxPolicy;`
+- `use` `codex-rs/tui/src/app.rs:58` `use codex_core::protocol::SessionSource;`
+- `use` `codex-rs/tui/src/app.rs:59` `use codex_core::protocol::SkillErrorInfo;`
+- `use` `codex-rs/tui/src/app.rs:60` `use codex_core::protocol::TokenUsage;`
+- `use` `codex-rs/tui/src/app.rs:62` `use codex_core::windows_sandbox::WindowsSandboxLevelExt;`
+- `use` `codex-rs/tui/src/app.rs:63` `use codex_otel::OtelManager;`
+- `use` `codex-rs/tui/src/app.rs:64` `use codex_protocol::ThreadId;`
+- `use` `codex-rs/tui/src/app.rs:65` `use codex_protocol::config_types::Personality;`
+- `use` `codex-rs/tui/src/app.rs:67` `use codex_protocol::config_types::WindowsSandboxLevel;`
+- `use` `codex-rs/tui/src/app.rs:68` `use codex_protocol::items::TurnItem;`
+- `use` `codex-rs/tui/src/app.rs:69` `use codex_protocol::openai_models::ModelPreset;`
+- `use` `codex-rs/tui/src/app.rs:70` `use codex_protocol::openai_models::ModelUpgrade;`
+- `use` `codex-rs/tui/src/app.rs:71` `use codex_protocol::openai_models::ReasoningEffort as ReasoningEffortConfig;`
+- `use` `codex-rs/tui/src/app.rs:72` `use codex_protocol::protocol::SessionConfiguredEvent;`
+- `use` `codex-rs/tui/src/app.rs:73` `use codex_utils_absolute_path::AbsolutePathBuf;`
+- `use` `codex-rs/tui/src/app.rs:74` `use color_eyre::eyre::Result;`
+- `use` `codex-rs/tui/src/app.rs:75` `use color_eyre::eyre::WrapErr;`
+- `use` `codex-rs/tui/src/app.rs:76` `use crossterm::event::KeyCode;`
+- `use` `codex-rs/tui/src/app.rs:77` `use crossterm::event::KeyEvent;`
+- `use` `codex-rs/tui/src/app.rs:78` `use crossterm::event::KeyEventKind;`
+- `use` `codex-rs/tui/src/app.rs:79` `use ratatui::style::Stylize;`
+- `use` `codex-rs/tui/src/app.rs:80` `use ratatui::text::Line;`
+- `use` `codex-rs/tui/src/app.rs:81` `use ratatui::widgets::Paragraph;`
+- `use` `codex-rs/tui/src/app.rs:82` `use ratatui::widgets::Wrap;`
+- `use` `codex-rs/tui/src/app.rs:83` `use std::collections::BTreeMap;`
+- `use` `codex-rs/tui/src/app.rs:84` `use std::collections::HashMap;`
+- `use` `codex-rs/tui/src/app.rs:85` `use std::collections::HashSet;`
+- `use` `codex-rs/tui/src/app.rs:86` `use std::collections::VecDeque;`
+- `use` `codex-rs/tui/src/app.rs:87` `use std::path::Path;`
+- `use` `codex-rs/tui/src/app.rs:88` `use std::path::PathBuf;`
+- `use` `codex-rs/tui/src/app.rs:89` `use std::sync::Arc;`
+- `use` `codex-rs/tui/src/app.rs:90` `use std::sync::atomic::AtomicBool;`
+- `use` `codex-rs/tui/src/app.rs:91` `use std::sync::atomic::Ordering;`
+- `use` `codex-rs/tui/src/app.rs:92` `use std::thread;`
+- `use` `codex-rs/tui/src/app.rs:93` `use std::time::Duration;`
+- `use` `codex-rs/tui/src/app.rs:94` `use std::time::Instant;`
+- `use` `codex-rs/tui/src/app.rs:95` `use tokio::select;`
+- `use` `codex-rs/tui/src/app.rs:96` `use tokio::sync::Mutex;`
+- `use` `codex-rs/tui/src/app.rs:97` `use tokio::sync::broadcast;`
+- `use` `codex-rs/tui/src/app.rs:98` `use tokio::sync::mpsc;`
+- `use` `codex-rs/tui/src/app.rs:99` `use tokio::sync::mpsc::error::TryRecvError;`
+- `use` `codex-rs/tui/src/app.rs:100` `use tokio::sync::mpsc::error::TrySendError;`
+- `use` `codex-rs/tui/src/app.rs:101` `use tokio::sync::mpsc::unbounded_channel;`
+- `use` `codex-rs/tui/src/app.rs:102` `use toml::Value as TomlValue;`
+- `const` `codex-rs/tui/src/app.rs:104` `const EXTERNAL_EDITOR_HINT: &str = "Save and close external editor to continue.";`
+- `const` `codex-rs/tui/src/app.rs:105` `const THREAD_EVENT_CHANNEL_CAPACITY: usize = 32768;`
+- `struct` `codex-rs/tui/src/app.rs:108` `pub struct AppExitInfo {`
+- `impl` `codex-rs/tui/src/app.rs:116` `impl AppExitInfo {`
+- `fn` `codex-rs/tui/src/app.rs:117` `pub fn fatal(message: impl Into<String>) -> Self {`
+- `enum` `codex-rs/tui/src/app.rs:135` `pub enum ExitReason {`
+- `fn` `codex-rs/tui/src/app.rs:140` `fn session_summary(`
+- `fn` `codex-rs/tui/src/app.rs:157` `fn errors_for_cwd(cwd: &Path, response: &ListSkillsResponseEvent) -> Vec<SkillErrorInfo> {`
+- `fn` `codex-rs/tui/src/app.rs:166` `fn emit_skill_load_warnings(app_event_tx: &AppEventSender, errors: &[SkillErrorInfo]) {`
+- `fn` `codex-rs/tui/src/app.rs:187` `fn emit_deprecation_notice(app_event_tx: &AppEventSender, notice: Option<DeprecationNoticeEvent>) {`
+- `fn` `codex-rs/tui/src/app.rs:196` `fn emit_project_config_warnings(app_event_tx: &AppEventSender, config: &Config) {`
+- `struct` `codex-rs/tui/src/app.rs:240` `struct SessionSummary {`
+- `struct` `codex-rs/tui/src/app.rs:246` `struct ThreadEventSnapshot {`
+- `struct` `codex-rs/tui/src/app.rs:252` `struct ThreadEventStore {`
+- `impl` `codex-rs/tui/src/app.rs:260` `impl ThreadEventStore {`
+- `fn` `codex-rs/tui/src/app.rs:261` `fn new(capacity: usize) -> Self {`
+- `fn` `codex-rs/tui/src/app.rs:271` `fn new_with_session_configured(capacity: usize, event: Event) -> Self {`
+- `fn` `codex-rs/tui/src/app.rs:277` `fn push_event(&mut self, event: Event) {`
+- `fn` `codex-rs/tui/src/app.rs:302` `fn push_legacy_event(&mut self, event: Event) {`
+- `fn` `codex-rs/tui/src/app.rs:319` `fn snapshot(&self) -> ThreadEventSnapshot {`
+- `struct` `codex-rs/tui/src/app.rs:328` `struct ThreadEventChannel {`
+- `impl` `codex-rs/tui/src/app.rs:334` `impl ThreadEventChannel {`
+- `fn` `codex-rs/tui/src/app.rs:335` `fn new(capacity: usize) -> Self {`
+- `fn` `codex-rs/tui/src/app.rs:344` `fn new_with_session_configured(capacity: usize, event: Event) -> Self {`
+- `fn` `codex-rs/tui/src/app.rs:356` `fn should_show_model_migration_prompt(`
+- `fn` `codex-rs/tui/src/app.rs:389` `fn migration_prompt_hidden(config: &Config, migration_config_key: &str) -> bool {`
+- `fn` `codex-rs/tui/src/app.rs:411` `async fn handle_model_migration_prompt_if_needed(`
+- `struct` `codex-rs/tui/src/app.rs:571` `struct WindowsSandboxState {`
+- `fn` `codex-rs/tui/src/app.rs:577` `fn normalize_harness_overrides_for_cwd(`
+- `impl` `codex-rs/tui/src/app.rs:594` `impl App {`
+- `fn` `codex-rs/tui/src/app.rs:595` `pub fn chatwidget_init_for_forked_or_resumed_thread(`
+- `fn` `codex-rs/tui/src/app.rs:617` `async fn rebuild_config_for_cwd(&self, cwd: PathBuf) -> Result<Config> {`
+- `fn` `codex-rs/tui/src/app.rs:630` `fn apply_runtime_policy_overrides(&mut self, config: &mut Config) {`
+- `fn` `codex-rs/tui/src/app.rs:649` `async fn shutdown_current_thread(&mut self) {`
+- `fn` `codex-rs/tui/src/app.rs:659` `fn ensure_thread_channel(&mut self, thread_id: ThreadId) -> &mut ThreadEventChannel {`
+- `fn` `codex-rs/tui/src/app.rs:665` `async fn set_thread_active(&mut self, thread_id: ThreadId, active: bool) {`
+- `fn` `codex-rs/tui/src/app.rs:672` `async fn activate_thread_channel(&mut self, thread_id: ThreadId) {`
+- `fn` `codex-rs/tui/src/app.rs:686` `async fn store_active_thread_receiver(&mut self) {`
+- `fn` `codex-rs/tui/src/app.rs:700` `async fn activate_thread_for_replay(`
+- `fn` `codex-rs/tui/src/app.rs:712` `async fn clear_active_thread(&mut self) {`
+- `fn` `codex-rs/tui/src/app.rs:719` `async fn enqueue_thread_event(&mut self, thread_id: ThreadId, event: Event) -> Result<()> {`
+- `fn` `codex-rs/tui/src/app.rs:752` `async fn enqueue_primary_event(&mut self, event: Event) -> Result<()> {`
+- `fn` `codex-rs/tui/src/app.rs:775` `fn open_agent_picker(&mut self) {`
+- `fn` `codex-rs/tui/src/app.rs:817` `async fn select_agent_thread(&mut self, tui: &mut tui::Tui, thread_id: ThreadId) -> Result<()> {`
+- `fn` `codex-rs/tui/src/app.rs:858` `fn reset_for_thread_switch(&mut self, tui: &mut tui::Tui) -> Result<()> {`
+- `fn` `codex-rs/tui/src/app.rs:870` `fn reset_thread_event_state(&mut self) {`
+- `fn` `codex-rs/tui/src/app.rs:878` `async fn drain_active_thread_events(&mut self, tui: &mut tui::Tui) -> Result<()> {`
+- `fn` `codex-rs/tui/src/app.rs:907` `fn replay_thread_snapshot(&mut self, snapshot: ThreadEventSnapshot) {`
+- `fn` `codex-rs/tui/src/app.rs:917` `pub async fn run(`
+- `use` `codex-rs/tui/src/app.rs:931` `use tokio_stream::StreamExt;`
+- `fn` `codex-rs/tui/src/app.rs:1277` `async fn handle_event(&mut self, tui: &mut tui::Tui, event: AppEvent) -> Result<AppRunControl> {`
+- `fn` `codex-rs/tui/src/app.rs:2215` `fn handle_codex_event_now(&mut self, event: Event) {`
+- `fn` `codex-rs/tui/src/app.rs:2229` `fn handle_codex_event_replay(&mut self, event: Event) {`
+- `fn` `codex-rs/tui/src/app.rs:2234` `fn handle_active_thread_event(&mut self, tui: &mut tui::Tui, event: Event) -> Result<()> {`
+- `fn` `codex-rs/tui/src/app.rs:2242` `async fn handle_thread_created(&mut self, thread_id: ThreadId) -> Result<()> {`
+- `fn` `codex-rs/tui/src/app.rs:2300` `fn reasoning_label(reasoning_effort: Option<ReasoningEffortConfig>) -> &'static str {`
+- `fn` `codex-rs/tui/src/app.rs:2311` `fn reasoning_label_for(`
+- `fn` `codex-rs/tui/src/app.rs:2322` `fn on_update_reasoning_effort(&mut self, effort: Option<ReasoningEffortConfig>) {`
+- `fn` `codex-rs/tui/src/app.rs:2329` `fn on_update_personality(&mut self, personality: Personality) {`
+- `fn` `codex-rs/tui/src/app.rs:2334` `fn personality_label(personality: Personality) -> &'static str {`
+- `fn` `codex-rs/tui/src/app.rs:2341` `async fn launch_external_editor(&mut self, tui: &mut tui::Tui) {`
+- `fn` `codex-rs/tui/src/app.rs:2387` `fn request_external_editor_launch(&mut self, tui: &mut tui::Tui) {`
+- `fn` `codex-rs/tui/src/app.rs:2397` `fn reset_external_editor_state(&mut self, tui: &mut tui::Tui) {`
+- `fn` `codex-rs/tui/src/app.rs:2404` `async fn handle_key_event(&mut self, tui: &mut tui::Tui, key_event: KeyEvent) {`
+- `fn` `codex-rs/tui/src/app.rs:2481` `fn spawn_world_writable_scan(`
+- `use` `codex-rs/tui/src/app.rs:2511` `use super::*;`
+- `use` `codex-rs/tui/src/app.rs:2512` `use crate::app_backtrack::BacktrackState;`
+- `use` `codex-rs/tui/src/app.rs:2513` `use crate::app_backtrack::user_count;`
+- `use` `codex-rs/tui/src/app.rs:2514` `use crate::chatwidget::tests::make_chatwidget_manual_with_sender;`
+- `use` `codex-rs/tui/src/app.rs:2515` `use crate::file_search::FileSearchManager;`
+- `use` `codex-rs/tui/src/app.rs:2516` `use crate::history_cell::AgentMessageCell;`
+- `use` `codex-rs/tui/src/app.rs:2517` `use crate::history_cell::HistoryCell;`
+- `use` `codex-rs/tui/src/app.rs:2518` `use crate::history_cell::UserHistoryCell;`
+- `use` `codex-rs/tui/src/app.rs:2519` `use crate::history_cell::new_session_info;`
+- `use` `codex-rs/tui/src/app.rs:2520` `use codex_core::AuthManager;`
+- `use` `codex-rs/tui/src/app.rs:2521` `use codex_core::CodexAuth;`
+- `use` `codex-rs/tui/src/app.rs:2522` `use codex_core::ThreadManager;`
+- `use` `codex-rs/tui/src/app.rs:2523` `use codex_core::config::ConfigBuilder;`
+- `use` `codex-rs/tui/src/app.rs:2524` `use codex_core::config::ConfigOverrides;`
+- `use` `codex-rs/tui/src/app.rs:2525` `use codex_core::models_manager::manager::ModelsManager;`
+- `use` `codex-rs/tui/src/app.rs:2526` `use codex_core::protocol::AskForApproval;`
+- `use` `codex-rs/tui/src/app.rs:2527` `use codex_core::protocol::Event;`
+- `use` `codex-rs/tui/src/app.rs:2528` `use codex_core::protocol::EventMsg;`
+- `use` `codex-rs/tui/src/app.rs:2529` `use codex_core::protocol::SandboxPolicy;`
+- `use` `codex-rs/tui/src/app.rs:2530` `use codex_core::protocol::SessionConfiguredEvent;`
+- `use` `codex-rs/tui/src/app.rs:2531` `use codex_core::protocol::SessionSource;`
+- `use` `codex-rs/tui/src/app.rs:2532` `use codex_otel::OtelManager;`
+- `use` `codex-rs/tui/src/app.rs:2533` `use codex_protocol::ThreadId;`
+- `use` `codex-rs/tui/src/app.rs:2534` `use codex_protocol::user_input::TextElement;`
+- `use` `codex-rs/tui/src/app.rs:2535` `use insta::assert_snapshot;`
+- `use` `codex-rs/tui/src/app.rs:2536` `use pretty_assertions::assert_eq;`
+- `use` `codex-rs/tui/src/app.rs:2537` `use ratatui::prelude::Line;`
+- `use` `codex-rs/tui/src/app.rs:2538` `use std::path::PathBuf;`
+- `use` `codex-rs/tui/src/app.rs:2539` `use std::sync::Arc;`
+- `use` `codex-rs/tui/src/app.rs:2540` `use std::sync::atomic::AtomicBool;`
+- `use` `codex-rs/tui/src/app.rs:2541` `use tempfile::tempdir;`
+- `use` `codex-rs/tui/src/app.rs:2542` `use tokio::time;`
+- `fn` `codex-rs/tui/src/app.rs:2545` `fn normalize_harness_overrides_resolves_relative_add_dirs() -> Result<()> {`
+- `fn` `codex-rs/tui/src/app.rs:2564` `async fn enqueue_thread_event_does_not_block_when_channel_full() -> Result<()> {`
+- `fn` `codex-rs/tui/src/app.rs:2604` `async fn make_test_app() -> App {`
+- `fn` `codex-rs/tui/src/app.rs:2652` `async fn make_test_app_with_channels() -> (`
+- `fn` `codex-rs/tui/src/app.rs:2708` `fn test_otel_manager(config: &Config, model: &str) -> OtelManager {`
+- `fn` `codex-rs/tui/src/app.rs:2723` `fn all_model_presets() -> Vec<ModelPreset> {`
+- (… 11 more definitions omitted; see symbol indexes under `workdocjcl/spec/13_Indexes/`)
+
+## Dependencies (auto sample)
+### Imports / Includes
+- `use crate::app_backtrack::BacktrackState;`
+- `use crate::app_event::AppEvent;`
+- `use crate::app_event::ExitMode;`
+- `use crate::app_event::WindowsSandboxEnableMode;`
+- `use crate::app_event::WindowsSandboxFallbackReason;`
+- `use crate::app_event_sender::AppEventSender;`
+- `use crate::bottom_pane::ApprovalRequest;`
+- `use crate::bottom_pane::FeedbackAudience;`
+- `use crate::bottom_pane::SelectionItem;`
+- `use crate::bottom_pane::SelectionViewParams;`
+- `use crate::bottom_pane::popup_consts::standard_popup_hint_line;`
+- `use crate::chatwidget::ChatWidget;`
+- `use crate::chatwidget::ExternalEditorState;`
+- `use crate::cwd_prompt::CwdPromptAction;`
+- `use crate::diff_render::DiffSummary;`
+- `use crate::exec_command::strip_bash_lc_and_escape;`
+- `use crate::external_editor;`
+- `use crate::file_search::FileSearchManager;`
+- `use crate::history_cell;`
+- `use crate::history_cell::HistoryCell;`
+### Referenced env vars
+- (none detected)
+
+## Error Handling / Edge Cases
+- has retry/timeout/backoff logic
+- returns structured errors (Result/ErrorKind)
+- uses Rust panic/expect/unwrap-style failure paths
+
+## Spec Links
+- `workdocjcl/spec/06_UI/TUI.md`

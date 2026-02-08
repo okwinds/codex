@@ -1,0 +1,92 @@
+# `codex-rs/core/src/state_db.rs`
+
+## Identity
+- kind: `source`
+- ext: `.rs`
+- size_bytes: `11430`
+- sha256: `ba29f9175b99023ff082fd545d8ee6f133cbcba7fd6247e4bcca3b2f3e8116e7`
+- generated_utc: `2026-02-03T16:08:29Z`
+
+## Purpose (Why)
+Source file implementing exported/public items listed below.
+
+## Interfaces (Inputs/Outputs)
+### Inputs
+- filesystem: `codex-rs/core/src/state_db.rs` (read)
+
+### Outputs / Side Effects
+- spawns subprocesses
+
+## Public Surface (auto)
+- `pub fn record_discrepancy(stage: &str, reason: &str) {`
+
+## Definitions (auto, per-file)
+- `use` `codex-rs/core/src/state_db.rs:1` `use crate::config::Config;`
+- `use` `codex-rs/core/src/state_db.rs:2` `use crate::features::Feature;`
+- `use` `codex-rs/core/src/state_db.rs:3` `use crate::rollout::list::Cursor;`
+- `use` `codex-rs/core/src/state_db.rs:4` `use crate::rollout::list::ThreadSortKey;`
+- `use` `codex-rs/core/src/state_db.rs:5` `use crate::rollout::metadata;`
+- `use` `codex-rs/core/src/state_db.rs:6` `use chrono::DateTime;`
+- `use` `codex-rs/core/src/state_db.rs:7` `use chrono::NaiveDateTime;`
+- `use` `codex-rs/core/src/state_db.rs:8` `use chrono::Timelike;`
+- `use` `codex-rs/core/src/state_db.rs:9` `use chrono::Utc;`
+- `use` `codex-rs/core/src/state_db.rs:10` `use codex_otel::OtelManager;`
+- `use` `codex-rs/core/src/state_db.rs:11` `use codex_protocol::ThreadId;`
+- `use` `codex-rs/core/src/state_db.rs:12` `use codex_protocol::dynamic_tools::DynamicToolSpec;`
+- `use` `codex-rs/core/src/state_db.rs:13` `use codex_protocol::protocol::RolloutItem;`
+- `use` `codex-rs/core/src/state_db.rs:14` `use codex_protocol::protocol::SessionSource;`
+- `use` `codex-rs/core/src/state_db.rs:15` `use codex_state::DB_METRIC_COMPARE_ERROR;`
+- `use` `codex-rs/core/src/state_db.rs:17` `use codex_state::STATE_DB_FILENAME;`
+- `use` `codex-rs/core/src/state_db.rs:18` `use codex_state::ThreadMetadataBuilder;`
+- `use` `codex-rs/core/src/state_db.rs:19` `use serde_json::Value;`
+- `use` `codex-rs/core/src/state_db.rs:20` `use std::path::Path;`
+- `use` `codex-rs/core/src/state_db.rs:21` `use std::path::PathBuf;`
+- `use` `codex-rs/core/src/state_db.rs:22` `use std::sync::Arc;`
+- `use` `codex-rs/core/src/state_db.rs:23` `use tracing::warn;`
+- `use` `codex-rs/core/src/state_db.rs:24` `use uuid::Uuid;`
+- `type` `codex-rs/core/src/state_db.rs:27` `pub type StateDbHandle = Arc<codex_state::StateRuntime>;`
+- `fn` `codex-rs/core/src/state_db.rs:76` `pub async fn get_state_db(config: &Config, otel: Option<&OtelManager>) -> Option<StateDbHandle> {`
+- `fn` `codex-rs/core/src/state_db.rs:95` `pub async fn open_if_present(codex_home: &Path, default_provider: &str) -> Option<StateDbHandle> {`
+- `fn` `codex-rs/core/src/state_db.rs:110` `fn cursor_to_anchor(cursor: Option<&Cursor>) -> Option<codex_state::Anchor> {`
+- `fn` `codex-rs/core/src/state_db.rs:132` `pub async fn list_thread_ids_db(`
+- `fn` `codex-rs/core/src/state_db.rs:185` `pub async fn find_rollout_path_by_id(`
+- `fn` `codex-rs/core/src/state_db.rs:201` `pub async fn get_dynamic_tools(`
+- `fn` `codex-rs/core/src/state_db.rs:217` `pub async fn persist_dynamic_tools(`
+- `fn` `codex-rs/core/src/state_db.rs:232` `pub async fn reconcile_rollout(`
+- `fn` `codex-rs/core/src/state_db.rs:289` `pub async fn apply_rollout_items(`
+- `fn` `codex-rs/core/src/state_db.rs:324` `pub fn record_discrepancy(stage: &str, reason: &str) {`
+- `use` `codex-rs/core/src/state_db.rs:339` `use super::*;`
+- `use` `codex-rs/core/src/state_db.rs:340` `use crate::rollout::list::parse_cursor;`
+- `use` `codex-rs/core/src/state_db.rs:341` `use pretty_assertions::assert_eq;`
+- `fn` `codex-rs/core/src/state_db.rs:344` `fn cursor_to_anchor_normalizes_timestamp_format() {`
+
+## Dependencies (auto sample)
+### Imports / Includes
+- `use crate::config::Config;`
+- `use crate::features::Feature;`
+- `use crate::rollout::list::Cursor;`
+- `use crate::rollout::list::ThreadSortKey;`
+- `use crate::rollout::metadata;`
+- `use chrono::DateTime;`
+- `use chrono::NaiveDateTime;`
+- `use chrono::Timelike;`
+- `use chrono::Utc;`
+- `use codex_otel::OtelManager;`
+- `use codex_protocol::ThreadId;`
+- `use codex_protocol::dynamic_tools::DynamicToolSpec;`
+- `use codex_protocol::protocol::RolloutItem;`
+- `use codex_protocol::protocol::SessionSource;`
+- `use codex_state::DB_METRIC_COMPARE_ERROR;`
+- `use codex_state::STATE_DB_FILENAME;`
+- `use codex_state::ThreadMetadataBuilder;`
+- `use serde_json::Value;`
+- `use std::path::Path;`
+- `use std::path::PathBuf;`
+### Referenced env vars
+- (none detected)
+
+## Error Handling / Edge Cases
+- uses Rust panic/expect/unwrap-style failure paths
+
+## Spec Links
+- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`

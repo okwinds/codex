@@ -1,0 +1,283 @@
+# `codex-rs/core/src/config/mod.rs`
+
+## Identity
+- kind: `source`
+- ext: `.rs`
+- size_bytes: `164726`
+- sha256: `3a698afdae59382b5c32a8efa9439bfa3b648e8f457644832caaf38862db2020`
+- generated_utc: `2026-02-03T16:08:29Z`
+
+## Purpose (Why)
+Source file implementing exported/public items listed below.
+
+## Interfaces (Inputs/Outputs)
+### Inputs
+- filesystem: `codex-rs/core/src/config/mod.rs` (read)
+
+### Outputs / Side Effects
+- writes to filesystem
+
+## Public Surface (auto)
+- `pub struct Config {`
+- `pub struct ConfigBuilder {`
+- `pub fn codex_home(mut self, codex_home: PathBuf) -> Self {`
+- `pub fn cli_overrides(mut self, cli_overrides: Vec<(String, TomlValue)>) -> Self {`
+- `pub fn harness_overrides(mut self, harness_overrides: ConfigOverrides) -> Self {`
+- `pub fn loader_overrides(mut self, loader_overrides: LoaderOverrides) -> Self {`
+- `pub fn cloud_requirements(mut self, cloud_requirements: CloudRequirementsLoader) -> Self {`
+- `pub fn fallback_cwd(mut self, fallback_cwd: Option<PathBuf>) -> Self {`
+- `pub fn load_default_with_cli_overrides(`
+- `pub fn set_project_trust_level(`
+- `pub fn set_default_oss_provider(codex_home: &Path, provider: &str) -> std::io::Result<()> {`
+- `pub struct ConfigToml {`
+- `pub struct ProjectConfig {`
+- `pub fn is_trusted(&self) -> bool {`
+- `pub fn is_untrusted(&self) -> bool {`
+- `pub struct ToolsToml {`
+- `pub struct AgentsToml {`
+- `pub struct GhostSnapshotToml {`
+- `pub struct SandboxPolicyResolution {`
+- `pub fn get_active_project(&self, resolved_cwd: &Path) -> Option<ProjectConfig> {`
+- `pub fn get_config_profile(`
+- `pub struct ConfigOverrides {`
+- `pub fn resolve_oss_provider(`
+- `pub fn set_windows_sandbox_enabled(&mut self, value: bool) {`
+- `pub fn set_windows_elevated_sandbox_enabled(&mut self, value: bool) {`
+- `pub fn find_codex_home() -> std::io::Result<PathBuf> {`
+- `pub fn log_dir(cfg: &Config) -> std::io::Result<PathBuf> {`
+
+## Definitions (auto, per-file)
+- `use` `codex-rs/core/src/config/mod.rs:1` `use crate::auth::AuthCredentialsStoreMode;`
+- `use` `codex-rs/core/src/config/mod.rs:2` `use crate::config::edit::ConfigEdit;`
+- `use` `codex-rs/core/src/config/mod.rs:3` `use crate::config::edit::ConfigEditsBuilder;`
+- `use` `codex-rs/core/src/config/mod.rs:4` `use crate::config::types::DEFAULT_OTEL_ENVIRONMENT;`
+- `use` `codex-rs/core/src/config/mod.rs:5` `use crate::config::types::History;`
+- `use` `codex-rs/core/src/config/mod.rs:6` `use crate::config::types::McpServerConfig;`
+- `use` `codex-rs/core/src/config/mod.rs:7` `use crate::config::types::McpServerDisabledReason;`
+- `use` `codex-rs/core/src/config/mod.rs:8` `use crate::config::types::McpServerTransportConfig;`
+- `use` `codex-rs/core/src/config/mod.rs:9` `use crate::config::types::Notice;`
+- `use` `codex-rs/core/src/config/mod.rs:10` `use crate::config::types::NotificationMethod;`
+- `use` `codex-rs/core/src/config/mod.rs:11` `use crate::config::types::Notifications;`
+- `use` `codex-rs/core/src/config/mod.rs:12` `use crate::config::types::OtelConfig;`
+- `use` `codex-rs/core/src/config/mod.rs:13` `use crate::config::types::OtelConfigToml;`
+- `use` `codex-rs/core/src/config/mod.rs:14` `use crate::config::types::OtelExporterKind;`
+- `use` `codex-rs/core/src/config/mod.rs:15` `use crate::config::types::SandboxWorkspaceWrite;`
+- `use` `codex-rs/core/src/config/mod.rs:16` `use crate::config::types::ShellEnvironmentPolicy;`
+- `use` `codex-rs/core/src/config/mod.rs:17` `use crate::config::types::ShellEnvironmentPolicyToml;`
+- `use` `codex-rs/core/src/config/mod.rs:18` `use crate::config::types::SkillsConfig;`
+- `use` `codex-rs/core/src/config/mod.rs:19` `use crate::config::types::Tui;`
+- `use` `codex-rs/core/src/config/mod.rs:20` `use crate::config::types::UriBasedFileOpener;`
+- `use` `codex-rs/core/src/config/mod.rs:21` `use crate::config_loader::CloudRequirementsLoader;`
+- `use` `codex-rs/core/src/config/mod.rs:22` `use crate::config_loader::ConfigLayerStack;`
+- `use` `codex-rs/core/src/config/mod.rs:23` `use crate::config_loader::ConfigRequirements;`
+- `use` `codex-rs/core/src/config/mod.rs:24` `use crate::config_loader::LoaderOverrides;`
+- `use` `codex-rs/core/src/config/mod.rs:25` `use crate::config_loader::McpServerIdentity;`
+- `use` `codex-rs/core/src/config/mod.rs:26` `use crate::config_loader::McpServerRequirement;`
+- `use` `codex-rs/core/src/config/mod.rs:27` `use crate::config_loader::ResidencyRequirement;`
+- `use` `codex-rs/core/src/config/mod.rs:28` `use crate::config_loader::Sourced;`
+- `use` `codex-rs/core/src/config/mod.rs:29` `use crate::config_loader::load_config_layers_state;`
+- `use` `codex-rs/core/src/config/mod.rs:30` `use crate::features::Feature;`
+- `use` `codex-rs/core/src/config/mod.rs:31` `use crate::features::FeatureOverrides;`
+- `use` `codex-rs/core/src/config/mod.rs:32` `use crate::features::Features;`
+- `use` `codex-rs/core/src/config/mod.rs:33` `use crate::features::FeaturesToml;`
+- `use` `codex-rs/core/src/config/mod.rs:34` `use crate::git_info::resolve_root_git_project_for_trust;`
+- `use` `codex-rs/core/src/config/mod.rs:35` `use crate::model_provider_info::LMSTUDIO_OSS_PROVIDER_ID;`
+- `use` `codex-rs/core/src/config/mod.rs:36` `use crate::model_provider_info::ModelProviderInfo;`
+- `use` `codex-rs/core/src/config/mod.rs:37` `use crate::model_provider_info::OLLAMA_CHAT_PROVIDER_ID;`
+- `use` `codex-rs/core/src/config/mod.rs:38` `use crate::model_provider_info::OLLAMA_OSS_PROVIDER_ID;`
+- `use` `codex-rs/core/src/config/mod.rs:39` `use crate::model_provider_info::built_in_model_providers;`
+- `use` `codex-rs/core/src/config/mod.rs:40` `use crate::project_doc::DEFAULT_PROJECT_DOC_FILENAME;`
+- `use` `codex-rs/core/src/config/mod.rs:41` `use crate::project_doc::LOCAL_PROJECT_DOC_FILENAME;`
+- `use` `codex-rs/core/src/config/mod.rs:42` `use crate::protocol::AskForApproval;`
+- `use` `codex-rs/core/src/config/mod.rs:43` `use crate::protocol::SandboxPolicy;`
+- `use` `codex-rs/core/src/config/mod.rs:44` `use crate::windows_sandbox::WindowsSandboxLevelExt;`
+- `use` `codex-rs/core/src/config/mod.rs:45` `use codex_app_server_protocol::Tools;`
+- `use` `codex-rs/core/src/config/mod.rs:46` `use codex_app_server_protocol::UserSavedConfig;`
+- `use` `codex-rs/core/src/config/mod.rs:47` `use codex_protocol::config_types::AltScreenMode;`
+- `use` `codex-rs/core/src/config/mod.rs:48` `use codex_protocol::config_types::ForcedLoginMethod;`
+- `use` `codex-rs/core/src/config/mod.rs:49` `use codex_protocol::config_types::ModeKind;`
+- `use` `codex-rs/core/src/config/mod.rs:50` `use codex_protocol::config_types::Personality;`
+- `use` `codex-rs/core/src/config/mod.rs:51` `use codex_protocol::config_types::ReasoningSummary;`
+- `use` `codex-rs/core/src/config/mod.rs:52` `use codex_protocol::config_types::SandboxMode;`
+- `use` `codex-rs/core/src/config/mod.rs:53` `use codex_protocol::config_types::TrustLevel;`
+- `use` `codex-rs/core/src/config/mod.rs:54` `use codex_protocol::config_types::Verbosity;`
+- `use` `codex-rs/core/src/config/mod.rs:55` `use codex_protocol::config_types::WebSearchMode;`
+- `use` `codex-rs/core/src/config/mod.rs:56` `use codex_protocol::config_types::WindowsSandboxLevel;`
+- `use` `codex-rs/core/src/config/mod.rs:57` `use codex_protocol::openai_models::ReasoningEffort;`
+- `use` `codex-rs/core/src/config/mod.rs:58` `use codex_rmcp_client::OAuthCredentialsStoreMode;`
+- `use` `codex-rs/core/src/config/mod.rs:59` `use codex_utils_absolute_path::AbsolutePathBuf;`
+- `use` `codex-rs/core/src/config/mod.rs:60` `use codex_utils_absolute_path::AbsolutePathBufGuard;`
+- `use` `codex-rs/core/src/config/mod.rs:61` `use schemars::JsonSchema;`
+- `use` `codex-rs/core/src/config/mod.rs:62` `use serde::Deserialize;`
+- `use` `codex-rs/core/src/config/mod.rs:63` `use serde::Serialize;`
+- `use` `codex-rs/core/src/config/mod.rs:64` `use similar::DiffableStr;`
+- `use` `codex-rs/core/src/config/mod.rs:65` `use std::collections::BTreeMap;`
+- `use` `codex-rs/core/src/config/mod.rs:66` `use std::collections::HashMap;`
+- `use` `codex-rs/core/src/config/mod.rs:67` `use std::io::ErrorKind;`
+- `use` `codex-rs/core/src/config/mod.rs:68` `use std::path::Path;`
+- `use` `codex-rs/core/src/config/mod.rs:69` `use std::path::PathBuf;`
+- `use` `codex-rs/core/src/config/mod.rs:71` `use tempfile::tempdir;`
+- `use` `codex-rs/core/src/config/mod.rs:73` `use crate::config::profile::ConfigProfile;`
+- `use` `codex-rs/core/src/config/mod.rs:74` `use toml::Value as TomlValue;`
+- `use` `codex-rs/core/src/config/mod.rs:75` `use toml_edit::DocumentMut;`
+- `mod` `codex-rs/core/src/config/mod.rs:77` `mod constraint;`
+- `mod` `codex-rs/core/src/config/mod.rs:78` `pub mod edit;`
+- `mod` `codex-rs/core/src/config/mod.rs:79` `pub mod profile;`
+- `mod` `codex-rs/core/src/config/mod.rs:80` `pub mod schema;`
+- `mod` `codex-rs/core/src/config/mod.rs:81` `pub mod service;`
+- `mod` `codex-rs/core/src/config/mod.rs:82` `pub mod types;`
+- `const` `codex-rs/core/src/config/mod.rs:98` `pub const CONFIG_TOML_FILE: &str = "config.toml";`
+- `struct` `codex-rs/core/src/config/mod.rs:113` `pub struct Config {`
+- `struct` `codex-rs/core/src/config/mod.rs:370` `pub struct ConfigBuilder {`
+- `impl` `codex-rs/core/src/config/mod.rs:379` `impl ConfigBuilder {`
+- `fn` `codex-rs/core/src/config/mod.rs:380` `pub fn codex_home(mut self, codex_home: PathBuf) -> Self {`
+- `fn` `codex-rs/core/src/config/mod.rs:385` `pub fn cli_overrides(mut self, cli_overrides: Vec<(String, TomlValue)>) -> Self {`
+- `fn` `codex-rs/core/src/config/mod.rs:390` `pub fn harness_overrides(mut self, harness_overrides: ConfigOverrides) -> Self {`
+- `fn` `codex-rs/core/src/config/mod.rs:395` `pub fn loader_overrides(mut self, loader_overrides: LoaderOverrides) -> Self {`
+- `fn` `codex-rs/core/src/config/mod.rs:400` `pub fn cloud_requirements(mut self, cloud_requirements: CloudRequirementsLoader) -> Self {`
+- `fn` `codex-rs/core/src/config/mod.rs:405` `pub fn fallback_cwd(mut self, fallback_cwd: Option<PathBuf>) -> Self {`
+- `fn` `codex-rs/core/src/config/mod.rs:410` `pub async fn build(self) -> std::io::Result<Config> {`
+- `impl` `codex-rs/core/src/config/mod.rs:467` `impl Config {`
+- `fn` `codex-rs/core/src/config/mod.rs:469` `pub async fn load_with_cli_overrides(`
+- `fn` `codex-rs/core/src/config/mod.rs:479` `pub fn load_default_with_cli_overrides(`
+- `fn` `codex-rs/core/src/config/mod.rs:507` `pub async fn load_with_cli_overrides_and_harness_overrides(`
+- `fn` `codex-rs/core/src/config/mod.rs:522` `pub async fn load_config_as_toml_with_cli_overrides(`
+- `fn` `codex-rs/core/src/config/mod.rs:557` `fn filter_mcp_servers_by_requirements(`
+- `fn` `codex-rs/core/src/config/mod.rs:582` `fn constrain_mcp_servers(`
+- `fn` `codex-rs/core/src/config/mod.rs:597` `fn mcp_server_matches_requirement(`
+- `fn` `codex-rs/core/src/config/mod.rs:617` `pub async fn load_global_mcp_servers(`
+- `fn` `codex-rs/core/src/config/mod.rs:654` `fn ensure_no_inline_bearer_tokens(value: &TomlValue) -> std::io::Result<()> {`
+- `fn` `codex-rs/core/src/config/mod.rs:744` `pub fn set_project_trust_level(`
+- `use` `codex-rs/core/src/config/mod.rs:749` `use crate::config::edit::ConfigEditsBuilder;`
+- `fn` `codex-rs/core/src/config/mod.rs:757` `pub fn set_default_oss_provider(codex_home: &Path, provider: &str) -> std::io::Result<()> {`
+- `use` `codex-rs/core/src/config/mod.rs:772` `use toml_edit::value;`
+- `struct` `codex-rs/core/src/config/mod.rs:788` `pub struct ConfigToml {`
+- `impl` `codex-rs/core/src/config/mod.rs:992` `impl From<ConfigToml> for UserSavedConfig {`
+- `fn` `codex-rs/core/src/config/mod.rs:993` `fn from(config_toml: ConfigToml) -> Self {`
+- `struct` `codex-rs/core/src/config/mod.rs:1019` `pub struct ProjectConfig {`
+- `impl` `codex-rs/core/src/config/mod.rs:1023` `impl ProjectConfig {`
+- `fn` `codex-rs/core/src/config/mod.rs:1024` `pub fn is_trusted(&self) -> bool {`
+- `fn` `codex-rs/core/src/config/mod.rs:1028` `pub fn is_untrusted(&self) -> bool {`
+- `struct` `codex-rs/core/src/config/mod.rs:1035` `pub struct ToolsToml {`
+- `struct` `codex-rs/core/src/config/mod.rs:1046` `pub struct AgentsToml {`
+- `impl` `codex-rs/core/src/config/mod.rs:1053` `impl From<ToolsToml> for Tools {`
+- `fn` `codex-rs/core/src/config/mod.rs:1054` `fn from(tools_toml: ToolsToml) -> Self {`
+- `struct` `codex-rs/core/src/config/mod.rs:1064` `pub struct GhostSnapshotToml {`
+- `struct` `codex-rs/core/src/config/mod.rs:1077` `pub struct SandboxPolicyResolution {`
+- `impl` `codex-rs/core/src/config/mod.rs:1082` `impl ConfigToml {`
+- `fn` `codex-rs/core/src/config/mod.rs:1084` `fn derive_sandbox_policy(`
+- `fn` `codex-rs/core/src/config/mod.rs:1140` `pub fn get_active_project(&self, resolved_cwd: &Path) -> Option<ProjectConfig> {`
+- `fn` `codex-rs/core/src/config/mod.rs:1160` `pub fn get_config_profile(`
+- `struct` `codex-rs/core/src/config/mod.rs:1184` `pub struct ConfigOverrides {`
+- `fn` `codex-rs/core/src/config/mod.rs:1207` `pub fn resolve_oss_provider(`
+- `fn` `codex-rs/core/src/config/mod.rs:1234` `fn resolve_web_search_mode(`
+- `impl` `codex-rs/core/src/config/mod.rs:1269` `impl Config {`
+- `fn` `codex-rs/core/src/config/mod.rs:1271` `fn load_from_base_config_with_overrides(`
+- `fn` `codex-rs/core/src/config/mod.rs:1281` `fn load_config_with_layer_stack(`
+- `use` `codex-rs/core/src/config/mod.rs:1336` `use std::env;`
+- `fn` `codex-rs/core/src/config/mod.rs:1676` `fn load_instructions(codex_dir: Option<&Path>) -> Option<String> {`
+- `fn` `codex-rs/core/src/config/mod.rs:1694` `fn try_read_non_empty_file(`
+- `fn` `codex-rs/core/src/config/mod.rs:1720` `pub fn set_windows_sandbox_enabled(&mut self, value: bool) {`
+- `fn` `codex-rs/core/src/config/mod.rs:1729` `pub fn set_windows_elevated_sandbox_enabled(&mut self, value: bool) {`
+- `fn` `codex-rs/core/src/config/mod.rs:1746` `fn toml_uses_deprecated_instructions_file(value: &TomlValue) -> bool {`
+- `fn` `codex-rs/core/src/config/mod.rs:1771` `pub fn find_codex_home() -> std::io::Result<PathBuf> {`
+- `fn` `codex-rs/core/src/config/mod.rs:1777` `pub fn log_dir(cfg: &Config) -> std::io::Result<PathBuf> {`
+- `use` `codex-rs/core/src/config/mod.rs:1785` `use crate::config::edit::ConfigEdit;`
+- `use` `codex-rs/core/src/config/mod.rs:1786` `use crate::config::edit::ConfigEditsBuilder;`
+- `use` `codex-rs/core/src/config/mod.rs:1787` `use crate::config::edit::apply_blocking;`
+- `use` `codex-rs/core/src/config/mod.rs:1788` `use crate::config::types::FeedbackConfigToml;`
+- `use` `codex-rs/core/src/config/mod.rs:1789` `use crate::config::types::HistoryPersistence;`
+- `use` `codex-rs/core/src/config/mod.rs:1790` `use crate::config::types::McpServerTransportConfig;`
+- `use` `codex-rs/core/src/config/mod.rs:1791` `use crate::config::types::NotificationMethod;`
+- `use` `codex-rs/core/src/config/mod.rs:1792` `use crate::config::types::Notifications;`
+- `use` `codex-rs/core/src/config/mod.rs:1793` `use crate::config_loader::RequirementSource;`
+- `use` `codex-rs/core/src/config/mod.rs:1794` `use crate::features::Feature;`
+- `use` `codex-rs/core/src/config/mod.rs:1796` `use super::*;`
+- `use` `codex-rs/core/src/config/mod.rs:1797` `use core_test_support::test_absolute_path;`
+- `use` `codex-rs/core/src/config/mod.rs:1798` `use pretty_assertions::assert_eq;`
+- `use` `codex-rs/core/src/config/mod.rs:1800` `use std::collections::BTreeMap;`
+- `use` `codex-rs/core/src/config/mod.rs:1801` `use std::collections::HashMap;`
+- `use` `codex-rs/core/src/config/mod.rs:1802` `use std::time::Duration;`
+- `use` `codex-rs/core/src/config/mod.rs:1803` `use tempfile::TempDir;`
+- `fn` `codex-rs/core/src/config/mod.rs:1805` `fn stdio_mcp(command: &str) -> McpServerConfig {`
+- `fn` `codex-rs/core/src/config/mod.rs:1824` `fn http_mcp(url: &str) -> McpServerConfig {`
+- `fn` `codex-rs/core/src/config/mod.rs:1843` `fn test_toml_parsing() {`
+- `fn` `codex-rs/core/src/config/mod.rs:1875` `fn tui_config_missing_notifications_field_defaults_to_enabled() {`
+- `fn` `codex-rs/core/src/config/mod.rs:1898` `fn test_sandbox_config_parsing() {`
+- `fn` `codex-rs/core/src/config/mod.rs:2044` `fn filter_mcp_servers_by_allowlist_enforces_identity_rules() {`
+- `const` `codex-rs/core/src/config/mod.rs:2045` `const MISMATCHED_COMMAND_SERVER: &str = "mismatched-command-should-disable";`
+- `const` `codex-rs/core/src/config/mod.rs:2046` `const MISMATCHED_URL_SERVER: &str = "mismatched-url-should-disable";`
+- `const` `codex-rs/core/src/config/mod.rs:2047` `const MATCHED_COMMAND_SERVER: &str = "matched-command-should-allow";`
+- `const` `codex-rs/core/src/config/mod.rs:2048` `const MATCHED_URL_SERVER: &str = "matched-url-should-allow";`
+- `const` `codex-rs/core/src/config/mod.rs:2049` `const DIFFERENT_NAME_SERVER: &str = "different-name-should-disable";`
+- `const` `codex-rs/core/src/config/mod.rs:2051` `const GOOD_CMD: &str = "good-cmd";`
+- `const` `codex-rs/core/src/config/mod.rs:2052` `const GOOD_URL: &str = "https://example.com/good";`
+- `fn` `codex-rs/core/src/config/mod.rs:2127` `fn filter_mcp_servers_by_allowlist_allows_all_when_unset() {`
+- `fn` `codex-rs/core/src/config/mod.rs:2151` `fn filter_mcp_servers_by_allowlist_blocks_all_when_empty() {`
+- `fn` `codex-rs/core/src/config/mod.rs:2178` `fn add_dir_override_extends_workspace_writable_roots() -> std::io::Result<()> {`
+- `fn` `codex-rs/core/src/config/mod.rs:2229` `fn config_defaults_to_file_cli_auth_store_mode() -> std::io::Result<()> {`
+- `fn` `codex-rs/core/src/config/mod.rs:2248` `fn config_honors_explicit_keyring_auth_store_mode() -> std::io::Result<()> {`
+- `fn` `codex-rs/core/src/config/mod.rs:2270` `fn config_defaults_to_auto_oauth_store_mode() -> std::io::Result<()> {`
+- `fn` `codex-rs/core/src/config/mod.rs:2289` `fn feedback_enabled_defaults_to_true() -> std::io::Result<()> {`
+- `fn` `codex-rs/core/src/config/mod.rs:2308` `fn web_search_mode_defaults_to_none_if_unset() {`
+- `fn` `codex-rs/core/src/config/mod.rs:2317` `fn web_search_mode_prefers_profile_over_legacy_flags() {`
+- `fn` `codex-rs/core/src/config/mod.rs:2333` `fn web_search_mode_disabled_overrides_legacy_request() {`
+- `fn` `codex-rs/core/src/config/mod.rs:2349` `fn web_search_mode_for_turn_defaults_to_cached_when_unset() {`
+- `fn` `codex-rs/core/src/config/mod.rs:2356` `fn web_search_mode_for_turn_defaults_to_live_for_danger_full_access() {`
+- `fn` `codex-rs/core/src/config/mod.rs:2363` `fn web_search_mode_for_turn_prefers_explicit_value() {`
+- `fn` `codex-rs/core/src/config/mod.rs:2374` `fn web_search_mode_for_turn_disables_for_azure_responses_endpoint() {`
+- `fn` `codex-rs/core/src/config/mod.rs:2381` `fn profile_legacy_toggles_override_base() -> std::io::Result<()> {`
+- `fn` `codex-rs/core/src/config/mod.rs:2409` `async fn project_profile_overrides_user_profile() -> std::io::Result<()> {`
+- `fn` `codex-rs/core/src/config/mod.rs:2455` `fn profile_sandbox_mode_overrides_base() -> std::io::Result<()> {`
+- `fn` `codex-rs/core/src/config/mod.rs:2488` `fn cli_override_takes_precedence_over_profile_sandbox_mode() -> std::io::Result<()> {`
+- `fn` `codex-rs/core/src/config/mod.rs:2533` `fn feature_table_overrides_legacy_flags() -> std::io::Result<()> {`
+- `fn` `codex-rs/core/src/config/mod.rs:2555` `fn legacy_toggles_map_to_features() -> std::io::Result<()> {`
+- `fn` `codex-rs/core/src/config/mod.rs:2580` `fn responses_websockets_feature_does_not_change_wire_api() -> std::io::Result<()> {`
+- `fn` `codex-rs/core/src/config/mod.rs:2604` `fn config_honors_explicit_file_oauth_store_mode() -> std::io::Result<()> {`
+- `fn` `codex-rs/core/src/config/mod.rs:2626` `async fn managed_config_overrides_oauth_store_mode() -> anyhow::Result<()> {`
+- `fn` `codex-rs/core/src/config/mod.rs:2677` `async fn load_global_mcp_servers_returns_empty_if_missing() -> anyhow::Result<()> {`
+- `fn` `codex-rs/core/src/config/mod.rs:2687` `async fn replace_mcp_servers_round_trips_entries() -> anyhow::Result<()> {`
+- `fn` `codex-rs/core/src/config/mod.rs:2753` `async fn managed_config_wins_over_cli_overrides() -> anyhow::Result<()> {`
+- `fn` `codex-rs/core/src/config/mod.rs:2794` `async fn load_global_mcp_servers_accepts_legacy_ms_field() -> anyhow::Result<()> {`
+- `fn` `codex-rs/core/src/config/mod.rs:2816` `async fn load_global_mcp_servers_rejects_inline_bearer_token() -> anyhow::Result<()> {`
+- `fn` `codex-rs/core/src/config/mod.rs:2841` `async fn replace_mcp_servers_serializes_env_sorted() -> anyhow::Result<()> {`
+- `fn` `codex-rs/core/src/config/mod.rs:2914` `async fn replace_mcp_servers_serializes_env_vars() -> anyhow::Result<()> {`
+- `fn` `codex-rs/core/src/config/mod.rs:2963` `async fn replace_mcp_servers_serializes_cwd() -> anyhow::Result<()> {`
+- `fn` `codex-rs/core/src/config/mod.rs:3013` `async fn replace_mcp_servers_streamable_http_serializes_bearer_token() -> anyhow::Result<()> {`
+- `fn` `codex-rs/core/src/config/mod.rs:3074` `async fn replace_mcp_servers_streamable_http_serializes_custom_headers() -> anyhow::Result<()> {`
+- `fn` `codex-rs/core/src/config/mod.rs:3148` `async fn replace_mcp_servers_streamable_http_removes_optional_sections() -> anyhow::Result<()> {`
+- `fn` `codex-rs/core/src/config/mod.rs:3240` `async fn replace_mcp_servers_streamable_http_isolates_headers_between_servers()`
+- (… 41 more definitions omitted; see symbol indexes under `workdocjcl/spec/13_Indexes/`)
+
+## Dependencies (auto sample)
+### Imports / Includes
+- `use crate::auth::AuthCredentialsStoreMode;`
+- `use crate::config::edit::ConfigEdit;`
+- `use crate::config::edit::ConfigEditsBuilder;`
+- `use crate::config::types::DEFAULT_OTEL_ENVIRONMENT;`
+- `use crate::config::types::History;`
+- `use crate::config::types::McpServerConfig;`
+- `use crate::config::types::McpServerDisabledReason;`
+- `use crate::config::types::McpServerTransportConfig;`
+- `use crate::config::types::Notice;`
+- `use crate::config::types::NotificationMethod;`
+- `use crate::config::types::Notifications;`
+- `use crate::config::types::OtelConfig;`
+- `use crate::config::types::OtelConfigToml;`
+- `use crate::config::types::OtelExporterKind;`
+- `use crate::config::types::SandboxWorkspaceWrite;`
+- `use crate::config::types::ShellEnvironmentPolicy;`
+- `use crate::config::types::ShellEnvironmentPolicyToml;`
+- `use crate::config::types::SkillsConfig;`
+- `use crate::config::types::Tui;`
+- `use crate::config::types::UriBasedFileOpener;`
+### Referenced env vars
+- (none detected)
+
+## Error Handling / Edge Cases
+- has retry/timeout/backoff logic
+- returns structured errors (Result/ErrorKind)
+- uses Rust panic/expect/unwrap-style failure paths
+
+## Spec Links
+- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`

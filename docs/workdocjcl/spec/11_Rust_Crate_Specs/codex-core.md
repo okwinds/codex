@@ -1,0 +1,166 @@
+# `codex-core`
+
+- path: `codex-rs/core`
+- generated_utc: `2026-02-03T09:48:37Z`
+- role: core engine (turn loop, tools, config, rollout)
+
+## Build Targets
+- has_lib_rs: `true`
+- has_main_rs: `false`
+- explicit_bins:
+  - name: `codex-write-config-schema` path: `src/bin/config_schema.rs`
+
+## Key Dependencies (direct, from Cargo.toml)
+- `anyhow`
+- `arc-swap`
+- `async-channel`
+- `async-trait`
+- `base64`
+- `chardetng`
+- `chrono`
+- `clap`
+- `codex-api`
+- `codex-app-server-protocol`
+- `codex-apply-patch`
+- `codex-async-utils`
+- `codex-client`
+- `codex-execpolicy`
+- `codex-file-search`
+- `codex-git`
+- `codex-keyring-store`
+- `codex-otel`
+- `codex-protocol`
+- `codex-rmcp-client`
+- `codex-state`
+- `codex-utils-absolute-path`
+- `codex-utils-home-dir`
+- `codex-utils-pty`
+- `codex-utils-readiness`
+- `codex-utils-string`
+- `codex-windows-sandbox`
+- `dirs`
+- `dunce`
+- `encoding_rs`
+- `env-flags`
+- `eventsource-stream`
+- `futures`
+- `http`
+- `include_dir`
+- `indexmap`
+- `indoc`
+- `keyring`
+- `libc`
+- `multimap`
+- `once_cell`
+- `os_info`
+- `rand`
+- `regex`
+- `regex-lite`
+- `reqwest`
+- `rmcp`
+- `schemars`
+- `serde`
+- `serde_json`
+- `serde_path_to_error`
+- `serde_yaml`
+- `sha1`
+- `sha2`
+- `shlex`
+- `similar`
+- `tempfile`
+- `test-case`
+- `test-log`
+- `thiserror`
+- (… 13 more)
+
+## Features
+- `deterministic_process_ids`
+- `test-support`
+
+## Public Surface (auto, from src/lib.rs or src/main.rs)
+- `pub mod api_bridge;`
+- `pub mod auth;`
+- `pub mod bash;`
+- `pub mod codex;`
+- `pub use codex_thread::CodexThread;`
+- `pub use codex_thread::ThreadConfigSnapshot;`
+- `pub mod config;`
+- `pub mod config_loader;`
+- `pub mod connectors;`
+- `pub mod custom_prompts;`
+- `pub mod env;`
+- `pub mod error;`
+- `pub mod exec;`
+- `pub mod exec_env;`
+- `pub mod features;`
+- `pub mod git_info;`
+- `pub mod instructions;`
+- `pub mod landlock;`
+- `pub mod mcp;`
+- `pub mod models_manager;`
+- `pub use mcp_connection_manager::MCP_SANDBOX_STATE_CAPABILITY;`
+- `pub use mcp_connection_manager::MCP_SANDBOX_STATE_METHOD;`
+- `pub use mcp_connection_manager::SandboxState;`
+- `pub mod parse_command;`
+- `pub mod path_utils;`
+- `pub mod personality_migration;`
+- `pub mod powershell;`
+- `pub mod sandboxing;`
+- `pub mod token_data;`
+- `pub mod windows_sandbox;`
+- `pub use model_provider_info::CHAT_WIRE_API_DEPRECATION_SUMMARY;`
+- `pub use model_provider_info::DEFAULT_LMSTUDIO_PORT;`
+- `pub use model_provider_info::DEFAULT_OLLAMA_PORT;`
+- `pub use model_provider_info::LMSTUDIO_OSS_PROVIDER_ID;`
+- `pub use model_provider_info::ModelProviderInfo;`
+- `pub use model_provider_info::OLLAMA_CHAT_PROVIDER_ID;`
+- `pub use model_provider_info::OLLAMA_OSS_PROVIDER_ID;`
+- `pub use model_provider_info::WireApi;`
+- `pub use model_provider_info::built_in_model_providers;`
+- `pub use model_provider_info::create_oss_provider_with_base_url;`
+- `pub mod review_format;`
+- `pub mod review_prompts;`
+- `pub mod web_search;`
+- `pub use codex_protocol::protocol::InitialHistory;`
+- `pub use thread_manager::NewThread;`
+- `pub use thread_manager::ThreadManager;`
+- `pub use auth::AuthManager;`
+- `pub use auth::CodexAuth;`
+- `pub mod default_client;`
+- `pub mod project_doc;`
+- `pub mod seatbelt;`
+- `pub mod shell;`
+- `pub mod shell_snapshot;`
+- `pub mod skills;`
+- `pub mod spawn;`
+- `pub mod state_db;`
+- `pub mod terminal;`
+- `pub mod turn_diff_tracker;`
+- `pub use rollout::ARCHIVED_SESSIONS_SUBDIR;`
+- `pub use rollout::INTERACTIVE_SESSION_SOURCES;`
+- `pub use rollout::RolloutRecorder;`
+- `pub use rollout::RolloutRecorderParams;`
+- `pub use rollout::SESSIONS_SUBDIR;`
+- `pub use rollout::SessionMeta;`
+- `pub use rollout::find_archived_thread_path_by_id_str;`
+- `pub use rollout::find_conversation_path_by_id_str;`
+- `pub use rollout::find_thread_path_by_id_str;`
+- `pub use rollout::find_thread_path_by_name_str;`
+- `pub use rollout::list::Cursor;`
+- `pub use rollout::list::ThreadItem;`
+- `pub use rollout::list::ThreadSortKey;`
+- `pub use rollout::list::ThreadsPage;`
+- `pub use rollout::list::parse_cursor;`
+- `pub use rollout::list::read_head_for_summary;`
+- `pub use rollout::list::read_session_meta_line;`
+- `pub use rollout::rollout_date_parts;`
+- `pub use rollout::session_index::find_thread_names_by_ids;`
+- `pub use transport_manager::TransportManager;`
+- `pub mod util;`
+- `pub use apply_patch::CODEX_APPLY_PATCH_ARG1;`
+
+## Spec Links
+- `workdocjcl/spec/00_Overview/MODULE_MAP.md`
+- `workdocjcl/spec/09_Verification/CODE_TO_SPEC_MAP.md`
+- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `workdocjcl/spec/05_Integrations/TOOLS.md`

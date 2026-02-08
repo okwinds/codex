@@ -1,0 +1,117 @@
+{
+  "workspace_root": "/Users/okwinds/Files/工作/若凡光年/技术平台/Code/codex",
+  "packages": [
+    {
+      "pattern": "codex-cli",
+      "path": "codex-cli",
+      "name": "@openai/codex",
+      "version": "0.0.0-dev",
+      "private": null,
+      "bin": {
+        "codex": "bin/codex.js"
+      },
+      "type": "module",
+      "engines": {
+        "node": ">=16"
+      },
+      "scripts": [],
+      "dependencies": [],
+      "devDependencies": []
+    },
+    {
+      "pattern": "codex-rs/responses-api-proxy/npm",
+      "path": "codex-rs/responses-api-proxy/npm",
+      "name": "@openai/codex-responses-api-proxy",
+      "version": "0.0.0-dev",
+      "private": null,
+      "bin": {
+        "codex-responses-api-proxy": "bin/codex-responses-api-proxy.js"
+      },
+      "type": "module",
+      "engines": {
+        "node": ">=16"
+      },
+      "scripts": [],
+      "dependencies": [],
+      "devDependencies": []
+    },
+    {
+      "pattern": "sdk/typescript",
+      "path": "sdk/typescript",
+      "name": "@openai/codex-sdk",
+      "version": "0.0.0-dev",
+      "private": null,
+      "bin": null,
+      "type": "module",
+      "engines": {
+        "node": ">=18"
+      },
+      "scripts": [
+        "clean",
+        "build",
+        "build:watch",
+        "lint",
+        "lint:fix",
+        "test",
+        "test:watch",
+        "coverage",
+        "format",
+        "format:fix",
+        "prepare"
+      ],
+      "dependencies": [],
+      "devDependencies": [
+        "@modelcontextprotocol/sdk",
+        "@types/jest",
+        "@types/node",
+        "eslint",
+        "eslint-config-prettier",
+        "eslint-plugin-jest",
+        "eslint-plugin-node-import",
+        "jest",
+        "prettier",
+        "ts-jest",
+        "ts-jest-mock-import-meta",
+        "ts-node",
+        "tsup",
+        "typescript",
+        "typescript-eslint",
+        "zod",
+        "zod-to-json-schema"
+      ]
+    },
+    {
+      "pattern": "shell-tool-mcp",
+      "path": "shell-tool-mcp",
+      "name": "@openai/codex-shell-tool-mcp",
+      "version": "0.0.0-dev",
+      "private": null,
+      "bin": {
+        "codex-shell-tool-mcp": "bin/mcp-server.js"
+      },
+      "type": null,
+      "engines": {
+        "node": ">=18"
+      },
+      "scripts": [
+        "clean",
+        "build",
+        "build:watch",
+        "test",
+        "test:watch",
+        "format",
+        "format:fix"
+      ],
+      "dependencies": [],
+      "devDependencies": [
+        "@types/jest",
+        "@types/node",
+        "jest",
+        "prettier",
+        "ts-jest",
+        "tsup",
+        "typescript"
+      ]
+    }
+  ]
+}

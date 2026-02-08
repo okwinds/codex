@@ -1,0 +1,307 @@
+# `codex-rs/protocol/src/protocol.rs`
+
+## Identity
+- kind: `source`
+- ext: `.rs`
+- size_bytes: `92281`
+- sha256: `9fbf864a50b487b6321b8702890211c407e707fcd04bd3f4b2fa1700a560a74b`
+- generated_utc: `2026-02-03T16:08:30Z`
+
+## Purpose (Why)
+Source file implementing exported/public items listed below.
+
+## Interfaces (Inputs/Outputs)
+### Inputs
+- filesystem: `codex-rs/protocol/src/protocol.rs` (read)
+- env: `TMPDIR`
+
+### Outputs / Side Effects
+- (no obvious side effects detected by heuristic)
+
+## Public Surface (auto)
+- `pub struct Submission {`
+- `pub struct McpServerRefreshConfig {`
+- `pub enum Op {`
+- `pub enum AskForApproval {`
+- `pub enum NetworkAccess {`
+- `pub fn is_enabled(self) -> bool {`
+- `pub enum SandboxPolicy {`
+- `pub struct WritableRoot {`
+- `pub fn is_path_writable(&self, path: &Path) -> bool {`
+- `pub fn new_read_only_policy() -> Self {`
+- `pub fn new_workspace_write_policy() -> Self {`
+- `pub fn has_full_disk_read_access(&self) -> bool {`
+- `pub fn has_full_disk_write_access(&self) -> bool {`
+- `pub fn has_full_network_access(&self) -> bool {`
+- `pub fn get_writable_roots_with_cwd(&self, cwd: &Path) -> Vec<WritableRoot> {`
+- `pub struct Event {`
+- `pub enum EventMsg {`
+- `pub enum AgentStatus {`
+- `pub enum CodexErrorInfo {`
+- `pub struct RawResponseItemEvent {`
+- `pub struct ItemStartedEvent {`
+- `pub struct ItemCompletedEvent {`
+- `pub trait HasLegacyEvent {`
+- `pub struct AgentMessageContentDeltaEvent {`
+- `pub struct PlanDeltaEvent {`
+- `pub struct ReasoningContentDeltaEvent {`
+- `pub struct ReasoningRawContentDeltaEvent {`
+- `pub struct ExitedReviewModeEvent {`
+- `pub struct ErrorEvent {`
+- `pub struct WarningEvent {`
+- `pub struct ContextCompactedEvent;`
+- `pub struct TurnCompleteEvent {`
+- `pub struct TurnStartedEvent {`
+- `pub struct TokenUsage {`
+- `pub struct TokenUsageInfo {`
+- `pub fn new_or_append(`
+- `pub fn append_last_usage(&mut self, last: &TokenUsage) {`
+- `pub fn fill_to_context_window(&mut self, context_window: i64) {`
+- `pub fn full_context_window(context_window: i64) -> Self {`
+- `pub struct TokenCountEvent {`
+- `pub struct RateLimitSnapshot {`
+- `pub struct RateLimitWindow {`
+- `pub struct CreditsSnapshot {`
+- `pub fn is_zero(&self) -> bool {`
+- `pub fn cached_input(&self) -> i64 {`
+- `pub fn non_cached_input(&self) -> i64 {`
+- `pub fn blended_total(&self) -> i64 {`
+- `pub fn tokens_in_context_window(&self) -> i64 {`
+- `pub fn percent_of_context_window_remaining(&self, context_window: i64) -> i64 {`
+- `pub fn add_assign(&mut self, other: &TokenUsage) {`
+
+## Definitions (auto, per-file)
+- `use` `codex-rs/protocol/src/protocol.rs:6` `use std::collections::HashMap;`
+- `use` `codex-rs/protocol/src/protocol.rs:7` `use std::ffi::OsStr;`
+- `use` `codex-rs/protocol/src/protocol.rs:8` `use std::fmt;`
+- `use` `codex-rs/protocol/src/protocol.rs:9` `use std::path::Path;`
+- `use` `codex-rs/protocol/src/protocol.rs:10` `use std::path::PathBuf;`
+- `use` `codex-rs/protocol/src/protocol.rs:11` `use std::str::FromStr;`
+- `use` `codex-rs/protocol/src/protocol.rs:12` `use std::time::Duration;`
+- `use` `codex-rs/protocol/src/protocol.rs:14` `use crate::ThreadId;`
+- `use` `codex-rs/protocol/src/protocol.rs:15` `use crate::approvals::ElicitationRequestEvent;`
+- `use` `codex-rs/protocol/src/protocol.rs:16` `use crate::config_types::CollaborationMode;`
+- `use` `codex-rs/protocol/src/protocol.rs:17` `use crate::config_types::ModeKind;`
+- `use` `codex-rs/protocol/src/protocol.rs:18` `use crate::config_types::Personality;`
+- `use` `codex-rs/protocol/src/protocol.rs:19` `use crate::config_types::ReasoningSummary as ReasoningSummaryConfig;`
+- `use` `codex-rs/protocol/src/protocol.rs:20` `use crate::config_types::WindowsSandboxLevel;`
+- `use` `codex-rs/protocol/src/protocol.rs:21` `use crate::custom_prompts::CustomPrompt;`
+- `use` `codex-rs/protocol/src/protocol.rs:22` `use crate::dynamic_tools::DynamicToolCallRequest;`
+- `use` `codex-rs/protocol/src/protocol.rs:23` `use crate::dynamic_tools::DynamicToolResponse;`
+- `use` `codex-rs/protocol/src/protocol.rs:24` `use crate::dynamic_tools::DynamicToolSpec;`
+- `use` `codex-rs/protocol/src/protocol.rs:25` `use crate::items::TurnItem;`
+- `use` `codex-rs/protocol/src/protocol.rs:26` `use crate::mcp::CallToolResult;`
+- `use` `codex-rs/protocol/src/protocol.rs:27` `use crate::mcp::RequestId;`
+- `use` `codex-rs/protocol/src/protocol.rs:28` `use crate::mcp::Resource as McpResource;`
+- `use` `codex-rs/protocol/src/protocol.rs:29` `use crate::mcp::ResourceTemplate as McpResourceTemplate;`
+- `use` `codex-rs/protocol/src/protocol.rs:30` `use crate::mcp::Tool as McpTool;`
+- `use` `codex-rs/protocol/src/protocol.rs:31` `use crate::message_history::HistoryEntry;`
+- `use` `codex-rs/protocol/src/protocol.rs:32` `use crate::models::BaseInstructions;`
+- `use` `codex-rs/protocol/src/protocol.rs:33` `use crate::models::ContentItem;`
+- `use` `codex-rs/protocol/src/protocol.rs:34` `use crate::models::ResponseItem;`
+- `use` `codex-rs/protocol/src/protocol.rs:35` `use crate::models::WebSearchAction;`
+- `use` `codex-rs/protocol/src/protocol.rs:36` `use crate::num_format::format_with_separators;`
+- `use` `codex-rs/protocol/src/protocol.rs:37` `use crate::openai_models::ReasoningEffort as ReasoningEffortConfig;`
+- `use` `codex-rs/protocol/src/protocol.rs:38` `use crate::parse_command::ParsedCommand;`
+- `use` `codex-rs/protocol/src/protocol.rs:39` `use crate::plan_tool::UpdatePlanArgs;`
+- `use` `codex-rs/protocol/src/protocol.rs:40` `use crate::request_user_input::RequestUserInputResponse;`
+- `use` `codex-rs/protocol/src/protocol.rs:41` `use crate::user_input::UserInput;`
+- `use` `codex-rs/protocol/src/protocol.rs:42` `use codex_utils_absolute_path::AbsolutePathBuf;`
+- `use` `codex-rs/protocol/src/protocol.rs:43` `use schemars::JsonSchema;`
+- `use` `codex-rs/protocol/src/protocol.rs:44` `use serde::Deserialize;`
+- `use` `codex-rs/protocol/src/protocol.rs:45` `use serde::Serialize;`
+- `use` `codex-rs/protocol/src/protocol.rs:46` `use serde_json::Value;`
+- `use` `codex-rs/protocol/src/protocol.rs:47` `use serde_with::serde_as;`
+- `use` `codex-rs/protocol/src/protocol.rs:48` `use strum_macros::Display;`
+- `use` `codex-rs/protocol/src/protocol.rs:49` `use tracing::error;`
+- `use` `codex-rs/protocol/src/protocol.rs:50` `use ts_rs::TS;`
+- `const` `codex-rs/protocol/src/protocol.rs:60` `pub const USER_INSTRUCTIONS_OPEN_TAG: &str = "<user_instructions>";`
+- `const` `codex-rs/protocol/src/protocol.rs:61` `pub const USER_INSTRUCTIONS_CLOSE_TAG: &str = "</user_instructions>";`
+- `const` `codex-rs/protocol/src/protocol.rs:62` `pub const ENVIRONMENT_CONTEXT_OPEN_TAG: &str = "<environment_context>";`
+- `const` `codex-rs/protocol/src/protocol.rs:63` `pub const ENVIRONMENT_CONTEXT_CLOSE_TAG: &str = "</environment_context>";`
+- `const` `codex-rs/protocol/src/protocol.rs:64` `pub const COLLABORATION_MODE_OPEN_TAG: &str = "<collaboration_mode>";`
+- `const` `codex-rs/protocol/src/protocol.rs:65` `pub const COLLABORATION_MODE_CLOSE_TAG: &str = "</collaboration_mode>";`
+- `const` `codex-rs/protocol/src/protocol.rs:66` `pub const USER_MESSAGE_BEGIN: &str = "## My request for Codex:";`
+- `struct` `codex-rs/protocol/src/protocol.rs:70` `pub struct Submission {`
+- `struct` `codex-rs/protocol/src/protocol.rs:79` `pub struct McpServerRefreshConfig {`
+- `enum` `codex-rs/protocol/src/protocol.rs:89` `pub enum Op {`
+- `enum` `codex-rs/protocol/src/protocol.rs:329` `pub enum AskForApproval {`
+- `enum` `codex-rs/protocol/src/protocol.rs:358` `pub enum NetworkAccess {`
+- `impl` `codex-rs/protocol/src/protocol.rs:364` `impl NetworkAccess {`
+- `fn` `codex-rs/protocol/src/protocol.rs:365` `pub fn is_enabled(self) -> bool {`
+- `enum` `codex-rs/protocol/src/protocol.rs:374` `pub enum SandboxPolicy {`
+- `struct` `codex-rs/protocol/src/protocol.rs:425` `pub struct WritableRoot {`
+- `impl` `codex-rs/protocol/src/protocol.rs:432` `impl WritableRoot {`
+- `fn` `codex-rs/protocol/src/protocol.rs:433` `pub fn is_path_writable(&self, path: &Path) -> bool {`
+- `impl` `codex-rs/protocol/src/protocol.rs:450` `impl FromStr for SandboxPolicy {`
+- `type` `codex-rs/protocol/src/protocol.rs:451` `type Err = serde_json::Error;`
+- `fn` `codex-rs/protocol/src/protocol.rs:453` `fn from_str(s: &str) -> Result<Self, Self::Err> {`
+- `impl` `codex-rs/protocol/src/protocol.rs:458` `impl SandboxPolicy {`
+- `fn` `codex-rs/protocol/src/protocol.rs:460` `pub fn new_read_only_policy() -> Self {`
+- `fn` `codex-rs/protocol/src/protocol.rs:467` `pub fn new_workspace_write_policy() -> Self {`
+- `fn` `codex-rs/protocol/src/protocol.rs:477` `pub fn has_full_disk_read_access(&self) -> bool {`
+- `fn` `codex-rs/protocol/src/protocol.rs:481` `pub fn has_full_disk_write_access(&self) -> bool {`
+- `fn` `codex-rs/protocol/src/protocol.rs:490` `pub fn has_full_network_access(&self) -> bool {`
+- `fn` `codex-rs/protocol/src/protocol.rs:502` `pub fn get_writable_roots_with_cwd(&self, cwd: &Path) -> Vec<WritableRoot> {`
+- `fn` `codex-rs/protocol/src/protocol.rs:610` `fn is_git_pointer_file(path: &AbsolutePathBuf) -> bool {`
+- `fn` `codex-rs/protocol/src/protocol.rs:614` `fn resolve_gitdir_from_file(dot_git: &AbsolutePathBuf) -> Option<AbsolutePathBuf> {`
+- `struct` `codex-rs/protocol/src/protocol.rs:677` `pub struct Event {`
+- `enum` `codex-rs/protocol/src/protocol.rs:690` `pub enum EventMsg {`
+- `impl` `codex-rs/protocol/src/protocol.rs:864` `impl From<CollabAgentSpawnBeginEvent> for EventMsg {`
+- `fn` `codex-rs/protocol/src/protocol.rs:865` `fn from(event: CollabAgentSpawnBeginEvent) -> Self {`
+- `impl` `codex-rs/protocol/src/protocol.rs:870` `impl From<CollabAgentSpawnEndEvent> for EventMsg {`
+- `fn` `codex-rs/protocol/src/protocol.rs:871` `fn from(event: CollabAgentSpawnEndEvent) -> Self {`
+- `impl` `codex-rs/protocol/src/protocol.rs:876` `impl From<CollabAgentInteractionBeginEvent> for EventMsg {`
+- `fn` `codex-rs/protocol/src/protocol.rs:877` `fn from(event: CollabAgentInteractionBeginEvent) -> Self {`
+- `impl` `codex-rs/protocol/src/protocol.rs:882` `impl From<CollabAgentInteractionEndEvent> for EventMsg {`
+- `fn` `codex-rs/protocol/src/protocol.rs:883` `fn from(event: CollabAgentInteractionEndEvent) -> Self {`
+- `impl` `codex-rs/protocol/src/protocol.rs:888` `impl From<CollabWaitingBeginEvent> for EventMsg {`
+- `fn` `codex-rs/protocol/src/protocol.rs:889` `fn from(event: CollabWaitingBeginEvent) -> Self {`
+- `impl` `codex-rs/protocol/src/protocol.rs:894` `impl From<CollabWaitingEndEvent> for EventMsg {`
+- `fn` `codex-rs/protocol/src/protocol.rs:895` `fn from(event: CollabWaitingEndEvent) -> Self {`
+- `impl` `codex-rs/protocol/src/protocol.rs:900` `impl From<CollabCloseBeginEvent> for EventMsg {`
+- `fn` `codex-rs/protocol/src/protocol.rs:901` `fn from(event: CollabCloseBeginEvent) -> Self {`
+- `impl` `codex-rs/protocol/src/protocol.rs:906` `impl From<CollabCloseEndEvent> for EventMsg {`
+- `fn` `codex-rs/protocol/src/protocol.rs:907` `fn from(event: CollabCloseEndEvent) -> Self {`
+- `enum` `codex-rs/protocol/src/protocol.rs:916` `pub enum AgentStatus {`
+- `enum` `codex-rs/protocol/src/protocol.rs:936` `pub enum CodexErrorInfo {`
+- `struct` `codex-rs/protocol/src/protocol.rs:967` `pub struct RawResponseItemEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:972` `pub struct ItemStartedEvent {`
+- `impl` `codex-rs/protocol/src/protocol.rs:978` `impl HasLegacyEvent for ItemStartedEvent {`
+- `fn` `codex-rs/protocol/src/protocol.rs:979` `fn as_legacy_events(&self, _: bool) -> Vec<EventMsg> {`
+- `struct` `codex-rs/protocol/src/protocol.rs:990` `pub struct ItemCompletedEvent {`
+- `trait` `codex-rs/protocol/src/protocol.rs:996` `pub trait HasLegacyEvent {`
+- `fn` `codex-rs/protocol/src/protocol.rs:997` `fn as_legacy_events(&self, show_raw_agent_reasoning: bool) -> Vec<EventMsg>;`
+- `impl` `codex-rs/protocol/src/protocol.rs:1000` `impl HasLegacyEvent for ItemCompletedEvent {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1001` `fn as_legacy_events(&self, show_raw_agent_reasoning: bool) -> Vec<EventMsg> {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1007` `pub struct AgentMessageContentDeltaEvent {`
+- `impl` `codex-rs/protocol/src/protocol.rs:1014` `impl HasLegacyEvent for AgentMessageContentDeltaEvent {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1015` `fn as_legacy_events(&self, _: bool) -> Vec<EventMsg> {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1023` `pub struct PlanDeltaEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1031` `pub struct ReasoningContentDeltaEvent {`
+- `impl` `codex-rs/protocol/src/protocol.rs:1041` `impl HasLegacyEvent for ReasoningContentDeltaEvent {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1042` `fn as_legacy_events(&self, _: bool) -> Vec<EventMsg> {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1050` `pub struct ReasoningRawContentDeltaEvent {`
+- `impl` `codex-rs/protocol/src/protocol.rs:1060` `impl HasLegacyEvent for ReasoningRawContentDeltaEvent {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1061` `fn as_legacy_events(&self, _: bool) -> Vec<EventMsg> {`
+- `impl` `codex-rs/protocol/src/protocol.rs:1070` `impl HasLegacyEvent for EventMsg {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1071` `fn as_legacy_events(&self, show_raw_agent_reasoning: bool) -> Vec<EventMsg> {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1090` `pub struct ExitedReviewModeEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1097` `pub struct ErrorEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1104` `pub struct WarningEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1109` `pub struct ContextCompactedEvent;`
+- `struct` `codex-rs/protocol/src/protocol.rs:1112` `pub struct TurnCompleteEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1117` `pub struct TurnStartedEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1125` `pub struct TokenUsage {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1139` `pub struct TokenUsageInfo {`
+- `impl` `codex-rs/protocol/src/protocol.rs:1147` `impl TokenUsageInfo {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1148` `pub fn new_or_append(`
+- `fn` `codex-rs/protocol/src/protocol.rs:1171` `pub fn append_last_usage(&mut self, last: &TokenUsage) {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1176` `pub fn fill_to_context_window(&mut self, context_window: i64) {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1191` `pub fn full_context_window(context_window: i64) -> Self {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1203` `pub struct TokenCountEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1209` `pub struct RateLimitSnapshot {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1217` `pub struct RateLimitWindow {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1229` `pub struct CreditsSnapshot {`
+- `const` `codex-rs/protocol/src/protocol.rs:1236` `const BASELINE_TOKENS: i64 = 12000;`
+- `impl` `codex-rs/protocol/src/protocol.rs:1238` `impl TokenUsage {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1239` `pub fn is_zero(&self) -> bool {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1243` `pub fn cached_input(&self) -> i64 {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1247` `pub fn non_cached_input(&self) -> i64 {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1252` `pub fn blended_total(&self) -> i64 {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1256` `pub fn tokens_in_context_window(&self) -> i64 {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1270` `pub fn percent_of_context_window_remaining(&self, context_window: i64) -> i64 {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1284` `pub fn add_assign(&mut self, other: &TokenUsage) {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1294` `pub struct FinalOutput {`
+- `impl` `codex-rs/protocol/src/protocol.rs:1298` `impl From<TokenUsage> for FinalOutput {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1299` `fn from(token_usage: TokenUsage) -> Self {`
+- `impl` `codex-rs/protocol/src/protocol.rs:1304` `impl fmt::Display for FinalOutput {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1305` `fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1335` `pub struct AgentMessageEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1340` `pub struct UserMessageEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1358` `pub struct AgentMessageDeltaEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1363` `pub struct AgentReasoningEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1368` `pub struct AgentReasoningRawContentEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1373` `pub struct AgentReasoningRawContentDeltaEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1378` `pub struct AgentReasoningSectionBreakEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1387` `pub struct AgentReasoningDeltaEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1392` `pub struct McpInvocation {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1402` `pub struct McpToolCallBeginEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1409` `pub struct McpToolCallEndEvent {`
+- `impl` `codex-rs/protocol/src/protocol.rs:1419` `impl McpToolCallEndEvent {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1420` `pub fn is_success(&self) -> bool {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1429` `pub struct WebSearchBeginEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1434` `pub struct WebSearchEndEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1444` `pub struct ConversationPathResponseEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1450` `pub struct ResumedHistory {`
+- `enum` `codex-rs/protocol/src/protocol.rs:1457` `pub enum InitialHistory {`
+- `impl` `codex-rs/protocol/src/protocol.rs:1463` `impl InitialHistory {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1464` `pub fn forked_from_id(&self) -> Option<ThreadId> {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1480` `pub fn session_cwd(&self) -> Option<PathBuf> {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1488` `pub fn get_rollout_items(&self) -> Vec<RolloutItem> {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1496` `pub fn get_event_msgs(&self) -> Option<Vec<EventMsg>> {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1521` `pub fn get_base_instructions(&self) -> Option<BaseInstructions> {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1538` `pub fn get_dynamic_tools(&self) -> Option<Vec<DynamicToolSpec>> {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1555` `fn session_cwd_from_items(items: &[RolloutItem]) -> Option<PathBuf> {`
+- `enum` `codex-rs/protocol/src/protocol.rs:1565` `pub enum SessionSource {`
+- `enum` `codex-rs/protocol/src/protocol.rs:1579` `pub enum SubAgentSource {`
+- `impl` `codex-rs/protocol/src/protocol.rs:1589` `impl fmt::Display for SessionSource {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1590` `fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {`
+- `impl` `codex-rs/protocol/src/protocol.rs:1602` `impl fmt::Display for SubAgentSource {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1603` `fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1624` `pub struct SessionMeta {`
+- `impl` `codex-rs/protocol/src/protocol.rs:1643` `impl Default for SessionMeta {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1644` `fn default() -> Self {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1661` `pub struct SessionMetaLine {`
+- `enum` `codex-rs/protocol/src/protocol.rs:1670` `pub enum RolloutItem {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1679` `pub struct CompactedItem {`
+- `impl` `codex-rs/protocol/src/protocol.rs:1685` `impl From<CompactedItem> for ResponseItem {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1686` `fn from(value: CompactedItem) -> Self {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1700` `pub struct TurnContextItem {`
+- `enum` `codex-rs/protocol/src/protocol.rs:1724` `pub enum TruncationPolicy {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1730` `pub struct RolloutLine {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1737` `pub struct GitInfo {`
+- `enum` `codex-rs/protocol/src/protocol.rs:1751` `pub enum ReviewDelivery {`
+- `enum` `codex-rs/protocol/src/protocol.rs:1759` `pub enum ReviewTarget {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1785` `pub struct ReviewRequest {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1794` `pub struct ReviewOutputEvent {`
+- `impl` `codex-rs/protocol/src/protocol.rs:1801` `impl Default for ReviewOutputEvent {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1802` `fn default() -> Self {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1814` `pub struct ReviewFinding {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1824` `pub struct ReviewCodeLocation {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1831` `pub struct ReviewLineRange {`
+- `enum` `codex-rs/protocol/src/protocol.rs:1840` `pub enum ExecCommandSource {`
+- (… 70 more definitions omitted; see symbol indexes under `workdocjcl/spec/13_Indexes/`)
+
+## Dependencies (auto sample)
+### Imports / Includes
+- `use std::collections::HashMap;`
+- `use std::ffi::OsStr;`
+- `use std::fmt;`
+- `use std::path::Path;`
+- `use std::path::PathBuf;`
+- `use std::str::FromStr;`
+- `use std::time::Duration;`
+- `use crate::ThreadId;`
+- `use crate::approvals::ElicitationRequestEvent;`
+- `use crate::config_types::CollaborationMode;`
+- `use crate::config_types::ModeKind;`
+- `use crate::config_types::Personality;`
+- `use crate::config_types::ReasoningSummary as ReasoningSummaryConfig;`
+- `use crate::config_types::WindowsSandboxLevel;`
+- `use crate::custom_prompts::CustomPrompt;`
+- `use crate::dynamic_tools::DynamicToolCallRequest;`
+- `use crate::dynamic_tools::DynamicToolResponse;`
+- `use crate::dynamic_tools::DynamicToolSpec;`
+- `use crate::items::TurnItem;`
+- `use crate::mcp::CallToolResult;`
+### Referenced env vars
+- `TMPDIR`
+
+## Error Handling / Edge Cases
+- has retry/timeout/backoff logic
+- returns structured errors (Result/ErrorKind)
+- uses Rust panic/expect/unwrap-style failure paths
+
+## Spec Links
+- `workdocjcl/spec/02_Data/ROLLOUT_FORMAT.md`

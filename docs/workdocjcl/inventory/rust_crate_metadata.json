@@ -1,0 +1,652 @@
+[
+  {
+    "path": "codex-rs/backend-client",
+    "name": "codex-backend-client",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": false,
+    "default_run": null,
+    "lib": true,
+    "bin_count": 0,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/ansi-escape",
+    "name": "codex-ansi-escape",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": true,
+    "bin_count": 0,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/async-utils",
+    "name": "codex-async-utils",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": false,
+    "bin_count": 0,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/app-server",
+    "name": "codex-app-server",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": true,
+    "bin_count": 1,
+    "has_main_rs": true
+  },
+  {
+    "path": "codex-rs/app-server-protocol",
+    "name": "codex-app-server-protocol",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": true,
+    "bin_count": 0,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/app-server-test-client",
+    "name": "codex-app-server-test-client",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": false,
+    "bin_count": 0,
+    "has_main_rs": true
+  },
+  {
+    "path": "codex-rs/debug-client",
+    "name": "codex-debug-client",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": false,
+    "bin_count": 0,
+    "has_main_rs": true
+  },
+  {
+    "path": "codex-rs/apply-patch",
+    "name": "codex-apply-patch",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": true,
+    "bin_count": 1,
+    "has_main_rs": true
+  },
+  {
+    "path": "codex-rs/arg0",
+    "name": "codex-arg0",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": true,
+    "bin_count": 0,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/feedback",
+    "name": "codex-feedback",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": false,
+    "bin_count": 0,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/codex-backend-openapi-models",
+    "name": "codex-backend-openapi-models",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": true,
+    "bin_count": 0,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/cloud-requirements",
+    "name": "codex-cloud-requirements",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": false,
+    "bin_count": 0,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/cloud-tasks",
+    "name": "codex-cloud-tasks",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": true,
+    "bin_count": 0,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/cloud-tasks-client",
+    "name": "codex-cloud-tasks-client",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": true,
+    "bin_count": 0,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/cli",
+    "name": "codex-cli",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": true,
+    "bin_count": 1,
+    "has_main_rs": true
+  },
+  {
+    "path": "codex-rs/common",
+    "name": "codex-common",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": false,
+    "bin_count": 0,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/core",
+    "name": "codex-core",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": true,
+    "bin_count": 1,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/exec",
+    "name": "codex-exec",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": true,
+    "bin_count": 1,
+    "has_main_rs": true
+  },
+  {
+    "path": "codex-rs/exec-server",
+    "name": "codex-exec-server",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": true,
+    "bin_count": 2,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/execpolicy",
+    "name": "codex-execpolicy",
+    "description": "Codex exec policy: prefix-based Starlark rules for command decisions.",
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": true,
+    "bin_count": 1,
+    "has_main_rs": true
+  },
+  {
+    "path": "codex-rs/execpolicy-legacy",
+    "name": "codex-execpolicy-legacy",
+    "description": "Legacy exec policy engine for validating proposed exec calls.",
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": true,
+    "bin_count": 1,
+    "has_main_rs": true
+  },
+  {
+    "path": "codex-rs/keyring-store",
+    "name": "codex-keyring-store",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": false,
+    "bin_count": 0,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/file-search",
+    "name": "codex-file-search",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": true,
+    "bin_count": 1,
+    "has_main_rs": true
+  },
+  {
+    "path": "codex-rs/linux-sandbox",
+    "name": "codex-linux-sandbox",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": true,
+    "bin_count": 1,
+    "has_main_rs": true
+  },
+  {
+    "path": "codex-rs/lmstudio",
+    "name": "codex-lmstudio",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": true,
+    "bin_count": 0,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/login",
+    "name": "codex-login",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": false,
+    "bin_count": 0,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/mcp-server",
+    "name": "codex-mcp-server",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": true,
+    "bin_count": 1,
+    "has_main_rs": true
+  },
+  {
+    "path": "codex-rs/network-proxy",
+    "name": "codex-network-proxy",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": true,
+    "bin_count": 1,
+    "has_main_rs": true
+  },
+  {
+    "path": "codex-rs/ollama",
+    "name": "codex-ollama",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": true,
+    "bin_count": 0,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/process-hardening",
+    "name": "codex-process-hardening",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": true,
+    "bin_count": 0,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/protocol",
+    "name": "codex-protocol",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": true,
+    "bin_count": 0,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/rmcp-client",
+    "name": "codex-rmcp-client",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": false,
+    "bin_count": 0,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/responses-api-proxy",
+    "name": "codex-responses-api-proxy",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": true,
+    "bin_count": 1,
+    "has_main_rs": true
+  },
+  {
+    "path": "codex-rs/stdio-to-uds",
+    "name": "codex-stdio-to-uds",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": true,
+    "bin_count": 1,
+    "has_main_rs": true
+  },
+  {
+    "path": "codex-rs/otel",
+    "name": "codex-otel",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": true,
+    "bin_count": 0,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/tui",
+    "name": "codex-tui",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": true,
+    "bin_count": 1,
+    "has_main_rs": true
+  },
+  {
+    "path": "codex-rs/utils/absolute-path",
+    "name": "codex-utils-absolute-path",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": false,
+    "bin_count": 0,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/utils/cargo-bin",
+    "name": "codex-utils-cargo-bin",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": false,
+    "bin_count": 0,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/utils/git",
+    "name": "codex-git",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": false,
+    "bin_count": 0,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/utils/cache",
+    "name": "codex-utils-cache",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": false,
+    "bin_count": 0,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/utils/image",
+    "name": "codex-utils-image",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": false,
+    "bin_count": 0,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/utils/json-to-toml",
+    "name": "codex-utils-json-to-toml",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": false,
+    "bin_count": 0,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/utils/home-dir",
+    "name": "codex-utils-home-dir",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": false,
+    "bin_count": 0,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/utils/pty",
+    "name": "codex-utils-pty",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": false,
+    "bin_count": 0,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/utils/readiness",
+    "name": "codex-utils-readiness",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": false,
+    "bin_count": 0,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/utils/string",
+    "name": "codex-utils-string",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": false,
+    "bin_count": 0,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/codex-client",
+    "name": "codex-client",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": false,
+    "bin_count": 0,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/codex-api",
+    "name": "codex-api",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": false,
+    "bin_count": 0,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/state",
+    "name": "codex-state",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": false,
+    "bin_count": 0,
+    "has_main_rs": false
+  },
+  {
+    "path": "codex-rs/codex-experimental-api-macros",
+    "name": "codex-experimental-api-macros",
+    "description": null,
+    "version": {
+      "workspace": true
+    },
+    "publish": null,
+    "default_run": null,
+    "lib": true,
+    "bin_count": 0,
+    "has_main_rs": false
+  }
+]

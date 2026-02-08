@@ -1,0 +1,36 @@
+# `codex-rs/tui/frames/shapes/frame_26.txt`
+
+## Identity
+- kind: `unknown`
+- ext: `.txt`
+- size_bytes: `1036`
+- sha256: `c5223a3ee6af2047d553ffdf746680420ac09be5518ff6448982ae7451135b05`
+- generated_utc: `2026-02-03T16:08:30Z`
+
+## Purpose (Why)
+Repository file.
+
+## Interfaces (Inputs/Outputs)
+### Inputs
+- filesystem: `codex-rs/tui/frames/shapes/frame_26.txt` (read)
+
+### Outputs / Side Effects
+- none (file is declarative: doc/config/test/asset)
+
+## Public Surface (auto)
+- (none detected)
+
+## Definitions (auto, per-file)
+- (not extracted)
+
+## Dependencies (auto sample)
+### Imports / Includes
+- (none detected)
+### Referenced env vars
+- (none detected)
+
+## Error Handling / Edge Cases
+- (none detected)
+
+## Spec Links
+- `workdocjcl/spec/06_UI/TUI.md`

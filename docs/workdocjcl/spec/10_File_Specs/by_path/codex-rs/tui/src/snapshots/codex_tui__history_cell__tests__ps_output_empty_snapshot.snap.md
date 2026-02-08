@@ -1,0 +1,36 @@
+# `codex-rs/tui/src/snapshots/codex_tui__history_cell__tests__ps_output_empty_snapshot.snap`
+
+## Identity
+- kind: `test`
+- ext: `.snap`
+- size_bytes: `127`
+- sha256: `7c0d896e0a6afb30f794a6900d15a40ee18a49e0daccadab812f920410db869f`
+- generated_utc: `2026-02-03T16:08:30Z`
+
+## Purpose (Why)
+Test or snapshot file used for automated verification.
+
+## Interfaces (Inputs/Outputs)
+### Inputs
+- filesystem: `codex-rs/tui/src/snapshots/codex_tui__history_cell__tests__ps_output_empty_snapshot.snap` (read)
+
+### Outputs / Side Effects
+- none (file is declarative: doc/config/test/asset)
+
+## Public Surface (auto)
+- (none detected)
+
+## Definitions (auto, per-file)
+- (not extracted)
+
+## Dependencies (auto sample)
+### Imports / Includes
+- (none detected)
+### Referenced env vars
+- (none detected)
+
+## Error Handling / Edge Cases
+- (none detected)
+
+## Spec Links
+- `workdocjcl/spec/06_UI/TUI.md`

@@ -1,0 +1,257 @@
+# `codex-rs/tui/src/chatwidget.rs`
+
+## Identity
+- kind: `source`
+- ext: `.rs`
+- size_bytes: `247472`
+- sha256: `1b2d6c241d5bb8865f6beb3c08f68ee8a9338868b275ce220104ea605027d73d`
+- generated_utc: `2026-02-03T16:08:30Z`
+
+## Purpose (Why)
+Source file (no public surface detected by heuristic).
+
+## Interfaces (Inputs/Outputs)
+### Inputs
+- filesystem: `codex-rs/tui/src/chatwidget.rs` (read)
+
+### Outputs / Side Effects
+- spawns subprocesses
+
+## Public Surface (auto)
+- (none detected)
+
+## Definitions (auto, per-file)
+- `use` `codex-rs/tui/src/chatwidget.rs:23` `use std::collections::HashMap;`
+- `use` `codex-rs/tui/src/chatwidget.rs:24` `use std::collections::HashSet;`
+- `use` `codex-rs/tui/src/chatwidget.rs:25` `use std::collections::VecDeque;`
+- `use` `codex-rs/tui/src/chatwidget.rs:26` `use std::path::Path;`
+- `use` `codex-rs/tui/src/chatwidget.rs:27` `use std::path::PathBuf;`
+- `use` `codex-rs/tui/src/chatwidget.rs:28` `use std::sync::Arc;`
+- `use` `codex-rs/tui/src/chatwidget.rs:29` `use std::time::Duration;`
+- `use` `codex-rs/tui/src/chatwidget.rs:30` `use std::time::Instant;`
+- `use` `codex-rs/tui/src/chatwidget.rs:32` `use crate::version::CODEX_CLI_VERSION;`
+- `use` `codex-rs/tui/src/chatwidget.rs:33` `use codex_backend_client::Client as BackendClient;`
+- `use` `codex-rs/tui/src/chatwidget.rs:34` `use codex_chatgpt::connectors;`
+- `use` `codex-rs/tui/src/chatwidget.rs:35` `use codex_core::config::Config;`
+- `use` `codex-rs/tui/src/chatwidget.rs:36` `use codex_core::config::ConstraintResult;`
+- `use` `codex-rs/tui/src/chatwidget.rs:37` `use codex_core::config::types::Notifications;`
+- `use` `codex-rs/tui/src/chatwidget.rs:38` `use codex_core::features::FEATURES;`
+- `use` `codex-rs/tui/src/chatwidget.rs:39` `use codex_core::features::Feature;`
+- `use` `codex-rs/tui/src/chatwidget.rs:40` `use codex_core::git_info::current_branch_name;`
+- `use` `codex-rs/tui/src/chatwidget.rs:41` `use codex_core::git_info::local_git_branches;`
+- `use` `codex-rs/tui/src/chatwidget.rs:42` `use codex_core::models_manager::manager::ModelsManager;`
+- `use` `codex-rs/tui/src/chatwidget.rs:43` `use codex_core::project_doc::DEFAULT_PROJECT_DOC_FILENAME;`
+- `use` `codex-rs/tui/src/chatwidget.rs:44` `use codex_core::protocol::AgentMessageDeltaEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:45` `use codex_core::protocol::AgentMessageEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:46` `use codex_core::protocol::AgentReasoningDeltaEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:47` `use codex_core::protocol::AgentReasoningEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:48` `use codex_core::protocol::AgentReasoningRawContentDeltaEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:49` `use codex_core::protocol::AgentReasoningRawContentEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:50` `use codex_core::protocol::ApplyPatchApprovalRequestEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:51` `use codex_core::protocol::BackgroundEventEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:52` `use codex_core::protocol::CodexErrorInfo;`
+- `use` `codex-rs/tui/src/chatwidget.rs:53` `use codex_core::protocol::CreditsSnapshot;`
+- `use` `codex-rs/tui/src/chatwidget.rs:54` `use codex_core::protocol::DeprecationNoticeEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:55` `use codex_core::protocol::ErrorEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:56` `use codex_core::protocol::Event;`
+- `use` `codex-rs/tui/src/chatwidget.rs:57` `use codex_core::protocol::EventMsg;`
+- `use` `codex-rs/tui/src/chatwidget.rs:58` `use codex_core::protocol::ExecApprovalRequestEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:59` `use codex_core::protocol::ExecCommandBeginEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:60` `use codex_core::protocol::ExecCommandEndEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:61` `use codex_core::protocol::ExecCommandOutputDeltaEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:62` `use codex_core::protocol::ExecCommandSource;`
+- `use` `codex-rs/tui/src/chatwidget.rs:63` `use codex_core::protocol::ExitedReviewModeEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:64` `use codex_core::protocol::ListCustomPromptsResponseEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:65` `use codex_core::protocol::ListSkillsResponseEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:66` `use codex_core::protocol::McpListToolsResponseEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:67` `use codex_core::protocol::McpStartupCompleteEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:68` `use codex_core::protocol::McpStartupStatus;`
+- `use` `codex-rs/tui/src/chatwidget.rs:69` `use codex_core::protocol::McpStartupUpdateEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:70` `use codex_core::protocol::McpToolCallBeginEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:71` `use codex_core::protocol::McpToolCallEndEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:72` `use codex_core::protocol::Op;`
+- `use` `codex-rs/tui/src/chatwidget.rs:73` `use codex_core::protocol::PatchApplyBeginEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:74` `use codex_core::protocol::RateLimitSnapshot;`
+- `use` `codex-rs/tui/src/chatwidget.rs:75` `use codex_core::protocol::ReviewRequest;`
+- `use` `codex-rs/tui/src/chatwidget.rs:76` `use codex_core::protocol::ReviewTarget;`
+- `use` `codex-rs/tui/src/chatwidget.rs:77` `use codex_core::protocol::SkillMetadata as ProtocolSkillMetadata;`
+- `use` `codex-rs/tui/src/chatwidget.rs:78` `use codex_core::protocol::StreamErrorEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:79` `use codex_core::protocol::TerminalInteractionEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:80` `use codex_core::protocol::TokenUsage;`
+- `use` `codex-rs/tui/src/chatwidget.rs:81` `use codex_core::protocol::TokenUsageInfo;`
+- `use` `codex-rs/tui/src/chatwidget.rs:82` `use codex_core::protocol::TurnAbortReason;`
+- `use` `codex-rs/tui/src/chatwidget.rs:83` `use codex_core::protocol::TurnCompleteEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:84` `use codex_core::protocol::TurnDiffEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:85` `use codex_core::protocol::UndoCompletedEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:86` `use codex_core::protocol::UndoStartedEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:87` `use codex_core::protocol::UserMessageEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:88` `use codex_core::protocol::ViewImageToolCallEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:89` `use codex_core::protocol::WarningEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:90` `use codex_core::protocol::WebSearchBeginEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:91` `use codex_core::protocol::WebSearchEndEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:92` `use codex_core::skills::model::SkillMetadata;`
+- `use` `codex-rs/tui/src/chatwidget.rs:94` `use codex_core::windows_sandbox::WindowsSandboxLevelExt;`
+- `use` `codex-rs/tui/src/chatwidget.rs:95` `use codex_otel::OtelManager;`
+- `use` `codex-rs/tui/src/chatwidget.rs:96` `use codex_protocol::ThreadId;`
+- `use` `codex-rs/tui/src/chatwidget.rs:97` `use codex_protocol::account::PlanType;`
+- `use` `codex-rs/tui/src/chatwidget.rs:98` `use codex_protocol::approvals::ElicitationRequestEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:99` `use codex_protocol::config_types::CollaborationMode;`
+- `use` `codex-rs/tui/src/chatwidget.rs:100` `use codex_protocol::config_types::CollaborationModeMask;`
+- `use` `codex-rs/tui/src/chatwidget.rs:101` `use codex_protocol::config_types::ModeKind;`
+- `use` `codex-rs/tui/src/chatwidget.rs:102` `use codex_protocol::config_types::Personality;`
+- `use` `codex-rs/tui/src/chatwidget.rs:103` `use codex_protocol::config_types::Settings;`
+- `use` `codex-rs/tui/src/chatwidget.rs:105` `use codex_protocol::config_types::WindowsSandboxLevel;`
+- `use` `codex-rs/tui/src/chatwidget.rs:106` `use codex_protocol::models::local_image_label_text;`
+- `use` `codex-rs/tui/src/chatwidget.rs:107` `use codex_protocol::parse_command::ParsedCommand;`
+- `use` `codex-rs/tui/src/chatwidget.rs:108` `use codex_protocol::request_user_input::RequestUserInputEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:109` `use codex_protocol::user_input::TextElement;`
+- `use` `codex-rs/tui/src/chatwidget.rs:110` `use codex_protocol::user_input::UserInput;`
+- `use` `codex-rs/tui/src/chatwidget.rs:111` `use crossterm::event::KeyCode;`
+- `use` `codex-rs/tui/src/chatwidget.rs:112` `use crossterm::event::KeyEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:113` `use crossterm::event::KeyEventKind;`
+- `use` `codex-rs/tui/src/chatwidget.rs:114` `use crossterm::event::KeyModifiers;`
+- `use` `codex-rs/tui/src/chatwidget.rs:115` `use rand::Rng;`
+- `use` `codex-rs/tui/src/chatwidget.rs:116` `use ratatui::buffer::Buffer;`
+- `use` `codex-rs/tui/src/chatwidget.rs:117` `use ratatui::layout::Rect;`
+- `use` `codex-rs/tui/src/chatwidget.rs:118` `use ratatui::style::Color;`
+- `use` `codex-rs/tui/src/chatwidget.rs:119` `use ratatui::style::Modifier;`
+- `use` `codex-rs/tui/src/chatwidget.rs:120` `use ratatui::style::Style;`
+- `use` `codex-rs/tui/src/chatwidget.rs:121` `use ratatui::style::Stylize;`
+- `use` `codex-rs/tui/src/chatwidget.rs:122` `use ratatui::text::Line;`
+- `use` `codex-rs/tui/src/chatwidget.rs:123` `use ratatui::widgets::Paragraph;`
+- `use` `codex-rs/tui/src/chatwidget.rs:124` `use ratatui::widgets::Wrap;`
+- `use` `codex-rs/tui/src/chatwidget.rs:125` `use tokio::sync::mpsc::UnboundedSender;`
+- `use` `codex-rs/tui/src/chatwidget.rs:126` `use tokio::task::JoinHandle;`
+- `use` `codex-rs/tui/src/chatwidget.rs:127` `use tracing::debug;`
+- `const` `codex-rs/tui/src/chatwidget.rs:129` `const DEFAULT_MODEL_DISPLAY_NAME: &str = "loading";`
+- `const` `codex-rs/tui/src/chatwidget.rs:130` `const PLAN_IMPLEMENTATION_TITLE: &str = "Implement this plan?";`
+- `const` `codex-rs/tui/src/chatwidget.rs:131` `const PLAN_IMPLEMENTATION_YES: &str = "Yes, implement this plan";`
+- `const` `codex-rs/tui/src/chatwidget.rs:132` `const PLAN_IMPLEMENTATION_NO: &str = "No, stay in Plan mode";`
+- `const` `codex-rs/tui/src/chatwidget.rs:133` `const PLAN_IMPLEMENTATION_CODING_MESSAGE: &str = "Implement the plan.";`
+- `use` `codex-rs/tui/src/chatwidget.rs:135` `use crate::app_event::AppEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:136` `use crate::app_event::ConnectorsSnapshot;`
+- `use` `codex-rs/tui/src/chatwidget.rs:137` `use crate::app_event::ExitMode;`
+- `use` `codex-rs/tui/src/chatwidget.rs:139` `use crate::app_event::WindowsSandboxEnableMode;`
+- `use` `codex-rs/tui/src/chatwidget.rs:140` `use crate::app_event::WindowsSandboxFallbackReason;`
+- `use` `codex-rs/tui/src/chatwidget.rs:141` `use crate::app_event_sender::AppEventSender;`
+- `use` `codex-rs/tui/src/chatwidget.rs:142` `use crate::bottom_pane::ApprovalRequest;`
+- `use` `codex-rs/tui/src/chatwidget.rs:143` `use crate::bottom_pane::BottomPane;`
+- `use` `codex-rs/tui/src/chatwidget.rs:144` `use crate::bottom_pane::BottomPaneParams;`
+- `use` `codex-rs/tui/src/chatwidget.rs:145` `use crate::bottom_pane::CancellationEvent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:146` `use crate::bottom_pane::CollaborationModeIndicator;`
+- `use` `codex-rs/tui/src/chatwidget.rs:147` `use crate::bottom_pane::DOUBLE_PRESS_QUIT_SHORTCUT_ENABLED;`
+- `use` `codex-rs/tui/src/chatwidget.rs:148` `use crate::bottom_pane::ExperimentalFeatureItem;`
+- `use` `codex-rs/tui/src/chatwidget.rs:149` `use crate::bottom_pane::ExperimentalFeaturesView;`
+- `use` `codex-rs/tui/src/chatwidget.rs:150` `use crate::bottom_pane::FeedbackAudience;`
+- `use` `codex-rs/tui/src/chatwidget.rs:151` `use crate::bottom_pane::InputResult;`
+- `use` `codex-rs/tui/src/chatwidget.rs:152` `use crate::bottom_pane::LocalImageAttachment;`
+- `use` `codex-rs/tui/src/chatwidget.rs:153` `use crate::bottom_pane::QUIT_SHORTCUT_TIMEOUT;`
+- `use` `codex-rs/tui/src/chatwidget.rs:154` `use crate::bottom_pane::SelectionAction;`
+- `use` `codex-rs/tui/src/chatwidget.rs:155` `use crate::bottom_pane::SelectionItem;`
+- `use` `codex-rs/tui/src/chatwidget.rs:156` `use crate::bottom_pane::SelectionViewParams;`
+- `use` `codex-rs/tui/src/chatwidget.rs:157` `use crate::bottom_pane::custom_prompt_view::CustomPromptView;`
+- `use` `codex-rs/tui/src/chatwidget.rs:158` `use crate::bottom_pane::popup_consts::standard_popup_hint_line;`
+- `use` `codex-rs/tui/src/chatwidget.rs:159` `use crate::clipboard_paste::paste_image_to_temp_png;`
+- `use` `codex-rs/tui/src/chatwidget.rs:160` `use crate::collab;`
+- `use` `codex-rs/tui/src/chatwidget.rs:161` `use crate::collaboration_modes;`
+- `use` `codex-rs/tui/src/chatwidget.rs:162` `use crate::diff_render::display_path_for;`
+- `use` `codex-rs/tui/src/chatwidget.rs:163` `use crate::exec_cell::CommandOutput;`
+- `use` `codex-rs/tui/src/chatwidget.rs:164` `use crate::exec_cell::ExecCell;`
+- `use` `codex-rs/tui/src/chatwidget.rs:165` `use crate::exec_cell::new_active_exec_command;`
+- `use` `codex-rs/tui/src/chatwidget.rs:166` `use crate::exec_command::strip_bash_lc_and_escape;`
+- `use` `codex-rs/tui/src/chatwidget.rs:167` `use crate::get_git_diff::get_git_diff;`
+- `use` `codex-rs/tui/src/chatwidget.rs:168` `use crate::history_cell;`
+- `use` `codex-rs/tui/src/chatwidget.rs:169` `use crate::history_cell::AgentMessageCell;`
+- `use` `codex-rs/tui/src/chatwidget.rs:170` `use crate::history_cell::HistoryCell;`
+- `use` `codex-rs/tui/src/chatwidget.rs:171` `use crate::history_cell::McpToolCallCell;`
+- `use` `codex-rs/tui/src/chatwidget.rs:172` `use crate::history_cell::PlainHistoryCell;`
+- `use` `codex-rs/tui/src/chatwidget.rs:173` `use crate::history_cell::WebSearchCell;`
+- `use` `codex-rs/tui/src/chatwidget.rs:174` `use crate::key_hint;`
+- `use` `codex-rs/tui/src/chatwidget.rs:175` `use crate::key_hint::KeyBinding;`
+- `use` `codex-rs/tui/src/chatwidget.rs:176` `use crate::markdown::append_markdown;`
+- `use` `codex-rs/tui/src/chatwidget.rs:177` `use crate::render::Insets;`
+- `use` `codex-rs/tui/src/chatwidget.rs:178` `use crate::render::renderable::ColumnRenderable;`
+- `use` `codex-rs/tui/src/chatwidget.rs:179` `use crate::render::renderable::FlexRenderable;`
+- `use` `codex-rs/tui/src/chatwidget.rs:180` `use crate::render::renderable::Renderable;`
+- `use` `codex-rs/tui/src/chatwidget.rs:181` `use crate::render::renderable::RenderableExt;`
+- `use` `codex-rs/tui/src/chatwidget.rs:182` `use crate::render::renderable::RenderableItem;`
+- `use` `codex-rs/tui/src/chatwidget.rs:183` `use crate::slash_command::SlashCommand;`
+- `use` `codex-rs/tui/src/chatwidget.rs:184` `use crate::status::RateLimitSnapshotDisplay;`
+- `use` `codex-rs/tui/src/chatwidget.rs:185` `use crate::text_formatting::truncate_text;`
+- `use` `codex-rs/tui/src/chatwidget.rs:186` `use crate::tui::FrameRequester;`
+- `mod` `codex-rs/tui/src/chatwidget.rs:187` `mod interrupts;`
+- `use` `codex-rs/tui/src/chatwidget.rs:188` `use self::interrupts::InterruptManager;`
+- `mod` `codex-rs/tui/src/chatwidget.rs:189` `mod agent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:190` `use self::agent::spawn_agent;`
+- `use` `codex-rs/tui/src/chatwidget.rs:191` `use self::agent::spawn_agent_from_existing;`
+- `mod` `codex-rs/tui/src/chatwidget.rs:193` `mod session_header;`
+- `use` `codex-rs/tui/src/chatwidget.rs:194` `use self::session_header::SessionHeader;`
+- `mod` `codex-rs/tui/src/chatwidget.rs:195` `mod skills;`
+- `use` `codex-rs/tui/src/chatwidget.rs:196` `use self::skills::collect_tool_mentions;`
+- `use` `codex-rs/tui/src/chatwidget.rs:197` `use self::skills::find_app_mentions;`
+- `use` `codex-rs/tui/src/chatwidget.rs:198` `use self::skills::find_skill_mentions_with_tool_mentions;`
+- `use` `codex-rs/tui/src/chatwidget.rs:199` `use crate::streaming::controller::PlanStreamController;`
+- `use` `codex-rs/tui/src/chatwidget.rs:200` `use crate::streaming::controller::StreamController;`
+- `use` `codex-rs/tui/src/chatwidget.rs:202` `use chrono::Local;`
+- `use` `codex-rs/tui/src/chatwidget.rs:203` `use codex_common::approval_presets::ApprovalPreset;`
+- `use` `codex-rs/tui/src/chatwidget.rs:204` `use codex_common::approval_presets::builtin_approval_presets;`
+- `use` `codex-rs/tui/src/chatwidget.rs:205` `use codex_core::AuthManager;`
+- `use` `codex-rs/tui/src/chatwidget.rs:206` `use codex_core::CodexAuth;`
+- `use` `codex-rs/tui/src/chatwidget.rs:207` `use codex_core::ThreadManager;`
+- `use` `codex-rs/tui/src/chatwidget.rs:208` `use codex_core::protocol::AskForApproval;`
+- `use` `codex-rs/tui/src/chatwidget.rs:209` `use codex_core::protocol::SandboxPolicy;`
+- `use` `codex-rs/tui/src/chatwidget.rs:210` `use codex_file_search::FileMatch;`
+- `use` `codex-rs/tui/src/chatwidget.rs:211` `use codex_protocol::openai_models::InputModality;`
+- `use` `codex-rs/tui/src/chatwidget.rs:212` `use codex_protocol::openai_models::ModelPreset;`
+- `use` `codex-rs/tui/src/chatwidget.rs:213` `use codex_protocol::openai_models::ReasoningEffort as ReasoningEffortConfig;`
+- `use` `codex-rs/tui/src/chatwidget.rs:214` `use codex_protocol::plan_tool::UpdatePlanArgs;`
+- `use` `codex-rs/tui/src/chatwidget.rs:215` `use strum::IntoEnumIterator;`
+- `const` `codex-rs/tui/src/chatwidget.rs:217` `const USER_SHELL_COMMAND_HELP_TITLE: &str = "Prefix a command with ! to run it locally";`
+- `const` `codex-rs/tui/src/chatwidget.rs:218` `const USER_SHELL_COMMAND_HELP_HINT: &str = "Example: !ls";`
+- `const` `codex-rs/tui/src/chatwidget.rs:219` `const DEFAULT_OPENAI_BASE_URL: &str = "https://api.openai.com/v1";`
+- `struct` `codex-rs/tui/src/chatwidget.rs:221` `struct RunningCommand {`
+- `struct` `codex-rs/tui/src/chatwidget.rs:227` `struct UnifiedExecProcessSummary {`
+- `struct` `codex-rs/tui/src/chatwidget.rs:234` `struct UnifiedExecWaitState {`
+- `impl` `codex-rs/tui/src/chatwidget.rs:238` `impl UnifiedExecWaitState {`
+- `fn` `codex-rs/tui/src/chatwidget.rs:239` `fn new(command_display: String) -> Self {`
+- `fn` `codex-rs/tui/src/chatwidget.rs:243` `fn is_duplicate(&self, command_display: &str) -> bool {`
+- `struct` `codex-rs/tui/src/chatwidget.rs:249` `struct UnifiedExecWaitStreak {`
+- `impl` `codex-rs/tui/src/chatwidget.rs:254` `impl UnifiedExecWaitStreak {`
+- `fn` `codex-rs/tui/src/chatwidget.rs:255` `fn new(process_id: String, command_display: Option<String>) -> Self {`
+- `fn` `codex-rs/tui/src/chatwidget.rs:262` `fn update_command_display(&mut self, command_display: Option<String>) {`
+- `fn` `codex-rs/tui/src/chatwidget.rs:270` `fn is_unified_exec_source(source: ExecCommandSource) -> bool {`
+- `fn` `codex-rs/tui/src/chatwidget.rs:277` `fn is_standard_tool_call(parsed_cmd: &[ParsedCommand]) -> bool {`
+- (… 192 more definitions omitted; see symbol indexes under `workdocjcl/spec/13_Indexes/`)
+
+## Dependencies (auto sample)
+### Imports / Includes
+- `use std::collections::HashMap;`
+- `use std::collections::HashSet;`
+- `use std::collections::VecDeque;`
+- `use std::path::Path;`
+- `use std::path::PathBuf;`
+- `use std::sync::Arc;`
+- `use std::time::Duration;`
+- `use std::time::Instant;`
+- `use crate::version::CODEX_CLI_VERSION;`
+- `use codex_backend_client::Client as BackendClient;`
+- `use codex_chatgpt::connectors;`
+- `use codex_core::config::Config;`
+- `use codex_core::config::ConstraintResult;`
+- `use codex_core::config::types::Notifications;`
+- `use codex_core::features::FEATURES;`
+- `use codex_core::features::Feature;`
+- `use codex_core::git_info::current_branch_name;`
+- `use codex_core::git_info::local_git_branches;`
+- `use codex_core::models_manager::manager::ModelsManager;`
+- `use codex_core::project_doc::DEFAULT_PROJECT_DOC_FILENAME;`
+### Referenced env vars
+- (none detected)
+
+## Error Handling / Edge Cases
+- has retry/timeout/backoff logic
+- returns structured errors (Result/ErrorKind)
+- uses Rust panic/expect/unwrap-style failure paths
+
+## Spec Links
+- `workdocjcl/spec/06_UI/TUI.md`
