@@ -47,6 +47,6 @@
 - 明确实现“多层配置叠加”的优先级（一般为：CLI overrides > profile/project > base config > defaults）。
 
 ## 5. 来源（Source）
-- `ConfigToml` 定义：`codex-rs/core/src/config/mod.rs`
+- ConfigToml 定义：`codex-rs/core/src/config/mod.rs#ConfigToml`
 - JSON Schema：`codex-rs/core/config.schema.json`
 - CLI overrides：`codex-rs/common/src/config_override.rs`

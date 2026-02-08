@@ -131,3 +131,10 @@ flowchart TD
 ### Source
 - `codex-rs/cli/src/login.rs`
 - `codex-rs/login/`
+
+## 来源（Source）
+- `codex-rs/core/src/codex.rs`
+- `codex-rs/core/src/tools/router.rs`
+- `codex-rs/protocol/src/approvals.rs`
+- `codex-rs/cli/src/main.rs`
+- `codex-rs/state/src/runtime.rs`

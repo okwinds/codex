@@ -24,9 +24,9 @@
 ## 2. 来源（Source）
 
 ### 2.1 wire_api=chat 的移除与报错
-- `codex-rs/core/src/model_provider_info.rs`
-  - `CHAT_WIRE_API_REMOVED_ERROR`
-  - `WireApi` 的反序列化：`"chat" => Err(...)`
+- `codex-rs/core/src/model_provider_info.rs#CHAT_WIRE_API_REMOVED_ERROR`
+- `codex-rs/core/src/model_provider_info.rs#WireApi`
+- `codex-rs/core/src/model_provider_info.rs:52`
 
 ---
 

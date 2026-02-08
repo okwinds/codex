@@ -1011,6 +1011,13 @@ def main() -> int:
 
     md.append("")
     md.append(f"机器可读版本：`{WORKDOC_REPO_PREFIX}/spec/05_Integrations/TOOLS_SCHEMA_REFERENCE.json`")
+    md.append("")
+    md.append("## 来源（Source）")
+    md.append(f"- `{WORKDOC_REPO_PREFIX}/scripts/generate_tools_schema_reference.py`")
+    md.append(f"- `{SPEC_RS.relative_to(ROOT)}`")
+    md.append(f"- `{PLAN_RS.relative_to(ROOT)}`")
+    md.append(f"- `{APPLY_PATCH_RS.relative_to(ROOT)}`")
+    md.append(f"- `{MODELS_RS.relative_to(ROOT)}`")
     OUT_MD.write_text("\n".join(md) + "\n", "utf-8")
 
     return 0

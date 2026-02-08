@@ -62,7 +62,7 @@ feature：`skill_mcp_dependency_install`
 - 对外能力：把 Codex 的某些功能暴露为 MCP tools（具体 tool 集随版本演进）
 
 ## 6. 来源（Source）
-- 配置类型：`codex-rs/core/src/config/types.rs`（`McpServerConfig`, `McpServerTransportConfig`）
+- 配置类型：`codex-rs/core/src/config/types.rs#McpServerConfig`、`codex-rs/core/src/config/types.rs#McpServerTransportConfig`
 - config.toml schema：`codex-rs/core/config.schema.json`
 - MCP client：`codex-rs/rmcp-client/`、`codex-rs/core/src/mcp*`
 - MCP server：`codex-rs/mcp-server/`

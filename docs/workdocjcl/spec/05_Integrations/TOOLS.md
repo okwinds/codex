@@ -57,7 +57,7 @@ web search 工具受 `web_search` config 与 feature 影响：
 ## 5. 来源（Source）
 - 工具 schema：`codex-rs/core/src/tools/spec.rs`
 - tool router/runtime：`codex-rs/core/src/tools/router.rs`、`codex-rs/core/src/tools/runtimes/`
-- apply_patch handlers：`codex-rs/core/src/tools/handlers/apply_patch/*`
+- apply_patch handlers：`codex-rs/core/src/tools/handlers/apply_patch.rs`、`codex-rs/core/src/tools/runtimes/apply_patch.rs`、`codex-rs/core/src/tools/handlers/tool_apply_patch.lark`
 
 ## 6. Legacy aliases（兼容性）
 运行时会接受但不一定暴露给模型的 tool name：

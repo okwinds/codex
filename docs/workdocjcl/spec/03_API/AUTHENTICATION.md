@@ -68,4 +68,4 @@ printenv OPENAI_API_KEY | codex login --with-api-key
 - CLI 层登录逻辑：`codex-rs/cli/src/login.rs`
 - login server / device code：`codex-rs/login/`
 - API key 常量与读取：`codex-rs/core/src/auth.rs`
-- 配置项（存储后端等）：`codex-rs/core/src/config/mod.rs`（`ConfigToml`）
+- 配置项（存储后端等）：`codex-rs/core/src/config/mod.rs#ConfigToml`

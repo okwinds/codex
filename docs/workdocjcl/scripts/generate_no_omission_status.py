@@ -63,6 +63,13 @@ def main() -> int:
     md.append("## 4. Notes")
     md.append("- File capsules include per-file definition listings (heuristic) and are intended to eliminate “silent omissions”.")
     md.append("- Full replication still depends on semantics; see `KNOWN_GAPS.md` for the deepest remaining “behavioral” gaps.")
+    md.append("")
+    md.append("## 5. 来源（Source）")
+    md.append(f"- `{WORKDOC_ROOT.relative_to(ROOT) / 'scripts' / 'generate_no_omission_status.py'}`")
+    md.append(f"- `{MANIFEST.relative_to(ROOT)}`")
+    md.append(f"- `{CRATE_INDEX.relative_to(ROOT)}`")
+    md.append(f"- `{PKG_INDEX.relative_to(ROOT)}`")
+    md.append(f"- `{SYM_DIR.relative_to(ROOT)}`")
 
     OUT.write_text("\n".join(md) + "\n", "utf-8")
 

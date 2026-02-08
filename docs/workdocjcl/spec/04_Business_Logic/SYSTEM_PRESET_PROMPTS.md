@@ -84,3 +84,10 @@
 运行时注入顺序与“baked vs injected personality”判定见：
 - `docs/workdocjcl/spec/04_Business_Logic/PROMPT_ASSEMBLY.md`
 
+## 来源（Source）
+- `codex-rs/core/src/models_manager/model_info.rs#find_model_info_for_slug`
+- `codex-rs/core/src/models_manager/model_info.rs`
+- `codex-rs/core/prompt.md`
+- `codex-rs/core/prompt_with_apply_patch_instructions.md`
+- `codex-rs/core/gpt-5.2-codex_prompt.md`
+- `codex-rs/core/templates/model_instructions/gpt-5.2-codex_instructions_template.md`

@@ -338,3 +338,13 @@ UI 典型行为：
 - core handler：`codex-rs/core/src/codex.rs`（`handlers::list_skills`）
 - UI enable/disable 落盘：`codex-rs/tui/src/app.rs`（`AppEvent::SetSkillEnabled`）
 
+## 来源（Source）
+- `codex-rs/core/src/skills/loader.rs`
+- `codex-rs/core/src/skills/system.rs`
+- `codex-rs/core/src/skills/manager.rs`
+- `codex-rs/core/src/skills/injection.rs`
+- `codex-rs/core/src/skills/env_var_dependencies.rs`
+- `codex-rs/core/src/instructions/user_instructions.rs`
+- `codex-rs/core/src/codex.rs`
+- `codex-rs/protocol/src/protocol.rs`
+- `codex-rs/tui/src/app.rs`

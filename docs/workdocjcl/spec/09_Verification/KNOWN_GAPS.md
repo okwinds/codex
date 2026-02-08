@@ -29,3 +29,8 @@
 
 ## 4. Technical Debt / Notes
 - 技能提供的 `discover_project.sh` 与 `verify_coverage.sh` 在 macOS Bash 3.2 + `set -euo pipefail` 下存在兼容性问题（本次已用兼容报告替代，见 `workdocjcl/discovery_report.md` 与 `09_Verification/COVERAGE_REPORT.md`）。
+
+## 来源（Source）
+- `docs/workdocjcl/spec/09_Verification/COVERAGE_REPORT.md`
+- `docs/workdocjcl/spec/09_Verification/FILE_COVERAGE.md`
+- `docs/workdocjcl/spec/09_Verification/WORKDOCJCL_REVIEW_2026-02-08.md`

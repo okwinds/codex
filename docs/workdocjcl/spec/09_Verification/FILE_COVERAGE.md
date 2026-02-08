@@ -29,3 +29,8 @@ Generated (UTC): 2026-02-04
 
 这些深化项的进度与缺口列表见：
 - `docs/workdocjcl/spec/09_Verification/KNOWN_GAPS.md`
+
+## 来源（Source）
+- `docs/workdocjcl/inventory/file_manifest_repo.txt`
+- `docs/workdocjcl/scripts/generate_file_capsules.py`
+- `docs/workdocjcl/spec/10_File_Specs/COVERAGE.json`

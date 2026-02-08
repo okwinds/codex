@@ -60,3 +60,8 @@
 
 ## 4. 映射锚点（Mapping Anchor）
 - 复刻过程中遇到“这段代码对应哪份规格”时，直接查：`09_Verification/CODE_TO_SPEC_MAP.md`
+
+## 来源（Source）
+- `docs/workdocjcl/spec/SPEC_INDEX.md`
+- `docs/workdocjcl/spec/09_Verification/CODE_TO_SPEC_MAP.md`
+- `docs/workdocjcl/inventory/file_manifest_repo.txt`

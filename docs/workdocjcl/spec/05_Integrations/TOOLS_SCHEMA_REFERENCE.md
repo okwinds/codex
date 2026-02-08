@@ -1,6 +1,6 @@
 # Tools Schema Reference (Best-effort)
 
-- generated_utc: `2026-02-08T10:38:37Z`
+- generated_utc: `2026-02-08T11:22:05Z`
 - sources:
   - `codex-rs/core/src/tools/spec.rs`
   - `codex-rs/core/src/tools/handlers/plan.rs`
@@ -42,3 +42,10 @@
 | `write_stdin` | `function` | `session_id` | `chars:string`, `max_output_tokens:number`, `session_id:number`, `yield_time_ms:number` | `codex-rs/core/src/tools/spec.rs:299` |
 
 机器可读版本：`docs/workdocjcl/spec/05_Integrations/TOOLS_SCHEMA_REFERENCE.json`
+
+## 来源（Source）
+- `docs/workdocjcl/scripts/generate_tools_schema_reference.py`
+- `codex-rs/core/src/tools/spec.rs`
+- `codex-rs/core/src/tools/handlers/plan.rs`
+- `codex-rs/core/src/tools/handlers/apply_patch.rs`
+- `codex-rs/protocol/src/models.rs`

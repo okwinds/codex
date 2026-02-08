@@ -116,6 +116,10 @@ def main() -> int:
         t, d = rows_by_key[key]
         d = (d or "").replace("\n", " ").strip()
         md.append(f"| `{key}` | `{t}` | {d} |")
+    md.append("")
+    md.append("## 来源（Source）")
+    md.append(f"- `{SCHEMA.relative_to(ROOT)}`")
+    md.append(f"- `{WORKDOC_ROOT.relative_to(ROOT) / 'scripts' / 'generate_config_schema_reference.py'}`")
 
     OUT.write_text("\n".join(md) + "\n", "utf-8")
     return 0

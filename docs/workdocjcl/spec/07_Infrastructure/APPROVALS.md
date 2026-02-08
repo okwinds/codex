@@ -201,3 +201,11 @@ shell/unified exec 的 reason 选择逻辑（两者一致）：
 - exec 审批决策处理：`codex-rs/core/src/codex.rs:exec_approval`
 - 协议定义：`codex-rs/protocol/src/protocol.rs`、`codex-rs/protocol/src/approvals.rs`
 
+## 来源（Source）
+- `codex-rs/core/src/tools/orchestrator.rs`
+- `codex-rs/core/src/tools/sandboxing.rs`
+- `codex-rs/core/src/codex.rs#request_command_approval`
+- `codex-rs/core/src/codex.rs#exec_approval`
+- `codex-rs/core/src/codex.rs#patch_approval`
+- `codex-rs/protocol/src/approvals.rs`
+- `codex-rs/protocol/src/protocol.rs`

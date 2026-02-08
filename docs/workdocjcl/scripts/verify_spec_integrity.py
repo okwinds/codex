@@ -161,6 +161,11 @@ def main() -> int:
     else:
         md.append("## Findings")
         md.append("- (none)")
+    md.append("")
+    md.append("## 来源（Source）")
+    md.append(f"- `{WORKDOC_ROOT.relative_to(ROOT) / 'scripts' / 'verify_spec_integrity.py'}`")
+    md.append(f"- `{SPEC_INDEX.relative_to(ROOT)}`")
+    md.append(f"- `{CODE_TO_SPEC_MAP.relative_to(ROOT)}`")
     out_md.write_text("\n".join(md) + "\n", "utf-8")
 
     print(f"wrote {out_md}")

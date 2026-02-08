@@ -227,3 +227,8 @@
 
 详见：`docs/workdocjcl/spec/07_Infrastructure/EXEC_POLICY.md` §3。
 
+## 来源（Source）
+- `codex-rs/core/src/command_safety/is_safe_command.rs`
+- `codex-rs/core/src/command_safety/is_dangerous_command.rs`
+- `codex-rs/core/src/command_safety/windows_safe_commands.rs`
+- `codex-rs/core/src/command_safety/windows_dangerous_commands.rs`

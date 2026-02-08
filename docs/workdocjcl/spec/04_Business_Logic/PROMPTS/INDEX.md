@@ -24,3 +24,7 @@ prompt 的“选择/覆盖/注入顺序”属于运行时语义，见：
 - `templates/model_instructions/*`：模板化 instructions（配合 personality variables）
 - `templates/personalities/*`：personality 文本片段（friendly/pragmatic）
 
+## 来源（Source）
+- `docs/workdocjcl/spec/04_Business_Logic/PROMPTS/MANIFEST.json`
+- `codex-rs/core/prompt.md`
+- `codex-rs/core/templates/model_instructions/gpt-5.2-codex_instructions_template.md`

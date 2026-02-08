@@ -58,3 +58,9 @@ stateDiagram-v2
 ### Source
 - schema：`codex-rs/state/migrations/0001_threads.sql`
 - 查询过滤：`codex-rs/state/src/runtime.rs`（thread filters）
+
+## 来源（Source）
+- `codex-rs/protocol/src/protocol.rs#AgentStatus`
+- `codex-rs/core/src/agent/status.rs#agent_status_from_event`
+- `codex-rs/state/migrations/0001_threads.sql`
+- `codex-rs/state/src/runtime.rs`

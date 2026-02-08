@@ -206,3 +206,7 @@ draw 布局（纵向 5 行块）：
 来源：
 - `codex-rs/tui/src/resume_picker.rs:draw_picker` / `render_list` / `calculate_column_metrics`
 
+## 来源（Source）
+- `codex-rs/tui/src/resume_picker.rs`
+- `codex-rs/cli/src/main.rs`
+- `codex-rs/state/src/runtime.rs`

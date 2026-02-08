@@ -54,7 +54,7 @@ execpolicy 是更细粒度的命令控制层：
 - `docs/workdocjcl/spec/07_Infrastructure/COMMAND_SAFETY.md`（execpolicy fallback 依赖的安全/危险启发式）
 
 ## 6. 来源（Source）
-- CLI sandbox 子命令：`codex-rs/cli/src/main.rs`（`Subcommand::Sandbox`）
+- CLI sandbox 子命令：`codex-rs/cli/src/main.rs#Subcommand`
 - Execpolicy：`docs/execpolicy.md`、`codex-rs/execpolicy*`
 - Sandbox wrappers：`codex-rs/cli` + 平台相关 crate（Seatbelt/Landlock/Windows）
-- 协议类型：`codex-rs/protocol/`（`SandboxPolicy`、审批事件等）
+- 协议类型：`codex-rs/protocol/src/protocol.rs#SandboxPolicy`

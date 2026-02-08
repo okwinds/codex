@@ -121,6 +121,11 @@ def main() -> int:
     md.append("- 查某个文件 `path/to/file`：在 `file_to_spec_map.json` 里找 key，得到 capsule + owner spec 路径。")
     md.append("- 查某个 crate/package 覆盖范围：在 JSON 里筛选 `owner_name`。")
     md.append("")
+    md.append("## 4. 来源（Source）")
+    md.append(f"- `{WORKDOC_REPO_PREFIX}/scripts/generate_bidirectional_index.py`")
+    md.append(f"- `{WORKDOC_REPO_PREFIX}/inventory/file_manifest_repo.txt`")
+    md.append(f"- `{WORKDOC_REPO_PREFIX}/inventory/rust_workspace.json`")
+    md.append(f"- `{WORKDOC_REPO_PREFIX}/inventory/node_workspace.json`")
 
     OUT_MD.write_text("\n".join(md) + "\n", "utf-8")
     return 0

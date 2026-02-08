@@ -77,6 +77,6 @@ flowchart LR
 - Node wrapper：`codex-cli/bin/codex.js`
 - Rust CLI 多工具入口：`codex-rs/cli/src/main.rs`
 - Core 引擎主类型：`codex-rs/core/src/codex.rs`
-- 配置类型（`ConfigToml`）：`codex-rs/core/src/config/mod.rs`
+- 配置类型（ConfigToml）：`codex-rs/core/src/config/mod.rs#ConfigToml`
 - Feature flags：`codex-rs/core/src/features.rs`
 - State DB：`codex-rs/state/src/runtime.rs` 与 `codex-rs/state/migrations/*.sql`

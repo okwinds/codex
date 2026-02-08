@@ -242,3 +242,9 @@ Responses streaming 的 retry delay 主要来自 `response.failed` 的 error mes
 这些属于“模型适配”，详见：
 - `docs/workdocjcl/spec/04_Business_Logic/PROMPT_ASSEMBLY.md`
 - `docs/workdocjcl/spec/05_Integrations/TOOLS_SCHEMA_REFERENCE.md`
+
+## 来源（Source）
+- `codex-rs/core/src/model_provider_info.rs`
+- `codex-rs/core/src/client.rs`
+- `codex-rs/codex-api/src/sse/responses.rs:383`
+- `codex-rs/core/src/models_manager/model_info.rs`

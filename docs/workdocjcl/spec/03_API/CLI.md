@@ -59,4 +59,4 @@ codex [OPTIONS] <COMMAND> [ARGS]
 
 ## 5. 来源（Source）
 - CLI 入口与子命令：`codex-rs/cli/src/main.rs`
-- `-c/--config` 覆盖解析：`codex-rs/common/src/config_override.rs`
+- -c/--config 覆盖解析：`codex-rs/common/src/config_override.rs`

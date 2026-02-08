@@ -94,5 +94,5 @@ payload：`CompactedItem`
 - schema 与 event semantics 足以推导 threads 表字段
 
 ## 4. 来源（Source）
-- 类型定义：`codex-rs/protocol/src/protocol.rs`（`RolloutLine`, `RolloutItem`, `SessionMetaLine`, `TurnContextItem`）
+- 类型定义：`codex-rs/protocol/src/protocol.rs#RolloutLine`、`codex-rs/protocol/src/protocol.rs#RolloutItem`、`codex-rs/protocol/src/protocol.rs#SessionMetaLine`、`codex-rs/protocol/src/protocol.rs#TurnContextItem`
 - state 抽取：`codex-rs/state/src/extract.rs`、`codex-rs/state/src/runtime.rs`

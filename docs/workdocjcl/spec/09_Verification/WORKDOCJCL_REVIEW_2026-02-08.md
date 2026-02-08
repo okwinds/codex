@@ -75,6 +75,11 @@ workdocjcl 从 repo root 迁移到 `docs/workdocjcl/` 后，历史文档中大�
 
 3) 自检：
 - `python3 docs/workdocjcl/scripts/verify_spec_integrity.py`
+- `python3 docs/workdocjcl/scripts/verify_source_anchors.py`
+
+自检产物（用于留档/协作排查）：
+- `docs/workdocjcl/spec/09_Verification/SPEC_INTEGRITY_REPORT.md`
+- `docs/workdocjcl/spec/09_Verification/SOURCE_ANCHOR_REPORT.md`
 
 ## 4. 已知限制（仍需人工判断的“语义复刻”部分）
 
@@ -86,3 +91,7 @@ workdocjcl 从 repo root 迁移到 `docs/workdocjcl/` 后，历史文档中大�
   - `docs/workdocjcl/spec/06_UI/TUI.md`
   - `docs/workdocjcl/spec/09_Verification/CORE_INFRASTRUCTURE_REVIEW.md`
 
+## 来源（Source）
+- `docs/workdocjcl/scripts/generate_inventory_repo_files.py`
+- `docs/workdocjcl/scripts/generate_file_capsules.py`
+- `docs/workdocjcl/scripts/verify_spec_integrity.py`

@@ -155,3 +155,7 @@ Overlay 类型定义：`codex-rs/tui/src/pager_overlay.rs:Overlay`
 审批弹窗（ApprovalOverlay）的快捷键、队列语义（LIFO）、Ctrl+A 全屏查看、Ctrl+C abort 等详见：
 - `docs/workdocjcl/spec/06_UI/TUI_APPROVALS.md`
 
+## 来源（Source）
+- `codex-rs/tui/src/app.rs`
+- `codex-rs/tui/src/pager_overlay.rs`
+- `codex-rs/tui/src/app_backtrack.rs`

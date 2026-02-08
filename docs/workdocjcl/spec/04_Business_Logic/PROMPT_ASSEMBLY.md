@@ -69,11 +69,14 @@ Prompt 最终由两部分构成：
 > 技能如何被选中（`$name`、`[$name](path)`、与 connectors 冲突消歧）不在本章展开，见 `docs/workdocjcl/spec/05_Integrations/SKILLS.md`。
 
 ### 0.6 EnvironmentContext（环境上下文）
-输入项：`codex_protocol::models::EnvironmentContext::new(Some(cwd), shell)`
-- `cwd`：当前工作目录（`PathBuf`）
-- `shell`：用户 shell（`Shell`）
+输入项：`ResponseItem::from(EnvironmentContext::new(Some(cwd), shell))`
+- 其中 `EnvironmentContext` 为 core 内部结构（`codex-rs/core/src/environment_context.rs`），会被序列化为 XML：
+  - `<environment_context> ... </environment_context>`（tag 常量见 `codex-rs/protocol/src/protocol.rs`）
+- 字段语义：
+  - `cwd`：当前工作目录（`PathBuf`）
+  - `shell`：用户 shell（`Shell`）
 
-该项在每个 turn 都会被注入（见 §2.3）。
+该项在每个 turn 都会被注入（见 §2.1、§2.3）。
 
 ---
 
@@ -276,7 +279,7 @@ ApiPrompt.output_schema = prompt.output_schema
 
 复刻实现时应至少对齐下列源码的行为与顺序：
 - BaseInstructions 决议：`codex-rs/core/src/codex.rs`（session spawn 逻辑）
-- initial context 注入顺序：`codex-rs/core/src/codex.rs:build_initial_context`
+- initial context 注入顺序：`codex-rs/core/src/codex.rs#build_initial_context`
 - project doc 发现/拼接：`codex-rs/core/src/project_doc.rs`
 - UserInstructions/SkillInstructions 编码：`codex-rs/core/src/instructions/user_instructions.rs`
 - DeveloperInstructions permissions/personality/collab：`codex-rs/protocol/src/models.rs`
@@ -284,3 +287,16 @@ ApiPrompt.output_schema = prompt.output_schema
 - Prompt → API payload：`codex-rs/core/src/client_common.rs`、`codex-rs/core/src/client.rs`
 - compaction history 重建：`codex-rs/core/src/compact.rs`
 
+## 来源（Source）
+- `codex-rs/core/src/codex.rs#record_initial_history`
+- `codex-rs/core/src/codex.rs#seed_initial_context_if_needed`
+- `codex-rs/core/src/codex.rs#build_initial_context`
+- `codex-rs/core/src/project_doc.rs#get_user_instructions`
+- `codex-rs/core/src/instructions/user_instructions.rs`
+- `codex-rs/core/src/environment_context.rs`
+- `codex-rs/protocol/src/models.rs#BaseInstructions`
+- `codex-rs/protocol/src/models.rs#DeveloperInstructions`
+- `codex-rs/protocol/src/protocol.rs`
+- `codex-rs/core/src/client_common.rs#Prompt`
+- `codex-rs/core/src/client.rs#build_api_prompt`
+- `codex-rs/core/src/compact.rs`

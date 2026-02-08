@@ -49,5 +49,5 @@ provider 支持 request/stream 的最大重试次数与超时策略（见 `Model
 ## 5. 来源（Source）
 - 登录错误与 exit code：`codex-rs/cli/src/login.rs`
 - Provider 重试/超时：`codex-rs/core/src/model_provider_info.rs`
-- 事件类型：`codex-rs/core/src/protocol/*` 与 `codex-rs/protocol/`
+- 事件类型：`codex-rs/protocol/src/*.rs`
 - 日志与 state DB：`codex-rs/state/src/runtime.rs`

@@ -106,3 +106,10 @@ pnpm -C shell-tool-mcp test
   - `docs/workdocjcl/inventory/file_manifest_repo.txt`：repo tracked 文件清单（默认排除 `docs/workdocjcl/**`，避免规格递归）
   - `docs/workdocjcl/inventory/rust_workspace.md`：Rust workspace member 列表
   - `docs/workdocjcl/inventory/node_workspace.md`：pnpm workspace package 列表
+
+## 来源（Source）
+- `README.md`
+- `package.json`
+- `codex-cli/bin/codex.js`
+- `codex-rs/Cargo.toml`
+- `codex-rs/cli/src/main.rs`

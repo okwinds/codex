@@ -227,3 +227,11 @@ Retryable（core 会产生 `CodexErr::Stream(message, delay)` 并走重试）：
 - SSE 事件解析与 `process_responses_event`：`codex-rs/codex-api/src/sse/responses.rs`
 - WebSocket 事件循环与解析：`codex-rs/codex-api/src/endpoint/responses_websocket.rs`
 - `ResponseEvent`/`ResponsesWsRequest` 定义：`codex-rs/codex-api/src/common.rs`
+
+## 来源（Source）
+- `codex-rs/core/src/client.rs`
+- `codex-rs/core/src/api_bridge.rs`
+- `codex-rs/core/src/codex.rs`
+- `codex-rs/codex-api/src/sse/responses.rs`
+- `codex-rs/codex-api/src/endpoint/responses_websocket.rs`
+- `codex-rs/codex-api/src/common.rs`

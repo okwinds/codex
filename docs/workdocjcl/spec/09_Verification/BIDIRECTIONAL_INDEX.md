@@ -1,6 +1,6 @@
 # 双向覆盖索引（Bidirectional Coverage Index）
 
-- generated_utc: `2026-02-08T10:45:45Z`
+- generated_utc: `2026-02-08T11:22:05Z`
 - repo_file_count: `2567` (from `docs/workdocjcl/inventory/file_manifest_repo.txt`)
 
 本索引用于回答两个问题：
@@ -80,3 +80,8 @@
 - 查某个文件 `path/to/file`：在 `file_to_spec_map.json` 里找 key，得到 capsule + owner spec 路径。
 - 查某个 crate/package 覆盖范围：在 JSON 里筛选 `owner_name`。
 
+## 4. 来源（Source）
+- `docs/workdocjcl/scripts/generate_bidirectional_index.py`
+- `docs/workdocjcl/inventory/file_manifest_repo.txt`
+- `docs/workdocjcl/inventory/rust_workspace.json`
+- `docs/workdocjcl/inventory/node_workspace.json`

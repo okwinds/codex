@@ -10,3 +10,7 @@ Authoritative coverage anchors:
 - Contract/mapping anchor: `docs/workdocjcl/spec/09_Verification/CODE_TO_SPEC_MAP.md`
 - No-omission file baseline: `docs/workdocjcl/inventory/file_manifest_repo.txt`
 - Coverage narrative: `docs/workdocjcl/spec/09_Verification/COVERAGE_REPORT.md`
+
+## 来源（Source）
+- `docs/workdocjcl/spec/09_Verification/COVERAGE_REPORT.md`
+- `docs/workdocjcl/spec/09_Verification/CODE_TO_SPEC_MAP.md`

@@ -138,3 +138,8 @@
 - 全量文件清单：`docs/workdocjcl/inventory/file_manifest.txt`
 - Rust workspace：`docs/workdocjcl/inventory/rust_workspace.md`
 - Node workspace：`docs/workdocjcl/inventory/node_workspace.md`
+
+## 来源（Source）
+- `docs/workdocjcl/scripts/verify_spec_integrity.py`
+- `docs/workdocjcl/inventory/file_manifest_repo.txt`
+- `docs/workdocjcl/spec/SPEC_INDEX.md`

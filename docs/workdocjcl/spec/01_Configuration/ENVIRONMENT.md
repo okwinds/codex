@@ -100,7 +100,7 @@
 - 变量位置采样：`docs/workdocjcl/inventory/env_var_usages.md`
 
 ## 8. 来源（Source）
-- `CODEX_HOME`：`codex-rs/utils/home-dir/src/lib.rs`
+- CODEX_HOME：`codex-rs/utils/home-dir/src/lib.rs#find_codex_home_from_env`
 - OpenAI provider base_url 与 env headers：`codex-rs/core/src/model_provider_info.rs`
 - 登录与 API key：`codex-rs/core/src/auth.rs`、`codex-rs/cli/src/login.rs`
 - TUI session log env vars：`codex-rs/tui/src/session_log.rs`

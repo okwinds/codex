@@ -148,3 +148,8 @@ Generated (local): 2026-02-04
 2) **补齐 Chat wire 的完整映射（仅当你要求保留 chat 复刻）**（B1）。
 3) **补齐 Cloud tasks（仅当你不接受裁剪）**（B2）。
 4) TUI 像素级（仅当你要 UI 完全一致）。（B3）
+
+## 来源（Source）
+- `docs/workdocjcl/spec/09_Verification/WORKDOCJCL_REVIEW_2026-02-08.md`
+- `docs/workdocjcl/spec/09_Verification/KNOWN_GAPS.md`
+- `docs/workdocjcl/scripts/verify_source_anchors.py`

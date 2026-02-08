@@ -1,6 +1,6 @@
 # config.toml JSON Schema Reference (Flattened)
 
-- generated_utc: `2026-02-08T10:34:52Z`
+- generated_utc: `2026-02-08T11:22:04Z`
 - schema_source: `codex-rs/core/config.schema.json`
 
 本文件把 `config.schema.json` 展平为 `dot.path` 形式，作为“无遗漏”配置键参考。
@@ -289,3 +289,7 @@
 | `tui.status_line[]` | `string` |  |
 | `web_search` | `allOf` | Controls the web search tool mode: disabled, cached, or live. |
 | `windows_wsl_setup_acknowledged` | `boolean` | Tracks whether the Windows onboarding screen has been acknowledged. |
+
+## 来源（Source）
+- `codex-rs/core/config.schema.json`
+- `docs/workdocjcl/scripts/generate_config_schema_reference.py`

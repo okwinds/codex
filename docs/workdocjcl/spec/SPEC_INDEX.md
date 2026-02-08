@@ -73,6 +73,8 @@
 
 ## Verification
 - [09_Verification/COVERAGE_REPORT.md](09_Verification/COVERAGE_REPORT.md) - Spec coverage
+- [09_Verification/SPEC_INTEGRITY_REPORT.md](09_Verification/SPEC_INTEGRITY_REPORT.md) - Spec index + mapping integrity check (generated)
+- [09_Verification/SOURCE_ANCHOR_REPORT.md](09_Verification/SOURCE_ANCHOR_REPORT.md) - Spec→code source anchor check (generated)
 - [09_Verification/CORE_INFRASTRUCTURE_REVIEW.md](09_Verification/CORE_INFRASTRUCTURE_REVIEW.md) - Deep audit of core infra (model API, prompts, tools, skills)
 - [09_Verification/WORKDOCJCL_REVIEW_2026-02-08.md](09_Verification/WORKDOCJCL_REVIEW_2026-02-08.md) - Review summary for docs migration + spec/code realignment
 - [09_Verification/REPLICATION_GUIDE.md](09_Verification/REPLICATION_GUIDE.md) - How to replicate
@@ -96,3 +98,7 @@
 - [13_Indexes/RUST_SYMBOL_INDEX.md](13_Indexes/RUST_SYMBOL_INDEX.md) - All detected Rust public items + mains
 - [13_Indexes/TYPESCRIPT_SYMBOL_INDEX.md](13_Indexes/TYPESCRIPT_SYMBOL_INDEX.md) - All detected TypeScript exports
 - [13_Indexes/PYTHON_SYMBOL_INDEX.md](13_Indexes/PYTHON_SYMBOL_INDEX.md) - All detected Python top-level defs/classes
+
+## 来源（Source）
+- `docs/workdocjcl/scripts/verify_spec_integrity.py`
+- `docs/workdocjcl/scripts/normalize_spec_paths.py`

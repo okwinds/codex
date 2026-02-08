@@ -415,3 +415,13 @@ execpolicy 的输出不会直接执行命令；它通过 `ExecApprovalRequiremen
 - `codex-rs/protocol/src/protocol.rs:ReviewDecision`（含 `ApprovedExecpolicyAmendment`）
 
 > 注：更完整的“审批缓存、sandbox deny 重试、ApprovedForSession 语义”等，请参见 `docs/workdocjcl/spec/07_Infrastructure/APPROVALS.md`（本仓库规格文档体系内的审批总章）。
+
+## 来源（Source）
+- `codex-rs/core/src/exec_policy.rs`
+- `codex-rs/core/src/codex.rs#persist_execpolicy_amendment`
+- `codex-rs/execpolicy/src/amend.rs`
+- `codex-rs/core/src/tools/handlers/shell.rs`
+- `codex-rs/core/src/tools/orchestrator.rs`
+- `codex-rs/core/src/tools/runtimes/shell.rs`
+- `codex-rs/core/src/tools/runtimes/unified_exec.rs`
+- `codex-rs/protocol/src/protocol.rs#ReviewDecision`

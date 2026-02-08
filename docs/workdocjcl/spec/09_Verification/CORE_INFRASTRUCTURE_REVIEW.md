@@ -138,3 +138,9 @@
 - skills 内容本身（SKILL.md + scripts/assets）属于“运行时可见提示与工具编排”输入的一部分；缺失会改变模型输出。
 - system skills 的实际集合在当前仓库实现中非常小（samples）；复刻时不应擅自扩充，否则行为偏离。
 
+## 来源（Source）
+- `docs/workdocjcl/spec/05_Integrations/TOOLS.md`
+- `docs/workdocjcl/spec/05_Integrations/SKILLS.md`
+- `codex-rs/core/src/tools/spec.rs`
+- `codex-rs/core/src/tools/router.rs`
+- `codex-rs/core/src/skills/system.rs`

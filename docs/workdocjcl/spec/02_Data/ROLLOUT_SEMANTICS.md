@@ -232,3 +232,11 @@ state crate 的职责：把 rollout 的“可检索元数据”同步进 SQLite�
 - resume/fork 初始上下文与 reconstruction：`codex-rs/core/src/codex.rs`（`record_initial_history` / `seed_initial_context_if_needed` / `reconstruct_history_from_rollout`）
 - 截断：`codex-rs/core/src/rollout/truncation.rs`
 - 元数据抽取：`codex-rs/state/src/extract.rs`
+
+## 来源（Source）
+- `codex-rs/core/src/rollout/recorder.rs`
+- `codex-rs/core/src/rollout/policy.rs`
+- `codex-rs/core/src/rollout/truncation.rs`
+- `codex-rs/core/src/thread_manager.rs`
+- `codex-rs/core/src/codex.rs`
+- `codex-rs/state/src/extract.rs`

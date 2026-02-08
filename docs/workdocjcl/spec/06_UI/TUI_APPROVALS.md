@@ -223,3 +223,10 @@ ApprovalOverlay 内部队列字段：`queue: Vec<ApprovalRequest>`
 - overlay 生命周期：`codex-rs/tui/src/app_backtrack.rs:overlay_forward_event`（done → `leave_alt_screen`）
 - pager：`codex-rs/tui/src/pager_overlay.rs:StaticOverlay`
 
+## 来源（Source）
+- `codex-rs/tui/src/bottom_pane/approval_overlay.rs`
+- `codex-rs/tui/src/pager_overlay.rs`
+- `codex-rs/tui/src/app.rs`
+- `codex-rs/tui/src/app_backtrack.rs`
+- `codex-rs/protocol/src/approvals.rs`
+- `codex-rs/protocol/src/protocol.rs`

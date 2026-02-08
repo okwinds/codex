@@ -90,3 +90,9 @@ Generated (UTC): 2026-02-04
 - 清单覆盖：`docs/workdocjcl/inventory/*`
 
 另外：`docs/workdocjcl/spec/09_Verification/COVERAGE_REPORT.generated.md` 是技能模板产物（非仓库权威报告、内容不完整），仅保留用于追溯“为什么不采用该脚本”的原因。
+
+## 来源（Source）
+- `docs/workdocjcl/spec/09_Verification/CODE_TO_SPEC_MAP.md`
+- `docs/workdocjcl/inventory/file_manifest_repo.txt`
+- `docs/workdocjcl/scripts/generate_inventory_repo_files.py`
+- `docs/workdocjcl/scripts/generate_no_omission_status.py`

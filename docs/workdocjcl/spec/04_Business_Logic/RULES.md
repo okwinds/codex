@@ -152,3 +152,11 @@ run sqlx migrator (./migrations)
 
 ### Source
 - `codex-cli/bin/codex.js`
+
+## 来源（Source）
+- `codex-rs/utils/home-dir/src/lib.rs#find_codex_home_from_env`
+- `codex-rs/cli/src/login.rs#read_api_key_from_stdin`
+- `codex-rs/core/src/model_provider_info.rs#create_openai_provider`
+- `codex-rs/core/src/features.rs`
+- `codex-rs/state/src/runtime.rs`
+- `codex-cli/bin/codex.js`

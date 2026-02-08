@@ -253,5 +253,4 @@ Command popup 会把每个 prompt 的“显示名”视作 `prompts:<name>`，�
 - prompt args 核心：`codex-rs/tui/src/bottom_pane/prompt_args.rs`
 - command popup（展示与筛选）：`codex-rs/tui/src/bottom_pane/command_popup.rs`
 - composer 提交集成：`codex-rs/tui/src/bottom_pane/chat_composer.rs`
-- custom prompt 数据类型：`codex-rs/protocol/src/custom_prompts.rs`（定义 `CustomPrompt`、`PROMPTS_CMD_PREFIX`）
-
+- custom prompt 数据类型：`codex-rs/protocol/src/custom_prompts.rs#CustomPrompt`、`codex-rs/protocol/src/custom_prompts.rs#PROMPTS_CMD_PREFIX`

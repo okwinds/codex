@@ -172,3 +172,9 @@
 来源：
 - `codex-rs/tui/src/chatwidget.rs:dispatch_command` / `dispatch_command_with_args`
 - `codex-rs/tui/src/slash_command.rs:description/supports_inline_args/available_during_task`
+
+## 来源（Source）
+- `codex-rs/tui/src/chatwidget.rs`
+- `codex-rs/tui/src/slash_command.rs`
+- `codex-rs/core/src/codex.rs`
+- `codex-rs/protocol/src/protocol.rs`

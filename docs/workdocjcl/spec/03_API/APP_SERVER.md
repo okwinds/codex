@@ -317,3 +317,13 @@ core 侧产生 approvals 事件后，app-server 会向客户端发起 server req
 - v1/v2 协议类型：`codex-rs/app-server-protocol/src/protocol/v1.rs`、`codex-rs/app-server-protocol/src/protocol/v2.rs`
 - event→notification 桥接（approvals/tool deltas 等）：`codex-rs/app-server/src/bespoke_event_handling.rs`
 
+## 来源（Source）
+- `codex-rs/app-server/src/lib.rs`
+- `codex-rs/app-server/src/message_processor.rs`
+- `codex-rs/app-server/src/outgoing_message.rs`
+- `codex-rs/app-server/src/bespoke_event_handling.rs`
+- `codex-rs/app-server-protocol/src/jsonrpc_lite.rs`
+- `codex-rs/app-server-protocol/src/experimental_api.rs`
+- `codex-rs/app-server-protocol/src/protocol/common.rs`
+- `codex-rs/app-server-protocol/src/protocol/v1.rs`
+- `codex-rs/app-server-protocol/src/protocol/v2.rs`

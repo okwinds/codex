@@ -44,5 +44,5 @@
 - `docs/workdocjcl/inventory/env_var_usages.md`：环境变量 → 位置（采样，可能需要定期刷新）
 
 ## 5. 来源（Source）
-- 本章为规格约定，不对应单一源码文件；自动生成材料来自 `rg`/`python3` 扫描（见 `docs/workdocjcl/` 下的生成物）。
+- 本章为规格约定，不对应单一源码文件；自动生成材料来自 rg/python3 扫描（见 `docs/workdocjcl/` 下的生成物）。
 - 生成脚本入口：`docs/workdocjcl/scripts/`

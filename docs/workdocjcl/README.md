@@ -26,6 +26,7 @@ python3 docs/workdocjcl/scripts/generate_bidirectional_index.py
 python3 docs/workdocjcl/scripts/generate_no_omission_status.py
 
 python3 docs/workdocjcl/scripts/verify_spec_integrity.py
+python3 docs/workdocjcl/scripts/verify_source_anchors.py
 ```
 
 如发现历史章节仍引用旧路径前缀（`workdocjcl/spec/...`），可运行：
