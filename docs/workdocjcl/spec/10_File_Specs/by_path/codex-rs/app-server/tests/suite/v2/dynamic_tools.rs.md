@@ -3,9 +3,9 @@
 ## Identity
 - kind: `test`
 - ext: `.rs`
-- size_bytes: `9658`
-- sha256: `26694f9ae4334880575407e3cce38c89af5e4d6b04dfb8af2820a137330ae33b`
-- generated_utc: `2026-02-03T16:08:28Z`
+- size_bytes: `15521`
+- sha256: `dc2b5ff8bff8c2da81dc330f5c4532efff084adbd5a7a5d4afccdb10903b2b86`
+- generated_utc: `2026-02-08T10:45:15Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -31,6 +31,7 @@ Test or snapshot file used for automated verification.
 - `use app_test_support::create_final_assistant_message_sse_response;`
 - `use app_test_support::create_mock_responses_server_sequence_unchecked;`
 - `use app_test_support::to_response;`
+- `use codex_app_server_protocol::DynamicToolCallOutputContentItem;`
 - `use codex_app_server_protocol::DynamicToolCallParams;`
 - `use codex_app_server_protocol::DynamicToolCallResponse;`
 - `use codex_app_server_protocol::DynamicToolSpec;`
@@ -42,9 +43,8 @@ Test or snapshot file used for automated verification.
 - `use codex_app_server_protocol::TurnStartParams;`
 - `use codex_app_server_protocol::TurnStartResponse;`
 - `use codex_app_server_protocol::UserInput as V2UserInput;`
-- `use core_test_support::responses;`
-- `use pretty_assertions::assert_eq;`
-- `use serde_json::Value;`
+- `use codex_protocol::models::FunctionCallOutputBody;`
+- `use codex_protocol::models::FunctionCallOutputContentItem;`
 ### Referenced env vars
 - (none detected)
 

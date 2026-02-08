@@ -1,19 +1,19 @@
 {
-  "generated_utc": "2026-02-03T16:43:42Z",
+  "generated_utc": "2026-02-08T10:38:37Z",
   "sources": [
     "codex-rs/core/src/tools/spec.rs",
     "codex-rs/core/src/tools/handlers/plan.rs",
     "codex-rs/core/src/tools/handlers/apply_patch.rs",
     "codex-rs/protocol/src/models.rs"
   ],
-  "tool_count": 22,
+  "tool_count": 24,
   "tools": [
     {
       "name": "apply_patch",
       "kind": "freeform",
       "source": {
         "file": "codex-rs/core/src/tools/handlers/apply_patch.rs",
-        "line": 267
+        "line": 264
       },
       "description": {
         "kind": "literal",
@@ -27,7 +27,7 @@
       "kind": "function",
       "source": {
         "file": "codex-rs/core/src/tools/handlers/apply_patch.rs",
-        "line": 287
+        "line": 284
       },
       "description": {
         "kind": "expr",
@@ -53,7 +53,7 @@
       "kind": "function",
       "source": {
         "file": "codex-rs/core/src/tools/spec.rs",
-        "line": 645
+        "line": 692
       },
       "description": {
         "kind": "expr",
@@ -79,7 +79,7 @@
       "kind": "function",
       "source": {
         "file": "codex-rs/core/src/tools/spec.rs",
-        "line": 248
+        "line": 252
       },
       "description": {
         "kind": "expr",
@@ -156,11 +156,37 @@
       }
     },
     {
+      "name": "get_memory",
+      "kind": "function",
+      "source": {
+        "file": "codex-rs/core/src/tools/spec.rs",
+        "line": 671
+      },
+      "description": {
+        "kind": "literal",
+        "value": "Loads the full stored memory payload for a memory_id."
+      },
+      "strict": false,
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "memory_id": {
+            "type": "string",
+            "description": "Memory ID to fetch. Uses the thread ID as the memory identifier."
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "memory_id"
+        ]
+      }
+    },
+    {
       "name": "grep_files",
       "kind": "function",
       "source": {
         "file": "codex-rs/core/src/tools/spec.rs",
-        "line": 762
+        "line": 809
       },
       "description": {
         "kind": "expr",
@@ -204,7 +230,7 @@
       "kind": "function",
       "source": {
         "file": "codex-rs/core/src/tools/spec.rs",
-        "line": 911
+        "line": 958
       },
       "description": {
         "kind": "expr",
@@ -242,7 +268,7 @@
       "kind": "function",
       "source": {
         "file": "codex-rs/core/src/tools/spec.rs",
-        "line": 981
+        "line": 1028
       },
       "description": {
         "kind": "literal",
@@ -275,7 +301,7 @@
       "kind": "function",
       "source": {
         "file": "codex-rs/core/src/tools/spec.rs",
-        "line": 947
+        "line": 994
       },
       "description": {
         "kind": "literal",
@@ -308,7 +334,7 @@
       "kind": "local_shell",
       "source": {
         "file": "codex-rs/core/src/tools/spec.rs",
-        "line": 1300
+        "line": 1
       },
       "description": {
         "kind": "note",
@@ -322,7 +348,7 @@
       "kind": "function",
       "source": {
         "file": "codex-rs/core/src/tools/spec.rs",
-        "line": 865
+        "line": 912
       },
       "description": {
         "kind": "expr",
@@ -401,7 +427,7 @@
       "kind": "function",
       "source": {
         "file": "codex-rs/core/src/tools/spec.rs",
-        "line": 1015
+        "line": 1062
       },
       "description": {
         "kind": "expr",
@@ -438,11 +464,11 @@
       "kind": "function",
       "source": {
         "file": "codex-rs/core/src/tools/spec.rs",
-        "line": 622
+        "line": 649
       },
       "description": {
         "kind": "expr",
-        "expr": "\"Request user input for one to three short questions and wait for the response.\"\n                "
+        "expr": "request_user_input_tool_description()"
       },
       "strict": false,
       "parameters": {
@@ -509,11 +535,37 @@
       }
     },
     {
+      "name": "resume_agent",
+      "kind": "function",
+      "source": {
+        "file": "codex-rs/core/src/tools/spec.rs",
+        "line": 532
+      },
+      "description": {
+        "kind": "expr",
+        "expr": "\"Resume a previously closed agent by id so it can receive send_input and wait calls.\"\n                "
+      },
+      "strict": false,
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Agent id to resume."
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "id"
+        ]
+      }
+    },
+    {
       "name": "send_input",
       "kind": "function",
       "source": {
         "file": "codex-rs/core/src/tools/spec.rs",
-        "line": 505
+        "line": 509
       },
       "description": {
         "kind": "expr",
@@ -551,7 +603,7 @@
       "kind": "function",
       "source": {
         "file": "codex-rs/core/src/tools/spec.rs",
-        "line": 350
+        "line": 354
       },
       "description": {
         "kind": "expr",
@@ -610,7 +662,7 @@
       "kind": "function",
       "source": {
         "file": "codex-rs/core/src/tools/spec.rs",
-        "line": 412
+        "line": 416
       },
       "description": {
         "kind": "expr",
@@ -673,7 +725,7 @@
       "kind": "function",
       "source": {
         "file": "codex-rs/core/src/tools/spec.rs",
-        "line": 467
+        "line": 471
       },
       "description": {
         "kind": "expr",
@@ -709,7 +761,7 @@
       "kind": "function",
       "source": {
         "file": "codex-rs/core/src/tools/spec.rs",
-        "line": 713
+        "line": 760
       },
       "description": {
         "kind": "literal",
@@ -758,7 +810,7 @@
       "kind": "function",
       "source": {
         "file": "codex-rs/core/src/tools/handlers/plan.rs",
-        "line": 45
+        "line": 46
       },
       "description": {
         "kind": "expr",
@@ -804,7 +856,7 @@
       "kind": "function",
       "source": {
         "file": "codex-rs/core/src/tools/spec.rs",
-        "line": 433
+        "line": 437
       },
       "description": {
         "kind": "expr",
@@ -830,7 +882,7 @@
       "kind": "function",
       "source": {
         "file": "codex-rs/core/src/tools/spec.rs",
-        "line": 540
+        "line": 567
       },
       "description": {
         "kind": "expr",
@@ -869,7 +921,7 @@
       "kind": "web_search",
       "source": {
         "file": "codex-rs/core/src/tools/spec.rs",
-        "line": 1390
+        "line": 1417
       },
       "description": {
         "kind": "note",
@@ -883,7 +935,7 @@
       "kind": "function",
       "source": {
         "file": "codex-rs/core/src/tools/spec.rs",
-        "line": 295
+        "line": 299
       },
       "description": {
         "kind": "expr",

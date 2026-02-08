@@ -8,8 +8,8 @@
 - 支持全屏查看（Alt screen pager overlay）
 
 > 协议层/编排器层的审批语义（缓存、sandbox deny 重试、ReviewDecision）见：
-> - `workdocjcl/spec/07_Infrastructure/APPROVALS.md`
-> - `workdocjcl/spec/07_Infrastructure/EXEC_POLICY.md`（proposed_execpolicy_amendment 来源）
+> - `docs/workdocjcl/spec/07_Infrastructure/APPROVALS.md`
+> - `docs/workdocjcl/spec/07_Infrastructure/EXEC_POLICY.md`（proposed_execpolicy_amendment 来源）
 
 ---
 

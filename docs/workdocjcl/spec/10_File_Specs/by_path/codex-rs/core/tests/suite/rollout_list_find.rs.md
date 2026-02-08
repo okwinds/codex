@@ -3,9 +3,9 @@
 ## Identity
 - kind: `test`
 - ext: `.rs`
-- size_bytes: `5069`
-- sha256: `533956b712cb5061bc008ff7ca643f30d9936a7489a6965dccd414fa8b68352f`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `7190`
+- sha256: `101c5892f08e96ef39378f62f9cdb864d6740535e55d52fd222f781aea123a67`
+- generated_utc: `2026-02-08T10:45:36Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -28,6 +28,7 @@ Test or snapshot file used for automated verification.
 - `use std::io::Write;`
 - `use std::path::Path;`
 - `use std::path::PathBuf;`
+- `use chrono::Utc;`
 - `use codex_core::RolloutRecorder;`
 - `use codex_core::RolloutRecorderParams;`
 - `use codex_core::config::ConfigBuilder;`
@@ -37,6 +38,8 @@ Test or snapshot file used for automated verification.
 - `use codex_core::protocol::SessionSource;`
 - `use codex_protocol::ThreadId;`
 - `use codex_protocol::models::BaseInstructions;`
+- `use codex_state::StateRuntime;`
+- `use codex_state::ThreadMetadataBuilder;`
 - `use pretty_assertions::assert_eq;`
 - `use tempfile::TempDir;`
 - `use uuid::Uuid;`
@@ -47,4 +50,4 @@ Test or snapshot file used for automated verification.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

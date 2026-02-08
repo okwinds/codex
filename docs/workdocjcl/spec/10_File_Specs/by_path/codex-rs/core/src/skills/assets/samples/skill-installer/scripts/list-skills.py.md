@@ -5,7 +5,7 @@
 - ext: `.py`
 - size_bytes: `2967`
 - sha256: `e4e1f78ca3d045827f2a05cfd99fae57cc7c1a1bfeba8704029108834debff35`
-- generated_utc: `2026-02-03T16:08:29Z`
+- generated_utc: `2026-02-08T10:45:33Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -63,4 +63,4 @@ Source file implementing exported/public items listed below.
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

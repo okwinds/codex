@@ -30,7 +30,7 @@
   - 与 `shell` 同语义
   - `prefix_rule` 仅在 feature `RequestRule` 启用时保留（否则丢弃）
 
-> 结构化 schema 参考：`workdocjcl/spec/05_Integrations/TOOLS_SCHEMA_REFERENCE.json`（条目：`name=exec_command kind=function`）
+> 结构化 schema 参考：`docs/workdocjcl/spec/05_Integrations/TOOLS_SCHEMA_REFERENCE.json`（条目：`name=exec_command kind=function`）
 
 ## 3. 运行时语义（Runtime semantics）
 handler：`codex-rs/core/src/tools/handlers/unified_exec.rs::UnifiedExecHandler`

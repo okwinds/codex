@@ -7,9 +7,9 @@
 - 错误分类（fatal vs retryable）与重试/回退策略
 
 本章不覆盖：
-- Prompt 组装（见 `workdocjcl/spec/04_Business_Logic/PROMPT_ASSEMBLY.md`）
-- Provider registry/auth 注入（见 `workdocjcl/spec/05_Integrations/MODEL_PROVIDERS.md`）
-- Tool execution 与 approvals（见 `workdocjcl/spec/05_Integrations/TOOLS_DETAILED/*`、`workdocjcl/spec/07_Infrastructure/APPROVALS.md`）
+- Prompt 组装（见 `docs/workdocjcl/spec/04_Business_Logic/PROMPT_ASSEMBLY.md`）
+- Provider registry/auth 注入（见 `docs/workdocjcl/spec/05_Integrations/MODEL_PROVIDERS.md`）
+- Tool execution 与 approvals（见 `docs/workdocjcl/spec/05_Integrations/TOOLS_DETAILED/*`、`docs/workdocjcl/spec/07_Infrastructure/APPROVALS.md`）
 
 ---
 
@@ -222,9 +222,8 @@ Retryable（core 会产生 `CodexErr::Stream(message, delay)` 并走重试）：
 
 - 传输选择与 WS 增量 append：`codex-rs/core/src/client.rs`
 - WebSocket → HTTPS 回退触发点（retry budget exhausted）：`codex-rs/core/src/codex.rs`（sampling request loop）
-- 回退状态（一次性禁用 WS）：`codex-rs/core/src/transport_manager.rs`
+- 回退状态（一次性禁用 WS）：`codex-rs/core/src/client.rs`
 - ApiError → CodexErr 映射（retryable delay）：`codex-rs/core/src/api_bridge.rs`
 - SSE 事件解析与 `process_responses_event`：`codex-rs/codex-api/src/sse/responses.rs`
 - WebSocket 事件循环与解析：`codex-rs/codex-api/src/endpoint/responses_websocket.rs`
 - `ResponseEvent`/`ResponsesWsRequest` 定义：`codex-rs/codex-api/src/common.rs`
-

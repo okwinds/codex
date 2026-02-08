@@ -5,7 +5,7 @@
 - ext: `.lock`
 - size_bytes: `9832`
 - sha256: `025d2fc690c2101448514dc6cbb6216e5f236920b5d12f979d87a7321d925b6d`
-- generated_utc: `2026-02-03T16:08:31Z`
+- generated_utc: `2026-02-08T10:45:41Z`
 
 ## Purpose (Why)
 Configuration file for build/tooling/runtime.

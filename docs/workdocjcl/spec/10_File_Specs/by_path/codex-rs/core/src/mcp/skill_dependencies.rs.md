@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `17508`
-- sha256: `fa9baeb99d66cdacfb09d7a90a16b557ee584b128ea9576def7d0bec47965fdc`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `17631`
+- sha256: `ce010694b14b8c84d8daac704e4618f3c07b3c2985f9da6a05fc548587e5cf72`
+- generated_utc: `2026-02-08T10:45:33Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -58,14 +58,14 @@ Source file (no public surface detected by heuristic).
 - `fn` `codex-rs/core/src/mcp/skill_dependencies.rs:278` `fn canonical_mcp_server_key(name: &str, config: &McpServerConfig) -> String {`
 - `fn` `codex-rs/core/src/mcp/skill_dependencies.rs:289` `fn canonical_mcp_dependency_key(dependency: &SkillToolDependency) -> Result<String, String> {`
 - `fn` `codex-rs/core/src/mcp/skill_dependencies.rs:365` `fn mcp_dependency_to_server_config(`
-- `use` `codex-rs/core/src/mcp/skill_dependencies.rs:419` `use super::*;`
-- `use` `codex-rs/core/src/mcp/skill_dependencies.rs:420` `use crate::skills::model::SkillDependencies;`
-- `use` `codex-rs/core/src/mcp/skill_dependencies.rs:421` `use codex_protocol::protocol::SkillScope;`
-- `use` `codex-rs/core/src/mcp/skill_dependencies.rs:422` `use pretty_assertions::assert_eq;`
-- `use` `codex-rs/core/src/mcp/skill_dependencies.rs:423` `use std::path::PathBuf;`
-- `fn` `codex-rs/core/src/mcp/skill_dependencies.rs:425` `fn skill_with_tools(tools: Vec<SkillToolDependency>) -> SkillMetadata {`
-- `fn` `codex-rs/core/src/mcp/skill_dependencies.rs:438` `fn collect_missing_respects_canonical_installed_key() {`
-- `fn` `codex-rs/core/src/mcp/skill_dependencies.rs:474` `fn collect_missing_dedupes_by_canonical_key_but_preserves_original_name() {`
+- `use` `codex-rs/core/src/mcp/skill_dependencies.rs:421` `use super::*;`
+- `use` `codex-rs/core/src/mcp/skill_dependencies.rs:422` `use crate::skills::model::SkillDependencies;`
+- `use` `codex-rs/core/src/mcp/skill_dependencies.rs:423` `use codex_protocol::protocol::SkillScope;`
+- `use` `codex-rs/core/src/mcp/skill_dependencies.rs:424` `use pretty_assertions::assert_eq;`
+- `use` `codex-rs/core/src/mcp/skill_dependencies.rs:425` `use std::path::PathBuf;`
+- `fn` `codex-rs/core/src/mcp/skill_dependencies.rs:427` `fn skill_with_tools(tools: Vec<SkillToolDependency>) -> SkillMetadata {`
+- `fn` `codex-rs/core/src/mcp/skill_dependencies.rs:440` `fn collect_missing_respects_canonical_installed_key() {`
+- `fn` `codex-rs/core/src/mcp/skill_dependencies.rs:477` `fn collect_missing_dedupes_by_canonical_key_but_preserves_original_name() {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -97,4 +97,4 @@ Source file (no public surface detected by heuristic).
 - returns structured errors (Result/ErrorKind)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `4310`
-- sha256: `cdb676ac23ec2211fa30f6a5c7f9bde970f8b5e2acf56dcb22e18eddca2574ed`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `4365`
+- sha256: `989f680c62c632b2cd8ee3578b249cdefd63bd58cc5c94a15df88b8260e4bdc1`
+- generated_utc: `2026-02-08T10:45:33Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -34,15 +34,16 @@ Source file implementing exported/public items listed below.
 - `use` `codex-rs/core/src/tools/handlers/plan.rs:11` `use crate::tools::spec::JsonSchema;`
 - `use` `codex-rs/core/src/tools/handlers/plan.rs:12` `use async_trait::async_trait;`
 - `use` `codex-rs/core/src/tools/handlers/plan.rs:13` `use codex_protocol::config_types::ModeKind;`
-- `use` `codex-rs/core/src/tools/handlers/plan.rs:14` `use codex_protocol::plan_tool::UpdatePlanArgs;`
-- `use` `codex-rs/core/src/tools/handlers/plan.rs:15` `use codex_protocol::protocol::EventMsg;`
-- `use` `codex-rs/core/src/tools/handlers/plan.rs:16` `use std::collections::BTreeMap;`
-- `use` `codex-rs/core/src/tools/handlers/plan.rs:17` `use std::sync::LazyLock;`
-- `struct` `codex-rs/core/src/tools/handlers/plan.rs:19` `pub struct PlanHandler;`
-- `static` `codex-rs/core/src/tools/handlers/plan.rs:21` `pub static PLAN_TOOL: LazyLock<ToolSpec> = LazyLock::new(|| {`
-- `impl` `codex-rs/core/src/tools/handlers/plan.rs:64` `impl ToolHandler for PlanHandler {`
-- `fn` `codex-rs/core/src/tools/handlers/plan.rs:65` `fn kind(&self) -> ToolKind {`
-- `fn` `codex-rs/core/src/tools/handlers/plan.rs:69` `async fn handle(&self, invocation: ToolInvocation) -> Result<ToolOutput, FunctionCallError> {`
+- `use` `codex-rs/core/src/tools/handlers/plan.rs:14` `use codex_protocol::models::FunctionCallOutputBody;`
+- `use` `codex-rs/core/src/tools/handlers/plan.rs:15` `use codex_protocol::plan_tool::UpdatePlanArgs;`
+- `use` `codex-rs/core/src/tools/handlers/plan.rs:16` `use codex_protocol::protocol::EventMsg;`
+- `use` `codex-rs/core/src/tools/handlers/plan.rs:17` `use std::collections::BTreeMap;`
+- `use` `codex-rs/core/src/tools/handlers/plan.rs:18` `use std::sync::LazyLock;`
+- `struct` `codex-rs/core/src/tools/handlers/plan.rs:20` `pub struct PlanHandler;`
+- `static` `codex-rs/core/src/tools/handlers/plan.rs:22` `pub static PLAN_TOOL: LazyLock<ToolSpec> = LazyLock::new(|| {`
+- `impl` `codex-rs/core/src/tools/handlers/plan.rs:65` `impl ToolHandler for PlanHandler {`
+- `fn` `codex-rs/core/src/tools/handlers/plan.rs:66` `fn kind(&self) -> ToolKind {`
+- `fn` `codex-rs/core/src/tools/handlers/plan.rs:70` `async fn handle(&self, invocation: ToolInvocation) -> Result<ToolOutput, FunctionCallError> {`
 - `fn` `codex-rs/core/src/tools/handlers/plan.rs:119` `fn parse_update_plan_arguments(arguments: &str) -> Result<UpdatePlanArgs, FunctionCallError> {`
 
 ## Dependencies (auto sample)
@@ -60,6 +61,7 @@ Source file implementing exported/public items listed below.
 - `use crate::tools::spec::JsonSchema;`
 - `use async_trait::async_trait;`
 - `use codex_protocol::config_types::ModeKind;`
+- `use codex_protocol::models::FunctionCallOutputBody;`
 - `use codex_protocol::plan_tool::UpdatePlanArgs;`
 - `use codex_protocol::protocol::EventMsg;`
 - `use std::collections::BTreeMap;`
@@ -71,4 +73,4 @@ Source file implementing exported/public items listed below.
 - returns structured errors (Result/ErrorKind)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

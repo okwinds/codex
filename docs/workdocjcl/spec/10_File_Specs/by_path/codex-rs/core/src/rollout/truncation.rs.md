@@ -5,7 +5,7 @@
 - ext: `.rs`
 - size_bytes: `8155`
 - sha256: `926131e4b11d883a47c9a492af363c7a57416011ef738d83f774c52afc894953`
-- generated_utc: `2026-02-03T16:08:29Z`
+- generated_utc: `2026-02-08T10:45:33Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -61,4 +61,4 @@ Source file (no public surface detected by heuristic).
 - uses Rust panic/expect/unwrap-style failure paths
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

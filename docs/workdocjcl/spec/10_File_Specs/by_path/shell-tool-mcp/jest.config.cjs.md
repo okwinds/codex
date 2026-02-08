@@ -5,7 +5,7 @@
 - ext: `.cjs`
 - size_bytes: `137`
 - sha256: `373a0c4677421fb9e77bfa941449973afde253046101ba17948f711c155f46ab`
-- generated_utc: `2026-02-03T16:08:31Z`
+- generated_utc: `2026-02-08T10:45:42Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -33,4 +33,4 @@ Source file implementing exported/public items listed below.
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/05_Integrations/MCP.md`
+- `docs/workdocjcl/spec/05_Integrations/MCP.md`

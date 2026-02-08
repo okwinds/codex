@@ -3,9 +3,9 @@
 ## Identity
 - kind: `test`
 - ext: `.rs`
-- size_bytes: `3591`
-- sha256: `8ae6ae5b83f54203da04bd5f72d1b0a7168c23da421919d30dbdd241a8420949`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `6255`
+- sha256: `6089220ad5ae4bf2c9b5de9b51520a25c54c3e0a8e9dc4b1a5de80a3d0cc818d`
+- generated_utc: `2026-02-08T10:45:36Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -36,7 +36,11 @@ Test or snapshot file used for automated verification.
 - `use core_test_support::skip_if_no_network;`
 - `use core_test_support::test_codex::test_codex;`
 - `use pretty_assertions::assert_eq;`
+- `use wiremock::Mock;`
+- `use wiremock::ResponseTemplate;`
 - `use wiremock::http::Method;`
+- `use wiremock::matchers::method;`
+- `use wiremock::matchers::path_regex;`
 ### Referenced env vars
 - (none detected)
 
@@ -44,4 +48,4 @@ Test or snapshot file used for automated verification.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

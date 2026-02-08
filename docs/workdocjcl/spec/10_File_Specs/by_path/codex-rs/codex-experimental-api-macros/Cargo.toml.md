@@ -5,7 +5,7 @@
 - ext: `.toml`
 - size_bytes: `282`
 - sha256: `caa12afc87533f7cdb4d2cd00ab9382b37f70eebe0734859d82c3530ee9d5dac`
-- generated_utc: `2026-02-03T16:08:29Z`
+- generated_utc: `2026-02-08T10:45:25Z`
 
 ## Purpose (Why)
 Configuration file for build/tooling/runtime.

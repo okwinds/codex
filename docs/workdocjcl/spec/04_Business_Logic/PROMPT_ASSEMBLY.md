@@ -10,9 +10,9 @@
 - compaction（上下文压缩）对 prompt 组装的影响点（尤其是 base instructions、initial context 的重建）
 
 不覆盖：
-- 工具 schema 与 tool runtime（见 `workdocjcl/spec/05_Integrations/TOOLS.md` 与 `TOOLS_DETAILED/*`）
-- approvals/execpolicy 的具体语义（见 `workdocjcl/spec/07_Infrastructure/APPROVALS.md`、`EXEC_POLICY.md`）
-- skills 的发现/启用/mentions 解析（见 `workdocjcl/spec/05_Integrations/SKILLS.md`）
+- 工具 schema 与 tool runtime（见 `docs/workdocjcl/spec/05_Integrations/TOOLS.md` 与 `TOOLS_DETAILED/*`）
+- approvals/execpolicy 的具体语义（见 `docs/workdocjcl/spec/07_Infrastructure/APPROVALS.md`、`EXEC_POLICY.md`）
+- skills 的发现/启用/mentions 解析（见 `docs/workdocjcl/spec/05_Integrations/SKILLS.md`）
 
 ---
 
@@ -66,7 +66,7 @@ Prompt 最终由两部分构成：
 </skill>
 ```
 
-> 技能如何被选中（`$name`、`[$name](path)`、与 connectors 冲突消歧）不在本章展开，见 `workdocjcl/spec/05_Integrations/SKILLS.md`。
+> 技能如何被选中（`$name`、`[$name](path)`、与 connectors 冲突消歧）不在本章展开，见 `docs/workdocjcl/spec/05_Integrations/SKILLS.md`。
 
 ### 0.6 EnvironmentContext（环境上下文）
 输入项：`codex_protocol::models::EnvironmentContext::new(Some(cwd), shell)`
@@ -156,7 +156,7 @@ items += environment_context(cwd, shell)
 复刻关键点：
 - 第 2 步与第 1 步之间要插入固定分隔符：
   - `\n\n--- project-doc ---\n\n`
-- skills section 是“列表清单”，而真正的技能内容只在用户显式 mention 后以 `<skill>...</skill>` 形式注入（见 `workdocjcl/spec/05_Integrations/SKILLS.md`）。
+- skills section 是“列表清单”，而真正的技能内容只在用户显式 mention 后以 `<skill>...</skill>` 形式注入（见 `docs/workdocjcl/spec/05_Integrations/SKILLS.md`）。
 
 ### 2.4 Project doc（AGENTS.md）发现规则（repo root → cwd）
 project doc 的发现规则为：
@@ -222,7 +222,7 @@ Codex 的技能体系有两条进入 prompt 的路径：
 - 技能正文注入失败（文件不可读等）时：
   - 不应 panic；应产生 warning（并继续执行 turn）。
 
-选择/消歧/启用禁用/依赖提示等详见：`workdocjcl/spec/05_Integrations/SKILLS.md`。
+选择/消歧/启用禁用/依赖提示等详见：`docs/workdocjcl/spec/05_Integrations/SKILLS.md`。
 
 ---
 

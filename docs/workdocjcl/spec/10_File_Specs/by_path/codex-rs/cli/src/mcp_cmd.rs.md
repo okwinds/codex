@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `27449`
-- sha256: `ebab539bcecf7a2ef1810f2b941f5fdaa2d3cf62a0c40221afe245c50e117ddc`
-- generated_utc: `2026-02-03T16:08:28Z`
+- size_bytes: `27474`
+- sha256: `15db05a620bffb96095132e945c134e366428d4872dac2b33fd11e5ada857e71`
+- generated_utc: `2026-02-08T10:45:16Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -65,14 +65,14 @@ Source file implementing exported/public items listed below.
 - `impl` `codex-rs/cli/src/mcp_cmd.rs:151` `impl McpCli {`
 - `fn` `codex-rs/cli/src/mcp_cmd.rs:152` `pub async fn run(self) -> Result<()> {`
 - `fn` `codex-rs/cli/src/mcp_cmd.rs:183` `async fn run_add(config_overrides: &CliConfigOverrides, add_args: AddArgs) -> Result<()> {`
-- `fn` `codex-rs/cli/src/mcp_cmd.rs:288` `async fn run_remove(config_overrides: &CliConfigOverrides, remove_args: RemoveArgs) -> Result<()> {`
-- `fn` `codex-rs/cli/src/mcp_cmd.rs:321` `async fn run_login(config_overrides: &CliConfigOverrides, login_args: LoginArgs) -> Result<()> {`
-- `fn` `codex-rs/cli/src/mcp_cmd.rs:364` `async fn run_logout(config_overrides: &CliConfigOverrides, logout_args: LogoutArgs) -> Result<()> {`
-- `fn` `codex-rs/cli/src/mcp_cmd.rs:394` `async fn run_list(config_overrides: &CliConfigOverrides, list_args: ListArgs) -> Result<()> {`
-- `fn` `codex-rs/cli/src/mcp_cmd.rs:644` `async fn run_get(config_overrides: &CliConfigOverrides, get_args: GetArgs) -> Result<()> {`
-- `fn` `codex-rs/cli/src/mcp_cmd.rs:803` `fn parse_env_pair(raw: &str) -> Result<(String, String), String> {`
-- `fn` `codex-rs/cli/src/mcp_cmd.rs:818` `fn validate_server_name(name: &str) -> Result<()> {`
-- `fn` `codex-rs/cli/src/mcp_cmd.rs:831` `fn format_mcp_status(config: &McpServerConfig) -> String {`
+- `fn` `codex-rs/cli/src/mcp_cmd.rs:289` `async fn run_remove(config_overrides: &CliConfigOverrides, remove_args: RemoveArgs) -> Result<()> {`
+- `fn` `codex-rs/cli/src/mcp_cmd.rs:322` `async fn run_login(config_overrides: &CliConfigOverrides, login_args: LoginArgs) -> Result<()> {`
+- `fn` `codex-rs/cli/src/mcp_cmd.rs:365` `async fn run_logout(config_overrides: &CliConfigOverrides, logout_args: LogoutArgs) -> Result<()> {`
+- `fn` `codex-rs/cli/src/mcp_cmd.rs:395` `async fn run_list(config_overrides: &CliConfigOverrides, list_args: ListArgs) -> Result<()> {`
+- `fn` `codex-rs/cli/src/mcp_cmd.rs:645` `async fn run_get(config_overrides: &CliConfigOverrides, get_args: GetArgs) -> Result<()> {`
+- `fn` `codex-rs/cli/src/mcp_cmd.rs:804` `fn parse_env_pair(raw: &str) -> Result<(String, String), String> {`
+- `fn` `codex-rs/cli/src/mcp_cmd.rs:819` `fn validate_server_name(name: &str) -> Result<()> {`
+- `fn` `codex-rs/cli/src/mcp_cmd.rs:832` `fn format_mcp_status(config: &McpServerConfig) -> String {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -105,4 +105,4 @@ Source file implementing exported/public items listed below.
 - uses Rust panic/expect/unwrap-style failure paths
 
 ## Spec Links
-- `workdocjcl/spec/03_API/CLI.md`
+- `docs/workdocjcl/spec/03_API/CLI.md`

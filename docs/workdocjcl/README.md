@@ -6,6 +6,34 @@
 
 - 规格索引：`spec/SPEC_INDEX.md`
 
+## 生成与维护（以代码为准）
+
+workdocjcl 包含大量“自动生成的无遗漏材料”（file capsules、索引、workspace inventories）。当代码发生变更时，推荐按以下顺序刷新（在 repo root 运行）：
+
+```bash
+python3 docs/workdocjcl/scripts/generate_inventory_repo_files.py
+python3 docs/workdocjcl/scripts/generate_inventory_rust_workspace.py
+python3 docs/workdocjcl/scripts/generate_inventory_node_workspace.py
+
+python3 docs/workdocjcl/scripts/generate_config_schema_reference.py
+python3 docs/workdocjcl/scripts/generate_tools_schema_reference.py
+
+python3 docs/workdocjcl/scripts/generate_rust_crate_specs.py
+python3 docs/workdocjcl/scripts/generate_node_package_specs.py
+python3 docs/workdocjcl/scripts/generate_file_capsules.py
+python3 docs/workdocjcl/scripts/generate_symbol_indexes.py
+python3 docs/workdocjcl/scripts/generate_bidirectional_index.py
+python3 docs/workdocjcl/scripts/generate_no_omission_status.py
+
+python3 docs/workdocjcl/scripts/verify_spec_integrity.py
+```
+
+如发现历史章节仍引用旧路径前缀（`workdocjcl/spec/...`），可运行：
+
+```bash
+python3 docs/workdocjcl/scripts/normalize_spec_paths.py
+```
+
 ## 维护约定
 
 - 本目录以本仓库 `docs/workdocjcl/` 为 canonical 位置（对应 GitHub `okwinds/codex` 同路径；`https://github.com/okwinds/codex`）。

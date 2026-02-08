@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `1579`
-- sha256: `05622e252ae67c233c9f9f97457f69f797c7a7975361790d046c14e120dae00c`
-- generated_utc: `2026-02-03T16:08:28Z`
+- size_bytes: `1638`
+- sha256: `3833208840566aa48737fd523949a7c4df0b10b3a51d1395df5be8904d2a4b0d`
+- generated_utc: `2026-02-08T10:45:15Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -31,7 +31,7 @@ Source file (no public surface detected by heuristic).
 - `use` `codex-rs/app-server/src/models.rs:9` `use codex_protocol::openai_models::ReasoningEffortPreset;`
 - `fn` `codex-rs/app-server/src/models.rs:11` `pub async fn supported_models(thread_manager: Arc<ThreadManager>, config: &Config) -> Vec<Model> {`
 - `fn` `codex-rs/app-server/src/models.rs:21` `fn model_from_preset(preset: ModelPreset) -> Model {`
-- `fn` `codex-rs/app-server/src/models.rs:37` `fn reasoning_efforts_from_preset(`
+- `fn` `codex-rs/app-server/src/models.rs:38` `fn reasoning_efforts_from_preset(`
 
 ## Dependencies (auto sample)
 ### Imports / Includes

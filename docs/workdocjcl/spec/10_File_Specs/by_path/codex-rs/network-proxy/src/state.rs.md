@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `15627`
-- sha256: `0ff5ec704797e90920158b526cb860243c6b5609fad003474e43eb8757b89f41`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `14936`
+- sha256: `1c7af36b0799c88cc56db0f6e47fdedf29a3171e486481b46c7322e73ae47e4b`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -31,26 +31,24 @@ Source file (no public surface detected by heuristic).
 - `use` `codex-rs/network-proxy/src/state.rs:8` `use anyhow::Result;`
 - `use` `codex-rs/network-proxy/src/state.rs:9` `use codex_app_server_protocol::ConfigLayerSource;`
 - `use` `codex-rs/network-proxy/src/state.rs:10` `use codex_core::config::CONFIG_TOML_FILE;`
-- `use` `codex-rs/network-proxy/src/state.rs:11` `use codex_core::config::Constrained;`
-- `use` `codex-rs/network-proxy/src/state.rs:12` `use codex_core::config::ConstraintError;`
-- `use` `codex-rs/network-proxy/src/state.rs:13` `use codex_core::config::find_codex_home;`
-- `use` `codex-rs/network-proxy/src/state.rs:14` `use codex_core::config_loader::CloudRequirementsLoader;`
-- `use` `codex-rs/network-proxy/src/state.rs:15` `use codex_core::config_loader::ConfigLayerStack;`
-- `use` `codex-rs/network-proxy/src/state.rs:16` `use codex_core::config_loader::ConfigLayerStackOrdering;`
-- `use` `codex-rs/network-proxy/src/state.rs:17` `use codex_core::config_loader::LoaderOverrides;`
-- `use` `codex-rs/network-proxy/src/state.rs:18` `use codex_core::config_loader::RequirementSource;`
-- `use` `codex-rs/network-proxy/src/state.rs:19` `use codex_core::config_loader::load_config_layers_state;`
-- `use` `codex-rs/network-proxy/src/state.rs:20` `use serde::Deserialize;`
-- `use` `codex-rs/network-proxy/src/state.rs:21` `use std::collections::HashSet;`
-- `fn` `codex-rs/network-proxy/src/state.rs:72` `fn collect_layer_mtimes(stack: &ConfigLayerStack) -> Vec<LayerMtime> {`
-- `struct` `codex-rs/network-proxy/src/state.rs:95` `struct PartialConfig {`
-- `struct` `codex-rs/network-proxy/src/state.rs:101` `struct PartialNetworkProxyConfig {`
-- `struct` `codex-rs/network-proxy/src/state.rs:112` `struct PartialNetworkPolicy {`
-- `fn` `codex-rs/network-proxy/src/state.rs:136` `fn enforce_trusted_constraints(`
-- `fn` `codex-rs/network-proxy/src/state.rs:146` `fn network_proxy_constraints_from_trusted_layers(`
-- `fn` `codex-rs/network-proxy/src/state.rs:204` `fn is_user_controlled_layer(layer: &ConfigLayerSource) -> bool {`
-- `fn` `codex-rs/network-proxy/src/state.rs:217` `fn invalid_value(`
-- `fn` `codex-rs/network-proxy/src/state.rs:422` `fn network_mode_rank(mode: NetworkMode) -> u8 {`
+- `use` `codex-rs/network-proxy/src/state.rs:11` `use codex_core::config::ConstraintError;`
+- `use` `codex-rs/network-proxy/src/state.rs:12` `use codex_core::config::find_codex_home;`
+- `use` `codex-rs/network-proxy/src/state.rs:13` `use codex_core::config_loader::CloudRequirementsLoader;`
+- `use` `codex-rs/network-proxy/src/state.rs:14` `use codex_core::config_loader::ConfigLayerStack;`
+- `use` `codex-rs/network-proxy/src/state.rs:15` `use codex_core::config_loader::ConfigLayerStackOrdering;`
+- `use` `codex-rs/network-proxy/src/state.rs:16` `use codex_core::config_loader::LoaderOverrides;`
+- `use` `codex-rs/network-proxy/src/state.rs:17` `use codex_core::config_loader::RequirementSource;`
+- `use` `codex-rs/network-proxy/src/state.rs:18` `use codex_core::config_loader::load_config_layers_state;`
+- `use` `codex-rs/network-proxy/src/state.rs:19` `use serde::Deserialize;`
+- `use` `codex-rs/network-proxy/src/state.rs:20` `use std::collections::HashSet;`
+- `fn` `codex-rs/network-proxy/src/state.rs:71` `fn collect_layer_mtimes(stack: &ConfigLayerStack) -> Vec<LayerMtime> {`
+- `struct` `codex-rs/network-proxy/src/state.rs:94` `struct PartialConfig {`
+- `struct` `codex-rs/network-proxy/src/state.rs:100` `struct PartialNetworkConfig {`
+- `fn` `codex-rs/network-proxy/src/state.rs:129` `fn enforce_trusted_constraints(`
+- `fn` `codex-rs/network-proxy/src/state.rs:139` `fn network_constraints_from_trusted_layers(`
+- `fn` `codex-rs/network-proxy/src/state.rs:197` `fn is_user_controlled_layer(layer: &ConfigLayerSource) -> bool {`
+- `fn` `codex-rs/network-proxy/src/state.rs:210` `fn invalid_value(`
+- `fn` `codex-rs/network-proxy/src/state.rs:413` `fn network_mode_rank(mode: NetworkMode) -> u8 {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -64,7 +62,6 @@ Source file (no public surface detected by heuristic).
 - `use anyhow::Result;`
 - `use codex_app_server_protocol::ConfigLayerSource;`
 - `use codex_core::config::CONFIG_TOML_FILE;`
-- `use codex_core::config::Constrained;`
 - `use codex_core::config::ConstraintError;`
 - `use codex_core::config::find_codex_home;`
 - `use codex_core::config_loader::CloudRequirementsLoader;`
@@ -74,6 +71,7 @@ Source file (no public surface detected by heuristic).
 - `use codex_core::config_loader::RequirementSource;`
 - `use codex_core::config_loader::load_config_layers_state;`
 - `use serde::Deserialize;`
+- `use std::collections::HashSet;`
 ### Referenced env vars
 - (none detected)
 

@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `1135`
-- sha256: `ce3e09fc86044b25d1f2149cb79f4accee4d102ae004ff2fa2d32102e7f17226`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `3986`
+- sha256: `babc77805e638bf152fb79a48cb410a6c8b5dbc844c05954e4822206e2f2a378`
+- generated_utc: `2026-02-08T10:45:40Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -21,16 +21,26 @@ Source file (no public surface detected by heuristic).
 - (none detected)
 
 ## Definitions (auto, per-file)
-- `use` `codex-rs/tui/src/streaming/mod.rs:1` `use std::collections::VecDeque;`
-- `use` `codex-rs/tui/src/streaming/mod.rs:3` `use ratatui::text::Line;`
-- `use` `codex-rs/tui/src/streaming/mod.rs:5` `use crate::markdown_stream::MarkdownStreamCollector;`
-- `impl` `codex-rs/tui/src/streaming/mod.rs:14` `impl StreamState {`
+- `use` `codex-rs/tui/src/streaming/mod.rs:12` `use std::collections::VecDeque;`
+- `use` `codex-rs/tui/src/streaming/mod.rs:13` `use std::time::Duration;`
+- `use` `codex-rs/tui/src/streaming/mod.rs:14` `use std::time::Instant;`
+- `use` `codex-rs/tui/src/streaming/mod.rs:16` `use ratatui::text::Line;`
+- `use` `codex-rs/tui/src/streaming/mod.rs:18` `use crate::markdown_stream::MarkdownStreamCollector;`
+- `struct` `codex-rs/tui/src/streaming/mod.rs:23` `struct QueuedLine {`
+- `impl` `codex-rs/tui/src/streaming/mod.rs:35` `impl StreamState {`
+- `use` `codex-rs/tui/src/streaming/mod.rs:103` `use super::*;`
+- `use` `codex-rs/tui/src/streaming/mod.rs:104` `use pretty_assertions::assert_eq;`
+- `fn` `codex-rs/tui/src/streaming/mod.rs:107` `fn drain_n_clamps_to_available_lines() {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
 - `use std::collections::VecDeque;`
+- `use std::time::Duration;`
+- `use std::time::Instant;`
 - `use ratatui::text::Line;`
 - `use crate::markdown_stream::MarkdownStreamCollector;`
+- `use super::*;`
+- `use pretty_assertions::assert_eq;`
 ### Referenced env vars
 - (none detected)
 
@@ -38,4 +48,4 @@ Source file (no public surface detected by heuristic).
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/06_UI/TUI.md`
+- `docs/workdocjcl/spec/06_UI/TUI.md`

@@ -42,7 +42,7 @@
 - 在 UI 中清晰展示待批准操作（命令、文件变更、风险等级）
 
 复刻级细节（事件形状、缓存、sandbox deny 重试、amendment 应用）见：
-- `workdocjcl/spec/07_Infrastructure/APPROVALS.md`
+- `docs/workdocjcl/spec/07_Infrastructure/APPROVALS.md`
 
 ## 5. Execpolicy（命令策略）
 execpolicy 是更细粒度的命令控制层：
@@ -50,8 +50,8 @@ execpolicy 是更细粒度的命令控制层：
 - 既用于产品安全，也用于企业/组织策略
 
 复刻级细节（规则语言/加载/匹配/决策/落盘）见：
-- `workdocjcl/spec/07_Infrastructure/EXEC_POLICY.md`
-- `workdocjcl/spec/07_Infrastructure/COMMAND_SAFETY.md`（execpolicy fallback 依赖的安全/危险启发式）
+- `docs/workdocjcl/spec/07_Infrastructure/EXEC_POLICY.md`
+- `docs/workdocjcl/spec/07_Infrastructure/COMMAND_SAFETY.md`（execpolicy fallback 依赖的安全/危险启发式）
 
 ## 6. 来源（Source）
 - CLI sandbox 子命令：`codex-rs/cli/src/main.rs`（`Subcommand::Sandbox`）

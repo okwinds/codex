@@ -3,9 +3,9 @@
 ## Identity
 - kind: `test`
 - ext: `.rs`
-- size_bytes: `4041`
-- sha256: `f8aea529306d1b95264c67e570cd3e497d44b01deffb7270aa5b61d4d76f5e83`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `4145`
+- sha256: `8574cb5df7987eb96168c7175b457d44130c8e4d059145979794b1ed9e5ffb6e`
+- generated_utc: `2026-02-08T10:45:36Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -30,7 +30,9 @@ Test or snapshot file used for automated verification.
 - `use codex_core::protocol::EventMsg;`
 - `use codex_core::protocol::Op;`
 - `use codex_protocol::user_input::UserInput;`
-- `use core_test_support::load_sse_fixture_with_id;`
+- `use core_test_support::responses::ev_completed;`
+- `use core_test_support::responses::ev_response_created;`
+- `use core_test_support::responses::sse;`
 - `use core_test_support::skip_if_no_network;`
 - `use core_test_support::test_codex::TestCodex;`
 - `use core_test_support::test_codex::test_codex;`
@@ -48,4 +50,4 @@ Test or snapshot file used for automated verification.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

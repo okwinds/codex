@@ -5,7 +5,7 @@
 - ext: `.toml`
 - size_bytes: `1348`
 - sha256: `6a8189d0ffa1ed59b0f9f4063aeeca2897339466158177389fab2d42b582a1ba`
-- generated_utc: `2026-02-03T16:08:30Z`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Configuration file for build/tooling/runtime.
@@ -33,4 +33,4 @@ Configuration file for build/tooling/runtime.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/02_Data/ROLLOUT_FORMAT.md`
+- `docs/workdocjcl/spec/02_Data/ROLLOUT_FORMAT.md`

@@ -1,16 +1,16 @@
 # 集成：模型 API 交互与兼容性矩阵（Provider / WireApi / Headers / Events）复刻级规格
 
 本章目标：把 Codex 与“OpenAI-compatible HTTP API”交互的**可复刻细节**落盘到规格层，使实现者仅靠本章与仓库其他 specs，即可：
-- 正确实现 provider 配置、wire API 选择（Responses vs Chat）
+- 正确实现 provider 配置、wire API 选择（Responses；Chat wire 已移除）
 - 正确实现 streaming 请求（SSE / WebSocket）与重试策略对齐
 - 正确处理 **headers → 内部事件** 的注入逻辑（RateLimits / ModelsEtag / ReasoningIncluded / turn_state）
 - 形成“跨 provider / 跨模型”的**兼容性矩阵**（哪些能力是必需、哪些仅在特定 provider 上存在）
 
 本章重点是“兼容性与复刻边界”，不重复展开：
-- Responses SSE/WS 的完整事件解析与重试/回退：`workdocjcl/spec/05_Integrations/RESPONSES_STREAMING.md`
-- Prompt 组装（initial context / personality / skills）：`workdocjcl/spec/04_Business_Logic/PROMPT_ASSEMBLY.md`
-- Tools 的 schema 与逐 tool 行为：`workdocjcl/spec/05_Integrations/TOOLS_SCHEMA_REFERENCE.md` + `workdocjcl/spec/05_Integrations/TOOLS_DETAILED/*`
-- Skills 发现、mentions 消歧与 `<skill>` 注入：`workdocjcl/spec/05_Integrations/SKILLS.md`
+- Responses SSE/WS 的完整事件解析与重试/回退：`docs/workdocjcl/spec/05_Integrations/RESPONSES_STREAMING.md`
+- Prompt 组装（initial context / personality / skills）：`docs/workdocjcl/spec/04_Business_Logic/PROMPT_ASSEMBLY.md`
+- Tools 的 schema 与逐 tool 行为：`docs/workdocjcl/spec/05_Integrations/TOOLS_SCHEMA_REFERENCE.md` + `docs/workdocjcl/spec/05_Integrations/TOOLS_DETAILED/*`
+- Skills 发现、mentions 消歧与 `<skill>` 注入：`docs/workdocjcl/spec/05_Integrations/SKILLS.md`
 
 ---
 
@@ -27,7 +27,7 @@ Codex 将“一个可访问的 OpenAI-compatible API 部署”抽象为 provider
 ### 1.2 WireApi（协议形状，不可自动探测）
 `WireApi` 必须显式声明（否则请求/响应 shape 不匹配）：
 - `responses`：POST `.../responses`，以 Responses API shape 发送 `instructions + input + tools`
-- `chat`：POST `.../chat/completions`，以 Chat Completions shape 发送 `messages + tools`
+- `chat`：**已移除**（`wire_api = "chat"` 配置解析阶段直接失败；见 `docs/workdocjcl/spec/05_Integrations/CHAT_WIRE_MAPPING.md`）
 
 对应代码：
 - 配置层：`codex-rs/core/src/model_provider_info.rs::WireApi`
@@ -44,7 +44,6 @@ Codex 将“一个可访问的 OpenAI-compatible API 部署”抽象为 provider
 内置 providers（默认即可开箱用）：
 - `openai`：Responses + 支持 WebSocket + 需要 OpenAI/ChatGPT auth
 - `ollama`：Responses（OSS）+ 不支持 WebSocket
-- `ollama-chat`：Chat（OSS）+ 不支持 WebSocket
 - `lmstudio`：Responses（OSS）+ 不支持 WebSocket
 
 来源：`codex-rs/core/src/model_provider_info.rs::built_in_model_providers`
@@ -162,7 +161,7 @@ Responses WebSocket 只在以下条件组合时启用（**缺一不可**）：
 - feature flag `responses_websockets` 启用
 - session 未被 TransportManager 禁用 websockets（一次性回退后会永久禁用）
 
-来源（启用判定）：`codex-rs/core/src/client.rs`、`codex-rs/core/src/transport_manager.rs`
+来源（启用判定）：`codex-rs/core/src/client.rs`
 
 WebSocket handshake headers 处理：
 - `x-reasoning-included`：存在则连接记录 `server_reasoning_included=true`，随后 stream 开始时预注入 `ServerReasoningIncluded(true)`
@@ -189,33 +188,12 @@ WebSocket handshake headers 处理：
 
 ---
 
-## 5. Chat Completions 兼容性（请求体与 streaming 结束语义）
+## 5. Chat Completions 兼容性（已移除）
 
-### 5.1 ChatRequest 的 messages 构建（Responses input → Chat messages）
-当 provider.wire_api = chat 时，Codex 仍以统一 `Prompt`（instructions + input ResponseItems + tools）为上层输入，但会在发送前把 `ResponseItem[]` 映射为 Chat `messages[]`。
+当前基准提交中，`wire_api = "chat"` 不再支持：配置解析阶段会直接失败（不会进入“请求映射 / SSE 解析”分支）。
 
-完整“逐分支可复刻”的映射细则见：`workdocjcl/spec/05_Integrations/CHAT_WIRE_MAPPING.md`。
-
-最关键规则（用于复刻一致性）：
-- 第一条 message 固定是 `{"role":"system","content": <instructions>}`
-- `ResponseItem::Message`：
-  - user：若包含 image，则 `content` 变为 multi-part array（`[{type:"text"...},{type:"image_url"...}]`）；否则用纯字符串
-  - assistant：强制用纯字符串 `content`（即使原本是多段）
-  - 会去重：连续相同的 assistant 文本会被跳过（避免重复）
-- `ResponseItem::Reasoning`：在特定条件下会“附着”到相邻 assistant/tool_call 作为 `reasoning` 字段（只在最后不是 user 时启用该附着逻辑）
-- tool calls / tool outputs：会被映射为 chat tool_calls + tool role message（详见源码）
-
-来源：`codex-rs/codex-api/src/requests/chat.rs::ChatRequestBuilder::build`
-
-### 5.2 Chat streaming 的 Completed 终止条件（DONE sentinel）
-Chat streaming 终止不是 `response.completed` 事件，而是 SSE data sentinel：
-- `data: [DONE]`（标准）
-- 兼容历史 stub：`data: DONE`（无括号）
-
-来源：`codex-rs/codex-api/src/sse/chat.rs::process_chat_sse`
-
-复刻要点：
-- 即使网络连接未关闭，只要收到 DONE sentinel，也必须发出 `ResponseEvent::Completed`，否则上层会卡在“等待 completed 才继续”的状态。
+- 复刻要求：错误文案与迁移指引一致（见 `docs/workdocjcl/spec/05_Integrations/CHAT_WIRE_MAPPING.md` §3）。
+- 来源：`codex-rs/core/src/model_provider_info.rs`（`CHAT_WIRE_API_REMOVED_ERROR`）
 
 ---
 
@@ -262,5 +240,5 @@ Responses streaming 的 retry delay 主要来自 `response.failed` 的 error mes
 - tool schema（例如 `apply_patch` 以 function 还是 freeform 形式）
 
 这些属于“模型适配”，详见：
-- `workdocjcl/spec/04_Business_Logic/PROMPT_ASSEMBLY.md`
-- `workdocjcl/spec/05_Integrations/TOOLS_SCHEMA_REFERENCE.md`
+- `docs/workdocjcl/spec/04_Business_Logic/PROMPT_ASSEMBLY.md`
+- `docs/workdocjcl/spec/05_Integrations/TOOLS_SCHEMA_REFERENCE.md`

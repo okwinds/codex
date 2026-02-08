@@ -3,9 +3,9 @@
 ## Identity
 - kind: `test`
 - ext: `.rs`
-- size_bytes: `18075`
-- sha256: `612ec6a6a7438c43bc112337f653193936c04ecfa3656cac05aa7c45c0fb16c8`
-- generated_utc: `2026-02-03T16:08:28Z`
+- size_bytes: `21589`
+- sha256: `fd6a2c3a00f41e6f8e57582d09ab8c5b32879952d94397c44865e0d3a8e5b89c`
+- generated_utc: `2026-02-08T10:45:15Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -32,6 +32,7 @@ Test or snapshot file used for automated verification.
 - `use app_test_support::rollout_path;`
 - `use app_test_support::to_response;`
 - `use chrono::Utc;`
+- `use codex_app_server_protocol::JSONRPCError;`
 - `use codex_app_server_protocol::JSONRPCResponse;`
 - `use codex_app_server_protocol::RequestId;`
 - `use codex_app_server_protocol::SessionSource;`
@@ -44,7 +45,6 @@ Test or snapshot file used for automated verification.
 - `use codex_app_server_protocol::TurnStatus;`
 - `use codex_app_server_protocol::UserInput;`
 - `use codex_protocol::config_types::Personality;`
-- `use codex_protocol::models::ContentItem;`
 ### Referenced env vars
 - (none detected)
 

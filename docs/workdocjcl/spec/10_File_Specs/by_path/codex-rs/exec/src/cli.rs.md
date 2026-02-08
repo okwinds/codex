@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `9072`
-- sha256: `d1ae1c30461e054a755f952d5c63ea4b1ae0ffb44e7174f983a7fe204e7e3f91`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `9268`
+- sha256: `c451dc0c006f8e53a406b37a18139426da868481853526f45cf4980d620da2fa`
+- generated_utc: `2026-02-08T10:45:37Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -32,23 +32,23 @@ Source file implementing exported/public items listed below.
 - `use` `codex-rs/exec/src/cli.rs:5` `use codex_common::CliConfigOverrides;`
 - `use` `codex-rs/exec/src/cli.rs:6` `use std::path::PathBuf;`
 - `struct` `codex-rs/exec/src/cli.rs:10` `pub struct Cli {`
-- `enum` `codex-rs/exec/src/cli.rs:105` `pub enum Command {`
-- `struct` `codex-rs/exec/src/cli.rs:114` `struct ResumeArgsRaw {`
-- `struct` `codex-rs/exec/src/cli.rs:146` `pub struct ResumeArgs {`
-- `impl` `codex-rs/exec/src/cli.rs:164` `impl From<ResumeArgsRaw> for ResumeArgs {`
-- `fn` `codex-rs/exec/src/cli.rs:165` `fn from(raw: ResumeArgsRaw) -> Self {`
-- `impl` `codex-rs/exec/src/cli.rs:183` `impl Args for ResumeArgs {`
-- `fn` `codex-rs/exec/src/cli.rs:184` `fn augment_args(cmd: clap::Command) -> clap::Command {`
-- `fn` `codex-rs/exec/src/cli.rs:188` `fn augment_args_for_update(cmd: clap::Command) -> clap::Command {`
-- `impl` `codex-rs/exec/src/cli.rs:193` `impl FromArgMatches for ResumeArgs {`
-- `fn` `codex-rs/exec/src/cli.rs:194` `fn from_arg_matches(matches: &clap::ArgMatches) -> Result<Self, clap::Error> {`
-- `fn` `codex-rs/exec/src/cli.rs:198` `fn update_from_arg_matches(&mut self, matches: &clap::ArgMatches) -> Result<(), clap::Error> {`
-- `struct` `codex-rs/exec/src/cli.rs:205` `pub struct ReviewArgs {`
-- `enum` `codex-rs/exec/src/cli.rs:241` `pub enum Color {`
-- `use` `codex-rs/exec/src/cli.rs:250` `use super::*;`
-- `use` `codex-rs/exec/src/cli.rs:251` `use pretty_assertions::assert_eq;`
-- `fn` `codex-rs/exec/src/cli.rs:254` `fn resume_parses_prompt_after_global_flags() {`
-- `const` `codex-rs/exec/src/cli.rs:255` `const PROMPT: &str = "echo resume-with-global-flags-after-subcommand";`
+- `enum` `codex-rs/exec/src/cli.rs:109` `pub enum Command {`
+- `struct` `codex-rs/exec/src/cli.rs:118` `struct ResumeArgsRaw {`
+- `struct` `codex-rs/exec/src/cli.rs:150` `pub struct ResumeArgs {`
+- `impl` `codex-rs/exec/src/cli.rs:168` `impl From<ResumeArgsRaw> for ResumeArgs {`
+- `fn` `codex-rs/exec/src/cli.rs:169` `fn from(raw: ResumeArgsRaw) -> Self {`
+- `impl` `codex-rs/exec/src/cli.rs:187` `impl Args for ResumeArgs {`
+- `fn` `codex-rs/exec/src/cli.rs:188` `fn augment_args(cmd: clap::Command) -> clap::Command {`
+- `fn` `codex-rs/exec/src/cli.rs:192` `fn augment_args_for_update(cmd: clap::Command) -> clap::Command {`
+- `impl` `codex-rs/exec/src/cli.rs:197` `impl FromArgMatches for ResumeArgs {`
+- `fn` `codex-rs/exec/src/cli.rs:198` `fn from_arg_matches(matches: &clap::ArgMatches) -> Result<Self, clap::Error> {`
+- `fn` `codex-rs/exec/src/cli.rs:202` `fn update_from_arg_matches(&mut self, matches: &clap::ArgMatches) -> Result<(), clap::Error> {`
+- `struct` `codex-rs/exec/src/cli.rs:209` `pub struct ReviewArgs {`
+- `enum` `codex-rs/exec/src/cli.rs:245` `pub enum Color {`
+- `use` `codex-rs/exec/src/cli.rs:254` `use super::*;`
+- `use` `codex-rs/exec/src/cli.rs:255` `use pretty_assertions::assert_eq;`
+- `fn` `codex-rs/exec/src/cli.rs:258` `fn resume_parses_prompt_after_global_flags() {`
+- `const` `codex-rs/exec/src/cli.rs:259` `const PROMPT: &str = "echo resume-with-global-flags-after-subcommand";`
 
 ## Dependencies (auto sample)
 ### Imports / Includes

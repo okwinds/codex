@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `4718`
-- sha256: `77e675feedd9635057113c8bd3786c6a129581fd9423ed34ea726db23f094a97`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `5464`
+- sha256: `593073238389da8a49b1fa670333f343d7174a54872108d6c8d509221951462c`
+- generated_utc: `2026-02-08T10:45:31Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -42,8 +42,11 @@ Source file implementing exported/public items listed below.
 - `fn` `codex-rs/core/src/config/schema.rs:92` `pub fn write_config_schema(out_path: &Path) -> anyhow::Result<()> {`
 - `use` `codex-rs/core/src/config/schema.rs:100` `use super::canonicalize;`
 - `use` `codex-rs/core/src/config/schema.rs:101` `use super::config_schema_json;`
-- `use` `codex-rs/core/src/config/schema.rs:103` `use similar::TextDiff;`
-- `fn` `codex-rs/core/src/config/schema.rs:106` `fn config_schema_matches_fixture() {`
+- `use` `codex-rs/core/src/config/schema.rs:102` `use super::write_config_schema;`
+- `use` `codex-rs/core/src/config/schema.rs:104` `use pretty_assertions::assert_eq;`
+- `use` `codex-rs/core/src/config/schema.rs:105` `use similar::TextDiff;`
+- `use` `codex-rs/core/src/config/schema.rs:106` `use tempfile::TempDir;`
+- `fn` `codex-rs/core/src/config/schema.rs:109` `fn config_schema_matches_fixture() {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -62,7 +65,10 @@ Source file implementing exported/public items listed below.
 - `use std::path::Path;`
 - `use super::canonicalize;`
 - `use super::config_schema_json;`
+- `use super::write_config_schema;`
+- `use pretty_assertions::assert_eq;`
 - `use similar::TextDiff;`
+- `use tempfile::TempDir;`
 ### Referenced env vars
 - (none detected)
 
@@ -71,4 +77,4 @@ Source file implementing exported/public items listed below.
 - uses Rust panic/expect/unwrap-style failure paths
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

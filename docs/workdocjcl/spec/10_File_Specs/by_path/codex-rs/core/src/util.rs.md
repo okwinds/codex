@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `5688`
-- sha256: `934368240f709ac70d6388398654b1c9af8b7885bb50741bb87a7be492b0029b`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `5681`
+- sha256: `ee7bc108b99232b79c5462eb7b8109aa7b26fcd6c761e50944cf244d7447cc8b`
+- generated_utc: `2026-02-08T10:45:34Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -18,6 +18,7 @@ Source file implementing exported/public items listed below.
 - (no obvious side effects detected by heuristic)
 
 ## Public Surface (auto)
+- `pub fn backoff(attempt: u64) -> Duration {`
 - `pub fn resolve_path(base: &Path, path: &PathBuf) -> PathBuf {`
 - `pub fn normalize_thread_name(name: &str) -> Option<String> {`
 - `pub fn resume_command(thread_name: Option<&str>, thread_id: Option<ThreadId>) -> Option<String> {`
@@ -33,6 +34,7 @@ Source file implementing exported/public items listed below.
 - `use` `codex-rs/core/src/util.rs:10` `use crate::parse_command::shlex_join;`
 - `const` `codex-rs/core/src/util.rs:12` `const INITIAL_DELAY_MS: u64 = 200;`
 - `const` `codex-rs/core/src/util.rs:13` `const BACKOFF_FACTOR: f64 = 2.0;`
+- `fn` `codex-rs/core/src/util.rs:40` `pub fn backoff(attempt: u64) -> Duration {`
 - `fn` `codex-rs/core/src/util.rs:70` `pub fn resolve_path(base: &Path, path: &PathBuf) -> PathBuf {`
 - `fn` `codex-rs/core/src/util.rs:79` `pub fn normalize_thread_name(name: &str) -> Option<String> {`
 - `fn` `codex-rs/core/src/util.rs:88` `pub fn resume_command(thread_name: Option<&str>, thread_id: Option<ThreadId>) -> Option<String> {`
@@ -66,4 +68,4 @@ Source file implementing exported/public items listed below.
 - uses Rust panic/expect/unwrap-style failure paths
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

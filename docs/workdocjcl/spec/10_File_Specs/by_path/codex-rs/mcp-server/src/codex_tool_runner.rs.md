@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `15646`
-- sha256: `80ce2eae67216343af06e124416858e16c011c54757a9a61525c17cd9922c021`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `15867`
+- sha256: `6dde90dec71de933da090cac908db67d8193d16c836b663644ff6ec68fc139f7`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -49,9 +49,9 @@ Source file (no public surface detected by heuristic).
 - `fn` `codex-rs/mcp-server/src/codex_tool_runner.rs:59` `pub async fn run_codex_tool_session(`
 - `fn` `codex-rs/mcp-server/src/codex_tool_runner.rs:143` `pub async fn run_codex_tool_session_reply(`
 - `fn` `codex-rs/mcp-server/src/codex_tool_runner.rs:191` `async fn run_codex_tool_session_inner(`
-- `use` `codex-rs/mcp-server/src/codex_tool_runner.rs:390` `use super::*;`
-- `use` `codex-rs/mcp-server/src/codex_tool_runner.rs:391` `use pretty_assertions::assert_eq;`
-- `fn` `codex-rs/mcp-server/src/codex_tool_runner.rs:394` `fn call_tool_result_includes_thread_id_in_structured_content() {`
+- `use` `codex-rs/mcp-server/src/codex_tool_runner.rs:394` `use super::*;`
+- `use` `codex-rs/mcp-server/src/codex_tool_runner.rs:395` `use pretty_assertions::assert_eq;`
+- `fn` `codex-rs/mcp-server/src/codex_tool_runner.rs:398` `fn call_tool_result_includes_thread_id_in_structured_content() {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes

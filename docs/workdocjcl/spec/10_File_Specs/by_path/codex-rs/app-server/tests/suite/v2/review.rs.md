@@ -3,9 +3,9 @@
 ## Identity
 - kind: `test`
 - ext: `.rs`
-- size_bytes: `10893`
-- sha256: `e68a2c4d69523d37e303db74ac5e5c056a058b966e030469ded605ebb044233d`
-- generated_utc: `2026-02-03T16:08:28Z`
+- size_bytes: `15189`
+- sha256: `0a2327a61695c8dc3c8240ebf6365e903a7e7a04d77e854f9486699149f4141f`
+- generated_utc: `2026-02-08T10:45:15Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -27,7 +27,10 @@ Test or snapshot file used for automated verification.
 ### Imports / Includes
 - `use anyhow::Result;`
 - `use app_test_support::McpProcess;`
+- `use app_test_support::create_final_assistant_message_sse_response;`
 - `use app_test_support::create_mock_responses_server_repeating_assistant;`
+- `use app_test_support::create_mock_responses_server_sequence;`
+- `use app_test_support::create_shell_command_sse_response;`
 - `use app_test_support::to_response;`
 - `use codex_app_server_protocol::ItemCompletedNotification;`
 - `use codex_app_server_protocol::ItemStartedNotification;`
@@ -39,12 +42,9 @@ Test or snapshot file used for automated verification.
 - `use codex_app_server_protocol::ReviewStartParams;`
 - `use codex_app_server_protocol::ReviewStartResponse;`
 - `use codex_app_server_protocol::ReviewTarget;`
+- `use codex_app_server_protocol::ServerRequest;`
 - `use codex_app_server_protocol::ThreadItem;`
 - `use codex_app_server_protocol::ThreadStartParams;`
-- `use codex_app_server_protocol::ThreadStartResponse;`
-- `use codex_app_server_protocol::TurnStatus;`
-- `use serde_json::json;`
-- `use tempfile::TempDir;`
 ### Referenced env vars
 - (none detected)
 

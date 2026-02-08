@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `27179`
-- sha256: `2b4f2be4d74247b806cf680a9fa3c9a013d70200009a4e155ea3b8e2856f0e43`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `27165`
+- sha256: `bd42b7752dd7f49f4bc2cb55adbc3955d0678eef463e495b58729ae3d790d319`
+- generated_utc: `2026-02-08T10:45:34Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -76,19 +76,19 @@ Source file (no public surface detected by heuristic).
 - `fn` `codex-rs/core/src/unified_exec/process_manager.rs:356` `async fn prepare_process_handles(`
 - `fn` `codex-rs/core/src/unified_exec/process_manager.rs:386` `async fn send_input(`
 - `fn` `codex-rs/core/src/unified_exec/process_manager.rs:397` `async fn store_process(`
-- `const` `codex-rs/core/src/unified_exec/process_manager.rs:536` `const POST_EXIT_OUTPUT_GRACE: Duration = Duration::from_millis(50);`
-- `fn` `codex-rs/core/src/unified_exec/process_manager.rs:591` `fn prune_processes_if_needed(store: &mut ProcessStore) -> bool {`
-- `fn` `codex-rs/core/src/unified_exec/process_manager.rs:613` `fn process_id_to_prune_from_meta(meta: &[(String, Instant, bool)]) -> Option<String> {`
-- `enum` `codex-rs/core/src/unified_exec/process_manager.rs:659` `enum ProcessStatus {`
-- `use` `codex-rs/core/src/unified_exec/process_manager.rs:674` `use super::*;`
-- `use` `codex-rs/core/src/unified_exec/process_manager.rs:675` `use pretty_assertions::assert_eq;`
-- `use` `codex-rs/core/src/unified_exec/process_manager.rs:676` `use tokio::time::Duration;`
-- `use` `codex-rs/core/src/unified_exec/process_manager.rs:677` `use tokio::time::Instant;`
-- `fn` `codex-rs/core/src/unified_exec/process_manager.rs:680` `fn unified_exec_env_injects_defaults() {`
-- `fn` `codex-rs/core/src/unified_exec/process_manager.rs:699` `fn unified_exec_env_overrides_existing_values() {`
-- `fn` `codex-rs/core/src/unified_exec/process_manager.rs:711` `fn pruning_prefers_exited_processes_outside_recently_used() {`
-- `fn` `codex-rs/core/src/unified_exec/process_manager.rs:733` `fn pruning_falls_back_to_lru_when_no_exited() {`
-- `fn` `codex-rs/core/src/unified_exec/process_manager.rs:755` `fn pruning_protects_recent_processes_even_if_exited() {`
+- `const` `codex-rs/core/src/unified_exec/process_manager.rs:537` `const POST_EXIT_OUTPUT_GRACE: Duration = Duration::from_millis(50);`
+- `fn` `codex-rs/core/src/unified_exec/process_manager.rs:592` `fn prune_processes_if_needed(store: &mut ProcessStore) -> bool {`
+- `fn` `codex-rs/core/src/unified_exec/process_manager.rs:614` `fn process_id_to_prune_from_meta(meta: &[(String, Instant, bool)]) -> Option<String> {`
+- `enum` `codex-rs/core/src/unified_exec/process_manager.rs:660` `enum ProcessStatus {`
+- `use` `codex-rs/core/src/unified_exec/process_manager.rs:675` `use super::*;`
+- `use` `codex-rs/core/src/unified_exec/process_manager.rs:676` `use pretty_assertions::assert_eq;`
+- `use` `codex-rs/core/src/unified_exec/process_manager.rs:677` `use tokio::time::Duration;`
+- `use` `codex-rs/core/src/unified_exec/process_manager.rs:678` `use tokio::time::Instant;`
+- `fn` `codex-rs/core/src/unified_exec/process_manager.rs:681` `fn unified_exec_env_injects_defaults() {`
+- `fn` `codex-rs/core/src/unified_exec/process_manager.rs:700` `fn unified_exec_env_overrides_existing_values() {`
+- `fn` `codex-rs/core/src/unified_exec/process_manager.rs:712` `fn pruning_prefers_exited_processes_outside_recently_used() {`
+- `fn` `codex-rs/core/src/unified_exec/process_manager.rs:734` `fn pruning_falls_back_to_lru_when_no_exited() {`
+- `fn` `codex-rs/core/src/unified_exec/process_manager.rs:756` `fn pruning_protects_recent_processes_even_if_exited() {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -120,4 +120,4 @@ Source file (no public surface detected by heuristic).
 - returns structured errors (Result/ErrorKind)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

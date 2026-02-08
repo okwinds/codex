@@ -8,7 +8,7 @@
 - **同样的 execpolicy amendment 应用路径**（ApprovedExecpolicyAmendment）
 
 本章覆盖“通用审批骨架”，而 execpolicy 本身的规则语言/匹配/落盘细节见：
-- `workdocjcl/spec/07_Infrastructure/EXEC_POLICY.md`
+- `docs/workdocjcl/spec/07_Infrastructure/EXEC_POLICY.md`
 
 ---
 
@@ -190,7 +190,7 @@ shell/unified exec 的 reason 选择逻辑（两者一致）：
 - 并更新内存中的 policy（使当前 session 立即生效）
 
 写入格式与去重、文件锁等 **必须复刻**，详见：
-- `workdocjcl/spec/07_Infrastructure/EXEC_POLICY.md` §6.3.1
+- `docs/workdocjcl/spec/07_Infrastructure/EXEC_POLICY.md` §6.3.1
 
 ---
 

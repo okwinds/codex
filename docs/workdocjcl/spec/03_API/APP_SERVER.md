@@ -11,7 +11,7 @@
 - 全量 method/notification 清单（从 schema 提取，避免遗漏）
 
 不覆盖：
-- “core 引擎（codex-core）内部事件语义”本身（见 `workdocjcl/spec/04_Business_Logic/*` 与 `07_Infrastructure/*`）
+- “core 引擎（codex-core）内部事件语义”本身（见 `docs/workdocjcl/spec/04_Business_Logic/*` 与 `07_Infrastructure/*`）
 - 具体 UI（VS Code/TUI）的展示细节
 
 ---

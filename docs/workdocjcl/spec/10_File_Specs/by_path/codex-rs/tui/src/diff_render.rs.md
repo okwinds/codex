@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `24604`
-- sha256: `4cf2b5460e84b36d4bfc0a0b2c8c19c5c8e129fca965922d02c455486b0cf002`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `24615`
+- sha256: `4708b5f44a0673d6fffb82d7fb1ac57666d614f0cce10f6a4c988c163d9eb5c7`
+- generated_utc: `2026-02-08T10:45:40Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -57,7 +57,6 @@ Source file implementing exported/public items listed below.
 - `fn` `codex-rs/tui/src/diff_render.rs:126` `fn render_line_count_summary(added: usize, removed: usize) -> Vec<RtSpan<'static>> {`
 - `fn` `codex-rs/tui/src/diff_render.rs:136` `fn render_changes_block(rows: Vec<Row>, wrap_cols: usize, cwd: &Path) -> Vec<RtLine<'static>> {`
 - `fn` `codex-rs/tui/src/diff_render.rs:196` `fn render_change(change: &FileChange, out: &mut Vec<RtLine<'static>>, width: usize) {`
-- `fn` `codex-rs/tui/src/diff_render.rs:328` `fn calculate_add_remove_from_diff(diff: &str) -> (usize, usize) {`
 - `fn` `codex-rs/tui/src/diff_render.rs:345` `fn push_wrapped_diff_line(`
 - `fn` `codex-rs/tui/src/diff_render.rs:406` `fn line_number_width(max_line_number: usize) -> usize {`
 - `fn` `codex-rs/tui/src/diff_render.rs:414` `fn style_gutter() -> Style {`
@@ -117,4 +116,4 @@ Source file implementing exported/public items listed below.
 - uses Rust panic/expect/unwrap-style failure paths
 
 ## Spec Links
-- `workdocjcl/spec/06_UI/TUI.md`
+- `docs/workdocjcl/spec/06_UI/TUI.md`

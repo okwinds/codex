@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `11312`
-- sha256: `8f959c7e05639113d8d03072504e7b0d37ec71f1eb76556e62e752d74fdd1fce`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `11933`
+- sha256: `47562cded35cb06cd6a1d68644c82083cfe162f8d906d9cc74464e32855a1e56`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -47,18 +47,18 @@ Source file implementing exported/public items listed below.
 - `struct` `codex-rs/state/src/model/thread_metadata.rs:34` `pub struct ThreadsPage {`
 - `struct` `codex-rs/state/src/model/thread_metadata.rs:45` `pub struct ExtractionOutcome {`
 - `struct` `codex-rs/state/src/model/thread_metadata.rs:54` `pub struct ThreadMetadata {`
-- `struct` `codex-rs/state/src/model/thread_metadata.rs:91` `pub struct ThreadMetadataBuilder {`
-- `impl` `codex-rs/state/src/model/thread_metadata.rs:120` `impl ThreadMetadataBuilder {`
-- `fn` `codex-rs/state/src/model/thread_metadata.rs:122` `pub fn new(`
-- `fn` `codex-rs/state/src/model/thread_metadata.rs:146` `pub fn build(&self, default_provider: &str) -> ThreadMetadata {`
-- `impl` `codex-rs/state/src/model/thread_metadata.rs:179` `impl ThreadMetadata {`
-- `fn` `codex-rs/state/src/model/thread_metadata.rs:181` `pub fn diff_fields(&self, other: &Self) -> Vec<&'static str> {`
-- `fn` `codex-rs/state/src/model/thread_metadata.rs:235` `fn canonicalize_datetime(dt: DateTime<Utc>) -> DateTime<Utc> {`
-- `impl` `codex-rs/state/src/model/thread_metadata.rs:259` `impl ThreadRow {`
-- `impl` `codex-rs/state/src/model/thread_metadata.rs:282` `impl TryFrom<ThreadRow> for ThreadMetadata {`
-- `type` `codex-rs/state/src/model/thread_metadata.rs:283` `type Error = anyhow::Error;`
-- `fn` `codex-rs/state/src/model/thread_metadata.rs:285` `fn try_from(row: ThreadRow) -> std::result::Result<Self, Self::Error> {`
-- `struct` `codex-rs/state/src/model/thread_metadata.rs:345` `pub struct BackfillStats {`
+- `struct` `codex-rs/state/src/model/thread_metadata.rs:93` `pub struct ThreadMetadataBuilder {`
+- `impl` `codex-rs/state/src/model/thread_metadata.rs:124` `impl ThreadMetadataBuilder {`
+- `fn` `codex-rs/state/src/model/thread_metadata.rs:126` `pub fn new(`
+- `fn` `codex-rs/state/src/model/thread_metadata.rs:151` `pub fn build(&self, default_provider: &str) -> ThreadMetadata {`
+- `impl` `codex-rs/state/src/model/thread_metadata.rs:185` `impl ThreadMetadata {`
+- `fn` `codex-rs/state/src/model/thread_metadata.rs:187` `pub fn diff_fields(&self, other: &Self) -> Vec<&'static str> {`
+- `fn` `codex-rs/state/src/model/thread_metadata.rs:244` `fn canonicalize_datetime(dt: DateTime<Utc>) -> DateTime<Utc> {`
+- `impl` `codex-rs/state/src/model/thread_metadata.rs:269` `impl ThreadRow {`
+- `impl` `codex-rs/state/src/model/thread_metadata.rs:293` `impl TryFrom<ThreadRow> for ThreadMetadata {`
+- `type` `codex-rs/state/src/model/thread_metadata.rs:294` `type Error = anyhow::Error;`
+- `fn` `codex-rs/state/src/model/thread_metadata.rs:296` `fn try_from(row: ThreadRow) -> std::result::Result<Self, Self::Error> {`
+- `struct` `codex-rs/state/src/model/thread_metadata.rs:358` `pub struct BackfillStats {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -81,4 +81,4 @@ Source file implementing exported/public items listed below.
 - returns structured errors (Result/ErrorKind)
 
 ## Spec Links
-- `workdocjcl/spec/02_Data/ENTITIES.md`
+- `docs/workdocjcl/spec/02_Data/ENTITIES.md`

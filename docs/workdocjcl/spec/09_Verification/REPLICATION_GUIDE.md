@@ -1,6 +1,6 @@
 # 复刻指南（Replication Guide）
 
-本指南说明如何使用 `workdocjcl/spec/` 下的规格文档复刻该仓库的核心功能。
+本指南说明如何使用 `docs/workdocjcl/spec/` 下的规格文档复刻该仓库的核心功能。
 
 ## 0. 复刻目标（What counts as “done”）
 最低复刻闭包（Minimum Viable Replica）：
@@ -40,7 +40,7 @@
 
 ### Step 5：实现 provider registry（能真正跑起来）
 - 阅读：`05_Integrations/MODEL_PROVIDERS.md`、`03_API/AUTHENTICATION.md`
-- 优先实现 OpenAI provider + Responses API（Chat 可做兼容）。
+- 优先实现 OpenAI provider + Responses API（当前基准提交中 Chat wire 已移除，见 `05_Integrations/CHAT_WIRE_MAPPING.md`）。
 
 ### Step 6：实现审批与沙箱（安全闭包）
 - 阅读：`07_Infrastructure/SECURITY_SANDBOX.md`

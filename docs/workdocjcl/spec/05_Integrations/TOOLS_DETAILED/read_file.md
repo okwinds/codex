@@ -28,7 +28,7 @@
   - `include_header`：默认 false
   - `max_lines`：可选；默认等于全局 limit
 
-> 结构化 schema 参考：`workdocjcl/spec/05_Integrations/TOOLS_SCHEMA_REFERENCE.json`（条目：`name=read_file kind=function`）
+> 结构化 schema 参考：`docs/workdocjcl/spec/05_Integrations/TOOLS_SCHEMA_REFERENCE.json`（条目：`name=read_file kind=function`）
 
 ## 3. 运行时语义（Runtime semantics）
 handler：`codex-rs/core/src/tools/handlers/read_file.rs::ReadFileHandler`

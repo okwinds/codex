@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `197302`
-- sha256: `727a61447eec8bb871d7f6eb5abae5c75f82548dda8fca87aeca6435567d8e87`
-- generated_utc: `2026-02-03T16:08:28Z`
+- size_bytes: `222549`
+- sha256: `413532e7de638c4c67702e9afa7fe3e95eba395f0de5de693b3b36af6e38ea5e`
+- generated_utc: `2026-02-08T10:45:15Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -27,202 +27,202 @@ Source file implementing exported/public items listed below.
 - `use` `codex-rs/app-server/src/codex_message_processor.rs:3` `use crate::error_code::INVALID_REQUEST_ERROR_CODE;`
 - `use` `codex-rs/app-server/src/codex_message_processor.rs:4` `use crate::fuzzy_file_search::run_fuzzy_file_search;`
 - `use` `codex-rs/app-server/src/codex_message_processor.rs:5` `use crate::models::supported_models;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:6` `use crate::outgoing_message::OutgoingMessageSender;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:7` `use crate::outgoing_message::OutgoingNotification;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:8` `use chrono::DateTime;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:9` `use chrono::SecondsFormat;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:10` `use chrono::Utc;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:11` `use codex_app_server_protocol::Account;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:12` `use codex_app_server_protocol::AccountLoginCompletedNotification;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:13` `use codex_app_server_protocol::AccountUpdatedNotification;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:14` `use codex_app_server_protocol::AddConversationListenerParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:15` `use codex_app_server_protocol::AddConversationSubscriptionResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:16` `use codex_app_server_protocol::AppsListParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:17` `use codex_app_server_protocol::AppsListResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:18` `use codex_app_server_protocol::ArchiveConversationParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:19` `use codex_app_server_protocol::ArchiveConversationResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:20` `use codex_app_server_protocol::AskForApproval;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:21` `use codex_app_server_protocol::AuthMode;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:22` `use codex_app_server_protocol::AuthStatusChangeNotification;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:23` `use codex_app_server_protocol::CancelLoginAccountParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:24` `use codex_app_server_protocol::CancelLoginAccountResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:25` `use codex_app_server_protocol::CancelLoginAccountStatus;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:26` `use codex_app_server_protocol::CancelLoginChatGptResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:27` `use codex_app_server_protocol::ClientRequest;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:28` `use codex_app_server_protocol::CollaborationModeListParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:29` `use codex_app_server_protocol::CollaborationModeListResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:30` `use codex_app_server_protocol::CommandExecParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:31` `use codex_app_server_protocol::ConversationGitInfo;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:32` `use codex_app_server_protocol::ConversationSummary;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:33` `use codex_app_server_protocol::DynamicToolSpec as ApiDynamicToolSpec;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:34` `use codex_app_server_protocol::ExecOneOffCommandResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:35` `use codex_app_server_protocol::FeedbackUploadParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:36` `use codex_app_server_protocol::FeedbackUploadResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:37` `use codex_app_server_protocol::ForkConversationParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:38` `use codex_app_server_protocol::ForkConversationResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:39` `use codex_app_server_protocol::FuzzyFileSearchParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:40` `use codex_app_server_protocol::FuzzyFileSearchResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:41` `use codex_app_server_protocol::GetAccountParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:42` `use codex_app_server_protocol::GetAccountRateLimitsResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:43` `use codex_app_server_protocol::GetAccountResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:44` `use codex_app_server_protocol::GetAuthStatusParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:45` `use codex_app_server_protocol::GetAuthStatusResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:46` `use codex_app_server_protocol::GetConversationSummaryParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:47` `use codex_app_server_protocol::GetConversationSummaryResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:48` `use codex_app_server_protocol::GetUserAgentResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:49` `use codex_app_server_protocol::GetUserSavedConfigResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:50` `use codex_app_server_protocol::GitDiffToRemoteResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:51` `use codex_app_server_protocol::GitInfo as ApiGitInfo;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:52` `use codex_app_server_protocol::InputItem as WireInputItem;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:53` `use codex_app_server_protocol::InterruptConversationParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:54` `use codex_app_server_protocol::JSONRPCErrorError;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:55` `use codex_app_server_protocol::ListConversationsParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:56` `use codex_app_server_protocol::ListConversationsResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:57` `use codex_app_server_protocol::ListMcpServerStatusParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:58` `use codex_app_server_protocol::ListMcpServerStatusResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:59` `use codex_app_server_protocol::LoginAccountParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:60` `use codex_app_server_protocol::LoginAccountResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:61` `use codex_app_server_protocol::LoginApiKeyParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:62` `use codex_app_server_protocol::LoginApiKeyResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:63` `use codex_app_server_protocol::LoginChatGptCompleteNotification;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:64` `use codex_app_server_protocol::LoginChatGptResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:65` `use codex_app_server_protocol::LogoutAccountResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:66` `use codex_app_server_protocol::LogoutChatGptResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:67` `use codex_app_server_protocol::McpServerOauthLoginCompletedNotification;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:68` `use codex_app_server_protocol::McpServerOauthLoginParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:69` `use codex_app_server_protocol::McpServerOauthLoginResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:70` `use codex_app_server_protocol::McpServerRefreshResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:71` `use codex_app_server_protocol::McpServerStatus;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:72` `use codex_app_server_protocol::MockExperimentalMethodParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:73` `use codex_app_server_protocol::MockExperimentalMethodResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:74` `use codex_app_server_protocol::ModelListParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:75` `use codex_app_server_protocol::ModelListResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:76` `use codex_app_server_protocol::NewConversationParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:77` `use codex_app_server_protocol::NewConversationResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:78` `use codex_app_server_protocol::RemoveConversationListenerParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:79` `use codex_app_server_protocol::RemoveConversationSubscriptionResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:80` `use codex_app_server_protocol::RequestId;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:81` `use codex_app_server_protocol::ResumeConversationParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:82` `use codex_app_server_protocol::ResumeConversationResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:83` `use codex_app_server_protocol::ReviewDelivery as ApiReviewDelivery;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:84` `use codex_app_server_protocol::ReviewStartParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:85` `use codex_app_server_protocol::ReviewStartResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:86` `use codex_app_server_protocol::ReviewTarget as ApiReviewTarget;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:87` `use codex_app_server_protocol::SandboxMode;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:88` `use codex_app_server_protocol::SendUserMessageParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:89` `use codex_app_server_protocol::SendUserMessageResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:90` `use codex_app_server_protocol::SendUserTurnParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:91` `use codex_app_server_protocol::SendUserTurnResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:92` `use codex_app_server_protocol::ServerNotification;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:93` `use codex_app_server_protocol::SessionConfiguredNotification;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:94` `use codex_app_server_protocol::SetDefaultModelParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:95` `use codex_app_server_protocol::SetDefaultModelResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:96` `use codex_app_server_protocol::SkillsConfigWriteParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:97` `use codex_app_server_protocol::SkillsConfigWriteResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:98` `use codex_app_server_protocol::SkillsListParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:99` `use codex_app_server_protocol::SkillsListResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:100` `use codex_app_server_protocol::Thread;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:101` `use codex_app_server_protocol::ThreadArchiveParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:102` `use codex_app_server_protocol::ThreadArchiveResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:103` `use codex_app_server_protocol::ThreadForkParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:104` `use codex_app_server_protocol::ThreadForkResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:105` `use codex_app_server_protocol::ThreadItem;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:106` `use codex_app_server_protocol::ThreadListParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:107` `use codex_app_server_protocol::ThreadListResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:108` `use codex_app_server_protocol::ThreadLoadedListParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:109` `use codex_app_server_protocol::ThreadLoadedListResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:110` `use codex_app_server_protocol::ThreadReadParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:111` `use codex_app_server_protocol::ThreadReadResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:112` `use codex_app_server_protocol::ThreadResumeParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:113` `use codex_app_server_protocol::ThreadResumeResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:114` `use codex_app_server_protocol::ThreadRollbackParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:115` `use codex_app_server_protocol::ThreadSetNameParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:116` `use codex_app_server_protocol::ThreadSetNameResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:117` `use codex_app_server_protocol::ThreadSortKey;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:118` `use codex_app_server_protocol::ThreadSourceKind;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:119` `use codex_app_server_protocol::ThreadStartParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:120` `use codex_app_server_protocol::ThreadStartResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:121` `use codex_app_server_protocol::ThreadStartedNotification;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:122` `use codex_app_server_protocol::ThreadUnarchiveParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:123` `use codex_app_server_protocol::ThreadUnarchiveResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:124` `use codex_app_server_protocol::Turn;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:125` `use codex_app_server_protocol::TurnError;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:126` `use codex_app_server_protocol::TurnInterruptParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:127` `use codex_app_server_protocol::TurnStartParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:128` `use codex_app_server_protocol::TurnStartResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:129` `use codex_app_server_protocol::TurnStartedNotification;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:130` `use codex_app_server_protocol::TurnStatus;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:131` `use codex_app_server_protocol::UserInfoResponse;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:132` `use codex_app_server_protocol::UserInput as V2UserInput;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:133` `use codex_app_server_protocol::UserSavedConfig;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:134` `use codex_app_server_protocol::build_turns_from_event_msgs;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:135` `use codex_backend_client::Client as BackendClient;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:136` `use codex_chatgpt::connectors;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:137` `use codex_core::AuthManager;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:138` `use codex_core::CodexAuth;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:139` `use codex_core::CodexThread;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:140` `use codex_core::Cursor as RolloutCursor;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:141` `use codex_core::InitialHistory;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:142` `use codex_core::NewThread;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:143` `use codex_core::RolloutRecorder;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:144` `use codex_core::SessionMeta;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:145` `use codex_core::ThreadConfigSnapshot;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:146` `use codex_core::ThreadManager;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:147` `use codex_core::ThreadSortKey as CoreThreadSortKey;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:148` `use codex_core::auth::CLIENT_ID;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:149` `use codex_core::auth::login_with_api_key;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:150` `use codex_core::auth::login_with_chatgpt_auth_tokens;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:151` `use codex_core::config::Config;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:152` `use codex_core::config::ConfigOverrides;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:153` `use codex_core::config::ConfigService;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:154` `use codex_core::config::edit::ConfigEdit;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:155` `use codex_core::config::edit::ConfigEditsBuilder;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:156` `use codex_core::config::types::McpServerTransportConfig;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:157` `use codex_core::config_loader::CloudRequirementsLoader;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:158` `use codex_core::default_client::get_codex_user_agent;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:159` `use codex_core::error::CodexErr;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:160` `use codex_core::exec::ExecParams;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:161` `use codex_core::exec_env::create_env;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:162` `use codex_core::features::Feature;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:163` `use codex_core::find_archived_thread_path_by_id_str;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:164` `use codex_core::find_thread_path_by_id_str;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:165` `use codex_core::git_info::git_diff_to_remote;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:166` `use codex_core::mcp::collect_mcp_snapshot;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:167` `use codex_core::mcp::group_tools_by_server;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:168` `use codex_core::parse_cursor;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:169` `use codex_core::protocol::EventMsg;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:170` `use codex_core::protocol::Op;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:171` `use codex_core::protocol::ReviewDelivery as CoreReviewDelivery;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:172` `use codex_core::protocol::ReviewRequest;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:173` `use codex_core::protocol::ReviewTarget as CoreReviewTarget;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:174` `use codex_core::protocol::SessionConfiguredEvent;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:175` `use codex_core::read_head_for_summary;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:176` `use codex_core::read_session_meta_line;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:177` `use codex_core::rollout_date_parts;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:178` `use codex_core::sandboxing::SandboxPermissions;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:179` `use codex_core::state_db::get_state_db;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:180` `use codex_core::token_data::parse_id_token;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:181` `use codex_core::windows_sandbox::WindowsSandboxLevelExt;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:182` `use codex_feedback::CodexFeedback;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:183` `use codex_login::ServerOptions as LoginServerOptions;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:184` `use codex_login::ShutdownHandle;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:185` `use codex_login::run_login_server;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:186` `use codex_protocol::ThreadId;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:187` `use codex_protocol::config_types::ForcedLoginMethod;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:188` `use codex_protocol::config_types::Personality;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:189` `use codex_protocol::config_types::WindowsSandboxLevel;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:190` `use codex_protocol::dynamic_tools::DynamicToolSpec as CoreDynamicToolSpec;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:191` `use codex_protocol::items::TurnItem;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:192` `use codex_protocol::models::ResponseItem;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:193` `use codex_protocol::protocol::AgentStatus;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:194` `use codex_protocol::protocol::GitInfo as CoreGitInfo;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:195` `use codex_protocol::protocol::McpAuthStatus as CoreMcpAuthStatus;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:196` `use codex_protocol::protocol::McpServerRefreshConfig;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:197` `use codex_protocol::protocol::RateLimitSnapshot as CoreRateLimitSnapshot;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:198` `use codex_protocol::protocol::RolloutItem;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:199` `use codex_protocol::protocol::SessionMetaLine;`
-- `use` `codex-rs/app-server/src/codex_message_processor.rs:200` `use codex_protocol::protocol::USER_MESSAGE_BEGIN;`
-- (… 139 more definitions omitted; see symbol indexes under `workdocjcl/spec/13_Indexes/`)
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:6` `use crate::outgoing_message::ConnectionId;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:7` `use crate::outgoing_message::ConnectionRequestId;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:8` `use crate::outgoing_message::OutgoingMessageSender;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:9` `use crate::outgoing_message::OutgoingNotification;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:10` `use chrono::DateTime;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:11` `use chrono::SecondsFormat;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:12` `use chrono::Utc;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:13` `use codex_app_server_protocol::Account;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:14` `use codex_app_server_protocol::AccountLoginCompletedNotification;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:15` `use codex_app_server_protocol::AccountUpdatedNotification;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:16` `use codex_app_server_protocol::AddConversationListenerParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:17` `use codex_app_server_protocol::AddConversationSubscriptionResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:18` `use codex_app_server_protocol::AppsListParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:19` `use codex_app_server_protocol::AppsListResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:20` `use codex_app_server_protocol::ArchiveConversationParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:21` `use codex_app_server_protocol::ArchiveConversationResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:22` `use codex_app_server_protocol::AskForApproval;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:23` `use codex_app_server_protocol::AuthMode;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:24` `use codex_app_server_protocol::AuthStatusChangeNotification;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:25` `use codex_app_server_protocol::CancelLoginAccountParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:26` `use codex_app_server_protocol::CancelLoginAccountResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:27` `use codex_app_server_protocol::CancelLoginAccountStatus;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:28` `use codex_app_server_protocol::CancelLoginChatGptResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:29` `use codex_app_server_protocol::ClientRequest;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:30` `use codex_app_server_protocol::CollaborationModeListParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:31` `use codex_app_server_protocol::CollaborationModeListResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:32` `use codex_app_server_protocol::CommandExecParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:33` `use codex_app_server_protocol::ConversationGitInfo;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:34` `use codex_app_server_protocol::ConversationSummary;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:35` `use codex_app_server_protocol::DynamicToolSpec as ApiDynamicToolSpec;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:36` `use codex_app_server_protocol::ExecOneOffCommandResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:37` `use codex_app_server_protocol::ExperimentalFeature as ApiExperimentalFeature;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:38` `use codex_app_server_protocol::ExperimentalFeatureListParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:39` `use codex_app_server_protocol::ExperimentalFeatureListResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:40` `use codex_app_server_protocol::ExperimentalFeatureStage as ApiExperimentalFeatureStage;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:41` `use codex_app_server_protocol::FeedbackUploadParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:42` `use codex_app_server_protocol::FeedbackUploadResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:43` `use codex_app_server_protocol::ForkConversationParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:44` `use codex_app_server_protocol::ForkConversationResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:45` `use codex_app_server_protocol::FuzzyFileSearchParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:46` `use codex_app_server_protocol::FuzzyFileSearchResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:47` `use codex_app_server_protocol::GetAccountParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:48` `use codex_app_server_protocol::GetAccountRateLimitsResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:49` `use codex_app_server_protocol::GetAccountResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:50` `use codex_app_server_protocol::GetAuthStatusParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:51` `use codex_app_server_protocol::GetAuthStatusResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:52` `use codex_app_server_protocol::GetConversationSummaryParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:53` `use codex_app_server_protocol::GetConversationSummaryResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:54` `use codex_app_server_protocol::GetUserAgentResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:55` `use codex_app_server_protocol::GetUserSavedConfigResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:56` `use codex_app_server_protocol::GitDiffToRemoteResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:57` `use codex_app_server_protocol::GitInfo as ApiGitInfo;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:58` `use codex_app_server_protocol::InputItem as WireInputItem;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:59` `use codex_app_server_protocol::InterruptConversationParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:60` `use codex_app_server_protocol::JSONRPCErrorError;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:61` `use codex_app_server_protocol::ListConversationsParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:62` `use codex_app_server_protocol::ListConversationsResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:63` `use codex_app_server_protocol::ListMcpServerStatusParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:64` `use codex_app_server_protocol::ListMcpServerStatusResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:65` `use codex_app_server_protocol::LoginAccountParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:66` `use codex_app_server_protocol::LoginAccountResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:67` `use codex_app_server_protocol::LoginApiKeyParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:68` `use codex_app_server_protocol::LoginApiKeyResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:69` `use codex_app_server_protocol::LoginChatGptCompleteNotification;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:70` `use codex_app_server_protocol::LoginChatGptResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:71` `use codex_app_server_protocol::LogoutAccountResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:72` `use codex_app_server_protocol::LogoutChatGptResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:73` `use codex_app_server_protocol::McpServerOauthLoginCompletedNotification;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:74` `use codex_app_server_protocol::McpServerOauthLoginParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:75` `use codex_app_server_protocol::McpServerOauthLoginResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:76` `use codex_app_server_protocol::McpServerRefreshResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:77` `use codex_app_server_protocol::McpServerStatus;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:78` `use codex_app_server_protocol::MockExperimentalMethodParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:79` `use codex_app_server_protocol::MockExperimentalMethodResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:80` `use codex_app_server_protocol::ModelListParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:81` `use codex_app_server_protocol::ModelListResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:82` `use codex_app_server_protocol::NewConversationParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:83` `use codex_app_server_protocol::NewConversationResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:84` `use codex_app_server_protocol::RemoveConversationListenerParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:85` `use codex_app_server_protocol::RemoveConversationSubscriptionResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:86` `use codex_app_server_protocol::ResumeConversationParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:87` `use codex_app_server_protocol::ResumeConversationResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:88` `use codex_app_server_protocol::ReviewDelivery as ApiReviewDelivery;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:89` `use codex_app_server_protocol::ReviewStartParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:90` `use codex_app_server_protocol::ReviewStartResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:91` `use codex_app_server_protocol::ReviewTarget as ApiReviewTarget;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:92` `use codex_app_server_protocol::SandboxMode;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:93` `use codex_app_server_protocol::SendUserMessageParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:94` `use codex_app_server_protocol::SendUserMessageResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:95` `use codex_app_server_protocol::SendUserTurnParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:96` `use codex_app_server_protocol::SendUserTurnResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:97` `use codex_app_server_protocol::ServerNotification;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:98` `use codex_app_server_protocol::SessionConfiguredNotification;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:99` `use codex_app_server_protocol::SetDefaultModelParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:100` `use codex_app_server_protocol::SetDefaultModelResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:101` `use codex_app_server_protocol::SkillsConfigWriteParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:102` `use codex_app_server_protocol::SkillsConfigWriteResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:103` `use codex_app_server_protocol::SkillsListParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:104` `use codex_app_server_protocol::SkillsListResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:105` `use codex_app_server_protocol::SkillsRemoteReadParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:106` `use codex_app_server_protocol::SkillsRemoteReadResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:107` `use codex_app_server_protocol::SkillsRemoteWriteParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:108` `use codex_app_server_protocol::SkillsRemoteWriteResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:109` `use codex_app_server_protocol::Thread;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:110` `use codex_app_server_protocol::ThreadArchiveParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:111` `use codex_app_server_protocol::ThreadArchiveResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:112` `use codex_app_server_protocol::ThreadCompactStartParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:113` `use codex_app_server_protocol::ThreadCompactStartResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:114` `use codex_app_server_protocol::ThreadForkParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:115` `use codex_app_server_protocol::ThreadForkResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:116` `use codex_app_server_protocol::ThreadItem;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:117` `use codex_app_server_protocol::ThreadListParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:118` `use codex_app_server_protocol::ThreadListResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:119` `use codex_app_server_protocol::ThreadLoadedListParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:120` `use codex_app_server_protocol::ThreadLoadedListResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:121` `use codex_app_server_protocol::ThreadReadParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:122` `use codex_app_server_protocol::ThreadReadResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:123` `use codex_app_server_protocol::ThreadResumeParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:124` `use codex_app_server_protocol::ThreadResumeResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:125` `use codex_app_server_protocol::ThreadRollbackParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:126` `use codex_app_server_protocol::ThreadSetNameParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:127` `use codex_app_server_protocol::ThreadSetNameResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:128` `use codex_app_server_protocol::ThreadSortKey;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:129` `use codex_app_server_protocol::ThreadSourceKind;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:130` `use codex_app_server_protocol::ThreadStartParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:131` `use codex_app_server_protocol::ThreadStartResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:132` `use codex_app_server_protocol::ThreadStartedNotification;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:133` `use codex_app_server_protocol::ThreadUnarchiveParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:134` `use codex_app_server_protocol::ThreadUnarchiveResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:135` `use codex_app_server_protocol::Turn;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:136` `use codex_app_server_protocol::TurnError;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:137` `use codex_app_server_protocol::TurnInterruptParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:138` `use codex_app_server_protocol::TurnStartParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:139` `use codex_app_server_protocol::TurnStartResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:140` `use codex_app_server_protocol::TurnStartedNotification;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:141` `use codex_app_server_protocol::TurnStatus;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:142` `use codex_app_server_protocol::TurnSteerParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:143` `use codex_app_server_protocol::TurnSteerResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:144` `use codex_app_server_protocol::UserInfoResponse;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:145` `use codex_app_server_protocol::UserInput as V2UserInput;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:146` `use codex_app_server_protocol::UserSavedConfig;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:147` `use codex_app_server_protocol::build_turns_from_event_msgs;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:148` `use codex_backend_client::Client as BackendClient;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:149` `use codex_chatgpt::connectors;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:150` `use codex_cloud_requirements::cloud_requirements_loader;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:151` `use codex_core::AuthManager;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:152` `use codex_core::CodexAuth;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:153` `use codex_core::CodexThread;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:154` `use codex_core::Cursor as RolloutCursor;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:155` `use codex_core::InitialHistory;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:156` `use codex_core::NewThread;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:157` `use codex_core::RolloutRecorder;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:158` `use codex_core::SessionMeta;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:159` `use codex_core::SteerInputError;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:160` `use codex_core::ThreadConfigSnapshot;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:161` `use codex_core::ThreadManager;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:162` `use codex_core::ThreadSortKey as CoreThreadSortKey;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:163` `use codex_core::auth::AuthMode as CoreAuthMode;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:164` `use codex_core::auth::CLIENT_ID;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:165` `use codex_core::auth::login_with_api_key;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:166` `use codex_core::auth::login_with_chatgpt_auth_tokens;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:167` `use codex_core::config::Config;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:168` `use codex_core::config::ConfigOverrides;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:169` `use codex_core::config::ConfigService;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:170` `use codex_core::config::edit::ConfigEdit;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:171` `use codex_core::config::edit::ConfigEditsBuilder;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:172` `use codex_core::config::types::McpServerTransportConfig;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:173` `use codex_core::config_loader::CloudRequirementsLoader;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:174` `use codex_core::default_client::get_codex_user_agent;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:175` `use codex_core::default_client::set_default_client_residency_requirement;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:176` `use codex_core::error::CodexErr;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:177` `use codex_core::exec::ExecParams;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:178` `use codex_core::exec_env::create_env;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:179` `use codex_core::features::FEATURES;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:180` `use codex_core::features::Feature;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:181` `use codex_core::features::Stage;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:182` `use codex_core::find_archived_thread_path_by_id_str;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:183` `use codex_core::find_thread_path_by_id_str;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:184` `use codex_core::git_info::git_diff_to_remote;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:185` `use codex_core::mcp::collect_mcp_snapshot;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:186` `use codex_core::mcp::group_tools_by_server;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:187` `use codex_core::parse_cursor;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:188` `use codex_core::protocol::EventMsg;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:189` `use codex_core::protocol::Op;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:190` `use codex_core::protocol::ReviewDelivery as CoreReviewDelivery;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:191` `use codex_core::protocol::ReviewRequest;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:192` `use codex_core::protocol::ReviewTarget as CoreReviewTarget;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:193` `use codex_core::protocol::SessionConfiguredEvent;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:194` `use codex_core::read_head_for_summary;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:195` `use codex_core::read_session_meta_line;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:196` `use codex_core::rollout_date_parts;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:197` `use codex_core::sandboxing::SandboxPermissions;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:198` `use codex_core::skills::remote::download_remote_skill;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:199` `use codex_core::skills::remote::list_remote_skills;`
+- `use` `codex-rs/app-server/src/codex_message_processor.rs:200` `use codex_core::state_db::StateDbHandle;`
+- (… 178 more definitions omitted; see symbol indexes under `docs/workdocjcl/spec/13_Indexes/`)
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -231,6 +231,8 @@ Source file implementing exported/public items listed below.
 - `use crate::error_code::INVALID_REQUEST_ERROR_CODE;`
 - `use crate::fuzzy_file_search::run_fuzzy_file_search;`
 - `use crate::models::supported_models;`
+- `use crate::outgoing_message::ConnectionId;`
+- `use crate::outgoing_message::ConnectionRequestId;`
 - `use crate::outgoing_message::OutgoingMessageSender;`
 - `use crate::outgoing_message::OutgoingNotification;`
 - `use chrono::DateTime;`
@@ -244,8 +246,6 @@ Source file implementing exported/public items listed below.
 - `use codex_app_server_protocol::AppsListParams;`
 - `use codex_app_server_protocol::AppsListResponse;`
 - `use codex_app_server_protocol::ArchiveConversationParams;`
-- `use codex_app_server_protocol::ArchiveConversationResponse;`
-- `use codex_app_server_protocol::AskForApproval;`
 ### Referenced env vars
 - (none detected)
 

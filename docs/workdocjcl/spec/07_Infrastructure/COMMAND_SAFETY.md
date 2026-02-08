@@ -4,7 +4,7 @@
 - **已知安全**：`is_known_safe_command(...)`（允许自动执行）
 - **可能危险**：`command_might_be_dangerous(...)`（触发审批/禁止的强信号）
 
-这些启发式被 `render_decision_for_unmatched_command(...)` 直接使用（参见 `workdocjcl/spec/07_Infrastructure/EXEC_POLICY.md` §3）。
+这些启发式被 `render_decision_for_unmatched_command(...)` 直接使用（参见 `docs/workdocjcl/spec/07_Infrastructure/EXEC_POLICY.md` §3）。
 
 ---
 
@@ -31,7 +31,7 @@
 - `bash -lc "..."` **只有在脚本可被解析为“word-only command sequence”且每条内命令本身已知安全**时，才会被认定为安全。
 - 任意不支持的 shell 结构（变量展开、重定向、subshell、命令替换等）都会导致 `parse_shell_lc_plain_commands` 返回 None，从而整条命令不被视为已知安全。
 
-`parse_shell_lc_plain_commands` 的可解析子集见：`workdocjcl/spec/07_Infrastructure/EXEC_POLICY.md` §4。
+`parse_shell_lc_plain_commands` 的可解析子集见：`docs/workdocjcl/spec/07_Infrastructure/EXEC_POLICY.md` §4。
 
 ---
 
@@ -225,5 +225,5 @@
 - `is_known_safe_command`：在 `render_decision_for_unmatched_command` 最优先返回 allow（“无需审批即可执行”）
 - `command_might_be_dangerous`：在 `render_decision_for_unmatched_command` 中强制转为 prompt/forbidden（取决于 `AskForApproval`）
 
-详见：`workdocjcl/spec/07_Infrastructure/EXEC_POLICY.md` §3。
+详见：`docs/workdocjcl/spec/07_Infrastructure/EXEC_POLICY.md` §3。
 

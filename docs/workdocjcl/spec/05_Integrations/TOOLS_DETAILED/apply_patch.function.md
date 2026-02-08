@@ -78,5 +78,5 @@ function tool payload：
 - tool spec（function）：`codex-rs/core/src/tools/handlers/apply_patch.rs::create_apply_patch_json_tool`
 - tool registry：`codex-rs/core/src/tools/spec.rs::build_specs`
 - patch engine：`codex-rs/core/src/apply_patch/*` + `codex-rs/apply-patch/*`
-- 公共输出封装：`workdocjcl/spec/05_Integrations/TOOLS_DETAILED/_COMMON_OUTPUT_ENVELOPE.md`
+- 公共输出封装：`docs/workdocjcl/spec/05_Integrations/TOOLS_DETAILED/_COMMON_OUTPUT_ENVELOPE.md`
 

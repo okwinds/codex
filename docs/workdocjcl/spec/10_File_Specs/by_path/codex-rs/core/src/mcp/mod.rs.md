@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `13303`
-- sha256: `9a97b2ba29c55271c0deb89f53ee53fc8b1836cdd0574778e68280000758bbfa`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `13417`
+- sha256: `882cbf254e2558b9dc7ea5fa57a00ac0beddede0ff213d94dd62eced6459ce89`
+- generated_utc: `2026-02-08T10:45:33Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -53,15 +53,15 @@ Source file implementing exported/public items listed below.
 - `fn` `codex-rs/core/src/mcp/mod.rs:53` `fn codex_apps_mcp_http_headers(auth: Option<&CodexAuth>) -> Option<HashMap<String, String>> {`
 - `fn` `codex-rs/core/src/mcp/mod.rs:68` `fn codex_apps_mcp_url(base_url: &str) -> String {`
 - `fn` `codex-rs/core/src/mcp/mod.rs:85` `fn codex_apps_mcp_server_config(config: &Config, auth: Option<&CodexAuth>) -> McpServerConfig {`
-- `fn` `codex-rs/core/src/mcp/mod.rs:140` `pub async fn collect_mcp_snapshot(config: &Config) -> McpListToolsResponseEvent {`
-- `fn` `codex-rs/core/src/mcp/mod.rs:191` `pub fn split_qualified_tool_name(qualified_name: &str) -> Option<(String, String)> {`
-- `fn` `codex-rs/core/src/mcp/mod.rs:205` `pub fn group_tools_by_server(`
-- `use` `codex-rs/core/src/mcp/mod.rs:333` `use super::*;`
-- `use` `codex-rs/core/src/mcp/mod.rs:334` `use pretty_assertions::assert_eq;`
-- `fn` `codex-rs/core/src/mcp/mod.rs:336` `fn make_tool(name: &str) -> Tool {`
-- `fn` `codex-rs/core/src/mcp/mod.rs:350` `fn split_qualified_tool_name_returns_server_and_tool() {`
-- `fn` `codex-rs/core/src/mcp/mod.rs:358` `fn split_qualified_tool_name_rejects_invalid_names() {`
-- `fn` `codex-rs/core/src/mcp/mod.rs:364` `fn group_tools_by_server_strips_prefix_and_groups() {`
+- `fn` `codex-rs/core/src/mcp/mod.rs:141` `pub async fn collect_mcp_snapshot(config: &Config) -> McpListToolsResponseEvent {`
+- `fn` `codex-rs/core/src/mcp/mod.rs:193` `pub fn split_qualified_tool_name(qualified_name: &str) -> Option<(String, String)> {`
+- `fn` `codex-rs/core/src/mcp/mod.rs:207` `pub fn group_tools_by_server(`
+- `use` `codex-rs/core/src/mcp/mod.rs:335` `use super::*;`
+- `use` `codex-rs/core/src/mcp/mod.rs:336` `use pretty_assertions::assert_eq;`
+- `fn` `codex-rs/core/src/mcp/mod.rs:338` `fn make_tool(name: &str) -> Tool {`
+- `fn` `codex-rs/core/src/mcp/mod.rs:352` `fn split_qualified_tool_name_returns_server_and_tool() {`
+- `fn` `codex-rs/core/src/mcp/mod.rs:360` `fn split_qualified_tool_name_rejects_invalid_names() {`
+- `fn` `codex-rs/core/src/mcp/mod.rs:366` `fn group_tools_by_server_strips_prefix_and_groups() {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -92,4 +92,4 @@ Source file implementing exported/public items listed below.
 - has retry/timeout/backoff logic
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

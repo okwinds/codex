@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `21755`
-- sha256: `1676e8b33e2cb92b406ac3ae6c3b233ba702a09a4602d2f53b774e9ac0d3fc7c`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `21795`
+- sha256: `78dcf50003b2ef5555eed26db0b606963bf59500119b8cc3a7e0e1dfe1c730ad`
+- generated_utc: `2026-02-08T10:45:39Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -41,25 +41,25 @@ Source file (no public surface detected by heuristic).
 - `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:124` `fn filtered(&self) -> Vec<(CommandItem, Option<Vec<usize>>)> {`
 - `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:191` `fn filtered_items(&self) -> Vec<CommandItem> {`
 - `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:195` `fn rows_from_matches(`
-- `impl` `codex-rs/tui/src/bottom_pane/command_popup.rs:255` `impl WidgetRef for CommandPopup {`
-- `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:256` `fn render_ref(&self, area: Rect, buf: &mut Buffer) {`
-- `use` `codex-rs/tui/src/bottom_pane/command_popup.rs:271` `use super::*;`
-- `use` `codex-rs/tui/src/bottom_pane/command_popup.rs:272` `use pretty_assertions::assert_eq;`
-- `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:275` `fn filter_includes_init_when_typing_prefix() {`
-- `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:295` `fn selecting_init_by_exact_match() {`
-- `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:310` `fn model_is_first_suggestion_for_mo() {`
-- `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:324` `fn filtered_commands_keep_presentation_order_for_prefix() {`
-- `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:340` `fn prompt_discovery_lists_custom_prompts() {`
-- `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:371` `fn prompt_name_collision_with_builtin_is_ignored() {`
-- `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:395` `fn prompt_description_uses_frontmatter_metadata() {`
-- `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:415` `fn prompt_description_falls_back_when_missing() {`
-- `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:432` `fn prefix_filter_limits_matches_for_ac() {`
-- `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:451` `fn quit_hidden_in_empty_filter_but_shown_for_prefix() {`
-- `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:463` `fn collab_command_hidden_when_collaboration_modes_disabled() {`
-- `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:486` `fn collab_command_visible_when_collaboration_modes_enabled() {`
-- `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:505` `fn plan_command_visible_when_collaboration_modes_enabled() {`
-- `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:524` `fn personality_command_hidden_when_disabled() {`
-- `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:551` `fn personality_command_visible_when_enabled() {`
+- `impl` `codex-rs/tui/src/bottom_pane/command_popup.rs:256` `impl WidgetRef for CommandPopup {`
+- `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:257` `fn render_ref(&self, area: Rect, buf: &mut Buffer) {`
+- `use` `codex-rs/tui/src/bottom_pane/command_popup.rs:272` `use super::*;`
+- `use` `codex-rs/tui/src/bottom_pane/command_popup.rs:273` `use pretty_assertions::assert_eq;`
+- `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:276` `fn filter_includes_init_when_typing_prefix() {`
+- `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:296` `fn selecting_init_by_exact_match() {`
+- `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:311` `fn model_is_first_suggestion_for_mo() {`
+- `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:325` `fn filtered_commands_keep_presentation_order_for_prefix() {`
+- `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:341` `fn prompt_discovery_lists_custom_prompts() {`
+- `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:372` `fn prompt_name_collision_with_builtin_is_ignored() {`
+- `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:396` `fn prompt_description_uses_frontmatter_metadata() {`
+- `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:416` `fn prompt_description_falls_back_when_missing() {`
+- `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:433` `fn prefix_filter_limits_matches_for_ac() {`
+- `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:452` `fn quit_hidden_in_empty_filter_but_shown_for_prefix() {`
+- `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:464` `fn collab_command_hidden_when_collaboration_modes_disabled() {`
+- `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:487` `fn collab_command_visible_when_collaboration_modes_enabled() {`
+- `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:506` `fn plan_command_visible_when_collaboration_modes_enabled() {`
+- `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:525` `fn personality_command_hidden_when_disabled() {`
+- `fn` `codex-rs/tui/src/bottom_pane/command_popup.rs:552` `fn personality_command_visible_when_enabled() {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -87,4 +87,4 @@ Source file (no public surface detected by heuristic).
 - uses Rust panic/expect/unwrap-style failure paths
 
 ## Spec Links
-- `workdocjcl/spec/06_UI/TUI.md`
+- `docs/workdocjcl/spec/06_UI/TUI.md`

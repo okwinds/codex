@@ -5,7 +5,7 @@
 - ext: `.ts`
 - size_bytes: `1196`
 - sha256: `cfbd308e3b47809f434faa5837275593e093d5c0743ffc58a84a9b70b241c9e2`
-- generated_utc: `2026-02-03T16:08:31Z`
+- generated_utc: `2026-02-08T10:45:42Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -41,4 +41,4 @@ Source file implementing exported/public items listed below.
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/PROJECT.md`
+- `docs/workdocjcl/spec/00_Overview/PROJECT.md`

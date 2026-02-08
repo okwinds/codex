@@ -5,7 +5,7 @@
 - ext: `.md`
 - size_bytes: `1704`
 - sha256: `e4bf92827062e0b704254549e3d90f496fbf135ec11c68905c8c08425fbe5fa3`
-- generated_utc: `2026-02-03T16:08:30Z`
+- generated_utc: `2026-02-08T10:45:39Z`
 
 ## Purpose (Why)
 Documentation file.
@@ -33,4 +33,4 @@ Documentation file.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/06_UI/TUI.md`
+- `docs/workdocjcl/spec/06_UI/TUI.md`

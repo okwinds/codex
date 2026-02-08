@@ -5,7 +5,7 @@
 - ext: `.ps1`
 - size_bytes: `5162`
 - sha256: `5814e3fdfcbe3bd3814346f55078e2d13c1d28b575324317e2a9fdaf37b8629c`
-- generated_utc: `2026-02-03T16:08:29Z`
+- generated_utc: `2026-02-08T10:45:28Z`
 
 ## Purpose (Why)
 Repository file.
@@ -33,4 +33,4 @@ Repository file.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

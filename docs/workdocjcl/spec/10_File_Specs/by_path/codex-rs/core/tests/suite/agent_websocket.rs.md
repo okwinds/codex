@@ -3,9 +3,9 @@
 ## Identity
 - kind: `test`
 - ext: `.rs`
-- size_bytes: `2173`
-- sha256: `b82e330db3aa16094a26bb28a3a0add5c756e73300f2477236d34f9707b3d09d`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `6069`
+- sha256: `29e62405285c2120635fcb1c60913a7ccfd04581b2a77541a173b86fcd5da142`
+- generated_utc: `2026-02-08T10:45:34Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -26,16 +26,20 @@ Test or snapshot file used for automated verification.
 ## Dependencies (auto sample)
 ### Imports / Includes
 - `use anyhow::Result;`
+- `use codex_core::features::Feature;`
+- `use core_test_support::responses::WebSocketConnectionConfig;`
 - `use core_test_support::responses::ev_assistant_message;`
 - `use core_test_support::responses::ev_completed;`
 - `use core_test_support::responses::ev_done;`
 - `use core_test_support::responses::ev_response_created;`
 - `use core_test_support::responses::ev_shell_command_call;`
 - `use core_test_support::responses::start_websocket_server;`
+- `use core_test_support::responses::start_websocket_server_with_headers;`
 - `use core_test_support::skip_if_no_network;`
 - `use core_test_support::test_codex::test_codex;`
 - `use pretty_assertions::assert_eq;`
 - `use serde_json::Value;`
+- `use std::time::Duration;`
 ### Referenced env vars
 - (none detected)
 
@@ -43,4 +47,4 @@ Test or snapshot file used for automated verification.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

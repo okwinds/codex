@@ -5,7 +5,7 @@
 - ext: `.xml`
 - size_bytes: `264`
 - sha256: `034191c75f15338861ce0be2fcf28855833fc5f601b387cbc3c764032507dc86`
-- generated_utc: `2026-02-03T16:08:29Z`
+- generated_utc: `2026-02-08T10:45:34Z`
 
 ## Purpose (Why)
 Repository file.
@@ -33,4 +33,4 @@ Repository file.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

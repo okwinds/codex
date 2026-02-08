@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `110`
-- sha256: `3f637a05936705b5106bbb0eeae78a209042cc736221bf3f46f756ccbbcb05fb`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `131`
+- sha256: `201353b096ed88d6e919f35d6e1e2874fce46a7a82d549c16d78f9a9437013e8`
+- generated_utc: `2026-02-08T10:45:16Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -21,12 +21,13 @@ Source file (no public surface detected by heuristic).
 - (none detected)
 
 ## Definitions (auto, per-file)
-- `mod` `codex-rs/codex-api/src/endpoint/mod.rs:1` `pub mod chat;`
+- `mod` `codex-rs/codex-api/src/endpoint/mod.rs:1` `pub mod aggregate;`
 - `mod` `codex-rs/codex-api/src/endpoint/mod.rs:2` `pub mod compact;`
-- `mod` `codex-rs/codex-api/src/endpoint/mod.rs:3` `pub mod models;`
-- `mod` `codex-rs/codex-api/src/endpoint/mod.rs:4` `pub mod responses;`
-- `mod` `codex-rs/codex-api/src/endpoint/mod.rs:5` `pub mod responses_websocket;`
-- `mod` `codex-rs/codex-api/src/endpoint/mod.rs:6` `mod streaming;`
+- `mod` `codex-rs/codex-api/src/endpoint/mod.rs:3` `pub mod memories;`
+- `mod` `codex-rs/codex-api/src/endpoint/mod.rs:4` `pub mod models;`
+- `mod` `codex-rs/codex-api/src/endpoint/mod.rs:5` `pub mod responses;`
+- `mod` `codex-rs/codex-api/src/endpoint/mod.rs:6` `pub mod responses_websocket;`
+- `mod` `codex-rs/codex-api/src/endpoint/mod.rs:7` `mod session;`
 
 ## Dependencies (auto sample)
 ### Imports / Includes

@@ -5,7 +5,7 @@
 - ext: `.rs`
 - size_bytes: `6570`
 - sha256: `b31498223ede720915ca6f79215b7d718e0a291821f2a82b3d6548471f517a9f`
-- generated_utc: `2026-02-03T16:08:31Z`
+- generated_utc: `2026-02-08T10:45:41Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).

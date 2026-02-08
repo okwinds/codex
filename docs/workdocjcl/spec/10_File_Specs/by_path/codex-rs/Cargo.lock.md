@@ -3,9 +3,9 @@
 ## Identity
 - kind: `config`
 - ext: `.lock`
-- size_bytes: `240529`
-- sha256: `461b5b3a1c27cb766baacdb7804364e314de7c2c790a08944792f49b10545b3b`
-- generated_utc: `2026-02-03T16:08:28Z`
+- size_bytes: `256452`
+- sha256: `b7d222e504e231931f0cf306b9849d57ab768ad14a93f29bd6cb51b7088a2d3b`
+- generated_utc: `2026-02-08T10:45:14Z`
 
 ## Purpose (Why)
 Configuration file for build/tooling/runtime.

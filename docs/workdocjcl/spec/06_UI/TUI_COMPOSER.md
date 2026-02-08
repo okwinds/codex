@@ -211,7 +211,7 @@ composer 引入 `PasteBurst` 进行检测与缓冲。复刻关键点：
   - non-ASCII：不 hold 第一个字符（避免 IME 输入感觉丢字），但允许“retro-capture”将已插入前缀抓回到 burst buffer
 
 `PasteBurst` 自身的完整状态机、阈值与 flush/clear 契约见：
-- `workdocjcl/spec/06_UI/TUI_PASTE_BURST.md`
+- `docs/workdocjcl/spec/06_UI/TUI_PASTE_BURST.md`
 
 ### 5.4 `handle_input_basic_with_time` 的顺序约束
 该函数是“最低层编辑路径”，所有会 mutate textarea 的 key 都最终走它（popup handler 中 `input => self.handle_input_basic(input)`）。
@@ -487,10 +487,10 @@ composer 历史为两层合并：
 
 ## 11. 来源（Source）
 - composer 主实现：`codex-rs/tui/src/bottom_pane/chat_composer.rs`
-- paste burst 状态机：`codex-rs/tui/src/bottom_pane/paste_burst.rs`（详规见 `workdocjcl/spec/06_UI/TUI_PASTE_BURST.md`）
+- paste burst 状态机：`codex-rs/tui/src/bottom_pane/paste_burst.rs`（详规见 `docs/workdocjcl/spec/06_UI/TUI_PASTE_BURST.md`）
 - command popup：`codex-rs/tui/src/bottom_pane/command_popup.rs`
 - file popup：`codex-rs/tui/src/bottom_pane/file_search_popup.rs`
 - skill popup：`codex-rs/tui/src/bottom_pane/skill_popup.rs`
 - slash command gating：`codex-rs/tui/src/bottom_pane/slash_commands.rs`
-- prompt args 解析/展开：`codex-rs/tui/src/bottom_pane/prompt_args.rs`（详见 `workdocjcl/spec/06_UI/TUI_PROMPTS.md`）
+- prompt args 解析/展开：`codex-rs/tui/src/bottom_pane/prompt_args.rs`（详见 `docs/workdocjcl/spec/06_UI/TUI_PROMPTS.md`）
 - 参考实现笔记（repo 内）：`docs/tui-chat-composer.md`

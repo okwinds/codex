@@ -38,4 +38,4 @@
 - `codex-rs/state/`：SQLite state DB + rollout metadata 抽取
 
 ## 4. 来源（Source）
-- 目录结构以本仓库 root 为准（见 `workdocjcl/inventory/file_manifest.txt`）。
+- 目录结构以本仓库 root 为准（见 `docs/workdocjcl/inventory/file_manifest_repo.txt`）。

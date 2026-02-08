@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `4875`
-- sha256: `9e03704bd49cfafab540314db32cee51923ad1e6a35cb65b57e8e6867351845d`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `4954`
+- sha256: `e1bb87c3e8306599b4503f20f1009e2d5aeb43a6c35a0fc988f79e46bbc649b8`
+- generated_utc: `2026-02-08T10:45:33Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -38,12 +38,13 @@ Source file (no public surface detected by heuristic).
 - `use` `codex-rs/core/src/tools/parallel.rs:17` `use crate::tools::context::ToolPayload;`
 - `use` `codex-rs/core/src/tools/parallel.rs:18` `use crate::tools::router::ToolCall;`
 - `use` `codex-rs/core/src/tools/parallel.rs:19` `use crate::tools::router::ToolRouter;`
-- `use` `codex-rs/core/src/tools/parallel.rs:20` `use codex_protocol::models::FunctionCallOutputPayload;`
-- `use` `codex-rs/core/src/tools/parallel.rs:21` `use codex_protocol::models::ResponseInputItem;`
-- `impl` `codex-rs/core/src/tools/parallel.rs:32` `impl ToolCallRuntime {`
-- `impl` `codex-rs/core/src/tools/parallel.rs:108` `impl ToolCallRuntime {`
-- `fn` `codex-rs/core/src/tools/parallel.rs:109` `fn aborted_response(call: &ToolCall, secs: f32) -> ResponseInputItem {`
-- `fn` `codex-rs/core/src/tools/parallel.rs:129` `fn abort_message(call: &ToolCall, secs: f32) -> String {`
+- `use` `codex-rs/core/src/tools/parallel.rs:20` `use codex_protocol::models::FunctionCallOutputBody;`
+- `use` `codex-rs/core/src/tools/parallel.rs:21` `use codex_protocol::models::FunctionCallOutputPayload;`
+- `use` `codex-rs/core/src/tools/parallel.rs:22` `use codex_protocol::models::ResponseInputItem;`
+- `impl` `codex-rs/core/src/tools/parallel.rs:33` `impl ToolCallRuntime {`
+- `impl` `codex-rs/core/src/tools/parallel.rs:109` `impl ToolCallRuntime {`
+- `fn` `codex-rs/core/src/tools/parallel.rs:110` `fn aborted_response(call: &ToolCall, secs: f32) -> ResponseInputItem {`
+- `fn` `codex-rs/core/src/tools/parallel.rs:130` `fn abort_message(call: &ToolCall, secs: f32) -> String {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -64,6 +65,7 @@ Source file (no public surface detected by heuristic).
 - `use crate::tools::context::ToolPayload;`
 - `use crate::tools::router::ToolCall;`
 - `use crate::tools::router::ToolRouter;`
+- `use codex_protocol::models::FunctionCallOutputBody;`
 - `use codex_protocol::models::FunctionCallOutputPayload;`
 - `use codex_protocol::models::ResponseInputItem;`
 ### Referenced env vars
@@ -73,4 +75,4 @@ Source file (no public surface detected by heuristic).
 - returns structured errors (Result/ErrorKind)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

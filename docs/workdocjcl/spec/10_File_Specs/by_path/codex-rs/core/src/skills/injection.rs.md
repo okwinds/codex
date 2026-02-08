@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `23596`
-- sha256: `50a508045ccb3aa6e52a55a77811f64b81f54a9bc17d024c698c6a22f3badc0c`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `26232`
+- sha256: `86867b370bdf8074c4264d9a13d4a5497a7a016e43a5ab35dafc23a5be133932`
+- generated_utc: `2026-02-08T10:45:33Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -34,45 +34,47 @@ Source file (no public surface detected by heuristic).
 - `use` `codex-rs/core/src/skills/injection.rs:12` `use codex_protocol::user_input::UserInput;`
 - `use` `codex-rs/core/src/skills/injection.rs:13` `use tokio::fs;`
 - `fn` `codex-rs/core/src/skills/injection.rs:69` `fn emit_skill_injected_metric(otel: Option<&OtelManager>, skill: &SkillMetadata, status: &str) {`
-- `struct` `codex-rs/core/src/skills/injection.rs:122` `struct SkillSelectionContext<'a> {`
-- `impl` `codex-rs/core/src/skills/injection.rs:135` `impl<'a> ToolMentions<'a> {`
-- `fn` `codex-rs/core/src/skills/injection.rs:136` `fn is_empty(&self) -> bool {`
-- `const` `codex-rs/core/src/skills/injection.rs:157` `const APP_PATH_PREFIX: &str = "app://";`
-- `const` `codex-rs/core/src/skills/injection.rs:158` `const MCP_PATH_PREFIX: &str = "mcp://";`
-- `const` `codex-rs/core/src/skills/injection.rs:159` `const SKILL_PATH_PREFIX: &str = "skill://";`
-- `const` `codex-rs/core/src/skills/injection.rs:160` `const SKILL_FILENAME: &str = "SKILL.md";`
-- `fn` `codex-rs/core/src/skills/injection.rs:174` `fn is_skill_filename(path: &str) -> bool {`
-- `fn` `codex-rs/core/src/skills/injection.rs:255` `fn select_skills_from_mentions(`
-- `fn` `codex-rs/core/src/skills/injection.rs:380` `fn is_common_env_var(name: &str) -> bool {`
-- `fn` `codex-rs/core/src/skills/injection.rs:399` `fn text_mentions_skill(text: &str, skill_name: &str) -> bool {`
-- `fn` `codex-rs/core/src/skills/injection.rs:430` `fn is_mention_name_char(byte: u8) -> bool {`
-- `use` `codex-rs/core/src/skills/injection.rs:436` `use super::*;`
-- `use` `codex-rs/core/src/skills/injection.rs:437` `use pretty_assertions::assert_eq;`
-- `use` `codex-rs/core/src/skills/injection.rs:438` `use std::collections::HashMap;`
-- `use` `codex-rs/core/src/skills/injection.rs:439` `use std::collections::HashSet;`
-- `fn` `codex-rs/core/src/skills/injection.rs:441` `fn make_skill(name: &str, path: &str) -> SkillMetadata {`
-- `fn` `codex-rs/core/src/skills/injection.rs:457` `fn assert_mentions(text: &str, expected_names: &[&str], expected_paths: &[&str]) {`
-- `fn` `codex-rs/core/src/skills/injection.rs:463` `fn build_skill_name_counts(`
-- `fn` `codex-rs/core/src/skills/injection.rs:477` `fn collect_mentions(`
-- `fn` `codex-rs/core/src/skills/injection.rs:494` `fn text_mentions_skill_requires_exact_boundary() {`
-- `fn` `codex-rs/core/src/skills/injection.rs:518` `fn text_mentions_skill_handles_end_boundary_and_near_misses() {`
-- `fn` `codex-rs/core/src/skills/injection.rs:528` `fn text_mentions_skill_handles_many_dollars_without_looping() {`
-- `fn` `codex-rs/core/src/skills/injection.rs:535` `fn extract_tool_mentions_handles_plain_and_linked_mentions() {`
-- `fn` `codex-rs/core/src/skills/injection.rs:544` `fn extract_tool_mentions_skips_common_env_vars() {`
-- `fn` `codex-rs/core/src/skills/injection.rs:551` `fn extract_tool_mentions_requires_link_syntax() {`
-- `fn` `codex-rs/core/src/skills/injection.rs:558` `fn extract_tool_mentions_trims_linked_paths_and_allows_spacing() {`
-- `fn` `codex-rs/core/src/skills/injection.rs:563` `fn extract_tool_mentions_stops_at_non_name_chars() {`
-- `fn` `codex-rs/core/src/skills/injection.rs:572` `fn collect_explicit_skill_mentions_text_respects_skill_order() {`
-- `fn` `codex-rs/core/src/skills/injection.rs:589` `fn collect_explicit_skill_mentions_ignores_structured_inputs() {`
-- `fn` `codex-rs/core/src/skills/injection.rs:611` `fn collect_explicit_skill_mentions_dedupes_by_path() {`
-- `fn` `codex-rs/core/src/skills/injection.rs:626` `fn collect_explicit_skill_mentions_skips_ambiguous_name() {`
-- `fn` `codex-rs/core/src/skills/injection.rs:642` `fn collect_explicit_skill_mentions_prefers_linked_path_over_name() {`
-- `fn` `codex-rs/core/src/skills/injection.rs:658` `fn collect_explicit_skill_mentions_skips_plain_name_when_connector_matches() {`
-- `fn` `codex-rs/core/src/skills/injection.rs:673` `fn collect_explicit_skill_mentions_allows_explicit_path_with_connector_conflict() {`
-- `fn` `codex-rs/core/src/skills/injection.rs:688` `fn collect_explicit_skill_mentions_skips_when_linked_path_disabled() {`
-- `fn` `codex-rs/core/src/skills/injection.rs:705` `fn collect_explicit_skill_mentions_prefers_resource_path() {`
-- `fn` `codex-rs/core/src/skills/injection.rs:721` `fn collect_explicit_skill_mentions_skips_missing_path_with_no_fallback() {`
-- `fn` `codex-rs/core/src/skills/injection.rs:737` `fn collect_explicit_skill_mentions_skips_missing_path_without_fallback() {`
+- `struct` `codex-rs/core/src/skills/injection.rs:146` `struct SkillSelectionContext<'a> {`
+- `impl` `codex-rs/core/src/skills/injection.rs:159` `impl<'a> ToolMentions<'a> {`
+- `fn` `codex-rs/core/src/skills/injection.rs:160` `fn is_empty(&self) -> bool {`
+- `const` `codex-rs/core/src/skills/injection.rs:181` `const APP_PATH_PREFIX: &str = "app://";`
+- `const` `codex-rs/core/src/skills/injection.rs:182` `const MCP_PATH_PREFIX: &str = "mcp://";`
+- `const` `codex-rs/core/src/skills/injection.rs:183` `const SKILL_PATH_PREFIX: &str = "skill://";`
+- `const` `codex-rs/core/src/skills/injection.rs:184` `const SKILL_FILENAME: &str = "SKILL.md";`
+- `fn` `codex-rs/core/src/skills/injection.rs:198` `fn is_skill_filename(path: &str) -> bool {`
+- `fn` `codex-rs/core/src/skills/injection.rs:279` `fn select_skills_from_mentions(`
+- `fn` `codex-rs/core/src/skills/injection.rs:408` `fn is_common_env_var(name: &str) -> bool {`
+- `fn` `codex-rs/core/src/skills/injection.rs:427` `fn text_mentions_skill(text: &str, skill_name: &str) -> bool {`
+- `fn` `codex-rs/core/src/skills/injection.rs:458` `fn is_mention_name_char(byte: u8) -> bool {`
+- `use` `codex-rs/core/src/skills/injection.rs:464` `use super::*;`
+- `use` `codex-rs/core/src/skills/injection.rs:465` `use pretty_assertions::assert_eq;`
+- `use` `codex-rs/core/src/skills/injection.rs:466` `use std::collections::HashMap;`
+- `use` `codex-rs/core/src/skills/injection.rs:467` `use std::collections::HashSet;`
+- `fn` `codex-rs/core/src/skills/injection.rs:469` `fn make_skill(name: &str, path: &str) -> SkillMetadata {`
+- `fn` `codex-rs/core/src/skills/injection.rs:485` `fn assert_mentions(text: &str, expected_names: &[&str], expected_paths: &[&str]) {`
+- `fn` `codex-rs/core/src/skills/injection.rs:491` `fn build_skill_name_counts(`
+- `fn` `codex-rs/core/src/skills/injection.rs:505` `fn collect_mentions(`
+- `fn` `codex-rs/core/src/skills/injection.rs:522` `fn text_mentions_skill_requires_exact_boundary() {`
+- `fn` `codex-rs/core/src/skills/injection.rs:546` `fn text_mentions_skill_handles_end_boundary_and_near_misses() {`
+- `fn` `codex-rs/core/src/skills/injection.rs:556` `fn text_mentions_skill_handles_many_dollars_without_looping() {`
+- `fn` `codex-rs/core/src/skills/injection.rs:563` `fn extract_tool_mentions_handles_plain_and_linked_mentions() {`
+- `fn` `codex-rs/core/src/skills/injection.rs:572` `fn extract_tool_mentions_skips_common_env_vars() {`
+- `fn` `codex-rs/core/src/skills/injection.rs:579` `fn extract_tool_mentions_requires_link_syntax() {`
+- `fn` `codex-rs/core/src/skills/injection.rs:586` `fn extract_tool_mentions_trims_linked_paths_and_allows_spacing() {`
+- `fn` `codex-rs/core/src/skills/injection.rs:591` `fn extract_tool_mentions_stops_at_non_name_chars() {`
+- `fn` `codex-rs/core/src/skills/injection.rs:600` `fn collect_explicit_skill_mentions_text_respects_skill_order() {`
+- `fn` `codex-rs/core/src/skills/injection.rs:617` `fn collect_explicit_skill_mentions_prioritizes_structured_inputs() {`
+- `fn` `codex-rs/core/src/skills/injection.rs:639` `fn collect_explicit_skill_mentions_skips_invalid_structured_and_blocks_plain_fallback() {`
+- `fn` `codex-rs/core/src/skills/injection.rs:660` `fn collect_explicit_skill_mentions_skips_disabled_structured_and_blocks_plain_fallback() {`
+- `fn` `codex-rs/core/src/skills/injection.rs:682` `fn collect_explicit_skill_mentions_dedupes_by_path() {`
+- `fn` `codex-rs/core/src/skills/injection.rs:697` `fn collect_explicit_skill_mentions_skips_ambiguous_name() {`
+- `fn` `codex-rs/core/src/skills/injection.rs:713` `fn collect_explicit_skill_mentions_prefers_linked_path_over_name() {`
+- `fn` `codex-rs/core/src/skills/injection.rs:729` `fn collect_explicit_skill_mentions_skips_plain_name_when_connector_matches() {`
+- `fn` `codex-rs/core/src/skills/injection.rs:744` `fn collect_explicit_skill_mentions_allows_explicit_path_with_connector_conflict() {`
+- `fn` `codex-rs/core/src/skills/injection.rs:759` `fn collect_explicit_skill_mentions_skips_when_linked_path_disabled() {`
+- `fn` `codex-rs/core/src/skills/injection.rs:776` `fn collect_explicit_skill_mentions_prefers_resource_path() {`
+- `fn` `codex-rs/core/src/skills/injection.rs:792` `fn collect_explicit_skill_mentions_skips_missing_path_with_no_fallback() {`
+- `fn` `codex-rs/core/src/skills/injection.rs:808` `fn collect_explicit_skill_mentions_skips_missing_path_without_fallback() {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -99,4 +101,4 @@ Source file (no public surface detected by heuristic).
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

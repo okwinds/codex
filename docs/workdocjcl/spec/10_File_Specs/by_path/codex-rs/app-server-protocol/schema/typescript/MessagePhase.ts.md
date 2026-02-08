@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.ts`
-- size_bytes: `211`
-- sha256: `0035f1c3ff640ead84f3e07ff06d0a01ee7c3353ad96c2e5ac2ee01af21f7872`
-- generated_utc: `2026-02-03T16:08:28Z`
+- size_bytes: `447`
+- sha256: `9b9cac40f1eb1d9c9c387b90fd9f87873727e010f46e478230aff17fd3ec460c`
+- generated_utc: `2026-02-08T10:45:14Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -21,7 +21,7 @@ Source file implementing exported/public items listed below.
 - `export type MessagePhase = "commentary" | "final_answer";`
 
 ## Definitions (auto, per-file)
-- `export` `codex-rs/app-server-protocol/schema/typescript/MessagePhase.ts:5` `export type MessagePhase = "commentary" | "final_answer";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/MessagePhase.ts:11` `export type MessagePhase = "commentary" | "final_answer";`
 
 ## Dependencies (auto sample)
 ### Imports / Includes

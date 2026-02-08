@@ -5,7 +5,7 @@
 - ext: `.md`
 - size_bytes: `20923`
 - sha256: `0fae66723e9ba38083bd5a26f83f5c6c944954daaea3436084ab75eb8fdf46c8`
-- generated_utc: `2026-02-03T16:08:30Z`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Documentation file.
@@ -33,4 +33,4 @@ Documentation file.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/02_Data/ROLLOUT_FORMAT.md`
+- `docs/workdocjcl/spec/02_Data/ROLLOUT_FORMAT.md`

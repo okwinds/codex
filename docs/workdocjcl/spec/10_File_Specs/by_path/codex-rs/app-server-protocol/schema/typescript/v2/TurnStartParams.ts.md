@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.ts`
-- size_bytes: `1742`
-- sha256: `90e26e852b88cde7ea1a5c0824dee11b7d67835893bab0bbf37c0434e8c7130d`
-- generated_utc: `2026-02-03T16:08:28Z`
+- size_bytes: `1874`
+- sha256: `ef0c4b3b7275ca624ced93a6fc5597502c737dd431ef0131c9c50ce11420f724`
+- generated_utc: `2026-02-08T10:45:14Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -18,7 +18,7 @@ Source file implementing exported/public items listed below.
 - (no obvious side effects detected by heuristic)
 
 ## Public Surface (auto)
-- `export type TurnStartParams = { threadId: string, input: Array<UserInput>,`
+- `export type TurnStartParams = {threadId: string, input: Array<UserInput>, /**`
 
 ## Definitions (auto, per-file)
 - `import` `codex-rs/app-server-protocol/schema/typescript/v2/TurnStartParams.ts:4` `import type { CollaborationMode } from "../CollaborationMode";`
@@ -29,7 +29,7 @@ Source file implementing exported/public items listed below.
 - `import` `codex-rs/app-server-protocol/schema/typescript/v2/TurnStartParams.ts:9` `import type { AskForApproval } from "./AskForApproval";`
 - `import` `codex-rs/app-server-protocol/schema/typescript/v2/TurnStartParams.ts:10` `import type { SandboxPolicy } from "./SandboxPolicy";`
 - `import` `codex-rs/app-server-protocol/schema/typescript/v2/TurnStartParams.ts:11` `import type { UserInput } from "./UserInput";`
-- `export` `codex-rs/app-server-protocol/schema/typescript/v2/TurnStartParams.ts:13` `export type TurnStartParams = { threadId: string, input: Array<UserInput>,`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/TurnStartParams.ts:13` `export type TurnStartParams = {threadId: string, input: Array<UserInput>, /**`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -41,7 +41,7 @@ Source file implementing exported/public items listed below.
 - `import type { AskForApproval } from "./AskForApproval";`
 - `import type { SandboxPolicy } from "./SandboxPolicy";`
 - `import type { UserInput } from "./UserInput";`
-- `export type TurnStartParams = { threadId: string, input: Array<UserInput>,`
+- `export type TurnStartParams = {threadId: string, input: Array<UserInput>, /**`
 ### Referenced env vars
 - (none detected)
 

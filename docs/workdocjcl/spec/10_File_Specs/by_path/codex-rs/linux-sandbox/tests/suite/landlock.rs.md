@@ -3,9 +3,9 @@
 ## Identity
 - kind: `test`
 - ext: `.rs`
-- size_bytes: `8561`
-- sha256: `007ee06ec55fcf0419344385cba95f262ad335f8e20044c3e2df2fe94d6a7c76`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `12953`
+- sha256: `657c7b92a7b8ff21ff0740483cd134dcca3bd4d94bdde806943bd1085d19e3f7`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -27,6 +27,7 @@ Test or snapshot file used for automated verification.
 ### Imports / Includes
 - `use codex_core::config::types::ShellEnvironmentPolicy;`
 - `use codex_core::error::CodexErr;`
+- `use codex_core::error::Result;`
 - `use codex_core::error::SandboxErr;`
 - `use codex_core::exec::ExecParams;`
 - `use codex_core::exec::process_exec_tool_call;`
@@ -39,6 +40,7 @@ Test or snapshot file used for automated verification.
 - `use std::collections::HashMap;`
 - `use std::path::PathBuf;`
 - `use tempfile::NamedTempFile;`
+- `use std::os::unix::fs::symlink;`
 ### Referenced env vars
 - (none detected)
 

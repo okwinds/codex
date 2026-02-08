@@ -3,9 +3,9 @@
 ## Identity
 - kind: `config`
 - ext: `.yml`
-- size_bytes: `4774`
-- sha256: `3f373e9f061f690f6c57de2993fbd4fc633b6b60c59a3a14868daa1a416c1d98`
-- generated_utc: `2026-02-03T16:08:28Z`
+- size_bytes: `4870`
+- sha256: `91866ea269ae4e4c5b1210fd66078e810ddd8046b06b23af40974e90c0a1d168`
+- generated_utc: `2026-02-08T10:45:14Z`
 
 ## Purpose (Why)
 GitHub Actions workflow definition.

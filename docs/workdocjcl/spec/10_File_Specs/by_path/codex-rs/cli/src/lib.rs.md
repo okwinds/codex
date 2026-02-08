@@ -5,7 +5,7 @@
 - ext: `.rs`
 - size_bytes: `1682`
 - sha256: `2db038a3f393e97c1efc577838a56d38c70247818d4a38a4a62d729abd47c5a5`
-- generated_utc: `2026-02-03T16:08:28Z`
+- generated_utc: `2026-02-08T10:45:16Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -43,4 +43,4 @@ Source file implementing exported/public items listed below.
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/03_API/CLI.md`
+- `docs/workdocjcl/spec/03_API/CLI.md`

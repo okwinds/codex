@@ -45,18 +45,18 @@ TUI 自身的 CLI 参数结构体：
 - UI 的所有可见变化应能由事件流推导（允许 UI 有额外本地状态，例如输入框内容、选择器光标等）。
 
 审批（exec/apply_patch/MCP elicitation）是 UI 与 core 交互的关键闭环，复刻时必须保持事件→弹窗→Op 回传语义一致：
-- 详见：`workdocjcl/spec/06_UI/TUI_APPROVALS.md`
+- 详见：`docs/workdocjcl/spec/06_UI/TUI_APPROVALS.md`
 
 会话选择（resume/fork picker）属于“复刻系统级能力”，尤其影响 rollout 恢复与 fork 的可用性：
-- 详见：`workdocjcl/spec/06_UI/TUI_RESUME_PICKER.md`
+- 详见：`docs/workdocjcl/spec/06_UI/TUI_RESUME_PICKER.md`
 
 Slash commands（`/...`）是 UI 内部命令体系，决定了大量“非模型消息”的交互入口（打开弹窗/切换模式/退出等）：
-- 详见：`workdocjcl/spec/06_UI/TUI_SLASH_COMMANDS.md`
+- 详见：`docs/workdocjcl/spec/06_UI/TUI_SLASH_COMMANDS.md`
 
 输入框（composer）是 TUI 与 core 交互的另一个关键闭环：它把用户输入统一归一为 `InputResult`，并负责 large paste/附件占位符与 `/prompts:` 展开。
-- 详见：`workdocjcl/spec/06_UI/TUI_COMPOSER.md`
-- `/prompts:` 细节：`workdocjcl/spec/06_UI/TUI_PROMPTS.md`
-- 非 bracketed paste burst：`workdocjcl/spec/06_UI/TUI_PASTE_BURST.md`
+- 详见：`docs/workdocjcl/spec/06_UI/TUI_COMPOSER.md`
+- `/prompts:` 细节：`docs/workdocjcl/spec/06_UI/TUI_PROMPTS.md`
+- 非 bracketed paste burst：`docs/workdocjcl/spec/06_UI/TUI_PASTE_BURST.md`
 
 ## 5. 退出语义（Exit）
 TUI 返回：

@@ -5,7 +5,7 @@
 - ext: `.sh`
 - size_bytes: `3900`
 - sha256: `8fa0d5beab253af345a054be88af8124bd35577f69812c35f9edc9ad6c45bf20`
-- generated_utc: `2026-02-03T16:08:28Z`
+- generated_utc: `2026-02-08T10:45:14Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -33,4 +33,4 @@ Source file (no public surface detected by heuristic).
 - has retry/timeout/backoff logic
 
 ## Spec Links
-- `workdocjcl/spec/07_Infrastructure/PACKAGING.md`
+- `docs/workdocjcl/spec/07_Infrastructure/PACKAGING.md`

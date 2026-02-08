@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `8092`
-- sha256: `91f4506900aa0d61da6221f2da49a727afb8d5dfd1df567a7511b82910e91475`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `8020`
+- sha256: `b95da33f0ea8545d95b6a66482d89bc317ea8d2e2630bd02c99450d9139cb883`
+- generated_utc: `2026-02-08T10:45:16Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -68,13 +68,12 @@ Source file implementing exported/public items listed below.
 - `fn` `codex-rs/codex-api/src/requests/responses.rs:163` `fn attach_item_ids(payload_json: &mut Value, original_items: &[ResponseItem]) {`
 - `use` `codex-rs/codex-api/src/requests/responses.rs:192` `use super::*;`
 - `use` `codex-rs/codex-api/src/requests/responses.rs:193` `use crate::provider::RetryConfig;`
-- `use` `codex-rs/codex-api/src/requests/responses.rs:194` `use crate::provider::WireApi;`
-- `use` `codex-rs/codex-api/src/requests/responses.rs:195` `use codex_protocol::protocol::SubAgentSource;`
-- `use` `codex-rs/codex-api/src/requests/responses.rs:196` `use http::HeaderValue;`
-- `use` `codex-rs/codex-api/src/requests/responses.rs:197` `use pretty_assertions::assert_eq;`
-- `use` `codex-rs/codex-api/src/requests/responses.rs:198` `use std::time::Duration;`
-- `fn` `codex-rs/codex-api/src/requests/responses.rs:200` `fn provider(name: &str, base_url: &str) -> Provider {`
-- `fn` `codex-rs/codex-api/src/requests/responses.rs:219` `fn azure_default_store_attaches_ids_and_headers() {`
+- `use` `codex-rs/codex-api/src/requests/responses.rs:194` `use codex_protocol::protocol::SubAgentSource;`
+- `use` `codex-rs/codex-api/src/requests/responses.rs:195` `use http::HeaderValue;`
+- `use` `codex-rs/codex-api/src/requests/responses.rs:196` `use pretty_assertions::assert_eq;`
+- `use` `codex-rs/codex-api/src/requests/responses.rs:197` `use std::time::Duration;`
+- `fn` `codex-rs/codex-api/src/requests/responses.rs:199` `fn provider(name: &str, base_url: &str) -> Provider {`
+- `fn` `codex-rs/codex-api/src/requests/responses.rs:217` `fn azure_default_store_attaches_ids_and_headers() {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -92,7 +91,6 @@ Source file implementing exported/public items listed below.
 - `use serde_json::Value;`
 - `use super::*;`
 - `use crate::provider::RetryConfig;`
-- `use crate::provider::WireApi;`
 - `use codex_protocol::protocol::SubAgentSource;`
 - `use http::HeaderValue;`
 - `use pretty_assertions::assert_eq;`

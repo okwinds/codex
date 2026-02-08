@@ -7,13 +7,13 @@
 这些文件来自 `codex-rs/core/` 与其 `templates/` 子目录（见 `MANIFEST.json` 的 `source_path`）。
 
 ## 1. 清单与校验
-- 规范副本的完整清单与校验和：`workdocjcl/spec/04_Business_Logic/PROMPTS/MANIFEST.json`
+- 规范副本的完整清单与校验和：`docs/workdocjcl/spec/04_Business_Logic/PROMPTS/MANIFEST.json`
 - 复刻实现应当在构建阶段校验 sha256，以确保 prompt 文本未漂移。
 
 ## 2. 如何在运行时被使用（导航）
 prompt 的“选择/覆盖/注入顺序”属于运行时语义，见：
-- BaseInstructions 决议、initial context 注入：`workdocjcl/spec/04_Business_Logic/PROMPT_ASSEMBLY.md`
-- 模型 slug → preset prompt 的选择矩阵：`workdocjcl/spec/04_Business_Logic/SYSTEM_PRESET_PROMPTS.md`
+- BaseInstructions 决议、initial context 注入：`docs/workdocjcl/spec/04_Business_Logic/PROMPT_ASSEMBLY.md`
+- 模型 slug → preset prompt 的选择矩阵：`docs/workdocjcl/spec/04_Business_Logic/SYSTEM_PRESET_PROMPTS.md`
 
 ## 3. 资产分组（按用途）
 - `prompt.md`：默认 base instructions（通用）

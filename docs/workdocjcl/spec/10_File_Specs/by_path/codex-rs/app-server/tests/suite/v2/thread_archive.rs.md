@@ -3,9 +3,9 @@
 ## Identity
 - kind: `test`
 - ext: `.rs`
-- size_bytes: `3139`
-- sha256: `5cfccac638ac3c13e3df12c2f7f8f7310011a129991ae2fc5c4dd5ad437f7e79`
-- generated_utc: `2026-02-03T16:08:28Z`
+- size_bytes: `5845`
+- sha256: `0f9937109acd9b9e4fe28d20f188a47fcd9c039f6289a901bd5858c3a974558e`
+- generated_utc: `2026-02-08T10:45:15Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -27,13 +27,18 @@ Test or snapshot file used for automated verification.
 ### Imports / Includes
 - `use anyhow::Result;`
 - `use app_test_support::McpProcess;`
+- `use app_test_support::create_mock_responses_server_repeating_assistant;`
 - `use app_test_support::to_response;`
+- `use codex_app_server_protocol::JSONRPCError;`
 - `use codex_app_server_protocol::JSONRPCResponse;`
 - `use codex_app_server_protocol::RequestId;`
 - `use codex_app_server_protocol::ThreadArchiveParams;`
 - `use codex_app_server_protocol::ThreadArchiveResponse;`
 - `use codex_app_server_protocol::ThreadStartParams;`
 - `use codex_app_server_protocol::ThreadStartResponse;`
+- `use codex_app_server_protocol::TurnStartParams;`
+- `use codex_app_server_protocol::TurnStartResponse;`
+- `use codex_app_server_protocol::UserInput;`
 - `use codex_core::ARCHIVED_SESSIONS_SUBDIR;`
 - `use codex_core::find_thread_path_by_id_str;`
 - `use std::path::Path;`

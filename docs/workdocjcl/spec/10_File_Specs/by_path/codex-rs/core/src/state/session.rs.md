@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `4646`
-- sha256: `f8f5f43e85d865077f8f520cf1c896ee954681475cbce4120c40e7cfbd323bf6`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `4851`
+- sha256: `2610014e12704f097cb86c441958af3117ca5f50c028bfb192fa1c798dc79f1d`
+- generated_utc: `2026-02-08T10:45:33Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -30,8 +30,8 @@ Source file (no public surface detected by heuristic).
 - `use` `codex-rs/core/src/state/session.rs:10` `use crate::protocol::TokenUsage;`
 - `use` `codex-rs/core/src/state/session.rs:11` `use crate::protocol::TokenUsageInfo;`
 - `use` `codex-rs/core/src/state/session.rs:12` `use crate::truncate::TruncationPolicy;`
-- `impl` `codex-rs/core/src/state/session.rs:29` `impl SessionState {`
-- `fn` `codex-rs/core/src/state/session.rs:131` `fn merge_rate_limit_fields(`
+- `impl` `codex-rs/core/src/state/session.rs:31` `impl SessionState {`
+- `fn` `codex-rs/core/src/state/session.rs:134` `fn merge_rate_limit_fields(`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -51,4 +51,4 @@ Source file (no public surface detected by heuristic).
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

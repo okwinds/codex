@@ -5,7 +5,7 @@
 - ext: `.json`
 - size_bytes: `1102`
 - sha256: `d569dfeae7b3047378386332bff394bd41ec4eba1af49d2268554cfa18bbdca5`
-- generated_utc: `2026-02-03T16:08:31Z`
+- generated_utc: `2026-02-08T10:45:42Z`
 
 ## Purpose (Why)
 Node package manifest (name/scripts/dependencies/exports).
@@ -33,4 +33,4 @@ Node package manifest (name/scripts/dependencies/exports).
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/05_Integrations/MCP.md`
+- `docs/workdocjcl/spec/05_Integrations/MCP.md`

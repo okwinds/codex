@@ -3,9 +3,9 @@
 ## Identity
 - kind: `test`
 - ext: `.rs`
-- size_bytes: `1849`
-- sha256: `09131854b372659ab18241a6728ab6813dcad6ffb06c1977ef63269bcb13e671`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `3234`
+- sha256: `ad4baef47caa62998519a231bc291bed413ec4d978930915fd4b573408cfa696`
+- generated_utc: `2026-02-08T10:45:36Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -25,6 +25,8 @@ Test or snapshot file used for automated verification.
 
 ## Dependencies (auto sample)
 ### Imports / Includes
+- `use std::ffi::OsString;`
+- `use codex_arg0::Arg0PathEntryGuard;`
 - `use codex_arg0::arg0_dispatch;`
 - `use ctor::ctor;`
 - `use tempfile::TempDir;`
@@ -35,4 +37,4 @@ Test or snapshot file used for automated verification.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

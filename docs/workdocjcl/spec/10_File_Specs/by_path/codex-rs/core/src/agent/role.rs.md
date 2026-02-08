@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `4921`
-- sha256: `c1353252a8bd0c1755e4edfa136e1f976c990db8c2c906f664c9d9edbbaa3d87`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `4926`
+- sha256: `047b6e158643c68ed0ee45af06000f8ffdd4ba61fc6cd97af142885549cf71b9`
+- generated_utc: `2026-02-08T10:45:26Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -31,7 +31,7 @@ Source file implementing exported/public items listed below.
 - `use` `codex-rs/core/src/agent/role.rs:4` `use serde::Deserialize;`
 - `use` `codex-rs/core/src/agent/role.rs:5` `use serde::Serialize;`
 - `const` `codex-rs/core/src/agent/role.rs:8` `const ORCHESTRATOR_PROMPT: &str = include_str!("../../templates/agents/orchestrator.md");`
-- `const` `codex-rs/core/src/agent/role.rs:11` `const EXPLORER_MODEL: &str = "gpt-5.2-codex";`
+- `const` `codex-rs/core/src/agent/role.rs:11` `const EXPLORER_MODEL: &str = "gpt-5.1-codex-mini";`
 - `const` `codex-rs/core/src/agent/role.rs:14` `const ALL_ROLES: [AgentRole; 3] = [`
 - `enum` `codex-rs/core/src/agent/role.rs:25` `pub enum AgentRole {`
 - `struct` `codex-rs/core/src/agent/role.rs:38` `pub struct AgentProfile {`
@@ -54,4 +54,4 @@ Source file implementing exported/public items listed below.
 - returns structured errors (Result/ErrorKind)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

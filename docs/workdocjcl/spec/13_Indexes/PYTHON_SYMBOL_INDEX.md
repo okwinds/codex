@@ -1,7 +1,7 @@
 # Python Symbol Index
 
-- generated_utc: `2026-02-03T14:49:41Z`
-- symbol_count: `106`
+- generated_utc: `2026-02-08T10:45:45Z`
+- symbol_count: `108`
 
 | Kind | Location | Signature |
 |---|---|---|
@@ -76,6 +76,8 @@
 | `def` | `codex-rs/core/src/skills/assets/samples/skill-installer/scripts/list-skills.py:50` | `def _list_skills(repo: str, path: str, ref: str) -> list[str]:` |
 | `def` | `codex-rs/core/src/skills/assets/samples/skill-installer/scripts/list-skills.py:68` | `def _parse_args(argv: list[str]) -> Args:` |
 | `def` | `codex-rs/core/src/skills/assets/samples/skill-installer/scripts/list-skills.py:86` | `def main(argv: list[str]) -> int:` |
+| `class` | `codex-rs/vendor/bubblewrap/tests/test-seccomp.py:209` | `class Test(unittest.TestCase):` |
+| `def` | `codex-rs/vendor/bubblewrap/tests/test-seccomp.py:612` | `def main():` |
 | `def` | `codex-rs/windows-sandbox-rs/sandbox_smoketests.py:12` | `def _resolve_codex_cmd() -> List[str]:` |
 | `class` | `codex-rs/windows-sandbox-rs/sandbox_smoketests.py:57` | `class CaseResult:` |
 | `def` | `codex-rs/windows-sandbox-rs/sandbox_smoketests.py:61` | `def run_sbx(` |

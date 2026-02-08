@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `15475`
-- sha256: `f3af44dd8184e6f38356b9953fe15b9af5343d39509dd6fd5b53c405d5ae6899`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `15521`
+- sha256: `967239b9767f7ecb9a29673fcd0b7bcdc58f8ea374a0e575ba1db1cebda18f6c`
+- generated_utc: `2026-02-08T10:45:33Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -21,32 +21,33 @@ Source file implementing exported/public items listed below.
 - `pub struct ListDirHandler;`
 
 ## Definitions (auto, per-file)
-- `use` `codex-rs/core/src/tools/handlers/list_dir.rs:1` `use std::collections::VecDeque;`
-- `use` `codex-rs/core/src/tools/handlers/list_dir.rs:2` `use std::ffi::OsStr;`
-- `use` `codex-rs/core/src/tools/handlers/list_dir.rs:3` `use std::fs::FileType;`
-- `use` `codex-rs/core/src/tools/handlers/list_dir.rs:4` `use std::path::Path;`
-- `use` `codex-rs/core/src/tools/handlers/list_dir.rs:5` `use std::path::PathBuf;`
-- `use` `codex-rs/core/src/tools/handlers/list_dir.rs:7` `use async_trait::async_trait;`
-- `use` `codex-rs/core/src/tools/handlers/list_dir.rs:8` `use codex_utils_string::take_bytes_at_char_boundary;`
-- `use` `codex-rs/core/src/tools/handlers/list_dir.rs:9` `use serde::Deserialize;`
-- `use` `codex-rs/core/src/tools/handlers/list_dir.rs:10` `use tokio::fs;`
-- `use` `codex-rs/core/src/tools/handlers/list_dir.rs:12` `use crate::function_tool::FunctionCallError;`
-- `use` `codex-rs/core/src/tools/handlers/list_dir.rs:13` `use crate::tools::context::ToolInvocation;`
-- `use` `codex-rs/core/src/tools/handlers/list_dir.rs:14` `use crate::tools::context::ToolOutput;`
-- `use` `codex-rs/core/src/tools/handlers/list_dir.rs:15` `use crate::tools::context::ToolPayload;`
-- `use` `codex-rs/core/src/tools/handlers/list_dir.rs:16` `use crate::tools::handlers::parse_arguments;`
-- `use` `codex-rs/core/src/tools/handlers/list_dir.rs:17` `use crate::tools::registry::ToolHandler;`
-- `use` `codex-rs/core/src/tools/handlers/list_dir.rs:18` `use crate::tools::registry::ToolKind;`
-- `struct` `codex-rs/core/src/tools/handlers/list_dir.rs:20` `pub struct ListDirHandler;`
-- `const` `codex-rs/core/src/tools/handlers/list_dir.rs:22` `const MAX_ENTRY_LENGTH: usize = 500;`
-- `const` `codex-rs/core/src/tools/handlers/list_dir.rs:23` `const INDENTATION_SPACES: usize = 2;`
-- `fn` `codex-rs/core/src/tools/handlers/list_dir.rs:25` `fn default_offset() -> usize {`
-- `fn` `codex-rs/core/src/tools/handlers/list_dir.rs:29` `fn default_limit() -> usize {`
-- `fn` `codex-rs/core/src/tools/handlers/list_dir.rs:33` `fn default_depth() -> usize {`
-- `struct` `codex-rs/core/src/tools/handlers/list_dir.rs:38` `struct ListDirArgs {`
-- `impl` `codex-rs/core/src/tools/handlers/list_dir.rs:49` `impl ToolHandler for ListDirHandler {`
-- `fn` `codex-rs/core/src/tools/handlers/list_dir.rs:50` `fn kind(&self) -> ToolKind {`
-- `fn` `codex-rs/core/src/tools/handlers/list_dir.rs:54` `async fn handle(&self, invocation: ToolInvocation) -> Result<ToolOutput, FunctionCallError> {`
+- `use` `codex-rs/core/src/tools/handlers/list_dir.rs:1` `use codex_protocol::models::FunctionCallOutputBody;`
+- `use` `codex-rs/core/src/tools/handlers/list_dir.rs:2` `use std::collections::VecDeque;`
+- `use` `codex-rs/core/src/tools/handlers/list_dir.rs:3` `use std::ffi::OsStr;`
+- `use` `codex-rs/core/src/tools/handlers/list_dir.rs:4` `use std::fs::FileType;`
+- `use` `codex-rs/core/src/tools/handlers/list_dir.rs:5` `use std::path::Path;`
+- `use` `codex-rs/core/src/tools/handlers/list_dir.rs:6` `use std::path::PathBuf;`
+- `use` `codex-rs/core/src/tools/handlers/list_dir.rs:8` `use async_trait::async_trait;`
+- `use` `codex-rs/core/src/tools/handlers/list_dir.rs:9` `use codex_utils_string::take_bytes_at_char_boundary;`
+- `use` `codex-rs/core/src/tools/handlers/list_dir.rs:10` `use serde::Deserialize;`
+- `use` `codex-rs/core/src/tools/handlers/list_dir.rs:11` `use tokio::fs;`
+- `use` `codex-rs/core/src/tools/handlers/list_dir.rs:13` `use crate::function_tool::FunctionCallError;`
+- `use` `codex-rs/core/src/tools/handlers/list_dir.rs:14` `use crate::tools::context::ToolInvocation;`
+- `use` `codex-rs/core/src/tools/handlers/list_dir.rs:15` `use crate::tools::context::ToolOutput;`
+- `use` `codex-rs/core/src/tools/handlers/list_dir.rs:16` `use crate::tools::context::ToolPayload;`
+- `use` `codex-rs/core/src/tools/handlers/list_dir.rs:17` `use crate::tools::handlers::parse_arguments;`
+- `use` `codex-rs/core/src/tools/handlers/list_dir.rs:18` `use crate::tools::registry::ToolHandler;`
+- `use` `codex-rs/core/src/tools/handlers/list_dir.rs:19` `use crate::tools::registry::ToolKind;`
+- `struct` `codex-rs/core/src/tools/handlers/list_dir.rs:21` `pub struct ListDirHandler;`
+- `const` `codex-rs/core/src/tools/handlers/list_dir.rs:23` `const MAX_ENTRY_LENGTH: usize = 500;`
+- `const` `codex-rs/core/src/tools/handlers/list_dir.rs:24` `const INDENTATION_SPACES: usize = 2;`
+- `fn` `codex-rs/core/src/tools/handlers/list_dir.rs:26` `fn default_offset() -> usize {`
+- `fn` `codex-rs/core/src/tools/handlers/list_dir.rs:30` `fn default_limit() -> usize {`
+- `fn` `codex-rs/core/src/tools/handlers/list_dir.rs:34` `fn default_depth() -> usize {`
+- `struct` `codex-rs/core/src/tools/handlers/list_dir.rs:39` `struct ListDirArgs {`
+- `impl` `codex-rs/core/src/tools/handlers/list_dir.rs:50` `impl ToolHandler for ListDirHandler {`
+- `fn` `codex-rs/core/src/tools/handlers/list_dir.rs:51` `fn kind(&self) -> ToolKind {`
+- `fn` `codex-rs/core/src/tools/handlers/list_dir.rs:55` `async fn handle(&self, invocation: ToolInvocation) -> Result<ToolOutput, FunctionCallError> {`
 - `fn` `codex-rs/core/src/tools/handlers/list_dir.rs:112` `async fn list_dir_slice(`
 - `fn` `codex-rs/core/src/tools/handlers/list_dir.rs:151` `async fn collect_entries(`
 - `fn` `codex-rs/core/src/tools/handlers/list_dir.rs:211` `fn format_entry_name(path: &Path) -> String {`
@@ -70,6 +71,7 @@ Source file implementing exported/public items listed below.
 
 ## Dependencies (auto sample)
 ### Imports / Includes
+- `use codex_protocol::models::FunctionCallOutputBody;`
 - `use std::collections::VecDeque;`
 - `use std::ffi::OsStr;`
 - `use std::fs::FileType;`
@@ -89,7 +91,6 @@ Source file implementing exported/public items listed below.
 - `use super::*;`
 - `use pretty_assertions::assert_eq;`
 - `use tempfile::tempdir;`
-- `use std::os::unix::fs::symlink;`
 ### Referenced env vars
 - (none detected)
 
@@ -98,4 +99,4 @@ Source file implementing exported/public items listed below.
 - uses Rust panic/expect/unwrap-style failure paths
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

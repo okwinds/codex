@@ -5,7 +5,7 @@
 - ext: `.txt`
 - size_bytes: `1192`
 - sha256: `52468572a5a822c6f620673bb0a999fbc4872c6f164176b6bd225c4e64356753`
-- generated_utc: `2026-02-03T16:08:30Z`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Repository file.
@@ -33,4 +33,4 @@ Repository file.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/06_UI/TUI.md`
+- `docs/workdocjcl/spec/06_UI/TUI.md`

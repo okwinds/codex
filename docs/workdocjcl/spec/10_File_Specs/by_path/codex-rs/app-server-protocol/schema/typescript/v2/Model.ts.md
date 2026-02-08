@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.ts`
-- size_bytes: `618`
-- sha256: `54b321dfc0791c760876f1a2be40fad75cb7e17a132b4a5919dc0eaf8b459645`
-- generated_utc: `2026-02-03T16:08:28Z`
+- size_bytes: `642`
+- sha256: `3526262d12003c5c91959e41219fd99d72b93e16e465c93b7690ec8cf94d6056`
+- generated_utc: `2026-02-08T10:45:14Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -18,20 +18,20 @@ Source file implementing exported/public items listed below.
 - (no obvious side effects detected by heuristic)
 
 ## Public Surface (auto)
-- `export type Model = { id: string, model: string, displayName: string, description: string, supportedReasoningEfforts: Array<ReasoningEffortOption>, defaultReasoningEffort: ReasoningEffort, inputModalities: Array<InputModality>, supportsPersonality: boolean, isDefault: boolean, };`
+- `export type Model = { id: string, model: string, upgrade: string | null, displayName: string, description: string, supportedReasoningEfforts: Array<ReasoningEffortOption>, defaultReasoningEffort: ReasoningEffort, inputModalities: Array<InputModality>, supportsPersonality: boolean, isDefault: boolean, };`
 
 ## Definitions (auto, per-file)
 - `import` `codex-rs/app-server-protocol/schema/typescript/v2/Model.ts:4` `import type { InputModality } from "../InputModality";`
 - `import` `codex-rs/app-server-protocol/schema/typescript/v2/Model.ts:5` `import type { ReasoningEffort } from "../ReasoningEffort";`
 - `import` `codex-rs/app-server-protocol/schema/typescript/v2/Model.ts:6` `import type { ReasoningEffortOption } from "./ReasoningEffortOption";`
-- `export` `codex-rs/app-server-protocol/schema/typescript/v2/Model.ts:8` `export type Model = { id: string, model: string, displayName: string, description: string, supportedReasoningEfforts: Array<ReasoningEffortOption>, defaultReasoningEffort: ReasoningEffort, inputModalities: Array<InputModality>, supportsPersonality: boolean, isDefault: boolean, };`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/Model.ts:8` `export type Model = { id: string, model: string, upgrade: string | null, displayName: string, description: string, supportedReasoningEfforts: Array<ReasoningEffortOption>, defaultReasoningEffort: ReasoningEffort, inputModalities: Array<InputModality>, supportsPersonality: boolean, isDefault: boolean, };`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
 - `import type { InputModality } from "../InputModality";`
 - `import type { ReasoningEffort } from "../ReasoningEffort";`
 - `import type { ReasoningEffortOption } from "./ReasoningEffortOption";`
-- `export type Model = { id: string, model: string, displayName: string, description: string, supportedReasoningEfforts: Array<ReasoningEffortOption>, defaultReasoningEffort: ReasoningEffort, inputModalities: Array<InputModality>, supportsPersonality: boolean, isDefault: boolean, };`
+- `export type Model = { id: string, model: string, upgrade: string | null, displayName: string, description: string, supportedReasoningEfforts: Array<ReasoningEffortOption>, defaultReasoningEffort: ReasoningEffort, inputModalities: Array<InputModality>, supportsPersonality: boolean, isDefault: boolean, };`
 ### Referenced env vars
 - (none detected)
 

@@ -3,9 +3,9 @@
 ## Identity
 - kind: `test`
 - ext: `.rs`
-- size_bytes: `16966`
-- sha256: `6e8f1033dddb3250e2049abb7a49eb32aa3ab799be82ebaaaf94ab8c88c268be`
-- generated_utc: `2026-02-03T16:08:28Z`
+- size_bytes: `18932`
+- sha256: `b9979ed47bf36495afd14dff0f7f8a745a40842f6f674037916a460c93579297`
+- generated_utc: `2026-02-08T10:45:15Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -30,6 +30,9 @@ Test or snapshot file used for automated verification.
 - `use app_test_support::test_path_buf_with_windows;`
 - `use app_test_support::test_tmp_path_buf;`
 - `use app_test_support::to_response;`
+- `use codex_app_server_protocol::AppConfig;`
+- `use codex_app_server_protocol::AppDisabledReason;`
+- `use codex_app_server_protocol::AppsConfig;`
 - `use codex_app_server_protocol::AskForApproval;`
 - `use codex_app_server_protocol::ConfigBatchWriteParams;`
 - `use codex_app_server_protocol::ConfigEdit;`
@@ -42,9 +45,6 @@ Test or snapshot file used for automated verification.
 - `use codex_app_server_protocol::JSONRPCResponse;`
 - `use codex_app_server_protocol::MergeStrategy;`
 - `use codex_app_server_protocol::RequestId;`
-- `use codex_app_server_protocol::SandboxMode;`
-- `use codex_app_server_protocol::ToolsV2;`
-- `use codex_app_server_protocol::WriteStatus;`
 ### Referenced env vars
 - (none detected)
 

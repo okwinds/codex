@@ -74,6 +74,7 @@
 ## Verification
 - [09_Verification/COVERAGE_REPORT.md](09_Verification/COVERAGE_REPORT.md) - Spec coverage
 - [09_Verification/CORE_INFRASTRUCTURE_REVIEW.md](09_Verification/CORE_INFRASTRUCTURE_REVIEW.md) - Deep audit of core infra (model API, prompts, tools, skills)
+- [09_Verification/WORKDOCJCL_REVIEW_2026-02-08.md](09_Verification/WORKDOCJCL_REVIEW_2026-02-08.md) - Review summary for docs migration + spec/code realignment
 - [09_Verification/REPLICATION_GUIDE.md](09_Verification/REPLICATION_GUIDE.md) - How to replicate
 - [09_Verification/KNOWN_GAPS.md](09_Verification/KNOWN_GAPS.md) - Documentation gaps
 - [09_Verification/CODE_TO_SPEC_MAP.md](09_Verification/CODE_TO_SPEC_MAP.md) - Bidirectional mapping anchor

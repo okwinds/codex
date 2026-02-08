@@ -5,7 +5,7 @@
 - ext: `.sh`
 - size_bytes: `401`
 - sha256: `091c0c44cb1be42d313ea8e6202e8e717d9e7be43c13962797ba39a7f495bcdc`
-- generated_utc: `2026-02-03T16:08:28Z`
+- generated_utc: `2026-02-08T10:45:14Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -33,4 +33,4 @@ Source file (no public surface detected by heuristic).
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/07_Infrastructure/PACKAGING.md`
+- `docs/workdocjcl/spec/07_Infrastructure/PACKAGING.md`

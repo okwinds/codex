@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `20182`
-- sha256: `8a1c8c3390ea1149801cd412dfc708e9307046c4aa1fc00ede4bf3692ac5c964`
-- generated_utc: `2026-02-03T16:08:31Z`
+- size_bytes: `20311`
+- sha256: `492c602eaf9b401b003e6caae0727b53eb2b008bdbe849d0ebfe78816cf64161`
+- generated_utc: `2026-02-08T10:45:41Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -82,18 +82,18 @@ Source file implementing exported/public items listed below.
 - `const` `codex-rs/windows-sandbox-rs/src/elevated_impl.rs:181` `const ERROR_PIPE_CONNECTED: u32 = 535;`
 - `struct` `codex-rs/windows-sandbox-rs/src/elevated_impl.rs:192` `struct RunnerPayload {`
 - `fn` `codex-rs/windows-sandbox-rs/src/elevated_impl.rs:211` `pub fn run_windows_sandbox_capture(`
-- `use` `codex-rs/windows-sandbox-rs/src/elevated_impl.rs:464` `use crate::policy::SandboxPolicy;`
-- `fn` `codex-rs/windows-sandbox-rs/src/elevated_impl.rs:466` `fn workspace_policy(network_access: bool) -> SandboxPolicy {`
-- `fn` `codex-rs/windows-sandbox-rs/src/elevated_impl.rs:476` `fn applies_network_block_when_access_is_disabled() {`
-- `fn` `codex-rs/windows-sandbox-rs/src/elevated_impl.rs:481` `fn skips_network_block_when_access_is_allowed() {`
-- `fn` `codex-rs/windows-sandbox-rs/src/elevated_impl.rs:486` `fn applies_network_block_for_read_only() {`
-- `use` `codex-rs/windows-sandbox-rs/src/elevated_impl.rs:497` `use anyhow::bail;`
-- `use` `codex-rs/windows-sandbox-rs/src/elevated_impl.rs:498` `use anyhow::Result;`
-- `use` `codex-rs/windows-sandbox-rs/src/elevated_impl.rs:499` `use codex_protocol::protocol::SandboxPolicy;`
-- `use` `codex-rs/windows-sandbox-rs/src/elevated_impl.rs:500` `use std::collections::HashMap;`
-- `use` `codex-rs/windows-sandbox-rs/src/elevated_impl.rs:501` `use std::path::Path;`
-- `struct` `codex-rs/windows-sandbox-rs/src/elevated_impl.rs:504` `pub struct CaptureResult {`
-- `fn` `codex-rs/windows-sandbox-rs/src/elevated_impl.rs:512` `pub fn run_windows_sandbox_capture(`
+- `use` `codex-rs/windows-sandbox-rs/src/elevated_impl.rs:467` `use crate::policy::SandboxPolicy;`
+- `fn` `codex-rs/windows-sandbox-rs/src/elevated_impl.rs:469` `fn workspace_policy(network_access: bool) -> SandboxPolicy {`
+- `fn` `codex-rs/windows-sandbox-rs/src/elevated_impl.rs:479` `fn applies_network_block_when_access_is_disabled() {`
+- `fn` `codex-rs/windows-sandbox-rs/src/elevated_impl.rs:484` `fn skips_network_block_when_access_is_allowed() {`
+- `fn` `codex-rs/windows-sandbox-rs/src/elevated_impl.rs:489` `fn applies_network_block_for_read_only() {`
+- `use` `codex-rs/windows-sandbox-rs/src/elevated_impl.rs:500` `use anyhow::bail;`
+- `use` `codex-rs/windows-sandbox-rs/src/elevated_impl.rs:501` `use anyhow::Result;`
+- `use` `codex-rs/windows-sandbox-rs/src/elevated_impl.rs:502` `use codex_protocol::protocol::SandboxPolicy;`
+- `use` `codex-rs/windows-sandbox-rs/src/elevated_impl.rs:503` `use std::collections::HashMap;`
+- `use` `codex-rs/windows-sandbox-rs/src/elevated_impl.rs:504` `use std::path::Path;`
+- `struct` `codex-rs/windows-sandbox-rs/src/elevated_impl.rs:507` `pub struct CaptureResult {`
+- `fn` `codex-rs/windows-sandbox-rs/src/elevated_impl.rs:515` `pub fn run_windows_sandbox_capture(`
 
 ## Dependencies (auto sample)
 ### Imports / Includes

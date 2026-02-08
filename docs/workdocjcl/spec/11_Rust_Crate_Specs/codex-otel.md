@@ -1,7 +1,7 @@
 # `codex-otel`
 
 - path: `codex-rs/otel`
-- generated_utc: `2026-02-03T09:48:37Z`
+- generated_utc: `2026-02-08T10:45:13Z`
 - role: crate
 
 ## Build Targets
@@ -12,9 +12,9 @@
 ## Key Dependencies (direct, from Cargo.toml)
 - `chrono`
 - `codex-api`
-- `codex-app-server-protocol`
 - `codex-protocol`
 - `codex-utils-absolute-path`
+- `codex-utils-string`
 - `eventsource-stream`
 - `http`
 - `opentelemetry`
@@ -22,6 +22,7 @@
 - `opentelemetry-otlp`
 - `opentelemetry-semantic-conventions`
 - `opentelemetry_sdk`
+- `os_info`
 - `reqwest`
 - `serde`
 - `serde_json`
@@ -42,9 +43,11 @@
 - `pub mod otel_provider;`
 - `pub mod traces;`
 - `pub use crate::metrics::timer::Timer;`
+- `pub use codex_utils_string::sanitize_metric_tag_value;`
 - `pub use crate::metrics::runtime_metrics::RuntimeMetricTotals;`
 - `pub use crate::metrics::runtime_metrics::RuntimeMetricsSummary;`
 - `pub enum ToolDecisionSource {`
+- `pub enum TelemetryAuthMode {`
 - `pub struct OtelEventMetadata {`
 - `pub struct OtelManager {`
 - `pub fn with_model(mut self, model: &str, slug: &str) -> Self {`
@@ -63,5 +66,5 @@
 - `pub fn start_global_timer(name: &str, tags: &[(&str, &str)]) -> MetricsResult<Timer> {`
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/MODULE_MAP.md`
-- `workdocjcl/spec/09_Verification/CODE_TO_SPEC_MAP.md`
+- `docs/workdocjcl/spec/00_Overview/MODULE_MAP.md`
+- `docs/workdocjcl/spec/09_Verification/CODE_TO_SPEC_MAP.md`

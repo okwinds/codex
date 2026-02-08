@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `20304`
-- sha256: `f2fa59625ba3ba4c2e3695a01f817e4435d902e0884d3900a7778bb545ef2ee4`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `20031`
+- sha256: `a48731adba853cfbbfbb74e7be36e5aca916e0720e93e38357ac66d6e7945c04`
+- generated_utc: `2026-02-08T10:45:32Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -67,35 +67,35 @@ Source file implementing exported/public items listed below.
 - `fn` `codex-rs/core/src/features.rs:54` `pub fn experimental_menu_description(self) -> Option<&'static str> {`
 - `fn` `codex-rs/core/src/features.rs:63` `pub fn experimental_announcement(self) -> Option<&'static str> {`
 - `enum` `codex-rs/core/src/features.rs:73` `pub enum Feature {`
-- `impl` `codex-rs/core/src/features.rs:132` `impl Feature {`
-- `fn` `codex-rs/core/src/features.rs:133` `pub fn key(self) -> &'static str {`
-- `fn` `codex-rs/core/src/features.rs:137` `pub fn stage(self) -> Stage {`
-- `fn` `codex-rs/core/src/features.rs:141` `pub fn default_enabled(self) -> bool {`
-- `fn` `codex-rs/core/src/features.rs:145` `fn info(self) -> &'static FeatureSpec {`
-- `struct` `codex-rs/core/src/features.rs:154` `pub struct LegacyFeatureUsage {`
-- `struct` `codex-rs/core/src/features.rs:163` `pub struct Features {`
-- `struct` `codex-rs/core/src/features.rs:169` `pub struct FeatureOverrides {`
-- `impl` `codex-rs/core/src/features.rs:174` `impl FeatureOverrides {`
-- `fn` `codex-rs/core/src/features.rs:175` `fn apply(self, features: &mut Features) {`
-- `impl` `codex-rs/core/src/features.rs:185` `impl Features {`
-- `fn` `codex-rs/core/src/features.rs:187` `pub fn with_defaults() -> Self {`
-- `fn` `codex-rs/core/src/features.rs:200` `pub fn enabled(&self, f: Feature) -> bool {`
-- `fn` `codex-rs/core/src/features.rs:204` `pub fn enable(&mut self, f: Feature) -> &mut Self {`
-- `fn` `codex-rs/core/src/features.rs:209` `pub fn disable(&mut self, f: Feature) -> &mut Self {`
-- `fn` `codex-rs/core/src/features.rs:214` `pub fn record_legacy_usage_force(&mut self, alias: &str, feature: Feature) {`
-- `fn` `codex-rs/core/src/features.rs:224` `pub fn record_legacy_usage(&mut self, alias: &str, feature: Feature) {`
-- `fn` `codex-rs/core/src/features.rs:231` `pub fn legacy_feature_usages(&self) -> impl Iterator<Item = &LegacyFeatureUsage> + '_ {`
-- `fn` `codex-rs/core/src/features.rs:235` `pub fn emit_metrics(&self, otel: &OtelManager) {`
-- `fn` `codex-rs/core/src/features.rs:251` `pub fn apply_map(&mut self, m: &BTreeMap<String, bool>) {`
-- `fn` `codex-rs/core/src/features.rs:286` `pub fn from_config(`
-- `fn` `codex-rs/core/src/features.rs:323` `pub fn enabled_features(&self) -> Vec<Feature> {`
-- `fn` `codex-rs/core/src/features.rs:328` `fn legacy_usage_notice(alias: &str, feature: Feature) -> (String, Option<String>) {`
-- `fn` `codex-rs/core/src/features.rs:360` `fn web_search_details() -> &'static str {`
-- `fn` `codex-rs/core/src/features.rs:365` `fn feature_for_key(key: &str) -> Option<Feature> {`
-- `fn` `codex-rs/core/src/features.rs:375` `pub fn is_known_feature_key(key: &str) -> bool {`
-- `struct` `codex-rs/core/src/features.rs:381` `pub struct FeaturesToml {`
-- `struct` `codex-rs/core/src/features.rs:388` `pub struct FeatureSpec {`
-- `const` `codex-rs/core/src/features.rs:395` `pub const FEATURES: &[FeatureSpec] = &[`
+- `impl` `codex-rs/core/src/features.rs:134` `impl Feature {`
+- `fn` `codex-rs/core/src/features.rs:135` `pub fn key(self) -> &'static str {`
+- `fn` `codex-rs/core/src/features.rs:139` `pub fn stage(self) -> Stage {`
+- `fn` `codex-rs/core/src/features.rs:143` `pub fn default_enabled(self) -> bool {`
+- `fn` `codex-rs/core/src/features.rs:147` `fn info(self) -> &'static FeatureSpec {`
+- `struct` `codex-rs/core/src/features.rs:156` `pub struct LegacyFeatureUsage {`
+- `struct` `codex-rs/core/src/features.rs:165` `pub struct Features {`
+- `struct` `codex-rs/core/src/features.rs:171` `pub struct FeatureOverrides {`
+- `impl` `codex-rs/core/src/features.rs:176` `impl FeatureOverrides {`
+- `fn` `codex-rs/core/src/features.rs:177` `fn apply(self, features: &mut Features) {`
+- `impl` `codex-rs/core/src/features.rs:187` `impl Features {`
+- `fn` `codex-rs/core/src/features.rs:189` `pub fn with_defaults() -> Self {`
+- `fn` `codex-rs/core/src/features.rs:202` `pub fn enabled(&self, f: Feature) -> bool {`
+- `fn` `codex-rs/core/src/features.rs:206` `pub fn enable(&mut self, f: Feature) -> &mut Self {`
+- `fn` `codex-rs/core/src/features.rs:211` `pub fn disable(&mut self, f: Feature) -> &mut Self {`
+- `fn` `codex-rs/core/src/features.rs:216` `pub fn record_legacy_usage_force(&mut self, alias: &str, feature: Feature) {`
+- `fn` `codex-rs/core/src/features.rs:226` `pub fn record_legacy_usage(&mut self, alias: &str, feature: Feature) {`
+- `fn` `codex-rs/core/src/features.rs:233` `pub fn legacy_feature_usages(&self) -> impl Iterator<Item = &LegacyFeatureUsage> + '_ {`
+- `fn` `codex-rs/core/src/features.rs:237` `pub fn emit_metrics(&self, otel: &OtelManager) {`
+- `fn` `codex-rs/core/src/features.rs:253` `pub fn apply_map(&mut self, m: &BTreeMap<String, bool>) {`
+- `fn` `codex-rs/core/src/features.rs:288` `pub fn from_config(`
+- `fn` `codex-rs/core/src/features.rs:325` `pub fn enabled_features(&self) -> Vec<Feature> {`
+- `fn` `codex-rs/core/src/features.rs:330` `fn legacy_usage_notice(alias: &str, feature: Feature) -> (String, Option<String>) {`
+- `fn` `codex-rs/core/src/features.rs:362` `fn web_search_details() -> &'static str {`
+- `fn` `codex-rs/core/src/features.rs:367` `fn feature_for_key(key: &str) -> Option<Feature> {`
+- `fn` `codex-rs/core/src/features.rs:377` `pub fn is_known_feature_key(key: &str) -> bool {`
+- `struct` `codex-rs/core/src/features.rs:383` `pub struct FeaturesToml {`
+- `struct` `codex-rs/core/src/features.rs:390` `pub struct FeatureSpec {`
+- `const` `codex-rs/core/src/features.rs:397` `pub const FEATURES: &[FeatureSpec] = &[`
 - `fn` `codex-rs/core/src/features.rs:583` `pub fn maybe_push_unstable_features_warning(`
 
 ## Dependencies (auto sample)
@@ -121,4 +121,4 @@ Source file implementing exported/public items listed below.
 - uses Rust panic/expect/unwrap-style failure paths
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

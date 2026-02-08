@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.ts`
-- size_bytes: `423`
-- sha256: `399ad85c54b285e2b3cc17e210f6c2d849168198b7b71ddcbcb845b764d91a7e`
-- generated_utc: `2026-02-03T16:08:28Z`
+- size_bytes: `425`
+- sha256: `64e3b711fdc739d37f4aeb1d23791118ec737fa44dd20c7d95d21074b9ae6a12`
+- generated_utc: `2026-02-08T10:45:14Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.

@@ -17,7 +17,7 @@
 ## 2. 输入（Input arguments）
 与 `shell` 完全一致：
 - 权威类型：`codex-rs/protocol/src/models.rs::ShellToolCallParams`
-- 文档：`workdocjcl/spec/05_Integrations/TOOLS_DETAILED/shell.md`
+- 文档：`docs/workdocjcl/spec/05_Integrations/TOOLS_DETAILED/shell.md`
 
 ## 3. 运行时语义（Runtime semantics）
 处理器与逻辑与 `shell` 相同：

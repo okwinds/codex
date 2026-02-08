@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `29935`
-- sha256: `5bfa5f91c7bbbeb01ac8ba68ed5e0de5e8d0e8c87e10760dea422ed7c9a95991`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `29862`
+- sha256: `e2560ee3ff696645ff54f6c5a02109db4b9d4176048a7bb8cde43cdbcc5e8d98`
+- generated_utc: `2026-02-08T10:45:40Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -50,7 +50,7 @@ Source file (no public surface detected by heuristic).
 - `use` `codex-rs/tui/src/onboarding/auth.rs:29` `use ratatui::widgets::Paragraph;`
 - `use` `codex-rs/tui/src/onboarding/auth.rs:30` `use ratatui::widgets::WidgetRef;`
 - `use` `codex-rs/tui/src/onboarding/auth.rs:31` `use ratatui::widgets::Wrap;`
-- `use` `codex-rs/tui/src/onboarding/auth.rs:33` `use codex_app_server_protocol::AuthMode;`
+- `use` `codex-rs/tui/src/onboarding/auth.rs:33` `use codex_core::auth::AuthMode;`
 - `use` `codex-rs/tui/src/onboarding/auth.rs:34` `use codex_protocol::config_types::ForcedLoginMethod;`
 - `use` `codex-rs/tui/src/onboarding/auth.rs:35` `use std::sync::RwLock;`
 - `use` `codex-rs/tui/src/onboarding/auth.rs:37` `use crate::LoginStatus;`
@@ -89,19 +89,19 @@ Source file (no public surface detected by heuristic).
 - `fn` `codex-rs/tui/src/onboarding/auth.rs:597` `fn start_api_key_entry(&mut self) {`
 - `fn` `codex-rs/tui/src/onboarding/auth.rs:627` `fn save_api_key(&mut self, api_key: String) {`
 - `fn` `codex-rs/tui/src/onboarding/auth.rs:663` `fn handle_existing_chatgpt_login(&mut self) -> bool {`
-- `fn` `codex-rs/tui/src/onboarding/auth.rs:677` `fn start_chatgpt_login(&mut self) {`
-- `fn` `codex-rs/tui/src/onboarding/auth.rs:732` `fn start_device_code_login(&mut self) {`
-- `impl` `codex-rs/tui/src/onboarding/auth.rs:748` `impl StepStateProvider for AuthModeWidget {`
-- `fn` `codex-rs/tui/src/onboarding/auth.rs:749` `fn get_step_state(&self) -> StepState {`
-- `impl` `codex-rs/tui/src/onboarding/auth.rs:762` `impl WidgetRef for AuthModeWidget {`
-- `fn` `codex-rs/tui/src/onboarding/auth.rs:763` `fn render_ref(&self, area: Rect, buf: &mut Buffer) {`
-- `use` `codex-rs/tui/src/onboarding/auth.rs:793` `use super::*;`
-- `use` `codex-rs/tui/src/onboarding/auth.rs:794` `use pretty_assertions::assert_eq;`
-- `use` `codex-rs/tui/src/onboarding/auth.rs:795` `use tempfile::TempDir;`
-- `use` `codex-rs/tui/src/onboarding/auth.rs:797` `use codex_core::auth::AuthCredentialsStoreMode;`
-- `fn` `codex-rs/tui/src/onboarding/auth.rs:799` `fn widget_forced_chatgpt() -> (AuthModeWidget, TempDir) {`
-- `fn` `codex-rs/tui/src/onboarding/auth.rs:823` `fn api_key_flow_disabled_when_chatgpt_forced() {`
-- `fn` `codex-rs/tui/src/onboarding/auth.rs:836` `fn saving_api_key_is_blocked_when_chatgpt_forced() {`
+- `fn` `codex-rs/tui/src/onboarding/auth.rs:674` `fn start_chatgpt_login(&mut self) {`
+- `fn` `codex-rs/tui/src/onboarding/auth.rs:729` `fn start_device_code_login(&mut self) {`
+- `impl` `codex-rs/tui/src/onboarding/auth.rs:745` `impl StepStateProvider for AuthModeWidget {`
+- `fn` `codex-rs/tui/src/onboarding/auth.rs:746` `fn get_step_state(&self) -> StepState {`
+- `impl` `codex-rs/tui/src/onboarding/auth.rs:759` `impl WidgetRef for AuthModeWidget {`
+- `fn` `codex-rs/tui/src/onboarding/auth.rs:760` `fn render_ref(&self, area: Rect, buf: &mut Buffer) {`
+- `use` `codex-rs/tui/src/onboarding/auth.rs:790` `use super::*;`
+- `use` `codex-rs/tui/src/onboarding/auth.rs:791` `use pretty_assertions::assert_eq;`
+- `use` `codex-rs/tui/src/onboarding/auth.rs:792` `use tempfile::TempDir;`
+- `use` `codex-rs/tui/src/onboarding/auth.rs:794` `use codex_core::auth::AuthCredentialsStoreMode;`
+- `fn` `codex-rs/tui/src/onboarding/auth.rs:796` `fn widget_forced_chatgpt() -> (AuthModeWidget, TempDir) {`
+- `fn` `codex-rs/tui/src/onboarding/auth.rs:820` `fn api_key_flow_disabled_when_chatgpt_forced() {`
+- `fn` `codex-rs/tui/src/onboarding/auth.rs:833` `fn saving_api_key_is_blocked_when_chatgpt_forced() {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -132,4 +132,4 @@ Source file (no public surface detected by heuristic).
 - uses Rust panic/expect/unwrap-style failure paths
 
 ## Spec Links
-- `workdocjcl/spec/06_UI/TUI.md`
+- `docs/workdocjcl/spec/06_UI/TUI.md`

@@ -5,7 +5,7 @@
 - ext: `.patch`
 - size_bytes: `756`
 - sha256: `9a8c5860d8f2492a873726b3a83c5d2a868a220e6cab6c95f6dda9e813e9ed85`
-- generated_utc: `2026-02-03T16:08:31Z`
+- generated_utc: `2026-02-08T10:45:42Z`
 
 ## Purpose (Why)
 Repository file.
@@ -33,4 +33,4 @@ Repository file.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/05_Integrations/MCP.md`
+- `docs/workdocjcl/spec/05_Integrations/MCP.md`

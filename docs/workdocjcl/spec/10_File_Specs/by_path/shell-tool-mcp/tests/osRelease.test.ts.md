@@ -5,7 +5,7 @@
 - ext: `.ts`
 - size_bytes: `767`
 - sha256: `ab43f1f8c54e695ca03dafebd715227b7406c8a4a1af2ec1ac1e1414b225a8a6`
-- generated_utc: `2026-02-03T16:08:31Z`
+- generated_utc: `2026-02-08T10:45:42Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -33,4 +33,4 @@ Test or snapshot file used for automated verification.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/05_Integrations/MCP.md`
+- `docs/workdocjcl/spec/05_Integrations/MCP.md`

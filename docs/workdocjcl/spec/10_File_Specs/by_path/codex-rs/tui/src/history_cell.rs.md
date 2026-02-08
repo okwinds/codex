@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `118851`
-- sha256: `d33c9cff152a41f59270616a5ac66d77961356f9bb2fc94632a29f319aad0216`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `121273`
+- sha256: `b84df0dce9801c0be4e1a6ad2372dc8ce2c2650a0e5c0bf5df9ac6d14bba606b`
+- generated_utc: `2026-02-08T10:45:40Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -197,33 +197,33 @@ Source file implementing exported/public items listed below.
 - `impl` `codex-rs/tui/src/history_cell.rs:2133` `impl FinalMessageSeparator {`
 - `impl` `codex-rs/tui/src/history_cell.rs:2145` `impl HistoryCell for FinalMessageSeparator {`
 - `fn` `codex-rs/tui/src/history_cell.rs:2146` `fn display_lines(&self, width: u16) -> Vec<Line<'static>> {`
-- `fn` `codex-rs/tui/src/history_cell.rs:2175` `fn runtime_metrics_label(summary: RuntimeMetricsSummary) -> Option<String> {`
-- `fn` `codex-rs/tui/src/history_cell.rs:2223` `fn format_duration_ms(duration_ms: u64) -> String {`
-- `fn` `codex-rs/tui/src/history_cell.rs:2232` `fn pluralize(count: u64, singular: &'static str, plural: &'static str) -> &'static str {`
-- `use` `codex-rs/tui/src/history_cell.rs:2259` `use super::*;`
-- `use` `codex-rs/tui/src/history_cell.rs:2260` `use crate::exec_cell::CommandOutput;`
-- `use` `codex-rs/tui/src/history_cell.rs:2261` `use crate::exec_cell::ExecCall;`
-- `use` `codex-rs/tui/src/history_cell.rs:2262` `use crate::exec_cell::ExecCell;`
-- `use` `codex-rs/tui/src/history_cell.rs:2263` `use codex_core::config::Config;`
-- `use` `codex-rs/tui/src/history_cell.rs:2264` `use codex_core::config::ConfigBuilder;`
-- `use` `codex-rs/tui/src/history_cell.rs:2265` `use codex_core::config::types::McpServerConfig;`
-- `use` `codex-rs/tui/src/history_cell.rs:2266` `use codex_core::config::types::McpServerTransportConfig;`
-- `use` `codex-rs/tui/src/history_cell.rs:2267` `use codex_core::protocol::McpAuthStatus;`
-- `use` `codex-rs/tui/src/history_cell.rs:2268` `use codex_otel::RuntimeMetricTotals;`
-- `use` `codex-rs/tui/src/history_cell.rs:2269` `use codex_otel::RuntimeMetricsSummary;`
-- `use` `codex-rs/tui/src/history_cell.rs:2270` `use codex_protocol::models::WebSearchAction;`
-- `use` `codex-rs/tui/src/history_cell.rs:2271` `use codex_protocol::parse_command::ParsedCommand;`
-- `use` `codex-rs/tui/src/history_cell.rs:2272` `use dirs::home_dir;`
-- `use` `codex-rs/tui/src/history_cell.rs:2273` `use pretty_assertions::assert_eq;`
-- `use` `codex-rs/tui/src/history_cell.rs:2274` `use serde_json::json;`
-- `use` `codex-rs/tui/src/history_cell.rs:2275` `use std::collections::HashMap;`
-- `use` `codex-rs/tui/src/history_cell.rs:2277` `use codex_core::protocol::ExecCommandSource;`
-- `use` `codex-rs/tui/src/history_cell.rs:2278` `use codex_protocol::mcp::CallToolResult;`
-- `use` `codex-rs/tui/src/history_cell.rs:2279` `use codex_protocol::mcp::Tool;`
-- `use` `codex-rs/tui/src/history_cell.rs:2280` `use rmcp::model::Content;`
-- `const` `codex-rs/tui/src/history_cell.rs:2282` `const SMALL_PNG_BASE64: &str = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4nGP4z8DwHwAFAAH/iZk9HQAAAABJRU5ErkJggg==";`
-- `fn` `codex-rs/tui/src/history_cell.rs:2283` `async fn test_config() -> Config {`
-- (… 53 more definitions omitted; see symbol indexes under `workdocjcl/spec/13_Indexes/`)
+- `fn` `codex-rs/tui/src/history_cell.rs:2259` `fn format_duration_ms(duration_ms: u64) -> String {`
+- `fn` `codex-rs/tui/src/history_cell.rs:2268` `fn pluralize(count: u64, singular: &'static str, plural: &'static str) -> &'static str {`
+- `use` `codex-rs/tui/src/history_cell.rs:2295` `use super::*;`
+- `use` `codex-rs/tui/src/history_cell.rs:2296` `use crate::exec_cell::CommandOutput;`
+- `use` `codex-rs/tui/src/history_cell.rs:2297` `use crate::exec_cell::ExecCall;`
+- `use` `codex-rs/tui/src/history_cell.rs:2298` `use crate::exec_cell::ExecCell;`
+- `use` `codex-rs/tui/src/history_cell.rs:2299` `use codex_core::config::Config;`
+- `use` `codex-rs/tui/src/history_cell.rs:2300` `use codex_core::config::ConfigBuilder;`
+- `use` `codex-rs/tui/src/history_cell.rs:2301` `use codex_core::config::types::McpServerConfig;`
+- `use` `codex-rs/tui/src/history_cell.rs:2302` `use codex_core::config::types::McpServerTransportConfig;`
+- `use` `codex-rs/tui/src/history_cell.rs:2303` `use codex_core::protocol::McpAuthStatus;`
+- `use` `codex-rs/tui/src/history_cell.rs:2304` `use codex_otel::RuntimeMetricTotals;`
+- `use` `codex-rs/tui/src/history_cell.rs:2305` `use codex_otel::RuntimeMetricsSummary;`
+- `use` `codex-rs/tui/src/history_cell.rs:2306` `use codex_protocol::models::WebSearchAction;`
+- `use` `codex-rs/tui/src/history_cell.rs:2307` `use codex_protocol::parse_command::ParsedCommand;`
+- `use` `codex-rs/tui/src/history_cell.rs:2308` `use dirs::home_dir;`
+- `use` `codex-rs/tui/src/history_cell.rs:2309` `use pretty_assertions::assert_eq;`
+- `use` `codex-rs/tui/src/history_cell.rs:2310` `use serde_json::json;`
+- `use` `codex-rs/tui/src/history_cell.rs:2311` `use std::collections::HashMap;`
+- `use` `codex-rs/tui/src/history_cell.rs:2313` `use codex_core::protocol::ExecCommandSource;`
+- `use` `codex-rs/tui/src/history_cell.rs:2314` `use codex_protocol::mcp::CallToolResult;`
+- `use` `codex-rs/tui/src/history_cell.rs:2315` `use codex_protocol::mcp::Tool;`
+- `use` `codex-rs/tui/src/history_cell.rs:2316` `use rmcp::model::Content;`
+- `const` `codex-rs/tui/src/history_cell.rs:2318` `const SMALL_PNG_BASE64: &str = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4nGP4z8DwHwAFAAH/iZk9HQAAAABJRU5ErkJggg==";`
+- `fn` `codex-rs/tui/src/history_cell.rs:2319` `async fn test_config() -> Config {`
+- `fn` `codex-rs/tui/src/history_cell.rs:2328` `fn render_lines(lines: &[Line<'static>]) -> Vec<String> {`
+- (… 52 more definitions omitted; see symbol indexes under `docs/workdocjcl/spec/13_Indexes/`)
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -256,4 +256,4 @@ Source file implementing exported/public items listed below.
 - uses Rust panic/expect/unwrap-style failure paths
 
 ## Spec Links
-- `workdocjcl/spec/06_UI/TUI.md`
+- `docs/workdocjcl/spec/06_UI/TUI.md`

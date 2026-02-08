@@ -5,7 +5,7 @@
 - ext: `.sql`
 - size_bytes: `863`
 - sha256: `7a89ab37ba540b92781868aec12e7dc0a49eeb9a4b81125236e500534b012758`
-- generated_utc: `2026-02-03T16:08:30Z`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 SQLite migration file (schema evolution).
@@ -33,4 +33,4 @@ SQLite migration file (schema evolution).
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/02_Data/ENTITIES.md`
+- `docs/workdocjcl/spec/02_Data/ENTITIES.md`

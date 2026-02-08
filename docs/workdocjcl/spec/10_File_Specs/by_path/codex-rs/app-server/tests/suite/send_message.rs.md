@@ -3,9 +3,9 @@
 ## Identity
 - kind: `test`
 - ext: `.rs`
-- size_bytes: `15349`
-- sha256: `c2f976ff02f2d2fe9f233cdd69f9a838a3c2cb34accf6adc2a480a87655c799e`
-- generated_utc: `2026-02-03T16:08:28Z`
+- size_bytes: `20528`
+- sha256: `1e093b496c0bb8b04087e8d8137e43737405c3c18b896a48ea3eeab04f6350e2`
+- generated_utc: `2026-02-08T10:45:15Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -27,6 +27,8 @@ Test or snapshot file used for automated verification.
 ### Imports / Includes
 - `use anyhow::Result;`
 - `use app_test_support::McpProcess;`
+- `use app_test_support::create_fake_rollout;`
+- `use app_test_support::rollout_path;`
 - `use app_test_support::to_response;`
 - `use codex_app_server_protocol::AddConversationListenerParams;`
 - `use codex_app_server_protocol::AddConversationSubscriptionResponse;`
@@ -36,15 +38,13 @@ Test or snapshot file used for automated verification.
 - `use codex_app_server_protocol::NewConversationParams;`
 - `use codex_app_server_protocol::NewConversationResponse;`
 - `use codex_app_server_protocol::RequestId;`
+- `use codex_app_server_protocol::ResumeConversationParams;`
+- `use codex_app_server_protocol::ResumeConversationResponse;`
 - `use codex_app_server_protocol::SendUserMessageParams;`
 - `use codex_app_server_protocol::SendUserMessageResponse;`
 - `use codex_execpolicy::Policy;`
 - `use codex_protocol::ThreadId;`
-- `use codex_protocol::models::ContentItem;`
-- `use codex_protocol::models::DeveloperInstructions;`
-- `use codex_protocol::models::ResponseItem;`
-- `use codex_protocol::protocol::AskForApproval;`
-- `use codex_protocol::protocol::RawResponseItemEvent;`
+- `use codex_protocol::config_types::ReasoningSummary;`
 ### Referenced env vars
 - (none detected)
 

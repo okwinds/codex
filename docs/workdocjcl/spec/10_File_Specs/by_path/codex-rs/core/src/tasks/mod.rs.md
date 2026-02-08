@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `10043`
-- sha256: `500de9e659cada717b08200d12ce64b7d7ba4744a3f81065478b8bf07c5d9db8`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `10721`
+- sha256: `86b7159fa398264d53d10433ba982fcdd6d2dc1cf14212e21d90b86bb7bb4ff9`
+- generated_utc: `2026-02-08T10:45:33Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -51,22 +51,23 @@ Source file (no public surface detected by heuristic).
 - `use` `codex-rs/core/src/tasks/mod.rs:31` `use crate::state::RunningTask;`
 - `use` `codex-rs/core/src/tasks/mod.rs:32` `use crate::state::TaskKind;`
 - `use` `codex-rs/core/src/tasks/mod.rs:33` `use codex_protocol::models::ContentItem;`
-- `use` `codex-rs/core/src/tasks/mod.rs:34` `use codex_protocol::models::ResponseItem;`
-- `use` `codex-rs/core/src/tasks/mod.rs:35` `use codex_protocol::protocol::RolloutItem;`
-- `use` `codex-rs/core/src/tasks/mod.rs:36` `use codex_protocol::user_input::UserInput;`
-- `const` `codex-rs/core/src/tasks/mod.rs:45` `const GRACEFULL_INTERRUPTION_TIMEOUT_MS: u64 = 100;`
-- `const` `codex-rs/core/src/tasks/mod.rs:46` `const TURN_ABORTED_INTERRUPTED_GUIDANCE: &str = "The user interrupted the previous turn on purpose. If any tools/commands were aborted, they may have partially executed; verify current state before retrying.";`
-- `impl` `codex-rs/core/src/tasks/mod.rs:54` `impl SessionTaskContext {`
-- `fn` `codex-rs/core/src/tasks/mod.rs:84` `fn kind(&self) -> TaskKind;`
-- `fn` `codex-rs/core/src/tasks/mod.rs:94` `async fn run(`
-- `fn` `codex-rs/core/src/tasks/mod.rs:107` `async fn abort(&self, session: Arc<SessionTaskContext>, ctx: Arc<TurnContext>) {`
-- `impl` `codex-rs/core/src/tasks/mod.rs:112` `impl Session {`
-- `fn` `codex-rs/core/src/tasks/mod.rs:178` `pub async fn abort_all_tasks(self: &Arc<Self>, reason: TurnAbortReason) {`
-- `fn` `codex-rs/core/src/tasks/mod.rs:185` `pub async fn on_task_finished(`
-- `fn` `codex-rs/core/src/tasks/mod.rs:207` `async fn register_new_active_task(&self, task: RunningTask) {`
-- `fn` `codex-rs/core/src/tasks/mod.rs:214` `async fn take_all_running_tasks(&self) -> Vec<RunningTask> {`
-- `fn` `codex-rs/core/src/tasks/mod.rs:226` `async fn close_unified_exec_processes(&self) {`
-- `fn` `codex-rs/core/src/tasks/mod.rs:233` `async fn handle_task_abort(self: &Arc<Self>, task: RunningTask, reason: TurnAbortReason) {`
+- `use` `codex-rs/core/src/tasks/mod.rs:34` `use codex_protocol::models::ResponseInputItem;`
+- `use` `codex-rs/core/src/tasks/mod.rs:35` `use codex_protocol::models::ResponseItem;`
+- `use` `codex-rs/core/src/tasks/mod.rs:36` `use codex_protocol::protocol::RolloutItem;`
+- `use` `codex-rs/core/src/tasks/mod.rs:37` `use codex_protocol::user_input::UserInput;`
+- `const` `codex-rs/core/src/tasks/mod.rs:48` `const GRACEFULL_INTERRUPTION_TIMEOUT_MS: u64 = 100;`
+- `const` `codex-rs/core/src/tasks/mod.rs:49` `const TURN_ABORTED_INTERRUPTED_GUIDANCE: &str = "The user interrupted the previous turn on purpose. If any tools/commands were aborted, they may have partially executed; verify current state before retrying.";`
+- `impl` `codex-rs/core/src/tasks/mod.rs:57` `impl SessionTaskContext {`
+- `fn` `codex-rs/core/src/tasks/mod.rs:87` `fn kind(&self) -> TaskKind;`
+- `fn` `codex-rs/core/src/tasks/mod.rs:97` `async fn run(`
+- `fn` `codex-rs/core/src/tasks/mod.rs:110` `async fn abort(&self, session: Arc<SessionTaskContext>, ctx: Arc<TurnContext>) {`
+- `impl` `codex-rs/core/src/tasks/mod.rs:115` `impl Session {`
+- `fn` `codex-rs/core/src/tasks/mod.rs:180` `pub async fn abort_all_tasks(self: &Arc<Self>, reason: TurnAbortReason) {`
+- `fn` `codex-rs/core/src/tasks/mod.rs:187` `pub async fn on_task_finished(`
+- `fn` `codex-rs/core/src/tasks/mod.rs:221` `async fn register_new_active_task(&self, task: RunningTask) {`
+- `fn` `codex-rs/core/src/tasks/mod.rs:228` `async fn take_all_running_tasks(&self) -> Vec<RunningTask> {`
+- `fn` `codex-rs/core/src/tasks/mod.rs:240` `async fn close_unified_exec_processes(&self) {`
+- `fn` `codex-rs/core/src/tasks/mod.rs:247` `async fn handle_task_abort(self: &Arc<Self>, task: RunningTask, reason: TurnAbortReason) {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -97,4 +98,4 @@ Source file (no public surface detected by heuristic).
 - has retry/timeout/backoff logic
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

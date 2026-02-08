@@ -5,7 +5,7 @@
 - ext: `.sbpl`
 - size_bytes: `1036`
 - sha256: `2b4cdb95fc5ccbdd0e5158cc1ca19e62925b666b9778484e6d55640bbf0dc421`
-- generated_utc: `2026-02-03T16:08:29Z`
+- generated_utc: `2026-02-08T10:45:33Z`
 
 ## Purpose (Why)
 Repository file.
@@ -33,4 +33,4 @@ Repository file.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

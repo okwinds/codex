@@ -5,7 +5,7 @@
 - ext: `.sh`
 - size_bytes: `330`
 - sha256: `8a0af2b27b23189f13b926948d029f77a52ff70ff148bddd8766a819e5ea0f32`
-- generated_utc: `2026-02-03T16:08:31Z`
+- generated_utc: `2026-02-08T10:45:42Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).

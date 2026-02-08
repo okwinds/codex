@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `1170`
-- sha256: `5ef69252e7ae1695ad84798f43f002c11c6c8c433d3c734a576bbac270afef5d`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `845`
+- sha256: `2fb5116a194baee70abbca303d040114179a6b38c6ea0520b17bf3231c555e90`
+- generated_utc: `2026-02-08T10:45:33Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -21,11 +21,11 @@ Source file (no public surface detected by heuristic).
 - (none detected)
 
 ## Definitions (auto, per-file)
-- `use` `codex-rs/core/src/session_prefix.rs:1` `use codex_protocol::models::ContentItem;`
+- (no definitions detected by heuristic)
 
 ## Dependencies (auto sample)
 ### Imports / Includes
-- `use codex_protocol::models::ContentItem;`
+- (none detected)
 ### Referenced env vars
 - (none detected)
 
@@ -33,4 +33,4 @@ Source file (no public surface detected by heuristic).
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

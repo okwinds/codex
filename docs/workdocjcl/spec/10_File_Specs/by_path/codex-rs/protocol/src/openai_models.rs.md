@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `21693`
-- sha256: `f512773d24e18793c3ee2163f326f1d92f00e62170e01327aa0a61270fce2752`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `22447`
+- sha256: `52821d907c18d1e05982f8f40c56bc8de0b5bcf81150e00dd136897079cb5028`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -88,27 +88,27 @@ Source file implementing exported/public items listed below.
 - `impl` `codex-rs/protocol/src/openai_models.rs:328` `impl ModelInstructionsVariables {`
 - `fn` `codex-rs/protocol/src/openai_models.rs:329` `pub fn is_complete(&self) -> bool {`
 - `fn` `codex-rs/protocol/src/openai_models.rs:335` `pub fn get_personality_message(&self, personality: Option<Personality>) -> Option<String> {`
-- `struct` `codex-rs/protocol/src/openai_models.rs:348` `pub struct ModelInfoUpgrade {`
-- `impl` `codex-rs/protocol/src/openai_models.rs:353` `impl From<&ModelUpgrade> for ModelInfoUpgrade {`
-- `fn` `codex-rs/protocol/src/openai_models.rs:354` `fn from(upgrade: &ModelUpgrade) -> Self {`
-- `struct` `codex-rs/protocol/src/openai_models.rs:364` `pub struct ModelsResponse {`
-- `impl` `codex-rs/protocol/src/openai_models.rs:369` `impl From<ModelInfo> for ModelPreset {`
-- `fn` `codex-rs/protocol/src/openai_models.rs:370` `fn from(info: ModelInfo) -> Self {`
-- `impl` `codex-rs/protocol/src/openai_models.rs:401` `impl ModelPreset {`
-- `fn` `codex-rs/protocol/src/openai_models.rs:405` `pub fn filter_by_auth(models: Vec<ModelPreset>, chatgpt_mode: bool) -> Vec<ModelPreset> {`
-- `fn` `codex-rs/protocol/src/openai_models.rs:415` `pub fn merge(`
-- `fn` `codex-rs/protocol/src/openai_models.rs:441` `fn reasoning_effort_mapping_from_presets(`
-- `fn` `codex-rs/protocol/src/openai_models.rs:458` `fn effort_rank(effort: ReasoningEffort) -> i32 {`
-- `fn` `codex-rs/protocol/src/openai_models.rs:469` `fn nearest_effort(target: ReasoningEffort, supported: &[ReasoningEffort]) -> ReasoningEffort {`
-- `use` `codex-rs/protocol/src/openai_models.rs:480` `use super::*;`
-- `use` `codex-rs/protocol/src/openai_models.rs:481` `use pretty_assertions::assert_eq;`
-- `fn` `codex-rs/protocol/src/openai_models.rs:483` `fn test_model(spec: Option<ModelMessages>) -> ModelInfo {`
-- `fn` `codex-rs/protocol/src/openai_models.rs:511` `fn personality_variables() -> ModelInstructionsVariables {`
-- `fn` `codex-rs/protocol/src/openai_models.rs:520` `fn get_model_instructions_uses_template_when_placeholder_present() {`
-- `fn` `codex-rs/protocol/src/openai_models.rs:532` `fn get_model_instructions_always_strips_placeholder() {`
-- `fn` `codex-rs/protocol/src/openai_models.rs:571` `fn get_model_instructions_falls_back_when_template_is_missing() {`
-- `fn` `codex-rs/protocol/src/openai_models.rs:587` `fn get_personality_message_returns_default_when_personality_is_none() {`
-- `fn` `codex-rs/protocol/src/openai_models.rs:596` `fn get_personality_message() {`
+- `struct` `codex-rs/protocol/src/openai_models.rs:349` `pub struct ModelInfoUpgrade {`
+- `impl` `codex-rs/protocol/src/openai_models.rs:354` `impl From<&ModelUpgrade> for ModelInfoUpgrade {`
+- `fn` `codex-rs/protocol/src/openai_models.rs:355` `fn from(upgrade: &ModelUpgrade) -> Self {`
+- `struct` `codex-rs/protocol/src/openai_models.rs:365` `pub struct ModelsResponse {`
+- `impl` `codex-rs/protocol/src/openai_models.rs:370` `impl From<ModelInfo> for ModelPreset {`
+- `fn` `codex-rs/protocol/src/openai_models.rs:371` `fn from(info: ModelInfo) -> Self {`
+- `impl` `codex-rs/protocol/src/openai_models.rs:402` `impl ModelPreset {`
+- `fn` `codex-rs/protocol/src/openai_models.rs:406` `pub fn filter_by_auth(models: Vec<ModelPreset>, chatgpt_mode: bool) -> Vec<ModelPreset> {`
+- `fn` `codex-rs/protocol/src/openai_models.rs:416` `pub fn merge(`
+- `fn` `codex-rs/protocol/src/openai_models.rs:442` `fn reasoning_effort_mapping_from_presets(`
+- `fn` `codex-rs/protocol/src/openai_models.rs:459` `fn effort_rank(effort: ReasoningEffort) -> i32 {`
+- `fn` `codex-rs/protocol/src/openai_models.rs:470` `fn nearest_effort(target: ReasoningEffort, supported: &[ReasoningEffort]) -> ReasoningEffort {`
+- `use` `codex-rs/protocol/src/openai_models.rs:481` `use super::*;`
+- `use` `codex-rs/protocol/src/openai_models.rs:482` `use pretty_assertions::assert_eq;`
+- `fn` `codex-rs/protocol/src/openai_models.rs:484` `fn test_model(spec: Option<ModelMessages>) -> ModelInfo {`
+- `fn` `codex-rs/protocol/src/openai_models.rs:512` `fn personality_variables() -> ModelInstructionsVariables {`
+- `fn` `codex-rs/protocol/src/openai_models.rs:521` `fn get_model_instructions_uses_template_when_placeholder_present() {`
+- `fn` `codex-rs/protocol/src/openai_models.rs:533` `fn get_model_instructions_always_strips_placeholder() {`
+- `fn` `codex-rs/protocol/src/openai_models.rs:580` `fn get_model_instructions_falls_back_when_template_is_missing() {`
+- `fn` `codex-rs/protocol/src/openai_models.rs:596` `fn get_personality_message_returns_default_when_personality_is_none() {`
+- `fn` `codex-rs/protocol/src/openai_models.rs:605` `fn get_personality_message() {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -133,4 +133,4 @@ Source file implementing exported/public items listed below.
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/02_Data/ROLLOUT_FORMAT.md`
+- `docs/workdocjcl/spec/02_Data/ROLLOUT_FORMAT.md`

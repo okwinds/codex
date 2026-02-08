@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `32571`
-- sha256: `9016b84cf08b329e0d450aa4210a76f715948fde388806c64e5c88d31a45d897`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `33049`
+- sha256: `87a0aa4d425f3ae2889c373a6ac5cabf4f0dbe250cadf388ec589f44f2e3af0d`
+- generated_utc: `2026-02-08T10:45:32Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -49,33 +49,33 @@ Source file (no public surface detected by heuristic).
 - `use` `codex-rs/core/src/config_loader/mod.rs:30` `use std::io;`
 - `use` `codex-rs/core/src/config_loader/mod.rs:31` `use std::path::Path;`
 - `use` `codex-rs/core/src/config_loader/mod.rs:32` `use toml::Value as TomlValue;`
-- `const` `codex-rs/core/src/config_loader/mod.rs:61` `const DEFAULT_REQUIREMENTS_TOML_FILE_UNIX: &str = "/etc/codex/requirements.toml";`
-- `const` `codex-rs/core/src/config_loader/mod.rs:66` `pub const SYSTEM_CONFIG_TOML_FILE_UNIX: &str = "/etc/codex/config.toml";`
-- `const` `codex-rs/core/src/config_loader/mod.rs:68` `const DEFAULT_PROJECT_ROOT_MARKERS: &[&str] = &[".git"];`
-- `fn` `codex-rs/core/src/config_loader/mod.rs:100` `pub async fn load_config_layers_state(`
-- `fn` `codex-rs/core/src/config_loader/mod.rs:300` `async fn load_config_toml_for_required_layer(`
-- `fn` `codex-rs/core/src/config_loader/mod.rs:339` `async fn load_requirements_toml(`
-- `fn` `codex-rs/core/src/config_loader/mod.rs:380` `async fn load_requirements_from_legacy_scheme(`
-- `struct` `codex-rs/core/src/config_loader/mod.rs:466` `struct ProjectTrustContext {`
-- `struct` `codex-rs/core/src/config_loader/mod.rs:474` `struct ProjectTrustDecision {`
-- `impl` `codex-rs/core/src/config_loader/mod.rs:479` `impl ProjectTrustDecision {`
-- `fn` `codex-rs/core/src/config_loader/mod.rs:480` `fn is_trusted(&self) -> bool {`
-- `impl` `codex-rs/core/src/config_loader/mod.rs:485` `impl ProjectTrustContext {`
-- `fn` `codex-rs/core/src/config_loader/mod.rs:486` `fn decision_for_dir(&self, dir: &AbsolutePathBuf) -> ProjectTrustDecision {`
-- `fn` `codex-rs/core/src/config_loader/mod.rs:520` `fn disabled_reason_for_dir(&self, dir: &AbsolutePathBuf) -> Option<String> {`
-- `fn` `codex-rs/core/src/config_loader/mod.rs:539` `fn project_layer_entry(`
-- `fn` `codex-rs/core/src/config_loader/mod.rs:557` `async fn project_trust_context(`
-- `fn` `codex-rs/core/src/config_loader/mod.rs:595` `fn resolve_relative_paths_in_config_toml(`
-- `fn` `codex-rs/core/src/config_loader/mod.rs:624` `fn copy_shape_from_original(original: &TomlValue, resolved: &TomlValue) -> TomlValue {`
-- `fn` `codex-rs/core/src/config_loader/mod.rs:649` `async fn find_project_root(`
-- `fn` `codex-rs/core/src/config_loader/mod.rs:673` `async fn load_project_layers(`
-- `struct` `codex-rs/core/src/config_loader/mod.rs:783` `struct LegacyManagedConfigToml {`
-- `impl` `codex-rs/core/src/config_loader/mod.rs:788` `impl From<LegacyManagedConfigToml> for ConfigRequirementsToml {`
-- `fn` `codex-rs/core/src/config_loader/mod.rs:789` `fn from(legacy: LegacyManagedConfigToml) -> Self {`
-- `use` `codex-rs/core/src/config_loader/mod.rs:816` `use super::*;`
-- `use` `codex-rs/core/src/config_loader/mod.rs:817` `use tempfile::tempdir;`
-- `fn` `codex-rs/core/src/config_loader/mod.rs:820` `fn ensure_resolve_relative_paths_in_config_toml_preserves_all_fields() -> anyhow::Result<()> {`
-- `fn` `codex-rs/core/src/config_loader/mod.rs:857` `fn legacy_managed_config_backfill_includes_read_only_sandbox_mode() {`
+- `const` `codex-rs/core/src/config_loader/mod.rs:65` `const DEFAULT_REQUIREMENTS_TOML_FILE_UNIX: &str = "/etc/codex/requirements.toml";`
+- `const` `codex-rs/core/src/config_loader/mod.rs:70` `pub const SYSTEM_CONFIG_TOML_FILE_UNIX: &str = "/etc/codex/config.toml";`
+- `const` `codex-rs/core/src/config_loader/mod.rs:72` `const DEFAULT_PROJECT_ROOT_MARKERS: &[&str] = &[".git"];`
+- `fn` `codex-rs/core/src/config_loader/mod.rs:104` `pub async fn load_config_layers_state(`
+- `fn` `codex-rs/core/src/config_loader/mod.rs:312` `async fn load_config_toml_for_required_layer(`
+- `fn` `codex-rs/core/src/config_loader/mod.rs:351` `async fn load_requirements_toml(`
+- `fn` `codex-rs/core/src/config_loader/mod.rs:392` `async fn load_requirements_from_legacy_scheme(`
+- `struct` `codex-rs/core/src/config_loader/mod.rs:478` `struct ProjectTrustContext {`
+- `struct` `codex-rs/core/src/config_loader/mod.rs:486` `struct ProjectTrustDecision {`
+- `impl` `codex-rs/core/src/config_loader/mod.rs:491` `impl ProjectTrustDecision {`
+- `fn` `codex-rs/core/src/config_loader/mod.rs:492` `fn is_trusted(&self) -> bool {`
+- `impl` `codex-rs/core/src/config_loader/mod.rs:497` `impl ProjectTrustContext {`
+- `fn` `codex-rs/core/src/config_loader/mod.rs:498` `fn decision_for_dir(&self, dir: &AbsolutePathBuf) -> ProjectTrustDecision {`
+- `fn` `codex-rs/core/src/config_loader/mod.rs:532` `fn disabled_reason_for_dir(&self, dir: &AbsolutePathBuf) -> Option<String> {`
+- `fn` `codex-rs/core/src/config_loader/mod.rs:551` `fn project_layer_entry(`
+- `fn` `codex-rs/core/src/config_loader/mod.rs:569` `async fn project_trust_context(`
+- `fn` `codex-rs/core/src/config_loader/mod.rs:607` `fn resolve_relative_paths_in_config_toml(`
+- `fn` `codex-rs/core/src/config_loader/mod.rs:636` `fn copy_shape_from_original(original: &TomlValue, resolved: &TomlValue) -> TomlValue {`
+- `fn` `codex-rs/core/src/config_loader/mod.rs:661` `async fn find_project_root(`
+- `fn` `codex-rs/core/src/config_loader/mod.rs:685` `async fn load_project_layers(`
+- `struct` `codex-rs/core/src/config_loader/mod.rs:795` `struct LegacyManagedConfigToml {`
+- `impl` `codex-rs/core/src/config_loader/mod.rs:800` `impl From<LegacyManagedConfigToml> for ConfigRequirementsToml {`
+- `fn` `codex-rs/core/src/config_loader/mod.rs:801` `fn from(legacy: LegacyManagedConfigToml) -> Self {`
+- `use` `codex-rs/core/src/config_loader/mod.rs:828` `use super::*;`
+- `use` `codex-rs/core/src/config_loader/mod.rs:829` `use tempfile::tempdir;`
+- `fn` `codex-rs/core/src/config_loader/mod.rs:832` `fn ensure_resolve_relative_paths_in_config_toml_preserves_all_fields() -> anyhow::Result<()> {`
+- `fn` `codex-rs/core/src/config_loader/mod.rs:869` `fn legacy_managed_config_backfill_includes_read_only_sandbox_mode() {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -105,4 +105,4 @@ Source file (no public surface detected by heuristic).
 - returns structured errors (Result/ErrorKind)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

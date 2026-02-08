@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `6857`
-- sha256: `ecaad9667978b18696a06e1190c9b59aaf084062156fc33a86955a3adcf4fb7f`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `7496`
+- sha256: `b137efe670239bd120f2df88fc8dc4cc10f78910401c2008b40b04d83839454d`
+- generated_utc: `2026-02-08T10:45:33Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -44,12 +44,12 @@ Source file implementing exported/public items listed below.
 - `use` `codex-rs/core/src/sandboxing/mod.rs:28` `use std::path::PathBuf;`
 - `struct` `codex-rs/core/src/sandboxing/mod.rs:31` `pub struct CommandSpec {`
 - `struct` `codex-rs/core/src/sandboxing/mod.rs:42` `pub struct ExecEnv {`
-- `enum` `codex-rs/core/src/sandboxing/mod.rs:54` `pub enum SandboxPreference {`
-- `struct` `codex-rs/core/src/sandboxing/mod.rs:70` `pub struct SandboxManager;`
-- `impl` `codex-rs/core/src/sandboxing/mod.rs:72` `impl SandboxManager {`
-- `fn` `codex-rs/core/src/sandboxing/mod.rs:73` `pub fn new() -> Self {`
-- `fn` `codex-rs/core/src/sandboxing/mod.rs:180` `pub fn denied(&self, sandbox: SandboxType, out: &ExecToolCallOutput) -> bool {`
-- `fn` `codex-rs/core/src/sandboxing/mod.rs:185` `pub async fn execute_env(`
+- `enum` `codex-rs/core/src/sandboxing/mod.rs:67` `pub enum SandboxPreference {`
+- `struct` `codex-rs/core/src/sandboxing/mod.rs:83` `pub struct SandboxManager;`
+- `impl` `codex-rs/core/src/sandboxing/mod.rs:85` `impl SandboxManager {`
+- `fn` `codex-rs/core/src/sandboxing/mod.rs:86` `pub fn new() -> Self {`
+- `fn` `codex-rs/core/src/sandboxing/mod.rs:201` `pub fn denied(&self, sandbox: SandboxType, out: &ExecToolCallOutput) -> bool {`
+- `fn` `codex-rs/core/src/sandboxing/mod.rs:206` `pub async fn execute_env(`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -76,4 +76,4 @@ Source file implementing exported/public items listed below.
 - returns structured errors (Result/ErrorKind)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

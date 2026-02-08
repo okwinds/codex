@@ -5,7 +5,7 @@
 - ext: `.bazel`
 - size_bytes: `751`
 - sha256: `a3c228338f48cb7b02111b844e04feba143780f97638e6d494614817cf112b3a`
-- generated_utc: `2026-02-03T16:08:28Z`
+- generated_utc: `2026-02-08T10:45:14Z`
 
 ## Purpose (Why)
 GitHub Actions workflow definition.

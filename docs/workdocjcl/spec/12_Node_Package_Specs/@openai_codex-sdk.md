@@ -2,7 +2,7 @@
 
 - path: `sdk/typescript`
 - version: `0.0.0-dev`
-- generated_utc: `2026-02-03T09:49:16Z`
+- generated_utc: `2026-02-08T10:45:13Z`
 - description: TypeScript SDK for Codex APIs.
 
 ## Entry Points
@@ -47,4 +47,4 @@
 - `zod-to-json-schema`: `^3.24.6`
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/PROJECT.md`
+- `docs/workdocjcl/spec/00_Overview/PROJECT.md`

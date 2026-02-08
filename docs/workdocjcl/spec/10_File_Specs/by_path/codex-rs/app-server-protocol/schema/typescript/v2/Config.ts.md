@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.ts`
-- size_bytes: `1733`
-- sha256: `cc536d2f5e4e19da46e809c1acafe3b682c2ff59a396ba95f6b7ba45bb760d2f`
-- generated_utc: `2026-02-03T16:08:28Z`
+- size_bytes: `1730`
+- sha256: `bf132343237f570274b3253066e709e914ff3a34ed11c19e8c656b98f0d89116`
+- generated_utc: `2026-02-08T10:45:14Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -18,7 +18,7 @@ Source file implementing exported/public items listed below.
 - (no obvious side effects detected by heuristic)
 
 ## Public Surface (auto)
-- `export type Config = { model: string | null, review_model: string | null, model_context_window: bigint | null, model_auto_compact_token_limit: bigint | null, model_provider: string | null, approval_policy: AskForApproval | null, sandbox_mode: SandboxMode | null, sandbox_workspace_write: SandboxWorkspaceWrite | null, forced_chatgpt_workspace_id: string | null, forced_login_method: ForcedLoginMethod | null, web_search: WebSearchMode | null, tools: ToolsV2 | null, profile: string | null, profiles: { [key in string]?: ProfileV2 }, instructions: string | null, developer_instructions: string | null, compact_prompt: string | null, model_reasoning_effort: ReasoningEffort | null, model_reasoning_summary: ReasoningSummary | null, model_verbosity: Verbosity | null, analytics: AnalyticsConfig | null, } & ({ [key in string]?: number | string | boolean | Array<JsonValue> | { [key in string]?: JsonValue } | null });`
+- `export type Config = {model: string | null, review_model: string | null, model_context_window: bigint | null, model_auto_compact_token_limit: bigint | null, model_provider: string | null, approval_policy: AskForApproval | null, sandbox_mode: SandboxMode | null, sandbox_workspace_write: SandboxWorkspaceWrite | null, forced_chatgpt_workspace_id: string | null, forced_login_method: ForcedLoginMethod | null, web_search: WebSearchMode | null, tools: ToolsV2 | null, profile: string | null, profiles: { [key in string]?: ProfileV2 }, instructions: string | null, developer_instructions: string | null, compact_prompt: string | null, model_reasoning_effort: ReasoningEffort | null, model_reasoning_summary: ReasoningSummary | null, model_verbosity: Verbosity | null, analytics: AnalyticsConfig | null} & ({ [key in string]?: number | string | boolean | Array<JsonValue> | { [key in string]?: JsonValue } | null });`
 
 ## Definitions (auto, per-file)
 - `import` `codex-rs/app-server-protocol/schema/typescript/v2/Config.ts:4` `import type { ForcedLoginMethod } from "../ForcedLoginMethod";`
@@ -33,7 +33,7 @@ Source file implementing exported/public items listed below.
 - `import` `codex-rs/app-server-protocol/schema/typescript/v2/Config.ts:13` `import type { SandboxMode } from "./SandboxMode";`
 - `import` `codex-rs/app-server-protocol/schema/typescript/v2/Config.ts:14` `import type { SandboxWorkspaceWrite } from "./SandboxWorkspaceWrite";`
 - `import` `codex-rs/app-server-protocol/schema/typescript/v2/Config.ts:15` `import type { ToolsV2 } from "./ToolsV2";`
-- `export` `codex-rs/app-server-protocol/schema/typescript/v2/Config.ts:17` `export type Config = { model: string | null, review_model: string | null, model_context_window: bigint | null, model_auto_compact_token_limit: bigint | null, model_provider: string | null, approval_policy: AskForApproval | null, sandbox_mode: SandboxMode | null, sandbox_workspace_write: SandboxWorkspaceWrite | null, forced_chatgpt_workspace_id: string | null, forced_login_method: ForcedLoginMethod | null, web_search: WebSearchMode | null, tools: ToolsV2 | null, profile: string | null, profiles: { [key in string]?: ProfileV2 }, instructions: string | null, developer_instructions: string | null, compact_prompt: string | null, model_reasoning_effort: ReasoningEffort | null, model_reasoning_summary: ReasoningSummary | null, model_verbosity: Verbosity | null, analytics: AnalyticsConfig | null, } & ({ [key in string]?: number | string | boolean | Array<JsonValue> | { [key in string]?: JsonValue } | null });`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/Config.ts:17` `export type Config = {model: string | null, review_model: string | null, model_context_window: bigint | null, model_auto_compact_token_limit: bigint | null, model_provider: string | null, approval_policy: AskForApproval | null, sandbox_mode: SandboxMode | null, sandbox_workspace_write: SandboxWorkspaceWrite | null, forced_chatgpt_workspace_id: string | null, forced_login_method: ForcedLoginMethod | null, web_search: WebSearchMode | null, tools: ToolsV2 | null, profile: string | null, profiles: { [key in string]?: ProfileV2 }, instructions: string | null, developer_instructions: string | null, compact_prompt: string | null, model_reasoning_effort: ReasoningEffort | null, model_reasoning_summary: ReasoningSummary | null, model_verbosity: Verbosity | null, analytics: AnalyticsConfig | null} & ({ [key in string]?: number | string | boolean | Array<JsonValue> | { [key in string]?: JsonValue } | null });`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -49,7 +49,7 @@ Source file implementing exported/public items listed below.
 - `import type { SandboxMode } from "./SandboxMode";`
 - `import type { SandboxWorkspaceWrite } from "./SandboxWorkspaceWrite";`
 - `import type { ToolsV2 } from "./ToolsV2";`
-- `export type Config = { model: string | null, review_model: string | null, model_context_window: bigint | null, model_auto_compact_token_limit: bigint | null, model_provider: string | null, approval_policy: AskForApproval | null, sandbox_mode: SandboxMode | null, sandbox_workspace_write: SandboxWorkspaceWrite | null, forced_chatgpt_workspace_id: string | null, forced_login_method: ForcedLoginMethod | null, web_search: WebSearchMode | null, tools: ToolsV2 | null, profile: string | null, profiles: { [key in string]?: ProfileV2 }, instructions: string | null, developer_instructions: string | null, compact_prompt: string | null, model_reasoning_effort: ReasoningEffort | null, model_reasoning_summary: ReasoningSummary | null, model_verbosity: Verbosity | null, analytics: AnalyticsConfig | null, } & ({ [key in string]?: number | string | boolean | Array<JsonValue> | { [key in string]?: JsonValue } | null });`
+- `export type Config = {model: string | null, review_model: string | null, model_context_window: bigint | null, model_auto_compact_token_limit: bigint | null, model_provider: string | null, approval_policy: AskForApproval | null, sandbox_mode: SandboxMode | null, sandbox_workspace_write: SandboxWorkspaceWrite | null, forced_chatgpt_workspace_id: string | null, forced_login_method: ForcedLoginMethod | null, web_search: WebSearchMode | null, tools: ToolsV2 | null, profile: string | null, profiles: { [key in string]?: ProfileV2 }, instructions: string | null, developer_instructions: string | null, compact_prompt: string | null, model_reasoning_effort: ReasoningEffort | null, model_reasoning_summary: ReasoningSummary | null, model_verbosity: Verbosity | null, analytics: AnalyticsConfig | null} & ({ [key in string]?: number | string | boolean | Array<JsonValue> | { [key in string]?: JsonValue } | null });`
 ### Referenced env vars
 - (none detected)
 

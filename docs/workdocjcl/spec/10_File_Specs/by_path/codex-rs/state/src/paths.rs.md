@@ -5,7 +5,7 @@
 - ext: `.rs`
 - size_bytes: `358`
 - sha256: `a6904524e73b4132cec4637cd8a8da1ad25e07e36ae3170e284dafe8e525e709`
-- generated_utc: `2026-02-03T16:08:30Z`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -39,4 +39,4 @@ Source file (no public surface detected by heuristic).
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/02_Data/ENTITIES.md`
+- `docs/workdocjcl/spec/02_Data/ENTITIES.md`

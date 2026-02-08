@@ -20,8 +20,8 @@
 - `codex-rs/responses-api-proxy/`：内部 proxy（用于特殊网络/兼容性场景）。
 
 ### 1.2 完整 crate 清单（自动生成）
-- Rust workspace member 列表：`workdocjcl/inventory/rust_workspace.md`
-- Rust crate 元数据（含 description）：`workdocjcl/inventory/rust_crate_metadata.json`
+- Rust workspace member 列表：`docs/workdocjcl/inventory/rust_workspace.md`
+- Rust crate 元数据（含 description）：`docs/workdocjcl/inventory/rust_crate_metadata.json`
 
 ## 2. Node/pnpm workspace
 
@@ -34,7 +34,7 @@
 | `codex-rs/responses-api-proxy/npm/` |（见该目录 `package.json`）| responses-api-proxy 的 npm 产物 |
 
 ### 2.2 完整 package 清单（自动生成）
-- pnpm workspace package 列表：`workdocjcl/inventory/node_workspace.md`
+- pnpm workspace package 列表：`docs/workdocjcl/inventory/node_workspace.md`
 
 ## 3. 复刻的“接口边界”（建议以协议为准）
 为了确保复刻一致性，建议把以下内容当作“接口契约”：

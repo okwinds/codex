@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `93166`
-- sha256: `a3a2a343cc2eeded4df0acfd90a9f8842317e90fa0a50c1c82b367be1ed3abd3`
-- generated_utc: `2026-02-03T16:08:28Z`
+- size_bytes: `97470`
+- sha256: `70e10aa34475f9b9ba66afd2468a1331824bc63b7d06853a1a204552b3fadd99`
+- generated_utc: `2026-02-08T10:45:14Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -111,83 +111,92 @@ Source file (no public surface detected by heuristic).
 - `use` `codex-rs/app-server/src/bespoke_event_handling.rs:88` `use codex_core::review_format::format_review_findings_block;`
 - `use` `codex-rs/app-server/src/bespoke_event_handling.rs:89` `use codex_core::review_prompts;`
 - `use` `codex-rs/app-server/src/bespoke_event_handling.rs:90` `use codex_protocol::ThreadId;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:91` `use codex_protocol::dynamic_tools::DynamicToolResponse as CoreDynamicToolResponse;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:92` `use codex_protocol::plan_tool::UpdatePlanArgs;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:93` `use codex_protocol::protocol::ReviewOutputEvent;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:94` `use codex_protocol::request_user_input::RequestUserInputAnswer as CoreRequestUserInputAnswer;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:95` `use codex_protocol::request_user_input::RequestUserInputResponse as CoreRequestUserInputResponse;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:96` `use std::collections::HashMap;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:97` `use std::convert::TryFrom;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:98` `use std::path::PathBuf;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:99` `use std::sync::Arc;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:100` `use tokio::sync::oneshot;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:101` `use tracing::error;`
-- `type` `codex-rs/app-server/src/bespoke_event_handling.rs:103` `type JsonValue = serde_json::Value;`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1152` `async fn handle_turn_diff(`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1171` `async fn handle_turn_plan_update(`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1196` `async fn emit_turn_completed_with_status(`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1217` `async fn complete_file_change_item(`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1249` `async fn complete_command_execution_item(`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1281` `async fn maybe_emit_raw_response_item_completed(`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1302` `async fn find_and_remove_turn_summary(`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1310` `async fn handle_turn_complete(`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1326` `async fn handle_turn_interrupted(`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1344` `async fn handle_thread_rollback_failed(`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1369` `async fn handle_token_count_event(`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1397` `async fn handle_error(`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1406` `async fn on_patch_approval_response(`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1448` `async fn on_exec_approval_response(`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1484` `async fn on_request_user_input_response(`
-- `const` `codex-rs/app-server/src/bespoke_event_handling.rs:1543` `const REVIEW_FALLBACK_MESSAGE: &str = "Reviewer failed to output a response.";`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1545` `fn render_review_output_text(output: &ReviewOutputEvent) -> String {`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1565` `fn convert_patch_changes(changes: &HashMap<PathBuf, CoreFileChange>) -> Vec<FileUpdateChange> {`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1578` `fn map_patch_change_kind(change: &CoreFileChange) -> V2PatchChangeKind {`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1588` `fn format_file_change_diff(change: &CoreFileChange) -> String {`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1605` `fn map_file_change_approval_decision(`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1621` `async fn on_file_change_request_approval_response(`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1679` `async fn on_command_execution_request_approval_response(`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1760` `async fn construct_mcp_tool_call_notification(`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1783` `async fn construct_mcp_tool_call_end_notification(`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1830` `use super::*;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1831` `use crate::CHANNEL_CAPACITY;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1832` `use crate::outgoing_message::OutgoingMessage;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1833` `use crate::outgoing_message::OutgoingMessageSender;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1834` `use anyhow::Result;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1835` `use anyhow::anyhow;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1836` `use anyhow::bail;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1837` `use codex_app_server_protocol::TurnPlanStepStatus;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1838` `use codex_core::protocol::CreditsSnapshot;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1839` `use codex_core::protocol::McpInvocation;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1840` `use codex_core::protocol::RateLimitSnapshot;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1841` `use codex_core::protocol::RateLimitWindow;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1842` `use codex_core::protocol::TokenUsage;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1843` `use codex_core::protocol::TokenUsageInfo;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1844` `use codex_protocol::mcp::CallToolResult;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1845` `use codex_protocol::plan_tool::PlanItemArg;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1846` `use codex_protocol::plan_tool::StepStatus;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1847` `use pretty_assertions::assert_eq;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1848` `use rmcp::model::Content;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1849` `use serde_json::Value as JsonValue;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1850` `use std::collections::HashMap;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1851` `use std::time::Duration;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1852` `use tokio::sync::Mutex;`
-- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1853` `use tokio::sync::mpsc;`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1855` `fn new_turn_summary_store() -> TurnSummaryStore {`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1860` `fn file_change_accept_for_session_maps_to_approved_for_session() {`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1868` `async fn test_handle_error_records_message() -> Result<()> {`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1896` `async fn test_handle_turn_complete_emits_completed_without_error() -> Result<()> {`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1928` `async fn test_handle_turn_interrupted_emits_interrupted_with_error() -> Result<()> {`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1970` `async fn test_handle_turn_complete_emits_failed_with_error() -> Result<()> {`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:2019` `async fn test_handle_turn_plan_update_emits_notification_for_v2() -> Result<()> {`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:2069` `async fn test_handle_token_count_event_emits_usage_and_rate_limits() -> Result<()> {`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:2154` `async fn test_handle_token_count_event_without_usage_info() -> Result<()> {`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:2179` `async fn test_construct_mcp_tool_call_begin_notification_with_args() {`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:2217` `async fn test_handle_turn_complete_emits_error_multiple_turns() -> Result<()> {`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:2337` `async fn test_construct_mcp_tool_call_begin_notification_without_args() {`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:2375` `async fn test_construct_mcp_tool_call_end_notification_success() {`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:2429` `async fn test_construct_mcp_tool_call_end_notification_error() {`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:2471` `async fn test_handle_turn_diff_emits_v2_notification() -> Result<()> {`
-- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:2507` `async fn test_handle_turn_diff_is_noop_for_v1() -> Result<()> {`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:91` `use codex_protocol::dynamic_tools::DynamicToolCallOutputContentItem as CoreDynamicToolCallOutputContentItem;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:92` `use codex_protocol::dynamic_tools::DynamicToolResponse as CoreDynamicToolResponse;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:93` `use codex_protocol::plan_tool::UpdatePlanArgs;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:94` `use codex_protocol::protocol::ReviewOutputEvent;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:95` `use codex_protocol::request_user_input::RequestUserInputAnswer as CoreRequestUserInputAnswer;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:96` `use codex_protocol::request_user_input::RequestUserInputResponse as CoreRequestUserInputResponse;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:97` `use std::collections::HashMap;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:98` `use std::convert::TryFrom;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:99` `use std::path::PathBuf;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:100` `use std::sync::Arc;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:101` `use tokio::sync::oneshot;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:102` `use tracing::error;`
+- `type` `codex-rs/app-server/src/bespoke_event_handling.rs:104` `type JsonValue = serde_json::Value;`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1176` `async fn handle_turn_diff(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1195` `async fn handle_turn_plan_update(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1220` `async fn emit_turn_completed_with_status(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1241` `async fn complete_file_change_item(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1273` `async fn complete_command_execution_item(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1305` `async fn maybe_emit_raw_response_item_completed(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1326` `async fn find_and_remove_turn_summary(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1334` `async fn handle_turn_complete(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1350` `async fn handle_turn_interrupted(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1368` `async fn handle_thread_rollback_failed(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1393` `async fn handle_token_count_event(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1421` `async fn handle_error(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1430` `async fn on_patch_approval_response(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1472` `async fn on_exec_approval_response(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1508` `async fn on_request_user_input_response(`
+- `const` `codex-rs/app-server/src/bespoke_event_handling.rs:1567` `const REVIEW_FALLBACK_MESSAGE: &str = "Reviewer failed to output a response.";`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1569` `fn render_review_output_text(output: &ReviewOutputEvent) -> String {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1589` `fn convert_patch_changes(changes: &HashMap<PathBuf, CoreFileChange>) -> Vec<FileUpdateChange> {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1602` `fn map_patch_change_kind(change: &CoreFileChange) -> V2PatchChangeKind {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1612` `fn format_file_change_diff(change: &CoreFileChange) -> String {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1629` `fn map_file_change_approval_decision(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1645` `async fn on_file_change_request_approval_response(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1703` `async fn on_command_execution_request_approval_response(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1783` `fn collab_resume_begin_item(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1797` `fn collab_resume_end_item(end_event: codex_core::protocol::CollabResumeEndEvent) -> ThreadItem {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1822` `async fn construct_mcp_tool_call_notification(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1845` `async fn construct_mcp_tool_call_end_notification(`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1892` `use super::*;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1893` `use crate::CHANNEL_CAPACITY;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1894` `use crate::outgoing_message::OutgoingEnvelope;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1895` `use crate::outgoing_message::OutgoingMessage;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1896` `use crate::outgoing_message::OutgoingMessageSender;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1897` `use anyhow::Result;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1898` `use anyhow::anyhow;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1899` `use anyhow::bail;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1900` `use codex_app_server_protocol::TurnPlanStepStatus;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1901` `use codex_core::protocol::CollabResumeBeginEvent;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1902` `use codex_core::protocol::CollabResumeEndEvent;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1903` `use codex_core::protocol::CreditsSnapshot;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1904` `use codex_core::protocol::McpInvocation;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1905` `use codex_core::protocol::RateLimitSnapshot;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1906` `use codex_core::protocol::RateLimitWindow;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1907` `use codex_core::protocol::TokenUsage;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1908` `use codex_core::protocol::TokenUsageInfo;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1909` `use codex_protocol::mcp::CallToolResult;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1910` `use codex_protocol::plan_tool::PlanItemArg;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1911` `use codex_protocol::plan_tool::StepStatus;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1912` `use pretty_assertions::assert_eq;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1913` `use rmcp::model::Content;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1914` `use serde_json::Value as JsonValue;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1915` `use std::collections::HashMap;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1916` `use std::time::Duration;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1917` `use tokio::sync::Mutex;`
+- `use` `codex-rs/app-server/src/bespoke_event_handling.rs:1918` `use tokio::sync::mpsc;`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1920` `fn new_turn_summary_store() -> TurnSummaryStore {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1924` `async fn recv_broadcast_message(`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1940` `fn file_change_accept_for_session_maps_to_approved_for_session() {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1948` `fn collab_resume_begin_maps_to_item_started_resume_agent() {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1969` `fn collab_resume_end_maps_to_item_completed_resume_agent() {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:1997` `async fn test_handle_error_records_message() -> Result<()> {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:2025` `async fn test_handle_turn_complete_emits_completed_without_error() -> Result<()> {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:2054` `async fn test_handle_turn_interrupted_emits_interrupted_with_error() -> Result<()> {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:2093` `async fn test_handle_turn_complete_emits_failed_with_error() -> Result<()> {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:2139` `async fn test_handle_turn_plan_update_emits_notification_for_v2() -> Result<()> {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:2186` `async fn test_handle_token_count_event_emits_usage_and_rate_limits() -> Result<()> {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:2265` `async fn test_handle_token_count_event_without_usage_info() -> Result<()> {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:2290` `async fn test_construct_mcp_tool_call_begin_notification_with_args() {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:2328` `async fn test_handle_turn_complete_emits_error_multiple_turns() -> Result<()> {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:2439` `async fn test_construct_mcp_tool_call_begin_notification_without_args() {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:2477` `async fn test_construct_mcp_tool_call_end_notification_success() {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:2531` `async fn test_construct_mcp_tool_call_end_notification_error() {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:2573` `async fn test_handle_turn_diff_emits_v2_notification() -> Result<()> {`
+- `fn` `codex-rs/app-server/src/bespoke_event_handling.rs:2606` `async fn test_handle_turn_diff_is_noop_for_v1() -> Result<()> {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes

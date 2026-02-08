@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `13272`
-- sha256: `3031f468d231620e11b127e9c60400f1db5da94b4134144e79e3431e34234a1a`
-- generated_utc: `2026-02-03T16:08:31Z`
+- size_bytes: `13093`
+- sha256: `eb74f7e8e9c6379459ce19e98fa03c7509d15af98813863b1157f4fa89df8562`
+- generated_utc: `2026-02-08T10:45:42Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).

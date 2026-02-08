@@ -5,7 +5,7 @@
 - ext: `.json`
 - size_bytes: `715`
 - sha256: `ecfbc99beed2154d74578059fc44fadcf32d5406a58b6728d3c595dccce4d000`
-- generated_utc: `2026-02-03T16:08:28Z`
+- generated_utc: `2026-02-08T10:45:14Z`
 
 ## Purpose (Why)
 Configuration file for build/tooling/runtime.

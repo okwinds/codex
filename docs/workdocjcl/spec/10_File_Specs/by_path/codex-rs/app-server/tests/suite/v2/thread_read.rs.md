@@ -3,9 +3,9 @@
 ## Identity
 - kind: `test`
 - ext: `.rs`
-- size_bytes: `5288`
-- sha256: `09df1b0c7e974e02c50a8f700039d225a22fe9d110dbd9792e2a3029f59ca2f1`
-- generated_utc: `2026-02-03T16:08:28Z`
+- size_bytes: `8734`
+- sha256: `a4f8b92fd31a4a5d5c58c8141b0a2785065bc6719659a526f6eb1b001793a74d`
+- generated_utc: `2026-02-08T10:45:15Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -30,21 +30,21 @@ Test or snapshot file used for automated verification.
 - `use app_test_support::create_fake_rollout_with_text_elements;`
 - `use app_test_support::create_mock_responses_server_repeating_assistant;`
 - `use app_test_support::to_response;`
+- `use codex_app_server_protocol::JSONRPCError;`
 - `use codex_app_server_protocol::JSONRPCResponse;`
 - `use codex_app_server_protocol::RequestId;`
 - `use codex_app_server_protocol::SessionSource;`
 - `use codex_app_server_protocol::ThreadItem;`
 - `use codex_app_server_protocol::ThreadReadParams;`
 - `use codex_app_server_protocol::ThreadReadResponse;`
+- `use codex_app_server_protocol::ThreadStartParams;`
+- `use codex_app_server_protocol::ThreadStartResponse;`
 - `use codex_app_server_protocol::TurnStatus;`
 - `use codex_app_server_protocol::UserInput;`
 - `use codex_protocol::user_input::ByteRange;`
 - `use codex_protocol::user_input::TextElement;`
 - `use pretty_assertions::assert_eq;`
 - `use std::path::Path;`
-- `use std::path::PathBuf;`
-- `use tempfile::TempDir;`
-- `use tokio::time::timeout;`
 ### Referenced env vars
 - (none detected)
 

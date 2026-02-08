@@ -3,9 +3,9 @@
 ## Identity
 - kind: `test`
 - ext: `.rs`
-- size_bytes: `10818`
-- sha256: `374e908e23da0fb005077400df1553fb30bb36187ad97288b03b5994ab880f86`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `11349`
+- sha256: `ce1d358468df0c5461e93ec0e7e6ef3abc54bbc254601936d4e0c40dccf7c9d1`
+- generated_utc: `2026-02-08T10:45:36Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -36,8 +36,6 @@ Test or snapshot file used for automated verification.
 - `use codex_protocol::protocol::SessionMetaLine;`
 - `use codex_protocol::protocol::SessionSource;`
 - `use codex_protocol::protocol::UserMessageEvent;`
-- `use codex_state::STATE_DB_FILENAME;`
-- `use core_test_support::load_sse_fixture_with_id;`
 - `use core_test_support::responses;`
 - `use core_test_support::responses::ev_completed;`
 - `use core_test_support::responses::ev_function_call;`
@@ -45,6 +43,8 @@ Test or snapshot file used for automated verification.
 - `use core_test_support::responses::mount_sse_sequence;`
 - `use core_test_support::responses::start_mock_server;`
 - `use core_test_support::test_codex::test_codex;`
+- `use pretty_assertions::assert_eq;`
+- `use serde_json::json;`
 ### Referenced env vars
 - (none detected)
 
@@ -52,4 +52,4 @@ Test or snapshot file used for automated verification.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

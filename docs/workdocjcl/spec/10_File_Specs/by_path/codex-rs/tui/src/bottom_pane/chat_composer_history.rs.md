@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `11758`
-- sha256: `6c332771347f71b0044a6b2c061018200757ecfeb7680305c2d1801ab530ef40`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `13157`
+- sha256: `96c9c3a616bb8d28111b7a3fa0f5204780cff033aecf1b3af2ca09f942fa50f9`
+- generated_utc: `2026-02-08T10:45:39Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -32,27 +32,29 @@ Source file implementing exported/public items listed below.
 - `use` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:2` `use std::path::PathBuf;`
 - `use` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:4` `use crate::app_event::AppEvent;`
 - `use` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:5` `use crate::app_event_sender::AppEventSender;`
-- `use` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:6` `use codex_core::protocol::Op;`
-- `use` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:7` `use codex_protocol::user_input::TextElement;`
-- `impl` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:16` `impl HistoryEntry {`
-- `fn` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:17` `fn empty() -> Self {`
-- `impl` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:60` `impl ChatComposerHistory {`
-- `fn` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:61` `pub fn new() -> Self {`
-- `fn` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:73` `pub fn set_metadata(&mut self, log_id: u64, entry_count: usize) {`
-- `fn` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:84` `pub fn record_local_submission(&mut self, entry: HistoryEntry) {`
-- `fn` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:101` `pub fn reset_navigation(&mut self) {`
-- `fn` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:108` `pub fn should_handle_navigation(&self, text: &str, cursor: usize) -> bool {`
-- `fn` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:129` `pub fn navigate_up(&mut self, app_event_tx: &AppEventSender) -> Option<HistoryEntry> {`
-- `fn` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:146` `pub fn navigate_down(&mut self, app_event_tx: &AppEventSender) -> Option<HistoryEntry> {`
-- `fn` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:173` `pub fn on_entry_response(`
-- `fn` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:197` `fn populate_history_at_index(`
-- `use` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:228` `use super::*;`
-- `use` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:229` `use crate::app_event::AppEvent;`
-- `use` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:230` `use codex_core::protocol::Op;`
-- `use` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:231` `use tokio::sync::mpsc::unbounded_channel;`
-- `fn` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:234` `fn duplicate_submissions_are_not_recorded() {`
-- `fn` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:263` `fn navigation_with_async_fetch() {`
-- `fn` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:317` `fn reset_navigation_resets_cursor() {`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:6` `use crate::bottom_pane::MentionBinding;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:7` `use crate::mention_codec::decode_history_mentions;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:8` `use codex_core::protocol::Op;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:9` `use codex_protocol::user_input::TextElement;`
+- `impl` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:26` `impl HistoryEntry {`
+- `impl` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:89` `impl ChatComposerHistory {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:90` `pub fn new() -> Self {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:102` `pub fn set_metadata(&mut self, log_id: u64, entry_count: usize) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:113` `pub fn record_local_submission(&mut self, entry: HistoryEntry) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:134` `pub fn reset_navigation(&mut self) {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:141` `pub fn should_handle_navigation(&self, text: &str, cursor: usize) -> bool {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:162` `pub fn navigate_up(&mut self, app_event_tx: &AppEventSender) -> Option<HistoryEntry> {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:179` `pub fn navigate_down(&mut self, app_event_tx: &AppEventSender) -> Option<HistoryEntry> {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:206` `pub fn on_entry_response(`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:229` `fn populate_history_at_index(`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:260` `use super::*;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:261` `use crate::app_event::AppEvent;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:262` `use codex_core::protocol::Op;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:263` `use pretty_assertions::assert_eq;`
+- `use` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:264` `use tokio::sync::mpsc::unbounded_channel;`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:267` `fn duplicate_submissions_are_not_recorded() {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:296` `fn navigation_with_async_fetch() {`
+- `fn` `codex-rs/tui/src/bottom_pane/chat_composer_history.rs:350` `fn reset_navigation_resets_cursor() {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -60,11 +62,14 @@ Source file implementing exported/public items listed below.
 - `use std::path::PathBuf;`
 - `use crate::app_event::AppEvent;`
 - `use crate::app_event_sender::AppEventSender;`
+- `use crate::bottom_pane::MentionBinding;`
+- `use crate::mention_codec::decode_history_mentions;`
 - `use codex_core::protocol::Op;`
 - `use codex_protocol::user_input::TextElement;`
 - `use super::*;`
 - `use crate::app_event::AppEvent;`
 - `use codex_core::protocol::Op;`
+- `use pretty_assertions::assert_eq;`
 - `use tokio::sync::mpsc::unbounded_channel;`
 ### Referenced env vars
 - (none detected)
@@ -73,4 +78,4 @@ Source file implementing exported/public items listed below.
 - uses Rust panic/expect/unwrap-style failure paths
 
 ## Spec Links
-- `workdocjcl/spec/06_UI/TUI.md`
+- `docs/workdocjcl/spec/06_UI/TUI.md`

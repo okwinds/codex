@@ -3,9 +3,9 @@
 ## Identity
 - kind: `test`
 - ext: `.rs`
-- size_bytes: `9306`
-- sha256: `66de5ab35ecf863e6c60a4e64db3cfd8ba89b3b618cd1ea0c3cca5103e0d7667`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `7532`
+- sha256: `a335c9759a38f067459192e54f3362f060015248e6876caa43c8100697b65b59`
+- generated_utc: `2026-02-08T10:45:16Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -32,11 +32,9 @@ Test or snapshot file used for automated verification.
 - `use async_trait::async_trait;`
 - `use bytes::Bytes;`
 - `use codex_api::AuthProvider;`
-- `use codex_api::ChatClient;`
 - `use codex_api::Provider;`
 - `use codex_api::ResponsesClient;`
 - `use codex_api::ResponsesOptions;`
-- `use codex_api::WireApi;`
 - `use codex_api::requests::responses::Compression;`
 - `use codex_client::HttpTransport;`
 - `use codex_client::Request;`
@@ -45,6 +43,8 @@ Test or snapshot file used for automated verification.
 - `use codex_client::TransportError;`
 - `use codex_protocol::models::ContentItem;`
 - `use codex_protocol::models::ResponseItem;`
+- `use http::HeaderMap;`
+- `use http::StatusCode;`
 ### Referenced env vars
 - (none detected)
 

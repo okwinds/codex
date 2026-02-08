@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `2410`
-- sha256: `50b139552597de12f69210b36b63115d2804cbef9cf039f40502f154acd2c32c`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `7736`
+- sha256: `0c570f1f7c8457c7be1fc0998f2e3e3963e90cc3c59b1ba5218dc9732e0e0015`
+- generated_utc: `2026-02-08T10:45:33Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -15,7 +15,7 @@ Source file (no public surface detected by heuristic).
 - filesystem: `codex-rs/core/src/tools/runtimes/mod.rs` (read)
 
 ### Outputs / Side Effects
-- (no obvious side effects detected by heuristic)
+- writes to filesystem
 
 ## Public Surface (auto)
 - (none detected)
@@ -31,6 +31,21 @@ Source file (no public surface detected by heuristic).
 - `mod` `codex-rs/core/src/tools/runtimes/mod.rs:15` `pub mod apply_patch;`
 - `mod` `codex-rs/core/src/tools/runtimes/mod.rs:16` `pub mod shell;`
 - `mod` `codex-rs/core/src/tools/runtimes/mod.rs:17` `pub mod unified_exec;`
+- `fn` `codex-rs/core/src/tools/runtimes/mod.rs:91` `fn shell_single_quote(input: &str) -> String {`
+- `use` `codex-rs/core/src/tools/runtimes/mod.rs:97` `use super::*;`
+- `use` `codex-rs/core/src/tools/runtimes/mod.rs:98` `use crate::shell::ShellType;`
+- `use` `codex-rs/core/src/tools/runtimes/mod.rs:99` `use crate::shell_snapshot::ShellSnapshot;`
+- `use` `codex-rs/core/src/tools/runtimes/mod.rs:100` `use pretty_assertions::assert_eq;`
+- `use` `codex-rs/core/src/tools/runtimes/mod.rs:101` `use std::path::PathBuf;`
+- `use` `codex-rs/core/src/tools/runtimes/mod.rs:102` `use std::sync::Arc;`
+- `use` `codex-rs/core/src/tools/runtimes/mod.rs:103` `use tempfile::tempdir;`
+- `use` `codex-rs/core/src/tools/runtimes/mod.rs:104` `use tokio::sync::watch;`
+- `fn` `codex-rs/core/src/tools/runtimes/mod.rs:106` `fn shell_with_snapshot(`
+- `fn` `codex-rs/core/src/tools/runtimes/mod.rs:122` `fn maybe_wrap_shell_lc_with_snapshot_bootstraps_in_user_shell() {`
+- `fn` `codex-rs/core/src/tools/runtimes/mod.rs:142` `fn maybe_wrap_shell_lc_with_snapshot_escapes_single_quotes() {`
+- `fn` `codex-rs/core/src/tools/runtimes/mod.rs:159` `fn maybe_wrap_shell_lc_with_snapshot_uses_bash_bootstrap_shell() {`
+- `fn` `codex-rs/core/src/tools/runtimes/mod.rs:179` `fn maybe_wrap_shell_lc_with_snapshot_uses_sh_bootstrap_shell() {`
+- `fn` `codex-rs/core/src/tools/runtimes/mod.rs:199` `fn maybe_wrap_shell_lc_with_snapshot_preserves_trailing_args() {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -41,12 +56,21 @@ Source file (no public surface detected by heuristic).
 - `use crate::tools::sandboxing::ToolError;`
 - `use std::collections::HashMap;`
 - `use std::path::Path;`
+- `use super::*;`
+- `use crate::shell::ShellType;`
+- `use crate::shell_snapshot::ShellSnapshot;`
+- `use pretty_assertions::assert_eq;`
+- `use std::path::PathBuf;`
+- `use std::sync::Arc;`
+- `use tempfile::tempdir;`
+- `use tokio::sync::watch;`
 ### Referenced env vars
 - (none detected)
 
 ## Error Handling / Edge Cases
 - has retry/timeout/backoff logic
 - returns structured errors (Result/ErrorKind)
+- uses Rust panic/expect/unwrap-style failure paths
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

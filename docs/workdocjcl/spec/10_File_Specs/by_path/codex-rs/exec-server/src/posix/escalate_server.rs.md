@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `10459`
-- sha256: `f3c38f002ecff04cd848a9ce110ecdda2afbfe000c914ad81c57644ae9de18a4`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `10510`
+- sha256: `2b2335d59a31bfc326f016d0908c5170b8e1e9b381d7657821d52fe2f7373982`
+- generated_utc: `2026-02-08T10:45:36Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -49,18 +49,18 @@ Source file (no public surface detected by heuristic).
 - `use` `codex-rs/exec-server/src/posix/escalate_server.rs:29` `use codex_core::exec::ExecExpiration;`
 - `impl` `codex-rs/exec-server/src/posix/escalate_server.rs:37` `impl EscalateServer {`
 - `fn` `codex-rs/exec-server/src/posix/escalate_server.rs:49` `pub async fn exec(`
-- `fn` `codex-rs/exec-server/src/posix/escalate_server.rs:112` `async fn escalate_task(`
-- `fn` `codex-rs/exec-server/src/posix/escalate_server.rs:140` `async fn handle_escalate_session_with_policy(`
-- `use` `codex-rs/exec-server/src/posix/escalate_server.rs:232` `use super::*;`
-- `use` `codex-rs/exec-server/src/posix/escalate_server.rs:233` `use pretty_assertions::assert_eq;`
-- `use` `codex-rs/exec-server/src/posix/escalate_server.rs:234` `use std::collections::HashMap;`
-- `use` `codex-rs/exec-server/src/posix/escalate_server.rs:235` `use std::path::Path;`
-- `use` `codex-rs/exec-server/src/posix/escalate_server.rs:236` `use std::path::PathBuf;`
-- `struct` `codex-rs/exec-server/src/posix/escalate_server.rs:238` `struct DeterministicEscalationPolicy {`
-- `impl` `codex-rs/exec-server/src/posix/escalate_server.rs:243` `impl EscalationPolicy for DeterministicEscalationPolicy {`
-- `fn` `codex-rs/exec-server/src/posix/escalate_server.rs:244` `async fn determine_action(`
-- `fn` `codex-rs/exec-server/src/posix/escalate_server.rs:255` `async fn handle_escalate_session_respects_run_in_sandbox_decision() -> anyhow::Result<()> {`
-- `fn` `codex-rs/exec-server/src/posix/escalate_server.rs:290` `async fn handle_escalate_session_executes_escalated_command() -> anyhow::Result<()> {`
+- `fn` `codex-rs/exec-server/src/posix/escalate_server.rs:113` `async fn escalate_task(`
+- `fn` `codex-rs/exec-server/src/posix/escalate_server.rs:141` `async fn handle_escalate_session_with_policy(`
+- `use` `codex-rs/exec-server/src/posix/escalate_server.rs:233` `use super::*;`
+- `use` `codex-rs/exec-server/src/posix/escalate_server.rs:234` `use pretty_assertions::assert_eq;`
+- `use` `codex-rs/exec-server/src/posix/escalate_server.rs:235` `use std::collections::HashMap;`
+- `use` `codex-rs/exec-server/src/posix/escalate_server.rs:236` `use std::path::Path;`
+- `use` `codex-rs/exec-server/src/posix/escalate_server.rs:237` `use std::path::PathBuf;`
+- `struct` `codex-rs/exec-server/src/posix/escalate_server.rs:239` `struct DeterministicEscalationPolicy {`
+- `impl` `codex-rs/exec-server/src/posix/escalate_server.rs:244` `impl EscalationPolicy for DeterministicEscalationPolicy {`
+- `fn` `codex-rs/exec-server/src/posix/escalate_server.rs:245` `async fn determine_action(`
+- `fn` `codex-rs/exec-server/src/posix/escalate_server.rs:256` `async fn handle_escalate_session_respects_run_in_sandbox_decision() -> anyhow::Result<()> {`
+- `fn` `codex-rs/exec-server/src/posix/escalate_server.rs:291` `async fn handle_escalate_session_executes_escalated_command() -> anyhow::Result<()> {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes

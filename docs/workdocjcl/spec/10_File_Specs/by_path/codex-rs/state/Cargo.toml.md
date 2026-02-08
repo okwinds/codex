@@ -5,7 +5,7 @@
 - ext: `.toml`
 - size_bytes: `807`
 - sha256: `47220ab67e8355d60f98191ba060dba40a7810faf39b975cdd2473285557286c`
-- generated_utc: `2026-02-03T16:08:30Z`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Configuration file for build/tooling/runtime.
@@ -33,4 +33,4 @@ Configuration file for build/tooling/runtime.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/02_Data/ENTITIES.md`
+- `docs/workdocjcl/spec/02_Data/ENTITIES.md`

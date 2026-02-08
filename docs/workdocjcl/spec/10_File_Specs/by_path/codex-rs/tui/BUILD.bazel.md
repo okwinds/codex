@@ -5,7 +5,7 @@
 - ext: `.bazel`
 - size_bytes: `478`
 - sha256: `c1580eab8e76fe996c0a03470eba77882ff19a6105d092b137aeab68f8497800`
-- generated_utc: `2026-02-03T16:08:30Z`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Bazel build configuration file.
@@ -33,4 +33,4 @@ Bazel build configuration file.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/06_UI/TUI.md`
+- `docs/workdocjcl/spec/06_UI/TUI.md`

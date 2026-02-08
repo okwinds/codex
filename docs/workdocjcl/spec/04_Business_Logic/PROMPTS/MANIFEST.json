@@ -4,73 +4,73 @@
   "items": [
     {
       "source_path": "codex-rs/core/gpt-5.1-codex-max_prompt.md",
-      "dest_path": "workdocjcl/spec/04_Business_Logic/PROMPTS/gpt-5.1-codex-max_prompt.md",
+      "dest_path": "docs/workdocjcl/spec/04_Business_Logic/PROMPTS/gpt-5.1-codex-max_prompt.md",
       "sha256": "1b3dd697043a7f613c691a3721a450251626685b3e97ac3ad3d35ea62758a31e",
       "bytes": 7589
     },
     {
       "source_path": "codex-rs/core/gpt-5.2-codex_prompt.md",
-      "dest_path": "workdocjcl/spec/04_Business_Logic/PROMPTS/gpt-5.2-codex_prompt.md",
+      "dest_path": "docs/workdocjcl/spec/04_Business_Logic/PROMPTS/gpt-5.2-codex_prompt.md",
       "sha256": "1b3dd697043a7f613c691a3721a450251626685b3e97ac3ad3d35ea62758a31e",
       "bytes": 7589
     },
     {
       "source_path": "codex-rs/core/gpt_5_1_prompt.md",
-      "dest_path": "workdocjcl/spec/04_Business_Logic/PROMPTS/gpt_5_1_prompt.md",
+      "dest_path": "docs/workdocjcl/spec/04_Business_Logic/PROMPTS/gpt_5_1_prompt.md",
       "sha256": "a2e9567a159ee2c777c540caae2e6e697942dbc89f5fb45e77dce36c73d7455d",
       "bytes": 24224
     },
     {
       "source_path": "codex-rs/core/gpt_5_2_prompt.md",
-      "dest_path": "workdocjcl/spec/04_Business_Logic/PROMPTS/gpt_5_2_prompt.md",
+      "dest_path": "docs/workdocjcl/spec/04_Business_Logic/PROMPTS/gpt_5_2_prompt.md",
       "sha256": "c9b2fa097ac69cae82c3d2ae12271083890a96521c55ad8dc14cae5168ad3f39",
       "bytes": 21672
     },
     {
       "source_path": "codex-rs/core/gpt_5_codex_prompt.md",
-      "dest_path": "workdocjcl/spec/04_Business_Logic/PROMPTS/gpt_5_codex_prompt.md",
+      "dest_path": "docs/workdocjcl/spec/04_Business_Logic/PROMPTS/gpt_5_codex_prompt.md",
       "sha256": "42842be69650ae563d212695e8d3f3591534908fd8ca33b63f742daf41f88b65",
       "bytes": 6647
     },
     {
       "source_path": "codex-rs/core/hierarchical_agents_message.md",
-      "dest_path": "workdocjcl/spec/04_Business_Logic/PROMPTS/hierarchical_agents_message.md",
+      "dest_path": "docs/workdocjcl/spec/04_Business_Logic/PROMPTS/hierarchical_agents_message.md",
       "sha256": "014702d6022bda308699f94aac2e2a328541bd916b599faee8724b162e643be8",
       "bytes": 1111
     },
     {
       "source_path": "codex-rs/core/prompt.md",
-      "dest_path": "workdocjcl/spec/04_Business_Logic/PROMPTS/prompt.md",
+      "dest_path": "docs/workdocjcl/spec/04_Business_Logic/PROMPTS/prompt.md",
       "sha256": "0fae66723e9ba38083bd5a26f83f5c6c944954daaea3436084ab75eb8fdf46c8",
       "bytes": 20923
     },
     {
       "source_path": "codex-rs/core/prompt_with_apply_patch_instructions.md",
-      "dest_path": "workdocjcl/spec/04_Business_Logic/PROMPTS/prompt_with_apply_patch_instructions.md",
+      "dest_path": "docs/workdocjcl/spec/04_Business_Logic/PROMPTS/prompt_with_apply_patch_instructions.md",
       "sha256": "a78d24ea274453453cedc397095b1a1bfe7218fe884f4e75c6e828375dd42241",
       "bytes": 24008
     },
     {
       "source_path": "codex-rs/core/review_prompt.md",
-      "dest_path": "workdocjcl/spec/04_Business_Logic/PROMPTS/review_prompt.md",
+      "dest_path": "docs/workdocjcl/spec/04_Business_Logic/PROMPTS/review_prompt.md",
       "sha256": "bc96ddff6a80d36620ea27cd3e864abffd875cc4ea65a55063b99da459ba4ae2",
       "bytes": 6438
     },
     {
       "source_path": "codex-rs/core/templates/model_instructions/gpt-5.2-codex_instructions_template.md",
-      "dest_path": "workdocjcl/spec/04_Business_Logic/PROMPTS/templates/model_instructions/gpt-5.2-codex_instructions_template.md",
+      "dest_path": "docs/workdocjcl/spec/04_Business_Logic/PROMPTS/templates/model_instructions/gpt-5.2-codex_instructions_template.md",
       "sha256": "492a212d8a23be8b03c488177d8986f4db4ee54a34b2e8a60779e5e5c89a1b63",
       "bytes": 7319
     },
     {
       "source_path": "codex-rs/core/templates/personalities/gpt-5.2-codex_friendly.md",
-      "dest_path": "workdocjcl/spec/04_Business_Logic/PROMPTS/templates/personalities/gpt-5.2-codex_friendly.md",
+      "dest_path": "docs/workdocjcl/spec/04_Business_Logic/PROMPTS/templates/personalities/gpt-5.2-codex_friendly.md",
       "sha256": "c6d577a699d90df68a8f50ab30a956ac9250befd82fbc9000a824f44333a4394",
       "bytes": 2068
     },
     {
       "source_path": "codex-rs/core/templates/personalities/gpt-5.2-codex_pragmatic.md",
-      "dest_path": "workdocjcl/spec/04_Business_Logic/PROMPTS/templates/personalities/gpt-5.2-codex_pragmatic.md",
+      "dest_path": "docs/workdocjcl/spec/04_Business_Logic/PROMPTS/templates/personalities/gpt-5.2-codex_pragmatic.md",
       "sha256": "3c1e6e6507ac1a04d57f378e6535b78ea2793670f964cbce2cb6e0a7a3d6e7e0",
       "bytes": 1851
     }

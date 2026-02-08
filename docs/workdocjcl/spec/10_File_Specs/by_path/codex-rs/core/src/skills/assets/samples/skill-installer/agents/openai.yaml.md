@@ -5,7 +5,7 @@
 - ext: `.yaml`
 - size_bytes: `221`
 - sha256: `5ce223d8b1070b82c42298538f1b8d376f788eb9e7a42a987e8c094070d73f0e`
-- generated_utc: `2026-02-03T16:08:29Z`
+- generated_utc: `2026-02-08T10:45:33Z`
 
 ## Purpose (Why)
 Configuration file for build/tooling/runtime.
@@ -33,4 +33,4 @@ Configuration file for build/tooling/runtime.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

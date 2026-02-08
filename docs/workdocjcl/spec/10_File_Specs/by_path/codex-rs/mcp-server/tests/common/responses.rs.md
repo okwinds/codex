@@ -3,9 +3,9 @@
 ## Identity
 - kind: `test`
 - ext: `.rs`
-- size_bytes: `2696`
-- sha256: `0a8999cf60ffe06d661f26dcfc2b5232d8b9cc7108a400b6fe0808d91ade91d4`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `1633`
+- sha256: `7b84a751172b4e6830cf13c24d9420a8a1ca3e84ced9f4821acf07bcb6b87c4c`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -27,8 +27,9 @@ Test or snapshot file used for automated verification.
 
 ## Dependencies (auto sample)
 ### Imports / Includes
-- `use serde_json::json;`
 - `use std::path::Path;`
+- `use core_test_support::responses;`
+- `use serde_json::json;`
 ### Referenced env vars
 - (none detected)
 

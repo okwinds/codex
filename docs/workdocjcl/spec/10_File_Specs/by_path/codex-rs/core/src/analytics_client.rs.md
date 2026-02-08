@@ -5,7 +5,7 @@
 - ext: `.rs`
 - size_bytes: `9695`
 - sha256: `ed341f3ab587fda298a60be9fdd1121855a8044b29c44ef7871c09bda93c4b8f`
-- generated_utc: `2026-02-03T16:08:29Z`
+- generated_utc: `2026-02-08T10:45:26Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -82,4 +82,4 @@ Source file (no public surface detected by heuristic).
 - has retry/timeout/backoff logic
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

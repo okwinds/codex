@@ -5,7 +5,7 @@
 - ext: `.rs`
 - size_bytes: `1449`
 - sha256: `25e999bf7306b1994b2fab42e47dbd3a519716c0e2f4f5be8670988ccd01ab6f`
-- generated_utc: `2026-02-03T16:08:29Z`
+- generated_utc: `2026-02-08T10:45:36Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -38,4 +38,4 @@ Test or snapshot file used for automated verification.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

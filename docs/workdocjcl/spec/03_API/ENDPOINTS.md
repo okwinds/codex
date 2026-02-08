@@ -62,4 +62,4 @@ Codex 在部分场景下需要模型列表与能力信息（例如 UI 选择模�
 - 传输：stdio JSONL（JSON-RPC-like，省略 `"jsonrpc":"2.0"` 字段）
 - 用途：VS Code 扩展等富客户端通过 thread/turn/item API 驱动 Codex，并接收 streaming notifications，处理 approvals/auth/tool requests。
 
-复刻规格见：`workdocjcl/spec/03_API/APP_SERVER.md`
+复刻规格见：`docs/workdocjcl/spec/03_API/APP_SERVER.md`

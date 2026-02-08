@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `1009`
-- sha256: `8d74d2326219c7eef7cc8e1964a531ae477a3570b6c99eafa821192dc563da62`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `1056`
+- sha256: `38bf6328a2cf39c075d8a949bf7af8c3005c276f554013afe26ef584eb8d5cf1`
+- generated_utc: `2026-02-08T10:45:33Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -27,7 +27,7 @@ Source file (no public surface detected by heuristic).
 - `const` `codex-rs/core/src/rollout/mod.rs:7` `pub const INTERACTIVE_SESSION_SOURCES: &[SessionSource] =`
 - `mod` `codex-rs/core/src/rollout/mod.rs:11` `pub mod list;`
 - `mod` `codex-rs/core/src/rollout/mod.rs:14` `pub mod recorder;`
-- `mod` `codex-rs/core/src/rollout/mod.rs:30` `pub mod tests;`
+- `mod` `codex-rs/core/src/rollout/mod.rs:31` `pub mod tests;`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -39,4 +39,4 @@ Source file (no public surface detected by heuristic).
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

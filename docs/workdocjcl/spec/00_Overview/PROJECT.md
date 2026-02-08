@@ -5,7 +5,8 @@
 - 仓库目录：本地工作区根目录（即本仓库根目录）
 - 上游仓库：`openai/codex`（GitHub）
 - License：Apache-2.0（见 `LICENSE`）
-- 本次规格文档基准提交：`53d847406134bdb5b25c014a6b6fed5e484b28be`
+- 本次规格文档基准提交（以代码为准）：`7f567b11ecb56a92a105b9a624dabadc44147ddd`
+- 规格文档固定锚点（tag，便于回滚/重放）：`docs-workdocjcl-20260208`
 - 目标：**在不阅读原始代码的前提下，仅凭本规格文档可复刻该项目的关键行为与系统结构**（允许使用不同技术栈复刻，但需达到同等外部接口与行为）
 
 ## 项目是什么（What）
@@ -102,6 +103,6 @@ pnpm -C shell-tool-mcp test
 ## 代码到规格文档映射（Mapping）
 - 本规格文档的“模块/接口/行为”说明会在每个章节末尾提供“来源（Source）”并给出实现位置（文件路径）。
 - 完整清单类材料：
-  - `workdocjcl/inventory/file_manifest.txt`：全仓文件清单
-  - `workdocjcl/inventory/rust_workspace.md`：Rust workspace member 列表
-  - `workdocjcl/inventory/node_workspace.md`：pnpm workspace package 列表
+  - `docs/workdocjcl/inventory/file_manifest_repo.txt`：repo tracked 文件清单（默认排除 `docs/workdocjcl/**`，避免规格递归）
+  - `docs/workdocjcl/inventory/rust_workspace.md`：Rust workspace member 列表
+  - `docs/workdocjcl/inventory/node_workspace.md`：pnpm workspace package 列表

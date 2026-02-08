@@ -3,9 +3,9 @@
 ## Identity
 - kind: `test`
 - ext: `.rs`
-- size_bytes: `3974`
-- sha256: `fde36c9dc53025d5bd301c8076bc78eba160ba43dde6787dbd4f50f82b0e48f8`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `4060`
+- sha256: `41a071f1ab408358b63ee5e8b1b3dbd5eca1e1ac78c55eede1156b6a8f7a2e56`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -27,8 +27,8 @@ Test or snapshot file used for automated verification.
 ### Imports / Includes
 - `use crate::harness::attributes_to_map;`
 - `use crate::harness::find_metric;`
-- `use codex_app_server_protocol::AuthMode;`
 - `use codex_otel::OtelManager;`
+- `use codex_otel::TelemetryAuthMode;`
 - `use codex_otel::metrics::MetricsClient;`
 - `use codex_otel::metrics::MetricsConfig;`
 - `use codex_otel::metrics::Result;`

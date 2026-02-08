@@ -24,9 +24,9 @@
 - `response.failed` 的 retry delay 文案解析（OpenAI vs Azure 两类模式）
 
 ### 1.2 对应规格文档（Spec anchors）
-- provider/wire/headers/events/azure：`workdocjcl/spec/05_Integrations/MODEL_API_COMPATIBILITY.md`
-- Responses SSE/WS 事件解析、重试与 WS→HTTP 回退：`workdocjcl/spec/05_Integrations/RESPONSES_STREAMING.md`
-- provider registry + auth 注入：`workdocjcl/spec/05_Integrations/MODEL_PROVIDERS.md`
+- provider/wire/headers/events/azure：`docs/workdocjcl/spec/05_Integrations/MODEL_API_COMPATIBILITY.md`
+- Responses SSE/WS 事件解析、重试与 WS→HTTP 回退：`docs/workdocjcl/spec/05_Integrations/RESPONSES_STREAMING.md`
+- provider registry + auth 注入：`docs/workdocjcl/spec/05_Integrations/MODEL_PROVIDERS.md`
 
 ### 1.3 代码锚点（Code anchors）
 - provider URL 与 Azure 检测：`codex-rs/codex-api/src/provider.rs`
@@ -60,8 +60,8 @@
 - compaction 重建时：会重新调用 `build_initial_context` 并过滤 session prefix
 
 ### 2.2 对应规格文档
-- prompt 组装与注入顺序：`workdocjcl/spec/04_Business_Logic/PROMPT_ASSEMBLY.md`
-- rollout/compaction 重建影响：`workdocjcl/spec/02_Data/ROLLOUT_SEMANTICS.md`
+- prompt 组装与注入顺序：`docs/workdocjcl/spec/04_Business_Logic/PROMPT_ASSEMBLY.md`
+- rollout/compaction 重建影响：`docs/workdocjcl/spec/02_Data/ROLLOUT_SEMANTICS.md`
 
 ### 2.3 代码锚点
 - BaseInstructions 决议与 build_initial_context：`codex-rs/core/src/codex.rs`
@@ -81,8 +81,8 @@
 - personality/template 资产必须原文一致（模板化 instructions 会影响最终 instructions）
 
 ### 3.2 对应规格文档
-- 选择矩阵与模板组合：`workdocjcl/spec/04_Business_Logic/SYSTEM_PRESET_PROMPTS.md`
-- 资产副本与 sha256：`workdocjcl/spec/04_Business_Logic/PROMPTS/INDEX.md` + `workdocjcl/spec/04_Business_Logic/PROMPTS/MANIFEST.json`
+- 选择矩阵与模板组合：`docs/workdocjcl/spec/04_Business_Logic/SYSTEM_PRESET_PROMPTS.md`
+- 资产副本与 sha256：`docs/workdocjcl/spec/04_Business_Logic/PROMPTS/INDEX.md` + `docs/workdocjcl/spec/04_Business_Logic/PROMPTS/MANIFEST.json`
 
 ### 3.3 代码锚点（原始来源）
 - include_str 资产与 slug 分支：`codex-rs/core/src/models_manager/model_info.rs`
@@ -99,10 +99,10 @@
 - tool outputs 的 envelope（success/error/metadata）必须一致（否则模型与 UI 的反馈回路不同）
 
 ### 4.2 对应规格文档
-- tool catalog（启用条件/总览）：`workdocjcl/spec/05_Integrations/TOOLS.md`
-- tool schema reference：`workdocjcl/spec/05_Integrations/TOOLS_SCHEMA_REFERENCE.md`
-- per-tool 行为规格（审批/沙箱/错误路径/输出 envelope）：`workdocjcl/spec/05_Integrations/TOOLS_DETAILED/INDEX.md`
-- approvals/sandbox/execpolicy：`workdocjcl/spec/07_Infrastructure/APPROVALS.md`、`workdocjcl/spec/07_Infrastructure/SECURITY_SANDBOX.md`、`workdocjcl/spec/07_Infrastructure/EXEC_POLICY.md`
+- tool catalog（启用条件/总览）：`docs/workdocjcl/spec/05_Integrations/TOOLS.md`
+- tool schema reference：`docs/workdocjcl/spec/05_Integrations/TOOLS_SCHEMA_REFERENCE.md`
+- per-tool 行为规格（审批/沙箱/错误路径/输出 envelope）：`docs/workdocjcl/spec/05_Integrations/TOOLS_DETAILED/INDEX.md`
+- approvals/sandbox/execpolicy：`docs/workdocjcl/spec/07_Infrastructure/APPROVALS.md`、`docs/workdocjcl/spec/07_Infrastructure/SECURITY_SANDBOX.md`、`docs/workdocjcl/spec/07_Infrastructure/EXEC_POLICY.md`
 
 ### 4.3 代码锚点
 - tool schema：`codex-rs/core/src/tools/spec.rs`
@@ -127,8 +127,8 @@
 - system skills 安装与 marker fingerprint（salt `"v1"`）
 
 ### 5.2 对应规格文档
-- skills 语义总规格：`workdocjcl/spec/05_Integrations/SKILLS.md`
-- embedded system skills 资产副本：`workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS.md` + `workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/MANIFEST.json`
+- skills 语义总规格：`docs/workdocjcl/spec/05_Integrations/SKILLS.md`
+- embedded system skills 资产副本：`docs/workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS.md` + `docs/workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/MANIFEST.json`
 
 ### 5.3 代码锚点
 - loader/manager/injection：`codex-rs/core/src/skills/*`

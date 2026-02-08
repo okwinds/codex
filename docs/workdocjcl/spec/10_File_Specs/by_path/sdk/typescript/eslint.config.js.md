@@ -5,7 +5,7 @@
 - ext: `.js`
 - size_bytes: `523`
 - sha256: `26a9317fd75922d37151f5d17a30058166341cafd6347239f7593c04a31b2af4`
-- generated_utc: `2026-02-03T16:08:31Z`
+- generated_utc: `2026-02-08T10:45:42Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -41,4 +41,4 @@ Source file (no public surface detected by heuristic).
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/PROJECT.md`
+- `docs/workdocjcl/spec/00_Overview/PROJECT.md`

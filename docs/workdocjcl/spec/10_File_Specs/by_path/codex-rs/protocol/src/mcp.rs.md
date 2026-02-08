@@ -5,7 +5,7 @@
 - ext: `.rs`
 - size_bytes: `10015`
 - sha256: `1ada8bfee02d9971cedb3e4efc3ffd6f78d1934c67b8f78e99e8f2272f095908`
-- generated_utc: `2026-02-03T16:08:30Z`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -74,4 +74,4 @@ Source file implementing exported/public items listed below.
 - uses Rust panic/expect/unwrap-style failure paths
 
 ## Spec Links
-- `workdocjcl/spec/02_Data/ROLLOUT_FORMAT.md`
+- `docs/workdocjcl/spec/02_Data/ROLLOUT_FORMAT.md`

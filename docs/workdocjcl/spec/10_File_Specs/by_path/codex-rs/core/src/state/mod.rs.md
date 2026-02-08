@@ -5,7 +5,7 @@
 - ext: `.rs`
 - size_bytes: `214`
 - sha256: `6372ce46aff2a8acb8f373dbc0f95db58f3177a7e02240c045a16cf0cf80ea1b`
-- generated_utc: `2026-02-03T16:08:29Z`
+- generated_utc: `2026-02-08T10:45:33Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -35,4 +35,4 @@ Source file (no public surface detected by heuristic).
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

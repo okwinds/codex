@@ -5,7 +5,7 @@
 - ext: `.md`
 - size_bytes: `5180`
 - sha256: `ac730b7ad65b2f2d03e40a3f8bfa41bddb384c7714922570e733897df5988dae`
-- generated_utc: `2026-02-03T16:08:31Z`
+- generated_utc: `2026-02-08T10:45:42Z`
 
 ## Purpose (Why)
 Documentation file.
@@ -33,4 +33,4 @@ Documentation file.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/05_Integrations/MCP.md`
+- `docs/workdocjcl/spec/05_Integrations/MCP.md`

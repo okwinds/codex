@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `8359`
-- sha256: `6f947c1de6b430f9b335c16dc649641031cd8dba8b772abf2802ed77e5e6ca20`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `9250`
+- sha256: `db8e09091163277b975fbbaafe1b764424e41d30aadd04f1665ef9369970a310`
+- generated_utc: `2026-02-08T10:45:40Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -28,25 +28,27 @@ Source file (no public surface detected by heuristic).
 - `use` `codex-rs/tui/src/collab.rs:5` `use codex_core::protocol::CollabAgentInteractionEndEvent;`
 - `use` `codex-rs/tui/src/collab.rs:6` `use codex_core::protocol::CollabAgentSpawnEndEvent;`
 - `use` `codex-rs/tui/src/collab.rs:7` `use codex_core::protocol::CollabCloseEndEvent;`
-- `use` `codex-rs/tui/src/collab.rs:8` `use codex_core::protocol::CollabWaitingBeginEvent;`
-- `use` `codex-rs/tui/src/collab.rs:9` `use codex_core::protocol::CollabWaitingEndEvent;`
-- `use` `codex-rs/tui/src/collab.rs:10` `use codex_protocol::ThreadId;`
-- `use` `codex-rs/tui/src/collab.rs:11` `use ratatui::style::Stylize;`
-- `use` `codex-rs/tui/src/collab.rs:12` `use ratatui::text::Line;`
-- `use` `codex-rs/tui/src/collab.rs:13` `use ratatui::text::Span;`
-- `use` `codex-rs/tui/src/collab.rs:14` `use std::collections::HashMap;`
-- `const` `codex-rs/tui/src/collab.rs:16` `const COLLAB_PROMPT_PREVIEW_GRAPHEMES: usize = 160;`
-- `const` `codex-rs/tui/src/collab.rs:17` `const COLLAB_AGENT_ERROR_PREVIEW_GRAPHEMES: usize = 160;`
-- `const` `codex-rs/tui/src/collab.rs:18` `const COLLAB_AGENT_RESPONSE_PREVIEW_GRAPHEMES: usize = 240;`
-- `fn` `codex-rs/tui/src/collab.rs:100` `fn collab_event(title: impl Into<String>, details: Vec<Line<'static>>) -> PlainHistoryCell {`
-- `fn` `codex-rs/tui/src/collab.rs:110` `fn detail_line(label: &str, value: impl Into<Span<'static>>) -> Line<'static> {`
-- `fn` `codex-rs/tui/src/collab.rs:114` `fn status_line(status: &AgentStatus) -> Line<'static> {`
-- `fn` `codex-rs/tui/src/collab.rs:118` `fn status_span(status: &AgentStatus) -> Span<'static> {`
-- `fn` `codex-rs/tui/src/collab.rs:129` `fn prompt_line(prompt: &str) -> Option<Line<'static>> {`
-- `fn` `codex-rs/tui/src/collab.rs:141` `fn format_thread_ids(ids: &[ThreadId]) -> Span<'static> {`
-- `fn` `codex-rs/tui/src/collab.rs:153` `fn wait_complete_lines(statuses: &HashMap<ThreadId, AgentStatus>) -> Vec<Line<'static>> {`
-- `fn` `codex-rs/tui/src/collab.rs:246` `fn push_status_count(`
-- `fn` `codex-rs/tui/src/collab.rs:260` `fn detail_line_spans(label: &str, mut value: Vec<Span<'static>>) -> Line<'static> {`
+- `use` `codex-rs/tui/src/collab.rs:8` `use codex_core::protocol::CollabResumeBeginEvent;`
+- `use` `codex-rs/tui/src/collab.rs:9` `use codex_core::protocol::CollabResumeEndEvent;`
+- `use` `codex-rs/tui/src/collab.rs:10` `use codex_core::protocol::CollabWaitingBeginEvent;`
+- `use` `codex-rs/tui/src/collab.rs:11` `use codex_core::protocol::CollabWaitingEndEvent;`
+- `use` `codex-rs/tui/src/collab.rs:12` `use codex_protocol::ThreadId;`
+- `use` `codex-rs/tui/src/collab.rs:13` `use ratatui::style::Stylize;`
+- `use` `codex-rs/tui/src/collab.rs:14` `use ratatui::text::Line;`
+- `use` `codex-rs/tui/src/collab.rs:15` `use ratatui::text::Span;`
+- `use` `codex-rs/tui/src/collab.rs:16` `use std::collections::HashMap;`
+- `const` `codex-rs/tui/src/collab.rs:18` `const COLLAB_PROMPT_PREVIEW_GRAPHEMES: usize = 160;`
+- `const` `codex-rs/tui/src/collab.rs:19` `const COLLAB_AGENT_ERROR_PREVIEW_GRAPHEMES: usize = 160;`
+- `const` `codex-rs/tui/src/collab.rs:20` `const COLLAB_AGENT_RESPONSE_PREVIEW_GRAPHEMES: usize = 240;`
+- `fn` `codex-rs/tui/src/collab.rs:130` `fn collab_event(title: impl Into<String>, details: Vec<Line<'static>>) -> PlainHistoryCell {`
+- `fn` `codex-rs/tui/src/collab.rs:140` `fn detail_line(label: &str, value: impl Into<Span<'static>>) -> Line<'static> {`
+- `fn` `codex-rs/tui/src/collab.rs:144` `fn status_line(status: &AgentStatus) -> Line<'static> {`
+- `fn` `codex-rs/tui/src/collab.rs:148` `fn status_span(status: &AgentStatus) -> Span<'static> {`
+- `fn` `codex-rs/tui/src/collab.rs:159` `fn prompt_line(prompt: &str) -> Option<Line<'static>> {`
+- `fn` `codex-rs/tui/src/collab.rs:171` `fn format_thread_ids(ids: &[ThreadId]) -> Span<'static> {`
+- `fn` `codex-rs/tui/src/collab.rs:183` `fn wait_complete_lines(statuses: &HashMap<ThreadId, AgentStatus>) -> Vec<Line<'static>> {`
+- `fn` `codex-rs/tui/src/collab.rs:276` `fn push_status_count(`
+- `fn` `codex-rs/tui/src/collab.rs:290` `fn detail_line_spans(label: &str, mut value: Vec<Span<'static>>) -> Line<'static> {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -57,6 +59,8 @@ Source file (no public surface detected by heuristic).
 - `use codex_core::protocol::CollabAgentInteractionEndEvent;`
 - `use codex_core::protocol::CollabAgentSpawnEndEvent;`
 - `use codex_core::protocol::CollabCloseEndEvent;`
+- `use codex_core::protocol::CollabResumeBeginEvent;`
+- `use codex_core::protocol::CollabResumeEndEvent;`
 - `use codex_core::protocol::CollabWaitingBeginEvent;`
 - `use codex_core::protocol::CollabWaitingEndEvent;`
 - `use codex_protocol::ThreadId;`
@@ -71,4 +75,4 @@ Source file (no public surface detected by heuristic).
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/06_UI/TUI.md`
+- `docs/workdocjcl/spec/06_UI/TUI.md`

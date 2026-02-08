@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `6657`
-- sha256: `250a0cc85ac6555c1fda47965564cb2370464d23634a3ac659f2f88be1be10a7`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `6835`
+- sha256: `cc5a0a197103b3976474b8d8c41f0ddbf96eadecdd110404e4f35b3636c100e3`
+- generated_utc: `2026-02-08T10:45:39Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -38,14 +38,15 @@ Source file (no public surface detected by heuristic).
 - `use` `codex-rs/tui/src/bottom_pane/skill_popup.rs:16` `use crate::render::RectExt;`
 - `use` `codex-rs/tui/src/bottom_pane/skill_popup.rs:17` `use crate::text_formatting::truncate_text;`
 - `use` `codex-rs/tui/src/bottom_pane/skill_popup.rs:18` `use codex_common::fuzzy_match::fuzzy_match;`
-- `impl` `codex-rs/tui/src/bottom_pane/skill_popup.rs:35` `impl SkillPopup {`
-- `fn` `codex-rs/tui/src/bottom_pane/skill_popup.rs:79` `fn clamp_selection(&mut self) {`
-- `fn` `codex-rs/tui/src/bottom_pane/skill_popup.rs:85` `fn filtered_items(&self) -> Vec<usize> {`
-- `fn` `codex-rs/tui/src/bottom_pane/skill_popup.rs:89` `fn rows_from_matches(`
-- `fn` `codex-rs/tui/src/bottom_pane/skill_popup.rs:112` `fn filtered(&self) -> Vec<(usize, Option<Vec<usize>>, i32)> {`
-- `impl` `codex-rs/tui/src/bottom_pane/skill_popup.rs:167` `impl WidgetRef for SkillPopup {`
-- `fn` `codex-rs/tui/src/bottom_pane/skill_popup.rs:168` `fn render_ref(&self, area: Rect, buf: &mut Buffer) {`
-- `fn` `codex-rs/tui/src/bottom_pane/skill_popup.rs:201` `fn skill_popup_hint_line() -> Line<'static> {`
+- `const` `codex-rs/tui/src/bottom_pane/skill_popup.rs:30` `const MENTION_NAME_TRUNCATE_LEN: usize = 24;`
+- `impl` `codex-rs/tui/src/bottom_pane/skill_popup.rs:38` `impl SkillPopup {`
+- `fn` `codex-rs/tui/src/bottom_pane/skill_popup.rs:82` `fn clamp_selection(&mut self) {`
+- `fn` `codex-rs/tui/src/bottom_pane/skill_popup.rs:88` `fn filtered_items(&self) -> Vec<usize> {`
+- `fn` `codex-rs/tui/src/bottom_pane/skill_popup.rs:92` `fn rows_from_matches(`
+- `fn` `codex-rs/tui/src/bottom_pane/skill_popup.rs:116` `fn filtered(&self) -> Vec<(usize, Option<Vec<usize>>, i32)> {`
+- `impl` `codex-rs/tui/src/bottom_pane/skill_popup.rs:171` `impl WidgetRef for SkillPopup {`
+- `fn` `codex-rs/tui/src/bottom_pane/skill_popup.rs:172` `fn render_ref(&self, area: Rect, buf: &mut Buffer) {`
+- `fn` `codex-rs/tui/src/bottom_pane/skill_popup.rs:205` `fn skill_popup_hint_line() -> Line<'static> {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -73,4 +74,4 @@ Source file (no public surface detected by heuristic).
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/06_UI/TUI.md`
+- `docs/workdocjcl/spec/06_UI/TUI.md`

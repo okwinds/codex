@@ -5,7 +5,7 @@
 - ext: `.rs`
 - size_bytes: `4428`
 - sha256: `a5729afab26fe313d983ea1dd7cf27dd29b40fa25abef4605afd729132fd8241`
-- generated_utc: `2026-02-03T16:08:30Z`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.

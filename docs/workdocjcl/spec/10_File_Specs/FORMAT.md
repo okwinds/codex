@@ -45,17 +45,17 @@
 - <fatal exits / error returns / retries / defaults>
 
 ## Spec Links
-- high-level spec anchors this file belongs to (links to `workdocjcl/spec/...`)
+- high-level spec anchors this file belongs to (links to `docs/workdocjcl/spec/...`)
 ```
 
 ## 3. 自动抽取策略（Auto-extraction policy）
-- 该目录主要由脚本生成（见 `workdocjcl/scripts/generate_file_capsules.py`）。
+- 该目录主要由脚本生成（见 `docs/workdocjcl/scripts/generate_file_capsules.py`）。
 - 对于体积很大的文件（>1MB）或二进制文件：
   - 不读取全文，只记录元数据与路径角色；
   - 若为关键文件，再手工补充“Purpose/Interfaces”段落。
 
 ## 4. “无遗漏”的判定
 满足以下条件视为“文件级无遗漏”：
-- `workdocjcl/inventory/file_manifest_repo.txt` 中每个路径都存在对应 capsule 文件；
+- `docs/workdocjcl/inventory/file_manifest_repo.txt` 中每个路径都存在对应 capsule 文件；
 - `10_File_Specs/INDEX.md` 中对每个路径都有索引条目；
 - `09_Verification/FILE_COVERAGE.md` 中的覆盖统计为 100%。

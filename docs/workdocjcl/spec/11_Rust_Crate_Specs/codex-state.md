@@ -1,7 +1,7 @@
 # `codex-state`
 
 - path: `codex-rs/state`
-- generated_utc: `2026-02-03T09:48:37Z`
+- generated_utc: `2026-02-08T10:45:13Z`
 - role: SQLite-backed state DB and rollout metadata extraction
 
 ## Build Targets
@@ -37,16 +37,22 @@
 - `pub use runtime::StateRuntime;`
 - `pub use extract::apply_rollout_item;`
 - `pub use model::Anchor;`
+- `pub use model::BackfillState;`
 - `pub use model::BackfillStats;`
+- `pub use model::BackfillStatus;`
 - `pub use model::ExtractionOutcome;`
 - `pub use model::SortKey;`
+- `pub use model::ThreadMemory;`
 - `pub use model::ThreadMetadata;`
 - `pub use model::ThreadMetadataBuilder;`
 - `pub use model::ThreadsPage;`
 - `pub use runtime::STATE_DB_FILENAME;`
+- `pub use runtime::STATE_DB_VERSION;`
+- `pub use runtime::state_db_filename;`
+- `pub use runtime::state_db_path;`
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/MODULE_MAP.md`
-- `workdocjcl/spec/09_Verification/CODE_TO_SPEC_MAP.md`
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
-- `workdocjcl/spec/02_Data/ENTITIES.md`
+- `docs/workdocjcl/spec/00_Overview/MODULE_MAP.md`
+- `docs/workdocjcl/spec/09_Verification/CODE_TO_SPEC_MAP.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/02_Data/ENTITIES.md`

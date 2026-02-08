@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `16263`
-- sha256: `3a55e5b712f592f34f6adc8436211d5eddd04f054bda0c29183ef5bf4a66890d`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `16126`
+- sha256: `46b213e38406d37907ede5f06987cc50cea358eaf7d59672f446729ef8ac2a29`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -35,26 +35,25 @@ Source file implementing exported/public items listed below.
 - `use` `codex-rs/ollama/src/client.rs:13` `use crate::url::is_openai_compatible_base_url;`
 - `use` `codex-rs/ollama/src/client.rs:14` `use codex_core::ModelProviderInfo;`
 - `use` `codex-rs/ollama/src/client.rs:15` `use codex_core::OLLAMA_OSS_PROVIDER_ID;`
-- `use` `codex-rs/ollama/src/client.rs:16` `use codex_core::WireApi;`
-- `use` `codex-rs/ollama/src/client.rs:17` `use codex_core::config::Config;`
-- `const` `codex-rs/ollama/src/client.rs:19` `const OLLAMA_CONNECTION_ERROR: &str = "No running Ollama server detected. Start it with: `ollama serve` (after installing). Install instructions: https://github.com/ollama/ollama?tab=readme-ov-file#ollama";`
-- `struct` `codex-rs/ollama/src/client.rs:22` `pub struct OllamaClient {`
-- `impl` `codex-rs/ollama/src/client.rs:28` `impl OllamaClient {`
-- `fn` `codex-rs/ollama/src/client.rs:32` `pub async fn try_from_oss_provider(config: &Config) -> io::Result<Self> {`
-- `fn` `codex-rs/ollama/src/client.rs:50` `async fn try_from_provider_with_base_url(base_url: &str) -> io::Result<Self> {`
-- `fn` `codex-rs/ollama/src/client.rs:81` `async fn probe_server(&self) -> io::Result<()> {`
-- `fn` `codex-rs/ollama/src/client.rs:104` `pub async fn fetch_models(&self) -> io::Result<Vec<String>> {`
-- `fn` `codex-rs/ollama/src/client.rs:130` `pub async fn fetch_version(&self) -> io::Result<Option<Version>> {`
-- `fn` `codex-rs/ollama/src/client.rs:157` `pub async fn pull_model_stream(`
-- `fn` `codex-rs/ollama/src/client.rs:215` `pub async fn pull_with_reporter(`
-- `fn` `codex-rs/ollama/src/client.rs:250` `fn from_host_root(host_root: impl Into<String>) -> Self {`
-- `use` `codex-rs/ollama/src/client.rs:265` `use super::*;`
-- `use` `codex-rs/ollama/src/client.rs:266` `use pretty_assertions::assert_eq;`
-- `fn` `codex-rs/ollama/src/client.rs:270` `async fn test_fetch_models_happy_path() {`
-- `fn` `codex-rs/ollama/src/client.rs:301` `async fn test_fetch_version() {`
-- `fn` `codex-rs/ollama/src/client.rs:337` `async fn test_probe_server_happy_path_openai_compat_and_native() {`
-- `fn` `codex-rs/ollama/src/client.rs:374` `async fn test_try_from_oss_provider_ok_when_server_running() {`
-- `fn` `codex-rs/ollama/src/client.rs:398` `async fn test_try_from_oss_provider_err_when_server_missing() {`
+- `use` `codex-rs/ollama/src/client.rs:16` `use codex_core::config::Config;`
+- `const` `codex-rs/ollama/src/client.rs:18` `const OLLAMA_CONNECTION_ERROR: &str = "No running Ollama server detected. Start it with: `ollama serve` (after installing). Install instructions: https://github.com/ollama/ollama?tab=readme-ov-file#ollama";`
+- `struct` `codex-rs/ollama/src/client.rs:21` `pub struct OllamaClient {`
+- `impl` `codex-rs/ollama/src/client.rs:27` `impl OllamaClient {`
+- `fn` `codex-rs/ollama/src/client.rs:31` `pub async fn try_from_oss_provider(config: &Config) -> io::Result<Self> {`
+- `fn` `codex-rs/ollama/src/client.rs:49` `async fn try_from_provider_with_base_url(base_url: &str) -> io::Result<Self> {`
+- `fn` `codex-rs/ollama/src/client.rs:78` `async fn probe_server(&self) -> io::Result<()> {`
+- `fn` `codex-rs/ollama/src/client.rs:101` `pub async fn fetch_models(&self) -> io::Result<Vec<String>> {`
+- `fn` `codex-rs/ollama/src/client.rs:127` `pub async fn fetch_version(&self) -> io::Result<Option<Version>> {`
+- `fn` `codex-rs/ollama/src/client.rs:154` `pub async fn pull_model_stream(`
+- `fn` `codex-rs/ollama/src/client.rs:212` `pub async fn pull_with_reporter(`
+- `fn` `codex-rs/ollama/src/client.rs:247` `fn from_host_root(host_root: impl Into<String>) -> Self {`
+- `use` `codex-rs/ollama/src/client.rs:262` `use super::*;`
+- `use` `codex-rs/ollama/src/client.rs:263` `use pretty_assertions::assert_eq;`
+- `fn` `codex-rs/ollama/src/client.rs:267` `async fn test_fetch_models_happy_path() {`
+- `fn` `codex-rs/ollama/src/client.rs:298` `async fn test_fetch_version() {`
+- `fn` `codex-rs/ollama/src/client.rs:334` `async fn test_probe_server_happy_path_openai_compat_and_native() {`
+- `fn` `codex-rs/ollama/src/client.rs:371` `async fn test_try_from_oss_provider_ok_when_server_running() {`
+- `fn` `codex-rs/ollama/src/client.rs:395` `async fn test_try_from_oss_provider_err_when_server_missing() {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -72,7 +71,6 @@ Source file implementing exported/public items listed below.
 - `use crate::url::is_openai_compatible_base_url;`
 - `use codex_core::ModelProviderInfo;`
 - `use codex_core::OLLAMA_OSS_PROVIDER_ID;`
-- `use codex_core::WireApi;`
 - `use codex_core::config::Config;`
 - `use super::*;`
 - `use pretty_assertions::assert_eq;`

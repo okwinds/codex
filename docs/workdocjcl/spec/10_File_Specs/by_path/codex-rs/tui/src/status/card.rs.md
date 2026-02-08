@@ -5,7 +5,7 @@
 - ext: `.rs`
 - size_bytes: `20086`
 - sha256: `f13dd4a6636db45f0a3dabac8e45ad6002b65b042e8e7ab306cb4013266556a6`
-- generated_utc: `2026-02-03T16:08:30Z`
+- generated_utc: `2026-02-08T10:45:40Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -106,4 +106,4 @@ Source file (no public surface detected by heuristic).
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/06_UI/TUI.md`
+- `docs/workdocjcl/spec/06_UI/TUI.md`

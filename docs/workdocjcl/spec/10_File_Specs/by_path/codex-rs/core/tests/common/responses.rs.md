@@ -3,9 +3,9 @@
 ## Identity
 - kind: `test`
 - ext: `.rs`
-- size_bytes: `37123`
-- sha256: `f222c4ecf2151611fc43ffb6abfa993e8a203528611664ff46d6eb0f8c67291f`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `39283`
+- sha256: `5239f8e531735a476096a2c8174cff2f080f6573354f2901efa04028a3ecc177`
+- generated_utc: `2026-02-08T10:45:34Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -56,6 +56,7 @@ Test or snapshot file used for automated verification.
 - `pub fn requests(&self) -> Vec<wiremock::Request> {`
 - `pub fn single_request_path(&self) -> String {`
 - `pub fn sse(events: Vec<Value>) -> String {`
+- `pub fn sse_completed(id: &str) -> String {`
 - `pub fn ev_completed(id: &str) -> Value {`
 - `pub fn ev_done() -> Value {`
 - `pub fn ev_response_created(id: &str) -> Value {`
@@ -67,7 +68,6 @@ Test or snapshot file used for automated verification.
 - `pub fn ev_reasoning_item_added(id: &str, summary: &[&str]) -> Value {`
 - `pub fn ev_reasoning_summary_text_delta(delta: &str) -> Value {`
 - `pub fn ev_reasoning_text_delta(delta: &str) -> Value {`
-- `pub fn ev_web_search_call_added_partial(id: &str, status: &str) -> Value {`
 
 ## Definitions (auto, per-file)
 - (not extracted)
@@ -86,14 +86,14 @@ Test or snapshot file used for automated verification.
 - `use serde_json::Value;`
 - `use tokio::net::TcpListener;`
 - `use tokio::sync::oneshot;`
+- `use tokio_tungstenite::accept_hdr_async_with_config;`
 - `use tokio_tungstenite::tungstenite::Message;`
+- `use tokio_tungstenite::tungstenite::extensions::ExtensionsConfig;`
+- `use tokio_tungstenite::tungstenite::extensions::compression::deflate::DeflateConfig;`
 - `use tokio_tungstenite::tungstenite::handshake::server::Request;`
 - `use tokio_tungstenite::tungstenite::handshake::server::Response;`
+- `use tokio_tungstenite::tungstenite::protocol::WebSocketConfig;`
 - `use wiremock::BodyPrintLimit;`
-- `use wiremock::Match;`
-- `use wiremock::Mock;`
-- `use wiremock::MockBuilder;`
-- `use wiremock::MockServer;`
 ### Referenced env vars
 - (none detected)
 
@@ -101,4 +101,4 @@ Test or snapshot file used for automated verification.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

@@ -32,7 +32,7 @@
 - rest 为 name 之后去掉前导空白的剩余部分
 - `rest_offset` 是 rest 在原始 line 中的 byte offset（用于 text_elements rebasing）
 
-> `parse_slash_name` 既用于内建 slash commands，也用于 `/prompts:<name>` 的自定义 prompt 解析；自定义 prompts 的参数展开与元素保真细节见 `workdocjcl/spec/06_UI/TUI_PROMPTS.md`。
+> `parse_slash_name` 既用于内建 slash commands，也用于 `/prompts:<name>` 的自定义 prompt 解析；自定义 prompts 的参数展开与元素保真细节见 `docs/workdocjcl/spec/06_UI/TUI_PROMPTS.md`。
 
 ### 2.2 “裸命令”派发（无 args）
 函数：`ChatComposer::try_dispatch_bare_slash_command`
@@ -88,7 +88,7 @@
 
 来源：
 - `codex-rs/tui/src/bottom_pane/chat_composer.rs:prepare_submission_text`
-- 关联：composer 提交/粘贴/附件/弹窗的完整状态机见 `workdocjcl/spec/06_UI/TUI_COMPOSER.md`
+- 关联：composer 提交/粘贴/附件/弹窗的完整状态机见 `docs/workdocjcl/spec/06_UI/TUI_COMPOSER.md`
 
 ---
 
@@ -116,7 +116,7 @@
 
 ### 4.1 会话/线程生命周期
 - `/new` → `AppEvent::NewSession`
-- `/resume` → `AppEvent::OpenResumePicker`（见 `workdocjcl/spec/06_UI/TUI_RESUME_PICKER.md`）
+- `/resume` → `AppEvent::OpenResumePicker`（见 `docs/workdocjcl/spec/06_UI/TUI_RESUME_PICKER.md`）
 - `/fork` → `AppEvent::ForkCurrentSession`
 - `/rename`（无 args）→ 打开 rename prompt view（自定义输入框）
 - `/rename <name>` → 发送 `Op::SetThreadName { name }`（并插入确认 history cell；name 会 normalize）

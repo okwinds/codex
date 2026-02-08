@@ -5,7 +5,7 @@
 - ext: `.ts`
 - size_bytes: `2593`
 - sha256: `736f526b1b2793c66a93a8f27b60ae8551d02672ac067f3a05408bf6c73d3b2b`
-- generated_utc: `2026-02-03T16:08:31Z`
+- generated_utc: `2026-02-08T10:45:42Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -58,4 +58,4 @@ Source file (no public surface detected by heuristic).
 - throws exceptions
 
 ## Spec Links
-- `workdocjcl/spec/05_Integrations/MCP.md`
+- `docs/workdocjcl/spec/05_Integrations/MCP.md`

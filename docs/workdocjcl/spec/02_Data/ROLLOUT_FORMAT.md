@@ -9,7 +9,7 @@
 - 每行 JSON 的结构与 `RolloutLine`/`RolloutItem` 一致
 - item 的 tag/字段名一致（serde tag/rename 规则）
 
-> 仅有格式不足以复刻 `resume/fork` 与 state.sqlite 同步逻辑；语义见：`workdocjcl/spec/02_Data/ROLLOUT_SEMANTICS.md`。
+> 仅有格式不足以复刻 `resume/fork` 与 state.sqlite 同步逻辑；语义见：`docs/workdocjcl/spec/02_Data/ROLLOUT_SEMANTICS.md`。
 
 ## 1. 顶层：`RolloutLine`
 每一行是一个 JSON 对象，形如：

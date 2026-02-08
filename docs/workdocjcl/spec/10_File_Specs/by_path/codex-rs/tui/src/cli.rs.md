@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `4507`
-- sha256: `77b7abaa97230b5e01a5b2d222821ecb4c3d1eb0e052a6514dccfe067e411e6a`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `4493`
+- sha256: `8d514ffe1f6c06e45f9e69158c0a4c3a04eecb32348ec06aa1defc77960f6f55`
+- generated_utc: `2026-02-08T10:45:40Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -42,4 +42,4 @@ Source file implementing exported/public items listed below.
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/06_UI/TUI.md`
+- `docs/workdocjcl/spec/06_UI/TUI.md`

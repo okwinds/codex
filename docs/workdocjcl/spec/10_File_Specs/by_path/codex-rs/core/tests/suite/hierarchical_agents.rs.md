@@ -3,9 +3,9 @@
 ## Identity
 - kind: `test`
 - ext: `.rs`
-- size_bytes: `2777`
-- sha256: `4ec9c2899abe109d58277f0460299a9396e59f4cc2bff0ea46f10f1295912885`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `2892`
+- sha256: `e0e36e5bddf47c20823deda3e73ac7e166d0e1ce1c481320f9debb49e9e9cb40`
+- generated_utc: `2026-02-08T10:45:36Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -26,8 +26,10 @@ Test or snapshot file used for automated verification.
 ## Dependencies (auto sample)
 ### Imports / Includes
 - `use codex_core::features::Feature;`
-- `use core_test_support::load_sse_fixture_with_id;`
+- `use core_test_support::responses::ev_completed;`
+- `use core_test_support::responses::ev_response_created;`
 - `use core_test_support::responses::mount_sse_once;`
+- `use core_test_support::responses::sse;`
 - `use core_test_support::responses::start_mock_server;`
 - `use core_test_support::test_codex::test_codex;`
 ### Referenced env vars
@@ -37,4 +39,4 @@ Test or snapshot file used for automated verification.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

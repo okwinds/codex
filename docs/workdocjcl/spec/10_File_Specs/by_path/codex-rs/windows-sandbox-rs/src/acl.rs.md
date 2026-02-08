@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `21835`
-- sha256: `e41af19b02f8782025f286c95ef219965965ea6de852db1a0a7dea1cab704eac`
-- generated_utc: `2026-02-03T16:08:31Z`
+- size_bytes: `21933`
+- sha256: `1f4079d866a9e9aada62871420ed4e60518459a426add9276a2039e235c6494f`
+- generated_utc: `2026-02-08T10:45:41Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -74,9 +74,9 @@ Source file implementing exported/public items listed below.
 - `const` `codex-rs/windows-sandbox-rs/src/acl.rs:51` `const GENERIC_WRITE_MASK: u32 = 0x4000_0000;`
 - `const` `codex-rs/windows-sandbox-rs/src/acl.rs:52` `const DENY_ACCESS: i32 = 3;`
 - `fn` `codex-rs/windows-sandbox-rs/src/acl.rs:160` `pub fn path_mask_allows(`
-- `const` `codex-rs/windows-sandbox-rs/src/acl.rs:260` `const WRITE_ALLOW_MASK: u32 = FILE_GENERIC_READ`
-- `const` `codex-rs/windows-sandbox-rs/src/acl.rs:628` `const CONTAINER_INHERIT_ACE: u32 = 0x2;`
-- `const` `codex-rs/windows-sandbox-rs/src/acl.rs:629` `const OBJECT_INHERIT_ACE: u32 = 0x1;`
+- `const` `codex-rs/windows-sandbox-rs/src/acl.rs:262` `const WRITE_ALLOW_MASK: u32 = FILE_GENERIC_READ`
+- `const` `codex-rs/windows-sandbox-rs/src/acl.rs:632` `const CONTAINER_INHERIT_ACE: u32 = 0x2;`
+- `const` `codex-rs/windows-sandbox-rs/src/acl.rs:633` `const OBJECT_INHERIT_ACE: u32 = 0x1;`
 
 ## Dependencies (auto sample)
 ### Imports / Includes

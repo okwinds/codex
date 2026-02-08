@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `8428`
-- sha256: `a71d0508b92e4ae73ada4b8141561ae344e9c677458fb28d074696474f1fd357`
-- generated_utc: `2026-02-03T16:08:28Z`
+- size_bytes: `8608`
+- sha256: `84b1cceb64a64dccecaaba360e8d6d94ee09ce8788ae08f56c9f423644373d5b`
+- generated_utc: `2026-02-08T10:45:16Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -50,7 +50,8 @@ Source file implementing exported/public items listed below.
 - `use` `codex-rs/cli/src/debug_sandbox.rs:142` `use codex_windows_sandbox::run_windows_sandbox_capture_elevated;`
 - `use` `codex-rs/cli/src/debug_sandbox.rs:195` `use std::io::Write;`
 - `use` `codex-rs/cli/src/debug_sandbox.rs:199` `use std::io::Write;`
-- `fn` `codex-rs/cli/src/debug_sandbox.rs:273` `pub fn create_sandbox_mode(full_auto: bool) -> SandboxMode {`
+- `use` `codex-rs/cli/src/debug_sandbox.rs:230` `use codex_core::features::Feature;`
+- `fn` `codex-rs/cli/src/debug_sandbox.rs:276` `pub fn create_sandbox_mode(full_auto: bool) -> SandboxMode {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -82,4 +83,4 @@ Source file implementing exported/public items listed below.
 - uses Rust panic/expect/unwrap-style failure paths
 
 ## Spec Links
-- `workdocjcl/spec/03_API/CLI.md`
+- `docs/workdocjcl/spec/03_API/CLI.md`

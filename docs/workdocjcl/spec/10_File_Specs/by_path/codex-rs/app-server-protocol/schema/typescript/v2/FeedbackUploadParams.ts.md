@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.ts`
-- size_bytes: `287`
-- sha256: `05bd9b9e13bd381df51a27ba5650b02a7417ffe350e9f95599907160b10144ab`
-- generated_utc: `2026-02-03T16:08:28Z`
+- size_bytes: `289`
+- sha256: `4d91ab023807e9c66f3cd04d5cdb22d94f93b42011d8d2210df628d7496c8e43`
+- generated_utc: `2026-02-08T10:45:14Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -18,14 +18,14 @@ Source file implementing exported/public items listed below.
 - (no obvious side effects detected by heuristic)
 
 ## Public Surface (auto)
-- `export type FeedbackUploadParams = { classification: string, reason: string | null, threadId: string | null, includeLogs: boolean, };`
+- `export type FeedbackUploadParams = { classification: string, reason?: string | null, threadId?: string | null, includeLogs: boolean, };`
 
 ## Definitions (auto, per-file)
-- `export` `codex-rs/app-server-protocol/schema/typescript/v2/FeedbackUploadParams.ts:5` `export type FeedbackUploadParams = { classification: string, reason: string | null, threadId: string | null, includeLogs: boolean, };`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/FeedbackUploadParams.ts:5` `export type FeedbackUploadParams = { classification: string, reason?: string | null, threadId?: string | null, includeLogs: boolean, };`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
-- `export type FeedbackUploadParams = { classification: string, reason: string | null, threadId: string | null, includeLogs: boolean, };`
+- `export type FeedbackUploadParams = { classification: string, reason?: string | null, threadId?: string | null, includeLogs: boolean, };`
 ### Referenced env vars
 - (none detected)
 

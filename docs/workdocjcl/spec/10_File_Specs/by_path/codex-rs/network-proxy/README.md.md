@@ -3,9 +3,9 @@
 ## Identity
 - kind: `doc`
 - ext: `.md`
-- size_bytes: `6631`
-- sha256: `72715d62bca889c86ce0a6357659ae6fcb3e72ba54581945d88bff868e96fe9c`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `6598`
+- sha256: `bf2f968f9deda5423f5ee2b7649b19baea4e0a1f17f406e7e26b1acc9f9f283a`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Documentation file.

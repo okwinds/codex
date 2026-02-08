@@ -3,9 +3,9 @@
 ## Identity
 - kind: `test`
 - ext: `.rs`
-- size_bytes: `64412`
-- sha256: `411295c82a405167a03f8483acd00ca2bc1ef9746fc345f8de4e5b2010796307`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `65740`
+- sha256: `ad68efe8958159b643cf8a0f6414dfefb9637e5c44aee902c6b0de960ec12efa`
+- generated_utc: `2026-02-08T10:45:35Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -38,13 +38,13 @@ Test or snapshot file used for automated verification.
 - `use codex_core::ResponseEvent;`
 - `use codex_core::ResponseItem;`
 - `use codex_core::ThreadManager;`
-- `use codex_core::TransportManager;`
 - `use codex_core::WireApi;`
 - `use codex_core::auth::AuthCredentialsStoreMode;`
 - `use codex_core::built_in_model_providers;`
 - `use codex_core::default_client::originator;`
 - `use codex_core::error::CodexErr;`
 - `use codex_core::models_manager::manager::ModelsManager;`
+- `use codex_core::protocol::EventMsg;`
 ### Referenced env vars
 - (none detected)
 
@@ -52,4 +52,4 @@ Test or snapshot file used for automated verification.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

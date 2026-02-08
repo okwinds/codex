@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `4402`
-- sha256: `1b243258199ad932aff7646ed82f2ee319fa5830ebc1d5f1c68b19eaf949737d`
-- generated_utc: `2026-02-03T16:08:31Z`
+- size_bytes: `5170`
+- sha256: `2ef17e2a43fc8a56acc83b8aafa6c120b2791875b79933bb97e14fe6e960615c`
+- generated_utc: `2026-02-08T10:45:41Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -26,6 +26,8 @@ Source file implementing exported/public items listed below.
 - `pub fn set_process_group() -> io::Result<()> {`
 - `pub fn kill_process_group_by_pid(pid: u32) -> io::Result<()> {`
 - `pub fn kill_process_group_by_pid(_pid: u32) -> io::Result<()> {`
+- `pub fn terminate_process_group(process_group_id: u32) -> io::Result<bool> {`
+- `pub fn terminate_process_group(_process_group_id: u32) -> io::Result<bool> {`
 - `pub fn kill_process_group(process_group_id: u32) -> io::Result<()> {`
 - `pub fn kill_process_group(_process_group_id: u32) -> io::Result<()> {`
 - `pub fn kill_child_process_group(child: &mut Child) -> io::Result<()> {`
@@ -43,16 +45,20 @@ Source file implementing exported/public items listed below.
 - `fn` `codex-rs/utils/pty/src/process_group.rs:90` `pub fn kill_process_group_by_pid(pid: u32) -> io::Result<()> {`
 - `use` `codex-rs/utils/pty/src/process_group.rs:91` `use std::io::ErrorKind;`
 - `fn` `codex-rs/utils/pty/src/process_group.rs:116` `pub fn kill_process_group_by_pid(_pid: u32) -> io::Result<()> {`
-- `fn` `codex-rs/utils/pty/src/process_group.rs:122` `pub fn kill_process_group(process_group_id: u32) -> io::Result<()> {`
-- `use` `codex-rs/utils/pty/src/process_group.rs:123` `use std::io::ErrorKind;`
-- `fn` `codex-rs/utils/pty/src/process_group.rs:139` `pub fn kill_process_group(_process_group_id: u32) -> io::Result<()> {`
-- `fn` `codex-rs/utils/pty/src/process_group.rs:145` `pub fn kill_child_process_group(child: &mut Child) -> io::Result<()> {`
-- `fn` `codex-rs/utils/pty/src/process_group.rs:155` `pub fn kill_child_process_group(_child: &mut Child) -> io::Result<()> {`
+- `fn` `codex-rs/utils/pty/src/process_group.rs:125` `pub fn terminate_process_group(process_group_id: u32) -> io::Result<bool> {`
+- `use` `codex-rs/utils/pty/src/process_group.rs:126` `use std::io::ErrorKind;`
+- `fn` `codex-rs/utils/pty/src/process_group.rs:143` `pub fn terminate_process_group(_process_group_id: u32) -> io::Result<bool> {`
+- `fn` `codex-rs/utils/pty/src/process_group.rs:149` `pub fn kill_process_group(process_group_id: u32) -> io::Result<()> {`
+- `use` `codex-rs/utils/pty/src/process_group.rs:150` `use std::io::ErrorKind;`
+- `fn` `codex-rs/utils/pty/src/process_group.rs:166` `pub fn kill_process_group(_process_group_id: u32) -> io::Result<()> {`
+- `fn` `codex-rs/utils/pty/src/process_group.rs:172` `pub fn kill_child_process_group(child: &mut Child) -> io::Result<()> {`
+- `fn` `codex-rs/utils/pty/src/process_group.rs:182` `pub fn kill_child_process_group(_child: &mut Child) -> io::Result<()> {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
 - `use std::io;`
 - `use tokio::process::Child;`
+- `use std::io::ErrorKind;`
 - `use std::io::ErrorKind;`
 - `use std::io::ErrorKind;`
 ### Referenced env vars

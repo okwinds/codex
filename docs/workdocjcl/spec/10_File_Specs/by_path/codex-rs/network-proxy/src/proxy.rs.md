@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `6162`
-- sha256: `071458e78f789ae9a674bc0615d5be21c70711d38a8423b38d70137f6ca000a5`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `6132`
+- sha256: `075ebab4eabb84c4a4d53d5204ae29fb8f9928ab20ead3ce06fa70e8d461b3a1`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.

@@ -3,7 +3,7 @@
 本章目标：补齐 skills 系统中“随二进制内嵌并在运行时安装到 `CODEX_HOME/skills/.system`”的那部分资产，使复刻者在不查看源码的情况下也能得到完全一致的 system skills 内容。
 
 skills 的发现/扫描/启用禁用/mentions 消歧/注入语义见：
-- `workdocjcl/spec/05_Integrations/SKILLS.md`
+- `docs/workdocjcl/spec/05_Integrations/SKILLS.md`
 
 ---
 
@@ -22,10 +22,10 @@ Codex 将“system skills”作为编译期资源内嵌：
 
 ## 2. 规范化副本（verbatim copy）
 为满足“仅依赖规格文档即可复刻”，本规格将 embedded system skills 的文件内容完整拷贝到：
-- `workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/`
+- `docs/workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/`
 
 并提供可验证清单：
-- `workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/MANIFEST.json`
+- `docs/workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/MANIFEST.json`
 
 复刻要求：
 - 复刻实现应当以该目录内容作为“system skills”权威源，并可在构建阶段校验 sha256。
@@ -40,5 +40,5 @@ Codex 将“system skills”作为编译期资源内嵌：
 4) 写入 marker 文件（fingerprint + `\\n`）
 
 对应细节见：
-- `workdocjcl/spec/05_Integrations/SKILLS.md`（system skills 安装与 marker 语义）
+- `docs/workdocjcl/spec/05_Integrations/SKILLS.md`（system skills 安装与 marker 语义）
 

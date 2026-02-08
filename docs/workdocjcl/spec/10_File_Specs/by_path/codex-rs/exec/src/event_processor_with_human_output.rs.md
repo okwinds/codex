@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `36344`
-- sha256: `be681bce5ebc38b88c0b3974a141f43a1c8435008ec4235ef977385ec772ed7d`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `36658`
+- sha256: `0a70b6a685be6a1062eea4ba881088e6012be96e16f7e92cd866715e36646b5f`
+- generated_utc: `2026-02-08T10:45:37Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -78,16 +78,16 @@ Source file (no public surface detected by heuristic).
 - `fn` `codex-rs/exec/src/event_processor_with_human_output.rs:145` `fn print_config_summary(`
 - `const` `codex-rs/exec/src/event_processor_with_human_output.rs:151` `const VERSION: &str = env!("CARGO_PKG_VERSION");`
 - `fn` `codex-rs/exec/src/event_processor_with_human_output.rs:177` `fn process_event(&mut self, event: Event) -> CodexStatus {`
-- `fn` `codex-rs/exec/src/event_processor_with_human_output.rs:799` `fn print_final_output(&mut self) {`
-- `fn` `codex-rs/exec/src/event_processor_with_human_output.rs:823` `fn escape_command(command: &[String]) -> String {`
-- `fn` `codex-rs/exec/src/event_processor_with_human_output.rs:827` `fn format_file_change(change: &FileChange) -> &'static str {`
-- `fn` `codex-rs/exec/src/event_processor_with_human_output.rs:840` `fn format_collab_invocation(tool: &str, call_id: &str, prompt: Option<&str>) -> String {`
-- `fn` `codex-rs/exec/src/event_processor_with_human_output.rs:851` `fn format_collab_status(status: &AgentStatus) -> String {`
-- `fn` `codex-rs/exec/src/event_processor_with_human_output.rs:877` `fn style_for_agent_status(`
-- `fn` `codex-rs/exec/src/event_processor_with_human_output.rs:889` `fn is_collab_status_failure(status: &AgentStatus) -> bool {`
-- `fn` `codex-rs/exec/src/event_processor_with_human_output.rs:893` `fn format_receiver_list(ids: &[codex_protocol::ThreadId]) -> String {`
-- `fn` `codex-rs/exec/src/event_processor_with_human_output.rs:903` `fn truncate_preview(text: &str, max_chars: usize) -> String {`
-- `fn` `codex-rs/exec/src/event_processor_with_human_output.rs:912` `fn format_mcp_invocation(invocation: &McpInvocation) -> String {`
+- `fn` `codex-rs/exec/src/event_processor_with_human_output.rs:806` `fn print_final_output(&mut self) {`
+- `fn` `codex-rs/exec/src/event_processor_with_human_output.rs:830` `fn escape_command(command: &[String]) -> String {`
+- `fn` `codex-rs/exec/src/event_processor_with_human_output.rs:834` `fn format_file_change(change: &FileChange) -> &'static str {`
+- `fn` `codex-rs/exec/src/event_processor_with_human_output.rs:847` `fn format_collab_invocation(tool: &str, call_id: &str, prompt: Option<&str>) -> String {`
+- `fn` `codex-rs/exec/src/event_processor_with_human_output.rs:858` `fn format_collab_status(status: &AgentStatus) -> String {`
+- `fn` `codex-rs/exec/src/event_processor_with_human_output.rs:884` `fn style_for_agent_status(`
+- `fn` `codex-rs/exec/src/event_processor_with_human_output.rs:896` `fn is_collab_status_failure(status: &AgentStatus) -> bool {`
+- `fn` `codex-rs/exec/src/event_processor_with_human_output.rs:900` `fn format_receiver_list(ids: &[codex_protocol::ThreadId]) -> String {`
+- `fn` `codex-rs/exec/src/event_processor_with_human_output.rs:910` `fn truncate_preview(text: &str, max_chars: usize) -> String {`
+- `fn` `codex-rs/exec/src/event_processor_with_human_output.rs:919` `fn format_mcp_invocation(invocation: &McpInvocation) -> String {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes

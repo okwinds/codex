@@ -5,7 +5,7 @@
 - ext: `.bazel`
 - size_bytes: `157`
 - sha256: `2c089c4b42d3a48fda9c93b9086227ef05018952abb8490af1bf7c8964c85f75`
-- generated_utc: `2026-02-03T16:08:30Z`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Bazel build configuration file.
@@ -33,4 +33,4 @@ Bazel build configuration file.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/02_Data/ENTITIES.md`
+- `docs/workdocjcl/spec/02_Data/ENTITIES.md`

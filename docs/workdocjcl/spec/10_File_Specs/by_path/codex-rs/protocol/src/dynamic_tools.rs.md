@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `818`
-- sha256: `d1e032d877b887a2e833411dcb24573f915196f8ef88bc0d1597d8a7ceb56ca7`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `1170`
+- sha256: `dfb667c8069fe8890f484d8185e49384846a6508105606f1e04e63c543842c50`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -21,6 +21,7 @@ Source file implementing exported/public items listed below.
 - `pub struct DynamicToolSpec {`
 - `pub struct DynamicToolCallRequest {`
 - `pub struct DynamicToolResponse {`
+- `pub enum DynamicToolCallOutputContentItem {`
 
 ## Definitions (auto, per-file)
 - `use` `codex-rs/protocol/src/dynamic_tools.rs:1` `use schemars::JsonSchema;`
@@ -31,6 +32,7 @@ Source file implementing exported/public items listed below.
 - `struct` `codex-rs/protocol/src/dynamic_tools.rs:9` `pub struct DynamicToolSpec {`
 - `struct` `codex-rs/protocol/src/dynamic_tools.rs:17` `pub struct DynamicToolCallRequest {`
 - `struct` `codex-rs/protocol/src/dynamic_tools.rs:26` `pub struct DynamicToolResponse {`
+- `enum` `codex-rs/protocol/src/dynamic_tools.rs:34` `pub enum DynamicToolCallOutputContentItem {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -46,4 +48,4 @@ Source file implementing exported/public items listed below.
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/02_Data/ROLLOUT_FORMAT.md`
+- `docs/workdocjcl/spec/02_Data/ROLLOUT_FORMAT.md`

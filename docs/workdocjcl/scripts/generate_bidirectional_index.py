@@ -8,6 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
 WORKDOC_ROOT = ROOT / "docs" / "workdocjcl"
+WORKDOC_REPO_PREFIX = "docs/workdocjcl"
 MANIFEST = WORKDOC_ROOT / "inventory" / "file_manifest_repo.txt"
 RUST_WS = WORKDOC_ROOT / "inventory" / "rust_workspace.json"
 NODE_WS = WORKDOC_ROOT / "inventory" / "node_workspace.json"
@@ -66,14 +67,14 @@ def main() -> int:
 
     for rel in rels:
         owner_type, owner_name = find_owner(rel)
-        capsule = f"workdocjcl/spec/10_File_Specs/by_path/{rel}.md"
+        capsule = f"{WORKDOC_REPO_PREFIX}/spec/10_File_Specs/by_path/{rel}.md"
         crate_spec = None
         pkg_spec = None
         if owner_type == "rust_crate":
-            crate_spec = f"workdocjcl/spec/11_Rust_Crate_Specs/{owner_name}.md"
+            crate_spec = f"{WORKDOC_REPO_PREFIX}/spec/11_Rust_Crate_Specs/{owner_name}.md"
             counts["rust_crate"][owner_name] = counts["rust_crate"].get(owner_name, 0) + 1
         elif owner_type == "node_package":
-            pkg_spec = f"workdocjcl/spec/12_Node_Package_Specs/{owner_name.replace('/','_')}.md"
+            pkg_spec = f"{WORKDOC_REPO_PREFIX}/spec/12_Node_Package_Specs/{owner_name.replace('/','_')}.md"
             counts["node_package"][owner_name] = counts["node_package"].get(owner_name, 0) + 1
         else:
             counts["repo"] += 1
@@ -92,17 +93,17 @@ def main() -> int:
     md.append("# 双向覆盖索引（Bidirectional Coverage Index）")
     md.append("")
     md.append(f"- generated_utc: `{utc_now()}`")
-    md.append(f"- repo_file_count: `{len(rels)}` (from `workdocjcl/inventory/file_manifest_repo.txt`)")
+    md.append(f"- repo_file_count: `{len(rels)}` (from `{WORKDOC_REPO_PREFIX}/inventory/file_manifest_repo.txt`)")
     md.append("")
     md.append("本索引用于回答两个问题：")
     md.append("1) **任意代码文件** → 它的 file capsule 在哪里？属于哪个 crate/package？")
     md.append("2) **任意 crate/package** → 它覆盖了哪些文件？（通过 `file_to_spec_map.json` 可反查）")
     md.append("")
     md.append("## 1. 生成物")
-    md.append("- 文件到规格映射（机器可读）：`workdocjcl/spec/09_Verification/file_to_spec_map.json`")
-    md.append("- 文件胶囊索引：`workdocjcl/spec/10_File_Specs/INDEX.md`")
-    md.append("- Rust crate 索引：`workdocjcl/spec/11_Rust_Crate_Specs/INDEX.md`")
-    md.append("- Node package 索引：`workdocjcl/spec/12_Node_Package_Specs/INDEX.md`")
+    md.append(f"- 文件到规格映射（机器可读）：`{WORKDOC_REPO_PREFIX}/spec/09_Verification/file_to_spec_map.json`")
+    md.append(f"- 文件胶囊索引：`{WORKDOC_REPO_PREFIX}/spec/10_File_Specs/INDEX.md`")
+    md.append(f"- Rust crate 索引：`{WORKDOC_REPO_PREFIX}/spec/11_Rust_Crate_Specs/INDEX.md`")
+    md.append(f"- Node package 索引：`{WORKDOC_REPO_PREFIX}/spec/12_Node_Package_Specs/INDEX.md`")
     md.append("")
     md.append("## 2. 覆盖统计（owners）")
     md.append("")

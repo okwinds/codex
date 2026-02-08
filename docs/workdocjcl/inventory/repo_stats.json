@@ -1,40 +1,169 @@
 {
-  "root": "/Users/okwinds/Files/工作/若凡光年/技术平台/Code/codex",
-  "file_count": 2455,
-  "extension_counts": {
-    ".rs": 828,
-    ".txt": 441,
-    ".ts": 419,
-    ".snap": 221,
-    ".json": 177,
-    ".md": 127,
-    ".toml": 68,
-    ".bazel": 59,
-    "<noext>": 24,
-    ".yml": 22,
-    ".py": 13,
-    ".yaml": 6,
-    ".sh": 6,
-    ".lock": 5,
-    ".patch": 5,
-    ".sql": 4,
-    ".js": 3,
-    ".png": 3,
-    ".bzl": 2,
-    ".nix": 2,
-    ".sse": 2,
-    ".xml": 2,
-    ".sbpl": 2,
-    ".ps1": 2,
-    ".svg": 2,
-    ".cjs": 2,
-    ".lark": 1,
-    ".jsonl": 1,
-    ".marker": 1,
-    ".manifest": 1,
-    ".codexpolicy": 1,
-    ".policy": 1,
-    ".html": 1,
-    ".bazelrc": 1
-  }
+  "generated_utc": "2026-02-08T10:31:01Z",
+  "head": "7f567b11ecb56a92a105b9a624dabadc44147ddd",
+  "tracked_files": 2567,
+  "tracked_bytes_total": 18540519,
+  "top_level_dirs": {
+    "codex-rs": 2403,
+    ".github": 38,
+    "sdk": 28,
+    "docs": 23,
+    "shell-tool-mcp": 15,
+    "codex-cli": 13,
+    "patches": 7,
+    "scripts": 5,
+    ".devcontainer": 3,
+    ".vscode": 3,
+    ".bazelignore": 1,
+    ".bazelrc": 1,
+    ".bazelversion": 1,
+    ".codespellignore": 1,
+    ".codespellrc": 1,
+    ".gitignore": 1,
+    ".markdownlint-cli2.yaml": 1,
+    ".npmrc": 1,
+    ".prettierignore": 1,
+    ".prettierrc.toml": 1,
+    "AGENTS.md": 1,
+    "BUILD.bazel": 1,
+    "CHANGELOG.md": 1,
+    "LICENSE": 1,
+    "MODULE.bazel": 1,
+    "MODULE.bazel.lock": 1,
+    "NOTICE": 1,
+    "README.md": 1,
+    "announcement_tip.toml": 1,
+    "cliff.toml": 1,
+    "defs.bzl": 1,
+    "flake.lock": 1,
+    "flake.nix": 1,
+    "justfile": 1,
+    "package.json": 1,
+    "pnpm-lock.yaml": 1,
+    "pnpm-workspace.yaml": 1,
+    "rbe.bzl": 1,
+    "third_party": 1
+  },
+  "extensions_top": [
+    [
+      ".rs",
+      856
+    ],
+    [
+      ".ts",
+      443
+    ],
+    [
+      ".txt",
+      441
+    ],
+    [
+      ".snap",
+      234
+    ],
+    [
+      ".json",
+      186
+    ],
+    [
+      ".md",
+      112
+    ],
+    [
+      ".toml",
+      69
+    ],
+    [
+      ".bazel",
+      59
+    ],
+    [
+      "(no_ext)",
+      31
+    ],
+    [
+      ".yml",
+      25
+    ],
+    [
+      ".sh",
+      16
+    ],
+    [
+      ".py",
+      16
+    ],
+    [
+      ".sql",
+      8
+    ],
+    [
+      ".patch",
+      7
+    ],
+    [
+      ".yaml",
+      6
+    ],
+    [
+      ".c",
+      6
+    ],
+    [
+      ".build",
+      6
+    ],
+    [
+      ".lock",
+      5
+    ],
+    [
+      ".h",
+      4
+    ],
+    [
+      ".png",
+      3
+    ],
+    [
+      ".js",
+      3
+    ],
+    [
+      ".xml",
+      3
+    ],
+    [
+      ".ps1",
+      2
+    ],
+    [
+      ".sbpl",
+      2
+    ],
+    [
+      ".svg",
+      2
+    ],
+    [
+      ".sse",
+      2
+    ],
+    [
+      ".nix",
+      2
+    ],
+    [
+      ".bzl",
+      2
+    ],
+    [
+      ".cjs",
+      2
+    ],
+    [
+      ".bazelrc",
+      1
+    ]
+  ]
 }

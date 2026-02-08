@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `6982`
-- sha256: `1b53f13b232961bf4e40cff397310d61133a201dbdb78ff9a2c3299dc87dc27d`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `7255`
+- sha256: `19c7ded27082eb1866fa100641f192680f3ab4b000de9a9cdcc8c8985682579c`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -19,6 +19,7 @@ Source file implementing exported/public items listed below.
 
 ## Public Surface (auto)
 - `pub enum ToolDecisionSource {`
+- `pub enum TelemetryAuthMode {`
 - `pub struct OtelEventMetadata {`
 - `pub struct OtelManager {`
 - `pub fn with_model(mut self, model: &str, slug: &str) -> Self {`
@@ -50,30 +51,31 @@ Source file implementing exported/public items listed below.
 - `use` `codex-rs/otel/src/lib.rs:14` `use crate::metrics::validation::validate_tag_value;`
 - `use` `codex-rs/otel/src/lib.rs:15` `use crate::otel_provider::OtelProvider;`
 - `use` `codex-rs/otel/src/lib.rs:16` `use codex_protocol::ThreadId;`
-- `use` `codex-rs/otel/src/lib.rs:17` `use opentelemetry_sdk::metrics::data::ResourceMetrics;`
-- `use` `codex-rs/otel/src/lib.rs:18` `use serde::Serialize;`
-- `use` `codex-rs/otel/src/lib.rs:19` `use std::time::Duration;`
-- `use` `codex-rs/otel/src/lib.rs:20` `use strum_macros::Display;`
-- `use` `codex-rs/otel/src/lib.rs:21` `use tracing::debug;`
-- `enum` `codex-rs/otel/src/lib.rs:28` `pub enum ToolDecisionSource {`
-- `struct` `codex-rs/otel/src/lib.rs:34` `pub struct OtelEventMetadata {`
-- `struct` `codex-rs/otel/src/lib.rs:48` `pub struct OtelManager {`
-- `impl` `codex-rs/otel/src/lib.rs:54` `impl OtelManager {`
-- `fn` `codex-rs/otel/src/lib.rs:55` `pub fn with_model(mut self, model: &str, slug: &str) -> Self {`
-- `fn` `codex-rs/otel/src/lib.rs:61` `pub fn with_metrics(mut self, metrics: MetricsClient) -> Self {`
-- `fn` `codex-rs/otel/src/lib.rs:67` `pub fn with_metrics_without_metadata_tags(mut self, metrics: MetricsClient) -> Self {`
-- `fn` `codex-rs/otel/src/lib.rs:73` `pub fn with_metrics_config(self, config: MetricsConfig) -> MetricsResult<Self> {`
-- `fn` `codex-rs/otel/src/lib.rs:78` `pub fn with_provider_metrics(self, provider: &OtelProvider) -> Self {`
-- `fn` `codex-rs/otel/src/lib.rs:85` `pub fn counter(&self, name: &str, inc: i64, tags: &[(&str, &str)]) {`
-- `fn` `codex-rs/otel/src/lib.rs:100` `pub fn histogram(&self, name: &str, value: i64, tags: &[(&str, &str)]) {`
-- `fn` `codex-rs/otel/src/lib.rs:115` `pub fn record_duration(&self, name: &str, duration: Duration, tags: &[(&str, &str)]) {`
-- `fn` `codex-rs/otel/src/lib.rs:130` `pub fn start_timer(&self, name: &str, tags: &[(&str, &str)]) -> Result<Timer, MetricsError> {`
-- `fn` `codex-rs/otel/src/lib.rs:138` `pub fn shutdown_metrics(&self) -> MetricsResult<()> {`
-- `fn` `codex-rs/otel/src/lib.rs:145` `pub fn snapshot_metrics(&self) -> MetricsResult<ResourceMetrics> {`
-- `fn` `codex-rs/otel/src/lib.rs:153` `pub fn reset_runtime_metrics(&self) {`
-- `fn` `codex-rs/otel/src/lib.rs:163` `pub fn runtime_metrics_summary(&self) -> Option<RuntimeMetricsSummary> {`
-- `fn` `codex-rs/otel/src/lib.rs:187` `fn metadata_tag_refs(&self) -> MetricsResult<Vec<(&str, &str)>> {`
-- `fn` `codex-rs/otel/src/lib.rs:219` `pub fn start_global_timer(name: &str, tags: &[(&str, &str)]) -> MetricsResult<Timer> {`
+- `use` `codex-rs/otel/src/lib.rs:18` `use opentelemetry_sdk::metrics::data::ResourceMetrics;`
+- `use` `codex-rs/otel/src/lib.rs:19` `use serde::Serialize;`
+- `use` `codex-rs/otel/src/lib.rs:20` `use std::time::Duration;`
+- `use` `codex-rs/otel/src/lib.rs:21` `use strum_macros::Display;`
+- `use` `codex-rs/otel/src/lib.rs:22` `use tracing::debug;`
+- `enum` `codex-rs/otel/src/lib.rs:29` `pub enum ToolDecisionSource {`
+- `enum` `codex-rs/otel/src/lib.rs:36` `pub enum TelemetryAuthMode {`
+- `struct` `codex-rs/otel/src/lib.rs:42` `pub struct OtelEventMetadata {`
+- `struct` `codex-rs/otel/src/lib.rs:57` `pub struct OtelManager {`
+- `impl` `codex-rs/otel/src/lib.rs:63` `impl OtelManager {`
+- `fn` `codex-rs/otel/src/lib.rs:64` `pub fn with_model(mut self, model: &str, slug: &str) -> Self {`
+- `fn` `codex-rs/otel/src/lib.rs:70` `pub fn with_metrics(mut self, metrics: MetricsClient) -> Self {`
+- `fn` `codex-rs/otel/src/lib.rs:76` `pub fn with_metrics_without_metadata_tags(mut self, metrics: MetricsClient) -> Self {`
+- `fn` `codex-rs/otel/src/lib.rs:82` `pub fn with_metrics_config(self, config: MetricsConfig) -> MetricsResult<Self> {`
+- `fn` `codex-rs/otel/src/lib.rs:87` `pub fn with_provider_metrics(self, provider: &OtelProvider) -> Self {`
+- `fn` `codex-rs/otel/src/lib.rs:94` `pub fn counter(&self, name: &str, inc: i64, tags: &[(&str, &str)]) {`
+- `fn` `codex-rs/otel/src/lib.rs:109` `pub fn histogram(&self, name: &str, value: i64, tags: &[(&str, &str)]) {`
+- `fn` `codex-rs/otel/src/lib.rs:124` `pub fn record_duration(&self, name: &str, duration: Duration, tags: &[(&str, &str)]) {`
+- `fn` `codex-rs/otel/src/lib.rs:139` `pub fn start_timer(&self, name: &str, tags: &[(&str, &str)]) -> Result<Timer, MetricsError> {`
+- `fn` `codex-rs/otel/src/lib.rs:147` `pub fn shutdown_metrics(&self) -> MetricsResult<()> {`
+- `fn` `codex-rs/otel/src/lib.rs:154` `pub fn snapshot_metrics(&self) -> MetricsResult<ResourceMetrics> {`
+- `fn` `codex-rs/otel/src/lib.rs:162` `pub fn reset_runtime_metrics(&self) {`
+- `fn` `codex-rs/otel/src/lib.rs:172` `pub fn runtime_metrics_summary(&self) -> Option<RuntimeMetricsSummary> {`
+- `fn` `codex-rs/otel/src/lib.rs:196` `fn metadata_tag_refs(&self) -> MetricsResult<Vec<(&str, &str)>> {`
+- `fn` `codex-rs/otel/src/lib.rs:228` `pub fn start_global_timer(name: &str, tags: &[(&str, &str)]) -> MetricsResult<Timer> {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes

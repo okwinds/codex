@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `29346`
-- sha256: `2fae39b1c1af7dd340f6216503f74fa240b45786d21168658f3c3ed6f1ac503e`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `29247`
+- sha256: `6d76bae986c0aea7d9f0f9264c0204ebcb8436b3d2634790c4d969277545e1f0`
+- generated_utc: `2026-02-08T10:45:33Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -75,35 +75,35 @@ Source file implementing exported/public items listed below.
 - `fn` `codex-rs/core/src/models_manager/manager.rs:250` `fn load_remote_models_from_file() -> Result<Vec<ModelInfo>, std::io::Error> {`
 - `fn` `codex-rs/core/src/models_manager/manager.rs:257` `async fn try_load_cache(&self) -> bool {`
 - `fn` `codex-rs/core/src/models_manager/manager.rs:272` `fn build_available_models(&self, mut remote_models: Vec<ModelInfo>) -> Vec<ModelPreset> {`
-- `fn` `codex-rs/core/src/models_manager/manager.rs:299` `async fn get_remote_models(&self, config: &Config) -> Vec<ModelInfo> {`
-- `fn` `codex-rs/core/src/models_manager/manager.rs:307` `fn try_get_remote_models(&self, config: &Config) -> Result<Vec<ModelInfo>, TryLockError> {`
-- `fn` `codex-rs/core/src/models_manager/manager.rs:317` `pub fn with_provider(`
-- `fn` `codex-rs/core/src/models_manager/manager.rs:336` `pub fn get_model_offline(model: Option<&str>) -> String {`
-- `fn` `codex-rs/core/src/models_manager/manager.rs:351` `pub fn construct_model_info_offline(model: &str, config: &Config) -> ModelInfo {`
-- `use` `codex-rs/core/src/models_manager/manager.rs:358` `use super::*;`
-- `use` `codex-rs/core/src/models_manager/manager.rs:359` `use crate::CodexAuth;`
-- `use` `codex-rs/core/src/models_manager/manager.rs:360` `use crate::auth::AuthCredentialsStoreMode;`
-- `use` `codex-rs/core/src/models_manager/manager.rs:361` `use crate::config::ConfigBuilder;`
-- `use` `codex-rs/core/src/models_manager/manager.rs:362` `use crate::features::Feature;`
-- `use` `codex-rs/core/src/models_manager/manager.rs:363` `use crate::model_provider_info::WireApi;`
-- `use` `codex-rs/core/src/models_manager/manager.rs:364` `use chrono::Utc;`
-- `use` `codex-rs/core/src/models_manager/manager.rs:365` `use codex_protocol::openai_models::ModelsResponse;`
-- `use` `codex-rs/core/src/models_manager/manager.rs:366` `use core_test_support::responses::mount_models_once;`
-- `use` `codex-rs/core/src/models_manager/manager.rs:367` `use pretty_assertions::assert_eq;`
-- `use` `codex-rs/core/src/models_manager/manager.rs:368` `use serde_json::json;`
-- `use` `codex-rs/core/src/models_manager/manager.rs:369` `use tempfile::tempdir;`
-- `use` `codex-rs/core/src/models_manager/manager.rs:370` `use wiremock::MockServer;`
-- `fn` `codex-rs/core/src/models_manager/manager.rs:372` `fn remote_model(slug: &str, display: &str, priority: i32) -> ModelInfo {`
-- `fn` `codex-rs/core/src/models_manager/manager.rs:376` `fn remote_model_with_visibility(`
-- `fn` `codex-rs/core/src/models_manager/manager.rs:407` `fn assert_models_contain(actual: &[ModelInfo], expected: &[ModelInfo]) {`
-- `fn` `codex-rs/core/src/models_manager/manager.rs:417` `fn provider_for(base_url: String) -> ModelProviderInfo {`
-- `fn` `codex-rs/core/src/models_manager/manager.rs:437` `async fn refresh_available_models_sorts_by_priority() {`
-- `fn` `codex-rs/core/src/models_manager/manager.rs:494` `async fn refresh_available_models_uses_cache_when_fresh() {`
-- `fn` `codex-rs/core/src/models_manager/manager.rs:541` `async fn refresh_available_models_refetches_when_cache_stale() {`
-- `fn` `codex-rs/core/src/models_manager/manager.rs:610` `async fn refresh_available_models_refetches_when_version_mismatch() {`
-- `fn` `codex-rs/core/src/models_manager/manager.rs:679` `async fn refresh_available_models_drops_removed_remote_models() {`
-- `fn` `codex-rs/core/src/models_manager/manager.rs:748` `fn build_available_models_picks_default_after_hiding_hidden_models() {`
-- `fn` `codex-rs/core/src/models_manager/manager.rs:770` `fn bundled_models_json_roundtrips() {`
+- `fn` `codex-rs/core/src/models_manager/manager.rs:296` `async fn get_remote_models(&self, config: &Config) -> Vec<ModelInfo> {`
+- `fn` `codex-rs/core/src/models_manager/manager.rs:304` `fn try_get_remote_models(&self, config: &Config) -> Result<Vec<ModelInfo>, TryLockError> {`
+- `fn` `codex-rs/core/src/models_manager/manager.rs:314` `pub fn with_provider(`
+- `fn` `codex-rs/core/src/models_manager/manager.rs:333` `pub fn get_model_offline(model: Option<&str>) -> String {`
+- `fn` `codex-rs/core/src/models_manager/manager.rs:348` `pub fn construct_model_info_offline(model: &str, config: &Config) -> ModelInfo {`
+- `use` `codex-rs/core/src/models_manager/manager.rs:355` `use super::*;`
+- `use` `codex-rs/core/src/models_manager/manager.rs:356` `use crate::CodexAuth;`
+- `use` `codex-rs/core/src/models_manager/manager.rs:357` `use crate::auth::AuthCredentialsStoreMode;`
+- `use` `codex-rs/core/src/models_manager/manager.rs:358` `use crate::config::ConfigBuilder;`
+- `use` `codex-rs/core/src/models_manager/manager.rs:359` `use crate::features::Feature;`
+- `use` `codex-rs/core/src/models_manager/manager.rs:360` `use crate::model_provider_info::WireApi;`
+- `use` `codex-rs/core/src/models_manager/manager.rs:361` `use chrono::Utc;`
+- `use` `codex-rs/core/src/models_manager/manager.rs:362` `use codex_protocol::openai_models::ModelsResponse;`
+- `use` `codex-rs/core/src/models_manager/manager.rs:363` `use core_test_support::responses::mount_models_once;`
+- `use` `codex-rs/core/src/models_manager/manager.rs:364` `use pretty_assertions::assert_eq;`
+- `use` `codex-rs/core/src/models_manager/manager.rs:365` `use serde_json::json;`
+- `use` `codex-rs/core/src/models_manager/manager.rs:366` `use tempfile::tempdir;`
+- `use` `codex-rs/core/src/models_manager/manager.rs:367` `use wiremock::MockServer;`
+- `fn` `codex-rs/core/src/models_manager/manager.rs:369` `fn remote_model(slug: &str, display: &str, priority: i32) -> ModelInfo {`
+- `fn` `codex-rs/core/src/models_manager/manager.rs:373` `fn remote_model_with_visibility(`
+- `fn` `codex-rs/core/src/models_manager/manager.rs:404` `fn assert_models_contain(actual: &[ModelInfo], expected: &[ModelInfo]) {`
+- `fn` `codex-rs/core/src/models_manager/manager.rs:414` `fn provider_for(base_url: String) -> ModelProviderInfo {`
+- `fn` `codex-rs/core/src/models_manager/manager.rs:434` `async fn refresh_available_models_sorts_by_priority() {`
+- `fn` `codex-rs/core/src/models_manager/manager.rs:491` `async fn refresh_available_models_uses_cache_when_fresh() {`
+- `fn` `codex-rs/core/src/models_manager/manager.rs:538` `async fn refresh_available_models_refetches_when_cache_stale() {`
+- `fn` `codex-rs/core/src/models_manager/manager.rs:607` `async fn refresh_available_models_refetches_when_version_mismatch() {`
+- `fn` `codex-rs/core/src/models_manager/manager.rs:676` `async fn refresh_available_models_drops_removed_remote_models() {`
+- `fn` `codex-rs/core/src/models_manager/manager.rs:745` `fn build_available_models_picks_default_after_hiding_hidden_models() {`
+- `fn` `codex-rs/core/src/models_manager/manager.rs:767` `fn bundled_models_json_roundtrips() {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -136,4 +136,4 @@ Source file implementing exported/public items listed below.
 - uses Rust panic/expect/unwrap-style failure paths
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

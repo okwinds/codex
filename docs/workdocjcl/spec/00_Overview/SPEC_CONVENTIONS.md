@@ -4,7 +4,7 @@
 
 ## 1. 映射规范（Code ↔ Spec）
 - 每个章节必须包含 **来源（Source）** 小节，列出对应实现文件路径（必要时列出关键类型/函数名）。
-- 对于“清单类内容”（例如 env vars、crate list、文件清单），优先引用 `workdocjcl/inventory/` 中自动生成的材料，避免人工遗漏。
+- 对于“清单类内容”（例如 env vars、crate list、文件清单），优先引用 `docs/workdocjcl/inventory/` 中自动生成的材料，避免人工遗漏。
 - 文档中提到的可执行命令/路径/配置键名必须保持与代码一致（大小写敏感）。
 
 ## 2. 复刻粒度（Replication Granularity）
@@ -34,14 +34,15 @@
 
 ## 4. 自动生成材料（防遗漏）
 以下文件由扫描脚本生成，作为“无遗漏清单”的基础：
-- `workdocjcl/inventory/file_manifest_repo.txt`：repo-only 文件清单（无遗漏基线，不含 `workdocjcl/`）
-- `workdocjcl/inventory/file_manifest.txt`：全量文件清单（含 `workdocjcl/` 生成物）
-- `workdocjcl/inventory/file_manifest_all.txt`：全量文件清单（更宽口径，含更多生成物）
-- `workdocjcl/inventory/repo_stats.json`：扩展名统计/规模快照
-- `workdocjcl/inventory/rust_workspace.md`：Rust workspace member 清单
-- `workdocjcl/inventory/node_workspace.md`：pnpm workspace package 清单
-- `workdocjcl/inventory/env_vars_detected.txt`：源码检测到的环境变量清单
-- `workdocjcl/inventory/env_var_usages.md`：环境变量 → 位置（采样）
+- `docs/workdocjcl/inventory/file_manifest_repo.txt`：repo tracked 文件清单（无遗漏基线；默认排除 `docs/workdocjcl/**`）
+- `docs/workdocjcl/inventory/file_manifest.txt`：与 `file_manifest_repo.txt` 保持一致（作为 fallback manifest）
+- `docs/workdocjcl/inventory/file_manifest_all.txt`：与 `file_manifest_repo.txt` 保持一致（兼容历史引用）
+- `docs/workdocjcl/inventory/repo_stats.json`：规模快照（文件数/总字节数/扩展名 Top）
+- `docs/workdocjcl/inventory/rust_workspace.md`：Rust workspace member 清单
+- `docs/workdocjcl/inventory/node_workspace.md`：pnpm workspace package 清单
+- `docs/workdocjcl/inventory/env_vars_detected.txt`：源码检测到的环境变量清单（可能需要定期刷新）
+- `docs/workdocjcl/inventory/env_var_usages.md`：环境变量 → 位置（采样，可能需要定期刷新）
 
 ## 5. 来源（Source）
-- 本章为规格约定，不对应单一源码文件；自动生成材料来自 `rg`/`python3` 扫描（见 `workdocjcl/` 下的生成物）。
+- 本章为规格约定，不对应单一源码文件；自动生成材料来自 `rg`/`python3` 扫描（见 `docs/workdocjcl/` 下的生成物）。
+- 生成脚本入口：`docs/workdocjcl/scripts/`

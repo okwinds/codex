@@ -1,107 +1,107 @@
 {
   "artifact_set": "embedded_system_skills_samples",
   "source_root": "codex-rs/core/src/skills/assets/samples",
-  "dest_root": "workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS",
+  "dest_root": "docs/workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS",
   "items": [
     {
       "source_path": "codex-rs/core/src/skills/assets/samples/skill-creator/SKILL.md",
-      "dest_path": "workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-creator/SKILL.md",
+      "dest_path": "docs/workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-creator/SKILL.md",
       "sha256": "faf5931f553dc9f19b061f8049dd4d31e00232b14eed2577d95795ac1c5ab8de",
       "bytes": 19058
     },
     {
       "source_path": "codex-rs/core/src/skills/assets/samples/skill-creator/agents/openai.yaml",
-      "dest_path": "workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-creator/agents/openai.yaml",
+      "dest_path": "docs/workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-creator/agents/openai.yaml",
       "sha256": "d07d21b93fcf3d4dc8d9a3399c05fc226a49a333a96d3e1c68b451b8dd9eade6",
       "bytes": 183
     },
     {
       "source_path": "codex-rs/core/src/skills/assets/samples/skill-creator/assets/skill-creator-small.svg",
-      "dest_path": "workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-creator/assets/skill-creator-small.svg",
+      "dest_path": "docs/workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-creator/assets/skill-creator-small.svg",
       "sha256": "6591bf8ea9bb9435890dbdea299e0d2bd05f3aa893a335d26e4c535e93c8e7fb",
       "bytes": 1319
     },
     {
       "source_path": "codex-rs/core/src/skills/assets/samples/skill-creator/assets/skill-creator.png",
-      "dest_path": "workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-creator/assets/skill-creator.png",
+      "dest_path": "docs/workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-creator/assets/skill-creator.png",
       "sha256": "a4024b0306ddb05847e1012879d37aaf1e658205199da596f5145ed7a88d9162",
       "bytes": 1563
     },
     {
       "source_path": "codex-rs/core/src/skills/assets/samples/skill-creator/license.txt",
-      "dest_path": "workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-creator/license.txt",
+      "dest_path": "docs/workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-creator/license.txt",
       "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "bytes": 11358
     },
     {
       "source_path": "codex-rs/core/src/skills/assets/samples/skill-creator/references/openai_yaml.md",
-      "dest_path": "workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-creator/references/openai_yaml.md",
+      "dest_path": "docs/workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-creator/references/openai_yaml.md",
       "sha256": "9fb5928b7f4a746fdb39df503ebbd7a659d5e64b47f85a60626aa1a03fd76b17",
       "bytes": 2130
     },
     {
       "source_path": "codex-rs/core/src/skills/assets/samples/skill-creator/scripts/generate_openai_yaml.py",
-      "dest_path": "workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-creator/scripts/generate_openai_yaml.py",
+      "dest_path": "docs/workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-creator/scripts/generate_openai_yaml.py",
       "sha256": "b8f6be33a9d72dd7a8da02e7a9fffea23dc79e94862e6dd6358b57a8899d8f73",
       "bytes": 6614
     },
     {
       "source_path": "codex-rs/core/src/skills/assets/samples/skill-creator/scripts/init_skill.py",
-      "dest_path": "workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-creator/scripts/init_skill.py",
+      "dest_path": "docs/workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-creator/scripts/init_skill.py",
       "sha256": "bcb8982d3f033a094f2f1be43123ac8537e2562d25d8ba4d8ef2196ae514d96d",
       "bytes": 14483
     },
     {
       "source_path": "codex-rs/core/src/skills/assets/samples/skill-creator/scripts/quick_validate.py",
-      "dest_path": "workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-creator/scripts/quick_validate.py",
+      "dest_path": "docs/workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-creator/scripts/quick_validate.py",
       "sha256": "6cc9dc3199c935916cf6f73fcbbbb0e3bb1b58c8f5109fefa499978908164f51",
       "bytes": 3293
     },
     {
       "source_path": "codex-rs/core/src/skills/assets/samples/skill-installer/LICENSE.txt",
-      "dest_path": "workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-installer/LICENSE.txt",
+      "dest_path": "docs/workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-installer/LICENSE.txt",
       "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "bytes": 11358
     },
     {
       "source_path": "codex-rs/core/src/skills/assets/samples/skill-installer/SKILL.md",
-      "dest_path": "workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-installer/SKILL.md",
+      "dest_path": "docs/workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-installer/SKILL.md",
       "sha256": "09df0ea7921f63d51befae9fc8f71daece5ef49d7b96e35fff8b18d15d6afda7",
       "bytes": 3366
     },
     {
       "source_path": "codex-rs/core/src/skills/assets/samples/skill-installer/agents/openai.yaml",
-      "dest_path": "workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-installer/agents/openai.yaml",
+      "dest_path": "docs/workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-installer/agents/openai.yaml",
       "sha256": "5ce223d8b1070b82c42298538f1b8d376f788eb9e7a42a987e8c094070d73f0e",
       "bytes": 221
     },
     {
       "source_path": "codex-rs/core/src/skills/assets/samples/skill-installer/assets/skill-installer-small.svg",
-      "dest_path": "workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-installer/assets/skill-installer-small.svg",
+      "dest_path": "docs/workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-installer/assets/skill-installer-small.svg",
       "sha256": "3928703ff00dc1a681e7a22401843b7edcbd4b2051651ce4c43b75f7e140504e",
       "bytes": 923
     },
     {
       "source_path": "codex-rs/core/src/skills/assets/samples/skill-installer/assets/skill-installer.png",
-      "dest_path": "workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-installer/assets/skill-installer.png",
+      "dest_path": "docs/workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-installer/assets/skill-installer.png",
       "sha256": "d0a230b1a79b71b858b7c215a0fbb0768d6459c14ea4ef80c61592629bf0e605",
       "bytes": 1086
     },
     {
       "source_path": "codex-rs/core/src/skills/assets/samples/skill-installer/scripts/github_utils.py",
-      "dest_path": "workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-installer/scripts/github_utils.py",
+      "dest_path": "docs/workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-installer/scripts/github_utils.py",
       "sha256": "61c1bbe2ae217433b4b6f9f09f21aca4df52c12598068343ade719f706e4859b",
       "bytes": 659
     },
     {
       "source_path": "codex-rs/core/src/skills/assets/samples/skill-installer/scripts/install-skill-from-github.py",
-      "dest_path": "workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-installer/scripts/install-skill-from-github.py",
+      "dest_path": "docs/workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-installer/scripts/install-skill-from-github.py",
       "sha256": "0fbbd36e8ea294442c0bd48d6f610a2e8656216bfef5c322f1dcf448ef2f09f1",
       "bytes": 10096
     },
     {
       "source_path": "codex-rs/core/src/skills/assets/samples/skill-installer/scripts/list-skills.py",
-      "dest_path": "workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-installer/scripts/list-skills.py",
+      "dest_path": "docs/workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/skill-installer/scripts/list-skills.py",
       "sha256": "e4e1f78ca3d045827f2a05cfd99fae57cc7c1a1bfeba8704029108834debff35",
       "bytes": 2967
     }

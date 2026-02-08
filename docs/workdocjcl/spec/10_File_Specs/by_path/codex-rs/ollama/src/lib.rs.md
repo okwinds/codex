@@ -3,12 +3,12 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `3451`
-- sha256: `a1cc5e2fff7548f893b5a708f185745ed7c63b198c84f102854cc309f10a8aad`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `2983`
+- sha256: `689e1601e42302b2dd5446361a34ff36af869cfd54acb0eecfd2903ccfcc82c5`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
-Source file implementing exported/public items listed below.
+Source file (no public surface detected by heuristic).
 
 ## Interfaces (Inputs/Outputs)
 ### Inputs
@@ -18,7 +18,7 @@ Source file implementing exported/public items listed below.
 - (no obvious side effects detected by heuristic)
 
 ## Public Surface (auto)
-- `pub struct WireApiDetection {`
+- (none detected)
 
 ## Definitions (auto, per-file)
 - `mod` `codex-rs/ollama/src/lib.rs:1` `mod client;`
@@ -26,29 +26,24 @@ Source file implementing exported/public items listed below.
 - `mod` `codex-rs/ollama/src/lib.rs:3` `mod pull;`
 - `mod` `codex-rs/ollama/src/lib.rs:4` `mod url;`
 - `use` `codex-rs/ollama/src/lib.rs:7` `use codex_core::ModelProviderInfo;`
-- `use` `codex-rs/ollama/src/lib.rs:8` `use codex_core::WireApi;`
-- `use` `codex-rs/ollama/src/lib.rs:9` `use codex_core::config::Config;`
-- `use` `codex-rs/ollama/src/lib.rs:14` `use semver::Version;`
-- `const` `codex-rs/ollama/src/lib.rs:17` `pub const DEFAULT_OSS_MODEL: &str = "gpt-oss:20b";`
-- `struct` `codex-rs/ollama/src/lib.rs:19` `pub struct WireApiDetection {`
-- `fn` `codex-rs/ollama/src/lib.rs:28` `pub async fn ensure_oss_ready(config: &Config) -> std::io::Result<()> {`
-- `fn` `codex-rs/ollama/src/lib.rs:57` `fn min_responses_version() -> Version {`
-- `fn` `codex-rs/ollama/src/lib.rs:61` `fn wire_api_for_version(version: &Version) -> WireApi {`
-- `fn` `codex-rs/ollama/src/lib.rs:72` `pub async fn detect_wire_api(`
-- `use` `codex-rs/ollama/src/lib.rs:90` `use super::*;`
-- `use` `codex-rs/ollama/src/lib.rs:91` `use pretty_assertions::assert_eq;`
-- `fn` `codex-rs/ollama/src/lib.rs:94` `fn test_wire_api_for_version_dev_zero_keeps_responses() {`
-- `fn` `codex-rs/ollama/src/lib.rs:102` `fn test_wire_api_for_version_before_cutoff_is_chat() {`
-- `fn` `codex-rs/ollama/src/lib.rs:107` `fn test_wire_api_for_version_at_or_after_cutoff_is_responses() {`
+- `use` `codex-rs/ollama/src/lib.rs:8` `use codex_core::config::Config;`
+- `use` `codex-rs/ollama/src/lib.rs:13` `use semver::Version;`
+- `const` `codex-rs/ollama/src/lib.rs:16` `pub const DEFAULT_OSS_MODEL: &str = "gpt-oss:20b";`
+- `fn` `codex-rs/ollama/src/lib.rs:22` `pub async fn ensure_oss_ready(config: &Config) -> std::io::Result<()> {`
+- `fn` `codex-rs/ollama/src/lib.rs:51` `fn min_responses_version() -> Version {`
+- `fn` `codex-rs/ollama/src/lib.rs:55` `fn supports_responses(version: &Version) -> bool {`
+- `fn` `codex-rs/ollama/src/lib.rs:62` `pub async fn ensure_responses_supported(provider: &ModelProviderInfo) -> std::io::Result<()> {`
+- `use` `codex-rs/ollama/src/lib.rs:80` `use super::*;`
+- `fn` `codex-rs/ollama/src/lib.rs:83` `fn supports_responses_for_dev_zero() {`
+- `fn` `codex-rs/ollama/src/lib.rs:88` `fn does_not_support_responses_before_cutoff() {`
+- `fn` `codex-rs/ollama/src/lib.rs:93` `fn supports_responses_at_or_after_cutoff() {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
 - `use codex_core::ModelProviderInfo;`
-- `use codex_core::WireApi;`
 - `use codex_core::config::Config;`
 - `use semver::Version;`
 - `use super::*;`
-- `use pretty_assertions::assert_eq;`
 ### Referenced env vars
 - (none detected)
 

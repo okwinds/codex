@@ -5,7 +5,7 @@
 
 ## 1. 暴露/启用条件
 与 `exec_command` 相同：`ToolsConfig.shell_type == UnifiedExec` 时暴露并注册 handler。
-见：`workdocjcl/spec/05_Integrations/TOOLS_DETAILED/exec_command.md`
+见：`docs/workdocjcl/spec/05_Integrations/TOOLS_DETAILED/exec_command.md`
 
 ## 2. 输入（Input arguments）
 权威解析类型：`codex-rs/core/src/tools/handlers/unified_exec.rs::WriteStdinArgs`
@@ -16,7 +16,7 @@
 - `yield_time_ms`（可选，默认 250）：等待输出时间片
 - `max_output_tokens`（可选）：输出 token 上限
 
-> 结构化 schema 参考：`workdocjcl/spec/05_Integrations/TOOLS_SCHEMA_REFERENCE.json`（条目：`name=write_stdin kind=function`）
+> 结构化 schema 参考：`docs/workdocjcl/spec/05_Integrations/TOOLS_SCHEMA_REFERENCE.json`（条目：`name=write_stdin kind=function`）
 
 ## 3. 运行时语义
 handler：`codex-rs/core/src/tools/handlers/unified_exec.rs::UnifiedExecHandler`

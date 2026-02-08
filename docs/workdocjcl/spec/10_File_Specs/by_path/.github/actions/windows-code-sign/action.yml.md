@@ -5,7 +5,7 @@
 - ext: `.yml`
 - size_bytes: `2242`
 - sha256: `fe3b753ae10521c4a6739ebeef99ec3938a915e97f8b5af6ef032e3af392c57c`
-- generated_utc: `2026-02-03T16:08:28Z`
+- generated_utc: `2026-02-08T10:45:14Z`
 
 ## Purpose (Why)
 GitHub Action definition (composite/docker action).

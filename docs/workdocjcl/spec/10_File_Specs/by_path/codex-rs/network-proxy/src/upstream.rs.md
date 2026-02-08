@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `5528`
-- sha256: `d703342854bb7acd44a3e945c53f57279409efd0529ad9f79944ea935eef3298`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `5554`
+- sha256: `e2d2c83949543f270df9ace13252223628a4b4c18faeade23d3c6bf9271345e7`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -40,8 +40,8 @@ Source file (no public surface detected by heuristic).
 - `use` `codex-rs/network-proxy/src/upstream.rs:17` `use rama_net::client::EstablishedClientConnection;`
 - `use` `codex-rs/network-proxy/src/upstream.rs:18` `use rama_net::http::RequestContext;`
 - `use` `codex-rs/network-proxy/src/upstream.rs:19` `use rama_tcp::client::service::TcpConnector;`
-- `use` `codex-rs/network-proxy/src/upstream.rs:20` `use rama_tls_boring::client::TlsConnectorDataBuilder;`
-- `use` `codex-rs/network-proxy/src/upstream.rs:21` `use rama_tls_boring::client::TlsConnectorLayer;`
+- `use` `codex-rs/network-proxy/src/upstream.rs:20` `use rama_tls_rustls::client::TlsConnectorDataBuilder;`
+- `use` `codex-rs/network-proxy/src/upstream.rs:21` `use rama_tls_rustls::client::TlsConnectorLayer;`
 - `use` `codex-rs/network-proxy/src/upstream.rs:22` `use tracing::warn;`
 - `use` `codex-rs/network-proxy/src/upstream.rs:25` `use rama_unix::client::UnixConnector;`
 - `struct` `codex-rs/network-proxy/src/upstream.rs:28` `struct ProxyConfig {`
@@ -57,7 +57,7 @@ Source file (no public surface detected by heuristic).
 - `type` `codex-rs/network-proxy/src/upstream.rs:133` `type Error = OpaqueError;`
 - `fn` `codex-rs/network-proxy/src/upstream.rs:135` `async fn serve(&self, mut req: Request<Body>) -> Result<Self::Output, Self::Error> {`
 - `fn` `codex-rs/network-proxy/src/upstream.rs:161` `fn build_http_connector() -> BoxService<`
-- `fn` `codex-rs/network-proxy/src/upstream.rs:178` `fn build_unix_connector(`
+- `fn` `codex-rs/network-proxy/src/upstream.rs:180` `fn build_unix_connector(`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -80,7 +80,7 @@ Source file (no public surface detected by heuristic).
 - `use rama_net::client::EstablishedClientConnection;`
 - `use rama_net::http::RequestContext;`
 - `use rama_tcp::client::service::TcpConnector;`
-- `use rama_tls_boring::client::TlsConnectorDataBuilder;`
+- `use rama_tls_rustls::client::TlsConnectorDataBuilder;`
 ### Referenced env vars
 - (none detected)
 

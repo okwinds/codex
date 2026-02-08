@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `6065`
-- sha256: `cd64af142fbd6bed28546ece6eecd1e7f96efb5de68bcf1136199ecb159af5c4`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `6103`
+- sha256: `427550de8d3d6b51e20d18663e87e3dce1cc824e04c8ba39aa3c6f6a15293260`
+- generated_utc: `2026-02-08T10:45:33Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -38,23 +38,24 @@ Source file implementing exported/public items listed below.
 - `use` `codex-rs/core/src/tools/router.rs:11` `use crate::tools::spec::ToolsConfig;`
 - `use` `codex-rs/core/src/tools/router.rs:12` `use crate::tools::spec::build_specs;`
 - `use` `codex-rs/core/src/tools/router.rs:13` `use codex_protocol::dynamic_tools::DynamicToolSpec;`
-- `use` `codex-rs/core/src/tools/router.rs:14` `use codex_protocol::models::LocalShellAction;`
-- `use` `codex-rs/core/src/tools/router.rs:15` `use codex_protocol::models::ResponseInputItem;`
-- `use` `codex-rs/core/src/tools/router.rs:16` `use codex_protocol::models::ResponseItem;`
-- `use` `codex-rs/core/src/tools/router.rs:17` `use codex_protocol::models::ShellToolCallParams;`
-- `use` `codex-rs/core/src/tools/router.rs:18` `use rmcp::model::Tool;`
-- `use` `codex-rs/core/src/tools/router.rs:19` `use std::collections::HashMap;`
-- `use` `codex-rs/core/src/tools/router.rs:20` `use std::sync::Arc;`
-- `use` `codex-rs/core/src/tools/router.rs:21` `use tracing::instrument;`
-- `struct` `codex-rs/core/src/tools/router.rs:24` `pub struct ToolCall {`
-- `struct` `codex-rs/core/src/tools/router.rs:30` `pub struct ToolRouter {`
-- `impl` `codex-rs/core/src/tools/router.rs:35` `impl ToolRouter {`
-- `fn` `codex-rs/core/src/tools/router.rs:36` `pub fn from_config(`
-- `fn` `codex-rs/core/src/tools/router.rs:47` `pub fn specs(&self) -> Vec<ToolSpec> {`
-- `fn` `codex-rs/core/src/tools/router.rs:54` `pub fn tool_supports_parallel(&self, tool_name: &str) -> bool {`
-- `fn` `codex-rs/core/src/tools/router.rs:62` `pub async fn build_tool_call(`
-- `fn` `codex-rs/core/src/tools/router.rs:134` `pub async fn dispatch_tool_call(`
-- `fn` `codex-rs/core/src/tools/router.rs:169` `fn failure_response(`
+- `use` `codex-rs/core/src/tools/router.rs:14` `use codex_protocol::models::FunctionCallOutputBody;`
+- `use` `codex-rs/core/src/tools/router.rs:15` `use codex_protocol::models::LocalShellAction;`
+- `use` `codex-rs/core/src/tools/router.rs:16` `use codex_protocol::models::ResponseInputItem;`
+- `use` `codex-rs/core/src/tools/router.rs:17` `use codex_protocol::models::ResponseItem;`
+- `use` `codex-rs/core/src/tools/router.rs:18` `use codex_protocol::models::ShellToolCallParams;`
+- `use` `codex-rs/core/src/tools/router.rs:19` `use rmcp::model::Tool;`
+- `use` `codex-rs/core/src/tools/router.rs:20` `use std::collections::HashMap;`
+- `use` `codex-rs/core/src/tools/router.rs:21` `use std::sync::Arc;`
+- `use` `codex-rs/core/src/tools/router.rs:22` `use tracing::instrument;`
+- `struct` `codex-rs/core/src/tools/router.rs:25` `pub struct ToolCall {`
+- `struct` `codex-rs/core/src/tools/router.rs:31` `pub struct ToolRouter {`
+- `impl` `codex-rs/core/src/tools/router.rs:36` `impl ToolRouter {`
+- `fn` `codex-rs/core/src/tools/router.rs:37` `pub fn from_config(`
+- `fn` `codex-rs/core/src/tools/router.rs:48` `pub fn specs(&self) -> Vec<ToolSpec> {`
+- `fn` `codex-rs/core/src/tools/router.rs:55` `pub fn tool_supports_parallel(&self, tool_name: &str) -> bool {`
+- `fn` `codex-rs/core/src/tools/router.rs:63` `pub async fn build_tool_call(`
+- `fn` `codex-rs/core/src/tools/router.rs:135` `pub async fn dispatch_tool_call(`
+- `fn` `codex-rs/core/src/tools/router.rs:170` `fn failure_response(`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -71,13 +72,13 @@ Source file implementing exported/public items listed below.
 - `use crate::tools::spec::ToolsConfig;`
 - `use crate::tools::spec::build_specs;`
 - `use codex_protocol::dynamic_tools::DynamicToolSpec;`
+- `use codex_protocol::models::FunctionCallOutputBody;`
 - `use codex_protocol::models::LocalShellAction;`
 - `use codex_protocol::models::ResponseInputItem;`
 - `use codex_protocol::models::ResponseItem;`
 - `use codex_protocol::models::ShellToolCallParams;`
 - `use rmcp::model::Tool;`
 - `use std::collections::HashMap;`
-- `use std::sync::Arc;`
 ### Referenced env vars
 - (none detected)
 
@@ -86,4 +87,4 @@ Source file implementing exported/public items listed below.
 - returns structured errors (Result/ErrorKind)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

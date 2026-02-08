@@ -5,7 +5,7 @@
 - ext: `.yaml`
 - size_bytes: `741`
 - sha256: `09e45239706ccf8a551355febf3d624f97a6391b9e9df97e4c04c01a0680e7a2`
-- generated_utc: `2026-02-03T16:08:28Z`
+- generated_utc: `2026-02-08T10:45:14Z`
 
 ## Purpose (Why)
 Configuration file for build/tooling/runtime.

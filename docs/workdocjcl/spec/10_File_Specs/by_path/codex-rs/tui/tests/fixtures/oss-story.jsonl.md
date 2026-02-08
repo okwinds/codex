@@ -5,7 +5,7 @@
 - ext: `.jsonl`
 - size_bytes: `838122`
 - sha256: `815e563dc36b0b90982d381338443dfc7efb05ba14b28c3df5bd4a9875d56c8b`
-- generated_utc: `2026-02-03T16:08:31Z`
+- generated_utc: `2026-02-08T10:45:41Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -33,4 +33,4 @@ Test or snapshot file used for automated verification.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/06_UI/TUI.md`
+- `docs/workdocjcl/spec/06_UI/TUI.md`

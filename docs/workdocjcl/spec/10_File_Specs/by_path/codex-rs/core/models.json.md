@@ -5,7 +5,7 @@
 - ext: `.json`
 - size_bytes: `125252`
 - sha256: `4c9470a04d482981ee1cda59173ee1b8c7a104d0a37b2b936f6cb6e4f220a6a1`
-- generated_utc: `2026-02-03T16:08:29Z`
+- generated_utc: `2026-02-08T10:45:26Z`
 
 ## Purpose (Why)
 Configuration file for build/tooling/runtime.
@@ -33,4 +33,4 @@ Configuration file for build/tooling/runtime.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

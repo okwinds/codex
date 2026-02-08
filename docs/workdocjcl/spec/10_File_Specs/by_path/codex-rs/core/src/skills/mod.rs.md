@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `609`
-- sha256: `e9bf0d68205bac6f937c0768f437341f68d8840a3b779c4d09bcaa8526bb2035`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `625`
+- sha256: `c1cc6ce56ffe543da53682a8bb9ecf12e5fd752aa435b6f4cb613c66aae772f4`
+- generated_utc: `2026-02-08T10:45:33Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -26,8 +26,9 @@ Source file (no public surface detected by heuristic).
 - `mod` `codex-rs/core/src/skills/mod.rs:3` `pub mod loader;`
 - `mod` `codex-rs/core/src/skills/mod.rs:4` `pub mod manager;`
 - `mod` `codex-rs/core/src/skills/mod.rs:5` `pub mod model;`
-- `mod` `codex-rs/core/src/skills/mod.rs:6` `pub mod render;`
-- `mod` `codex-rs/core/src/skills/mod.rs:7` `pub mod system;`
+- `mod` `codex-rs/core/src/skills/mod.rs:6` `pub mod remote;`
+- `mod` `codex-rs/core/src/skills/mod.rs:7` `pub mod render;`
+- `mod` `codex-rs/core/src/skills/mod.rs:8` `pub mod system;`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -39,4 +40,4 @@ Source file (no public surface detected by heuristic).
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

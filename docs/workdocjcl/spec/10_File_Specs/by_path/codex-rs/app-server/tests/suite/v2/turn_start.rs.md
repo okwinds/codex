@@ -3,9 +3,9 @@
 ## Identity
 - kind: `test`
 - ext: `.rs`
-- size_bytes: `60931`
-- sha256: `6ad798623c9151c702dca9041f8ab793acc9538f9c448572a5bfe2f71b69a591`
-- generated_utc: `2026-02-03T16:08:28Z`
+- size_bytes: `64741`
+- sha256: `aa4d434d22322a3a651603363775183140a19580eed4630b6b4d4b0dcc21a82e`
+- generated_utc: `2026-02-08T10:45:15Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -29,6 +29,7 @@ Test or snapshot file used for automated verification.
 - `use app_test_support::McpProcess;`
 - `use app_test_support::create_apply_patch_sse_response;`
 - `use app_test_support::create_exec_command_sse_response;`
+- `use app_test_support::create_fake_rollout;`
 - `use app_test_support::create_final_assistant_message_sse_response;`
 - `use app_test_support::create_mock_responses_server_sequence;`
 - `use app_test_support::create_mock_responses_server_sequence_unchecked;`
@@ -44,7 +45,6 @@ Test or snapshot file used for automated verification.
 - `use codex_app_server_protocol::FileChangeOutputDeltaNotification;`
 - `use codex_app_server_protocol::FileChangeRequestApprovalResponse;`
 - `use codex_app_server_protocol::ItemCompletedNotification;`
-- `use codex_app_server_protocol::ItemStartedNotification;`
 ### Referenced env vars
 - (none detected)
 

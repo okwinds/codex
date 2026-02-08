@@ -5,7 +5,7 @@
 - ext: `.bazel`
 - size_bytes: `153`
 - sha256: `feac7f7d5cc847edf6c3ea3cdef2efd997c36db5eb6136b8fb0725f6c183a3d7`
-- generated_utc: `2026-02-03T16:08:29Z`
+- generated_utc: `2026-02-08T10:45:34Z`
 
 ## Purpose (Why)
 Bazel build configuration file.
@@ -33,4 +33,4 @@ Bazel build configuration file.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

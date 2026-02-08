@@ -1,6 +1,6 @@
 # Node Package Specs Index
 
-- generated_utc: `2026-02-03T09:49:16Z`
+- generated_utc: `2026-02-08T10:45:13Z`
 - package_count: `4`
 
 | Path | Package | Spec | Bin | Engines |

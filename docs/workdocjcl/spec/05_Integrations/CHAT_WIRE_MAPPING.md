@@ -1,53 +1,52 @@
-# Chat Wire（wire_api=chat）完整映射规格
+# Chat wire 已移除（wire_api=chat）
 
-本章定义 `provider.wire_api = chat` 时，Codex 如何将内部 `Prompt`（`instructions` + `ResponseItem[]` + tools）映射为 Chat Completions 请求，以及如何把 Chat Completions SSE 流解析回 Codex 的 `ResponseEvent/ResponseItem` 事件序列。
+本章描述 **当前仓库基准提交** 下 `wire_api = "chat"` 的真实状态：**已不再支持**。
 
-目标：**仅凭本章即可实现与当前仓库等价的 Chat wire 兼容层**（不要求做 provider 运行时矩阵对照；只复刻现有实现规则）。
+复刻目标（必须满足）：
+- 当用户在 provider 配置中设置 `wire_api = "chat"` 时，配置解析阶段直接失败（错误文案需一致）。
+- 复刻者应把迁移路径写清楚：统一使用 `wire_api = "responses"`。
 
-> 术语说明：本仓库“内部统一表示”使用 `codex_protocol::models::ResponseItem`（同一套结构同时承载 Responses/Chat 两种 wire API 的输入与输出）；Chat wire 是一个“适配层”。
+> 注：本仓库历史上曾存在 Chat Completions wire 兼容层。为了便于考古与对照，本文末尾保留了**已废弃**的 legacy 规格（不会被当前代码路径执行）。
 
 ---
 
-## 1. 适用范围与非目标
+## 1. 适用范围与非目标（以当前实现为准）
 
-适用范围：
-- `WireApi::Chat` 路径的 **请求组装**（messages/tool_calls/tool outputs/headers）。
-- Chat Completions **SSE 流解析**（`[DONE]`/`DONE` 哨兵、delta 拼接、tool_calls 拼接、错误条件）。
+适用范围（当前实现）：
+- provider config 解析：拒绝 `wire_api = "chat"`。
+- 文档层迁移指引：如何切到 `responses`。
 
 非目标（本章不展开）：
-- provider 兼容性矩阵（哪些模型/供应商支持哪些字段）。这些属于运行时对照工作，见 `MODEL_API_COMPATIBILITY.md`。
-- tools 的 schema/语义细则（见 `TOOLS.md` 与 `TOOLS_DETAILED/*`）。
-- prompt/skills 的生成与注入（见 `PROMPT_ASSEMBLY.md`、`SYSTEM_PRESET_PROMPTS.md`、`SKILLS.md`）。
+- 不再描述 Chat Completions 请求组装与 SSE 解析（因为当前代码不再走该路径）。
 
 ---
 
 ## 2. 来源（Source）
 
-### 2.1 请求映射（ResponseItem → Chat messages/tool_calls）
-- `codex-rs/codex-api/src/requests/chat.rs`
-  - `ChatRequestBuilder::build`
-  - `push_tool_call_message`
-
-### 2.2 SSE 解析（Chat deltas → ResponseEvent/ResponseItem）
-- `codex-rs/codex-api/src/sse/chat.rs`
-  - `process_chat_sse`
-  - `append_assistant_text`
-  - `append_reasoning_text`
-
-### 2.3 Chat client 与聚合（AggregateMode）
-- `codex-rs/codex-api/src/endpoint/chat.rs`
-  - `ChatClient::path`（`chat/completions`）
-  - `ChatClient::stream`（`RequestCompression::None` + `spawn_chat_stream`）
-  - `AggregatedStream`（聚合/流式两种消费模式）
-
-### 2.3 Core 路由（何时走 Chat wire）
-- `codex-rs/core/src/client.rs`
-  - `ModelClientSession::stream`（`WireApi::Chat` 分支）
-  - `ModelClientSession::stream_chat_completions`
+### 2.1 wire_api=chat 的移除与报错
+- `codex-rs/core/src/model_provider_info.rs`
+  - `CHAT_WIRE_API_REMOVED_ERROR`
+  - `WireApi` 的反序列化：`"chat" => Err(...)`
 
 ---
 
-## 3. Core 路由与约束
+## 3. 当前行为（必须复刻）
+
+### 3.1 错误文案（需要一致）
+
+当 provider config 中出现 `wire_api = "chat"` 时，反序列化直接报错（完整字符串如下）：
+
+```text
+`wire_api = "chat"` is no longer supported.
+How to fix: set `wire_api = "responses"` in your provider config.
+More info: https://github.com/openai/codex/discussions/7782
+```
+
+---
+
+## 4. Legacy（归档，仅供历史对照；当前实现不会执行）
+
+以下内容为历史版本的 Chat wire 映射规格，保留用于考古/对照；若你要复刻**当前**仓库行为，可跳过本节余下部分。
 
 ### 3.1 Wire API 选择
 

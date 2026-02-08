@@ -26,7 +26,7 @@
 - `sandbox_permissions` / `justification` / `prefix_rule`：语义与 `shell` 相同
   - `prefix_rule` 仅在 feature `RequestRule` 启用时生效
 
-> 结构化 schema 参考：`workdocjcl/spec/05_Integrations/TOOLS_SCHEMA_REFERENCE.json`（条目：`name=shell_command kind=function`）
+> 结构化 schema 参考：`docs/workdocjcl/spec/05_Integrations/TOOLS_SCHEMA_REFERENCE.json`（条目：`name=shell_command kind=function`）
 
 ## 3. 运行时语义（Runtime semantics）
 处理器：`codex-rs/core/src/tools/handlers/shell.rs::ShellCommandHandler`
@@ -52,5 +52,5 @@
 - tool schema：`codex-rs/core/src/tools/spec.rs::create_shell_command_tool`
 - handler：`codex-rs/core/src/tools/handlers/shell.rs::ShellCommandHandler`
 - 参数类型：`codex-rs/protocol/src/models.rs::ShellCommandToolCallParams`
-- 公共输出封装：`workdocjcl/spec/05_Integrations/TOOLS_DETAILED/_COMMON_OUTPUT_ENVELOPE.md`
+- 公共输出封装：`docs/workdocjcl/spec/05_Integrations/TOOLS_DETAILED/_COMMON_OUTPUT_ENVELOPE.md`
 

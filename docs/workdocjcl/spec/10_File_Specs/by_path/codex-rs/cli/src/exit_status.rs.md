@@ -5,7 +5,7 @@
 - ext: `.rs`
 - size_bytes: `684`
 - sha256: `f2344dd67618220e6bddb780c4173009a4f8b0504ed12fc86d55edb4fc697e3c`
-- generated_utc: `2026-02-03T16:08:28Z`
+- generated_utc: `2026-02-08T10:45:16Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -33,4 +33,4 @@ Source file (no public surface detected by heuristic).
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/03_API/CLI.md`
+- `docs/workdocjcl/spec/03_API/CLI.md`

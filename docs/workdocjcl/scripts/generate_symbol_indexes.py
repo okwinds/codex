@@ -3,6 +3,7 @@
 
 import json
 import re
+import shutil
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -63,6 +64,9 @@ def write_index(basename: str, title: str, items: list) -> None:
 
 
 def main() -> int:
+    # 清理旧生成物，避免语言/文件变更后残留过期索引文件。
+    if OUT_DIR.exists():
+        shutil.rmtree(OUT_DIR)
     rels = load_manifest()
 
     rust_patterns = [

@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `148`
-- sha256: `4b41b2e5679b934544cdcdb86edbd9e37060ff72f3fed42ce5b6032bb9856cf8`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `134`
+- sha256: `e28abf45e8cdfdeae3745128824ee339d44e57d60d276ef2ab44b035f12d3f57`
+- generated_utc: `2026-02-08T10:45:16Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -21,8 +21,7 @@ Source file (no public surface detected by heuristic).
 - (none detected)
 
 ## Definitions (auto, per-file)
-- `mod` `codex-rs/codex-api/src/sse/mod.rs:1` `pub mod chat;`
-- `mod` `codex-rs/codex-api/src/sse/mod.rs:2` `pub mod responses;`
+- `mod` `codex-rs/codex-api/src/sse/mod.rs:1` `pub mod responses;`
 
 ## Dependencies (auto sample)
 ### Imports / Includes

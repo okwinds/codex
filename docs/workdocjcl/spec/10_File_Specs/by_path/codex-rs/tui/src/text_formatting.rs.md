@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `18344`
-- sha256: `72b63ba9a86163139ccdd21d540aa27d2b8bf8c52231f9c1f15e1dcdcbb4ec37`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `19746`
+- sha256: `824b6c7297bf0f6a22fb3ecaac4fe68d545384e179233b6dd0dff1685e02c155`
+- generated_utc: `2026-02-08T10:45:40Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -25,32 +25,33 @@ Source file (no public surface detected by heuristic).
 - `use` `codex-rs/tui/src/text_formatting.rs:2` `use unicode_width::UnicodeWidthChar;`
 - `use` `codex-rs/tui/src/text_formatting.rs:3` `use unicode_width::UnicodeWidthStr;`
 - `struct` `codex-rs/tui/src/text_formatting.rs:152` `struct Segment<'a> {`
-- `use` `codex-rs/tui/src/text_formatting.rs:332` `use super::*;`
-- `use` `codex-rs/tui/src/text_formatting.rs:333` `use pretty_assertions::assert_eq;`
-- `fn` `codex-rs/tui/src/text_formatting.rs:336` `fn test_truncate_text() {`
-- `fn` `codex-rs/tui/src/text_formatting.rs:343` `fn test_truncate_empty_string() {`
-- `fn` `codex-rs/tui/src/text_formatting.rs:350` `fn test_truncate_max_graphemes_zero() {`
-- `fn` `codex-rs/tui/src/text_formatting.rs:357` `fn test_truncate_max_graphemes_one() {`
-- `fn` `codex-rs/tui/src/text_formatting.rs:364` `fn test_truncate_max_graphemes_two() {`
-- `fn` `codex-rs/tui/src/text_formatting.rs:371` `fn test_truncate_max_graphemes_three_boundary() {`
-- `fn` `codex-rs/tui/src/text_formatting.rs:378` `fn test_truncate_text_shorter_than_limit() {`
-- `fn` `codex-rs/tui/src/text_formatting.rs:385` `fn test_truncate_text_exact_length() {`
-- `fn` `codex-rs/tui/src/text_formatting.rs:392` `fn test_truncate_emoji() {`
-- `fn` `codex-rs/tui/src/text_formatting.rs:402` `fn test_truncate_unicode_combining_characters() {`
-- `fn` `codex-rs/tui/src/text_formatting.rs:409` `fn test_truncate_very_long_text() {`
-- `fn` `codex-rs/tui/src/text_formatting.rs:417` `fn test_format_json_compact_simple_object() {`
-- `fn` `codex-rs/tui/src/text_formatting.rs:424` `fn test_format_json_compact_nested_object() {`
-- `fn` `codex-rs/tui/src/text_formatting.rs:434` `fn test_center_truncate_doesnt_truncate_short_path() {`
-- `fn` `codex-rs/tui/src/text_formatting.rs:443` `fn test_center_truncate_truncates_long_path() {`
-- `fn` `codex-rs/tui/src/text_formatting.rs:455` `fn test_center_truncate_truncates_long_windows_path() {`
-- `fn` `codex-rs/tui/src/text_formatting.rs:468` `fn test_center_truncate_handles_long_segment() {`
-- `fn` `codex-rs/tui/src/text_formatting.rs:477` `fn test_format_json_compact_array() {`
-- `fn` `codex-rs/tui/src/text_formatting.rs:484` `fn test_format_json_compact_already_compact() {`
-- `fn` `codex-rs/tui/src/text_formatting.rs:491` `fn test_format_json_compact_with_whitespace() {`
-- `fn` `codex-rs/tui/src/text_formatting.rs:509` `fn test_format_json_compact_invalid_json() {`
-- `fn` `codex-rs/tui/src/text_formatting.rs:516` `fn test_format_json_compact_empty_object() {`
-- `fn` `codex-rs/tui/src/text_formatting.rs:523` `fn test_format_json_compact_empty_array() {`
-- `fn` `codex-rs/tui/src/text_formatting.rs:530` `fn test_format_json_compact_primitive_values() {`
+- `use` `codex-rs/tui/src/text_formatting.rs:359` `use super::*;`
+- `use` `codex-rs/tui/src/text_formatting.rs:360` `use pretty_assertions::assert_eq;`
+- `fn` `codex-rs/tui/src/text_formatting.rs:363` `fn test_truncate_text() {`
+- `fn` `codex-rs/tui/src/text_formatting.rs:370` `fn test_truncate_empty_string() {`
+- `fn` `codex-rs/tui/src/text_formatting.rs:377` `fn test_truncate_max_graphemes_zero() {`
+- `fn` `codex-rs/tui/src/text_formatting.rs:384` `fn test_truncate_max_graphemes_one() {`
+- `fn` `codex-rs/tui/src/text_formatting.rs:391` `fn test_truncate_max_graphemes_two() {`
+- `fn` `codex-rs/tui/src/text_formatting.rs:398` `fn test_truncate_max_graphemes_three_boundary() {`
+- `fn` `codex-rs/tui/src/text_formatting.rs:405` `fn test_truncate_text_shorter_than_limit() {`
+- `fn` `codex-rs/tui/src/text_formatting.rs:412` `fn test_truncate_text_exact_length() {`
+- `fn` `codex-rs/tui/src/text_formatting.rs:419` `fn test_truncate_emoji() {`
+- `fn` `codex-rs/tui/src/text_formatting.rs:429` `fn test_truncate_unicode_combining_characters() {`
+- `fn` `codex-rs/tui/src/text_formatting.rs:436` `fn test_truncate_very_long_text() {`
+- `fn` `codex-rs/tui/src/text_formatting.rs:444` `fn test_format_json_compact_simple_object() {`
+- `fn` `codex-rs/tui/src/text_formatting.rs:451` `fn test_format_json_compact_nested_object() {`
+- `fn` `codex-rs/tui/src/text_formatting.rs:461` `fn test_center_truncate_doesnt_truncate_short_path() {`
+- `fn` `codex-rs/tui/src/text_formatting.rs:470` `fn test_center_truncate_truncates_long_path() {`
+- `fn` `codex-rs/tui/src/text_formatting.rs:482` `fn test_center_truncate_truncates_long_windows_path() {`
+- `fn` `codex-rs/tui/src/text_formatting.rs:495` `fn test_center_truncate_handles_long_segment() {`
+- `fn` `codex-rs/tui/src/text_formatting.rs:504` `fn test_format_json_compact_array() {`
+- `fn` `codex-rs/tui/src/text_formatting.rs:511` `fn test_format_json_compact_already_compact() {`
+- `fn` `codex-rs/tui/src/text_formatting.rs:518` `fn test_format_json_compact_with_whitespace() {`
+- `fn` `codex-rs/tui/src/text_formatting.rs:536` `fn test_format_json_compact_invalid_json() {`
+- `fn` `codex-rs/tui/src/text_formatting.rs:543` `fn test_format_json_compact_empty_object() {`
+- `fn` `codex-rs/tui/src/text_formatting.rs:550` `fn test_format_json_compact_empty_array() {`
+- `fn` `codex-rs/tui/src/text_formatting.rs:557` `fn test_format_json_compact_primitive_values() {`
+- `fn` `codex-rs/tui/src/text_formatting.rs:566` `fn test_proper_join() {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -66,4 +67,4 @@ Source file (no public surface detected by heuristic).
 - uses Rust panic/expect/unwrap-style failure paths
 
 ## Spec Links
-- `workdocjcl/spec/06_UI/TUI.md`
+- `docs/workdocjcl/spec/06_UI/TUI.md`

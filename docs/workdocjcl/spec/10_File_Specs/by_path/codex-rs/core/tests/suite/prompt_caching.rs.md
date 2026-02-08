@@ -3,9 +3,9 @@
 ## Identity
 - kind: `test`
 - ext: `.rs`
-- size_bytes: `29038`
-- sha256: `a1000f9376ca1464ac3d79d924037eef668deaa8edd125c8ca919571fc7c6599`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `31154`
+- sha256: `3c0077fb7741d8877638e2704ed0195a57644f6ca99446865daaa19359c4692c`
+- generated_utc: `2026-02-08T10:45:36Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -43,8 +43,8 @@ Test or snapshot file used for automated verification.
 - `use codex_protocol::openai_models::ReasoningEffort;`
 - `use codex_protocol::user_input::UserInput;`
 - `use codex_utils_absolute_path::AbsolutePathBuf;`
-- `use core_test_support::load_sse_fixture_with_id;`
-- `use core_test_support::responses::mount_sse_once;`
+- `use core_test_support::responses::ev_completed;`
+- `use core_test_support::responses::ev_response_created;`
 ### Referenced env vars
 - (none detected)
 
@@ -52,4 +52,4 @@ Test or snapshot file used for automated verification.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

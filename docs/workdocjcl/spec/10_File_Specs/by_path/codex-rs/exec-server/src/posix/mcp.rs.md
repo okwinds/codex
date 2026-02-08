@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `9158`
-- sha256: `efbe5ab424f1b0d5d3f154c57cab79757c4cae185ab91271a0e0d69eaed42e37`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `9210`
+- sha256: `bf50ea0efea5fc0500e2f7bae88235f858a5fc0de1269984d3ff9685264c1353`
+- generated_utc: `2026-02-08T10:45:36Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -67,17 +67,17 @@ Source file implementing exported/public items listed below.
 - `impl` `codex-rs/exec-server/src/posix/mcp.rs:89` `impl ExecTool {`
 - `fn` `codex-rs/exec-server/src/posix/mcp.rs:90` `pub fn new(`
 - `fn` `codex-rs/exec-server/src/posix/mcp.rs:108` `async fn shell(`
-- `struct` `codex-rs/exec-server/src/posix/mcp.rs:152` `pub struct CodexSandboxStateUpdateMethod;`
-- `impl` `codex-rs/exec-server/src/posix/mcp.rs:154` `impl rmcp::model::ConstString for CodexSandboxStateUpdateMethod {`
-- `const` `codex-rs/exec-server/src/posix/mcp.rs:155` `const VALUE: &'static str = MCP_SANDBOX_STATE_METHOD;`
-- `impl` `codex-rs/exec-server/src/posix/mcp.rs:159` `impl ServerHandler for ExecTool {`
-- `fn` `codex-rs/exec-server/src/posix/mcp.rs:160` `fn get_info(&self) -> ServerInfo {`
-- `fn` `codex-rs/exec-server/src/posix/mcp.rs:185` `async fn initialize(`
-- `fn` `codex-rs/exec-server/src/posix/mcp.rs:193` `async fn on_custom_request(`
-- `use` `codex-rs/exec-server/src/posix/mcp.rs:235` `use super::*;`
-- `use` `codex-rs/exec-server/src/posix/mcp.rs:236` `use pretty_assertions::assert_eq;`
-- `use` `codex-rs/exec-server/src/posix/mcp.rs:237` `use serde_json::json;`
-- `fn` `codex-rs/exec-server/src/posix/mcp.rs:243` `fn exec_params_json_schema_matches_expected() {`
+- `struct` `codex-rs/exec-server/src/posix/mcp.rs:153` `pub struct CodexSandboxStateUpdateMethod;`
+- `impl` `codex-rs/exec-server/src/posix/mcp.rs:155` `impl rmcp::model::ConstString for CodexSandboxStateUpdateMethod {`
+- `const` `codex-rs/exec-server/src/posix/mcp.rs:156` `const VALUE: &'static str = MCP_SANDBOX_STATE_METHOD;`
+- `impl` `codex-rs/exec-server/src/posix/mcp.rs:160` `impl ServerHandler for ExecTool {`
+- `fn` `codex-rs/exec-server/src/posix/mcp.rs:161` `fn get_info(&self) -> ServerInfo {`
+- `fn` `codex-rs/exec-server/src/posix/mcp.rs:186` `async fn initialize(`
+- `fn` `codex-rs/exec-server/src/posix/mcp.rs:194` `async fn on_custom_request(`
+- `use` `codex-rs/exec-server/src/posix/mcp.rs:236` `use super::*;`
+- `use` `codex-rs/exec-server/src/posix/mcp.rs:237` `use pretty_assertions::assert_eq;`
+- `use` `codex-rs/exec-server/src/posix/mcp.rs:238` `use serde_json::json;`
+- `fn` `codex-rs/exec-server/src/posix/mcp.rs:244` `fn exec_params_json_schema_matches_expected() {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes

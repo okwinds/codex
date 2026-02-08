@@ -23,6 +23,7 @@ from typing import Any, Optional
 
 ROOT = Path(__file__).resolve().parents[3]
 WORKDOC_ROOT = ROOT / "docs" / "workdocjcl"
+WORKDOC_REPO_PREFIX = "docs/workdocjcl"
 
 SPEC_RS = ROOT / "codex-rs" / "core" / "src" / "tools" / "spec.rs"
 PLAN_RS = ROOT / "codex-rs" / "core" / "src" / "tools" / "handlers" / "plan.rs"
@@ -986,7 +987,7 @@ def main() -> int:
     md.append("说明：本文件尝试从 Rust 源码中提取 tool schema（JSON Schema 子集）。")
     md.append("若某字段为 `kind=expr` 或 `kind=unparsed`，表示这是源码表达式，未做求值。")
     md.append("")
-    md.append("- 逐工具语义规格：`workdocjcl/spec/05_Integrations/TOOLS_DETAILED/INDEX.md`")
+    md.append(f"- 逐工具语义规格：`{WORKDOC_REPO_PREFIX}/spec/05_Integrations/TOOLS_DETAILED/INDEX.md`")
     md.append(f"- tool_count: `{dump['tool_count']}`")
     md.append(f"- duplicates_detected: `{len(dupes)}`")
     md.append("")
@@ -1009,7 +1010,7 @@ def main() -> int:
         )
 
     md.append("")
-    md.append("机器可读版本：`workdocjcl/spec/05_Integrations/TOOLS_SCHEMA_REFERENCE.json`")
+    md.append(f"机器可读版本：`{WORKDOC_REPO_PREFIX}/spec/05_Integrations/TOOLS_SCHEMA_REFERENCE.json`")
     OUT_MD.write_text("\n".join(md) + "\n", "utf-8")
 
     return 0

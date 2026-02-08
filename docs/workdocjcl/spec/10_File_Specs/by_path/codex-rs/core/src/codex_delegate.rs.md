@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `17012`
-- sha256: `72b88c7c03664d9a5b0d2996dc1df7b145dec15e4843b7c3090a320f5dcf4a47`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `17222`
+- sha256: `8f97e1154a12bb14ccee2bcbefd13f06f8253c0a9f1851dfb0d8c3ef0d10b976`
+- generated_utc: `2026-02-08T10:45:26Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -52,22 +52,22 @@ Source file (no public surface detected by heuristic).
 - `use` `codex-rs/core/src/codex_delegate.rs:31` `use crate::error::CodexErr;`
 - `use` `codex-rs/core/src/codex_delegate.rs:32` `use crate::models_manager::manager::ModelsManager;`
 - `use` `codex-rs/core/src/codex_delegate.rs:33` `use codex_protocol::protocol::InitialHistory;`
-- `fn` `codex-rs/core/src/codex_delegate.rs:176` `async fn forward_events(`
-- `fn` `codex-rs/core/src/codex_delegate.rs:274` `async fn shutdown_delegate(codex: &Codex) {`
-- `fn` `codex-rs/core/src/codex_delegate.rs:292` `async fn forward_ops(`
-- `fn` `codex-rs/core/src/codex_delegate.rs:307` `async fn handle_exec_approval(`
-- `fn` `codex-rs/core/src/codex_delegate.rs:336` `async fn handle_patch_approval(`
-- `fn` `codex-rs/core/src/codex_delegate.rs:363` `async fn handle_request_user_input(`
-- `use` `codex-rs/core/src/codex_delegate.rs:438` `use super::*;`
-- `use` `codex-rs/core/src/codex_delegate.rs:439` `use async_channel::bounded;`
-- `use` `codex-rs/core/src/codex_delegate.rs:440` `use codex_protocol::models::ResponseItem;`
-- `use` `codex-rs/core/src/codex_delegate.rs:441` `use codex_protocol::protocol::AgentStatus;`
-- `use` `codex-rs/core/src/codex_delegate.rs:442` `use codex_protocol::protocol::RawResponseItemEvent;`
-- `use` `codex-rs/core/src/codex_delegate.rs:443` `use codex_protocol::protocol::TurnAbortReason;`
-- `use` `codex-rs/core/src/codex_delegate.rs:444` `use codex_protocol::protocol::TurnAbortedEvent;`
-- `use` `codex-rs/core/src/codex_delegate.rs:445` `use pretty_assertions::assert_eq;`
-- `use` `codex-rs/core/src/codex_delegate.rs:446` `use tokio::sync::watch;`
-- `fn` `codex-rs/core/src/codex_delegate.rs:449` `async fn forward_events_cancelled_while_send_blocked_shuts_down_delegate() {`
+- `fn` `codex-rs/core/src/codex_delegate.rs:177` `async fn forward_events(`
+- `fn` `codex-rs/core/src/codex_delegate.rs:275` `async fn shutdown_delegate(codex: &Codex) {`
+- `fn` `codex-rs/core/src/codex_delegate.rs:293` `async fn forward_ops(`
+- `fn` `codex-rs/core/src/codex_delegate.rs:308` `async fn handle_exec_approval(`
+- `fn` `codex-rs/core/src/codex_delegate.rs:345` `async fn handle_patch_approval(`
+- `fn` `codex-rs/core/src/codex_delegate.rs:373` `async fn handle_request_user_input(`
+- `use` `codex-rs/core/src/codex_delegate.rs:448` `use super::*;`
+- `use` `codex-rs/core/src/codex_delegate.rs:449` `use async_channel::bounded;`
+- `use` `codex-rs/core/src/codex_delegate.rs:450` `use codex_protocol::models::ResponseItem;`
+- `use` `codex-rs/core/src/codex_delegate.rs:451` `use codex_protocol::protocol::AgentStatus;`
+- `use` `codex-rs/core/src/codex_delegate.rs:452` `use codex_protocol::protocol::RawResponseItemEvent;`
+- `use` `codex-rs/core/src/codex_delegate.rs:453` `use codex_protocol::protocol::TurnAbortReason;`
+- `use` `codex-rs/core/src/codex_delegate.rs:454` `use codex_protocol::protocol::TurnAbortedEvent;`
+- `use` `codex-rs/core/src/codex_delegate.rs:455` `use pretty_assertions::assert_eq;`
+- `use` `codex-rs/core/src/codex_delegate.rs:456` `use tokio::sync::watch;`
+- `fn` `codex-rs/core/src/codex_delegate.rs:459` `async fn forward_events_cancelled_while_send_blocked_shuts_down_delegate() {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -100,4 +100,4 @@ Source file (no public surface detected by heuristic).
 - uses Rust panic/expect/unwrap-style failure paths
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

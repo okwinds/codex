@@ -3,6 +3,7 @@
 
 import json
 import re
+import shutil
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -11,6 +12,7 @@ import tomli
 
 ROOT = Path(__file__).resolve().parents[3]
 WORKDOC_ROOT = ROOT / "docs" / "workdocjcl"
+WORKDOC_REPO_PREFIX = "docs/workdocjcl"
 WS_ROOT = ROOT / "codex-rs"
 OUT_ROOT = WORKDOC_ROOT / "spec" / "11_Rust_Crate_Specs"
 
@@ -64,6 +66,9 @@ def guess_role(crate_name: str, rel_path: str) -> str:
 
 
 def main() -> int:
+    # 清理旧生成物，避免 workspace members 变化导致残留过期 crate spec。
+    if OUT_ROOT.exists():
+        shutil.rmtree(OUT_ROOT)
     OUT_ROOT.mkdir(parents=True, exist_ok=True)
     ws = read_toml(WS_ROOT / "Cargo.toml")
     members = ws["workspace"]["members"]
@@ -151,14 +156,14 @@ def main() -> int:
             lines.append("- (none detected)")
         lines.append("")
         lines.append("## Spec Links")
-        lines.append("- `workdocjcl/spec/00_Overview/MODULE_MAP.md`")
-        lines.append("- `workdocjcl/spec/09_Verification/CODE_TO_SPEC_MAP.md`")
+        lines.append(f"- `{WORKDOC_REPO_PREFIX}/spec/00_Overview/MODULE_MAP.md`")
+        lines.append(f"- `{WORKDOC_REPO_PREFIX}/spec/09_Verification/CODE_TO_SPEC_MAP.md`")
         if name in ("codex-cli", "codex-core", "codex-tui", "codex-protocol", "codex-state"):
-            lines.append("- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`")
+            lines.append(f"- `{WORKDOC_REPO_PREFIX}/spec/00_Overview/ARCHITECTURE.md`")
         if name == "codex-state":
-            lines.append("- `workdocjcl/spec/02_Data/ENTITIES.md`")
+            lines.append(f"- `{WORKDOC_REPO_PREFIX}/spec/02_Data/ENTITIES.md`")
         if name == "codex-core":
-            lines.append("- `workdocjcl/spec/05_Integrations/TOOLS.md`")
+            lines.append(f"- `{WORKDOC_REPO_PREFIX}/spec/05_Integrations/TOOLS.md`")
         spec_path.write_text("\n".join(lines) + "\n", "utf-8")
 
         index_lines.append(

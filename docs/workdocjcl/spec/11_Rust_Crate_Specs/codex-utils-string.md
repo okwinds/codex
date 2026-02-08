@@ -1,7 +1,7 @@
 # `codex-utils-string`
 
 - path: `codex-rs/utils/string`
-- generated_utc: `2026-02-03T09:48:37Z`
+- generated_utc: `2026-02-08T10:45:13Z`
 - role: shared utility crate
 
 ## Build Targets
@@ -18,7 +18,8 @@
 ## Public Surface (auto, from src/lib.rs or src/main.rs)
 - `pub fn take_bytes_at_char_boundary(s: &str, maxb: usize) -> &str {`
 - `pub fn take_last_bytes_at_char_boundary(s: &str, maxb: usize) -> &str {`
+- `pub fn sanitize_metric_tag_value(value: &str) -> String {`
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/MODULE_MAP.md`
-- `workdocjcl/spec/09_Verification/CODE_TO_SPEC_MAP.md`
+- `docs/workdocjcl/spec/00_Overview/MODULE_MAP.md`
+- `docs/workdocjcl/spec/09_Verification/CODE_TO_SPEC_MAP.md`

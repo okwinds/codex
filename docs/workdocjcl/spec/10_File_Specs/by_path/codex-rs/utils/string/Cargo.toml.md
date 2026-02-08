@@ -3,9 +3,9 @@
 ## Identity
 - kind: `config`
 - ext: `.toml`
-- size_bytes: `139`
-- sha256: `2a24b9762ea30f8f5695232c1d63f938a86fddbfdb2750c5e7f1ddb6f650effb`
-- generated_utc: `2026-02-03T16:08:31Z`
+- size_bytes: `200`
+- sha256: `e37899f7562530dff7e0191767169f73e003cbcb6149c83d6d8617c3cb44a34e`
+- generated_utc: `2026-02-08T10:45:41Z`
 
 ## Purpose (Why)
 Configuration file for build/tooling/runtime.

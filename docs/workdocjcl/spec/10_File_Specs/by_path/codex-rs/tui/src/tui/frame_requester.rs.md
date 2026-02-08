@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `14111`
-- sha256: `fe44af5d04be03c1db3cf77a4f24b057d789dd85739094caf340e6c30736f371`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `14112`
+- sha256: `629599433594ebaf4dd1037efa31198686879833e2f8816478bd388c49080174`
+- generated_utc: `2026-02-08T10:45:41Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -48,7 +48,7 @@ Source file implementing exported/public items listed below.
 - `fn` `codex-rs/tui/src/tui/frame_requester.rs:160` `async fn test_schedule_frame_in_triggers_at_delay() {`
 - `fn` `codex-rs/tui/src/tui/frame_requester.rs:186` `async fn test_coalesces_multiple_requests_into_single_draw() {`
 - `fn` `codex-rs/tui/src/tui/frame_requester.rs:212` `async fn test_coalesces_mixed_immediate_and_delayed_requests() {`
-- `fn` `codex-rs/tui/src/tui/frame_requester.rs:235` `async fn test_limits_draw_notifications_to_60fps() {`
+- `fn` `codex-rs/tui/src/tui/frame_requester.rs:235` `async fn test_limits_draw_notifications_to_120fps() {`
 - `fn` `codex-rs/tui/src/tui/frame_requester.rs:266` `async fn test_rate_limit_clamps_early_delayed_requests() {`
 - `fn` `codex-rs/tui/src/tui/frame_requester.rs:298` `async fn test_rate_limit_does_not_delay_future_draws() {`
 - `fn` `codex-rs/tui/src/tui/frame_requester.rs:327` `async fn test_multiple_delayed_requests_coalesce_to_earliest() {`
@@ -72,4 +72,4 @@ Source file implementing exported/public items listed below.
 - uses Rust panic/expect/unwrap-style failure paths
 
 ## Spec Links
-- `workdocjcl/spec/06_UI/TUI.md`
+- `docs/workdocjcl/spec/06_UI/TUI.md`

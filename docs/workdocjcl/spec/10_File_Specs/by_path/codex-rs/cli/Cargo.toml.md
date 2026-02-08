@@ -3,9 +3,9 @@
 ## Identity
 - kind: `config`
 - ext: `.toml`
-- size_bytes: `1747`
-- sha256: `fc945cac92ef34caa30d5c7eb13018e023a85ed430812c28a4d3fd6c27c28204`
-- generated_utc: `2026-02-03T16:08:28Z`
+- size_bytes: `1799`
+- sha256: `67a100bd5ba9c9cd2d7f6f1a60de0352d75cd397c64fb966c6a3efdef27a9a6d`
+- generated_utc: `2026-02-08T10:45:16Z`
 
 ## Purpose (Why)
 Configuration file for build/tooling/runtime.
@@ -33,4 +33,4 @@ Configuration file for build/tooling/runtime.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/03_API/CLI.md`
+- `docs/workdocjcl/spec/03_API/CLI.md`

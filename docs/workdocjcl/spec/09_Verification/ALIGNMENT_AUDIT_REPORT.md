@@ -2,7 +2,7 @@
 
 Generated (local): 2026-02-04
 
-本报告回答问题：**当前 `codex` 仓库实现与 `workdocjcl/spec/` 规格文档是否对齐？哪些地方我没有做到“事无巨细”、哪些地方仍不够完善？**
+本报告回答问题：**当前 `codex` 仓库实现与 `docs/workdocjcl/spec/` 规格文档是否对齐？哪些地方我没有做到“事无巨细”、哪些地方仍不够完善？**
 
 报告结论分为两类：
 - **对齐性问题（Documentation Drift / Inconsistency）**：文档内部数字、引用或表述不一致，会误导复刻者。
@@ -15,11 +15,11 @@ Generated (local): 2026-02-04
 ## 0. 审计方法（我实际做了什么）
 
 ### 0.1 结构完整性（硬检查）
-- 校验 `workdocjcl/spec/SPEC_INDEX.md` 中所有链接目标文件存在（已通过）。
-- 校验 `workdocjcl/spec/09_Verification/CODE_TO_SPEC_MAP.md` 中引用的 spec 路径都存在（已通过）。
+- 校验 `docs/workdocjcl/spec/SPEC_INDEX.md` 中所有链接目标文件存在（已通过）。
+- 校验 `docs/workdocjcl/spec/09_Verification/CODE_TO_SPEC_MAP.md` 中引用的 spec 路径都存在（已通过）。
 - 校验 verbatim 资产副本的 `MANIFEST.json`（sha256/bytes）一致性：
-  - `workdocjcl/spec/04_Business_Logic/PROMPTS/MANIFEST.json`
-  - `workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/MANIFEST.json`
+  - `docs/workdocjcl/spec/04_Business_Logic/PROMPTS/MANIFEST.json`
+  - `docs/workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS/MANIFEST.json`
 
 ### 0.2 针对“核心基础设施”的对齐抽样（重点）
 围绕你点名的核心基础设施，抽样核对“代码实现 → 规格落点”：
@@ -38,13 +38,13 @@ Generated (local): 2026-02-04
 
 ### 1.1 已达成：核心能力基础设施的“行为复刻闭环”
 下列能力已经具备“仅靠规格文档即可复刻主要行为闭环”的条件（且已有代码锚点映射）：
-- Responses API streaming（SSE/WS/回退/重试/headers→事件注入）：`workdocjcl/spec/05_Integrations/RESPONSES_STREAMING.md`
-- Provider/WireApi/Headers/Azure store/Chat DONE sentinel：`workdocjcl/spec/05_Integrations/MODEL_API_COMPATIBILITY.md`
-- Prompt 组装（BaseInstructions 决议 + initial context 注入顺序 + personality baked/injected）：`workdocjcl/spec/04_Business_Logic/PROMPT_ASSEMBLY.md`
-- 系统预置 prompts（verbatim + sha256，可在复刻实现中做一致性校验）：`workdocjcl/spec/04_Business_Logic/SYSTEM_PRESET_PROMPTS.md` + `workdocjcl/spec/04_Business_Logic/PROMPTS/*`
-- Tools：schema reference + 每个 tool 的运行时语义（审批/沙箱/错误路径/输出 envelope）：`workdocjcl/spec/05_Integrations/TOOLS_DETAILED/*`
-- Skills：发现/扫描/禁用语义/mentions 消歧/注入/依赖提示：`workdocjcl/spec/05_Integrations/SKILLS.md`
-- embedded system skills（verbatim + sha256）：`workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS*`
+- Responses API streaming（SSE/WS/回退/重试/headers→事件注入）：`docs/workdocjcl/spec/05_Integrations/RESPONSES_STREAMING.md`
+- Provider/WireApi/Headers/Azure store/Chat DONE sentinel：`docs/workdocjcl/spec/05_Integrations/MODEL_API_COMPATIBILITY.md`
+- Prompt 组装（BaseInstructions 决议 + initial context 注入顺序 + personality baked/injected）：`docs/workdocjcl/spec/04_Business_Logic/PROMPT_ASSEMBLY.md`
+- 系统预置 prompts（verbatim + sha256，可在复刻实现中做一致性校验）：`docs/workdocjcl/spec/04_Business_Logic/SYSTEM_PRESET_PROMPTS.md` + `docs/workdocjcl/spec/04_Business_Logic/PROMPTS/*`
+- Tools：schema reference + 每个 tool 的运行时语义（审批/沙箱/错误路径/输出 envelope）：`docs/workdocjcl/spec/05_Integrations/TOOLS_DETAILED/*`
+- Skills：发现/扫描/禁用语义/mentions 消歧/注入/依赖提示：`docs/workdocjcl/spec/05_Integrations/SKILLS.md`
+- embedded system skills（verbatim + sha256）：`docs/workdocjcl/spec/05_Integrations/SKILLS_SYSTEM_ARTIFACTS*`
 
 ### 1.2 仍需改进：文档内部一致性与少数模块的“细节复刻”
 当前最明确、可操作的不足主要有两类：
@@ -57,34 +57,34 @@ Generated (local): 2026-02-04
 
 ### A1（高）`COVERAGE_REPORT.md` 的“规格文档 Markdown 文件数”已不真实
 - 状态：**已修复（2026-02-04）**
-- 修复位置：`workdocjcl/spec/09_Verification/COVERAGE_REPORT.md`
+- 修复位置：`docs/workdocjcl/spec/09_Verification/COVERAGE_REPORT.md`
 - 修复内容：将单一口径拆分为多口径并行呈现（总量 + 分目录 + “手写契约级 spec”）。
 - 修复后口径（静态计数）：
-  - `workdocjcl/spec/**/*.md` 总数：`2594`
+  - `docs/workdocjcl/spec/**/*.md` 总数：`2594`
   - 逐文件胶囊（`10_File_Specs/by_path`）：`2431`
   - 手写“契约级”规格（排除自动生成目录）：`87`
 
 ### A2（中）`COVERAGE_REPORT.md` 的小节编号顺序不一致（2.6 出现在 2.5 前）
 - 状态：**已修复（2026-02-04）**
-- 修复位置：`workdocjcl/spec/09_Verification/COVERAGE_REPORT.md`
+- 修复位置：`docs/workdocjcl/spec/09_Verification/COVERAGE_REPORT.md`
 - 修复内容：重编号为 `2.5 Prompt / Skills`、`2.6 集成`，保证小节顺序单调递增。
 
 ### A3（中）“存在性清单”口径在不同文档中混用 `file_manifest.txt` 与 `file_manifest_repo.txt`
 - 状态：**已修复（2026-02-04）**
 - 修复位置：
-  - `workdocjcl/spec/00_Overview/SPEC_CONVENTIONS.md`
-  - `workdocjcl/spec/09_Verification/COVERAGE_REPORT.md`
-  - `workdocjcl/spec/09_Verification/CODE_TO_SPEC_MAP.md`
+  - `docs/workdocjcl/spec/00_Overview/SPEC_CONVENTIONS.md`
+  - `docs/workdocjcl/spec/09_Verification/COVERAGE_REPORT.md`
+  - `docs/workdocjcl/spec/09_Verification/CODE_TO_SPEC_MAP.md`
 - 修复内容：统一明确三种 manifest 口径，并在“无遗漏基线”语境下优先使用 repo-only：
-  - repo-only：`workdocjcl/inventory/file_manifest_repo.txt`（不含 `workdocjcl/`）
-  - all-files：`workdocjcl/inventory/file_manifest.txt`（含 `workdocjcl/`）
-  - wide：`workdocjcl/inventory/file_manifest_all.txt`
+  - repo-only：`docs/workdocjcl/inventory/file_manifest_repo.txt`（不含 `workdocjcl/`）
+  - all-files：`docs/workdocjcl/inventory/file_manifest.txt`（含 `workdocjcl/`）
+  - wide：`docs/workdocjcl/inventory/file_manifest_all.txt`
 
 ### A4（中）`COVERAGE_REPORT.generated.md` 当前不具备“可追溯生成”的可信信息密度
 - 状态：**已修复（最小化修复，2026-02-04）**
 - 修复位置：
-  - `workdocjcl/spec/09_Verification/COVERAGE_REPORT.generated.md`
-  - `workdocjcl/spec/09_Verification/COVERAGE_REPORT.md`
+  - `docs/workdocjcl/spec/09_Verification/COVERAGE_REPORT.generated.md`
+  - `docs/workdocjcl/spec/09_Verification/COVERAGE_REPORT.md`
 - 修复内容：将其明确标注为“非权威/模板产物”，并给出权威覆盖锚点（`CODE_TO_SPEC_MAP.md` + repo-only manifest + `COVERAGE_REPORT.md`）。
 
 ### A5（低）跨章节导航缺少显式链接（不会阻断复刻，但降低“审计可达性”）
@@ -107,7 +107,7 @@ Generated (local): 2026-02-04
 状态：**已修复（2026-02-04）**
 
 修复内容：
-- 新增：`workdocjcl/spec/05_Integrations/CHAT_WIRE_MAPPING.md`
+- 新增：`docs/workdocjcl/spec/05_Integrations/CHAT_WIRE_MAPPING.md`
   - 请求侧：`ResponseItem[] → Chat messages/tool_calls/tool outputs` 的逐分支映射（含 reasoning attach、assistant 去重、tool_calls 分组、LocalShell/CustomTool 分支）
   - 响应侧：Chat SSE delta/哨兵/finish_reason/tool_calls 状态机的逐分支映射
 
@@ -125,7 +125,7 @@ Generated (local): 2026-02-04
 - 如果你接受“可裁剪”：在 `REPLICATION_GUIDE.md` 中明确裁剪开关与行为差异（避免误解）。
 
 ### B3（低）TUI 仍未承诺像素级复刻（属于明确声明的可选深化）
-- 位置：`workdocjcl/spec/09_Verification/KNOWN_GAPS.md:10`
+- 位置：`docs/workdocjcl/spec/09_Verification/KNOWN_GAPS.md:10`
 - 影响：仅当你的复刻目标是“UI 像素级一致”才需要继续。
 
 ---

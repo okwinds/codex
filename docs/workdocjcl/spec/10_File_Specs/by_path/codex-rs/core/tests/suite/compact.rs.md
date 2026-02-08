@@ -3,9 +3,9 @@
 ## Identity
 - kind: `test`
 - ext: `.rs`
-- size_bytes: `80804`
-- sha256: `94ea78d4caa13880ba9ed512a5577470927b3bee36a909b406789ef3d55c5813`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `80525`
+- sha256: `c41b14ea285646b6477fde741ebe53585baf2a8a37dcaf7994f9eb0192333ef2`
+- generated_utc: `2026-02-08T10:45:35Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -31,7 +31,6 @@ Test or snapshot file used for automated verification.
 - `use codex_core::compact::SUMMARIZATION_PROMPT;`
 - `use codex_core::compact::SUMMARY_PREFIX;`
 - `use codex_core::config::Config;`
-- `use codex_core::features::Feature;`
 - `use codex_core::protocol::AskForApproval;`
 - `use codex_core::protocol::EventMsg;`
 - `use codex_core::protocol::ItemCompletedEvent;`
@@ -45,6 +44,7 @@ Test or snapshot file used for automated verification.
 - `use codex_protocol::items::TurnItem;`
 - `use codex_protocol::user_input::UserInput;`
 - `use core_test_support::responses::ev_local_shell_call;`
+- `use core_test_support::responses::ev_reasoning_item;`
 ### Referenced env vars
 - (none detected)
 
@@ -52,4 +52,4 @@ Test or snapshot file used for automated verification.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

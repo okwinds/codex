@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `15798`
-- sha256: `1230f553dc79fadfa3c01bdcf80059a021884cc9dac0fd5ef57a2cff63dc9f0f`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `22813`
+- sha256: `35a08c8c52d2eb20cf18cf61fda970a64c7626fc53ade2062cd9402563fc126c`
+- generated_utc: `2026-02-08T10:45:39Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -37,20 +37,22 @@ Source file (no public surface detected by heuristic).
 - `use` `codex-rs/tui/src/bottom_pane/selection_popup_common.rs:17` `use crate::render::RectExt as _;`
 - `use` `codex-rs/tui/src/bottom_pane/selection_popup_common.rs:18` `use crate::style::user_message_style;`
 - `use` `codex-rs/tui/src/bottom_pane/selection_popup_common.rs:20` `use super::scroll_state::ScrollState;`
-- `const` `codex-rs/tui/src/bottom_pane/selection_popup_common.rs:34` `const MENU_SURFACE_INSET_V: u16 = 1;`
-- `const` `codex-rs/tui/src/bottom_pane/selection_popup_common.rs:35` `const MENU_SURFACE_INSET_H: u16 = 2;`
-- `use` `codex-rs/tui/src/bottom_pane/selection_popup_common.rs:65` `use crate::wrapping::RtOptions;`
-- `use` `codex-rs/tui/src/bottom_pane/selection_popup_common.rs:66` `use crate::wrapping::word_wrap_line;`
-- `fn` `codex-rs/tui/src/bottom_pane/selection_popup_common.rs:75` `fn line_width(line: &Line<'_>) -> usize {`
-- `fn` `codex-rs/tui/src/bottom_pane/selection_popup_common.rs:81` `fn truncate_line_to_width(line: Line<'static>, max_width: usize) -> Line<'static> {`
-- `fn` `codex-rs/tui/src/bottom_pane/selection_popup_common.rs:129` `fn truncate_line_with_ellipsis_if_overflow(line: Line<'static>, max_width: usize) -> Line<'static> {`
-- `fn` `codex-rs/tui/src/bottom_pane/selection_popup_common.rs:149` `fn compute_desc_col(`
-- `fn` `codex-rs/tui/src/bottom_pane/selection_popup_common.rs:177` `fn wrap_indent(row: &GenericDisplayRow, desc_col: usize, max_width: u16) -> usize {`
-- `fn` `codex-rs/tui/src/bottom_pane/selection_popup_common.rs:192` `fn build_full_line(row: &GenericDisplayRow, desc_col: usize) -> Line<'static> {`
-- `use` `codex-rs/tui/src/bottom_pane/selection_popup_common.rs:334` `use crate::wrapping::RtOptions;`
-- `use` `codex-rs/tui/src/bottom_pane/selection_popup_common.rs:335` `use crate::wrapping::word_wrap_line;`
-- `use` `codex-rs/tui/src/bottom_pane/selection_popup_common.rs:463` `use crate::wrapping::RtOptions;`
-- `use` `codex-rs/tui/src/bottom_pane/selection_popup_common.rs:464` `use crate::wrapping::word_wrap_line;`
+- `const` `codex-rs/tui/src/bottom_pane/selection_popup_common.rs:55` `const FIXED_LEFT_COLUMN_NUMERATOR: usize = 3;`
+- `const` `codex-rs/tui/src/bottom_pane/selection_popup_common.rs:56` `const FIXED_LEFT_COLUMN_DENOMINATOR: usize = 10;`
+- `const` `codex-rs/tui/src/bottom_pane/selection_popup_common.rs:58` `const MENU_SURFACE_INSET_V: u16 = 1;`
+- `const` `codex-rs/tui/src/bottom_pane/selection_popup_common.rs:59` `const MENU_SURFACE_INSET_H: u16 = 2;`
+- `use` `codex-rs/tui/src/bottom_pane/selection_popup_common.rs:94` `use crate::wrapping::RtOptions;`
+- `use` `codex-rs/tui/src/bottom_pane/selection_popup_common.rs:95` `use crate::wrapping::word_wrap_line;`
+- `fn` `codex-rs/tui/src/bottom_pane/selection_popup_common.rs:104` `fn line_width(line: &Line<'_>) -> usize {`
+- `fn` `codex-rs/tui/src/bottom_pane/selection_popup_common.rs:200` `fn compute_desc_col(`
+- `fn` `codex-rs/tui/src/bottom_pane/selection_popup_common.rs:252` `fn wrap_indent(row: &GenericDisplayRow, desc_col: usize, max_width: u16) -> usize {`
+- `fn` `codex-rs/tui/src/bottom_pane/selection_popup_common.rs:267` `fn build_full_line(row: &GenericDisplayRow, desc_col: usize) -> Line<'static> {`
+- `fn` `codex-rs/tui/src/bottom_pane/selection_popup_common.rs:350` `fn render_rows_inner(`
+- `use` `codex-rs/tui/src/bottom_pane/selection_popup_common.rs:420` `use crate::wrapping::RtOptions;`
+- `use` `codex-rs/tui/src/bottom_pane/selection_popup_common.rs:421` `use crate::wrapping::word_wrap_line;`
+- `fn` `codex-rs/tui/src/bottom_pane/selection_popup_common.rs:659` `fn measure_rows_height_inner(`
+- `use` `codex-rs/tui/src/bottom_pane/selection_popup_common.rs:693` `use crate::wrapping::RtOptions;`
+- `use` `codex-rs/tui/src/bottom_pane/selection_popup_common.rs:694` `use crate::wrapping::word_wrap_line;`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -81,4 +83,4 @@ Source file (no public surface detected by heuristic).
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/06_UI/TUI.md`
+- `docs/workdocjcl/spec/06_UI/TUI.md`

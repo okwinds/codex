@@ -3,9 +3,9 @@
 ## Identity
 - kind: `test`
 - ext: `.ts`
-- size_bytes: `2109`
-- sha256: `d06c24d7205a35850592e1f29b01776da91d619691fcab112a7405c73f06ea84`
-- generated_utc: `2026-02-03T16:08:31Z`
+- size_bytes: `3030`
+- sha256: `2fc043d005816b99cc84d0c3773eafa7fb5c84ceb3a20beb59c9e3bce1398293`
+- generated_utc: `2026-02-08T10:45:42Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -36,4 +36,4 @@ Test or snapshot file used for automated verification.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/PROJECT.md`
+- `docs/workdocjcl/spec/00_Overview/PROJECT.md`

@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `1462`
-- sha256: `a7fb492db83f1841270e63970e0e848689dedc1274b02f9ebc02f971b3260bc9`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `1599`
+- sha256: `a08bee1f0697b40fdeacbf3c0c72a86c5d9d27ecddf870d053c4ebef0feb6dac`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -27,10 +27,10 @@ Source file (no public surface detected by heuristic).
 - `mod` `codex-rs/state/src/lib.rs:10` `mod model;`
 - `mod` `codex-rs/state/src/lib.rs:11` `mod paths;`
 - `mod` `codex-rs/state/src/lib.rs:12` `mod runtime;`
-- `const` `codex-rs/state/src/lib.rs:34` `pub const DB_ERROR_METRIC: &str = "codex.db.error";`
-- `const` `codex-rs/state/src/lib.rs:36` `pub const DB_METRIC_BACKFILL: &str = "codex.db.backfill";`
-- `const` `codex-rs/state/src/lib.rs:38` `pub const DB_METRIC_BACKFILL_DURATION_MS: &str = "codex.db.backfill.duration_ms";`
-- `const` `codex-rs/state/src/lib.rs:40` `pub const DB_METRIC_COMPARE_ERROR: &str = "codex.db.compare_error";`
+- `const` `codex-rs/state/src/lib.rs:40` `pub const DB_ERROR_METRIC: &str = "codex.db.error";`
+- `const` `codex-rs/state/src/lib.rs:42` `pub const DB_METRIC_BACKFILL: &str = "codex.db.backfill";`
+- `const` `codex-rs/state/src/lib.rs:44` `pub const DB_METRIC_BACKFILL_DURATION_MS: &str = "codex.db.backfill.duration_ms";`
+- `const` `codex-rs/state/src/lib.rs:46` `pub const DB_METRIC_COMPARE_ERROR: &str = "codex.db.compare_error";`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -42,4 +42,4 @@ Source file (no public surface detected by heuristic).
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/02_Data/ENTITIES.md`
+- `docs/workdocjcl/spec/02_Data/ENTITIES.md`

@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `10409`
-- sha256: `1ab8051719a5a64ffce5a16b91f120069fcbf3b16bc76a74feb8ce0ba2910de0`
-- generated_utc: `2026-02-03T16:08:28Z`
+- size_bytes: `10226`
+- sha256: `c0d01e37a1a9f2a7edd71de68e0db5007db581a71397dee38b025b106f78f68f`
+- generated_utc: `2026-02-08T10:45:16Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -21,10 +21,10 @@ Source file implementing exported/public items listed below.
 - `pub fn read_api_key_from_stdin() -> String {`
 
 ## Definitions (auto, per-file)
-- `use` `codex-rs/cli/src/login.rs:1` `use codex_app_server_protocol::AuthMode;`
-- `use` `codex-rs/cli/src/login.rs:2` `use codex_common::CliConfigOverrides;`
-- `use` `codex-rs/cli/src/login.rs:3` `use codex_core::CodexAuth;`
-- `use` `codex-rs/cli/src/login.rs:4` `use codex_core::auth::AuthCredentialsStoreMode;`
+- `use` `codex-rs/cli/src/login.rs:1` `use codex_common::CliConfigOverrides;`
+- `use` `codex-rs/cli/src/login.rs:2` `use codex_core::CodexAuth;`
+- `use` `codex-rs/cli/src/login.rs:3` `use codex_core::auth::AuthCredentialsStoreMode;`
+- `use` `codex-rs/cli/src/login.rs:4` `use codex_core::auth::AuthMode;`
 - `use` `codex-rs/cli/src/login.rs:5` `use codex_core::auth::CLIENT_ID;`
 - `use` `codex-rs/cli/src/login.rs:6` `use codex_core::auth::login_with_api_key;`
 - `use` `codex-rs/cli/src/login.rs:7` `use codex_core::auth::logout;`
@@ -47,19 +47,19 @@ Source file implementing exported/public items listed below.
 - `fn` `codex-rs/cli/src/login.rs:130` `pub async fn run_login_with_device_code(`
 - `fn` `codex-rs/cli/src/login.rs:166` `pub async fn run_login_with_device_code_fallback_to_browser(`
 - `fn` `codex-rs/cli/src/login.rs:224` `pub async fn run_login_status(cli_config_overrides: CliConfigOverrides) -> ! {`
-- `fn` `codex-rs/cli/src/login.rs:259` `pub async fn run_logout(cli_config_overrides: CliConfigOverrides) -> ! {`
-- `fn` `codex-rs/cli/src/login.rs:278` `async fn load_config_or_exit(cli_config_overrides: CliConfigOverrides) -> Config {`
-- `fn` `codex-rs/cli/src/login.rs:296` `fn safe_format_key(key: &str) -> String {`
-- `use` `codex-rs/cli/src/login.rs:307` `use super::safe_format_key;`
-- `fn` `codex-rs/cli/src/login.rs:310` `fn formats_long_key() {`
-- `fn` `codex-rs/cli/src/login.rs:316` `fn short_key_returns_stars() {`
+- `fn` `codex-rs/cli/src/login.rs:255` `pub async fn run_logout(cli_config_overrides: CliConfigOverrides) -> ! {`
+- `fn` `codex-rs/cli/src/login.rs:274` `async fn load_config_or_exit(cli_config_overrides: CliConfigOverrides) -> Config {`
+- `fn` `codex-rs/cli/src/login.rs:292` `fn safe_format_key(key: &str) -> String {`
+- `use` `codex-rs/cli/src/login.rs:303` `use super::safe_format_key;`
+- `fn` `codex-rs/cli/src/login.rs:306` `fn formats_long_key() {`
+- `fn` `codex-rs/cli/src/login.rs:312` `fn short_key_returns_stars() {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
-- `use codex_app_server_protocol::AuthMode;`
 - `use codex_common::CliConfigOverrides;`
 - `use codex_core::CodexAuth;`
 - `use codex_core::auth::AuthCredentialsStoreMode;`
+- `use codex_core::auth::AuthMode;`
 - `use codex_core::auth::CLIENT_ID;`
 - `use codex_core::auth::login_with_api_key;`
 - `use codex_core::auth::logout;`
@@ -79,4 +79,4 @@ Source file implementing exported/public items listed below.
 - returns structured errors (Result/ErrorKind)
 
 ## Spec Links
-- `workdocjcl/spec/03_API/CLI.md`
+- `docs/workdocjcl/spec/03_API/CLI.md`

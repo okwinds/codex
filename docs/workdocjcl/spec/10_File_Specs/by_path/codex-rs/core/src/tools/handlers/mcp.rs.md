@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `2254`
-- sha256: `f447c747babe05a263952a5797b8e745dd423d6dddc14019805618aefcccd1d2`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `2020`
+- sha256: `6eea7bd337768f13ff3d44357be7735985cd7bef795b8bdcb2f8be69cf2856d1`
+- generated_utc: `2026-02-08T10:45:33Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -30,10 +30,11 @@ Source file implementing exported/public items listed below.
 - `use` `codex-rs/core/src/tools/handlers/mcp.rs:8` `use crate::tools::context::ToolPayload;`
 - `use` `codex-rs/core/src/tools/handlers/mcp.rs:9` `use crate::tools::registry::ToolHandler;`
 - `use` `codex-rs/core/src/tools/handlers/mcp.rs:10` `use crate::tools::registry::ToolKind;`
-- `struct` `codex-rs/core/src/tools/handlers/mcp.rs:12` `pub struct McpHandler;`
-- `impl` `codex-rs/core/src/tools/handlers/mcp.rs:15` `impl ToolHandler for McpHandler {`
-- `fn` `codex-rs/core/src/tools/handlers/mcp.rs:16` `fn kind(&self) -> ToolKind {`
-- `fn` `codex-rs/core/src/tools/handlers/mcp.rs:20` `async fn handle(&self, invocation: ToolInvocation) -> Result<ToolOutput, FunctionCallError> {`
+- `use` `codex-rs/core/src/tools/handlers/mcp.rs:11` `use codex_protocol::models::ResponseInputItem;`
+- `struct` `codex-rs/core/src/tools/handlers/mcp.rs:13` `pub struct McpHandler;`
+- `impl` `codex-rs/core/src/tools/handlers/mcp.rs:16` `impl ToolHandler for McpHandler {`
+- `fn` `codex-rs/core/src/tools/handlers/mcp.rs:17` `fn kind(&self) -> ToolKind {`
+- `fn` `codex-rs/core/src/tools/handlers/mcp.rs:21` `async fn handle(&self, invocation: ToolInvocation) -> Result<ToolOutput, FunctionCallError> {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -46,6 +47,7 @@ Source file implementing exported/public items listed below.
 - `use crate::tools::context::ToolPayload;`
 - `use crate::tools::registry::ToolHandler;`
 - `use crate::tools::registry::ToolKind;`
+- `use codex_protocol::models::ResponseInputItem;`
 ### Referenced env vars
 - (none detected)
 
@@ -53,4 +55,4 @@ Source file implementing exported/public items listed below.
 - returns structured errors (Result/ErrorKind)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

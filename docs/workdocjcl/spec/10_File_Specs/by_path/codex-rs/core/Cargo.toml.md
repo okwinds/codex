@@ -3,9 +3,9 @@
 ## Identity
 - kind: `config`
 - ext: `.toml`
-- size_bytes: `5287`
-- sha256: `1c6db540ab063a5d5b588bca6d00a7d0ee268b83d0feffec4898001ba76213fe`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `5344`
+- sha256: `db60d62cfbbe875e525bcf0eda5234419e95db3c87eb7e9ce8e38cfa8bafc7e9`
+- generated_utc: `2026-02-08T10:45:26Z`
 
 ## Purpose (Why)
 Configuration file for build/tooling/runtime.
@@ -33,4 +33,4 @@ Configuration file for build/tooling/runtime.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `8646`
-- sha256: `08030e88896f7103c830c18296d9cd850af0f4e0bcf6daffab740ba0c0e59bed`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `9505`
+- sha256: `1d334bb486a8053bd1f6cb651b0d543df325d4daa7097da72f88021d61e2b7ca`
+- generated_utc: `2026-02-08T10:45:33Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -38,22 +38,23 @@ Source file (no public surface detected by heuristic).
 - `use` `codex-rs/core/src/tasks/review.rs:17` `use crate::codex::Session;`
 - `use` `codex-rs/core/src/tasks/review.rs:18` `use crate::codex::TurnContext;`
 - `use` `codex-rs/core/src/tasks/review.rs:19` `use crate::codex_delegate::run_codex_thread_one_shot;`
-- `use` `codex-rs/core/src/tasks/review.rs:20` `use crate::review_format::format_review_findings_block;`
-- `use` `codex-rs/core/src/tasks/review.rs:21` `use crate::review_format::render_review_output_text;`
-- `use` `codex-rs/core/src/tasks/review.rs:22` `use crate::state::TaskKind;`
-- `use` `codex-rs/core/src/tasks/review.rs:23` `use codex_protocol::user_input::UserInput;`
-- `use` `codex-rs/core/src/tasks/review.rs:25` `use super::SessionTask;`
-- `use` `codex-rs/core/src/tasks/review.rs:26` `use super::SessionTaskContext;`
-- `impl` `codex-rs/core/src/tasks/review.rs:31` `impl ReviewTask {`
-- `impl` `codex-rs/core/src/tasks/review.rs:38` `impl SessionTask for ReviewTask {`
-- `fn` `codex-rs/core/src/tasks/review.rs:39` `fn kind(&self) -> TaskKind {`
-- `fn` `codex-rs/core/src/tasks/review.rs:43` `async fn run(`
-- `fn` `codex-rs/core/src/tasks/review.rs:74` `async fn abort(&self, session: Arc<SessionTaskContext>, ctx: Arc<TurnContext>) {`
-- `fn` `codex-rs/core/src/tasks/review.rs:79` `async fn start_review_conversation(`
-- `fn` `codex-rs/core/src/tasks/review.rs:114` `async fn process_review_events(`
-- `fn` `codex-rs/core/src/tasks/review.rs:169` `fn parse_review_output_event(text: &str) -> ReviewOutputEvent {`
-- `const` `codex-rs/core/src/tasks/review.rs:193` `const REVIEW_USER_MESSAGE_ID: &str = "review_rollout_user";`
-- `const` `codex-rs/core/src/tasks/review.rs:194` `const REVIEW_ASSISTANT_MESSAGE_ID: &str = "review_rollout_assistant";`
+- `use` `codex-rs/core/src/tasks/review.rs:20` `use crate::config::Constrained;`
+- `use` `codex-rs/core/src/tasks/review.rs:21` `use crate::review_format::format_review_findings_block;`
+- `use` `codex-rs/core/src/tasks/review.rs:22` `use crate::review_format::render_review_output_text;`
+- `use` `codex-rs/core/src/tasks/review.rs:23` `use crate::state::TaskKind;`
+- `use` `codex-rs/core/src/tasks/review.rs:24` `use codex_protocol::user_input::UserInput;`
+- `use` `codex-rs/core/src/tasks/review.rs:26` `use super::SessionTask;`
+- `use` `codex-rs/core/src/tasks/review.rs:27` `use super::SessionTaskContext;`
+- `impl` `codex-rs/core/src/tasks/review.rs:32` `impl ReviewTask {`
+- `impl` `codex-rs/core/src/tasks/review.rs:39` `impl SessionTask for ReviewTask {`
+- `fn` `codex-rs/core/src/tasks/review.rs:40` `fn kind(&self) -> TaskKind {`
+- `fn` `codex-rs/core/src/tasks/review.rs:44` `async fn run(`
+- `fn` `codex-rs/core/src/tasks/review.rs:75` `async fn abort(&self, session: Arc<SessionTaskContext>, ctx: Arc<TurnContext>) {`
+- `fn` `codex-rs/core/src/tasks/review.rs:80` `async fn start_review_conversation(`
+- `fn` `codex-rs/core/src/tasks/review.rs:128` `async fn process_review_events(`
+- `fn` `codex-rs/core/src/tasks/review.rs:183` `fn parse_review_output_event(text: &str) -> ReviewOutputEvent {`
+- `const` `codex-rs/core/src/tasks/review.rs:207` `const REVIEW_USER_MESSAGE_ID: &str = "review_rollout_user";`
+- `const` `codex-rs/core/src/tasks/review.rs:208` `const REVIEW_ASSISTANT_MESSAGE_ID: &str = "review_rollout_assistant";`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -74,9 +75,9 @@ Source file (no public surface detected by heuristic).
 - `use crate::codex::Session;`
 - `use crate::codex::TurnContext;`
 - `use crate::codex_delegate::run_codex_thread_one_shot;`
+- `use crate::config::Constrained;`
 - `use crate::review_format::format_review_findings_block;`
 - `use crate::review_format::render_review_output_text;`
-- `use crate::state::TaskKind;`
 ### Referenced env vars
 - (none detected)
 
@@ -84,4 +85,4 @@ Source file (no public surface detected by heuristic).
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

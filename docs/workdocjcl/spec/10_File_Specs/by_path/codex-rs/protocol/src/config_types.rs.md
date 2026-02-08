@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `9530`
-- sha256: `2f381b7c296ee80d35e05cee183d39d88af2b3bca5b48c69ac6182fa0696e28d`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `11253`
+- sha256: `4b59d40cd255a17b8f3e4f763fcfe288fd6ef82e93fb9f3a16344f24ba231f69`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -49,23 +49,30 @@ Source file implementing exported/public items listed below.
 - `enum` `codex-rs/protocol/src/config_types.rs:57` `pub enum SandboxMode {`
 - `enum` `codex-rs/protocol/src/config_types.rs:74` `pub enum WindowsSandboxLevel {`
 - `enum` `codex-rs/protocol/src/config_types.rs:98` `pub enum Personality {`
-- `enum` `codex-rs/protocol/src/config_types.rs:108` `pub enum WebSearchMode {`
-- `enum` `codex-rs/protocol/src/config_types.rs:118` `pub enum ForcedLoginMethod {`
-- `enum` `codex-rs/protocol/src/config_types.rs:128` `pub enum TrustLevel {`
-- `enum` `codex-rs/protocol/src/config_types.rs:158` `pub enum AltScreenMode {`
-- `enum` `codex-rs/protocol/src/config_types.rs:173` `pub enum ModeKind {`
-- `struct` `codex-rs/protocol/src/config_types.rs:185` `pub struct CollaborationMode {`
-- `impl` `codex-rs/protocol/src/config_types.rs:190` `impl CollaborationMode {`
-- `fn` `codex-rs/protocol/src/config_types.rs:192` `fn settings_ref(&self) -> &Settings {`
-- `fn` `codex-rs/protocol/src/config_types.rs:196` `pub fn model(&self) -> &str {`
-- `fn` `codex-rs/protocol/src/config_types.rs:200` `pub fn reasoning_effort(&self) -> Option<ReasoningEffort> {`
-- `fn` `codex-rs/protocol/src/config_types.rs:211` `pub fn with_updates(`
-- `fn` `codex-rs/protocol/src/config_types.rs:236` `pub fn apply_mask(&self, mask: &CollaborationModeMask) -> Self {`
-- `struct` `codex-rs/protocol/src/config_types.rs:254` `pub struct Settings {`
-- `struct` `codex-rs/protocol/src/config_types.rs:263` `pub struct CollaborationModeMask {`
-- `use` `codex-rs/protocol/src/config_types.rs:273` `use super::*;`
-- `use` `codex-rs/protocol/src/config_types.rs:274` `use pretty_assertions::assert_eq;`
-- `fn` `codex-rs/protocol/src/config_types.rs:277` `fn apply_mask_can_clear_optional_fields() {`
+- `enum` `codex-rs/protocol/src/config_types.rs:109` `pub enum WebSearchMode {`
+- `enum` `codex-rs/protocol/src/config_types.rs:119` `pub enum ForcedLoginMethod {`
+- `enum` `codex-rs/protocol/src/config_types.rs:129` `pub enum TrustLevel {`
+- `enum` `codex-rs/protocol/src/config_types.rs:159` `pub enum AltScreenMode {`
+- `enum` `codex-rs/protocol/src/config_types.rs:174` `pub enum ModeKind {`
+- `const` `codex-rs/protocol/src/config_types.rs:196` `pub const TUI_VISIBLE_COLLABORATION_MODES: [ModeKind; 2] = [ModeKind::Default, ModeKind::Plan];`
+- `impl` `codex-rs/protocol/src/config_types.rs:198` `impl ModeKind {`
+- `const` `codex-rs/protocol/src/config_types.rs:199` `pub const fn display_name(self) -> &'static str {`
+- `const` `codex-rs/protocol/src/config_types.rs:208` `pub const fn is_tui_visible(self) -> bool {`
+- `const` `codex-rs/protocol/src/config_types.rs:212` `pub const fn allows_request_user_input(self) -> bool {`
+- `struct` `codex-rs/protocol/src/config_types.rs:220` `pub struct CollaborationMode {`
+- `impl` `codex-rs/protocol/src/config_types.rs:225` `impl CollaborationMode {`
+- `fn` `codex-rs/protocol/src/config_types.rs:227` `fn settings_ref(&self) -> &Settings {`
+- `fn` `codex-rs/protocol/src/config_types.rs:231` `pub fn model(&self) -> &str {`
+- `fn` `codex-rs/protocol/src/config_types.rs:235` `pub fn reasoning_effort(&self) -> Option<ReasoningEffort> {`
+- `fn` `codex-rs/protocol/src/config_types.rs:246` `pub fn with_updates(`
+- `fn` `codex-rs/protocol/src/config_types.rs:271` `pub fn apply_mask(&self, mask: &CollaborationModeMask) -> Self {`
+- `struct` `codex-rs/protocol/src/config_types.rs:289` `pub struct Settings {`
+- `struct` `codex-rs/protocol/src/config_types.rs:298` `pub struct CollaborationModeMask {`
+- `use` `codex-rs/protocol/src/config_types.rs:308` `use super::*;`
+- `use` `codex-rs/protocol/src/config_types.rs:309` `use pretty_assertions::assert_eq;`
+- `fn` `codex-rs/protocol/src/config_types.rs:312` `fn apply_mask_can_clear_optional_fields() {`
+- `fn` `codex-rs/protocol/src/config_types.rs:341` `fn mode_kind_deserializes_alias_values_to_default() {`
+- `fn` `codex-rs/protocol/src/config_types.rs:350` `fn tui_visible_collaboration_modes_match_mode_kind_visibility() {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -82,7 +89,7 @@ Source file implementing exported/public items listed below.
 - (none detected)
 
 ## Error Handling / Edge Cases
-- (no obvious error-handling patterns detected by heuristic)
+- uses Rust panic/expect/unwrap-style failure paths
 
 ## Spec Links
-- `workdocjcl/spec/02_Data/ROLLOUT_FORMAT.md`
+- `docs/workdocjcl/spec/02_Data/ROLLOUT_FORMAT.md`

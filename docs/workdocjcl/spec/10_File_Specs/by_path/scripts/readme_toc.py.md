@@ -5,7 +5,7 @@
 - ext: `.py`
 - size_bytes: `3872`
 - sha256: `5c866752be5b7bd477548bb09805a41d85d2598881237ce185411e6a649d3e55`
-- generated_utc: `2026-02-03T16:08:31Z`
+- generated_utc: `2026-02-08T10:45:42Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.

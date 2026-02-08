@@ -1,7 +1,7 @@
 # `codex-utils-cache`
 
 - path: `codex-rs/utils/cache`
-- generated_utc: `2026-02-03T09:48:37Z`
+- generated_utc: `2026-02-08T10:45:13Z`
 - role: shared utility crate
 
 ## Build Targets
@@ -32,5 +32,5 @@
 - `pub fn sha1_digest(bytes: &[u8]) -> [u8; 20] {`
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/MODULE_MAP.md`
-- `workdocjcl/spec/09_Verification/CODE_TO_SPEC_MAP.md`
+- `docs/workdocjcl/spec/00_Overview/MODULE_MAP.md`
+- `docs/workdocjcl/spec/09_Verification/CODE_TO_SPEC_MAP.md`

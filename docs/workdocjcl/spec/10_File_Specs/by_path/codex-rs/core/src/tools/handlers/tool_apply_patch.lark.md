@@ -5,7 +5,7 @@
 - ext: `.lark`
 - size_bytes: `578`
 - sha256: `d6367f4826ed608c424b0a308f3d6163527df63c22513d089b91863552f8bfeb`
-- generated_utc: `2026-02-03T16:08:29Z`
+- generated_utc: `2026-02-08T10:45:33Z`
 
 ## Purpose (Why)
 Repository file.
@@ -33,4 +33,4 @@ Repository file.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

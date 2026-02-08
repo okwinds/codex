@@ -5,7 +5,7 @@
 - ext: `.md`
 - size_bytes: `6438`
 - sha256: `bc96ddff6a80d36620ea27cd3e864abffd875cc4ea65a55063b99da459ba4ae2`
-- generated_utc: `2026-02-03T16:08:29Z`
+- generated_utc: `2026-02-08T10:45:26Z`
 
 ## Purpose (Why)
 Documentation file.
@@ -33,4 +33,4 @@ Documentation file.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

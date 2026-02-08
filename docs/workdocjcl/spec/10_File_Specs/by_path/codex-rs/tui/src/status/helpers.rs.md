@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `6144`
-- sha256: `805bd62578ea0f0bf8adf3f695aa22d7f99b79d94ad5e8b9eb4a173016cbc838`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `6143`
+- sha256: `278ade7ba1be5993c630113b877dbf32883838e80731666316e6ebf516f34d31`
+- generated_utc: `2026-02-08T10:45:40Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -26,7 +26,7 @@ Source file (no public surface detected by heuristic).
 - `use` `codex-rs/tui/src/status/helpers.rs:3` `use chrono::DateTime;`
 - `use` `codex-rs/tui/src/status/helpers.rs:4` `use chrono::Local;`
 - `use` `codex-rs/tui/src/status/helpers.rs:5` `use codex_core::AuthManager;`
-- `use` `codex-rs/tui/src/status/helpers.rs:6` `use codex_core::CodexAuth;`
+- `use` `codex-rs/tui/src/status/helpers.rs:6` `use codex_core::auth::AuthMode as CoreAuthMode;`
 - `use` `codex-rs/tui/src/status/helpers.rs:7` `use codex_core::config::Config;`
 - `use` `codex-rs/tui/src/status/helpers.rs:8` `use codex_core::project_doc::discover_project_doc_paths;`
 - `use` `codex-rs/tui/src/status/helpers.rs:9` `use codex_protocol::account::PlanType;`
@@ -42,7 +42,7 @@ Source file (no public surface detected by heuristic).
 - `use chrono::DateTime;`
 - `use chrono::Local;`
 - `use codex_core::AuthManager;`
-- `use codex_core::CodexAuth;`
+- `use codex_core::auth::AuthMode as CoreAuthMode;`
 - `use codex_core::config::Config;`
 - `use codex_core::project_doc::discover_project_doc_paths;`
 - `use codex_protocol::account::PlanType;`
@@ -56,4 +56,4 @@ Source file (no public surface detected by heuristic).
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/06_UI/TUI.md`
+- `docs/workdocjcl/spec/06_UI/TUI.md`

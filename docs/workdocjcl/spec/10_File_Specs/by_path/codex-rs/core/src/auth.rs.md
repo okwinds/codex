@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `59017`
-- sha256: `46cf4b9e226485fa06d296877e5536960f8bb02db50eb6c5c9f8d06e9e019569`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `59193`
+- sha256: `1d7c627d7d6ccbfefbab8ff2d491710ee213a2df1929991b39dfd6b65150c47d`
+- generated_utc: `2026-02-08T10:45:26Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -31,7 +31,7 @@ Source file implementing exported/public items listed below.
 - `pub trait ExternalAuthRefresher: Send + Sync {`
 - `pub fn failed_reason(&self) -> Option<RefreshTokenFailedReason> {`
 - `pub fn from_auth_storage(`
-- `pub fn internal_auth_mode(&self) -> AuthMode {`
+- `pub fn auth_mode(&self) -> AuthMode {`
 - `pub fn api_auth_mode(&self) -> ApiAuthMode {`
 - `pub fn is_chatgpt_auth(&self) -> bool {`
 - `pub fn is_external_chatgpt_tokens(&self) -> bool {`
@@ -67,8 +67,8 @@ Source file implementing exported/public items listed below.
 - `pub fn shared(`
 - `pub fn unauthorized_recovery(self: &Arc<Self>) -> UnauthorizedRecovery {`
 - `pub fn logout(&self) -> std::io::Result<bool> {`
-- `pub fn get_auth_mode(&self) -> Option<ApiAuthMode> {`
-- `pub fn get_internal_auth_mode(&self) -> Option<AuthMode> {`
+- `pub fn get_api_auth_mode(&self) -> Option<ApiAuthMode> {`
+- `pub fn auth_mode(&self) -> Option<AuthMode> {`
 
 ## Definitions (auto, per-file)
 - `mod` `codex-rs/core/src/auth.rs:1` `mod storage;`
@@ -86,170 +86,173 @@ Source file implementing exported/public items listed below.
 - `use` `codex-rs/core/src/auth.rs:15` `use std::sync::Mutex;`
 - `use` `codex-rs/core/src/auth.rs:16` `use std::sync::RwLock;`
 - `use` `codex-rs/core/src/auth.rs:18` `use codex_app_server_protocol::AuthMode as ApiAuthMode;`
-- `use` `codex-rs/core/src/auth.rs:19` `use codex_protocol::config_types::ForcedLoginMethod;`
-- `use` `codex-rs/core/src/auth.rs:23` `use crate::auth::storage::AuthStorageBackend;`
-- `use` `codex-rs/core/src/auth.rs:24` `use crate::auth::storage::create_auth_storage;`
-- `use` `codex-rs/core/src/auth.rs:25` `use crate::config::Config;`
-- `use` `codex-rs/core/src/auth.rs:26` `use crate::error::RefreshTokenFailedError;`
-- `use` `codex-rs/core/src/auth.rs:27` `use crate::error::RefreshTokenFailedReason;`
-- `use` `codex-rs/core/src/auth.rs:28` `use crate::token_data::IdTokenInfo;`
-- `use` `codex-rs/core/src/auth.rs:29` `use crate::token_data::KnownPlan as InternalKnownPlan;`
-- `use` `codex-rs/core/src/auth.rs:30` `use crate::token_data::PlanType as InternalPlanType;`
-- `use` `codex-rs/core/src/auth.rs:31` `use crate::token_data::TokenData;`
-- `use` `codex-rs/core/src/auth.rs:32` `use crate::token_data::parse_id_token;`
-- `use` `codex-rs/core/src/auth.rs:33` `use crate::util::try_parse_error_message;`
-- `use` `codex-rs/core/src/auth.rs:34` `use codex_client::CodexHttpClient;`
-- `use` `codex-rs/core/src/auth.rs:35` `use codex_protocol::account::PlanType as AccountPlanType;`
-- `use` `codex-rs/core/src/auth.rs:36` `use serde_json::Value;`
-- `use` `codex-rs/core/src/auth.rs:37` `use thiserror::Error;`
-- `enum` `codex-rs/core/src/auth.rs:45` `pub enum AuthMode {`
-- `enum` `codex-rs/core/src/auth.rs:52` `pub enum CodexAuth {`
-- `struct` `codex-rs/core/src/auth.rs:59` `pub struct ApiKeyAuth {`
-- `struct` `codex-rs/core/src/auth.rs:64` `pub struct ChatgptAuth {`
-- `struct` `codex-rs/core/src/auth.rs:70` `pub struct ChatgptAuthTokens {`
-- `struct` `codex-rs/core/src/auth.rs:75` `struct ChatgptAuthState {`
-- `impl` `codex-rs/core/src/auth.rs:80` `impl PartialEq for CodexAuth {`
-- `fn` `codex-rs/core/src/auth.rs:81` `fn eq(&self, other: &Self) -> bool {`
-- `const` `codex-rs/core/src/auth.rs:87` `const TOKEN_REFRESH_INTERVAL: i64 = 8;`
-- `const` `codex-rs/core/src/auth.rs:89` `const REFRESH_TOKEN_EXPIRED_MESSAGE: &str = "Your access token could not be refreshed because your refresh token has expired. Please log out and sign in again.";`
-- `const` `codex-rs/core/src/auth.rs:90` `const REFRESH_TOKEN_REUSED_MESSAGE: &str = "Your access token could not be refreshed because your refresh token was already used. Please log out and sign in again.";`
-- `const` `codex-rs/core/src/auth.rs:91` `const REFRESH_TOKEN_INVALIDATED_MESSAGE: &str = "Your access token could not be refreshed because your refresh token was revoked. Please log out and sign in again.";`
-- `const` `codex-rs/core/src/auth.rs:92` `const REFRESH_TOKEN_UNKNOWN_MESSAGE: &str =`
-- `const` `codex-rs/core/src/auth.rs:94` `const REFRESH_TOKEN_URL: &str = "https://auth.openai.com/oauth/token";`
-- `const` `codex-rs/core/src/auth.rs:95` `pub const REFRESH_TOKEN_URL_OVERRIDE_ENV_VAR: &str = "CODEX_REFRESH_TOKEN_URL_OVERRIDE";`
-- `enum` `codex-rs/core/src/auth.rs:98` `pub enum RefreshTokenError {`
-- `struct` `codex-rs/core/src/auth.rs:106` `pub struct ExternalAuthTokens {`
-- `enum` `codex-rs/core/src/auth.rs:112` `pub enum ExternalAuthRefreshReason {`
-- `struct` `codex-rs/core/src/auth.rs:117` `pub struct ExternalAuthRefreshContext {`
-- `trait` `codex-rs/core/src/auth.rs:123` `pub trait ExternalAuthRefresher: Send + Sync {`
-- `fn` `codex-rs/core/src/auth.rs:124` `async fn refresh(`
-- `impl` `codex-rs/core/src/auth.rs:130` `impl RefreshTokenError {`
-- `fn` `codex-rs/core/src/auth.rs:131` `pub fn failed_reason(&self) -> Option<RefreshTokenFailedReason> {`
-- `impl` `codex-rs/core/src/auth.rs:139` `impl From<RefreshTokenError> for std::io::Error {`
-- `fn` `codex-rs/core/src/auth.rs:140` `fn from(err: RefreshTokenError) -> Self {`
-- `impl` `codex-rs/core/src/auth.rs:148` `impl CodexAuth {`
-- `fn` `codex-rs/core/src/auth.rs:149` `fn from_auth_dot_json(`
-- `fn` `codex-rs/core/src/auth.rs:182` `pub fn from_auth_storage(`
-- `fn` `codex-rs/core/src/auth.rs:189` `pub fn internal_auth_mode(&self) -> AuthMode {`
-- `fn` `codex-rs/core/src/auth.rs:196` `pub fn api_auth_mode(&self) -> ApiAuthMode {`
-- `fn` `codex-rs/core/src/auth.rs:204` `pub fn is_chatgpt_auth(&self) -> bool {`
-- `fn` `codex-rs/core/src/auth.rs:208` `pub fn is_external_chatgpt_tokens(&self) -> bool {`
-- `fn` `codex-rs/core/src/auth.rs:213` `pub fn api_key(&self) -> Option<&str> {`
-- `fn` `codex-rs/core/src/auth.rs:221` `pub fn get_token_data(&self) -> Result<TokenData, std::io::Error> {`
-- `fn` `codex-rs/core/src/auth.rs:234` `pub fn get_token(&self) -> Result<String, std::io::Error> {`
-- `fn` `codex-rs/core/src/auth.rs:245` `pub fn get_account_id(&self) -> Option<String> {`
-- `fn` `codex-rs/core/src/auth.rs:250` `pub fn get_account_email(&self) -> Option<String> {`
-- `fn` `codex-rs/core/src/auth.rs:258` `pub fn account_plan_type(&self) -> Option<AccountPlanType> {`
-- `fn` `codex-rs/core/src/auth.rs:279` `fn get_current_auth_json(&self) -> Option<AuthDotJson> {`
-- `fn` `codex-rs/core/src/auth.rs:290` `fn get_current_token_data(&self) -> Option<TokenData> {`
-- `fn` `codex-rs/core/src/auth.rs:295` `pub fn create_dummy_chatgpt_auth_for_testing() -> Self {`
-- `fn` `codex-rs/core/src/auth.rs:317` `fn from_api_key_with_client(api_key: &str, _client: CodexHttpClient) -> Self {`
-- `fn` `codex-rs/core/src/auth.rs:323` `pub fn from_api_key(api_key: &str) -> Self {`
-- `impl` `codex-rs/core/src/auth.rs:328` `impl ChatgptAuth {`
-- `fn` `codex-rs/core/src/auth.rs:329` `fn current_auth_json(&self) -> Option<AuthDotJson> {`
-- `fn` `codex-rs/core/src/auth.rs:334` `fn current_token_data(&self) -> Option<TokenData> {`
-- `fn` `codex-rs/core/src/auth.rs:338` `fn storage(&self) -> &Arc<dyn AuthStorageBackend> {`
-- `fn` `codex-rs/core/src/auth.rs:342` `fn client(&self) -> &CodexHttpClient {`
-- `const` `codex-rs/core/src/auth.rs:347` `pub const OPENAI_API_KEY_ENV_VAR: &str = "OPENAI_API_KEY";`
-- `const` `codex-rs/core/src/auth.rs:348` `pub const CODEX_API_KEY_ENV_VAR: &str = "CODEX_API_KEY";`
-- `fn` `codex-rs/core/src/auth.rs:350` `pub fn read_openai_api_key_from_env() -> Option<String> {`
-- `fn` `codex-rs/core/src/auth.rs:357` `pub fn read_codex_api_key_from_env() -> Option<String> {`
-- `fn` `codex-rs/core/src/auth.rs:366` `pub fn logout(`
-- `fn` `codex-rs/core/src/auth.rs:375` `pub fn login_with_api_key(`
-- `fn` `codex-rs/core/src/auth.rs:390` `pub fn login_with_chatgpt_auth_tokens(`
-- `fn` `codex-rs/core/src/auth.rs:404` `pub fn save_auth(`
-- `fn` `codex-rs/core/src/auth.rs:418` `pub fn load_auth_dot_json(`
-- `fn` `codex-rs/core/src/auth.rs:426` `pub fn enforce_login_restrictions(config: &Config) -> std::io::Result<()> {`
-- `fn` `codex-rs/core/src/auth.rs:499` `fn logout_with_message(`
-- `fn` `codex-rs/core/src/auth.rs:514` `fn logout_all_stores(`
-- `fn` `codex-rs/core/src/auth.rs:526` `fn load_auth(`
-- `fn` `codex-rs/core/src/auth.rs:572` `fn update_tokens(`
-- `fn` `codex-rs/core/src/auth.rs:597` `async fn try_refresh_token(`
-- `fn` `codex-rs/core/src/auth.rs:641` `fn classify_refresh_token_failure(body: &str) -> RefreshTokenFailedError {`
-- `fn` `codex-rs/core/src/auth.rs:670` `fn extract_refresh_token_error_code(body: &str) -> Option<String> {`
-- `struct` `codex-rs/core/src/auth.rs:697` `struct RefreshRequest {`
-- `struct` `codex-rs/core/src/auth.rs:705` `struct RefreshResponse {`
-- `const` `codex-rs/core/src/auth.rs:712` `pub const CLIENT_ID: &str = "app_EMoamEEZ73f0CkXaXp7hrann";`
-- `fn` `codex-rs/core/src/auth.rs:714` `fn refresh_token_endpoint() -> String {`
-- `impl` `codex-rs/core/src/auth.rs:719` `impl AuthDotJson {`
-- `fn` `codex-rs/core/src/auth.rs:720` `fn from_external_tokens(external: &ExternalAuthTokens, id_token: IdTokenInfo) -> Self {`
-- `fn` `codex-rs/core/src/auth.rs:737` `fn from_external_token_strings(id_token: &str, access_token: &str) -> std::io::Result<Self> {`
-- `fn` `codex-rs/core/src/auth.rs:746` `fn resolved_mode(&self) -> ApiAuthMode {`
-- `fn` `codex-rs/core/src/auth.rs:756` `fn storage_mode(`
-- `struct` `codex-rs/core/src/auth.rs:770` `struct CachedAuth {`
-- `impl` `codex-rs/core/src/auth.rs:776` `impl Debug for CachedAuth {`
-- `fn` `codex-rs/core/src/auth.rs:777` `fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {`
-- `enum` `codex-rs/core/src/auth.rs:791` `enum UnauthorizedRecoveryStep {`
-- `enum` `codex-rs/core/src/auth.rs:798` `enum ReloadOutcome {`
-- `enum` `codex-rs/core/src/auth.rs:804` `enum UnauthorizedRecoveryMode {`
-- `struct` `codex-rs/core/src/auth.rs:822` `pub struct UnauthorizedRecovery {`
-- `impl` `codex-rs/core/src/auth.rs:829` `impl UnauthorizedRecovery {`
-- `fn` `codex-rs/core/src/auth.rs:830` `fn new(manager: Arc<AuthManager>) -> Self {`
-- `fn` `codex-rs/core/src/auth.rs:853` `pub fn has_next(&self) -> bool {`
-- `fn` `codex-rs/core/src/auth.rs:872` `pub async fn next(&mut self) -> Result<(), RefreshTokenError> {`
-- `struct` `codex-rs/core/src/auth.rs:920` `pub struct AuthManager {`
-- `impl` `codex-rs/core/src/auth.rs:928` `impl AuthManager {`
-- `fn` `codex-rs/core/src/auth.rs:933` `pub fn new(`
-- `fn` `codex-rs/core/src/auth.rs:959` `pub fn from_auth_for_testing(auth: CodexAuth) -> Arc<Self> {`
-- `fn` `codex-rs/core/src/auth.rs:976` `pub fn from_auth_for_testing_with_home(auth: CodexAuth, codex_home: PathBuf) -> Arc<Self> {`
-- `fn` `codex-rs/core/src/auth.rs:991` `pub fn auth_cached(&self) -> Option<CodexAuth> {`
-- `fn` `codex-rs/core/src/auth.rs:997` `pub async fn auth(&self) -> Option<CodexAuth> {`
-- `fn` `codex-rs/core/src/auth.rs:1008` `pub fn reload(&self) -> bool {`
-- `fn` `codex-rs/core/src/auth.rs:1014` `fn reload_if_account_id_matches(&self, expected_account_id: Option<&str>) -> ReloadOutcome {`
-- `fn` `codex-rs/core/src/auth.rs:1039` `fn auths_equal(a: Option<&CodexAuth>, b: Option<&CodexAuth>) -> bool {`
-- `fn` `codex-rs/core/src/auth.rs:1047` `fn load_auth_from_storage(&self) -> Option<CodexAuth> {`
-- `fn` `codex-rs/core/src/auth.rs:1057` `fn set_cached_auth(&self, new_auth: Option<CodexAuth>) -> bool {`
-- `fn` `codex-rs/core/src/auth.rs:1069` `pub fn set_external_auth_refresher(&self, refresher: Arc<dyn ExternalAuthRefresher>) {`
-- `fn` `codex-rs/core/src/auth.rs:1075` `pub fn set_forced_chatgpt_workspace_id(&self, workspace_id: Option<String>) {`
-- `fn` `codex-rs/core/src/auth.rs:1081` `pub fn forced_chatgpt_workspace_id(&self) -> Option<String> {`
-- `fn` `codex-rs/core/src/auth.rs:1088` `pub fn has_external_auth_refresher(&self) -> bool {`
-- `fn` `codex-rs/core/src/auth.rs:1096` `pub fn is_external_auth_active(&self) -> bool {`
-- `fn` `codex-rs/core/src/auth.rs:1103` `pub fn shared(`
-- `fn` `codex-rs/core/src/auth.rs:1115` `pub fn unauthorized_recovery(self: &Arc<Self>) -> UnauthorizedRecovery {`
-- `fn` `codex-rs/core/src/auth.rs:1122` `pub async fn refresh_token(&self) -> Result<(), RefreshTokenError> {`
-- `fn` `codex-rs/core/src/auth.rs:1154` `pub fn logout(&self) -> std::io::Result<bool> {`
-- `fn` `codex-rs/core/src/auth.rs:1161` `pub fn get_auth_mode(&self) -> Option<ApiAuthMode> {`
-- `fn` `codex-rs/core/src/auth.rs:1165` `pub fn get_internal_auth_mode(&self) -> Option<AuthMode> {`
-- `fn` `codex-rs/core/src/auth.rs:1171` `async fn refresh_if_stale(&self, auth: &CodexAuth) -> Result<bool, RefreshTokenError> {`
-- `fn` `codex-rs/core/src/auth.rs:1198` `async fn refresh_external_auth(`
-- `fn` `codex-rs/core/src/auth.rs:1251` `async fn refresh_tokens(`
-- `use` `codex-rs/core/src/auth.rs:1272` `use super::*;`
-- `use` `codex-rs/core/src/auth.rs:1273` `use crate::auth::storage::FileAuthStorage;`
-- `use` `codex-rs/core/src/auth.rs:1274` `use crate::auth::storage::get_auth_file;`
-- `use` `codex-rs/core/src/auth.rs:1275` `use crate::config::Config;`
-- `use` `codex-rs/core/src/auth.rs:1276` `use crate::config::ConfigBuilder;`
-- `use` `codex-rs/core/src/auth.rs:1277` `use crate::token_data::IdTokenInfo;`
-- `use` `codex-rs/core/src/auth.rs:1278` `use crate::token_data::KnownPlan as InternalKnownPlan;`
-- `use` `codex-rs/core/src/auth.rs:1279` `use crate::token_data::PlanType as InternalPlanType;`
-- `use` `codex-rs/core/src/auth.rs:1280` `use codex_protocol::account::PlanType as AccountPlanType;`
-- `use` `codex-rs/core/src/auth.rs:1282` `use base64::Engine;`
-- `use` `codex-rs/core/src/auth.rs:1283` `use codex_protocol::config_types::ForcedLoginMethod;`
-- `use` `codex-rs/core/src/auth.rs:1284` `use pretty_assertions::assert_eq;`
-- `use` `codex-rs/core/src/auth.rs:1285` `use serde::Serialize;`
-- `use` `codex-rs/core/src/auth.rs:1286` `use serde_json::json;`
-- `use` `codex-rs/core/src/auth.rs:1287` `use tempfile::tempdir;`
-- `fn` `codex-rs/core/src/auth.rs:1290` `async fn refresh_without_id_token() {`
-- `fn` `codex-rs/core/src/auth.rs:1321` `fn login_with_api_key_overwrites_existing_auth_json() {`
-- `fn` `codex-rs/core/src/auth.rs:1351` `fn missing_auth_json_returns_none() {`
-- `fn` `codex-rs/core/src/auth.rs:1360` `async fn pro_account_with_no_api_key_uses_chatgpt_auth() {`
-- `fn` `codex-rs/core/src/auth.rs:1409` `async fn loads_api_key_from_auth_json() {`
-- `fn` `codex-rs/core/src/auth.rs:1428` `fn logout_removes_auth_file() -> Result<(), std::io::Error> {`
-- `struct` `codex-rs/core/src/auth.rs:1444` `struct AuthFileParams {`
-- `fn` `codex-rs/core/src/auth.rs:1450` `fn write_auth_file(params: AuthFileParams, codex_home: &Path) -> std::io::Result<String> {`
-- `struct` `codex-rs/core/src/auth.rs:1454` `struct Header {`
-- `fn` `codex-rs/core/src/auth.rs:1498` `async fn build_config(`
-- `struct` `codex-rs/core/src/auth.rs:1516` `struct EnvVarGuard {`
-- `impl` `codex-rs/core/src/auth.rs:1522` `impl EnvVarGuard {`
-- `fn` `codex-rs/core/src/auth.rs:1523` `fn set(key: &'static str, value: &str) -> Self {`
-- `impl` `codex-rs/core/src/auth.rs:1533` `impl Drop for EnvVarGuard {`
-- `fn` `codex-rs/core/src/auth.rs:1534` `fn drop(&mut self) {`
-- `fn` `codex-rs/core/src/auth.rs:1545` `async fn enforce_login_restrictions_logs_out_for_method_mismatch() {`
-- `fn` `codex-rs/core/src/auth.rs:1563` `async fn enforce_login_restrictions_logs_out_for_workspace_mismatch() {`
-- `fn` `codex-rs/core/src/auth.rs:1588` `async fn enforce_login_restrictions_allows_matching_workspace() {`
-- `fn` `codex-rs/core/src/auth.rs:1610` `async fn enforce_login_restrictions_allows_api_key_if_login_method_not_set_but_forced_chatgpt_workspace_id_is_set()`
-- `fn` `codex-rs/core/src/auth.rs:1627` `async fn enforce_login_restrictions_blocks_env_api_key_when_chatgpt_required() {`
-- `fn` `codex-rs/core/src/auth.rs:1642` `fn plan_type_maps_known_plan() {`
-- `fn` `codex-rs/core/src/auth.rs:1662` `fn plan_type_maps_unknown_to_unknown() {`
+- `use` `codex-rs/core/src/auth.rs:19` `use codex_otel::TelemetryAuthMode;`
+- `use` `codex-rs/core/src/auth.rs:20` `use codex_protocol::config_types::ForcedLoginMethod;`
+- `use` `codex-rs/core/src/auth.rs:24` `use crate::auth::storage::AuthStorageBackend;`
+- `use` `codex-rs/core/src/auth.rs:25` `use crate::auth::storage::create_auth_storage;`
+- `use` `codex-rs/core/src/auth.rs:26` `use crate::config::Config;`
+- `use` `codex-rs/core/src/auth.rs:27` `use crate::error::RefreshTokenFailedError;`
+- `use` `codex-rs/core/src/auth.rs:28` `use crate::error::RefreshTokenFailedReason;`
+- `use` `codex-rs/core/src/auth.rs:29` `use crate::token_data::IdTokenInfo;`
+- `use` `codex-rs/core/src/auth.rs:30` `use crate::token_data::KnownPlan as InternalKnownPlan;`
+- `use` `codex-rs/core/src/auth.rs:31` `use crate::token_data::PlanType as InternalPlanType;`
+- `use` `codex-rs/core/src/auth.rs:32` `use crate::token_data::TokenData;`
+- `use` `codex-rs/core/src/auth.rs:33` `use crate::token_data::parse_id_token;`
+- `use` `codex-rs/core/src/auth.rs:34` `use crate::util::try_parse_error_message;`
+- `use` `codex-rs/core/src/auth.rs:35` `use codex_client::CodexHttpClient;`
+- `use` `codex-rs/core/src/auth.rs:36` `use codex_protocol::account::PlanType as AccountPlanType;`
+- `use` `codex-rs/core/src/auth.rs:37` `use serde_json::Value;`
+- `use` `codex-rs/core/src/auth.rs:38` `use thiserror::Error;`
+- `enum` `codex-rs/core/src/auth.rs:46` `pub enum AuthMode {`
+- `impl` `codex-rs/core/src/auth.rs:51` `impl From<AuthMode> for TelemetryAuthMode {`
+- `fn` `codex-rs/core/src/auth.rs:52` `fn from(mode: AuthMode) -> Self {`
+- `enum` `codex-rs/core/src/auth.rs:62` `pub enum CodexAuth {`
+- `struct` `codex-rs/core/src/auth.rs:69` `pub struct ApiKeyAuth {`
+- `struct` `codex-rs/core/src/auth.rs:74` `pub struct ChatgptAuth {`
+- `struct` `codex-rs/core/src/auth.rs:80` `pub struct ChatgptAuthTokens {`
+- `struct` `codex-rs/core/src/auth.rs:85` `struct ChatgptAuthState {`
+- `impl` `codex-rs/core/src/auth.rs:90` `impl PartialEq for CodexAuth {`
+- `fn` `codex-rs/core/src/auth.rs:91` `fn eq(&self, other: &Self) -> bool {`
+- `const` `codex-rs/core/src/auth.rs:97` `const TOKEN_REFRESH_INTERVAL: i64 = 8;`
+- `const` `codex-rs/core/src/auth.rs:99` `const REFRESH_TOKEN_EXPIRED_MESSAGE: &str = "Your access token could not be refreshed because your refresh token has expired. Please log out and sign in again.";`
+- `const` `codex-rs/core/src/auth.rs:100` `const REFRESH_TOKEN_REUSED_MESSAGE: &str = "Your access token could not be refreshed because your refresh token was already used. Please log out and sign in again.";`
+- `const` `codex-rs/core/src/auth.rs:101` `const REFRESH_TOKEN_INVALIDATED_MESSAGE: &str = "Your access token could not be refreshed because your refresh token was revoked. Please log out and sign in again.";`
+- `const` `codex-rs/core/src/auth.rs:102` `const REFRESH_TOKEN_UNKNOWN_MESSAGE: &str =`
+- `const` `codex-rs/core/src/auth.rs:104` `const REFRESH_TOKEN_URL: &str = "https://auth.openai.com/oauth/token";`
+- `const` `codex-rs/core/src/auth.rs:105` `pub const REFRESH_TOKEN_URL_OVERRIDE_ENV_VAR: &str = "CODEX_REFRESH_TOKEN_URL_OVERRIDE";`
+- `enum` `codex-rs/core/src/auth.rs:108` `pub enum RefreshTokenError {`
+- `struct` `codex-rs/core/src/auth.rs:116` `pub struct ExternalAuthTokens {`
+- `enum` `codex-rs/core/src/auth.rs:122` `pub enum ExternalAuthRefreshReason {`
+- `struct` `codex-rs/core/src/auth.rs:127` `pub struct ExternalAuthRefreshContext {`
+- `trait` `codex-rs/core/src/auth.rs:133` `pub trait ExternalAuthRefresher: Send + Sync {`
+- `fn` `codex-rs/core/src/auth.rs:134` `async fn refresh(`
+- `impl` `codex-rs/core/src/auth.rs:140` `impl RefreshTokenError {`
+- `fn` `codex-rs/core/src/auth.rs:141` `pub fn failed_reason(&self) -> Option<RefreshTokenFailedReason> {`
+- `impl` `codex-rs/core/src/auth.rs:149` `impl From<RefreshTokenError> for std::io::Error {`
+- `fn` `codex-rs/core/src/auth.rs:150` `fn from(err: RefreshTokenError) -> Self {`
+- `impl` `codex-rs/core/src/auth.rs:158` `impl CodexAuth {`
+- `fn` `codex-rs/core/src/auth.rs:159` `fn from_auth_dot_json(`
+- `fn` `codex-rs/core/src/auth.rs:192` `pub fn from_auth_storage(`
+- `fn` `codex-rs/core/src/auth.rs:199` `pub fn auth_mode(&self) -> AuthMode {`
+- `fn` `codex-rs/core/src/auth.rs:206` `pub fn api_auth_mode(&self) -> ApiAuthMode {`
+- `fn` `codex-rs/core/src/auth.rs:214` `pub fn is_chatgpt_auth(&self) -> bool {`
+- `fn` `codex-rs/core/src/auth.rs:218` `pub fn is_external_chatgpt_tokens(&self) -> bool {`
+- `fn` `codex-rs/core/src/auth.rs:223` `pub fn api_key(&self) -> Option<&str> {`
+- `fn` `codex-rs/core/src/auth.rs:231` `pub fn get_token_data(&self) -> Result<TokenData, std::io::Error> {`
+- `fn` `codex-rs/core/src/auth.rs:244` `pub fn get_token(&self) -> Result<String, std::io::Error> {`
+- `fn` `codex-rs/core/src/auth.rs:255` `pub fn get_account_id(&self) -> Option<String> {`
+- `fn` `codex-rs/core/src/auth.rs:260` `pub fn get_account_email(&self) -> Option<String> {`
+- `fn` `codex-rs/core/src/auth.rs:268` `pub fn account_plan_type(&self) -> Option<AccountPlanType> {`
+- `fn` `codex-rs/core/src/auth.rs:289` `fn get_current_auth_json(&self) -> Option<AuthDotJson> {`
+- `fn` `codex-rs/core/src/auth.rs:300` `fn get_current_token_data(&self) -> Option<TokenData> {`
+- `fn` `codex-rs/core/src/auth.rs:305` `pub fn create_dummy_chatgpt_auth_for_testing() -> Self {`
+- `fn` `codex-rs/core/src/auth.rs:327` `fn from_api_key_with_client(api_key: &str, _client: CodexHttpClient) -> Self {`
+- `fn` `codex-rs/core/src/auth.rs:333` `pub fn from_api_key(api_key: &str) -> Self {`
+- `impl` `codex-rs/core/src/auth.rs:338` `impl ChatgptAuth {`
+- `fn` `codex-rs/core/src/auth.rs:339` `fn current_auth_json(&self) -> Option<AuthDotJson> {`
+- `fn` `codex-rs/core/src/auth.rs:344` `fn current_token_data(&self) -> Option<TokenData> {`
+- `fn` `codex-rs/core/src/auth.rs:348` `fn storage(&self) -> &Arc<dyn AuthStorageBackend> {`
+- `fn` `codex-rs/core/src/auth.rs:352` `fn client(&self) -> &CodexHttpClient {`
+- `const` `codex-rs/core/src/auth.rs:357` `pub const OPENAI_API_KEY_ENV_VAR: &str = "OPENAI_API_KEY";`
+- `const` `codex-rs/core/src/auth.rs:358` `pub const CODEX_API_KEY_ENV_VAR: &str = "CODEX_API_KEY";`
+- `fn` `codex-rs/core/src/auth.rs:360` `pub fn read_openai_api_key_from_env() -> Option<String> {`
+- `fn` `codex-rs/core/src/auth.rs:367` `pub fn read_codex_api_key_from_env() -> Option<String> {`
+- `fn` `codex-rs/core/src/auth.rs:376` `pub fn logout(`
+- `fn` `codex-rs/core/src/auth.rs:385` `pub fn login_with_api_key(`
+- `fn` `codex-rs/core/src/auth.rs:400` `pub fn login_with_chatgpt_auth_tokens(`
+- `fn` `codex-rs/core/src/auth.rs:414` `pub fn save_auth(`
+- `fn` `codex-rs/core/src/auth.rs:428` `pub fn load_auth_dot_json(`
+- `fn` `codex-rs/core/src/auth.rs:436` `pub fn enforce_login_restrictions(config: &Config) -> std::io::Result<()> {`
+- `fn` `codex-rs/core/src/auth.rs:509` `fn logout_with_message(`
+- `fn` `codex-rs/core/src/auth.rs:524` `fn logout_all_stores(`
+- `fn` `codex-rs/core/src/auth.rs:536` `fn load_auth(`
+- `fn` `codex-rs/core/src/auth.rs:582` `fn update_tokens(`
+- `fn` `codex-rs/core/src/auth.rs:607` `async fn try_refresh_token(`
+- `fn` `codex-rs/core/src/auth.rs:651` `fn classify_refresh_token_failure(body: &str) -> RefreshTokenFailedError {`
+- `fn` `codex-rs/core/src/auth.rs:680` `fn extract_refresh_token_error_code(body: &str) -> Option<String> {`
+- `struct` `codex-rs/core/src/auth.rs:707` `struct RefreshRequest {`
+- `struct` `codex-rs/core/src/auth.rs:715` `struct RefreshResponse {`
+- `const` `codex-rs/core/src/auth.rs:722` `pub const CLIENT_ID: &str = "app_EMoamEEZ73f0CkXaXp7hrann";`
+- `fn` `codex-rs/core/src/auth.rs:724` `fn refresh_token_endpoint() -> String {`
+- `impl` `codex-rs/core/src/auth.rs:729` `impl AuthDotJson {`
+- `fn` `codex-rs/core/src/auth.rs:730` `fn from_external_tokens(external: &ExternalAuthTokens, id_token: IdTokenInfo) -> Self {`
+- `fn` `codex-rs/core/src/auth.rs:747` `fn from_external_token_strings(id_token: &str, access_token: &str) -> std::io::Result<Self> {`
+- `fn` `codex-rs/core/src/auth.rs:756` `fn resolved_mode(&self) -> ApiAuthMode {`
+- `fn` `codex-rs/core/src/auth.rs:766` `fn storage_mode(`
+- `struct` `codex-rs/core/src/auth.rs:780` `struct CachedAuth {`
+- `impl` `codex-rs/core/src/auth.rs:786` `impl Debug for CachedAuth {`
+- `fn` `codex-rs/core/src/auth.rs:787` `fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {`
+- `enum` `codex-rs/core/src/auth.rs:801` `enum UnauthorizedRecoveryStep {`
+- `enum` `codex-rs/core/src/auth.rs:808` `enum ReloadOutcome {`
+- `enum` `codex-rs/core/src/auth.rs:814` `enum UnauthorizedRecoveryMode {`
+- `struct` `codex-rs/core/src/auth.rs:832` `pub struct UnauthorizedRecovery {`
+- `impl` `codex-rs/core/src/auth.rs:839` `impl UnauthorizedRecovery {`
+- `fn` `codex-rs/core/src/auth.rs:840` `fn new(manager: Arc<AuthManager>) -> Self {`
+- `fn` `codex-rs/core/src/auth.rs:863` `pub fn has_next(&self) -> bool {`
+- `fn` `codex-rs/core/src/auth.rs:882` `pub async fn next(&mut self) -> Result<(), RefreshTokenError> {`
+- `struct` `codex-rs/core/src/auth.rs:930` `pub struct AuthManager {`
+- `impl` `codex-rs/core/src/auth.rs:938` `impl AuthManager {`
+- `fn` `codex-rs/core/src/auth.rs:943` `pub fn new(`
+- `fn` `codex-rs/core/src/auth.rs:969` `pub fn from_auth_for_testing(auth: CodexAuth) -> Arc<Self> {`
+- `fn` `codex-rs/core/src/auth.rs:986` `pub fn from_auth_for_testing_with_home(auth: CodexAuth, codex_home: PathBuf) -> Arc<Self> {`
+- `fn` `codex-rs/core/src/auth.rs:1001` `pub fn auth_cached(&self) -> Option<CodexAuth> {`
+- `fn` `codex-rs/core/src/auth.rs:1007` `pub async fn auth(&self) -> Option<CodexAuth> {`
+- `fn` `codex-rs/core/src/auth.rs:1018` `pub fn reload(&self) -> bool {`
+- `fn` `codex-rs/core/src/auth.rs:1024` `fn reload_if_account_id_matches(&self, expected_account_id: Option<&str>) -> ReloadOutcome {`
+- `fn` `codex-rs/core/src/auth.rs:1049` `fn auths_equal(a: Option<&CodexAuth>, b: Option<&CodexAuth>) -> bool {`
+- `fn` `codex-rs/core/src/auth.rs:1057` `fn load_auth_from_storage(&self) -> Option<CodexAuth> {`
+- `fn` `codex-rs/core/src/auth.rs:1067` `fn set_cached_auth(&self, new_auth: Option<CodexAuth>) -> bool {`
+- `fn` `codex-rs/core/src/auth.rs:1079` `pub fn set_external_auth_refresher(&self, refresher: Arc<dyn ExternalAuthRefresher>) {`
+- `fn` `codex-rs/core/src/auth.rs:1085` `pub fn set_forced_chatgpt_workspace_id(&self, workspace_id: Option<String>) {`
+- `fn` `codex-rs/core/src/auth.rs:1091` `pub fn forced_chatgpt_workspace_id(&self) -> Option<String> {`
+- `fn` `codex-rs/core/src/auth.rs:1098` `pub fn has_external_auth_refresher(&self) -> bool {`
+- `fn` `codex-rs/core/src/auth.rs:1106` `pub fn is_external_auth_active(&self) -> bool {`
+- `fn` `codex-rs/core/src/auth.rs:1113` `pub fn shared(`
+- `fn` `codex-rs/core/src/auth.rs:1125` `pub fn unauthorized_recovery(self: &Arc<Self>) -> UnauthorizedRecovery {`
+- `fn` `codex-rs/core/src/auth.rs:1132` `pub async fn refresh_token(&self) -> Result<(), RefreshTokenError> {`
+- `fn` `codex-rs/core/src/auth.rs:1164` `pub fn logout(&self) -> std::io::Result<bool> {`
+- `fn` `codex-rs/core/src/auth.rs:1171` `pub fn get_api_auth_mode(&self) -> Option<ApiAuthMode> {`
+- `fn` `codex-rs/core/src/auth.rs:1175` `pub fn auth_mode(&self) -> Option<AuthMode> {`
+- `fn` `codex-rs/core/src/auth.rs:1179` `async fn refresh_if_stale(&self, auth: &CodexAuth) -> Result<bool, RefreshTokenError> {`
+- `fn` `codex-rs/core/src/auth.rs:1206` `async fn refresh_external_auth(`
+- `fn` `codex-rs/core/src/auth.rs:1259` `async fn refresh_tokens(`
+- `use` `codex-rs/core/src/auth.rs:1280` `use super::*;`
+- `use` `codex-rs/core/src/auth.rs:1281` `use crate::auth::storage::FileAuthStorage;`
+- `use` `codex-rs/core/src/auth.rs:1282` `use crate::auth::storage::get_auth_file;`
+- `use` `codex-rs/core/src/auth.rs:1283` `use crate::config::Config;`
+- `use` `codex-rs/core/src/auth.rs:1284` `use crate::config::ConfigBuilder;`
+- `use` `codex-rs/core/src/auth.rs:1285` `use crate::token_data::IdTokenInfo;`
+- `use` `codex-rs/core/src/auth.rs:1286` `use crate::token_data::KnownPlan as InternalKnownPlan;`
+- `use` `codex-rs/core/src/auth.rs:1287` `use crate::token_data::PlanType as InternalPlanType;`
+- `use` `codex-rs/core/src/auth.rs:1288` `use codex_protocol::account::PlanType as AccountPlanType;`
+- `use` `codex-rs/core/src/auth.rs:1290` `use base64::Engine;`
+- `use` `codex-rs/core/src/auth.rs:1291` `use codex_protocol::config_types::ForcedLoginMethod;`
+- `use` `codex-rs/core/src/auth.rs:1292` `use pretty_assertions::assert_eq;`
+- `use` `codex-rs/core/src/auth.rs:1293` `use serde::Serialize;`
+- `use` `codex-rs/core/src/auth.rs:1294` `use serde_json::json;`
+- `use` `codex-rs/core/src/auth.rs:1295` `use tempfile::tempdir;`
+- `fn` `codex-rs/core/src/auth.rs:1298` `async fn refresh_without_id_token() {`
+- `fn` `codex-rs/core/src/auth.rs:1329` `fn login_with_api_key_overwrites_existing_auth_json() {`
+- `fn` `codex-rs/core/src/auth.rs:1359` `fn missing_auth_json_returns_none() {`
+- `fn` `codex-rs/core/src/auth.rs:1368` `async fn pro_account_with_no_api_key_uses_chatgpt_auth() {`
+- `fn` `codex-rs/core/src/auth.rs:1417` `async fn loads_api_key_from_auth_json() {`
+- `fn` `codex-rs/core/src/auth.rs:1436` `fn logout_removes_auth_file() -> Result<(), std::io::Error> {`
+- `struct` `codex-rs/core/src/auth.rs:1452` `struct AuthFileParams {`
+- `fn` `codex-rs/core/src/auth.rs:1458` `fn write_auth_file(params: AuthFileParams, codex_home: &Path) -> std::io::Result<String> {`
+- `struct` `codex-rs/core/src/auth.rs:1462` `struct Header {`
+- `fn` `codex-rs/core/src/auth.rs:1506` `async fn build_config(`
+- `struct` `codex-rs/core/src/auth.rs:1524` `struct EnvVarGuard {`
+- `impl` `codex-rs/core/src/auth.rs:1530` `impl EnvVarGuard {`
+- `fn` `codex-rs/core/src/auth.rs:1531` `fn set(key: &'static str, value: &str) -> Self {`
+- `impl` `codex-rs/core/src/auth.rs:1541` `impl Drop for EnvVarGuard {`
+- `fn` `codex-rs/core/src/auth.rs:1542` `fn drop(&mut self) {`
+- `fn` `codex-rs/core/src/auth.rs:1553` `async fn enforce_login_restrictions_logs_out_for_method_mismatch() {`
+- `fn` `codex-rs/core/src/auth.rs:1571` `async fn enforce_login_restrictions_logs_out_for_workspace_mismatch() {`
+- `fn` `codex-rs/core/src/auth.rs:1596` `async fn enforce_login_restrictions_allows_matching_workspace() {`
+- `fn` `codex-rs/core/src/auth.rs:1618` `async fn enforce_login_restrictions_allows_api_key_if_login_method_not_set_but_forced_chatgpt_workspace_id_is_set()`
+- `fn` `codex-rs/core/src/auth.rs:1635` `async fn enforce_login_restrictions_blocks_env_api_key_when_chatgpt_required() {`
+- `fn` `codex-rs/core/src/auth.rs:1650` `fn plan_type_maps_known_plan() {`
+- `fn` `codex-rs/core/src/auth.rs:1670` `fn plan_type_maps_unknown_to_unknown() {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -267,12 +270,12 @@ Source file implementing exported/public items listed below.
 - `use std::sync::Mutex;`
 - `use std::sync::RwLock;`
 - `use codex_app_server_protocol::AuthMode as ApiAuthMode;`
+- `use codex_otel::TelemetryAuthMode;`
 - `use codex_protocol::config_types::ForcedLoginMethod;`
 - `use crate::auth::storage::AuthStorageBackend;`
 - `use crate::auth::storage::create_auth_storage;`
 - `use crate::config::Config;`
 - `use crate::error::RefreshTokenFailedError;`
-- `use crate::error::RefreshTokenFailedReason;`
 ### Referenced env vars
 - (none detected)
 
@@ -282,4 +285,4 @@ Source file implementing exported/public items listed below.
 - uses Rust panic/expect/unwrap-style failure paths
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

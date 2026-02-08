@@ -1,7 +1,7 @@
 # `codex-utils-image`
 
 - path: `codex-rs/utils/image`
-- generated_utc: `2026-02-03T09:48:37Z`
+- generated_utc: `2026-02-08T10:45:13Z`
 - role: shared utility crate
 
 ## Build Targets
@@ -26,5 +26,5 @@
 - `pub fn load_and_resize_to_fit(path: &Path) -> Result<EncodedImage, ImageProcessingError> {`
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/MODULE_MAP.md`
-- `workdocjcl/spec/09_Verification/CODE_TO_SPEC_MAP.md`
+- `docs/workdocjcl/spec/00_Overview/MODULE_MAP.md`
+- `docs/workdocjcl/spec/09_Verification/CODE_TO_SPEC_MAP.md`

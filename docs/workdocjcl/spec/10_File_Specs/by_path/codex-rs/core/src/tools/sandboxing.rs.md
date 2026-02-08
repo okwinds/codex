@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `10343`
-- sha256: `645d62532a39ec0b3c75d41db8a006663133b2908322bd121a0fa9179d35d66a`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `10624`
+- sha256: `dbe09cb044db477e23ed939e57e34dd2ed3e0b39a4590314ac6f2f7695349893`
+- generated_utc: `2026-02-08T10:45:33Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -52,13 +52,13 @@ Source file implementing exported/public items listed below.
 - `fn` `codex-rs/core/src/tools/sandboxing.rs:243` `fn sandbox_preference(&self) -> SandboxablePreference;`
 - `fn` `codex-rs/core/src/tools/sandboxing.rs:244` `fn escalate_on_failure(&self) -> bool {`
 - `fn` `codex-rs/core/src/tools/sandboxing.rs:263` `async fn run(`
-- `impl` `codex-rs/core/src/tools/sandboxing.rs:280` `impl<'a> SandboxAttempt<'a> {`
-- `fn` `codex-rs/core/src/tools/sandboxing.rs:281` `pub fn env_for(`
-- `use` `codex-rs/core/src/tools/sandboxing.rs:298` `use super::*;`
-- `use` `codex-rs/core/src/tools/sandboxing.rs:299` `use codex_protocol::protocol::NetworkAccess;`
-- `use` `codex-rs/core/src/tools/sandboxing.rs:300` `use pretty_assertions::assert_eq;`
-- `fn` `codex-rs/core/src/tools/sandboxing.rs:303` `fn external_sandbox_skips_exec_approval_on_request() {`
-- `fn` `codex-rs/core/src/tools/sandboxing.rs:319` `fn restricted_sandbox_requires_exec_approval_on_request() {`
+- `impl` `codex-rs/core/src/tools/sandboxing.rs:281` `impl<'a> SandboxAttempt<'a> {`
+- `fn` `codex-rs/core/src/tools/sandboxing.rs:282` `pub fn env_for(`
+- `use` `codex-rs/core/src/tools/sandboxing.rs:301` `use super::*;`
+- `use` `codex-rs/core/src/tools/sandboxing.rs:302` `use codex_protocol::protocol::NetworkAccess;`
+- `use` `codex-rs/core/src/tools/sandboxing.rs:303` `use pretty_assertions::assert_eq;`
+- `fn` `codex-rs/core/src/tools/sandboxing.rs:306` `fn external_sandbox_skips_exec_approval_on_request() {`
+- `fn` `codex-rs/core/src/tools/sandboxing.rs:322` `fn restricted_sandbox_requires_exec_approval_on_request() {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -90,4 +90,4 @@ Source file implementing exported/public items listed below.
 - returns structured errors (Result/ErrorKind)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

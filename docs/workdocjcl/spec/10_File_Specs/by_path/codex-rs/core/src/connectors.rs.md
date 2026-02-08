@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `7598`
-- sha256: `c3f45f7234b9fd1792779bcc8fce88ec5d71e4b0229991e56e1389289bc9e89f`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `7687`
+- sha256: `bcc561220dd6439a19762566321f2295c30518fb0d7360398c21143b0c719c76`
+- generated_utc: `2026-02-08T10:45:32Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -41,14 +41,14 @@ Source file implementing exported/public items listed below.
 - `use` `codex-rs/core/src/connectors.rs:17` `use crate::mcp_connection_manager::DEFAULT_STARTUP_TIMEOUT;`
 - `use` `codex-rs/core/src/connectors.rs:18` `use crate::mcp_connection_manager::McpConnectionManager;`
 - `fn` `codex-rs/core/src/connectors.rs:20` `pub async fn list_accessible_connectors_from_mcp_tools(`
-- `fn` `codex-rs/core/src/connectors.rs:72` `fn auth_manager_from_config(config: &Config) -> std::sync::Arc<AuthManager> {`
-- `fn` `codex-rs/core/src/connectors.rs:80` `pub fn connector_display_label(connector: &AppInfo) -> String {`
-- `fn` `codex-rs/core/src/connectors.rs:84` `pub fn connector_mention_slug(connector: &AppInfo) -> String {`
-- `fn` `codex-rs/core/src/connectors.rs:102` `pub fn merge_connectors(`
-- `fn` `codex-rs/core/src/connectors.rs:193` `fn normalize_connector_value(value: Option<&str>) -> Option<String> {`
-- `fn` `codex-rs/core/src/connectors.rs:200` `pub fn connector_install_url(name: &str, connector_id: &str) -> String {`
-- `fn` `codex-rs/core/src/connectors.rs:205` `pub fn connector_name_slug(name: &str) -> String {`
-- `fn` `codex-rs/core/src/connectors.rs:222` `fn format_connector_label(name: &str, _id: &str) -> String {`
+- `fn` `codex-rs/core/src/connectors.rs:73` `fn auth_manager_from_config(config: &Config) -> std::sync::Arc<AuthManager> {`
+- `fn` `codex-rs/core/src/connectors.rs:81` `pub fn connector_display_label(connector: &AppInfo) -> String {`
+- `fn` `codex-rs/core/src/connectors.rs:85` `pub fn connector_mention_slug(connector: &AppInfo) -> String {`
+- `fn` `codex-rs/core/src/connectors.rs:103` `pub fn merge_connectors(`
+- `fn` `codex-rs/core/src/connectors.rs:194` `fn normalize_connector_value(value: Option<&str>) -> Option<String> {`
+- `fn` `codex-rs/core/src/connectors.rs:201` `pub fn connector_install_url(name: &str, connector_id: &str) -> String {`
+- `fn` `codex-rs/core/src/connectors.rs:206` `pub fn connector_name_slug(name: &str) -> String {`
+- `fn` `codex-rs/core/src/connectors.rs:223` `fn format_connector_label(name: &str, _id: &str) -> String {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -75,4 +75,4 @@ Source file implementing exported/public items listed below.
 - returns structured errors (Result/ErrorKind)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

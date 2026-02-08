@@ -1,7 +1,7 @@
 # `codex-arg0`
 
 - path: `codex-rs/arg0`
-- generated_utc: `2026-02-03T09:48:37Z`
+- generated_utc: `2026-02-08T10:45:12Z`
 - role: crate
 
 ## Build Targets
@@ -22,10 +22,11 @@
 - (none)
 
 ## Public Surface (auto, from src/lib.rs or src/main.rs)
-- `pub fn arg0_dispatch() -> Option<TempDir> {`
+- `pub struct Arg0PathEntryGuard {`
+- `pub fn arg0_dispatch() -> Option<Arg0PathEntryGuard> {`
 - `pub fn arg0_dispatch_or_else<F, Fut>(main_fn: F) -> anyhow::Result<()>`
-- `pub fn prepend_path_entry_for_codex_aliases() -> std::io::Result<TempDir> {`
+- `pub fn prepend_path_entry_for_codex_aliases() -> std::io::Result<Arg0PathEntryGuard> {`
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/MODULE_MAP.md`
-- `workdocjcl/spec/09_Verification/CODE_TO_SPEC_MAP.md`
+- `docs/workdocjcl/spec/00_Overview/MODULE_MAP.md`
+- `docs/workdocjcl/spec/09_Verification/CODE_TO_SPEC_MAP.md`

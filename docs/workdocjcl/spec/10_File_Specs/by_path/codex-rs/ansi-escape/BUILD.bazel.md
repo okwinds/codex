@@ -5,7 +5,7 @@
 - ext: `.bazel`
 - size_bytes: `125`
 - sha256: `a8ab7628f473594ebfc2873908ec29c5576df24c59e292f60b880161ec35f3d5`
-- generated_utc: `2026-02-03T16:08:28Z`
+- generated_utc: `2026-02-08T10:45:14Z`
 
 ## Purpose (Why)
 Bazel build configuration file.

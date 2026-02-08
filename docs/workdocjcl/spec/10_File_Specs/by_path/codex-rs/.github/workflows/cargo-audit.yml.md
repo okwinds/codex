@@ -5,7 +5,7 @@
 - ext: `.yml`
 - size_bytes: `485`
 - sha256: `83bff59dae798dd1720b4d158ebc3e98b914bc862fbf7e6dd48f6022acdba127`
-- generated_utc: `2026-02-03T16:08:28Z`
+- generated_utc: `2026-02-08T10:45:14Z`
 
 ## Purpose (Why)
 Configuration file for build/tooling/runtime.

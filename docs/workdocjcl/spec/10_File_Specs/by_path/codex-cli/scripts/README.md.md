@@ -5,7 +5,7 @@
 - ext: `.md`
 - size_bytes: `658`
 - sha256: `0d2d5bb740f9416e6d9754eff927e21b1bfffb670797f8b8407256bf8b2ce7d7`
-- generated_utc: `2026-02-03T16:08:28Z`
+- generated_utc: `2026-02-08T10:45:14Z`
 
 ## Purpose (Why)
 Documentation file.
@@ -33,4 +33,4 @@ Documentation file.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/07_Infrastructure/PACKAGING.md`
+- `docs/workdocjcl/spec/07_Infrastructure/PACKAGING.md`

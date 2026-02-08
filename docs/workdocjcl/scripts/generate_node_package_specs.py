@@ -2,12 +2,14 @@
 # Generate per-package specs for pnpm workspace packages.
 
 import json
+import shutil
 from datetime import datetime, timezone
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[3]
 WORKDOC_ROOT = ROOT / "docs" / "workdocjcl"
+WORKDOC_REPO_PREFIX = "docs/workdocjcl"
 OUT_ROOT = WORKDOC_ROOT / "spec" / "12_Node_Package_Specs"
 
 
@@ -20,6 +22,9 @@ def read_json(path: Path) -> dict:
 
 
 def main() -> int:
+    # 清理旧生成物，避免 workspace packages 变化导致残留过期 package spec。
+    if OUT_ROOT.exists():
+        shutil.rmtree(OUT_ROOT)
     OUT_ROOT.mkdir(parents=True, exist_ok=True)
     ws = read_json(WORKDOC_ROOT / "inventory" / "node_workspace.json")
     packages = ws["packages"]
@@ -95,11 +100,11 @@ def main() -> int:
             lines.append("- (none)")
         lines.append("")
         lines.append("## Spec Links")
-        lines.append("- `workdocjcl/spec/00_Overview/PROJECT.md`")
+        lines.append(f"- `{WORKDOC_REPO_PREFIX}/spec/00_Overview/PROJECT.md`")
         if str(pkg_path.relative_to(ROOT)).startswith("codex-cli/"):
-            lines.append("- `workdocjcl/spec/07_Infrastructure/PACKAGING.md`")
+            lines.append(f"- `{WORKDOC_REPO_PREFIX}/spec/07_Infrastructure/PACKAGING.md`")
         if str(pkg_path.relative_to(ROOT)).startswith("shell-tool-mcp/"):
-            lines.append("- `workdocjcl/spec/05_Integrations/MCP.md`")
+            lines.append(f"- `{WORKDOC_REPO_PREFIX}/spec/05_Integrations/MCP.md`")
 
         spec_path.write_text("\n".join(lines) + "\n", "utf-8")
 

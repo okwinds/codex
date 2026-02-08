@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `5344`
-- sha256: `cafa051846b7ca2a1b14f5dd73514f6e161bf611d19ceea9d7ed1c6b33432465`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `6659`
+- sha256: `2503747327c8b08ab54156073546f572d38d275d08ad1467bda28cef147376a8`
+- generated_utc: `2026-02-08T10:45:37Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -21,33 +21,33 @@ Source file (no public surface detected by heuristic).
 - (none detected)
 
 ## Definitions (auto, per-file)
-- `use` `codex-rs/linux-sandbox/src/landlock.rs:1` `use std::collections::BTreeMap;`
-- `use` `codex-rs/linux-sandbox/src/landlock.rs:2` `use std::path::Path;`
-- `use` `codex-rs/linux-sandbox/src/landlock.rs:4` `use codex_core::error::CodexErr;`
-- `use` `codex-rs/linux-sandbox/src/landlock.rs:5` `use codex_core::error::Result;`
-- `use` `codex-rs/linux-sandbox/src/landlock.rs:6` `use codex_core::error::SandboxErr;`
-- `use` `codex-rs/linux-sandbox/src/landlock.rs:7` `use codex_core::protocol::SandboxPolicy;`
-- `use` `codex-rs/linux-sandbox/src/landlock.rs:8` `use codex_utils_absolute_path::AbsolutePathBuf;`
-- `use` `codex-rs/linux-sandbox/src/landlock.rs:10` `use landlock::ABI;`
-- `use` `codex-rs/linux-sandbox/src/landlock.rs:11` `use landlock::Access;`
-- `use` `codex-rs/linux-sandbox/src/landlock.rs:12` `use landlock::AccessFs;`
-- `use` `codex-rs/linux-sandbox/src/landlock.rs:13` `use landlock::CompatLevel;`
-- `use` `codex-rs/linux-sandbox/src/landlock.rs:14` `use landlock::Compatible;`
-- `use` `codex-rs/linux-sandbox/src/landlock.rs:15` `use landlock::Ruleset;`
-- `use` `codex-rs/linux-sandbox/src/landlock.rs:16` `use landlock::RulesetAttr;`
-- `use` `codex-rs/linux-sandbox/src/landlock.rs:17` `use landlock::RulesetCreatedAttr;`
-- `use` `codex-rs/linux-sandbox/src/landlock.rs:18` `use seccompiler::BpfProgram;`
-- `use` `codex-rs/linux-sandbox/src/landlock.rs:19` `use seccompiler::SeccompAction;`
-- `use` `codex-rs/linux-sandbox/src/landlock.rs:20` `use seccompiler::SeccompCmpArgLen;`
-- `use` `codex-rs/linux-sandbox/src/landlock.rs:21` `use seccompiler::SeccompCmpOp;`
-- `use` `codex-rs/linux-sandbox/src/landlock.rs:22` `use seccompiler::SeccompCondition;`
-- `use` `codex-rs/linux-sandbox/src/landlock.rs:23` `use seccompiler::SeccompFilter;`
-- `use` `codex-rs/linux-sandbox/src/landlock.rs:24` `use seccompiler::SeccompRule;`
-- `use` `codex-rs/linux-sandbox/src/landlock.rs:25` `use seccompiler::TargetArch;`
-- `use` `codex-rs/linux-sandbox/src/landlock.rs:26` `use seccompiler::apply_filter;`
-- `fn` `codex-rs/linux-sandbox/src/landlock.rs:57` `fn set_no_new_privs() -> Result<()> {`
-- `fn` `codex-rs/linux-sandbox/src/landlock.rs:71` `fn install_filesystem_landlock_rules_on_current_thread(`
-- `fn` `codex-rs/linux-sandbox/src/landlock.rs:101` `fn install_network_seccomp_filter_on_current_thread() -> std::result::Result<(), SandboxErr> {`
+- `use` `codex-rs/linux-sandbox/src/landlock.rs:5` `use std::collections::BTreeMap;`
+- `use` `codex-rs/linux-sandbox/src/landlock.rs:6` `use std::path::Path;`
+- `use` `codex-rs/linux-sandbox/src/landlock.rs:8` `use codex_core::error::CodexErr;`
+- `use` `codex-rs/linux-sandbox/src/landlock.rs:9` `use codex_core::error::Result;`
+- `use` `codex-rs/linux-sandbox/src/landlock.rs:10` `use codex_core::error::SandboxErr;`
+- `use` `codex-rs/linux-sandbox/src/landlock.rs:11` `use codex_core::protocol::SandboxPolicy;`
+- `use` `codex-rs/linux-sandbox/src/landlock.rs:12` `use codex_utils_absolute_path::AbsolutePathBuf;`
+- `use` `codex-rs/linux-sandbox/src/landlock.rs:14` `use landlock::ABI;`
+- `use` `codex-rs/linux-sandbox/src/landlock.rs:16` `use landlock::Access;`
+- `use` `codex-rs/linux-sandbox/src/landlock.rs:17` `use landlock::AccessFs;`
+- `use` `codex-rs/linux-sandbox/src/landlock.rs:18` `use landlock::CompatLevel;`
+- `use` `codex-rs/linux-sandbox/src/landlock.rs:19` `use landlock::Compatible;`
+- `use` `codex-rs/linux-sandbox/src/landlock.rs:20` `use landlock::Ruleset;`
+- `use` `codex-rs/linux-sandbox/src/landlock.rs:21` `use landlock::RulesetAttr;`
+- `use` `codex-rs/linux-sandbox/src/landlock.rs:22` `use landlock::RulesetCreatedAttr;`
+- `use` `codex-rs/linux-sandbox/src/landlock.rs:23` `use seccompiler::BpfProgram;`
+- `use` `codex-rs/linux-sandbox/src/landlock.rs:24` `use seccompiler::SeccompAction;`
+- `use` `codex-rs/linux-sandbox/src/landlock.rs:25` `use seccompiler::SeccompCmpArgLen;`
+- `use` `codex-rs/linux-sandbox/src/landlock.rs:26` `use seccompiler::SeccompCmpOp;`
+- `use` `codex-rs/linux-sandbox/src/landlock.rs:27` `use seccompiler::SeccompCondition;`
+- `use` `codex-rs/linux-sandbox/src/landlock.rs:28` `use seccompiler::SeccompFilter;`
+- `use` `codex-rs/linux-sandbox/src/landlock.rs:29` `use seccompiler::SeccompRule;`
+- `use` `codex-rs/linux-sandbox/src/landlock.rs:30` `use seccompiler::TargetArch;`
+- `use` `codex-rs/linux-sandbox/src/landlock.rs:31` `use seccompiler::apply_filter;`
+- `fn` `codex-rs/linux-sandbox/src/landlock.rs:76` `fn set_no_new_privs() -> Result<()> {`
+- `fn` `codex-rs/linux-sandbox/src/landlock.rs:93` `fn install_filesystem_landlock_rules_on_current_thread(`
+- `fn` `codex-rs/linux-sandbox/src/landlock.rs:126` `fn install_network_seccomp_filter_on_current_thread() -> std::result::Result<(), SandboxErr> {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes

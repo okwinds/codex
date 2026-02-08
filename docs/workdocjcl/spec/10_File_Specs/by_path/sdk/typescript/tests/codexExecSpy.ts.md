@@ -5,7 +5,7 @@
 - ext: `.ts`
 - size_bytes: `1356`
 - sha256: `ded178b232db5673eae501b9993dbf8570527a39dcca8222ecea1fe66bc0d5a2`
-- generated_utc: `2026-02-03T16:08:31Z`
+- generated_utc: `2026-02-08T10:45:42Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -34,4 +34,4 @@ Test or snapshot file used for automated verification.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/PROJECT.md`
+- `docs/workdocjcl/spec/00_Overview/PROJECT.md`

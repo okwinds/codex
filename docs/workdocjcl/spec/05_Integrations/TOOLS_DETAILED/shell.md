@@ -28,7 +28,7 @@
 - `justification`（可选）：当请求 `require_escalated` 时用于向用户解释的审批问题
 - `prefix_rule`（可选）：请求持久化的 command 前缀白名单（**仅当** feature `RequestRule` 启用时生效；否则会被丢弃）
 
-> 结构化 schema 参考：`workdocjcl/spec/05_Integrations/TOOLS_SCHEMA_REFERENCE.json`（条目：`name=shell kind=function`）
+> 结构化 schema 参考：`docs/workdocjcl/spec/05_Integrations/TOOLS_SCHEMA_REFERENCE.json`（条目：`name=shell kind=function`）
 
 ## 3. 运行时语义（Runtime semantics）
 处理器：`codex-rs/core/src/tools/handlers/shell.rs::ShellHandler`
@@ -79,5 +79,5 @@
 - tool schema：`codex-rs/core/src/tools/spec.rs::create_shell_tool`
 - handler：`codex-rs/core/src/tools/handlers/shell.rs::ShellHandler`
 - 参数类型：`codex-rs/protocol/src/models.rs::ShellToolCallParams`
-- 输出封装：`workdocjcl/spec/05_Integrations/TOOLS_DETAILED/_COMMON_OUTPUT_ENVELOPE.md`
+- 输出封装：`docs/workdocjcl/spec/05_Integrations/TOOLS_DETAILED/_COMMON_OUTPUT_ENVELOPE.md`
 

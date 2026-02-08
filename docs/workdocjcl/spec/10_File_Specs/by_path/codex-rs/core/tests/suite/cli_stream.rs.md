@@ -3,9 +3,9 @@
 ## Identity
 - kind: `test`
 - ext: `.rs`
-- size_bytes: `19653`
-- sha256: `78344ba6f55a5be31e3d7515bcabd9d0b03f872851321c14c4fb97b01301a08c`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `18973`
+- sha256: `3a827a99cfc3e566469a4642fd9167eb8ab0485a00dffc16c408e516e25dda92`
+- generated_utc: `2026-02-08T10:45:35Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -31,15 +31,12 @@ Test or snapshot file used for automated verification.
 - `use codex_core::protocol::GitInfo;`
 - `use codex_utils_cargo_bin::find_resource;`
 - `use core_test_support::fs_wait;`
+- `use core_test_support::responses;`
 - `use core_test_support::skip_if_no_network;`
 - `use std::time::Duration;`
 - `use tempfile::TempDir;`
 - `use uuid::Uuid;`
-- `use wiremock::Mock;`
 - `use wiremock::MockServer;`
-- `use wiremock::ResponseTemplate;`
-- `use wiremock::matchers::method;`
-- `use wiremock::matchers::path;`
 ### Referenced env vars
 - (none detected)
 
@@ -47,4 +44,4 @@ Test or snapshot file used for automated verification.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

@@ -6,10 +6,10 @@ Codex 的核心能力来自“模型调用工具（tool calls）→ 本地 runti
 
 ## 0. 相关规格（Replication-critical）
 本文件是“目录级概览”。要达到可复刻，需要同时参考：
-- 工具 schema（机器可读）：`workdocjcl/spec/05_Integrations/TOOLS_SCHEMA_REFERENCE.json`
-- 工具 schema（人类摘要）：`workdocjcl/spec/05_Integrations/TOOLS_SCHEMA_REFERENCE.md`
-- 逐工具行为规格（含审批/沙箱/错误路径）：`workdocjcl/spec/05_Integrations/TOOLS_DETAILED/INDEX.md`
-- 公共输出封装（所有 tool 通用）：`workdocjcl/spec/05_Integrations/TOOLS_DETAILED/_COMMON_OUTPUT_ENVELOPE.md`
+- 工具 schema（机器可读）：`docs/workdocjcl/spec/05_Integrations/TOOLS_SCHEMA_REFERENCE.json`
+- 工具 schema（人类摘要）：`docs/workdocjcl/spec/05_Integrations/TOOLS_SCHEMA_REFERENCE.md`
+- 逐工具行为规格（含审批/沙箱/错误路径）：`docs/workdocjcl/spec/05_Integrations/TOOLS_DETAILED/INDEX.md`
+- 公共输出封装（所有 tool 通用）：`docs/workdocjcl/spec/05_Integrations/TOOLS_DETAILED/_COMMON_OUTPUT_ENVELOPE.md`
 
 ## 1. 工具启用条件（ToolsConfig）
 工具集并非固定；它会受到以下因素影响：
@@ -62,4 +62,4 @@ web search 工具受 `web_search` config 与 feature 影响：
 ## 6. Legacy aliases（兼容性）
 运行时会接受但不一定暴露给模型的 tool name：
 - `container.exec`：`shell` 的历史别名（同一参数结构 `ShellToolCallParams`）
-  - 详见：`workdocjcl/spec/05_Integrations/TOOLS_DETAILED/container.exec.md`
+  - 详见：`docs/workdocjcl/spec/05_Integrations/TOOLS_DETAILED/container.exec.md`

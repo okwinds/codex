@@ -3,9 +3,9 @@
 ## Identity
 - kind: `test`
 - ext: `.rs`
-- size_bytes: `14542`
-- sha256: `9ce068d38f9036b4b003c82dc52889b89af71f63d707689b871b9ad527eb58c5`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `13250`
+- sha256: `4be938efb709b83cb0b14cf1b6a89faae75e19c5ae56bc9bb746b32af623c576`
+- generated_utc: `2026-02-08T10:45:34Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -26,7 +26,6 @@ Test or snapshot file used for automated verification.
 - `pub fn test_tmp_path_buf() -> PathBuf {`
 - `pub fn load_sse_fixture(path: impl AsRef<std::path::Path>) -> String {`
 - `pub fn load_sse_fixture_with_id_from_str(raw: &str, id: &str) -> String {`
-- `pub fn load_sse_fixture_with_id(path: impl AsRef<std::path::Path>, id: &str) -> String {`
 - `pub fn sandbox_env_var() -> &'static str {`
 - `pub fn sandbox_network_env_var() -> &'static str {`
 - `pub fn format_with_current_shell(command: &str) -> Vec<String> {`
@@ -41,7 +40,6 @@ Test or snapshot file used for automated verification.
 ## Dependencies (auto sample)
 ### Imports / Includes
 - `use codex_utils_cargo_bin::CargoBinError;`
-- `use codex_utils_cargo_bin::find_resource;`
 - `use tempfile::TempDir;`
 - `use codex_core::CodexThread;`
 - `use codex_core::config::Config;`
@@ -60,6 +58,7 @@ Test or snapshot file used for automated verification.
 - `use std::path::Path;`
 - `use std::path::PathBuf;`
 - `use std::sync::mpsc;`
+- `use std::sync::mpsc::RecvTimeoutError;`
 ### Referenced env vars
 - (none detected)
 
@@ -67,4 +66,4 @@ Test or snapshot file used for automated verification.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

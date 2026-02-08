@@ -5,7 +5,7 @@
 - ext: `<noext>`
 - size_bytes: `2569`
 - sha256: `dc35b25f25515f4eb8c18fde06830a5a1c8ee04ddadabb25873dbe41098ebf2e`
-- generated_utc: `2026-02-03T16:08:28Z`
+- generated_utc: `2026-02-08T10:45:14Z`
 
 ## Purpose (Why)
 Repository file.
@@ -33,4 +33,4 @@ Repository file.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/07_Infrastructure/PACKAGING.md`
+- `docs/workdocjcl/spec/07_Infrastructure/PACKAGING.md`

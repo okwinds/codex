@@ -3,9 +3,9 @@
 ## Identity
 - kind: `test`
 - ext: `.rs`
-- size_bytes: `4309`
-- sha256: `68d98c8c688161fd8f2445efa6e1e237f7960212534b0fcf9138ee977b5c40fd`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `4241`
+- sha256: `d295c3f3b660048107cd4395f641c2e185925383d23dd499304fd65ab8d895c4`
+- generated_utc: `2026-02-08T10:45:16Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -29,7 +29,6 @@ Test or snapshot file used for automated verification.
 - `use codex_api::ModelsClient;`
 - `use codex_api::provider::Provider;`
 - `use codex_api::provider::RetryConfig;`
-- `use codex_api::provider::WireApi;`
 - `use codex_client::ReqwestTransport;`
 - `use codex_protocol::openai_models::ConfigShellToolType;`
 - `use codex_protocol::openai_models::ModelInfo;`
@@ -45,6 +44,7 @@ Test or snapshot file used for automated verification.
 - `use wiremock::MockServer;`
 - `use wiremock::ResponseTemplate;`
 - `use wiremock::matchers::method;`
+- `use wiremock::matchers::path;`
 ### Referenced env vars
 - (none detected)
 

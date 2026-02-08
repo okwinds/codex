@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `33953`
-- sha256: `72a69cc6dfec3c29dd02c93d56e1c0e30a8da8ca407c40ce5e5cd0e51304bed7`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `33172`
+- sha256: `89a5a3c9d8fcc4c81b1964476f1062b9145338360f833cf3c758d47771f607d0`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -93,46 +93,45 @@ Source file implementing exported/public items listed below.
 - `fn` `codex-rs/network-proxy/src/runtime.rs:430` `fn log_domain_list_changes(list_name: &str, previous: &[String], next: &[String]) {`
 - `fn` `codex-rs/network-proxy/src/runtime.rs:466` `fn is_explicit_local_allowlisted(allowed_domains: &[String], host: &Host) -> bool {`
 - `fn` `codex-rs/network-proxy/src/runtime.rs:480` `fn unix_timestamp() -> i64 {`
-- `use` `codex-rs/network-proxy/src/runtime.rs:519` `use super::*;`
-- `use` `codex-rs/network-proxy/src/runtime.rs:521` `use crate::config::NetworkPolicy;`
-- `use` `codex-rs/network-proxy/src/runtime.rs:522` `use crate::config::NetworkProxyConfig;`
-- `use` `codex-rs/network-proxy/src/runtime.rs:523` `use crate::config::NetworkProxySettings;`
-- `use` `codex-rs/network-proxy/src/runtime.rs:524` `use crate::policy::compile_globset;`
-- `use` `codex-rs/network-proxy/src/runtime.rs:525` `use crate::state::NetworkProxyConstraints;`
-- `use` `codex-rs/network-proxy/src/runtime.rs:526` `use crate::state::validate_policy_against_constraints;`
-- `use` `codex-rs/network-proxy/src/runtime.rs:527` `use pretty_assertions::assert_eq;`
-- `fn` `codex-rs/network-proxy/src/runtime.rs:530` `async fn host_blocked_denied_wins_over_allowed() {`
-- `fn` `codex-rs/network-proxy/src/runtime.rs:544` `async fn host_blocked_requires_allowlist_match() {`
-- `fn` `codex-rs/network-proxy/src/runtime.rs:563` `async fn host_blocked_subdomain_wildcards_exclude_apex() {`
-- `fn` `codex-rs/network-proxy/src/runtime.rs:580` `async fn host_blocked_rejects_loopback_when_local_binding_disabled() {`
-- `fn` `codex-rs/network-proxy/src/runtime.rs:598` `async fn host_blocked_rejects_loopback_when_allowlist_is_wildcard() {`
-- `fn` `codex-rs/network-proxy/src/runtime.rs:612` `async fn host_blocked_rejects_private_ip_literal_when_allowlist_is_wildcard() {`
-- `fn` `codex-rs/network-proxy/src/runtime.rs:626` `async fn host_blocked_allows_loopback_when_explicitly_allowlisted_and_local_binding_disabled() {`
-- `fn` `codex-rs/network-proxy/src/runtime.rs:640` `async fn host_blocked_allows_private_ip_literal_when_explicitly_allowlisted() {`
-- `fn` `codex-rs/network-proxy/src/runtime.rs:654` `async fn host_blocked_rejects_scoped_ipv6_literal_when_not_allowlisted() {`
-- `fn` `codex-rs/network-proxy/src/runtime.rs:668` `async fn host_blocked_allows_scoped_ipv6_literal_when_explicitly_allowlisted() {`
-- `fn` `codex-rs/network-proxy/src/runtime.rs:682` `async fn host_blocked_rejects_private_ip_literals_when_local_binding_disabled() {`
-- `fn` `codex-rs/network-proxy/src/runtime.rs:696` `async fn host_blocked_rejects_loopback_when_allowlist_empty() {`
-- `fn` `codex-rs/network-proxy/src/runtime.rs:710` `fn validate_policy_against_constraints_disallows_widening_allowed_domains() {`
-- `fn` `codex-rs/network-proxy/src/runtime.rs:731` `fn validate_policy_against_constraints_disallows_widening_mode() {`
-- `fn` `codex-rs/network-proxy/src/runtime.rs:749` `fn validate_policy_against_constraints_allows_narrowing_wildcard_allowlist() {`
-- `fn` `codex-rs/network-proxy/src/runtime.rs:770` `fn validate_policy_against_constraints_rejects_widening_wildcard_allowlist() {`
-- `fn` `codex-rs/network-proxy/src/runtime.rs:791` `fn validate_policy_against_constraints_requires_managed_denied_domains_entries() {`
-- `fn` `codex-rs/network-proxy/src/runtime.rs:812` `fn validate_policy_against_constraints_disallows_enabling_when_managed_disabled() {`
-- `fn` `codex-rs/network-proxy/src/runtime.rs:829` `fn validate_policy_against_constraints_disallows_allow_local_binding_when_managed_disabled() {`
-- `fn` `codex-rs/network-proxy/src/runtime.rs:850` `fn validate_policy_against_constraints_disallows_non_loopback_admin_without_managed_opt_in() {`
-- `fn` `codex-rs/network-proxy/src/runtime.rs:868` `fn validate_policy_against_constraints_allows_non_loopback_admin_with_managed_opt_in() {`
-- `fn` `codex-rs/network-proxy/src/runtime.rs:886` `fn compile_globset_is_case_insensitive() {`
-- `fn` `codex-rs/network-proxy/src/runtime.rs:894` `fn compile_globset_excludes_apex_for_subdomain_patterns() {`
-- `fn` `codex-rs/network-proxy/src/runtime.rs:903` `fn compile_globset_includes_apex_for_double_wildcard_patterns() {`
-- `fn` `codex-rs/network-proxy/src/runtime.rs:912` `fn compile_globset_matches_all_with_star() {`
-- `fn` `codex-rs/network-proxy/src/runtime.rs:920` `fn compile_globset_dedupes_patterns_without_changing_behavior() {`
-- `fn` `codex-rs/network-proxy/src/runtime.rs:929` `fn compile_globset_rejects_invalid_patterns() {`
-- `fn` `codex-rs/network-proxy/src/runtime.rs:936` `async fn unix_socket_allowlist_is_respected_on_macos() {`
-- `fn` `codex-rs/network-proxy/src/runtime.rs:955` `async fn unix_socket_allowlist_resolves_symlinks() {`
-- `use` `codex-rs/network-proxy/src/runtime.rs:956` `use std::os::unix::fs::symlink;`
-- `use` `codex-rs/network-proxy/src/runtime.rs:957` `use tempfile::tempdir;`
-- `fn` `codex-rs/network-proxy/src/runtime.rs:984` `async fn unix_socket_allowlist_is_rejected_on_non_macos() {`
+- `use` `codex-rs/network-proxy/src/runtime.rs:512` `use super::*;`
+- `use` `codex-rs/network-proxy/src/runtime.rs:514` `use crate::config::NetworkProxyConfig;`
+- `use` `codex-rs/network-proxy/src/runtime.rs:515` `use crate::config::NetworkProxySettings;`
+- `use` `codex-rs/network-proxy/src/runtime.rs:516` `use crate::policy::compile_globset;`
+- `use` `codex-rs/network-proxy/src/runtime.rs:517` `use crate::state::NetworkProxyConstraints;`
+- `use` `codex-rs/network-proxy/src/runtime.rs:518` `use crate::state::validate_policy_against_constraints;`
+- `use` `codex-rs/network-proxy/src/runtime.rs:519` `use pretty_assertions::assert_eq;`
+- `fn` `codex-rs/network-proxy/src/runtime.rs:522` `async fn host_blocked_denied_wins_over_allowed() {`
+- `fn` `codex-rs/network-proxy/src/runtime.rs:536` `async fn host_blocked_requires_allowlist_match() {`
+- `fn` `codex-rs/network-proxy/src/runtime.rs:555` `async fn host_blocked_subdomain_wildcards_exclude_apex() {`
+- `fn` `codex-rs/network-proxy/src/runtime.rs:572` `async fn host_blocked_rejects_loopback_when_local_binding_disabled() {`
+- `fn` `codex-rs/network-proxy/src/runtime.rs:590` `async fn host_blocked_rejects_loopback_when_allowlist_is_wildcard() {`
+- `fn` `codex-rs/network-proxy/src/runtime.rs:604` `async fn host_blocked_rejects_private_ip_literal_when_allowlist_is_wildcard() {`
+- `fn` `codex-rs/network-proxy/src/runtime.rs:618` `async fn host_blocked_allows_loopback_when_explicitly_allowlisted_and_local_binding_disabled() {`
+- `fn` `codex-rs/network-proxy/src/runtime.rs:632` `async fn host_blocked_allows_private_ip_literal_when_explicitly_allowlisted() {`
+- `fn` `codex-rs/network-proxy/src/runtime.rs:646` `async fn host_blocked_rejects_scoped_ipv6_literal_when_not_allowlisted() {`
+- `fn` `codex-rs/network-proxy/src/runtime.rs:660` `async fn host_blocked_allows_scoped_ipv6_literal_when_explicitly_allowlisted() {`
+- `fn` `codex-rs/network-proxy/src/runtime.rs:674` `async fn host_blocked_rejects_private_ip_literals_when_local_binding_disabled() {`
+- `fn` `codex-rs/network-proxy/src/runtime.rs:688` `async fn host_blocked_rejects_loopback_when_allowlist_empty() {`
+- `fn` `codex-rs/network-proxy/src/runtime.rs:702` `fn validate_policy_against_constraints_disallows_widening_allowed_domains() {`
+- `fn` `codex-rs/network-proxy/src/runtime.rs:720` `fn validate_policy_against_constraints_disallows_widening_mode() {`
+- `fn` `codex-rs/network-proxy/src/runtime.rs:738` `fn validate_policy_against_constraints_allows_narrowing_wildcard_allowlist() {`
+- `fn` `codex-rs/network-proxy/src/runtime.rs:756` `fn validate_policy_against_constraints_rejects_widening_wildcard_allowlist() {`
+- `fn` `codex-rs/network-proxy/src/runtime.rs:774` `fn validate_policy_against_constraints_requires_managed_denied_domains_entries() {`
+- `fn` `codex-rs/network-proxy/src/runtime.rs:792` `fn validate_policy_against_constraints_disallows_enabling_when_managed_disabled() {`
+- `fn` `codex-rs/network-proxy/src/runtime.rs:809` `fn validate_policy_against_constraints_disallows_allow_local_binding_when_managed_disabled() {`
+- `fn` `codex-rs/network-proxy/src/runtime.rs:827` `fn validate_policy_against_constraints_disallows_non_loopback_admin_without_managed_opt_in() {`
+- `fn` `codex-rs/network-proxy/src/runtime.rs:845` `fn validate_policy_against_constraints_allows_non_loopback_admin_with_managed_opt_in() {`
+- `fn` `codex-rs/network-proxy/src/runtime.rs:863` `fn compile_globset_is_case_insensitive() {`
+- `fn` `codex-rs/network-proxy/src/runtime.rs:871` `fn compile_globset_excludes_apex_for_subdomain_patterns() {`
+- `fn` `codex-rs/network-proxy/src/runtime.rs:880` `fn compile_globset_includes_apex_for_double_wildcard_patterns() {`
+- `fn` `codex-rs/network-proxy/src/runtime.rs:889` `fn compile_globset_matches_all_with_star() {`
+- `fn` `codex-rs/network-proxy/src/runtime.rs:897` `fn compile_globset_dedupes_patterns_without_changing_behavior() {`
+- `fn` `codex-rs/network-proxy/src/runtime.rs:906` `fn compile_globset_rejects_invalid_patterns() {`
+- `fn` `codex-rs/network-proxy/src/runtime.rs:913` `async fn unix_socket_allowlist_is_respected_on_macos() {`
+- `fn` `codex-rs/network-proxy/src/runtime.rs:932` `async fn unix_socket_allowlist_resolves_symlinks() {`
+- `use` `codex-rs/network-proxy/src/runtime.rs:933` `use std::os::unix::fs::symlink;`
+- `use` `codex-rs/network-proxy/src/runtime.rs:934` `use tempfile::tempdir;`
+- `fn` `codex-rs/network-proxy/src/runtime.rs:961` `async fn unix_socket_allowlist_is_rejected_on_non_macos() {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes

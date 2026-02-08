@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `8039`
-- sha256: `190585482b22eded06cfd530bf3acf475c940e96e2e6f867f1c49dc507a46b7b`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `8522`
+- sha256: `79f2785c08398bb3647585d58e730d9227f307da3fecb95837365e072233493f`
+- generated_utc: `2026-02-08T10:45:26Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -38,19 +38,24 @@ Source file (no public surface detected by heuristic).
 - `use` `codex-rs/core/src/api_bridge.rs:16` `use crate::error::UsageLimitReachedError;`
 - `use` `codex-rs/core/src/api_bridge.rs:17` `use crate::model_provider_info::ModelProviderInfo;`
 - `use` `codex-rs/core/src/api_bridge.rs:18` `use crate::token_data::PlanType;`
-- `const` `codex-rs/core/src/api_bridge.rs:116` `const MODEL_CAP_MODEL_HEADER: &str = "x-codex-model-cap-model";`
-- `const` `codex-rs/core/src/api_bridge.rs:117` `const MODEL_CAP_RESET_AFTER_HEADER: &str = "x-codex-model-cap-reset-after-seconds";`
-- `use` `codex-rs/core/src/api_bridge.rs:121` `use super::*;`
-- `use` `codex-rs/core/src/api_bridge.rs:122` `use codex_api::TransportError;`
-- `use` `codex-rs/core/src/api_bridge.rs:123` `use http::HeaderMap;`
-- `use` `codex-rs/core/src/api_bridge.rs:124` `use http::StatusCode;`
-- `fn` `codex-rs/core/src/api_bridge.rs:127` `fn map_api_error_maps_model_cap_headers() {`
-- `fn` `codex-rs/core/src/api_bridge.rs:152` `fn extract_request_id(headers: Option<&HeaderMap>) -> Option<String> {`
-- `struct` `codex-rs/core/src/api_bridge.rs:197` `struct UsageErrorResponse {`
-- `struct` `codex-rs/core/src/api_bridge.rs:202` `struct UsageErrorBody {`
-- `impl` `codex-rs/core/src/api_bridge.rs:215` `impl ApiAuthProvider for CoreAuthProvider {`
-- `fn` `codex-rs/core/src/api_bridge.rs:216` `fn bearer_token(&self) -> Option<String> {`
-- `fn` `codex-rs/core/src/api_bridge.rs:220` `fn account_id(&self) -> Option<String> {`
+- `const` `codex-rs/core/src/api_bridge.rs:118` `const MODEL_CAP_MODEL_HEADER: &str = "x-codex-model-cap-model";`
+- `const` `codex-rs/core/src/api_bridge.rs:119` `const MODEL_CAP_RESET_AFTER_HEADER: &str = "x-codex-model-cap-reset-after-seconds";`
+- `const` `codex-rs/core/src/api_bridge.rs:120` `const REQUEST_ID_HEADER: &str = "x-request-id";`
+- `const` `codex-rs/core/src/api_bridge.rs:121` `const OAI_REQUEST_ID_HEADER: &str = "x-oai-request-id";`
+- `const` `codex-rs/core/src/api_bridge.rs:122` `const CF_RAY_HEADER: &str = "cf-ray";`
+- `use` `codex-rs/core/src/api_bridge.rs:126` `use super::*;`
+- `use` `codex-rs/core/src/api_bridge.rs:127` `use codex_api::TransportError;`
+- `use` `codex-rs/core/src/api_bridge.rs:128` `use http::HeaderMap;`
+- `use` `codex-rs/core/src/api_bridge.rs:129` `use http::StatusCode;`
+- `fn` `codex-rs/core/src/api_bridge.rs:132` `fn map_api_error_maps_model_cap_headers() {`
+- `fn` `codex-rs/core/src/api_bridge.rs:157` `fn extract_request_tracking_id(headers: Option<&HeaderMap>) -> Option<String> {`
+- `fn` `codex-rs/core/src/api_bridge.rs:161` `fn extract_request_id(headers: Option<&HeaderMap>) -> Option<String> {`
+- `fn` `codex-rs/core/src/api_bridge.rs:166` `fn extract_header(headers: Option<&HeaderMap>, name: &str) -> Option<String> {`
+- `struct` `codex-rs/core/src/api_bridge.rs:207` `struct UsageErrorResponse {`
+- `struct` `codex-rs/core/src/api_bridge.rs:212` `struct UsageErrorBody {`
+- `impl` `codex-rs/core/src/api_bridge.rs:225` `impl ApiAuthProvider for CoreAuthProvider {`
+- `fn` `codex-rs/core/src/api_bridge.rs:226` `fn bearer_token(&self) -> Option<String> {`
+- `fn` `codex-rs/core/src/api_bridge.rs:230` `fn account_id(&self) -> Option<String> {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -82,4 +87,4 @@ Source file (no public surface detected by heuristic).
 - uses Rust panic/expect/unwrap-style failure paths
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

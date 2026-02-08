@@ -4,6 +4,7 @@
 import hashlib
 import os
 import re
+import shutil
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -11,6 +12,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
 WORKDOC_ROOT = ROOT / "docs" / "workdocjcl"
+WORKDOC_REPO_PREFIX = "docs/workdocjcl"
 INVENTORY_MANIFEST_REPO = WORKDOC_ROOT / "inventory" / "file_manifest_repo.txt"
 INVENTORY_MANIFEST_FALLBACK = WORKDOC_ROOT / "inventory" / "file_manifest.txt"
 OUT_ROOT = WORKDOC_ROOT / "spec" / "10_File_Specs"
@@ -307,7 +309,7 @@ def write_capsule(rel: str) -> None:
     out_path.parent.mkdir(parents=True, exist_ok=True)
 
     spec_links = spec_links_for(rel)
-    spec_links_lines = "\n".join([f"- `workdocjcl/spec/{p}`" for p in spec_links]) if spec_links else "- (none; see `09_Verification/CODE_TO_SPEC_MAP.md`)"
+    spec_links_lines = "\n".join([f"- `{WORKDOC_REPO_PREFIX}/spec/{p}`" for p in spec_links]) if spec_links else "- (none; see `09_Verification/CODE_TO_SPEC_MAP.md`)"
 
     public_lines = "\n".join([f"- `{l}`" for l in public_surface]) if public_surface else "- (none detected)"
     imports_lines = "\n".join([f"- `{l}`" for l in imports_sample]) if imports_sample else "- (none detected)"
@@ -321,7 +323,7 @@ def write_capsule(rel: str) -> None:
             shown = defs[:max_rows]
             defs_lines = "\n".join([f"- `{k}` `{rel}:{ln}` `{sig}`" for k, ln, sig in shown]) + "\n"
             if len(defs) > max_rows:
-                defs_lines += f"- (… {len(defs) - max_rows} more definitions omitted; see symbol indexes under `workdocjcl/spec/13_Indexes/`)\n"
+                defs_lines += f"- (… {len(defs) - max_rows} more definitions omitted; see symbol indexes under `{WORKDOC_REPO_PREFIX}/spec/13_Indexes/`)\n"
         else:
             defs_lines = "- (no definitions detected by heuristic)\n"
 
@@ -388,6 +390,9 @@ def main() -> int:
         print(f"missing manifest: {manifest}", file=sys.stderr)
         return 2
 
+    # 清理旧生成物，避免 manifest 缩小时残留“幽灵 capsules”影响可检索性与对齐证明。
+    if OUT_BY_PATH.exists():
+        shutil.rmtree(OUT_BY_PATH)
     OUT_BY_PATH.mkdir(parents=True, exist_ok=True)
     rels = [line.strip() for line in manifest.read_text("utf-8").splitlines() if line.strip()]
 

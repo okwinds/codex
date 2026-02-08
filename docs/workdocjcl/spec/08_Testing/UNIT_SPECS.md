@@ -41,7 +41,7 @@
   - `shell-tool-mcp/tests/*`：jest
 
 ## 3. 防遗漏清单（自动生成）
-- Rust 测试文件清单：`workdocjcl/inventory/rust_test_manifest.txt`
+- Rust 测试文件清单：`docs/workdocjcl/inventory/rust_test_manifest.txt`
 
 ## 4. 来源（Source）
 - config override：`codex-rs/common/src/config_override.rs`

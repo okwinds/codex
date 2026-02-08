@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `4511`
-- sha256: `8ba8a371b2f96e673fb5b152c0a513e154584109e4dcabeca250c709f9f7a748`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `4684`
+- sha256: `e2d63786015e769fd09096f5754fed6fbe50ca965f81eb5be879a7f6058104fc`
+- generated_utc: `2026-02-08T10:45:33Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -37,4 +37,4 @@ Source file (no public surface detected by heuristic).
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

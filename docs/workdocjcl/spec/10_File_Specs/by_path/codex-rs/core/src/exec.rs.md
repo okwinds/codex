@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `36004`
-- sha256: `8552a138283c1ce395471a6d66a24a6549e4cc9cae0885e04bb37189c583f02d`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `36534`
+- sha256: `83cabc7b2fb994200b59ee89b56f3360e188a9df907ccf8d2084ef4f8d99bbb3`
+- generated_utc: `2026-02-08T10:45:32Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -76,64 +76,65 @@ Source file implementing exported/public items listed below.
 - `impl` `codex-rs/core/src/exec.rs:94` `impl ExecExpiration {`
 - `fn` `codex-rs/core/src/exec.rs:95` `async fn wait(self) {`
 - `enum` `codex-rs/core/src/exec.rs:118` `pub enum SandboxType {`
-- `struct` `codex-rs/core/src/exec.rs:132` `pub struct StdoutStream {`
-- `fn` `codex-rs/core/src/exec.rs:138` `pub async fn process_exec_tool_call(`
-- `fn` `codex-rs/core/src/exec.rs:236` `fn extract_create_process_as_user_error_code(err: &str) -> Option<String> {`
-- `fn` `codex-rs/core/src/exec.rs:249` `fn windowsapps_path_kind(path: &str) -> &'static str {`
-- `fn` `codex-rs/core/src/exec.rs:264` `fn record_windows_sandbox_spawn_failure(`
-- `fn` `codex-rs/core/src/exec.rs:302` `async fn exec_windows_sandbox(`
-- `use` `codex-rs/core/src/exec.rs:306` `use crate::config::find_codex_home;`
-- `use` `codex-rs/core/src/exec.rs:307` `use codex_protocol::config_types::WindowsSandboxLevel;`
-- `use` `codex-rs/core/src/exec.rs:308` `use codex_windows_sandbox::run_windows_sandbox_capture;`
-- `use` `codex-rs/core/src/exec.rs:309` `use codex_windows_sandbox::run_windows_sandbox_capture_elevated;`
-- `fn` `codex-rs/core/src/exec.rs:409` `fn finalize_exec_result(`
-- `use` `codex-rs/core/src/exec.rs:469` `use super::CodexErr;`
-- `use` `codex-rs/core/src/exec.rs:470` `use crate::sandboxing::SandboxTransformError;`
-- `impl` `codex-rs/core/src/exec.rs:472` `impl From<SandboxTransformError> for CodexErr {`
-- `fn` `codex-rs/core/src/exec.rs:473` `fn from(err: SandboxTransformError) -> Self {`
-- `const` `codex-rs/core/src/exec.rs:504` `const SANDBOX_DENIED_KEYWORDS: [&str; 7] = [`
-- `const` `codex-rs/core/src/exec.rs:531` `const QUICK_REJECT_EXIT_CODES: [i32; 3] = [2, 126, 127];`
-- `const` `codex-rs/core/src/exec.rs:538` `const SIGSYS_CODE: i32 = libc::SIGSYS;`
-- `struct` `codex-rs/core/src/exec.rs:550` `pub struct StreamOutput<T: Clone> {`
-- `struct` `codex-rs/core/src/exec.rs:556` `struct RawExecToolCallOutput {`
-- `impl` `codex-rs/core/src/exec.rs:564` `impl StreamOutput<String> {`
-- `fn` `codex-rs/core/src/exec.rs:565` `pub fn new(text: String) -> Self {`
-- `impl` `codex-rs/core/src/exec.rs:573` `impl StreamOutput<Vec<u8>> {`
-- `fn` `codex-rs/core/src/exec.rs:574` `pub fn from_utf8_lossy(&self) -> StreamOutput<String> {`
-- `fn` `codex-rs/core/src/exec.rs:583` `fn append_capped(dst: &mut Vec<u8>, src: &[u8], max_bytes: usize) {`
-- `fn` `codex-rs/core/src/exec.rs:592` `fn aggregate_output(`
-- `struct` `codex-rs/core/src/exec.rs:626` `pub struct ExecToolCallOutput {`
-- `impl` `codex-rs/core/src/exec.rs:635` `impl Default for ExecToolCallOutput {`
-- `fn` `codex-rs/core/src/exec.rs:636` `fn default() -> Self {`
-- `fn` `codex-rs/core/src/exec.rs:649` `async fn exec(`
-- `fn` `codex-rs/core/src/exec.rs:696` `async fn consume_truncated_output(`
-- `const` `codex-rs/core/src/exec.rs:752` `const IO_DRAIN_TIMEOUT_MS: u64 = 2_000; // 2 s should be plenty for local pipes`
-- `use` `codex-rs/core/src/exec.rs:755` `use tokio::task::JoinHandle;`
-- `fn` `codex-rs/core/src/exec.rs:757` `async fn await_with_timeout(`
-- `fn` `codex-rs/core/src/exec.rs:849` `fn synthetic_exit_status(code: i32) -> ExitStatus {`
-- `use` `codex-rs/core/src/exec.rs:850` `use std::os::unix::process::ExitStatusExt;`
-- `fn` `codex-rs/core/src/exec.rs:855` `fn synthetic_exit_status(code: i32) -> ExitStatus {`
-- `use` `codex-rs/core/src/exec.rs:856` `use std::os::windows::process::ExitStatusExt;`
-- `use` `codex-rs/core/src/exec.rs:864` `use super::*;`
-- `use` `codex-rs/core/src/exec.rs:865` `use pretty_assertions::assert_eq;`
-- `use` `codex-rs/core/src/exec.rs:866` `use std::time::Duration;`
-- `use` `codex-rs/core/src/exec.rs:867` `use tokio::io::AsyncWriteExt;`
-- `fn` `codex-rs/core/src/exec.rs:869` `fn make_exec_output(`
-- `fn` `codex-rs/core/src/exec.rs:886` `fn sandbox_detection_requires_keywords() {`
-- `fn` `codex-rs/core/src/exec.rs:895` `fn sandbox_detection_identifies_keyword_in_stderr() {`
-- `fn` `codex-rs/core/src/exec.rs:901` `fn sandbox_detection_respects_quick_reject_exit_codes() {`
-- `fn` `codex-rs/core/src/exec.rs:910` `fn sandbox_detection_ignores_non_sandbox_mode() {`
-- `fn` `codex-rs/core/src/exec.rs:916` `fn sandbox_detection_uses_aggregated_output() {`
-- `fn` `codex-rs/core/src/exec.rs:930` `async fn read_capped_limits_retained_bytes() {`
-- `fn` `codex-rs/core/src/exec.rs:942` `fn aggregate_output_prefers_stderr_on_contention() {`
-- `fn` `codex-rs/core/src/exec.rs:962` `fn aggregate_output_fills_remaining_capacity_with_stderr() {`
-- `fn` `codex-rs/core/src/exec.rs:982` `fn aggregate_output_rebalances_when_stderr_is_small() {`
-- `fn` `codex-rs/core/src/exec.rs:1001` `fn aggregate_output_keeps_stdout_then_stderr_when_under_cap() {`
-- `fn` `codex-rs/core/src/exec.rs:1022` `fn sandbox_detection_flags_sigsys_exit_code() {`
-- `fn` `codex-rs/core/src/exec.rs:1030` `async fn kill_child_process_group_kills_grandchildren_on_timeout() -> Result<()> {`
-- `fn` `codex-rs/core/src/exec.rs:1086` `async fn process_exec_tool_call_respects_cancellation_token() -> Result<()> {`
-- `fn` `codex-rs/core/src/exec.rs:1124` `fn long_running_command() -> Vec<String> {`
-- `fn` `codex-rs/core/src/exec.rs:1133` `fn long_running_command() -> Vec<String> {`
+- `impl` `codex-rs/core/src/exec.rs:131` `impl SandboxType {`
+- `struct` `codex-rs/core/src/exec.rs:143` `pub struct StdoutStream {`
+- `fn` `codex-rs/core/src/exec.rs:149` `pub async fn process_exec_tool_call(`
+- `fn` `codex-rs/core/src/exec.rs:249` `fn extract_create_process_as_user_error_code(err: &str) -> Option<String> {`
+- `fn` `codex-rs/core/src/exec.rs:262` `fn windowsapps_path_kind(path: &str) -> &'static str {`
+- `fn` `codex-rs/core/src/exec.rs:277` `fn record_windows_sandbox_spawn_failure(`
+- `fn` `codex-rs/core/src/exec.rs:315` `async fn exec_windows_sandbox(`
+- `use` `codex-rs/core/src/exec.rs:319` `use crate::config::find_codex_home;`
+- `use` `codex-rs/core/src/exec.rs:320` `use codex_protocol::config_types::WindowsSandboxLevel;`
+- `use` `codex-rs/core/src/exec.rs:321` `use codex_windows_sandbox::run_windows_sandbox_capture;`
+- `use` `codex-rs/core/src/exec.rs:322` `use codex_windows_sandbox::run_windows_sandbox_capture_elevated;`
+- `fn` `codex-rs/core/src/exec.rs:422` `fn finalize_exec_result(`
+- `use` `codex-rs/core/src/exec.rs:482` `use super::CodexErr;`
+- `use` `codex-rs/core/src/exec.rs:483` `use crate::sandboxing::SandboxTransformError;`
+- `impl` `codex-rs/core/src/exec.rs:485` `impl From<SandboxTransformError> for CodexErr {`
+- `fn` `codex-rs/core/src/exec.rs:486` `fn from(err: SandboxTransformError) -> Self {`
+- `const` `codex-rs/core/src/exec.rs:517` `const SANDBOX_DENIED_KEYWORDS: [&str; 7] = [`
+- `const` `codex-rs/core/src/exec.rs:544` `const QUICK_REJECT_EXIT_CODES: [i32; 3] = [2, 126, 127];`
+- `const` `codex-rs/core/src/exec.rs:551` `const SIGSYS_CODE: i32 = libc::SIGSYS;`
+- `struct` `codex-rs/core/src/exec.rs:563` `pub struct StreamOutput<T: Clone> {`
+- `struct` `codex-rs/core/src/exec.rs:569` `struct RawExecToolCallOutput {`
+- `impl` `codex-rs/core/src/exec.rs:577` `impl StreamOutput<String> {`
+- `fn` `codex-rs/core/src/exec.rs:578` `pub fn new(text: String) -> Self {`
+- `impl` `codex-rs/core/src/exec.rs:586` `impl StreamOutput<Vec<u8>> {`
+- `fn` `codex-rs/core/src/exec.rs:587` `pub fn from_utf8_lossy(&self) -> StreamOutput<String> {`
+- `fn` `codex-rs/core/src/exec.rs:596` `fn append_capped(dst: &mut Vec<u8>, src: &[u8], max_bytes: usize) {`
+- `fn` `codex-rs/core/src/exec.rs:605` `fn aggregate_output(`
+- `struct` `codex-rs/core/src/exec.rs:639` `pub struct ExecToolCallOutput {`
+- `impl` `codex-rs/core/src/exec.rs:648` `impl Default for ExecToolCallOutput {`
+- `fn` `codex-rs/core/src/exec.rs:649` `fn default() -> Self {`
+- `fn` `codex-rs/core/src/exec.rs:662` `async fn exec(`
+- `fn` `codex-rs/core/src/exec.rs:709` `async fn consume_truncated_output(`
+- `const` `codex-rs/core/src/exec.rs:765` `const IO_DRAIN_TIMEOUT_MS: u64 = 2_000; // 2 s should be plenty for local pipes`
+- `use` `codex-rs/core/src/exec.rs:768` `use tokio::task::JoinHandle;`
+- `fn` `codex-rs/core/src/exec.rs:770` `async fn await_with_timeout(`
+- `fn` `codex-rs/core/src/exec.rs:862` `fn synthetic_exit_status(code: i32) -> ExitStatus {`
+- `use` `codex-rs/core/src/exec.rs:863` `use std::os::unix::process::ExitStatusExt;`
+- `fn` `codex-rs/core/src/exec.rs:868` `fn synthetic_exit_status(code: i32) -> ExitStatus {`
+- `use` `codex-rs/core/src/exec.rs:869` `use std::os::windows::process::ExitStatusExt;`
+- `use` `codex-rs/core/src/exec.rs:877` `use super::*;`
+- `use` `codex-rs/core/src/exec.rs:878` `use pretty_assertions::assert_eq;`
+- `use` `codex-rs/core/src/exec.rs:879` `use std::time::Duration;`
+- `use` `codex-rs/core/src/exec.rs:880` `use tokio::io::AsyncWriteExt;`
+- `fn` `codex-rs/core/src/exec.rs:882` `fn make_exec_output(`
+- `fn` `codex-rs/core/src/exec.rs:899` `fn sandbox_detection_requires_keywords() {`
+- `fn` `codex-rs/core/src/exec.rs:908` `fn sandbox_detection_identifies_keyword_in_stderr() {`
+- `fn` `codex-rs/core/src/exec.rs:914` `fn sandbox_detection_respects_quick_reject_exit_codes() {`
+- `fn` `codex-rs/core/src/exec.rs:923` `fn sandbox_detection_ignores_non_sandbox_mode() {`
+- `fn` `codex-rs/core/src/exec.rs:929` `fn sandbox_detection_uses_aggregated_output() {`
+- `fn` `codex-rs/core/src/exec.rs:943` `async fn read_capped_limits_retained_bytes() {`
+- `fn` `codex-rs/core/src/exec.rs:955` `fn aggregate_output_prefers_stderr_on_contention() {`
+- `fn` `codex-rs/core/src/exec.rs:975` `fn aggregate_output_fills_remaining_capacity_with_stderr() {`
+- `fn` `codex-rs/core/src/exec.rs:995` `fn aggregate_output_rebalances_when_stderr_is_small() {`
+- `fn` `codex-rs/core/src/exec.rs:1014` `fn aggregate_output_keeps_stdout_then_stderr_when_under_cap() {`
+- `fn` `codex-rs/core/src/exec.rs:1035` `fn sandbox_detection_flags_sigsys_exit_code() {`
+- `fn` `codex-rs/core/src/exec.rs:1043` `async fn kill_child_process_group_kills_grandchildren_on_timeout() -> Result<()> {`
+- `fn` `codex-rs/core/src/exec.rs:1099` `async fn process_exec_tool_call_respects_cancellation_token() -> Result<()> {`
+- `fn` `codex-rs/core/src/exec.rs:1138` `fn long_running_command() -> Vec<String> {`
+- `fn` `codex-rs/core/src/exec.rs:1147` `fn long_running_command() -> Vec<String> {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -166,4 +167,4 @@ Source file implementing exported/public items listed below.
 - uses Rust panic/expect/unwrap-style failure paths
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

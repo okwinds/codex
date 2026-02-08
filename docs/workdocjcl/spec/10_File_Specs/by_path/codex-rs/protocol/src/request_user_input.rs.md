@@ -5,7 +5,7 @@
 - ext: `.rs`
 - size_bytes: `1784`
 - sha256: `f617bec633ca8ccc9df9f5b9c567cddb93a366ed51cc16f9948496d23eb492a6`
-- generated_utc: `2026-02-03T16:08:30Z`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -52,4 +52,4 @@ Source file implementing exported/public items listed below.
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/02_Data/ROLLOUT_FORMAT.md`
+- `docs/workdocjcl/spec/02_Data/ROLLOUT_FORMAT.md`

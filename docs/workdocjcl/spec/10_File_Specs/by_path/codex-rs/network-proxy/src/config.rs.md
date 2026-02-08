@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `15031`
-- sha256: `dbfe245bfa6495b14be4afd7234943527a1c4730e273799055b3713a5d2d1a7c`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `14722`
+- sha256: `67d582b94785bcfa09d34a7b86fabc6b5131576ed10ddd941a3c6585daa3d78d`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -20,7 +20,6 @@ Source file implementing exported/public items listed below.
 ## Public Surface (auto)
 - `pub struct NetworkProxyConfig {`
 - `pub struct NetworkProxySettings {`
-- `pub struct NetworkPolicy {`
 - `pub enum NetworkMode {`
 - `pub fn allows_method(self, method: &str) -> bool {`
 - `pub struct RuntimeConfig {`
@@ -38,38 +37,37 @@ Source file implementing exported/public items listed below.
 - `use` `codex-rs/network-proxy/src/config.rs:9` `use url::Url;`
 - `struct` `codex-rs/network-proxy/src/config.rs:12` `pub struct NetworkProxyConfig {`
 - `struct` `codex-rs/network-proxy/src/config.rs:18` `pub struct NetworkProxySettings {`
-- `impl` `codex-rs/network-proxy/src/config.rs:43` `impl Default for NetworkProxySettings {`
-- `fn` `codex-rs/network-proxy/src/config.rs:44` `fn default() -> Self {`
-- `struct` `codex-rs/network-proxy/src/config.rs:62` `pub struct NetworkPolicy {`
-- `enum` `codex-rs/network-proxy/src/config.rs:75` `pub enum NetworkMode {`
-- `impl` `codex-rs/network-proxy/src/config.rs:85` `impl NetworkMode {`
-- `fn` `codex-rs/network-proxy/src/config.rs:86` `pub fn allows_method(self, method: &str) -> bool {`
-- `fn` `codex-rs/network-proxy/src/config.rs:94` `fn default_proxy_url() -> String {`
-- `fn` `codex-rs/network-proxy/src/config.rs:98` `fn default_admin_url() -> String {`
-- `fn` `codex-rs/network-proxy/src/config.rs:102` `fn default_socks_url() -> String {`
-- `fn` `codex-rs/network-proxy/src/config.rs:107` `fn clamp_non_loopback(addr: SocketAddr, allow_non_loopback: bool, name: &str) -> SocketAddr {`
-- `struct` `codex-rs/network-proxy/src/config.rs:175` `pub struct RuntimeConfig {`
-- `fn` `codex-rs/network-proxy/src/config.rs:181` `pub fn resolve_runtime(cfg: &NetworkProxyConfig) -> Result<RuntimeConfig> {`
-- `fn` `codex-rs/network-proxy/src/config.rs:210` `fn resolve_addr(url: &str, default_port: u16) -> Result<SocketAddr> {`
-- `struct` `codex-rs/network-proxy/src/config.rs:224` `struct SocketAddressParts {`
-- `fn` `codex-rs/network-proxy/src/config.rs:229` `fn parse_host_port(url: &str, default_port: u16) -> Result<SocketAddressParts> {`
-- `fn` `codex-rs/network-proxy/src/config.rs:266` `fn parse_host_port_fallback(input: &str, default_port: u16) -> Result<SocketAddressParts> {`
-- `use` `codex-rs/network-proxy/src/config.rs:320` `use super::*;`
-- `use` `codex-rs/network-proxy/src/config.rs:322` `use pretty_assertions::assert_eq;`
-- `fn` `codex-rs/network-proxy/src/config.rs:325` `fn parse_host_port_defaults_for_empty_string() {`
-- `fn` `codex-rs/network-proxy/src/config.rs:330` `fn parse_host_port_defaults_for_whitespace() {`
-- `fn` `codex-rs/network-proxy/src/config.rs:335` `fn parse_host_port_parses_host_port_without_scheme() {`
-- `fn` `codex-rs/network-proxy/src/config.rs:346` `fn parse_host_port_parses_host_port_with_scheme_and_path() {`
-- `fn` `codex-rs/network-proxy/src/config.rs:357` `fn parse_host_port_strips_userinfo() {`
-- `fn` `codex-rs/network-proxy/src/config.rs:368` `fn parse_host_port_parses_ipv6_with_brackets() {`
-- `fn` `codex-rs/network-proxy/src/config.rs:379` `fn parse_host_port_does_not_treat_unbracketed_ipv6_as_host_port() {`
-- `fn` `codex-rs/network-proxy/src/config.rs:390` `fn parse_host_port_falls_back_to_default_port_when_port_is_invalid() {`
-- `fn` `codex-rs/network-proxy/src/config.rs:401` `fn resolve_addr_maps_localhost_to_loopback() {`
-- `fn` `codex-rs/network-proxy/src/config.rs:409` `fn resolve_addr_parses_ip_literals() {`
-- `fn` `codex-rs/network-proxy/src/config.rs:417` `fn resolve_addr_parses_ipv6_literals() {`
-- `fn` `codex-rs/network-proxy/src/config.rs:425` `fn resolve_addr_falls_back_to_loopback_for_hostnames() {`
-- `fn` `codex-rs/network-proxy/src/config.rs:433` `fn clamp_bind_addrs_allows_non_loopback_when_enabled() {`
-- `fn` `codex-rs/network-proxy/src/config.rs:452` `fn clamp_bind_addrs_forces_loopback_when_unix_sockets_enabled() {`
+- `impl` `codex-rs/network-proxy/src/config.rs:49` `impl Default for NetworkProxySettings {`
+- `fn` `codex-rs/network-proxy/src/config.rs:50` `fn default() -> Self {`
+- `enum` `codex-rs/network-proxy/src/config.rs:72` `pub enum NetworkMode {`
+- `impl` `codex-rs/network-proxy/src/config.rs:82` `impl NetworkMode {`
+- `fn` `codex-rs/network-proxy/src/config.rs:83` `pub fn allows_method(self, method: &str) -> bool {`
+- `fn` `codex-rs/network-proxy/src/config.rs:91` `fn default_proxy_url() -> String {`
+- `fn` `codex-rs/network-proxy/src/config.rs:95` `fn default_admin_url() -> String {`
+- `fn` `codex-rs/network-proxy/src/config.rs:99` `fn default_socks_url() -> String {`
+- `fn` `codex-rs/network-proxy/src/config.rs:104` `fn clamp_non_loopback(addr: SocketAddr, allow_non_loopback: bool, name: &str) -> SocketAddr {`
+- `struct` `codex-rs/network-proxy/src/config.rs:172` `pub struct RuntimeConfig {`
+- `fn` `codex-rs/network-proxy/src/config.rs:178` `pub fn resolve_runtime(cfg: &NetworkProxyConfig) -> Result<RuntimeConfig> {`
+- `fn` `codex-rs/network-proxy/src/config.rs:195` `fn resolve_addr(url: &str, default_port: u16) -> Result<SocketAddr> {`
+- `struct` `codex-rs/network-proxy/src/config.rs:209` `struct SocketAddressParts {`
+- `fn` `codex-rs/network-proxy/src/config.rs:214` `fn parse_host_port(url: &str, default_port: u16) -> Result<SocketAddressParts> {`
+- `fn` `codex-rs/network-proxy/src/config.rs:251` `fn parse_host_port_fallback(input: &str, default_port: u16) -> Result<SocketAddressParts> {`
+- `use` `codex-rs/network-proxy/src/config.rs:305` `use super::*;`
+- `use` `codex-rs/network-proxy/src/config.rs:307` `use pretty_assertions::assert_eq;`
+- `fn` `codex-rs/network-proxy/src/config.rs:310` `fn parse_host_port_defaults_for_empty_string() {`
+- `fn` `codex-rs/network-proxy/src/config.rs:315` `fn parse_host_port_defaults_for_whitespace() {`
+- `fn` `codex-rs/network-proxy/src/config.rs:320` `fn parse_host_port_parses_host_port_without_scheme() {`
+- `fn` `codex-rs/network-proxy/src/config.rs:331` `fn parse_host_port_parses_host_port_with_scheme_and_path() {`
+- `fn` `codex-rs/network-proxy/src/config.rs:342` `fn parse_host_port_strips_userinfo() {`
+- `fn` `codex-rs/network-proxy/src/config.rs:353` `fn parse_host_port_parses_ipv6_with_brackets() {`
+- `fn` `codex-rs/network-proxy/src/config.rs:364` `fn parse_host_port_does_not_treat_unbracketed_ipv6_as_host_port() {`
+- `fn` `codex-rs/network-proxy/src/config.rs:375` `fn parse_host_port_falls_back_to_default_port_when_port_is_invalid() {`
+- `fn` `codex-rs/network-proxy/src/config.rs:386` `fn resolve_addr_maps_localhost_to_loopback() {`
+- `fn` `codex-rs/network-proxy/src/config.rs:394` `fn resolve_addr_parses_ip_literals() {`
+- `fn` `codex-rs/network-proxy/src/config.rs:402` `fn resolve_addr_parses_ipv6_literals() {`
+- `fn` `codex-rs/network-proxy/src/config.rs:410` `fn resolve_addr_falls_back_to_loopback_for_hostnames() {`
+- `fn` `codex-rs/network-proxy/src/config.rs:418` `fn clamp_bind_addrs_allows_non_loopback_when_enabled() {`
+- `fn` `codex-rs/network-proxy/src/config.rs:437` `fn clamp_bind_addrs_forces_loopback_when_unix_sockets_enabled() {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes

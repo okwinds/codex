@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `3024`
-- sha256: `57108b806f3d38845c93fdd4b25e0ae2febfb58ebcaeabafa277324e82cd048f`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `3387`
+- sha256: `dc1fa3dd80d2d9c93cc3e78ce1fa2359eb45960a3944c18ea99a89ad36a988a3`
+- generated_utc: `2026-02-08T10:45:33Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -33,16 +33,18 @@ Source file implementing exported/public items listed below.
 - `use` `codex-rs/core/src/tools/handlers/dynamic.rs:10` `use async_trait::async_trait;`
 - `use` `codex-rs/core/src/tools/handlers/dynamic.rs:11` `use codex_protocol::dynamic_tools::DynamicToolCallRequest;`
 - `use` `codex-rs/core/src/tools/handlers/dynamic.rs:12` `use codex_protocol::dynamic_tools::DynamicToolResponse;`
-- `use` `codex-rs/core/src/tools/handlers/dynamic.rs:13` `use codex_protocol::protocol::EventMsg;`
-- `use` `codex-rs/core/src/tools/handlers/dynamic.rs:14` `use serde_json::Value;`
-- `use` `codex-rs/core/src/tools/handlers/dynamic.rs:15` `use tokio::sync::oneshot;`
-- `use` `codex-rs/core/src/tools/handlers/dynamic.rs:16` `use tracing::warn;`
-- `struct` `codex-rs/core/src/tools/handlers/dynamic.rs:18` `pub struct DynamicToolHandler;`
-- `impl` `codex-rs/core/src/tools/handlers/dynamic.rs:21` `impl ToolHandler for DynamicToolHandler {`
-- `fn` `codex-rs/core/src/tools/handlers/dynamic.rs:22` `fn kind(&self) -> ToolKind {`
-- `fn` `codex-rs/core/src/tools/handlers/dynamic.rs:26` `async fn is_mutating(&self, _invocation: &ToolInvocation) -> bool {`
-- `fn` `codex-rs/core/src/tools/handlers/dynamic.rs:30` `async fn handle(&self, invocation: ToolInvocation) -> Result<ToolOutput, FunctionCallError> {`
-- `fn` `codex-rs/core/src/tools/handlers/dynamic.rs:66` `async fn request_dynamic_tool(`
+- `use` `codex-rs/core/src/tools/handlers/dynamic.rs:13` `use codex_protocol::models::FunctionCallOutputBody;`
+- `use` `codex-rs/core/src/tools/handlers/dynamic.rs:14` `use codex_protocol::models::FunctionCallOutputContentItem;`
+- `use` `codex-rs/core/src/tools/handlers/dynamic.rs:15` `use codex_protocol::protocol::EventMsg;`
+- `use` `codex-rs/core/src/tools/handlers/dynamic.rs:16` `use serde_json::Value;`
+- `use` `codex-rs/core/src/tools/handlers/dynamic.rs:17` `use tokio::sync::oneshot;`
+- `use` `codex-rs/core/src/tools/handlers/dynamic.rs:18` `use tracing::warn;`
+- `struct` `codex-rs/core/src/tools/handlers/dynamic.rs:20` `pub struct DynamicToolHandler;`
+- `impl` `codex-rs/core/src/tools/handlers/dynamic.rs:23` `impl ToolHandler for DynamicToolHandler {`
+- `fn` `codex-rs/core/src/tools/handlers/dynamic.rs:24` `fn kind(&self) -> ToolKind {`
+- `fn` `codex-rs/core/src/tools/handlers/dynamic.rs:28` `async fn is_mutating(&self, _invocation: &ToolInvocation) -> bool {`
+- `fn` `codex-rs/core/src/tools/handlers/dynamic.rs:32` `async fn handle(&self, invocation: ToolInvocation) -> Result<ToolOutput, FunctionCallError> {`
+- `fn` `codex-rs/core/src/tools/handlers/dynamic.rs:77` `async fn request_dynamic_tool(`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -58,6 +60,8 @@ Source file implementing exported/public items listed below.
 - `use async_trait::async_trait;`
 - `use codex_protocol::dynamic_tools::DynamicToolCallRequest;`
 - `use codex_protocol::dynamic_tools::DynamicToolResponse;`
+- `use codex_protocol::models::FunctionCallOutputBody;`
+- `use codex_protocol::models::FunctionCallOutputContentItem;`
 - `use codex_protocol::protocol::EventMsg;`
 - `use serde_json::Value;`
 - `use tokio::sync::oneshot;`
@@ -69,4 +73,4 @@ Source file implementing exported/public items listed below.
 - returns structured errors (Result/ErrorKind)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

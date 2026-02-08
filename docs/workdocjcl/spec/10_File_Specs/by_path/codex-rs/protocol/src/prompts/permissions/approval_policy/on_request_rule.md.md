@@ -3,9 +3,9 @@
 ## Identity
 - kind: `doc`
 - ext: `.md`
-- size_bytes: `3067`
-- sha256: `5d3184b3193ca896959dc09fa7cc2dbee8d8e74e2fb6c5793be851a8eff586bb`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `3110`
+- sha256: `02e3862f79a764f72cd5cb96a82e767b40a9245a9cb40687227dafa2d075d011`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Documentation file.
@@ -33,4 +33,4 @@ Documentation file.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/02_Data/ROLLOUT_FORMAT.md`
+- `docs/workdocjcl/spec/02_Data/ROLLOUT_FORMAT.md`

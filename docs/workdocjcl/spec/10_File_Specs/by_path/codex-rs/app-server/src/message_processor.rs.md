@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `15974`
-- sha256: `74700999f8b0f88a6dd19b0eef32b35de624e2f10ddcc17466603c9dabdf8086`
-- generated_utc: `2026-02-03T16:08:28Z`
+- size_bytes: `17306`
+- sha256: `02a0efd64abe6de96526182fec8863e924cba54babd0e0783aac4a0764482df3`
+- generated_utc: `2026-02-08T10:45:15Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -23,31 +23,31 @@ Source file (no public surface detected by heuristic).
 ## Definitions (auto, per-file)
 - `use` `codex-rs/app-server/src/message_processor.rs:1` `use std::path::PathBuf;`
 - `use` `codex-rs/app-server/src/message_processor.rs:2` `use std::sync::Arc;`
-- `use` `codex-rs/app-server/src/message_processor.rs:3` `use std::sync::atomic::AtomicBool;`
-- `use` `codex-rs/app-server/src/message_processor.rs:4` `use std::sync::atomic::Ordering;`
-- `use` `codex-rs/app-server/src/message_processor.rs:6` `use crate::codex_message_processor::CodexMessageProcessor;`
-- `use` `codex-rs/app-server/src/message_processor.rs:7` `use crate::codex_message_processor::CodexMessageProcessorArgs;`
-- `use` `codex-rs/app-server/src/message_processor.rs:8` `use crate::config_api::ConfigApi;`
-- `use` `codex-rs/app-server/src/message_processor.rs:9` `use crate::error_code::INVALID_REQUEST_ERROR_CODE;`
-- `use` `codex-rs/app-server/src/message_processor.rs:10` `use crate::outgoing_message::OutgoingMessageSender;`
-- `use` `codex-rs/app-server/src/message_processor.rs:11` `use async_trait::async_trait;`
-- `use` `codex-rs/app-server/src/message_processor.rs:12` `use codex_app_server_protocol::ChatgptAuthTokensRefreshParams;`
-- `use` `codex-rs/app-server/src/message_processor.rs:13` `use codex_app_server_protocol::ChatgptAuthTokensRefreshReason;`
-- `use` `codex-rs/app-server/src/message_processor.rs:14` `use codex_app_server_protocol::ChatgptAuthTokensRefreshResponse;`
-- `use` `codex-rs/app-server/src/message_processor.rs:15` `use codex_app_server_protocol::ClientInfo;`
-- `use` `codex-rs/app-server/src/message_processor.rs:16` `use codex_app_server_protocol::ClientRequest;`
-- `use` `codex-rs/app-server/src/message_processor.rs:17` `use codex_app_server_protocol::ConfigBatchWriteParams;`
-- `use` `codex-rs/app-server/src/message_processor.rs:18` `use codex_app_server_protocol::ConfigReadParams;`
-- `use` `codex-rs/app-server/src/message_processor.rs:19` `use codex_app_server_protocol::ConfigValueWriteParams;`
-- `use` `codex-rs/app-server/src/message_processor.rs:20` `use codex_app_server_protocol::ConfigWarningNotification;`
-- `use` `codex-rs/app-server/src/message_processor.rs:21` `use codex_app_server_protocol::ExperimentalApi;`
-- `use` `codex-rs/app-server/src/message_processor.rs:22` `use codex_app_server_protocol::InitializeResponse;`
-- `use` `codex-rs/app-server/src/message_processor.rs:23` `use codex_app_server_protocol::JSONRPCError;`
-- `use` `codex-rs/app-server/src/message_processor.rs:24` `use codex_app_server_protocol::JSONRPCErrorError;`
-- `use` `codex-rs/app-server/src/message_processor.rs:25` `use codex_app_server_protocol::JSONRPCNotification;`
-- `use` `codex-rs/app-server/src/message_processor.rs:26` `use codex_app_server_protocol::JSONRPCRequest;`
-- `use` `codex-rs/app-server/src/message_processor.rs:27` `use codex_app_server_protocol::JSONRPCResponse;`
-- `use` `codex-rs/app-server/src/message_processor.rs:28` `use codex_app_server_protocol::RequestId;`
+- `use` `codex-rs/app-server/src/message_processor.rs:3` `use std::sync::RwLock;`
+- `use` `codex-rs/app-server/src/message_processor.rs:5` `use crate::codex_message_processor::CodexMessageProcessor;`
+- `use` `codex-rs/app-server/src/message_processor.rs:6` `use crate::codex_message_processor::CodexMessageProcessorArgs;`
+- `use` `codex-rs/app-server/src/message_processor.rs:7` `use crate::config_api::ConfigApi;`
+- `use` `codex-rs/app-server/src/message_processor.rs:8` `use crate::error_code::INVALID_REQUEST_ERROR_CODE;`
+- `use` `codex-rs/app-server/src/message_processor.rs:9` `use crate::outgoing_message::ConnectionId;`
+- `use` `codex-rs/app-server/src/message_processor.rs:10` `use crate::outgoing_message::ConnectionRequestId;`
+- `use` `codex-rs/app-server/src/message_processor.rs:11` `use crate::outgoing_message::OutgoingMessageSender;`
+- `use` `codex-rs/app-server/src/message_processor.rs:12` `use async_trait::async_trait;`
+- `use` `codex-rs/app-server/src/message_processor.rs:13` `use codex_app_server_protocol::ChatgptAuthTokensRefreshParams;`
+- `use` `codex-rs/app-server/src/message_processor.rs:14` `use codex_app_server_protocol::ChatgptAuthTokensRefreshReason;`
+- `use` `codex-rs/app-server/src/message_processor.rs:15` `use codex_app_server_protocol::ChatgptAuthTokensRefreshResponse;`
+- `use` `codex-rs/app-server/src/message_processor.rs:16` `use codex_app_server_protocol::ClientInfo;`
+- `use` `codex-rs/app-server/src/message_processor.rs:17` `use codex_app_server_protocol::ClientRequest;`
+- `use` `codex-rs/app-server/src/message_processor.rs:18` `use codex_app_server_protocol::ConfigBatchWriteParams;`
+- `use` `codex-rs/app-server/src/message_processor.rs:19` `use codex_app_server_protocol::ConfigReadParams;`
+- `use` `codex-rs/app-server/src/message_processor.rs:20` `use codex_app_server_protocol::ConfigValueWriteParams;`
+- `use` `codex-rs/app-server/src/message_processor.rs:21` `use codex_app_server_protocol::ConfigWarningNotification;`
+- `use` `codex-rs/app-server/src/message_processor.rs:22` `use codex_app_server_protocol::ExperimentalApi;`
+- `use` `codex-rs/app-server/src/message_processor.rs:23` `use codex_app_server_protocol::InitializeResponse;`
+- `use` `codex-rs/app-server/src/message_processor.rs:24` `use codex_app_server_protocol::JSONRPCError;`
+- `use` `codex-rs/app-server/src/message_processor.rs:25` `use codex_app_server_protocol::JSONRPCErrorError;`
+- `use` `codex-rs/app-server/src/message_processor.rs:26` `use codex_app_server_protocol::JSONRPCNotification;`
+- `use` `codex-rs/app-server/src/message_processor.rs:27` `use codex_app_server_protocol::JSONRPCRequest;`
+- `use` `codex-rs/app-server/src/message_processor.rs:28` `use codex_app_server_protocol::JSONRPCResponse;`
 - `use` `codex-rs/app-server/src/message_processor.rs:29` `use codex_app_server_protocol::ServerNotification;`
 - `use` `codex-rs/app-server/src/message_processor.rs:30` `use codex_app_server_protocol::ServerRequestPayload;`
 - `use` `codex-rs/app-server/src/message_processor.rs:31` `use codex_app_server_protocol::experimental_required_message;`
@@ -78,22 +78,23 @@ Source file (no public surface detected by heuristic).
 - `fn` `codex-rs/app-server/src/message_processor.rs:62` `fn map_reason(reason: ExternalAuthRefreshReason) -> ChatgptAuthTokensRefreshReason {`
 - `impl` `codex-rs/app-server/src/message_processor.rs:70` `impl ExternalAuthRefresher for ExternalAuthRefreshBridge {`
 - `fn` `codex-rs/app-server/src/message_processor.rs:71` `async fn refresh(`
-- `impl` `codex-rs/app-server/src/message_processor.rs:129` `impl MessageProcessor {`
-- `fn` `codex-rs/app-server/src/message_processor.rs:363` `async fn handle_config_read(&self, request_id: RequestId, params: ConfigReadParams) {`
-- `fn` `codex-rs/app-server/src/message_processor.rs:370` `async fn handle_config_value_write(`
-- `fn` `codex-rs/app-server/src/message_processor.rs:381` `async fn handle_config_batch_write(`
-- `fn` `codex-rs/app-server/src/message_processor.rs:392` `async fn handle_config_requirements_read(&self, request_id: RequestId) {`
+- `impl` `codex-rs/app-server/src/message_processor.rs:133` `impl MessageProcessor {`
+- `fn` `codex-rs/app-server/src/message_processor.rs:402` `async fn handle_config_read(&self, request_id: ConnectionRequestId, params: ConfigReadParams) {`
+- `fn` `codex-rs/app-server/src/message_processor.rs:409` `async fn handle_config_value_write(`
+- `fn` `codex-rs/app-server/src/message_processor.rs:420` `async fn handle_config_batch_write(`
+- `fn` `codex-rs/app-server/src/message_processor.rs:431` `async fn handle_config_requirements_read(&self, request_id: ConnectionRequestId) {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
 - `use std::path::PathBuf;`
 - `use std::sync::Arc;`
-- `use std::sync::atomic::AtomicBool;`
-- `use std::sync::atomic::Ordering;`
+- `use std::sync::RwLock;`
 - `use crate::codex_message_processor::CodexMessageProcessor;`
 - `use crate::codex_message_processor::CodexMessageProcessorArgs;`
 - `use crate::config_api::ConfigApi;`
 - `use crate::error_code::INVALID_REQUEST_ERROR_CODE;`
+- `use crate::outgoing_message::ConnectionId;`
+- `use crate::outgoing_message::ConnectionRequestId;`
 - `use crate::outgoing_message::OutgoingMessageSender;`
 - `use async_trait::async_trait;`
 - `use codex_app_server_protocol::ChatgptAuthTokensRefreshParams;`
@@ -105,7 +106,6 @@ Source file (no public surface detected by heuristic).
 - `use codex_app_server_protocol::ConfigReadParams;`
 - `use codex_app_server_protocol::ConfigValueWriteParams;`
 - `use codex_app_server_protocol::ConfigWarningNotification;`
-- `use codex_app_server_protocol::ExperimentalApi;`
 ### Referenced env vars
 - (none detected)
 

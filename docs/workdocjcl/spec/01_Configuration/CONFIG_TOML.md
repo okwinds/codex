@@ -9,7 +9,7 @@
 ## 2. 权威 Schema（强烈建议复刻时直接使用）
 - JSON Schema：`codex-rs/core/config.schema.json`
   - 该文件由 `ConfigToml` 与 schema helpers 生成（仓库注释建议通过 `just write-config-schema` 更新）。
-- 展平键参考（无遗漏 key 列表）：`workdocjcl/spec/01_Configuration/CONFIG_SCHEMA_REFERENCE.md`
+- 展平键参考（无遗漏 key 列表）：`docs/workdocjcl/spec/01_Configuration/CONFIG_SCHEMA_REFERENCE.md`
 
 复刻建议：
 - 直接把 schema 当作“配置契约”，并对 config 做：

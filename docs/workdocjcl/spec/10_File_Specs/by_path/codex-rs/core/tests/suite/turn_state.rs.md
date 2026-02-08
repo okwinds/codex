@@ -3,9 +3,9 @@
 ## Identity
 - kind: `test`
 - ext: `.rs`
-- size_bytes: `4522`
-- sha256: `a303641baa89a23780a6580c145420f37f879e29e662041a23634cded69befdf`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `4618`
+- sha256: `f0870e6a2bc2dde7053a3f881e23f3b7730eddac862a87c26c5c9bfea630683a`
+- generated_utc: `2026-02-08T10:45:36Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -48,4 +48,4 @@ Test or snapshot file used for automated verification.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

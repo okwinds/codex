@@ -1,7 +1,7 @@
 # `codex-execpolicy-legacy`
 
 - path: `codex-rs/execpolicy-legacy`
-- generated_utc: `2026-02-03T09:48:37Z`
+- generated_utc: `2026-02-08T10:45:13Z`
 - description: Legacy exec policy engine for validating proposed exec calls.
 - role: execpolicy rules and enforcement
 
@@ -53,5 +53,5 @@
 - `pub fn get_default_policy() -> starlark::Result<Policy> {`
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/MODULE_MAP.md`
-- `workdocjcl/spec/09_Verification/CODE_TO_SPEC_MAP.md`
+- `docs/workdocjcl/spec/00_Overview/MODULE_MAP.md`
+- `docs/workdocjcl/spec/09_Verification/CODE_TO_SPEC_MAP.md`

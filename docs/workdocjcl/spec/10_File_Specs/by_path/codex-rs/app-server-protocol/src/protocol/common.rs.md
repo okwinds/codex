@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `37769`
-- sha256: `13750436bea13bd8d73d733a8b7d82b27ce4a1a81829c069d6589299b644aafb`
-- generated_utc: `2026-02-03T16:08:28Z`
+- size_bytes: `39219`
+- sha256: `125c1c90149498d4edf071fde69fcf3e314b30fa9712003b4d2898a2182b4921`
+- generated_utc: `2026-02-08T10:45:14Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -64,55 +64,56 @@ Source file implementing exported/public items listed below.
 - `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:144` `pub fn export_client_responses(`
 - `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:154` `pub fn export_client_response_schemas(`
 - `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:165` `pub fn export_client_param_schemas(`
-- `enum` `codex-rs/app-server-protocol/src/protocol/common.rs:456` `pub enum ServerRequest {`
-- `enum` `codex-rs/app-server-protocol/src/protocol/common.rs:469` `pub enum ServerRequestPayload {`
-- `impl` `codex-rs/app-server-protocol/src/protocol/common.rs:473` `impl ServerRequestPayload {`
-- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:474` `pub fn request_with_id(self, request_id: RequestId) -> ServerRequest {`
-- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:481` `pub fn export_server_responses(`
-- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:491` `pub fn export_server_response_schemas(`
-- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:505` `pub fn export_server_param_schemas(`
-- `enum` `codex-rs/app-server-protocol/src/protocol/common.rs:533` `pub enum ServerNotification {`
-- `impl` `codex-rs/app-server-protocol/src/protocol/common.rs:541` `impl ServerNotification {`
-- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:542` `pub fn to_params(self) -> Result<serde_json::Value, serde_json::Error> {`
-- `impl` `codex-rs/app-server-protocol/src/protocol/common.rs:549` `impl TryFrom<JSONRPCNotification> for ServerNotification {`
-- `type` `codex-rs/app-server-protocol/src/protocol/common.rs:550` `type Error = serde_json::Error;`
-- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:552` `fn try_from(value: JSONRPCNotification) -> Result<Self, serde_json::Error> {`
-- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:558` `pub fn export_server_notification_schemas(`
-- `enum` `codex-rs/app-server-protocol/src/protocol/common.rs:578` `pub enum ClientNotification {`
-- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:585` `pub fn export_client_notification_schemas(`
-- `impl` `codex-rs/app-server-protocol/src/protocol/common.rs:595` `impl TryFrom<JSONRPCRequest> for ServerRequest {`
-- `type` `codex-rs/app-server-protocol/src/protocol/common.rs:596` `type Error = serde_json::Error;`
-- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:598` `fn try_from(value: JSONRPCRequest) -> Result<Self, Self::Error> {`
-- `struct` `codex-rs/app-server-protocol/src/protocol/common.rs:654` `pub struct FuzzyFileSearchParams {`
-- `struct` `codex-rs/app-server-protocol/src/protocol/common.rs:663` `pub struct FuzzyFileSearchResult {`
-- `struct` `codex-rs/app-server-protocol/src/protocol/common.rs:672` `pub struct FuzzyFileSearchResponse {`
-- `use` `codex-rs/app-server-protocol/src/protocol/common.rs:730` `use super::*;`
-- `use` `codex-rs/app-server-protocol/src/protocol/common.rs:731` `use anyhow::Result;`
-- `use` `codex-rs/app-server-protocol/src/protocol/common.rs:732` `use codex_protocol::ThreadId;`
-- `use` `codex-rs/app-server-protocol/src/protocol/common.rs:733` `use codex_protocol::account::PlanType;`
-- `use` `codex-rs/app-server-protocol/src/protocol/common.rs:734` `use codex_protocol::parse_command::ParsedCommand;`
-- `use` `codex-rs/app-server-protocol/src/protocol/common.rs:735` `use codex_protocol::protocol::AskForApproval;`
-- `use` `codex-rs/app-server-protocol/src/protocol/common.rs:736` `use pretty_assertions::assert_eq;`
-- `use` `codex-rs/app-server-protocol/src/protocol/common.rs:737` `use serde_json::json;`
-- `use` `codex-rs/app-server-protocol/src/protocol/common.rs:738` `use std::path::PathBuf;`
-- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:741` `fn serialize_new_conversation() -> Result<()> {`
-- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:780` `fn conversation_id_serializes_as_plain_string() -> Result<()> {`
-- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:791` `fn conversation_id_deserializes_from_plain_string() -> Result<()> {`
-- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:802` `fn serialize_client_notification() -> Result<()> {`
-- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:815` `fn serialize_server_request() -> Result<()> {`
-- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:859` `fn serialize_chatgpt_auth_tokens_refresh_request() -> Result<()> {`
-- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:882` `fn serialize_get_account_rate_limits() -> Result<()> {`
-- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:898` `fn serialize_config_requirements_read() -> Result<()> {`
-- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:914` `fn serialize_account_login_api_key() -> Result<()> {`
-- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:936` `fn serialize_account_login_chatgpt() -> Result<()> {`
-- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:955` `fn serialize_account_logout() -> Result<()> {`
-- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:971` `fn serialize_account_login_chatgpt_auth_tokens() -> Result<()> {`
-- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:995` `fn serialize_get_account() -> Result<()> {`
-- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:1016` `fn account_serializes_fields_in_camel_case() -> Result<()> {`
-- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:1042` `fn serialize_list_models() -> Result<()> {`
-- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:1062` `fn serialize_list_collaboration_modes() -> Result<()> {`
-- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:1079` `fn mock_experimental_method_is_marked_experimental() {`
-- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:1089` `fn thread_start_mock_field_is_marked_experimental() {`
+- `enum` `codex-rs/app-server-protocol/src/protocol/common.rs:480` `pub enum ServerRequest {`
+- `enum` `codex-rs/app-server-protocol/src/protocol/common.rs:493` `pub enum ServerRequestPayload {`
+- `impl` `codex-rs/app-server-protocol/src/protocol/common.rs:497` `impl ServerRequestPayload {`
+- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:498` `pub fn request_with_id(self, request_id: RequestId) -> ServerRequest {`
+- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:505` `pub fn export_server_responses(`
+- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:515` `pub fn export_server_response_schemas(`
+- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:529` `pub fn export_server_param_schemas(`
+- `enum` `codex-rs/app-server-protocol/src/protocol/common.rs:557` `pub enum ServerNotification {`
+- `impl` `codex-rs/app-server-protocol/src/protocol/common.rs:565` `impl ServerNotification {`
+- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:566` `pub fn to_params(self) -> Result<serde_json::Value, serde_json::Error> {`
+- `impl` `codex-rs/app-server-protocol/src/protocol/common.rs:573` `impl TryFrom<JSONRPCNotification> for ServerNotification {`
+- `type` `codex-rs/app-server-protocol/src/protocol/common.rs:574` `type Error = serde_json::Error;`
+- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:576` `fn try_from(value: JSONRPCNotification) -> Result<Self, serde_json::Error> {`
+- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:582` `pub fn export_server_notification_schemas(`
+- `enum` `codex-rs/app-server-protocol/src/protocol/common.rs:602` `pub enum ClientNotification {`
+- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:609` `pub fn export_client_notification_schemas(`
+- `impl` `codex-rs/app-server-protocol/src/protocol/common.rs:619` `impl TryFrom<JSONRPCRequest> for ServerRequest {`
+- `type` `codex-rs/app-server-protocol/src/protocol/common.rs:620` `type Error = serde_json::Error;`
+- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:622` `fn try_from(value: JSONRPCRequest) -> Result<Self, Self::Error> {`
+- `struct` `codex-rs/app-server-protocol/src/protocol/common.rs:678` `pub struct FuzzyFileSearchParams {`
+- `struct` `codex-rs/app-server-protocol/src/protocol/common.rs:687` `pub struct FuzzyFileSearchResult {`
+- `struct` `codex-rs/app-server-protocol/src/protocol/common.rs:696` `pub struct FuzzyFileSearchResponse {`
+- `use` `codex-rs/app-server-protocol/src/protocol/common.rs:754` `use super::*;`
+- `use` `codex-rs/app-server-protocol/src/protocol/common.rs:755` `use anyhow::Result;`
+- `use` `codex-rs/app-server-protocol/src/protocol/common.rs:756` `use codex_protocol::ThreadId;`
+- `use` `codex-rs/app-server-protocol/src/protocol/common.rs:757` `use codex_protocol::account::PlanType;`
+- `use` `codex-rs/app-server-protocol/src/protocol/common.rs:758` `use codex_protocol::parse_command::ParsedCommand;`
+- `use` `codex-rs/app-server-protocol/src/protocol/common.rs:759` `use codex_protocol::protocol::AskForApproval;`
+- `use` `codex-rs/app-server-protocol/src/protocol/common.rs:760` `use pretty_assertions::assert_eq;`
+- `use` `codex-rs/app-server-protocol/src/protocol/common.rs:761` `use serde_json::json;`
+- `use` `codex-rs/app-server-protocol/src/protocol/common.rs:762` `use std::path::PathBuf;`
+- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:765` `fn serialize_new_conversation() -> Result<()> {`
+- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:804` `fn conversation_id_serializes_as_plain_string() -> Result<()> {`
+- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:815` `fn conversation_id_deserializes_from_plain_string() -> Result<()> {`
+- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:826` `fn serialize_client_notification() -> Result<()> {`
+- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:839` `fn serialize_server_request() -> Result<()> {`
+- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:883` `fn serialize_chatgpt_auth_tokens_refresh_request() -> Result<()> {`
+- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:906` `fn serialize_get_account_rate_limits() -> Result<()> {`
+- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:922` `fn serialize_config_requirements_read() -> Result<()> {`
+- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:938` `fn serialize_account_login_api_key() -> Result<()> {`
+- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:960` `fn serialize_account_login_chatgpt() -> Result<()> {`
+- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:979` `fn serialize_account_logout() -> Result<()> {`
+- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:995` `fn serialize_account_login_chatgpt_auth_tokens() -> Result<()> {`
+- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:1019` `fn serialize_get_account() -> Result<()> {`
+- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:1040` `fn account_serializes_fields_in_camel_case() -> Result<()> {`
+- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:1066` `fn serialize_list_models() -> Result<()> {`
+- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:1086` `fn serialize_list_collaboration_modes() -> Result<()> {`
+- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:1103` `fn serialize_list_experimental_features() -> Result<()> {`
+- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:1123` `fn mock_experimental_method_is_marked_experimental() {`
+- `fn` `codex-rs/app-server-protocol/src/protocol/common.rs:1133` `fn thread_start_mock_field_is_marked_experimental() {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes

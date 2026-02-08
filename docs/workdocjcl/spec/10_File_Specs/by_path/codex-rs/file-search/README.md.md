@@ -5,7 +5,7 @@
 - ext: `.md`
 - size_bytes: `364`
 - sha256: `faec4972f988dd21637cdad0339431cd93baefb0a5df84eead9e0d2a8e5ca89c`
-- generated_utc: `2026-02-03T16:08:30Z`
+- generated_utc: `2026-02-08T10:45:37Z`
 
 ## Purpose (Why)
 Documentation file.

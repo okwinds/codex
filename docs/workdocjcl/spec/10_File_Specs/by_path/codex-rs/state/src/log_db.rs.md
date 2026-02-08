@@ -5,7 +5,7 @@
 - ext: `.rs`
 - size_bytes: `8527`
 - sha256: `640828a5b1db7ac3fe474db289d9adf230fe13318ab17152fbb2fdbc82a48606`
-- generated_utc: `2026-02-03T16:08:30Z`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -99,4 +99,4 @@ Source file implementing exported/public items listed below.
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/02_Data/ENTITIES.md`
+- `docs/workdocjcl/spec/02_Data/ENTITIES.md`

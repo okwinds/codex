@@ -5,8 +5,8 @@
 > 说明：TUI keybindings 体量非常大（涉及 composer、slash popup、review、skills、resume picker 等）。本章先把“全局路由 + overlay/pager/backtrack + approvals”闭环写清；其余弹窗与输入框快捷键会在后续章节继续补齐。
 
 相关章节：
-- 审批弹窗快捷键：`workdocjcl/spec/06_UI/TUI_APPROVALS.md`
-- 审批系统语义：`workdocjcl/spec/07_Infrastructure/APPROVALS.md`
+- 审批弹窗快捷键：`docs/workdocjcl/spec/06_UI/TUI_APPROVALS.md`
+- 审批系统语义：`docs/workdocjcl/spec/07_Infrastructure/APPROVALS.md`
 
 ---
 
@@ -153,5 +153,5 @@ Overlay 类型定义：`codex-rs/tui/src/pager_overlay.rs:Overlay`
 
 ## 4. 审批弹窗快捷键（引用）
 审批弹窗（ApprovalOverlay）的快捷键、队列语义（LIFO）、Ctrl+A 全屏查看、Ctrl+C abort 等详见：
-- `workdocjcl/spec/06_UI/TUI_APPROVALS.md`
+- `docs/workdocjcl/spec/06_UI/TUI_APPROVALS.md`
 

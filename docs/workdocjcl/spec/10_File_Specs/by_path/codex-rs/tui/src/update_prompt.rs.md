@@ -5,7 +5,7 @@
 - ext: `.rs`
 - size_bytes: `10155`
 - sha256: `62efda9fe46f200ff40b2e596a14e6e932804426c256520e5888907aced02b46`
-- generated_utc: `2026-02-03T16:08:31Z`
+- generated_utc: `2026-02-08T10:45:41Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -107,4 +107,4 @@ Source file (no public surface detected by heuristic).
 - uses Rust panic/expect/unwrap-style failure paths
 
 ## Spec Links
-- `workdocjcl/spec/06_UI/TUI.md`
+- `docs/workdocjcl/spec/06_UI/TUI.md`

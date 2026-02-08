@@ -3,9 +3,9 @@
 ## Identity
 - kind: `test`
 - ext: `.rs`
-- size_bytes: `4148`
-- sha256: `d16f1110199ca63a65dcaf81698dc4c638d0813e28681e38e1670feace75b39b`
-- generated_utc: `2026-02-03T16:08:28Z`
+- size_bytes: `5820`
+- sha256: `864e2e5a846ccd5a683f2e2ed0e0a0c742a08b6e5af3d38504eb0e04c0095f8a`
+- generated_utc: `2026-02-08T10:45:15Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -27,6 +27,7 @@ Test or snapshot file used for automated verification.
 ### Imports / Includes
 - `use anyhow::Result;`
 - `use app_test_support::McpProcess;`
+- `use app_test_support::create_mock_responses_server_repeating_assistant;`
 - `use app_test_support::to_response;`
 - `use codex_app_server_protocol::JSONRPCResponse;`
 - `use codex_app_server_protocol::RequestId;`
@@ -36,15 +37,14 @@ Test or snapshot file used for automated verification.
 - `use codex_app_server_protocol::ThreadStartResponse;`
 - `use codex_app_server_protocol::ThreadUnarchiveParams;`
 - `use codex_app_server_protocol::ThreadUnarchiveResponse;`
+- `use codex_app_server_protocol::TurnStartParams;`
+- `use codex_app_server_protocol::TurnStartResponse;`
+- `use codex_app_server_protocol::UserInput;`
 - `use codex_core::find_archived_thread_path_by_id_str;`
 - `use codex_core::find_thread_path_by_id_str;`
 - `use std::fs::FileTimes;`
 - `use std::fs::OpenOptions;`
 - `use std::path::Path;`
-- `use std::time::Duration;`
-- `use std::time::SystemTime;`
-- `use tempfile::TempDir;`
-- `use tokio::time::timeout;`
 ### Referenced env vars
 - (none detected)
 

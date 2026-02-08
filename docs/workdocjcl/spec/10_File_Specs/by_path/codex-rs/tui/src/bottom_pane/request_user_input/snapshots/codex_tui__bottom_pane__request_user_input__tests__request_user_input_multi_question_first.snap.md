@@ -3,9 +3,9 @@
 ## Identity
 - kind: `test`
 - ext: `.snap`
-- size_bytes: `1166`
-- sha256: `7cf0ed1edef6b16b66ac5929b337cdbf22143bb80ba2577e1e2dc6c37a2335f0`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `1194`
+- sha256: `0ac5d8cb4868d6e063c7c82e428dd800c08e7c31648cbe33b29245f7d55d9674`
+- generated_utc: `2026-02-08T10:45:39Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -33,4 +33,4 @@ Test or snapshot file used for automated verification.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/06_UI/TUI.md`
+- `docs/workdocjcl/spec/06_UI/TUI.md`

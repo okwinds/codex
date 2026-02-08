@@ -5,7 +5,7 @@
 - ext: `.rs`
 - size_bytes: `4923`
 - sha256: `72bbbea7d86b23a490579477e5522deb297e16a78ab46b6912cb231b3823c22e`
-- generated_utc: `2026-02-03T16:08:31Z`
+- generated_utc: `2026-02-08T10:45:41Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -36,4 +36,4 @@ Test or snapshot file used for automated verification.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/06_UI/TUI.md`
+- `docs/workdocjcl/spec/06_UI/TUI.md`

@@ -2,7 +2,7 @@
 
 - path: `codex-cli`
 - version: `0.0.0-dev`
-- generated_utc: `2026-02-03T09:49:16Z`
+- generated_utc: `2026-02-08T10:45:13Z`
 
 ## Entry Points
 - bin: `{'codex': 'bin/codex.js'}`
@@ -17,4 +17,4 @@
 - (none)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/PROJECT.md`
+- `docs/workdocjcl/spec/00_Overview/PROJECT.md`

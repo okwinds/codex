@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `16801`
-- sha256: `20eb8ccb246ff910511513c989652bd58f9011dbbe70c283ac591b09d6850921`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `16824`
+- sha256: `93eb6b6e9ce44dd2dca80ee56a8b3033b0da498e15f1e704d4e604206850be96`
+- generated_utc: `2026-02-08T10:45:33Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -35,57 +35,54 @@ Source file implementing exported/public items listed below.
 - `use` `codex-rs/core/src/model_provider_info.rs:8` `use crate::auth::AuthMode;`
 - `use` `codex-rs/core/src/model_provider_info.rs:9` `use crate::error::EnvVarError;`
 - `use` `codex-rs/core/src/model_provider_info.rs:10` `use codex_api::Provider as ApiProvider;`
-- `use` `codex-rs/core/src/model_provider_info.rs:11` `use codex_api::WireApi as ApiWireApi;`
-- `use` `codex-rs/core/src/model_provider_info.rs:12` `use codex_api::is_azure_responses_wire_base_url;`
-- `use` `codex-rs/core/src/model_provider_info.rs:13` `use codex_api::provider::RetryConfig as ApiRetryConfig;`
-- `use` `codex-rs/core/src/model_provider_info.rs:14` `use http::HeaderMap;`
-- `use` `codex-rs/core/src/model_provider_info.rs:15` `use http::header::HeaderName;`
-- `use` `codex-rs/core/src/model_provider_info.rs:16` `use http::header::HeaderValue;`
-- `use` `codex-rs/core/src/model_provider_info.rs:17` `use schemars::JsonSchema;`
-- `use` `codex-rs/core/src/model_provider_info.rs:18` `use serde::Deserialize;`
-- `use` `codex-rs/core/src/model_provider_info.rs:19` `use serde::Serialize;`
-- `use` `codex-rs/core/src/model_provider_info.rs:20` `use std::collections::HashMap;`
-- `use` `codex-rs/core/src/model_provider_info.rs:21` `use std::env::VarError;`
-- `use` `codex-rs/core/src/model_provider_info.rs:22` `use std::time::Duration;`
-- `const` `codex-rs/core/src/model_provider_info.rs:24` `const DEFAULT_STREAM_IDLE_TIMEOUT_MS: u64 = 300_000;`
-- `const` `codex-rs/core/src/model_provider_info.rs:25` `const DEFAULT_STREAM_MAX_RETRIES: u64 = 5;`
-- `const` `codex-rs/core/src/model_provider_info.rs:26` `const DEFAULT_REQUEST_MAX_RETRIES: u64 = 4;`
-- `const` `codex-rs/core/src/model_provider_info.rs:28` `const MAX_STREAM_MAX_RETRIES: u64 = 100;`
-- `const` `codex-rs/core/src/model_provider_info.rs:30` `const MAX_REQUEST_MAX_RETRIES: u64 = 100;`
-- `const` `codex-rs/core/src/model_provider_info.rs:31` `pub const CHAT_WIRE_API_DEPRECATION_SUMMARY: &str = r#"Support for the "chat" wire API is deprecated and will soon be removed. Update your model provider definition in config.toml to use wire_api = "responses"."#;`
-- `const` `codex-rs/core/src/model_provider_info.rs:33` `const OPENAI_PROVIDER_NAME: &str = "OpenAI";`
-- `enum` `codex-rs/core/src/model_provider_info.rs:43` `pub enum WireApi {`
-- `struct` `codex-rs/core/src/model_provider_info.rs:55` `pub struct ModelProviderInfo {`
-- `impl` `codex-rs/core/src/model_provider_info.rs:111` `impl ModelProviderInfo {`
-- `fn` `codex-rs/core/src/model_provider_info.rs:112` `fn build_header_map(&self) -> crate::error::Result<HeaderMap> {`
-- `fn` `codex-rs/core/src/model_provider_info.rs:186` `pub fn api_key(&self) -> crate::error::Result<Option<String>> {`
-- `fn` `codex-rs/core/src/model_provider_info.rs:210` `pub fn request_max_retries(&self) -> u64 {`
-- `fn` `codex-rs/core/src/model_provider_info.rs:217` `pub fn stream_max_retries(&self) -> u64 {`
-- `fn` `codex-rs/core/src/model_provider_info.rs:224` `pub fn stream_idle_timeout(&self) -> Duration {`
-- `fn` `codex-rs/core/src/model_provider_info.rs:229` `pub fn create_openai_provider() -> ModelProviderInfo {`
-- `fn` `codex-rs/core/src/model_provider_info.rs:270` `pub fn is_openai(&self) -> bool {`
-- `const` `codex-rs/core/src/model_provider_info.rs:275` `pub const DEFAULT_LMSTUDIO_PORT: u16 = 1234;`
-- `const` `codex-rs/core/src/model_provider_info.rs:276` `pub const DEFAULT_OLLAMA_PORT: u16 = 11434;`
-- `const` `codex-rs/core/src/model_provider_info.rs:278` `pub const LMSTUDIO_OSS_PROVIDER_ID: &str = "lmstudio";`
-- `const` `codex-rs/core/src/model_provider_info.rs:279` `pub const OLLAMA_OSS_PROVIDER_ID: &str = "ollama";`
-- `const` `codex-rs/core/src/model_provider_info.rs:280` `pub const OLLAMA_CHAT_PROVIDER_ID: &str = "ollama-chat";`
-- `fn` `codex-rs/core/src/model_provider_info.rs:283` `pub fn built_in_model_providers() -> HashMap<String, ModelProviderInfo> {`
-- `use` `codex-rs/core/src/model_provider_info.rs:284` `use ModelProviderInfo as P;`
-- `fn` `codex-rs/core/src/model_provider_info.rs:310` `pub fn create_oss_provider(default_provider_port: u16, wire_api: WireApi) -> ModelProviderInfo {`
-- `fn` `codex-rs/core/src/model_provider_info.rs:330` `pub fn create_oss_provider_with_base_url(base_url: &str, wire_api: WireApi) -> ModelProviderInfo {`
-- `use` `codex-rs/core/src/model_provider_info.rs:351` `use super::*;`
-- `use` `codex-rs/core/src/model_provider_info.rs:352` `use pretty_assertions::assert_eq;`
-- `fn` `codex-rs/core/src/model_provider_info.rs:355` `fn test_deserialize_ollama_model_provider_toml() {`
-- `fn` `codex-rs/core/src/model_provider_info.rs:382` `fn test_deserialize_azure_model_provider_toml() {`
-- `fn` `codex-rs/core/src/model_provider_info.rs:413` `fn test_deserialize_example_model_provider_toml() {`
+- `use` `codex-rs/core/src/model_provider_info.rs:11` `use codex_api::provider::RetryConfig as ApiRetryConfig;`
+- `use` `codex-rs/core/src/model_provider_info.rs:12` `use http::HeaderMap;`
+- `use` `codex-rs/core/src/model_provider_info.rs:13` `use http::header::HeaderName;`
+- `use` `codex-rs/core/src/model_provider_info.rs:14` `use http::header::HeaderValue;`
+- `use` `codex-rs/core/src/model_provider_info.rs:15` `use schemars::JsonSchema;`
+- `use` `codex-rs/core/src/model_provider_info.rs:16` `use serde::Deserialize;`
+- `use` `codex-rs/core/src/model_provider_info.rs:17` `use serde::Serialize;`
+- `use` `codex-rs/core/src/model_provider_info.rs:18` `use std::collections::HashMap;`
+- `use` `codex-rs/core/src/model_provider_info.rs:19` `use std::env::VarError;`
+- `use` `codex-rs/core/src/model_provider_info.rs:20` `use std::time::Duration;`
+- `const` `codex-rs/core/src/model_provider_info.rs:22` `const DEFAULT_STREAM_IDLE_TIMEOUT_MS: u64 = 300_000;`
+- `const` `codex-rs/core/src/model_provider_info.rs:23` `const DEFAULT_STREAM_MAX_RETRIES: u64 = 5;`
+- `const` `codex-rs/core/src/model_provider_info.rs:24` `const DEFAULT_REQUEST_MAX_RETRIES: u64 = 4;`
+- `const` `codex-rs/core/src/model_provider_info.rs:26` `const MAX_STREAM_MAX_RETRIES: u64 = 100;`
+- `const` `codex-rs/core/src/model_provider_info.rs:28` `const MAX_REQUEST_MAX_RETRIES: u64 = 100;`
+- `const` `codex-rs/core/src/model_provider_info.rs:30` `const OPENAI_PROVIDER_NAME: &str = "OpenAI";`
+- `const` `codex-rs/core/src/model_provider_info.rs:31` `const CHAT_WIRE_API_REMOVED_ERROR: &str = "`wire_api = \"chat\"` is no longer supported.\nHow to fix: set `wire_api = \"responses\"` in your provider config.\nMore info: https://github.com/openai/codex/discussions/7782";`
+- `enum` `codex-rs/core/src/model_provider_info.rs:38` `pub enum WireApi {`
+- `impl` `codex-rs/core/src/model_provider_info.rs:44` `impl<'de> Deserialize<'de> for WireApi {`
+- `struct` `codex-rs/core/src/model_provider_info.rs:61` `pub struct ModelProviderInfo {`
+- `impl` `codex-rs/core/src/model_provider_info.rs:117` `impl ModelProviderInfo {`
+- `fn` `codex-rs/core/src/model_provider_info.rs:118` `fn build_header_map(&self) -> crate::error::Result<HeaderMap> {`
+- `fn` `codex-rs/core/src/model_provider_info.rs:179` `pub fn api_key(&self) -> crate::error::Result<Option<String>> {`
+- `fn` `codex-rs/core/src/model_provider_info.rs:203` `pub fn request_max_retries(&self) -> u64 {`
+- `fn` `codex-rs/core/src/model_provider_info.rs:210` `pub fn stream_max_retries(&self) -> u64 {`
+- `fn` `codex-rs/core/src/model_provider_info.rs:217` `pub fn stream_idle_timeout(&self) -> Duration {`
+- `fn` `codex-rs/core/src/model_provider_info.rs:222` `pub fn create_openai_provider() -> ModelProviderInfo {`
+- `fn` `codex-rs/core/src/model_provider_info.rs:263` `pub fn is_openai(&self) -> bool {`
+- `const` `codex-rs/core/src/model_provider_info.rs:268` `pub const DEFAULT_LMSTUDIO_PORT: u16 = 1234;`
+- `const` `codex-rs/core/src/model_provider_info.rs:269` `pub const DEFAULT_OLLAMA_PORT: u16 = 11434;`
+- `const` `codex-rs/core/src/model_provider_info.rs:271` `pub const LMSTUDIO_OSS_PROVIDER_ID: &str = "lmstudio";`
+- `const` `codex-rs/core/src/model_provider_info.rs:272` `pub const OLLAMA_OSS_PROVIDER_ID: &str = "ollama";`
+- `fn` `codex-rs/core/src/model_provider_info.rs:275` `pub fn built_in_model_providers() -> HashMap<String, ModelProviderInfo> {`
+- `use` `codex-rs/core/src/model_provider_info.rs:276` `use ModelProviderInfo as P;`
+- `fn` `codex-rs/core/src/model_provider_info.rs:298` `pub fn create_oss_provider(default_provider_port: u16, wire_api: WireApi) -> ModelProviderInfo {`
+- `fn` `codex-rs/core/src/model_provider_info.rs:318` `pub fn create_oss_provider_with_base_url(base_url: &str, wire_api: WireApi) -> ModelProviderInfo {`
+- `use` `codex-rs/core/src/model_provider_info.rs:339` `use super::*;`
+- `use` `codex-rs/core/src/model_provider_info.rs:340` `use pretty_assertions::assert_eq;`
+- `fn` `codex-rs/core/src/model_provider_info.rs:343` `fn test_deserialize_ollama_model_provider_toml() {`
+- `fn` `codex-rs/core/src/model_provider_info.rs:370` `fn test_deserialize_azure_model_provider_toml() {`
+- `fn` `codex-rs/core/src/model_provider_info.rs:401` `fn test_deserialize_example_model_provider_toml() {`
+- `fn` `codex-rs/core/src/model_provider_info.rs:435` `fn test_deserialize_chat_wire_api_shows_helpful_error() {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
 - `use crate::auth::AuthMode;`
 - `use crate::error::EnvVarError;`
 - `use codex_api::Provider as ApiProvider;`
-- `use codex_api::WireApi as ApiWireApi;`
-- `use codex_api::is_azure_responses_wire_base_url;`
 - `use codex_api::provider::RetryConfig as ApiRetryConfig;`
 - `use http::HeaderMap;`
 - `use http::header::HeaderName;`
@@ -110,4 +107,4 @@ Source file implementing exported/public items listed below.
 - uses Rust panic/expect/unwrap-style failure paths
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

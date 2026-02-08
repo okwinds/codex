@@ -5,7 +5,7 @@
 - ext: `.ts`
 - size_bytes: `339`
 - sha256: `61759903a0fd0606118b4c8a3b8766097a7a7770242dac0829a4a2a438d200f4`
-- generated_utc: `2026-02-03T16:08:31Z`
+- generated_utc: `2026-02-08T10:45:42Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -42,4 +42,4 @@ Source file implementing exported/public items listed below.
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/05_Integrations/MCP.md`
+- `docs/workdocjcl/spec/05_Integrations/MCP.md`

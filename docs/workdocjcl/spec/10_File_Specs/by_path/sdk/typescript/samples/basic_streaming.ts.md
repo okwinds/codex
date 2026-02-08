@@ -5,7 +5,7 @@
 - ext: `.ts`
 - size_bytes: `2552`
 - sha256: `825eacaa496f3b9046d204b1d1dddd733e8fc97db03fcb65412f9f9bff71fa45`
-- generated_utc: `2026-02-03T16:08:31Z`
+- generated_utc: `2026-02-08T10:45:42Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -52,4 +52,4 @@ Source file (no public surface detected by heuristic).
 - calls process.exit(...)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/PROJECT.md`
+- `docs/workdocjcl/spec/00_Overview/PROJECT.md`

@@ -3,9 +3,9 @@
 ## Identity
 - kind: `config`
 - ext: `.json`
-- size_bytes: `48137`
-- sha256: `e7ace4d77f30f49f3d1fde9aeddc55a0419983fbbe7eff675f2f96636459c1b9`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `49411`
+- sha256: `66e0c1a74484ab14c386cca2830ea2c571a0fa94b138b20477e37da71e663f86`
+- generated_utc: `2026-02-08T10:45:26Z`
 
 ## Purpose (Why)
 Configuration file for build/tooling/runtime.
@@ -33,4 +33,4 @@ Configuration file for build/tooling/runtime.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

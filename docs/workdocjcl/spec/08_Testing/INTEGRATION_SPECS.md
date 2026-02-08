@@ -49,7 +49,7 @@
 
 ## 5. 清单与定位
 - Node/TS 的集成测试可见：`sdk/typescript/tests/*`、`shell-tool-mcp/tests/*`
-- Rust 的集成测试与快照测试清单：`workdocjcl/inventory/rust_test_manifest.txt`
+- Rust 的集成测试与快照测试清单：`docs/workdocjcl/inventory/rust_test_manifest.txt`
 
 ## 6. 来源（Source）
 - wrapper：`codex-cli/bin/codex.js`

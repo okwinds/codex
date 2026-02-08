@@ -1,7 +1,7 @@
 # `codex-core`
 
 - path: `codex-rs/core`
-- generated_utc: `2026-02-03T09:48:37Z`
+- generated_utc: `2026-02-08T10:45:13Z`
 - role: core engine (turn loop, tools, config, rollout)
 
 ## Build Targets
@@ -51,6 +51,7 @@
 - `keyring`
 - `libc`
 - `multimap`
+- `notify`
 - `once_cell`
 - `os_info`
 - `rand`
@@ -70,8 +71,7 @@
 - `tempfile`
 - `test-case`
 - `test-log`
-- `thiserror`
-- (… 13 more)
+- (… 15 more)
 
 ## Features
 - `deterministic_process_ids`
@@ -82,6 +82,7 @@
 - `pub mod auth;`
 - `pub mod bash;`
 - `pub mod codex;`
+- `pub use codex::SteerInputError;`
 - `pub use codex_thread::CodexThread;`
 - `pub use codex_thread::ThreadConfigSnapshot;`
 - `pub mod config;`
@@ -94,6 +95,7 @@
 - `pub mod exec_env;`
 - `pub mod features;`
 - `pub mod git_info;`
+- `pub mod hooks;`
 - `pub mod instructions;`
 - `pub mod landlock;`
 - `pub mod mcp;`
@@ -108,12 +110,11 @@
 - `pub mod sandboxing;`
 - `pub mod token_data;`
 - `pub mod windows_sandbox;`
-- `pub use model_provider_info::CHAT_WIRE_API_DEPRECATION_SUMMARY;`
+- `pub use client::X_RESPONSESAPI_INCLUDE_TIMING_METRICS_HEADER;`
 - `pub use model_provider_info::DEFAULT_LMSTUDIO_PORT;`
 - `pub use model_provider_info::DEFAULT_OLLAMA_PORT;`
 - `pub use model_provider_info::LMSTUDIO_OSS_PROVIDER_ID;`
 - `pub use model_provider_info::ModelProviderInfo;`
-- `pub use model_provider_info::OLLAMA_CHAT_PROVIDER_ID;`
 - `pub use model_provider_info::OLLAMA_OSS_PROVIDER_ID;`
 - `pub use model_provider_info::WireApi;`
 - `pub use model_provider_info::built_in_model_providers;`
@@ -144,6 +145,7 @@
 - `pub use rollout::SessionMeta;`
 - `pub use rollout::find_archived_thread_path_by_id_str;`
 - `pub use rollout::find_conversation_path_by_id_str;`
+- `pub use rollout::find_thread_name_by_id;`
 - `pub use rollout::find_thread_path_by_id_str;`
 - `pub use rollout::find_thread_path_by_name_str;`
 - `pub use rollout::list::Cursor;`
@@ -155,12 +157,10 @@
 - `pub use rollout::list::read_session_meta_line;`
 - `pub use rollout::rollout_date_parts;`
 - `pub use rollout::session_index::find_thread_names_by_ids;`
-- `pub use transport_manager::TransportManager;`
 - `pub mod util;`
-- `pub use apply_patch::CODEX_APPLY_PATCH_ARG1;`
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/MODULE_MAP.md`
-- `workdocjcl/spec/09_Verification/CODE_TO_SPEC_MAP.md`
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
-- `workdocjcl/spec/05_Integrations/TOOLS.md`
+- `docs/workdocjcl/spec/00_Overview/MODULE_MAP.md`
+- `docs/workdocjcl/spec/09_Verification/CODE_TO_SPEC_MAP.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/05_Integrations/TOOLS.md`

@@ -1,8 +1,8 @@
 # Rust Crate Specs Index
 
-- generated_utc: `2026-02-03T09:48:37Z`
+- generated_utc: `2026-02-08T10:45:12Z`
 - workspace_root: `/Users/okwinds/Files/工作/若凡光年/技术平台/Code/codex/codex-rs`
-- member_count: `50`
+- member_count: `51`
 
 | Member path | Crate name | Role (heuristic) | Spec |
 |---|---|---|---|
@@ -23,6 +23,7 @@
 | `cli` | `codex-cli` | top-level CLI multitool (clap) for codex executable | `codex-cli.md` |
 | `common` | `codex-common` | crate | `codex-common.md` |
 | `core` | `codex-core` | core engine (turn loop, tools, config, rollout) | `codex-core.md` |
+| `secrets` | `codex-secrets` | crate | `codex-secrets.md` |
 | `exec` | `codex-exec` | crate | `codex-exec.md` |
 | `exec-server` | `codex-exec-server` | crate | `codex-exec-server.md` |
 | `execpolicy` | `codex-execpolicy` | execpolicy rules and enforcement | `codex-execpolicy.md` |

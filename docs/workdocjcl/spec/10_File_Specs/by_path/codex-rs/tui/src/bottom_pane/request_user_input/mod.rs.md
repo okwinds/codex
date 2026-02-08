@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `93890`
-- sha256: `67a7165ae2b30299aa2aedf10ebdac0ca898006b80f69f3e40461d7a80ee8777`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `98515`
+- sha256: `7964c17f2a5dca674bad109544e3bbbda4640668441252f394042f566b80e2d1`
+- generated_utc: `2026-02-08T10:45:39Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -88,109 +88,113 @@ Source file (no public surface detected by heuristic).
 - `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:405` `fn sync_composer_placeholder(&mut self) {`
 - `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:410` `fn clear_notes_draft(&mut self) {`
 - `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:423` `fn footer_tips(&self) -> Vec<FooterTip> {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:473` `fn wrap_footer_tips(&self, width: u16, tips: Vec<FooterTip>) -> Vec<Vec<FooterTip>> {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:519` `fn ensure_focus_available(&mut self) {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:537` `fn reset_for_request(&mut self) {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:568` `fn options_len_for_question(`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:583` `fn other_option_enabled_for_question(`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:593` `fn option_label_for_index(`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:608` `fn move_question(&mut self, next: bool) {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:620` `fn jump_to_question(&mut self, idx: usize) {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:631` `fn select_current_option(&mut self, committed: bool) {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:649` `fn clear_selection(&mut self) {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:667` `fn ensure_selected_for_notes(&mut self) {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:675` `fn go_next_or_submit(&mut self) {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:689` `fn submit_answers(&mut self) {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:747` `fn open_unanswered_confirmation(&mut self) {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:753` `fn close_unanswered_confirmation(&mut self) {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:757` `fn unanswered_question_count(&self) -> usize {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:761` `fn unanswered_submit_description(&self) -> String {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:771` `fn first_unanswered_index(&self) -> Option<usize> {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:781` `fn unanswered_confirmation_rows(&self) -> Vec<GenericDisplayRow> {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:812` `fn is_question_answered(&self, idx: usize, _current_text: &str) -> bool {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:831` `fn unanswered_count(&self) -> usize {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:842` `fn notes_input_height(&self, width: u16) -> u16 {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:849` `fn apply_submission_to_draft(&mut self, text: String, text_elements: Vec<TextElement>) {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:870` `fn apply_submission_draft(&mut self, draft: ComposerDraft) {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:881` `fn handle_composer_input_result(&mut self, result: InputResult) -> bool {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:920` `fn handle_confirm_unanswered_key_event(&mut self, key_event: KeyEvent) {`
-- `impl` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:963` `impl BottomPaneView for RequestUserInputOverlay {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:964` `fn prefer_esc_to_handle_key_event(&self) -> bool {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:968` `fn handle_key_event(&mut self, key_event: KeyEvent) {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1185` `fn on_ctrl_c(&mut self) -> CancellationEvent {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1206` `fn is_complete(&self) -> bool {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1210` `fn handle_paste(&mut self, pasted: String) -> bool {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1225` `fn flush_paste_burst_if_due(&mut self) -> bool {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1229` `fn is_in_paste_burst(&self) -> bool {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1233` `fn try_consume_user_input_request(`
-- `use` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1244` `use super::*;`
-- `use` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1245` `use crate::app_event::AppEvent;`
-- `use` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1246` `use crate::bottom_pane::selection_popup_common::menu_surface_inset;`
-- `use` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1247` `use crate::render::renderable::Renderable;`
-- `use` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1248` `use codex_protocol::request_user_input::RequestUserInputQuestion;`
-- `use` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1249` `use codex_protocol::request_user_input::RequestUserInputQuestionOption;`
-- `use` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1250` `use pretty_assertions::assert_eq;`
-- `use` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1251` `use ratatui::buffer::Buffer;`
-- `use` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1252` `use ratatui::layout::Rect;`
-- `use` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1253` `use std::collections::HashMap;`
-- `use` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1254` `use tokio::sync::mpsc::unbounded_channel;`
-- `use` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1255` `use unicode_width::UnicodeWidthStr;`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1257` `fn test_sender() -> (`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1265` `fn expect_interrupt_only(rx: &mut tokio::sync::mpsc::UnboundedReceiver<AppEvent>) {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1277` `fn question_with_options(id: &str, header: &str) -> RequestUserInputQuestion {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1301` `fn question_with_options_and_other(id: &str, header: &str) -> RequestUserInputQuestion {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1325` `fn question_with_wrapped_options(id: &str, header: &str) -> RequestUserInputQuestion {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1355` `fn question_without_options(id: &str, header: &str) -> RequestUserInputQuestion {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1366` `fn request_event(`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1377` `fn snapshot_buffer(buf: &Buffer) -> String {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1389` `fn render_snapshot(overlay: &RequestUserInputOverlay, area: Rect) -> String {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1396` `fn queued_requests_are_fifo() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1422` `fn interrupt_discards_queued_requests_and_emits_interrupt() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1449` `fn options_can_submit_empty_when_unanswered() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1471` `fn enter_commits_default_selection_on_last_option_question() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1492` `fn enter_commits_default_selection_on_non_last_option_question() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1540` `fn number_keys_select_and_submit_options() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1561` `fn vim_keys_move_option_selection() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1583` `fn typing_in_options_does_not_open_notes() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1609` `fn h_l_move_between_questions_in_options() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1633` `fn tab_opens_notes_when_option_selected() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1652` `fn switching_to_options_resets_notes_focus_when_notes_hidden() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1676` `fn switching_from_freeform_with_text_resets_focus_and_keeps_last_option_empty() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1722` `fn esc_in_notes_mode_without_options_interrupts() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1739` `fn esc_in_options_mode_interrupts() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1756` `fn esc_in_notes_mode_interrupts() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1777` `fn esc_in_notes_mode_interrupts_with_notes_visible() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1799` `fn esc_drops_committed_answers() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1827` `fn backspace_in_options_clears_selection() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1848` `fn backspace_on_empty_notes_closes_notes_ui() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1874` `fn tab_in_notes_clears_notes_and_hides_ui() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1903` `fn skipped_option_questions_count_as_unanswered() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1917` `fn highlighted_option_questions_are_unanswered() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1933` `fn freeform_requires_enter_with_text_to_mark_answered() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1962` `fn freeform_enter_with_empty_text_is_unanswered() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1985` `fn freeform_questions_submit_empty_when_empty() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2006` `fn freeform_draft_is_not_submitted_without_enter() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2031` `fn freeform_commit_resets_when_draft_changes() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2074` `fn notes_are_captured_for_selected_option() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2116` `fn notes_submission_commits_selected_option() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2148` `fn is_other_adds_none_of_the_above_and_submits_it() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2201` `fn large_paste_is_preserved_when_switching_questions() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2229` `fn pending_paste_placeholder_survives_submission_and_back_navigation() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2260` `fn request_user_input_options_snapshot() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2277` `fn request_user_input_options_notes_visible_snapshot() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2300` `fn request_user_input_tight_height_snapshot() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2317` `fn layout_allocates_all_wrapped_options_when_space_allows() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2345` `fn desired_height_keeps_spacers_and_preferred_options_visible() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2374` `fn footer_wraps_tips_without_splitting_individual_tips() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2411` `fn request_user_input_wrapped_options_snapshot() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2444` `fn request_user_input_footer_wrap_snapshot() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2472` `fn request_user_input_scroll_options_snapshot() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2524` `fn request_user_input_hidden_options_footer_snapshot() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2576` `fn request_user_input_freeform_snapshot() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2593` `fn request_user_input_multi_question_first_snapshot() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2616` `fn request_user_input_multi_question_last_snapshot() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2640` `fn request_user_input_unanswered_confirmation_snapshot() {`
-- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2666` `fn options_scroll_while_editing_notes() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:475` `fn wrap_footer_tips(&self, width: u16, tips: Vec<FooterTip>) -> Vec<Vec<FooterTip>> {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:521` `fn ensure_focus_available(&mut self) {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:539` `fn reset_for_request(&mut self) {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:570` `fn options_len_for_question(`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:585` `fn other_option_enabled_for_question(`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:595` `fn option_label_for_index(`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:610` `fn move_question(&mut self, next: bool) {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:622` `fn jump_to_question(&mut self, idx: usize) {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:633` `fn select_current_option(&mut self, committed: bool) {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:651` `fn clear_selection(&mut self) {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:668` `fn clear_notes_and_focus_options(&mut self) {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:686` `fn ensure_selected_for_notes(&mut self) {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:694` `fn go_next_or_submit(&mut self) {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:708` `fn submit_answers(&mut self) {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:766` `fn open_unanswered_confirmation(&mut self) {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:772` `fn close_unanswered_confirmation(&mut self) {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:776` `fn unanswered_question_count(&self) -> usize {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:780` `fn unanswered_submit_description(&self) -> String {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:790` `fn first_unanswered_index(&self) -> Option<usize> {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:800` `fn unanswered_confirmation_rows(&self) -> Vec<GenericDisplayRow> {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:831` `fn is_question_answered(&self, idx: usize, _current_text: &str) -> bool {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:850` `fn unanswered_count(&self) -> usize {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:861` `fn notes_input_height(&self, width: u16) -> u16 {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:868` `fn apply_submission_to_draft(&mut self, text: String, text_elements: Vec<TextElement>) {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:889` `fn apply_submission_draft(&mut self, draft: ComposerDraft) {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:900` `fn handle_composer_input_result(&mut self, result: InputResult) -> bool {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:939` `fn handle_confirm_unanswered_key_event(&mut self, key_event: KeyEvent) {`
+- `impl` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:982` `impl BottomPaneView for RequestUserInputOverlay {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:983` `fn prefer_esc_to_handle_key_event(&self) -> bool {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:987` `fn handle_key_event(&mut self, key_event: KeyEvent) {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1215` `fn on_ctrl_c(&mut self) -> CancellationEvent {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1236` `fn is_complete(&self) -> bool {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1240` `fn handle_paste(&mut self, pasted: String) -> bool {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1255` `fn flush_paste_burst_if_due(&mut self) -> bool {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1259` `fn is_in_paste_burst(&self) -> bool {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1263` `fn try_consume_user_input_request(`
+- `use` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1274` `use super::*;`
+- `use` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1275` `use crate::app_event::AppEvent;`
+- `use` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1276` `use crate::bottom_pane::selection_popup_common::menu_surface_inset;`
+- `use` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1277` `use crate::render::renderable::Renderable;`
+- `use` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1278` `use codex_protocol::request_user_input::RequestUserInputQuestion;`
+- `use` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1279` `use codex_protocol::request_user_input::RequestUserInputQuestionOption;`
+- `use` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1280` `use pretty_assertions::assert_eq;`
+- `use` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1281` `use ratatui::buffer::Buffer;`
+- `use` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1282` `use ratatui::layout::Rect;`
+- `use` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1283` `use std::collections::HashMap;`
+- `use` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1284` `use tokio::sync::mpsc::unbounded_channel;`
+- `use` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1285` `use unicode_width::UnicodeWidthStr;`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1287` `fn test_sender() -> (`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1295` `fn expect_interrupt_only(rx: &mut tokio::sync::mpsc::UnboundedReceiver<AppEvent>) {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1307` `fn question_with_options(id: &str, header: &str) -> RequestUserInputQuestion {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1331` `fn question_with_options_and_other(id: &str, header: &str) -> RequestUserInputQuestion {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1355` `fn question_with_wrapped_options(id: &str, header: &str) -> RequestUserInputQuestion {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1385` `fn question_without_options(id: &str, header: &str) -> RequestUserInputQuestion {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1396` `fn request_event(`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1407` `fn snapshot_buffer(buf: &Buffer) -> String {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1419` `fn render_snapshot(overlay: &RequestUserInputOverlay, area: Rect) -> String {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1426` `fn queued_requests_are_fifo() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1452` `fn interrupt_discards_queued_requests_and_emits_interrupt() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1479` `fn options_can_submit_empty_when_unanswered() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1501` `fn enter_commits_default_selection_on_last_option_question() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1522` `fn enter_commits_default_selection_on_non_last_option_question() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1570` `fn number_keys_select_and_submit_options() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1591` `fn vim_keys_move_option_selection() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1613` `fn typing_in_options_does_not_open_notes() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1639` `fn h_l_move_between_questions_in_options() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1663` `fn left_right_move_between_questions_in_options() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1687` `fn options_notes_focus_hides_question_navigation_tip() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1724` `fn freeform_shows_ctrl_p_and_ctrl_n_question_navigation_tip() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1754` `fn tab_opens_notes_when_option_selected() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1773` `fn switching_to_options_resets_notes_focus_when_notes_hidden() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1797` `fn switching_from_freeform_with_text_resets_focus_and_keeps_last_option_empty() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1843` `fn esc_in_notes_mode_without_options_interrupts() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1860` `fn esc_in_options_mode_interrupts() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1877` `fn esc_in_notes_mode_clears_notes_and_hides_ui() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1905` `fn esc_in_notes_mode_with_text_clears_notes_and_hides_ui() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1934` `fn esc_drops_committed_answers() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1962` `fn backspace_in_options_clears_selection() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:1983` `fn backspace_on_empty_notes_closes_notes_ui() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2009` `fn tab_in_notes_clears_notes_and_hides_ui() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2038` `fn skipped_option_questions_count_as_unanswered() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2052` `fn highlighted_option_questions_are_unanswered() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2068` `fn freeform_requires_enter_with_text_to_mark_answered() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2097` `fn freeform_enter_with_empty_text_is_unanswered() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2120` `fn freeform_questions_submit_empty_when_empty() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2141` `fn freeform_draft_is_not_submitted_without_enter() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2166` `fn freeform_commit_resets_when_draft_changes() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2209` `fn notes_are_captured_for_selected_option() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2251` `fn notes_submission_commits_selected_option() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2283` `fn is_other_adds_none_of_the_above_and_submits_it() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2336` `fn large_paste_is_preserved_when_switching_questions() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2364` `fn pending_paste_placeholder_survives_submission_and_back_navigation() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2395` `fn request_user_input_options_snapshot() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2412` `fn request_user_input_options_notes_visible_snapshot() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2435` `fn request_user_input_tight_height_snapshot() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2452` `fn layout_allocates_all_wrapped_options_when_space_allows() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2480` `fn desired_height_keeps_spacers_and_preferred_options_visible() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2509` `fn footer_wraps_tips_without_splitting_individual_tips() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2546` `fn request_user_input_wrapped_options_snapshot() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2579` `fn request_user_input_footer_wrap_snapshot() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2607` `fn request_user_input_scroll_options_snapshot() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2659` `fn request_user_input_hidden_options_footer_snapshot() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2711` `fn request_user_input_freeform_snapshot() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2728` `fn request_user_input_multi_question_first_snapshot() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2751` `fn request_user_input_multi_question_last_snapshot() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2775` `fn request_user_input_unanswered_confirmation_snapshot() {`
+- `fn` `codex-rs/tui/src/bottom_pane/request_user_input/mod.rs:2801` `fn options_scroll_while_editing_notes() {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -221,4 +225,4 @@ Source file (no public surface detected by heuristic).
 - uses Rust panic/expect/unwrap-style failure paths
 
 ## Spec Links
-- `workdocjcl/spec/06_UI/TUI.md`
+- `docs/workdocjcl/spec/06_UI/TUI.md`

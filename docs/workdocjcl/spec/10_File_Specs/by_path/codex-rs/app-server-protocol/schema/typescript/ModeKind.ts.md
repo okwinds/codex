@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.ts`
-- size_bytes: `303`
-- sha256: `9ab96594ec05c28e28b21efb0d63cf9b9e707d515a239862b0eca1864bf7dd04`
-- generated_utc: `2026-02-03T16:08:28Z`
+- size_bytes: `262`
+- sha256: `c1ed359d44cf4e71cf2293e18e4ea11a43f833d404d9e643d6f3b3eaac8974f8`
+- generated_utc: `2026-02-08T10:45:14Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -18,14 +18,14 @@ Source file implementing exported/public items listed below.
 - (no obvious side effects detected by heuristic)
 
 ## Public Surface (auto)
-- `export type ModeKind = "plan" | "code" | "pair_programming" | "execute" | "custom";`
+- `export type ModeKind = "plan" | "default";`
 
 ## Definitions (auto, per-file)
-- `export` `codex-rs/app-server-protocol/schema/typescript/ModeKind.ts:8` `export type ModeKind = "plan" | "code" | "pair_programming" | "execute" | "custom";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/ModeKind.ts:8` `export type ModeKind = "plan" | "default";`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
-- `export type ModeKind = "plan" | "code" | "pair_programming" | "execute" | "custom";`
+- `export type ModeKind = "plan" | "default";`
 ### Referenced env vars
 - (none detected)
 

@@ -5,7 +5,7 @@
 - ext: `.js`
 - size_bytes: `4997`
 - sha256: `69b5cbe73a947e9532b1be337e27a1988bfba98a77148f8a96804fdfbf7a6903`
-- generated_utc: `2026-02-03T16:08:28Z`
+- generated_utc: `2026-02-08T10:45:14Z`
 
 ## Purpose (Why)
 Node wrapper entrypoint for @openai/codex: selects the correct platform-specific native binary and executes it with signal forwarding.
@@ -65,4 +65,4 @@ Node wrapper entrypoint for @openai/codex: selects the correct platform-specific
 - throws exceptions
 
 ## Spec Links
-- `workdocjcl/spec/07_Infrastructure/PACKAGING.md`
+- `docs/workdocjcl/spec/07_Infrastructure/PACKAGING.md`

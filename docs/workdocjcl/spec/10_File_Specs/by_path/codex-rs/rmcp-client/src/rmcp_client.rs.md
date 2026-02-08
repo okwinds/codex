@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `17992`
-- sha256: `6037d9066ad72068c13d466123175c4fe17d040480267f1863542c71e1bdc6af`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `20188`
+- sha256: `51a6967a8e2a7f418c3ed8f529bd54902790b60d977e7539850940033a743e6c`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -83,31 +83,40 @@ Source file implementing exported/public items listed below.
 - `use` `codex-rs/rmcp-client/src/rmcp_client.rs:59` `use crate::utils::create_env_for_mcp_server;`
 - `use` `codex-rs/rmcp-client/src/rmcp_client.rs:60` `use crate::utils::run_with_timeout;`
 - `enum` `codex-rs/rmcp-client/src/rmcp_client.rs:62` `enum PendingTransport {`
-- `enum` `codex-rs/rmcp-client/src/rmcp_client.rs:73` `enum ClientState {`
-- `type` `codex-rs/rmcp-client/src/rmcp_client.rs:83` `pub type Elicitation = CreateElicitationRequestParam;`
-- `type` `codex-rs/rmcp-client/src/rmcp_client.rs:84` `pub type ElicitationResponse = CreateElicitationResult;`
-- `type` `codex-rs/rmcp-client/src/rmcp_client.rs:87` `pub type SendElicitation = Box<`
-- `struct` `codex-rs/rmcp-client/src/rmcp_client.rs:91` `pub struct ToolWithConnectorId {`
-- `struct` `codex-rs/rmcp-client/src/rmcp_client.rs:97` `pub struct ListToolsWithConnectorIdResult {`
-- `struct` `codex-rs/rmcp-client/src/rmcp_client.rs:104` `pub struct RmcpClient {`
-- `impl` `codex-rs/rmcp-client/src/rmcp_client.rs:108` `impl RmcpClient {`
-- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:109` `pub async fn new_stdio_client(`
-- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:166` `pub async fn new_streamable_http_client(`
-- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:221` `pub async fn initialize(`
-- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:287` `pub async fn list_tools(`
-- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:300` `pub async fn list_tools_with_connector_ids(`
-- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:332` `fn meta_string(meta: Option<&rmcp::model::Meta>, key: &str) -> Option<String> {`
-- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:340` `pub async fn list_resources(`
-- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:354` `pub async fn list_resource_templates(`
-- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:368` `pub async fn read_resource(`
-- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:381` `pub async fn call_tool(`
-- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:408` `pub async fn send_custom_notification(`
-- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:424` `pub async fn send_custom_request(`
-- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:438` `async fn service(&self) -> Result<Arc<RunningService<RoleClient, LoggingClientHandler>>> {`
-- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:446` `async fn oauth_persistor(&self) -> Option<OAuthPersistor> {`
-- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:459` `async fn persist_oauth_tokens(&self) {`
-- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:467` `async fn refresh_oauth_if_needed(&self) {`
-- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:476` `async fn create_oauth_transport_and_runtime(`
+- `enum` `codex-rs/rmcp-client/src/rmcp_client.rs:76` `enum ClientState {`
+- `const` `codex-rs/rmcp-client/src/rmcp_client.rs:88` `const PROCESS_GROUP_TERM_GRACE_PERIOD: Duration = Duration::from_secs(2);`
+- `struct` `codex-rs/rmcp-client/src/rmcp_client.rs:91` `struct ProcessGroupGuard {`
+- `struct` `codex-rs/rmcp-client/src/rmcp_client.rs:96` `struct ProcessGroupGuard;`
+- `impl` `codex-rs/rmcp-client/src/rmcp_client.rs:98` `impl ProcessGroupGuard {`
+- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:99` `fn new(process_group_id: u32) -> Self {`
+- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:112` `fn maybe_terminate_process_group(&self) {`
+- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:135` `fn maybe_terminate_process_group(&self) {}`
+- `impl` `codex-rs/rmcp-client/src/rmcp_client.rs:138` `impl Drop for ProcessGroupGuard {`
+- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:139` `fn drop(&mut self) {`
+- `type` `codex-rs/rmcp-client/src/rmcp_client.rs:146` `pub type Elicitation = CreateElicitationRequestParam;`
+- `type` `codex-rs/rmcp-client/src/rmcp_client.rs:147` `pub type ElicitationResponse = CreateElicitationResult;`
+- `type` `codex-rs/rmcp-client/src/rmcp_client.rs:150` `pub type SendElicitation = Box<`
+- `struct` `codex-rs/rmcp-client/src/rmcp_client.rs:154` `pub struct ToolWithConnectorId {`
+- `struct` `codex-rs/rmcp-client/src/rmcp_client.rs:160` `pub struct ListToolsWithConnectorIdResult {`
+- `struct` `codex-rs/rmcp-client/src/rmcp_client.rs:167` `pub struct RmcpClient {`
+- `impl` `codex-rs/rmcp-client/src/rmcp_client.rs:171` `impl RmcpClient {`
+- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:172` `pub async fn new_stdio_client(`
+- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:235` `pub async fn new_streamable_http_client(`
+- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:290` `pub async fn initialize(`
+- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:363` `pub async fn list_tools(`
+- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:376` `pub async fn list_tools_with_connector_ids(`
+- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:408` `fn meta_string(meta: Option<&rmcp::model::Meta>, key: &str) -> Option<String> {`
+- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:416` `pub async fn list_resources(`
+- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:430` `pub async fn list_resource_templates(`
+- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:444` `pub async fn read_resource(`
+- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:457` `pub async fn call_tool(`
+- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:484` `pub async fn send_custom_notification(`
+- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:500` `pub async fn send_custom_request(`
+- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:514` `async fn service(&self) -> Result<Arc<RunningService<RoleClient, LoggingClientHandler>>> {`
+- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:522` `async fn oauth_persistor(&self) -> Option<OAuthPersistor> {`
+- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:535` `async fn persist_oauth_tokens(&self) {`
+- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:543` `async fn refresh_oauth_if_needed(&self) {`
+- `fn` `codex-rs/rmcp-client/src/rmcp_client.rs:552` `async fn create_oauth_transport_and_runtime(`
 
 ## Dependencies (auto sample)
 ### Imports / Includes

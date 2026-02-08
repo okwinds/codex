@@ -5,7 +5,7 @@
 - **Fork**：从某个历史 session fork 出新线程
 
 该选择器只负责“列出候选 + 搜索 + 选中返回 path”；真正的 resume/fork 语义（rollout 截断、cwd 处理、线程初始化）由 core/上层调用方完成：
-- Rollout 语义：`workdocjcl/spec/02_Data/ROLLOUT_SEMANTICS.md`
+- Rollout 语义：`docs/workdocjcl/spec/02_Data/ROLLOUT_SEMANTICS.md`
 
 ---
 

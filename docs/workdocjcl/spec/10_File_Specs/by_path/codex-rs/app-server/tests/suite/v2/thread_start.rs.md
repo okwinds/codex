@@ -3,9 +3,9 @@
 ## Identity
 - kind: `test`
 - ext: `.rs`
-- size_bytes: `4508`
-- sha256: `3b1b13105a812250ab5c351ecf65e10d8cde2c2ef1414d68b272f264ad3606fa`
-- generated_utc: `2026-02-03T16:08:28Z`
+- size_bytes: `7507`
+- sha256: `89753da9ce39c1bab9288da75d357fd99a5163ca151ff0672c13111c134553eb`
+- generated_utc: `2026-02-08T10:45:15Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -29,6 +29,7 @@ Test or snapshot file used for automated verification.
 - `use app_test_support::McpProcess;`
 - `use app_test_support::create_mock_responses_server_repeating_assistant;`
 - `use app_test_support::to_response;`
+- `use codex_app_server_protocol::JSONRPCError;`
 - `use codex_app_server_protocol::JSONRPCNotification;`
 - `use codex_app_server_protocol::JSONRPCResponse;`
 - `use codex_app_server_protocol::RequestId;`

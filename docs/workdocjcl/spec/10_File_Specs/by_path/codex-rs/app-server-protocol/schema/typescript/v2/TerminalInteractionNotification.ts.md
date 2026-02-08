@@ -5,7 +5,7 @@
 - ext: `.ts`
 - size_bytes: `288`
 - sha256: `c22bbace10fb3c79e3ff5f04721ecf6f3fb15919ea29ff3dfd7168a18a97b74f`
-- generated_utc: `2026-02-03T16:08:28Z`
+- generated_utc: `2026-02-08T10:45:14Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.

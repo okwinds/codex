@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `179856`
-- sha256: `5a19e599bbb7d6d90b58875688d308f3f372a9345d1d54dac220c1fba2c58334`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `206047`
+- sha256: `1ce046711d3cd77e1720d637afd2f168d47ae24ee6b0280a59daba866c4f1300`
+- generated_utc: `2026-02-08T10:45:40Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -29,201 +29,201 @@ Source file (no public surface detected by heuristic).
 - `use` `codex-rs/tui/src/chatwidget/tests.rs:10` `use crate::app_event_sender::AppEventSender;`
 - `use` `codex-rs/tui/src/chatwidget/tests.rs:11` `use crate::bottom_pane::FeedbackAudience;`
 - `use` `codex-rs/tui/src/chatwidget/tests.rs:12` `use crate::bottom_pane::LocalImageAttachment;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:13` `use crate::history_cell::UserHistoryCell;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:14` `use crate::test_backend::VT100Backend;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:15` `use crate::tui::FrameRequester;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:16` `use assert_matches::assert_matches;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:17` `use codex_common::approval_presets::builtin_approval_presets;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:18` `use codex_core::AuthManager;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:19` `use codex_core::CodexAuth;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:20` `use codex_core::config::Config;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:21` `use codex_core::config::ConfigBuilder;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:22` `use codex_core::config::Constrained;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:23` `use codex_core::config::ConstraintError;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:24` `use codex_core::config_loader::RequirementSource;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:25` `use codex_core::features::Feature;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:26` `use codex_core::models_manager::manager::ModelsManager;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:27` `use codex_core::protocol::AgentMessageDeltaEvent;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:28` `use codex_core::protocol::AgentMessageEvent;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:29` `use codex_core::protocol::AgentReasoningDeltaEvent;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:30` `use codex_core::protocol::AgentReasoningEvent;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:31` `use codex_core::protocol::ApplyPatchApprovalRequestEvent;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:32` `use codex_core::protocol::BackgroundEventEvent;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:33` `use codex_core::protocol::CreditsSnapshot;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:34` `use codex_core::protocol::Event;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:35` `use codex_core::protocol::EventMsg;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:36` `use codex_core::protocol::ExecApprovalRequestEvent;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:37` `use codex_core::protocol::ExecCommandBeginEvent;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:38` `use codex_core::protocol::ExecCommandEndEvent;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:39` `use codex_core::protocol::ExecCommandSource;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:40` `use codex_core::protocol::ExecPolicyAmendment;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:41` `use codex_core::protocol::ExitedReviewModeEvent;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:42` `use codex_core::protocol::FileChange;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:43` `use codex_core::protocol::McpStartupCompleteEvent;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:44` `use codex_core::protocol::McpStartupStatus;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:45` `use codex_core::protocol::McpStartupUpdateEvent;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:46` `use codex_core::protocol::Op;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:47` `use codex_core::protocol::PatchApplyBeginEvent;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:48` `use codex_core::protocol::PatchApplyEndEvent;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:49` `use codex_core::protocol::RateLimitWindow;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:50` `use codex_core::protocol::ReviewRequest;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:51` `use codex_core::protocol::ReviewTarget;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:52` `use codex_core::protocol::SessionSource;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:53` `use codex_core::protocol::StreamErrorEvent;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:54` `use codex_core::protocol::TerminalInteractionEvent;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:55` `use codex_core::protocol::TokenCountEvent;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:56` `use codex_core::protocol::TokenUsage;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:57` `use codex_core::protocol::TokenUsageInfo;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:58` `use codex_core::protocol::TurnCompleteEvent;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:59` `use codex_core::protocol::TurnStartedEvent;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:60` `use codex_core::protocol::UndoCompletedEvent;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:61` `use codex_core::protocol::UndoStartedEvent;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:62` `use codex_core::protocol::ViewImageToolCallEvent;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:63` `use codex_core::protocol::WarningEvent;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:64` `use codex_otel::OtelManager;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:65` `use codex_protocol::ThreadId;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:66` `use codex_protocol::account::PlanType;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:67` `use codex_protocol::config_types::CollaborationMode;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:68` `use codex_protocol::config_types::ModeKind;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:69` `use codex_protocol::config_types::Personality;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:70` `use codex_protocol::config_types::Settings;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:71` `use codex_protocol::openai_models::ModelPreset;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:72` `use codex_protocol::openai_models::ReasoningEffortPreset;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:73` `use codex_protocol::openai_models::default_input_modalities;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:74` `use codex_protocol::parse_command::ParsedCommand;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:75` `use codex_protocol::plan_tool::PlanItemArg;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:76` `use codex_protocol::plan_tool::StepStatus;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:77` `use codex_protocol::plan_tool::UpdatePlanArgs;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:78` `use codex_protocol::protocol::CodexErrorInfo;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:79` `use codex_protocol::user_input::TextElement;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:80` `use codex_protocol::user_input::UserInput;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:81` `use codex_utils_absolute_path::AbsolutePathBuf;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:82` `use crossterm::event::KeyCode;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:83` `use crossterm::event::KeyEvent;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:84` `use crossterm::event::KeyModifiers;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:85` `use insta::assert_snapshot;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:86` `use pretty_assertions::assert_eq;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:88` `use serial_test::serial;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:89` `use std::collections::HashSet;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:90` `use std::path::PathBuf;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:91` `use tempfile::NamedTempFile;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:92` `use tempfile::tempdir;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:93` `use tokio::sync::mpsc::error::TryRecvError;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:94` `use tokio::sync::mpsc::unbounded_channel;`
-- `use` `codex-rs/tui/src/chatwidget/tests.rs:95` `use toml::Value as TomlValue;`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:97` `async fn test_config() -> Config {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:107` `fn invalid_value(candidate: impl Into<String>, allowed: impl Into<String>) -> ConstraintError {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:116` `fn snapshot(percent: f64) -> RateLimitSnapshot {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:130` `async fn resumed_initial_messages_render_history() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:189` `async fn replayed_user_message_preserves_text_elements_and_local_images() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:250` `async fn submission_preserves_text_elements_and_local_images() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:329` `async fn blocked_image_restore_preserves_mention_paths() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:372` `async fn interrupted_turn_restores_queued_messages_with_images_and_elements() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:466` `async fn remap_placeholders_uses_attachment_labels() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:530` `async fn remap_placeholders_uses_byte_ranges_when_placeholder_missing() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:592` `async fn entered_review_mode_uses_request_hint() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:613` `async fn entered_review_mode_defaults_to_current_changes_banner() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:632` `async fn review_restores_context_window_indicator() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:681` `async fn token_count_none_resets_context_indicator() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:707` `async fn context_indicator_shows_used_tokens_when_window_unknown() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:746` `async fn helpers_are_available_and_do_not_panic() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:776` `fn test_otel_manager(config: &Config, model: &str) -> OtelManager {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:792` `async fn make_chatwidget_manual(`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:904` `fn next_submit_op(op_rx: &mut tokio::sync::mpsc::UnboundedReceiver<Op>) -> Op {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:915` `fn set_chatgpt_auth(chat: &mut ChatWidget) {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:925` `async fn worked_elapsed_from_resets_when_timer_restarts() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:945` `fn drain_insert_history(`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:961` `fn lines_to_single_string(lines: &[ratatui::text::Line<'static>]) -> String {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:972` `fn make_token_info(total_tokens: i64, context_window: i64) -> TokenUsageInfo {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:973` `fn usage(total_tokens: i64) -> TokenUsage {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:988` `async fn rate_limit_warnings_emit_thresholds() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1020` `async fn test_rate_limit_warnings_monthly() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1035` `async fn rate_limit_snapshot_keeps_prior_credits_when_missing_from_headers() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1084` `async fn rate_limit_snapshot_updates_and_retains_plan_type() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1137` `async fn rate_limit_switch_prompt_skips_when_on_lower_cost_model() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1151` `async fn rate_limit_switch_prompt_shows_once_per_session() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1175` `async fn rate_limit_switch_prompt_respects_hidden_notice() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1190` `async fn rate_limit_switch_prompt_defers_until_task_complete() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1211` `async fn rate_limit_switch_prompt_popup_snapshot() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1224` `async fn plan_implementation_popup_snapshot() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1233` `async fn plan_implementation_popup_no_selected_snapshot() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1243` `async fn plan_implementation_popup_yes_emits_submit_message_event() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1262` `async fn submit_user_message_with_mode_sets_coding_collaboration_mode() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1288` `async fn plan_implementation_popup_skips_replayed_turn_complete() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1308` `async fn plan_implementation_popup_shows_once_when_replay_precedes_live_turn_complete() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1363` `async fn plan_implementation_popup_skips_when_messages_queued() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1383` `async fn plan_implementation_popup_skips_without_proposed_plan() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1409` `async fn plan_implementation_popup_shows_after_proposed_plan_output() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1430` `async fn plan_implementation_popup_skips_when_rate_limit_prompt_pending() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1465` `async fn exec_approval_emits_proposed_command_and_decision_history() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1509` `async fn exec_approval_decision_truncates_multiline_and_long_commands() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1594` `fn begin_exec_with_source(`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1623` `fn begin_unified_exec_startup(`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1648` `fn terminal_interaction(chat: &mut ChatWidget, call_id: &str, process_id: &str, stdin: &str) {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1659` `fn begin_exec(chat: &mut ChatWidget, call_id: &str, raw_cmd: &str) -> ExecCommandBeginEvent {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1663` `fn end_exec(`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1706` `fn active_blob(chat: &ChatWidget) -> String {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1715` `fn get_available_model(chat: &ChatWidget, model: &str) -> ModelPreset {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1728` `async fn empty_enter_during_task_does_not_queue() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1742` `async fn alt_up_edits_most_recent_queued_message() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1775` `async fn enqueueing_history_prompt_multiple_times_is_stable() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1803` `async fn streaming_final_answer_keeps_task_running_state() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1834` `async fn exec_begin_restores_status_indicator_after_preamble() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1853` `async fn ctrl_c_shutdown_works_with_caps_lock() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1862` `async fn ctrl_d_quits_without_prompt() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1870` `async fn ctrl_d_with_modal_open_does_not_quit() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1880` `async fn ctrl_c_cleared_prompt_is_recoverable_via_history() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1911` `async fn exec_history_cell_shows_working_then_completed() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1941` `async fn exec_history_cell_shows_working_then_failed() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1965` `async fn exec_end_without_begin_uses_event_command() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2008` `async fn exec_history_shows_unified_exec_startup_commands() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2035` `async fn exec_history_shows_unified_exec_tool_calls() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2052` `async fn unified_exec_end_after_task_complete_is_suppressed() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2075` `async fn unified_exec_interaction_after_task_complete_is_suppressed() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2097` `async fn unified_exec_wait_after_final_agent_message_snapshot() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2132` `async fn unified_exec_wait_before_streamed_agent_message_snapshot() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2172` `async fn unified_exec_wait_status_header_updates_on_late_command_display() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2196` `async fn unified_exec_waiting_multiple_empty_snapshots() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2224` `async fn unified_exec_empty_then_non_empty_snapshot() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2241` `async fn unified_exec_non_empty_then_empty_snapshots() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2285` `async fn review_popup_custom_prompt_action_sends_event() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2310` `async fn slash_init_skips_when_project_doc_exists() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2342` `async fn collab_mode_shift_tab_cycles_only_when_enabled_and_idle() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2368` `async fn collab_slash_command_opens_picker_and_updates_mode() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2425` `async fn plan_slash_command_switches_to_plan_mode() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2438` `async fn plan_slash_command_with_args_submits_prompt_in_plan_mode() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2482` `async fn collaboration_modes_defaults_to_code_on_startup() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2521` `async fn experimental_mode_plan_applies_on_startup() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2566` `async fn set_model_updates_active_collaboration_mask() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2581` `async fn set_reasoning_effort_updates_active_collaboration_mask() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2596` `async fn collab_mode_is_not_sent_until_selected() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2619` `async fn collab_mode_enabling_keeps_custom_until_selected() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2627` `async fn user_turn_includes_personality_from_config() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2647` `async fn slash_quit_requests_exit() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2656` `async fn slash_exit_requests_exit() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2665` `async fn slash_resume_opens_picker() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2674` `async fn slash_fork_requests_current_fork() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2683` `async fn slash_rollout_displays_current_path() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2700` `async fn slash_rollout_handles_missing_path() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2719` `async fn undo_success_events_render_info_messages() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2756` `async fn undo_failure_events_render_error_message() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2791` `async fn undo_started_hides_interrupt_hint() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2811` `async fn review_commit_picker_shows_subjects_without_timestamps() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2873` `async fn custom_prompt_submit_sends_review_op() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2901` `async fn custom_prompt_enter_empty_does_not_send() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2913` `async fn view_image_tool_call_adds_history_cell() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2934` `async fn interrupt_exec_marks_failed_snapshot() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2963` `async fn interrupted_turn_error_message_snapshot() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2995` `async fn review_custom_prompt_escape_navigates_back_then_dismisses() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:3030` `async fn review_branch_picker_escape_navigates_back_then_dismisses() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:3063` `fn render_bottom_first_row(chat: &ChatWidget, width: u16) -> String {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:3085` `fn render_bottom_popup(chat: &ChatWidget, width: u16) -> String {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:3117` `async fn experimental_features_popup_snapshot() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:3142` `async fn experimental_features_toggle_saves_on_exit() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:3182` `async fn model_selection_popup_snapshot() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:3192` `async fn personality_selection_popup_snapshot() {`
-- `fn` `codex-rs/tui/src/chatwidget/tests.rs:3202` `async fn model_picker_hides_show_in_picker_false_models_from_cache() {`
-- (… 58 more definitions omitted; see symbol indexes under `workdocjcl/spec/13_Indexes/`)
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:13` `use crate::bottom_pane::MentionBinding;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:14` `use crate::history_cell::UserHistoryCell;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:15` `use crate::test_backend::VT100Backend;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:16` `use crate::tui::FrameRequester;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:17` `use assert_matches::assert_matches;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:18` `use codex_common::approval_presets::builtin_approval_presets;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:19` `use codex_core::AuthManager;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:20` `use codex_core::CodexAuth;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:21` `use codex_core::config::Config;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:22` `use codex_core::config::ConfigBuilder;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:23` `use codex_core::config::Constrained;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:24` `use codex_core::config::ConstraintError;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:25` `use codex_core::config_loader::RequirementSource;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:26` `use codex_core::features::Feature;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:27` `use codex_core::models_manager::manager::ModelsManager;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:28` `use codex_core::protocol::AgentMessageDeltaEvent;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:29` `use codex_core::protocol::AgentMessageEvent;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:30` `use codex_core::protocol::AgentReasoningDeltaEvent;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:31` `use codex_core::protocol::AgentReasoningEvent;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:32` `use codex_core::protocol::ApplyPatchApprovalRequestEvent;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:33` `use codex_core::protocol::BackgroundEventEvent;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:34` `use codex_core::protocol::CreditsSnapshot;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:35` `use codex_core::protocol::Event;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:36` `use codex_core::protocol::EventMsg;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:37` `use codex_core::protocol::ExecApprovalRequestEvent;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:38` `use codex_core::protocol::ExecCommandBeginEvent;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:39` `use codex_core::protocol::ExecCommandEndEvent;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:40` `use codex_core::protocol::ExecCommandSource;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:41` `use codex_core::protocol::ExecPolicyAmendment;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:42` `use codex_core::protocol::ExitedReviewModeEvent;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:43` `use codex_core::protocol::FileChange;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:44` `use codex_core::protocol::ItemCompletedEvent;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:45` `use codex_core::protocol::McpStartupCompleteEvent;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:46` `use codex_core::protocol::McpStartupStatus;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:47` `use codex_core::protocol::McpStartupUpdateEvent;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:48` `use codex_core::protocol::Op;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:49` `use codex_core::protocol::PatchApplyBeginEvent;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:50` `use codex_core::protocol::PatchApplyEndEvent;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:51` `use codex_core::protocol::RateLimitWindow;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:52` `use codex_core::protocol::ReviewRequest;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:53` `use codex_core::protocol::ReviewTarget;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:54` `use codex_core::protocol::SessionSource;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:55` `use codex_core::protocol::StreamErrorEvent;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:56` `use codex_core::protocol::TerminalInteractionEvent;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:57` `use codex_core::protocol::TokenCountEvent;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:58` `use codex_core::protocol::TokenUsage;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:59` `use codex_core::protocol::TokenUsageInfo;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:60` `use codex_core::protocol::TurnCompleteEvent;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:61` `use codex_core::protocol::TurnStartedEvent;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:62` `use codex_core::protocol::UndoCompletedEvent;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:63` `use codex_core::protocol::UndoStartedEvent;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:64` `use codex_core::protocol::ViewImageToolCallEvent;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:65` `use codex_core::protocol::WarningEvent;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:66` `use codex_core::skills::model::SkillMetadata;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:67` `use codex_otel::OtelManager;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:68` `use codex_otel::RuntimeMetricsSummary;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:69` `use codex_protocol::ThreadId;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:70` `use codex_protocol::account::PlanType;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:71` `use codex_protocol::config_types::CollaborationMode;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:72` `use codex_protocol::config_types::ModeKind;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:73` `use codex_protocol::config_types::Personality;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:74` `use codex_protocol::config_types::Settings;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:75` `use codex_protocol::items::AgentMessageContent;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:76` `use codex_protocol::items::AgentMessageItem;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:77` `use codex_protocol::items::TurnItem;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:78` `use codex_protocol::models::MessagePhase;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:79` `use codex_protocol::openai_models::ModelPreset;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:80` `use codex_protocol::openai_models::ReasoningEffortPreset;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:81` `use codex_protocol::openai_models::default_input_modalities;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:82` `use codex_protocol::parse_command::ParsedCommand;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:83` `use codex_protocol::plan_tool::PlanItemArg;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:84` `use codex_protocol::plan_tool::StepStatus;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:85` `use codex_protocol::plan_tool::UpdatePlanArgs;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:86` `use codex_protocol::protocol::CodexErrorInfo;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:87` `use codex_protocol::protocol::SkillScope;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:88` `use codex_protocol::user_input::TextElement;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:89` `use codex_protocol::user_input::UserInput;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:90` `use codex_utils_absolute_path::AbsolutePathBuf;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:91` `use crossterm::event::KeyCode;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:92` `use crossterm::event::KeyEvent;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:93` `use crossterm::event::KeyModifiers;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:94` `use insta::assert_snapshot;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:95` `use pretty_assertions::assert_eq;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:97` `use serial_test::serial;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:98` `use std::collections::HashSet;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:99` `use std::path::PathBuf;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:100` `use tempfile::NamedTempFile;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:101` `use tempfile::tempdir;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:102` `use tokio::sync::mpsc::error::TryRecvError;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:103` `use tokio::sync::mpsc::unbounded_channel;`
+- `use` `codex-rs/tui/src/chatwidget/tests.rs:104` `use toml::Value as TomlValue;`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:106` `async fn test_config() -> Config {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:116` `fn invalid_value(candidate: impl Into<String>, allowed: impl Into<String>) -> ConstraintError {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:125` `fn snapshot(percent: f64) -> RateLimitSnapshot {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:139` `async fn resumed_initial_messages_render_history() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:198` `async fn replayed_user_message_preserves_text_elements_and_local_images() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:259` `async fn forked_thread_history_line_includes_name_and_id_snapshot() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:296` `async fn forked_thread_history_line_without_name_shows_id_once_snapshot() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:323` `async fn submission_preserves_text_elements_and_local_images() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:402` `async fn submission_prefers_selected_duplicate_skill_path() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:477` `async fn blocked_image_restore_preserves_mention_bindings() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:530` `async fn interrupted_turn_restores_queued_messages_with_images_and_elements() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:624` `async fn interrupted_turn_restore_keeps_active_mode_for_resubmission() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:672` `async fn remap_placeholders_uses_attachment_labels() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:736` `async fn remap_placeholders_uses_byte_ranges_when_placeholder_missing() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:798` `async fn entered_review_mode_uses_request_hint() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:819` `async fn entered_review_mode_defaults_to_current_changes_banner() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:838` `async fn review_restores_context_window_indicator() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:887` `async fn token_count_none_resets_context_indicator() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:913` `async fn context_indicator_shows_used_tokens_when_window_unknown() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:952` `async fn helpers_are_available_and_do_not_panic() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:983` `fn test_otel_manager(config: &Config, model: &str) -> OtelManager {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1000` `async fn make_chatwidget_manual(`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1121` `fn next_submit_op(op_rx: &mut tokio::sync::mpsc::UnboundedReceiver<Op>) -> Op {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1132` `fn set_chatgpt_auth(chat: &mut ChatWidget) {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1142` `async fn prefetch_rate_limits_is_gated_on_chatgpt_auth_provider() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1158` `async fn worked_elapsed_from_resets_when_timer_restarts() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1178` `fn drain_insert_history(`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1194` `fn lines_to_single_string(lines: &[ratatui::text::Line<'static>]) -> String {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1205` `fn make_token_info(total_tokens: i64, context_window: i64) -> TokenUsageInfo {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1206` `fn usage(total_tokens: i64) -> TokenUsage {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1221` `async fn rate_limit_warnings_emit_thresholds() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1253` `async fn test_rate_limit_warnings_monthly() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1268` `async fn rate_limit_snapshot_keeps_prior_credits_when_missing_from_headers() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1317` `async fn rate_limit_snapshot_updates_and_retains_plan_type() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1370` `async fn rate_limit_switch_prompt_skips_when_on_lower_cost_model() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1384` `async fn rate_limit_switch_prompt_shows_once_per_session() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1408` `async fn rate_limit_switch_prompt_respects_hidden_notice() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1423` `async fn rate_limit_switch_prompt_defers_until_task_complete() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1444` `async fn rate_limit_switch_prompt_popup_snapshot() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1457` `async fn plan_implementation_popup_snapshot() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1466` `async fn plan_implementation_popup_no_selected_snapshot() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1476` `async fn plan_implementation_popup_yes_emits_submit_message_event() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1495` `async fn submit_user_message_with_mode_sets_coding_collaboration_mode() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1521` `async fn submit_user_message_with_mode_errors_when_mode_changes_during_running_turn() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1550` `async fn submit_user_message_with_mode_allows_same_mode_during_running_turn() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1581` `async fn submit_user_message_with_mode_submits_when_plan_stream_is_not_active() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1612` `async fn plan_implementation_popup_skips_replayed_turn_complete() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1632` `async fn plan_implementation_popup_shows_once_when_replay_precedes_live_turn_complete() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1687` `async fn plan_implementation_popup_skips_when_messages_queued() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1707` `async fn plan_implementation_popup_skips_without_proposed_plan() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1733` `async fn plan_implementation_popup_shows_after_proposed_plan_output() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1754` `async fn plan_implementation_popup_skips_when_rate_limit_prompt_pending() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1789` `async fn exec_approval_emits_proposed_command_and_decision_history() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1833` `async fn exec_approval_decision_truncates_multiline_and_long_commands() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1918` `fn begin_exec_with_source(`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1947` `fn begin_unified_exec_startup(`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1972` `fn terminal_interaction(chat: &mut ChatWidget, call_id: &str, process_id: &str, stdin: &str) {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:1983` `fn complete_assistant_message(`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2005` `fn begin_exec(chat: &mut ChatWidget, call_id: &str, raw_cmd: &str) -> ExecCommandBeginEvent {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2009` `fn end_exec(`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2052` `fn active_blob(chat: &ChatWidget) -> String {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2061` `fn get_available_model(chat: &ChatWidget, model: &str) -> ModelPreset {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2074` `async fn empty_enter_during_task_does_not_queue() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2088` `async fn alt_up_edits_most_recent_queued_message() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2121` `async fn enqueueing_history_prompt_multiple_times_is_stable() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2149` `async fn streaming_final_answer_keeps_task_running_state() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2181` `async fn idle_commit_ticks_do_not_restore_status_without_commentary_completion() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2200` `async fn commentary_completion_restores_status_indicator_before_exec_begin() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2227` `async fn plan_completion_restores_status_indicator_after_streaming_plan_output() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2252` `async fn preamble_keeps_working_status_snapshot() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2279` `async fn unified_exec_begin_restores_status_indicator_after_preamble() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2296` `async fn unified_exec_begin_restores_working_status_snapshot() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2321` `async fn steer_enter_queues_while_plan_stream_is_active() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2346` `async fn steer_enter_submits_when_plan_stream_is_not_active() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2370` `async fn ctrl_c_shutdown_works_with_caps_lock() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2379` `async fn ctrl_d_quits_without_prompt() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2387` `async fn ctrl_d_with_modal_open_does_not_quit() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2397` `async fn ctrl_c_cleared_prompt_is_recoverable_via_history() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2428` `async fn exec_history_cell_shows_working_then_completed() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2458` `async fn exec_history_cell_shows_working_then_failed() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2482` `async fn exec_end_without_begin_uses_event_command() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2525` `async fn exec_history_shows_unified_exec_startup_commands() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2552` `async fn exec_history_shows_unified_exec_tool_calls() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2569` `async fn unified_exec_end_after_task_complete_is_suppressed() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2592` `async fn unified_exec_interaction_after_task_complete_is_suppressed() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2614` `async fn unified_exec_wait_after_final_agent_message_snapshot() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2649` `async fn unified_exec_wait_before_streamed_agent_message_snapshot() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2689` `async fn unified_exec_wait_status_header_updates_on_late_command_display() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2713` `async fn unified_exec_waiting_multiple_empty_snapshots() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2741` `async fn unified_exec_empty_then_non_empty_snapshot() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2758` `async fn unified_exec_non_empty_then_empty_snapshots() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2802` `async fn review_popup_custom_prompt_action_sends_event() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2827` `async fn slash_init_skips_when_project_doc_exists() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2859` `async fn collab_mode_shift_tab_cycles_only_when_enabled_and_idle() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2885` `async fn collab_slash_command_opens_picker_and_updates_mode() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2942` `async fn plan_slash_command_switches_to_plan_mode() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2955` `async fn plan_slash_command_with_args_submits_prompt_in_plan_mode() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:2999` `async fn collaboration_modes_defaults_to_code_on_startup() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:3039` `async fn experimental_mode_plan_applies_on_startup() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:3085` `async fn set_model_updates_active_collaboration_mask() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:3100` `async fn set_reasoning_effort_updates_active_collaboration_mask() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:3115` `async fn collab_mode_is_sent_after_enabling() {`
+- `fn` `codex-rs/tui/src/chatwidget/tests.rs:3140` `async fn collab_mode_toggle_on_applies_default_preset() {`
+- (… 89 more definitions omitted; see symbol indexes under `docs/workdocjcl/spec/13_Indexes/`)
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -233,6 +233,7 @@ Source file (no public surface detected by heuristic).
 - `use crate::app_event_sender::AppEventSender;`
 - `use crate::bottom_pane::FeedbackAudience;`
 - `use crate::bottom_pane::LocalImageAttachment;`
+- `use crate::bottom_pane::MentionBinding;`
 - `use crate::history_cell::UserHistoryCell;`
 - `use crate::test_backend::VT100Backend;`
 - `use crate::tui::FrameRequester;`
@@ -246,7 +247,6 @@ Source file (no public surface detected by heuristic).
 - `use codex_core::config::ConstraintError;`
 - `use codex_core::config_loader::RequirementSource;`
 - `use codex_core::features::Feature;`
-- `use codex_core::models_manager::manager::ModelsManager;`
 ### Referenced env vars
 - (none detected)
 
@@ -256,4 +256,4 @@ Source file (no public surface detected by heuristic).
 - uses Rust panic/expect/unwrap-style failure paths
 
 ## Spec Links
-- `workdocjcl/spec/06_UI/TUI.md`
+- `docs/workdocjcl/spec/06_UI/TUI.md`

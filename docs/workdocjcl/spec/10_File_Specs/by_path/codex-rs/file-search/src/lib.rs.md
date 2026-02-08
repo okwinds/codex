@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `30217`
-- sha256: `625e2d45626ec0c64de52254cbbfbfcbffed53d2611480fc2c463dcc05357544`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `30900`
+- sha256: `a96f4ef0c0e5916a2e1d6187168537e2b571b25fce4795858ddc20a37212f57e`
+- generated_utc: `2026-02-08T10:45:37Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -122,23 +122,23 @@ Source file implementing exported/public items listed below.
 - `fn` `codex-rs/file-search/src/lib.rs:671` `fn file_name_from_path_falls_back_to_full_path() {`
 - `struct` `codex-rs/file-search/src/lib.rs:676` `struct RecordingReporter {`
 - `impl` `codex-rs/file-search/src/lib.rs:683` `impl RecordingReporter {`
-- `fn` `codex-rs/file-search/src/lib.rs:684` `fn wait_for_complete(&self, timeout: Duration) -> bool {`
-- `fn` `codex-rs/file-search/src/lib.rs:692` `fn clear(&self) {`
-- `fn` `codex-rs/file-search/src/lib.rs:697` `fn updates(&self) -> Vec<FileSearchSnapshot> {`
-- `fn` `codex-rs/file-search/src/lib.rs:701` `fn wait_for_updates_at_least(&self, min_len: usize, timeout: Duration) -> bool {`
-- `fn` `codex-rs/file-search/src/lib.rs:710` `fn snapshot(&self) -> FileSearchSnapshot {`
-- `impl` `codex-rs/file-search/src/lib.rs:720` `impl SessionReporter for RecordingReporter {`
-- `fn` `codex-rs/file-search/src/lib.rs:721` `fn on_update(&self, snapshot: &FileSearchSnapshot) {`
-- `fn` `codex-rs/file-search/src/lib.rs:727` `fn on_complete(&self) {`
-- `fn` `codex-rs/file-search/src/lib.rs:736` `fn create_temp_tree(file_count: usize) -> TempDir {`
-- `fn` `codex-rs/file-search/src/lib.rs:746` `fn session_scanned_file_count_is_monotonic_across_queries() {`
-- `fn` `codex-rs/file-search/src/lib.rs:766` `fn session_streams_updates_before_walk_complete() {`
-- `fn` `codex-rs/file-search/src/lib.rs:781` `fn session_accepts_query_updates_after_walk_complete() {`
-- `fn` `codex-rs/file-search/src/lib.rs:807` `fn session_emits_complete_when_query_changes_with_no_matches() {`
-- `fn` `codex-rs/file-search/src/lib.rs:835` `fn dropping_session_does_not_cancel_siblings_with_shared_cancel_flag() {`
-- `fn` `codex-rs/file-search/src/lib.rs:869` `fn session_emits_updates_when_query_changes() {`
-- `fn` `codex-rs/file-search/src/lib.rs:890` `fn run_returns_matches_for_query() {`
-- `fn` `codex-rs/file-search/src/lib.rs:913` `fn cancel_exits_run() {`
+- `fn` `codex-rs/file-search/src/lib.rs:712` `fn wait_for_complete(&self, timeout: Duration) -> bool {`
+- `fn` `codex-rs/file-search/src/lib.rs:720` `fn clear(&self) {`
+- `fn` `codex-rs/file-search/src/lib.rs:725` `fn updates(&self) -> Vec<FileSearchSnapshot> {`
+- `fn` `codex-rs/file-search/src/lib.rs:729` `fn wait_for_updates_at_least(&self, min_len: usize, timeout: Duration) -> bool {`
+- `fn` `codex-rs/file-search/src/lib.rs:735` `fn snapshot(&self) -> FileSearchSnapshot {`
+- `impl` `codex-rs/file-search/src/lib.rs:745` `impl SessionReporter for RecordingReporter {`
+- `fn` `codex-rs/file-search/src/lib.rs:746` `fn on_update(&self, snapshot: &FileSearchSnapshot) {`
+- `fn` `codex-rs/file-search/src/lib.rs:752` `fn on_complete(&self) {`
+- `fn` `codex-rs/file-search/src/lib.rs:761` `fn create_temp_tree(file_count: usize) -> TempDir {`
+- `fn` `codex-rs/file-search/src/lib.rs:771` `fn session_scanned_file_count_is_monotonic_across_queries() {`
+- `fn` `codex-rs/file-search/src/lib.rs:791` `fn session_streams_updates_before_walk_complete() {`
+- `fn` `codex-rs/file-search/src/lib.rs:806` `fn session_accepts_query_updates_after_walk_complete() {`
+- `fn` `codex-rs/file-search/src/lib.rs:832` `fn session_emits_complete_when_query_changes_with_no_matches() {`
+- `fn` `codex-rs/file-search/src/lib.rs:860` `fn dropping_session_does_not_cancel_siblings_with_shared_cancel_flag() {`
+- `fn` `codex-rs/file-search/src/lib.rs:894` `fn session_emits_updates_when_query_changes() {`
+- `fn` `codex-rs/file-search/src/lib.rs:915` `fn run_returns_matches_for_query() {`
+- `fn` `codex-rs/file-search/src/lib.rs:938` `fn cancel_exits_run() {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes

@@ -5,7 +5,7 @@
 - ext: `.rs`
 - size_bytes: `3043`
 - sha256: `98edf7cc70dfa79ae25ed688b590c323a826bcdd6f2c3cfc37969a0f4018936c`
-- generated_utc: `2026-02-03T16:08:28Z`
+- generated_utc: `2026-02-08T10:45:16Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -37,4 +37,4 @@ Test or snapshot file used for automated verification.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/03_API/CLI.md`
+- `docs/workdocjcl/spec/03_API/CLI.md`

@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `5410`
-- sha256: `778d17b731af942ff63f6562c5b136bedd4c2dbf7ea44ac4f380683336df2190`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `5722`
+- sha256: `12f155e2b8e7b4259b4773937183d004fe201934960c3bb200694b83964cc271`
+- generated_utc: `2026-02-08T10:45:40Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -32,13 +32,13 @@ Source file implementing exported/public items listed below.
 - `use` `codex-rs/tui/src/slash_command.rs:4` `use strum_macros::EnumString;`
 - `use` `codex-rs/tui/src/slash_command.rs:5` `use strum_macros::IntoStaticStr;`
 - `enum` `codex-rs/tui/src/slash_command.rs:12` `pub enum SlashCommand {`
-- `impl` `codex-rs/tui/src/slash_command.rs:48` `impl SlashCommand {`
-- `fn` `codex-rs/tui/src/slash_command.rs:50` `pub fn description(self) -> &'static str {`
-- `fn` `codex-rs/tui/src/slash_command.rs:86` `pub fn command(self) -> &'static str {`
-- `fn` `codex-rs/tui/src/slash_command.rs:91` `pub fn supports_inline_args(self) -> bool {`
-- `fn` `codex-rs/tui/src/slash_command.rs:99` `pub fn available_during_task(self) -> bool {`
-- `fn` `codex-rs/tui/src/slash_command.rs:134` `fn is_visible(self) -> bool {`
-- `fn` `codex-rs/tui/src/slash_command.rs:143` `pub fn built_in_slash_commands() -> Vec<(&'static str, SlashCommand)> {`
+- `impl` `codex-rs/tui/src/slash_command.rs:50` `impl SlashCommand {`
+- `fn` `codex-rs/tui/src/slash_command.rs:52` `pub fn description(self) -> &'static str {`
+- `fn` `codex-rs/tui/src/slash_command.rs:90` `pub fn command(self) -> &'static str {`
+- `fn` `codex-rs/tui/src/slash_command.rs:95` `pub fn supports_inline_args(self) -> bool {`
+- `fn` `codex-rs/tui/src/slash_command.rs:103` `pub fn available_during_task(self) -> bool {`
+- `fn` `codex-rs/tui/src/slash_command.rs:140` `fn is_visible(self) -> bool {`
+- `fn` `codex-rs/tui/src/slash_command.rs:149` `pub fn built_in_slash_commands() -> Vec<(&'static str, SlashCommand)> {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -54,4 +54,4 @@ Source file implementing exported/public items listed below.
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/06_UI/TUI.md`
+- `docs/workdocjcl/spec/06_UI/TUI.md`

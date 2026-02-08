@@ -4,8 +4,8 @@
 - kind: `source`
 - ext: `.rs`
 - size_bytes: `2120`
-- sha256: `4516ca07df6ad98044a61ebb9dad381f57844712553ebf4325ecccdd790f16e8`
-- generated_utc: `2026-02-03T16:08:30Z`
+- sha256: `67f461e4070265b1f7e7fc699f211beb4844f43ffda2eb38f41bd536a13a4ef6`
+- generated_utc: `2026-02-08T10:45:41Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -42,4 +42,4 @@ Source file (no public surface detected by heuristic).
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/06_UI/TUI.md`
+- `docs/workdocjcl/spec/06_UI/TUI.md`

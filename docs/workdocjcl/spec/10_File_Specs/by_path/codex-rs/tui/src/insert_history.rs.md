@@ -5,7 +5,7 @@
 - ext: `.rs`
 - size_bytes: `19722`
 - sha256: `a8d1d92071ea94f92fc22ba46cb681f0582f8e8326b48aa1101f11e3fb1c717f`
-- generated_utc: `2026-02-03T16:08:30Z`
+- generated_utc: `2026-02-08T10:45:40Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -99,4 +99,4 @@ Source file implementing exported/public items listed below.
 - uses Rust panic/expect/unwrap-style failure paths
 
 ## Spec Links
-- `workdocjcl/spec/06_UI/TUI.md`
+- `docs/workdocjcl/spec/06_UI/TUI.md`

@@ -188,7 +188,7 @@ requirements policy 的来源与限制：
 
 来源：
 - `codex-rs/core/src/exec_policy.rs:render_decision_for_unmatched_command`
-- `workdocjcl/spec/07_Infrastructure/COMMAND_SAFETY.md`（`is_known_safe_command` / `command_might_be_dangerous` 的完整复刻级定义）
+- `docs/workdocjcl/spec/07_Infrastructure/COMMAND_SAFETY.md`（`is_known_safe_command` / `command_might_be_dangerous` 的完整复刻级定义）
 
 #### 3.2.1 决策矩阵（复刻用）
 | 条件 | 输出 Decision |
@@ -414,4 +414,4 @@ execpolicy 的输出不会直接执行命令；它通过 `ExecApprovalRequiremen
 - `codex-rs/core/src/tools/runtimes/shell.rs`、`codex-rs/core/src/tools/runtimes/unified_exec.rs`（`SandboxOverride::BypassSandboxFirstAttempt`）
 - `codex-rs/protocol/src/protocol.rs:ReviewDecision`（含 `ApprovedExecpolicyAmendment`）
 
-> 注：更完整的“审批缓存、sandbox deny 重试、ApprovedForSession 语义”等，请参见 `workdocjcl/spec/07_Infrastructure/APPROVALS.md`（本仓库规格文档体系内的审批总章）。
+> 注：更完整的“审批缓存、sandbox deny 重试、ApprovedForSession 语义”等，请参见 `docs/workdocjcl/spec/07_Infrastructure/APPROVALS.md`（本仓库规格文档体系内的审批总章）。

@@ -3,9 +3,9 @@
 ## Identity
 - kind: `config`
 - ext: `.bazel`
-- size_bytes: `153`
-- sha256: `5d8d72f6a325ec55d35f8c304e479adea000988c0079f81d7155c7583225ff78`
-- generated_utc: `2026-02-03T16:08:28Z`
+- size_bytes: `147`
+- sha256: `df101b1b94ac4fe0e389f155eeb7cca5ff47f7f5e321f7d568076cc631a7f94f`
+- generated_utc: `2026-02-08T10:45:14Z`
 
 ## Purpose (Why)
 Bazel build configuration file.

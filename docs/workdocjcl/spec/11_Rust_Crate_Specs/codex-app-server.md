@@ -1,7 +1,7 @@
 # `codex-app-server`
 
 - path: `codex-rs/app-server`
-- generated_utc: `2026-02-03T09:48:37Z`
+- generated_utc: `2026-02-08T10:45:12Z`
 - role: crate
 
 ## Build Targets
@@ -14,6 +14,7 @@
 - `anyhow`
 - `async-trait`
 - `chrono`
+- `clap`
 - `codex-app-server-protocol`
 - `codex-arg0`
 - `codex-backend-client`
@@ -28,11 +29,14 @@
 - `codex-rmcp-client`
 - `codex-utils-absolute-path`
 - `codex-utils-json-to-toml`
+- `futures`
+- `owo-colors`
 - `serde`
 - `serde_json`
 - `tempfile`
 - `time`
 - `tokio`
+- `tokio-tungstenite`
 - `toml`
 - `tracing`
 - `tracing-subscriber`
@@ -42,8 +46,8 @@
 - (none)
 
 ## Public Surface (auto, from src/lib.rs or src/main.rs)
-- (none detected)
+- `pub use crate::transport::AppServerTransport;`
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/MODULE_MAP.md`
-- `workdocjcl/spec/09_Verification/CODE_TO_SPEC_MAP.md`
+- `docs/workdocjcl/spec/00_Overview/MODULE_MAP.md`
+- `docs/workdocjcl/spec/09_Verification/CODE_TO_SPEC_MAP.md`

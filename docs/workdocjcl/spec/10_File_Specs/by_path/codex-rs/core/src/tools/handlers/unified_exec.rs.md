@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `11782`
-- sha256: `47c642f3bc530174d77f5c27a9ad3b1d9dbb4ac7d57391138a7367c369812274`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `11837`
+- sha256: `43d6760a235d98a4a2f152e886fc07c1f0d1768eb29bdb48f9a9a2b3e0e78ecc`
+- generated_utc: `2026-02-08T10:45:33Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -41,21 +41,22 @@ Source file implementing exported/public items listed below.
 - `use` `codex-rs/core/src/tools/handlers/unified_exec.rs:18` `use crate::unified_exec::UnifiedExecResponse;`
 - `use` `codex-rs/core/src/tools/handlers/unified_exec.rs:19` `use crate::unified_exec::WriteStdinRequest;`
 - `use` `codex-rs/core/src/tools/handlers/unified_exec.rs:20` `use async_trait::async_trait;`
-- `use` `codex-rs/core/src/tools/handlers/unified_exec.rs:21` `use serde::Deserialize;`
-- `use` `codex-rs/core/src/tools/handlers/unified_exec.rs:22` `use std::path::PathBuf;`
-- `use` `codex-rs/core/src/tools/handlers/unified_exec.rs:23` `use std::sync::Arc;`
-- `struct` `codex-rs/core/src/tools/handlers/unified_exec.rs:25` `pub struct UnifiedExecHandler;`
-- `struct` `codex-rs/core/src/tools/handlers/unified_exec.rs:28` `struct ExecCommandArgs {`
-- `struct` `codex-rs/core/src/tools/handlers/unified_exec.rs:51` `struct WriteStdinArgs {`
-- `fn` `codex-rs/core/src/tools/handlers/unified_exec.rs:62` `fn default_exec_yield_time_ms() -> u64 {`
-- `fn` `codex-rs/core/src/tools/handlers/unified_exec.rs:66` `fn default_write_stdin_yield_time_ms() -> u64 {`
-- `fn` `codex-rs/core/src/tools/handlers/unified_exec.rs:70` `fn default_login() -> bool {`
-- `fn` `codex-rs/core/src/tools/handlers/unified_exec.rs:74` `fn default_tty() -> bool {`
-- `impl` `codex-rs/core/src/tools/handlers/unified_exec.rs:79` `impl ToolHandler for UnifiedExecHandler {`
-- `fn` `codex-rs/core/src/tools/handlers/unified_exec.rs:80` `fn kind(&self) -> ToolKind {`
-- `fn` `codex-rs/core/src/tools/handlers/unified_exec.rs:84` `fn matches_kind(&self, payload: &ToolPayload) -> bool {`
-- `fn` `codex-rs/core/src/tools/handlers/unified_exec.rs:88` `async fn is_mutating(&self, invocation: &ToolInvocation) -> bool {`
-- `fn` `codex-rs/core/src/tools/handlers/unified_exec.rs:104` `async fn handle(&self, invocation: ToolInvocation) -> Result<ToolOutput, FunctionCallError> {`
+- `use` `codex-rs/core/src/tools/handlers/unified_exec.rs:21` `use codex_protocol::models::FunctionCallOutputBody;`
+- `use` `codex-rs/core/src/tools/handlers/unified_exec.rs:22` `use serde::Deserialize;`
+- `use` `codex-rs/core/src/tools/handlers/unified_exec.rs:23` `use std::path::PathBuf;`
+- `use` `codex-rs/core/src/tools/handlers/unified_exec.rs:24` `use std::sync::Arc;`
+- `struct` `codex-rs/core/src/tools/handlers/unified_exec.rs:26` `pub struct UnifiedExecHandler;`
+- `struct` `codex-rs/core/src/tools/handlers/unified_exec.rs:29` `struct ExecCommandArgs {`
+- `struct` `codex-rs/core/src/tools/handlers/unified_exec.rs:52` `struct WriteStdinArgs {`
+- `fn` `codex-rs/core/src/tools/handlers/unified_exec.rs:63` `fn default_exec_yield_time_ms() -> u64 {`
+- `fn` `codex-rs/core/src/tools/handlers/unified_exec.rs:67` `fn default_write_stdin_yield_time_ms() -> u64 {`
+- `fn` `codex-rs/core/src/tools/handlers/unified_exec.rs:71` `fn default_login() -> bool {`
+- `fn` `codex-rs/core/src/tools/handlers/unified_exec.rs:75` `fn default_tty() -> bool {`
+- `impl` `codex-rs/core/src/tools/handlers/unified_exec.rs:80` `impl ToolHandler for UnifiedExecHandler {`
+- `fn` `codex-rs/core/src/tools/handlers/unified_exec.rs:81` `fn kind(&self) -> ToolKind {`
+- `fn` `codex-rs/core/src/tools/handlers/unified_exec.rs:85` `fn matches_kind(&self, payload: &ToolPayload) -> bool {`
+- `fn` `codex-rs/core/src/tools/handlers/unified_exec.rs:89` `async fn is_mutating(&self, invocation: &ToolInvocation) -> bool {`
+- `fn` `codex-rs/core/src/tools/handlers/unified_exec.rs:105` `async fn handle(&self, invocation: ToolInvocation) -> Result<ToolOutput, FunctionCallError> {`
 - `fn` `codex-rs/core/src/tools/handlers/unified_exec.rs:248` `fn get_command(args: &ExecCommandArgs, session_shell: Arc<Shell>) -> Vec<String> {`
 - `fn` `codex-rs/core/src/tools/handlers/unified_exec.rs:260` `fn format_response(response: &UnifiedExecResponse) -> String {`
 - `use` `codex-rs/core/src/tools/handlers/unified_exec.rs:291` `use super::*;`
@@ -95,4 +96,4 @@ Source file implementing exported/public items listed below.
 - returns structured errors (Result/ErrorKind)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

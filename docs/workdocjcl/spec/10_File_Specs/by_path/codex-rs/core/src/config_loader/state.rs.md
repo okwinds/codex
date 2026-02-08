@@ -5,7 +5,7 @@
 - ext: `.rs`
 - size_bytes: `10378`
 - sha256: `0e4cc7a66bcd80ceb5d763d9b27d0fb27a370ea3098ac790a2c4a29241734749`
-- generated_utc: `2026-02-03T16:08:29Z`
+- generated_utc: `2026-02-08T10:45:32Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -97,4 +97,4 @@ Source file implementing exported/public items listed below.
 - returns structured errors (Result/ErrorKind)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

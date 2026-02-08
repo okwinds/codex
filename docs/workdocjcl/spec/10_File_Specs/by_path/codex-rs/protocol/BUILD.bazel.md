@@ -5,7 +5,7 @@
 - ext: `.bazel`
 - size_bytes: `169`
 - sha256: `187dd0ec441157a1e56865d2bd9a74fed4345f1edfa2f939da83e1439f3f1b03`
-- generated_utc: `2026-02-03T16:08:30Z`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Bazel build configuration file.
@@ -33,4 +33,4 @@ Bazel build configuration file.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/02_Data/ROLLOUT_FORMAT.md`
+- `docs/workdocjcl/spec/02_Data/ROLLOUT_FORMAT.md`

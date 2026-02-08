@@ -6,7 +6,7 @@
 - 理解 personality/template 与 base instructions 的组合关系
 
 本章不重复描述 initial context 注入顺序（developer/user/skills/personality/env），见：
-- `workdocjcl/spec/04_Business_Logic/PROMPT_ASSEMBLY.md`
+- `docs/workdocjcl/spec/04_Business_Logic/PROMPT_ASSEMBLY.md`
 
 ---
 
@@ -14,8 +14,8 @@
 本仓库的 preset prompt 文本以静态文件形式存在于 `codex-rs/core/`，并在 Rust 编译期用 `include_str!` 内嵌到二进制中。
 
 为满足“规格文档可独立复刻”，这些文件的规范副本已拷贝到：
-- `workdocjcl/spec/04_Business_Logic/PROMPTS/`
-- 完整清单与 sha256：`workdocjcl/spec/04_Business_Logic/PROMPTS/MANIFEST.json`
+- `docs/workdocjcl/spec/04_Business_Logic/PROMPTS/`
+- 完整清单与 sha256：`docs/workdocjcl/spec/04_Business_Logic/PROMPTS/MANIFEST.json`
 
 复刻要求：
 - 复刻实现必须使用这些规范副本的**原文**（非摘要/非改写）。
@@ -41,7 +41,7 @@
 下面表格描述 **base_instructions** 的来源（即“系统预置 prompt 文本”），以及该分支是否启用 `instructions_template/personality`。
 
 约定：
-- “base prompt 文件”指 `workdocjcl/spec/04_Business_Logic/PROMPTS/` 下的同名文件。
+- “base prompt 文件”指 `docs/workdocjcl/spec/04_Business_Logic/PROMPTS/` 下的同名文件。
 - “模板/人格”指 `PROMPTS/templates/*` 下的文件。
 
 | 分支条件（按源码顺序） | base_instructions 资产 | 模板化 instructions | 备注（复刻关键点） |
@@ -76,11 +76,11 @@
 - 其中 `instructions_template` 会结合 `ModelInstructionsVariables`（personality_default/friendly/pragmatic）进行渲染
 
 规范副本：
-- 模板：`workdocjcl/spec/04_Business_Logic/PROMPTS/templates/model_instructions/gpt-5.2-codex_instructions_template.md`
+- 模板：`docs/workdocjcl/spec/04_Business_Logic/PROMPTS/templates/model_instructions/gpt-5.2-codex_instructions_template.md`
 - personalities：
-  - `workdocjcl/spec/04_Business_Logic/PROMPTS/templates/personalities/gpt-5.2-codex_friendly.md`
-  - `workdocjcl/spec/04_Business_Logic/PROMPTS/templates/personalities/gpt-5.2-codex_pragmatic.md`
+  - `docs/workdocjcl/spec/04_Business_Logic/PROMPTS/templates/personalities/gpt-5.2-codex_friendly.md`
+  - `docs/workdocjcl/spec/04_Business_Logic/PROMPTS/templates/personalities/gpt-5.2-codex_pragmatic.md`
 
 运行时注入顺序与“baked vs injected personality”判定见：
-- `workdocjcl/spec/04_Business_Logic/PROMPT_ASSEMBLY.md`
+- `docs/workdocjcl/spec/04_Business_Logic/PROMPT_ASSEMBLY.md`
 

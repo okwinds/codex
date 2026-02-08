@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `92281`
-- sha256: `9fbf864a50b487b6321b8702890211c407e707fcd04bd3f4b2fa1700a560a74b`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `94821`
+- sha256: `386dcc84c3cd8755a093b4fbb67b0274ebf859d57c19039811c8b9dae0d11048`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -125,153 +125,153 @@ Source file implementing exported/public items listed below.
 - `struct` `codex-rs/protocol/src/protocol.rs:70` `pub struct Submission {`
 - `struct` `codex-rs/protocol/src/protocol.rs:79` `pub struct McpServerRefreshConfig {`
 - `enum` `codex-rs/protocol/src/protocol.rs:89` `pub enum Op {`
-- `enum` `codex-rs/protocol/src/protocol.rs:329` `pub enum AskForApproval {`
-- `enum` `codex-rs/protocol/src/protocol.rs:358` `pub enum NetworkAccess {`
-- `impl` `codex-rs/protocol/src/protocol.rs:364` `impl NetworkAccess {`
-- `fn` `codex-rs/protocol/src/protocol.rs:365` `pub fn is_enabled(self) -> bool {`
-- `enum` `codex-rs/protocol/src/protocol.rs:374` `pub enum SandboxPolicy {`
-- `struct` `codex-rs/protocol/src/protocol.rs:425` `pub struct WritableRoot {`
-- `impl` `codex-rs/protocol/src/protocol.rs:432` `impl WritableRoot {`
-- `fn` `codex-rs/protocol/src/protocol.rs:433` `pub fn is_path_writable(&self, path: &Path) -> bool {`
-- `impl` `codex-rs/protocol/src/protocol.rs:450` `impl FromStr for SandboxPolicy {`
-- `type` `codex-rs/protocol/src/protocol.rs:451` `type Err = serde_json::Error;`
-- `fn` `codex-rs/protocol/src/protocol.rs:453` `fn from_str(s: &str) -> Result<Self, Self::Err> {`
-- `impl` `codex-rs/protocol/src/protocol.rs:458` `impl SandboxPolicy {`
-- `fn` `codex-rs/protocol/src/protocol.rs:460` `pub fn new_read_only_policy() -> Self {`
-- `fn` `codex-rs/protocol/src/protocol.rs:467` `pub fn new_workspace_write_policy() -> Self {`
-- `fn` `codex-rs/protocol/src/protocol.rs:477` `pub fn has_full_disk_read_access(&self) -> bool {`
-- `fn` `codex-rs/protocol/src/protocol.rs:481` `pub fn has_full_disk_write_access(&self) -> bool {`
-- `fn` `codex-rs/protocol/src/protocol.rs:490` `pub fn has_full_network_access(&self) -> bool {`
-- `fn` `codex-rs/protocol/src/protocol.rs:502` `pub fn get_writable_roots_with_cwd(&self, cwd: &Path) -> Vec<WritableRoot> {`
-- `fn` `codex-rs/protocol/src/protocol.rs:610` `fn is_git_pointer_file(path: &AbsolutePathBuf) -> bool {`
-- `fn` `codex-rs/protocol/src/protocol.rs:614` `fn resolve_gitdir_from_file(dot_git: &AbsolutePathBuf) -> Option<AbsolutePathBuf> {`
-- `struct` `codex-rs/protocol/src/protocol.rs:677` `pub struct Event {`
-- `enum` `codex-rs/protocol/src/protocol.rs:690` `pub enum EventMsg {`
-- `impl` `codex-rs/protocol/src/protocol.rs:864` `impl From<CollabAgentSpawnBeginEvent> for EventMsg {`
-- `fn` `codex-rs/protocol/src/protocol.rs:865` `fn from(event: CollabAgentSpawnBeginEvent) -> Self {`
-- `impl` `codex-rs/protocol/src/protocol.rs:870` `impl From<CollabAgentSpawnEndEvent> for EventMsg {`
-- `fn` `codex-rs/protocol/src/protocol.rs:871` `fn from(event: CollabAgentSpawnEndEvent) -> Self {`
-- `impl` `codex-rs/protocol/src/protocol.rs:876` `impl From<CollabAgentInteractionBeginEvent> for EventMsg {`
-- `fn` `codex-rs/protocol/src/protocol.rs:877` `fn from(event: CollabAgentInteractionBeginEvent) -> Self {`
-- `impl` `codex-rs/protocol/src/protocol.rs:882` `impl From<CollabAgentInteractionEndEvent> for EventMsg {`
-- `fn` `codex-rs/protocol/src/protocol.rs:883` `fn from(event: CollabAgentInteractionEndEvent) -> Self {`
-- `impl` `codex-rs/protocol/src/protocol.rs:888` `impl From<CollabWaitingBeginEvent> for EventMsg {`
-- `fn` `codex-rs/protocol/src/protocol.rs:889` `fn from(event: CollabWaitingBeginEvent) -> Self {`
-- `impl` `codex-rs/protocol/src/protocol.rs:894` `impl From<CollabWaitingEndEvent> for EventMsg {`
-- `fn` `codex-rs/protocol/src/protocol.rs:895` `fn from(event: CollabWaitingEndEvent) -> Self {`
-- `impl` `codex-rs/protocol/src/protocol.rs:900` `impl From<CollabCloseBeginEvent> for EventMsg {`
-- `fn` `codex-rs/protocol/src/protocol.rs:901` `fn from(event: CollabCloseBeginEvent) -> Self {`
-- `impl` `codex-rs/protocol/src/protocol.rs:906` `impl From<CollabCloseEndEvent> for EventMsg {`
-- `fn` `codex-rs/protocol/src/protocol.rs:907` `fn from(event: CollabCloseEndEvent) -> Self {`
-- `enum` `codex-rs/protocol/src/protocol.rs:916` `pub enum AgentStatus {`
-- `enum` `codex-rs/protocol/src/protocol.rs:936` `pub enum CodexErrorInfo {`
-- `struct` `codex-rs/protocol/src/protocol.rs:967` `pub struct RawResponseItemEvent {`
-- `struct` `codex-rs/protocol/src/protocol.rs:972` `pub struct ItemStartedEvent {`
-- `impl` `codex-rs/protocol/src/protocol.rs:978` `impl HasLegacyEvent for ItemStartedEvent {`
-- `fn` `codex-rs/protocol/src/protocol.rs:979` `fn as_legacy_events(&self, _: bool) -> Vec<EventMsg> {`
-- `struct` `codex-rs/protocol/src/protocol.rs:990` `pub struct ItemCompletedEvent {`
-- `trait` `codex-rs/protocol/src/protocol.rs:996` `pub trait HasLegacyEvent {`
-- `fn` `codex-rs/protocol/src/protocol.rs:997` `fn as_legacy_events(&self, show_raw_agent_reasoning: bool) -> Vec<EventMsg>;`
-- `impl` `codex-rs/protocol/src/protocol.rs:1000` `impl HasLegacyEvent for ItemCompletedEvent {`
-- `fn` `codex-rs/protocol/src/protocol.rs:1001` `fn as_legacy_events(&self, show_raw_agent_reasoning: bool) -> Vec<EventMsg> {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1007` `pub struct AgentMessageContentDeltaEvent {`
-- `impl` `codex-rs/protocol/src/protocol.rs:1014` `impl HasLegacyEvent for AgentMessageContentDeltaEvent {`
+- `enum` `codex-rs/protocol/src/protocol.rs:338` `pub enum AskForApproval {`
+- `enum` `codex-rs/protocol/src/protocol.rs:367` `pub enum NetworkAccess {`
+- `impl` `codex-rs/protocol/src/protocol.rs:373` `impl NetworkAccess {`
+- `fn` `codex-rs/protocol/src/protocol.rs:374` `pub fn is_enabled(self) -> bool {`
+- `enum` `codex-rs/protocol/src/protocol.rs:383` `pub enum SandboxPolicy {`
+- `struct` `codex-rs/protocol/src/protocol.rs:434` `pub struct WritableRoot {`
+- `impl` `codex-rs/protocol/src/protocol.rs:441` `impl WritableRoot {`
+- `fn` `codex-rs/protocol/src/protocol.rs:442` `pub fn is_path_writable(&self, path: &Path) -> bool {`
+- `impl` `codex-rs/protocol/src/protocol.rs:459` `impl FromStr for SandboxPolicy {`
+- `type` `codex-rs/protocol/src/protocol.rs:460` `type Err = serde_json::Error;`
+- `fn` `codex-rs/protocol/src/protocol.rs:462` `fn from_str(s: &str) -> Result<Self, Self::Err> {`
+- `impl` `codex-rs/protocol/src/protocol.rs:467` `impl SandboxPolicy {`
+- `fn` `codex-rs/protocol/src/protocol.rs:469` `pub fn new_read_only_policy() -> Self {`
+- `fn` `codex-rs/protocol/src/protocol.rs:476` `pub fn new_workspace_write_policy() -> Self {`
+- `fn` `codex-rs/protocol/src/protocol.rs:486` `pub fn has_full_disk_read_access(&self) -> bool {`
+- `fn` `codex-rs/protocol/src/protocol.rs:490` `pub fn has_full_disk_write_access(&self) -> bool {`
+- `fn` `codex-rs/protocol/src/protocol.rs:499` `pub fn has_full_network_access(&self) -> bool {`
+- `fn` `codex-rs/protocol/src/protocol.rs:511` `pub fn get_writable_roots_with_cwd(&self, cwd: &Path) -> Vec<WritableRoot> {`
+- `fn` `codex-rs/protocol/src/protocol.rs:624` `fn is_git_pointer_file(path: &AbsolutePathBuf) -> bool {`
+- `fn` `codex-rs/protocol/src/protocol.rs:628` `fn resolve_gitdir_from_file(dot_git: &AbsolutePathBuf) -> Option<AbsolutePathBuf> {`
+- `struct` `codex-rs/protocol/src/protocol.rs:691` `pub struct Event {`
+- `enum` `codex-rs/protocol/src/protocol.rs:704` `pub enum EventMsg {`
+- `impl` `codex-rs/protocol/src/protocol.rs:888` `impl From<CollabAgentSpawnBeginEvent> for EventMsg {`
+- `fn` `codex-rs/protocol/src/protocol.rs:889` `fn from(event: CollabAgentSpawnBeginEvent) -> Self {`
+- `impl` `codex-rs/protocol/src/protocol.rs:894` `impl From<CollabAgentSpawnEndEvent> for EventMsg {`
+- `fn` `codex-rs/protocol/src/protocol.rs:895` `fn from(event: CollabAgentSpawnEndEvent) -> Self {`
+- `impl` `codex-rs/protocol/src/protocol.rs:900` `impl From<CollabAgentInteractionBeginEvent> for EventMsg {`
+- `fn` `codex-rs/protocol/src/protocol.rs:901` `fn from(event: CollabAgentInteractionBeginEvent) -> Self {`
+- `impl` `codex-rs/protocol/src/protocol.rs:906` `impl From<CollabAgentInteractionEndEvent> for EventMsg {`
+- `fn` `codex-rs/protocol/src/protocol.rs:907` `fn from(event: CollabAgentInteractionEndEvent) -> Self {`
+- `impl` `codex-rs/protocol/src/protocol.rs:912` `impl From<CollabWaitingBeginEvent> for EventMsg {`
+- `fn` `codex-rs/protocol/src/protocol.rs:913` `fn from(event: CollabWaitingBeginEvent) -> Self {`
+- `impl` `codex-rs/protocol/src/protocol.rs:918` `impl From<CollabWaitingEndEvent> for EventMsg {`
+- `fn` `codex-rs/protocol/src/protocol.rs:919` `fn from(event: CollabWaitingEndEvent) -> Self {`
+- `impl` `codex-rs/protocol/src/protocol.rs:924` `impl From<CollabCloseBeginEvent> for EventMsg {`
+- `fn` `codex-rs/protocol/src/protocol.rs:925` `fn from(event: CollabCloseBeginEvent) -> Self {`
+- `impl` `codex-rs/protocol/src/protocol.rs:930` `impl From<CollabCloseEndEvent> for EventMsg {`
+- `fn` `codex-rs/protocol/src/protocol.rs:931` `fn from(event: CollabCloseEndEvent) -> Self {`
+- `impl` `codex-rs/protocol/src/protocol.rs:936` `impl From<CollabResumeBeginEvent> for EventMsg {`
+- `fn` `codex-rs/protocol/src/protocol.rs:937` `fn from(event: CollabResumeBeginEvent) -> Self {`
+- `impl` `codex-rs/protocol/src/protocol.rs:942` `impl From<CollabResumeEndEvent> for EventMsg {`
+- `fn` `codex-rs/protocol/src/protocol.rs:943` `fn from(event: CollabResumeEndEvent) -> Self {`
+- `enum` `codex-rs/protocol/src/protocol.rs:952` `pub enum AgentStatus {`
+- `enum` `codex-rs/protocol/src/protocol.rs:972` `pub enum CodexErrorInfo {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1003` `pub struct RawResponseItemEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1008` `pub struct ItemStartedEvent {`
+- `impl` `codex-rs/protocol/src/protocol.rs:1014` `impl HasLegacyEvent for ItemStartedEvent {`
 - `fn` `codex-rs/protocol/src/protocol.rs:1015` `fn as_legacy_events(&self, _: bool) -> Vec<EventMsg> {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1023` `pub struct PlanDeltaEvent {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1031` `pub struct ReasoningContentDeltaEvent {`
-- `impl` `codex-rs/protocol/src/protocol.rs:1041` `impl HasLegacyEvent for ReasoningContentDeltaEvent {`
-- `fn` `codex-rs/protocol/src/protocol.rs:1042` `fn as_legacy_events(&self, _: bool) -> Vec<EventMsg> {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1050` `pub struct ReasoningRawContentDeltaEvent {`
-- `impl` `codex-rs/protocol/src/protocol.rs:1060` `impl HasLegacyEvent for ReasoningRawContentDeltaEvent {`
-- `fn` `codex-rs/protocol/src/protocol.rs:1061` `fn as_legacy_events(&self, _: bool) -> Vec<EventMsg> {`
-- `impl` `codex-rs/protocol/src/protocol.rs:1070` `impl HasLegacyEvent for EventMsg {`
-- `fn` `codex-rs/protocol/src/protocol.rs:1071` `fn as_legacy_events(&self, show_raw_agent_reasoning: bool) -> Vec<EventMsg> {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1090` `pub struct ExitedReviewModeEvent {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1097` `pub struct ErrorEvent {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1104` `pub struct WarningEvent {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1109` `pub struct ContextCompactedEvent;`
-- `struct` `codex-rs/protocol/src/protocol.rs:1112` `pub struct TurnCompleteEvent {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1117` `pub struct TurnStartedEvent {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1125` `pub struct TokenUsage {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1139` `pub struct TokenUsageInfo {`
-- `impl` `codex-rs/protocol/src/protocol.rs:1147` `impl TokenUsageInfo {`
-- `fn` `codex-rs/protocol/src/protocol.rs:1148` `pub fn new_or_append(`
-- `fn` `codex-rs/protocol/src/protocol.rs:1171` `pub fn append_last_usage(&mut self, last: &TokenUsage) {`
-- `fn` `codex-rs/protocol/src/protocol.rs:1176` `pub fn fill_to_context_window(&mut self, context_window: i64) {`
-- `fn` `codex-rs/protocol/src/protocol.rs:1191` `pub fn full_context_window(context_window: i64) -> Self {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1203` `pub struct TokenCountEvent {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1209` `pub struct RateLimitSnapshot {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1217` `pub struct RateLimitWindow {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1229` `pub struct CreditsSnapshot {`
-- `const` `codex-rs/protocol/src/protocol.rs:1236` `const BASELINE_TOKENS: i64 = 12000;`
-- `impl` `codex-rs/protocol/src/protocol.rs:1238` `impl TokenUsage {`
-- `fn` `codex-rs/protocol/src/protocol.rs:1239` `pub fn is_zero(&self) -> bool {`
-- `fn` `codex-rs/protocol/src/protocol.rs:1243` `pub fn cached_input(&self) -> i64 {`
-- `fn` `codex-rs/protocol/src/protocol.rs:1247` `pub fn non_cached_input(&self) -> i64 {`
-- `fn` `codex-rs/protocol/src/protocol.rs:1252` `pub fn blended_total(&self) -> i64 {`
-- `fn` `codex-rs/protocol/src/protocol.rs:1256` `pub fn tokens_in_context_window(&self) -> i64 {`
-- `fn` `codex-rs/protocol/src/protocol.rs:1270` `pub fn percent_of_context_window_remaining(&self, context_window: i64) -> i64 {`
-- `fn` `codex-rs/protocol/src/protocol.rs:1284` `pub fn add_assign(&mut self, other: &TokenUsage) {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1294` `pub struct FinalOutput {`
-- `impl` `codex-rs/protocol/src/protocol.rs:1298` `impl From<TokenUsage> for FinalOutput {`
-- `fn` `codex-rs/protocol/src/protocol.rs:1299` `fn from(token_usage: TokenUsage) -> Self {`
-- `impl` `codex-rs/protocol/src/protocol.rs:1304` `impl fmt::Display for FinalOutput {`
-- `fn` `codex-rs/protocol/src/protocol.rs:1305` `fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1335` `pub struct AgentMessageEvent {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1340` `pub struct UserMessageEvent {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1358` `pub struct AgentMessageDeltaEvent {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1363` `pub struct AgentReasoningEvent {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1368` `pub struct AgentReasoningRawContentEvent {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1373` `pub struct AgentReasoningRawContentDeltaEvent {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1378` `pub struct AgentReasoningSectionBreakEvent {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1387` `pub struct AgentReasoningDeltaEvent {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1392` `pub struct McpInvocation {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1402` `pub struct McpToolCallBeginEvent {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1409` `pub struct McpToolCallEndEvent {`
-- `impl` `codex-rs/protocol/src/protocol.rs:1419` `impl McpToolCallEndEvent {`
-- `fn` `codex-rs/protocol/src/protocol.rs:1420` `pub fn is_success(&self) -> bool {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1429` `pub struct WebSearchBeginEvent {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1434` `pub struct WebSearchEndEvent {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1444` `pub struct ConversationPathResponseEvent {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1450` `pub struct ResumedHistory {`
-- `enum` `codex-rs/protocol/src/protocol.rs:1457` `pub enum InitialHistory {`
-- `impl` `codex-rs/protocol/src/protocol.rs:1463` `impl InitialHistory {`
-- `fn` `codex-rs/protocol/src/protocol.rs:1464` `pub fn forked_from_id(&self) -> Option<ThreadId> {`
-- `fn` `codex-rs/protocol/src/protocol.rs:1480` `pub fn session_cwd(&self) -> Option<PathBuf> {`
-- `fn` `codex-rs/protocol/src/protocol.rs:1488` `pub fn get_rollout_items(&self) -> Vec<RolloutItem> {`
-- `fn` `codex-rs/protocol/src/protocol.rs:1496` `pub fn get_event_msgs(&self) -> Option<Vec<EventMsg>> {`
-- `fn` `codex-rs/protocol/src/protocol.rs:1521` `pub fn get_base_instructions(&self) -> Option<BaseInstructions> {`
-- `fn` `codex-rs/protocol/src/protocol.rs:1538` `pub fn get_dynamic_tools(&self) -> Option<Vec<DynamicToolSpec>> {`
-- `fn` `codex-rs/protocol/src/protocol.rs:1555` `fn session_cwd_from_items(items: &[RolloutItem]) -> Option<PathBuf> {`
-- `enum` `codex-rs/protocol/src/protocol.rs:1565` `pub enum SessionSource {`
-- `enum` `codex-rs/protocol/src/protocol.rs:1579` `pub enum SubAgentSource {`
-- `impl` `codex-rs/protocol/src/protocol.rs:1589` `impl fmt::Display for SessionSource {`
-- `fn` `codex-rs/protocol/src/protocol.rs:1590` `fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {`
-- `impl` `codex-rs/protocol/src/protocol.rs:1602` `impl fmt::Display for SubAgentSource {`
-- `fn` `codex-rs/protocol/src/protocol.rs:1603` `fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1624` `pub struct SessionMeta {`
-- `impl` `codex-rs/protocol/src/protocol.rs:1643` `impl Default for SessionMeta {`
-- `fn` `codex-rs/protocol/src/protocol.rs:1644` `fn default() -> Self {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1661` `pub struct SessionMetaLine {`
-- `enum` `codex-rs/protocol/src/protocol.rs:1670` `pub enum RolloutItem {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1679` `pub struct CompactedItem {`
-- `impl` `codex-rs/protocol/src/protocol.rs:1685` `impl From<CompactedItem> for ResponseItem {`
-- `fn` `codex-rs/protocol/src/protocol.rs:1686` `fn from(value: CompactedItem) -> Self {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1700` `pub struct TurnContextItem {`
-- `enum` `codex-rs/protocol/src/protocol.rs:1724` `pub enum TruncationPolicy {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1730` `pub struct RolloutLine {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1737` `pub struct GitInfo {`
-- `enum` `codex-rs/protocol/src/protocol.rs:1751` `pub enum ReviewDelivery {`
-- `enum` `codex-rs/protocol/src/protocol.rs:1759` `pub enum ReviewTarget {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1785` `pub struct ReviewRequest {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1794` `pub struct ReviewOutputEvent {`
-- `impl` `codex-rs/protocol/src/protocol.rs:1801` `impl Default for ReviewOutputEvent {`
-- `fn` `codex-rs/protocol/src/protocol.rs:1802` `fn default() -> Self {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1814` `pub struct ReviewFinding {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1824` `pub struct ReviewCodeLocation {`
-- `struct` `codex-rs/protocol/src/protocol.rs:1831` `pub struct ReviewLineRange {`
-- `enum` `codex-rs/protocol/src/protocol.rs:1840` `pub enum ExecCommandSource {`
-- (… 70 more definitions omitted; see symbol indexes under `workdocjcl/spec/13_Indexes/`)
+- `struct` `codex-rs/protocol/src/protocol.rs:1026` `pub struct ItemCompletedEvent {`
+- `trait` `codex-rs/protocol/src/protocol.rs:1032` `pub trait HasLegacyEvent {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1033` `fn as_legacy_events(&self, show_raw_agent_reasoning: bool) -> Vec<EventMsg>;`
+- `impl` `codex-rs/protocol/src/protocol.rs:1036` `impl HasLegacyEvent for ItemCompletedEvent {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1037` `fn as_legacy_events(&self, show_raw_agent_reasoning: bool) -> Vec<EventMsg> {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1043` `pub struct AgentMessageContentDeltaEvent {`
+- `impl` `codex-rs/protocol/src/protocol.rs:1050` `impl HasLegacyEvent for AgentMessageContentDeltaEvent {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1051` `fn as_legacy_events(&self, _: bool) -> Vec<EventMsg> {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1059` `pub struct PlanDeltaEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1067` `pub struct ReasoningContentDeltaEvent {`
+- `impl` `codex-rs/protocol/src/protocol.rs:1077` `impl HasLegacyEvent for ReasoningContentDeltaEvent {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1078` `fn as_legacy_events(&self, _: bool) -> Vec<EventMsg> {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1086` `pub struct ReasoningRawContentDeltaEvent {`
+- `impl` `codex-rs/protocol/src/protocol.rs:1096` `impl HasLegacyEvent for ReasoningRawContentDeltaEvent {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1097` `fn as_legacy_events(&self, _: bool) -> Vec<EventMsg> {`
+- `impl` `codex-rs/protocol/src/protocol.rs:1106` `impl HasLegacyEvent for EventMsg {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1107` `fn as_legacy_events(&self, show_raw_agent_reasoning: bool) -> Vec<EventMsg> {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1126` `pub struct ExitedReviewModeEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1133` `pub struct ErrorEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1140` `pub struct WarningEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1145` `pub struct ContextCompactedEvent;`
+- `struct` `codex-rs/protocol/src/protocol.rs:1148` `pub struct TurnCompleteEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1153` `pub struct TurnStartedEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1161` `pub struct TokenUsage {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1175` `pub struct TokenUsageInfo {`
+- `impl` `codex-rs/protocol/src/protocol.rs:1183` `impl TokenUsageInfo {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1184` `pub fn new_or_append(`
+- `fn` `codex-rs/protocol/src/protocol.rs:1207` `pub fn append_last_usage(&mut self, last: &TokenUsage) {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1212` `pub fn fill_to_context_window(&mut self, context_window: i64) {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1227` `pub fn full_context_window(context_window: i64) -> Self {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1239` `pub struct TokenCountEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1245` `pub struct RateLimitSnapshot {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1253` `pub struct RateLimitWindow {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1265` `pub struct CreditsSnapshot {`
+- `const` `codex-rs/protocol/src/protocol.rs:1272` `const BASELINE_TOKENS: i64 = 12000;`
+- `impl` `codex-rs/protocol/src/protocol.rs:1274` `impl TokenUsage {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1275` `pub fn is_zero(&self) -> bool {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1279` `pub fn cached_input(&self) -> i64 {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1283` `pub fn non_cached_input(&self) -> i64 {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1288` `pub fn blended_total(&self) -> i64 {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1292` `pub fn tokens_in_context_window(&self) -> i64 {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1306` `pub fn percent_of_context_window_remaining(&self, context_window: i64) -> i64 {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1320` `pub fn add_assign(&mut self, other: &TokenUsage) {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1330` `pub struct FinalOutput {`
+- `impl` `codex-rs/protocol/src/protocol.rs:1334` `impl From<TokenUsage> for FinalOutput {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1335` `fn from(token_usage: TokenUsage) -> Self {`
+- `impl` `codex-rs/protocol/src/protocol.rs:1340` `impl fmt::Display for FinalOutput {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1341` `fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1371` `pub struct AgentMessageEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1376` `pub struct UserMessageEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1394` `pub struct AgentMessageDeltaEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1399` `pub struct AgentReasoningEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1404` `pub struct AgentReasoningRawContentEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1409` `pub struct AgentReasoningRawContentDeltaEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1414` `pub struct AgentReasoningSectionBreakEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1423` `pub struct AgentReasoningDeltaEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1428` `pub struct McpInvocation {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1438` `pub struct McpToolCallBeginEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1445` `pub struct McpToolCallEndEvent {`
+- `impl` `codex-rs/protocol/src/protocol.rs:1455` `impl McpToolCallEndEvent {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1456` `pub fn is_success(&self) -> bool {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1465` `pub struct WebSearchBeginEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1470` `pub struct WebSearchEndEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1480` `pub struct ConversationPathResponseEvent {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1486` `pub struct ResumedHistory {`
+- `enum` `codex-rs/protocol/src/protocol.rs:1493` `pub enum InitialHistory {`
+- `impl` `codex-rs/protocol/src/protocol.rs:1499` `impl InitialHistory {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1500` `pub fn forked_from_id(&self) -> Option<ThreadId> {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1516` `pub fn session_cwd(&self) -> Option<PathBuf> {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1524` `pub fn get_rollout_items(&self) -> Vec<RolloutItem> {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1532` `pub fn get_event_msgs(&self) -> Option<Vec<EventMsg>> {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1557` `pub fn get_base_instructions(&self) -> Option<BaseInstructions> {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1574` `pub fn get_dynamic_tools(&self) -> Option<Vec<DynamicToolSpec>> {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1591` `fn session_cwd_from_items(items: &[RolloutItem]) -> Option<PathBuf> {`
+- `enum` `codex-rs/protocol/src/protocol.rs:1601` `pub enum SessionSource {`
+- `enum` `codex-rs/protocol/src/protocol.rs:1615` `pub enum SubAgentSource {`
+- `impl` `codex-rs/protocol/src/protocol.rs:1625` `impl fmt::Display for SessionSource {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1626` `fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {`
+- `impl` `codex-rs/protocol/src/protocol.rs:1638` `impl fmt::Display for SubAgentSource {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1639` `fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1660` `pub struct SessionMeta {`
+- `impl` `codex-rs/protocol/src/protocol.rs:1679` `impl Default for SessionMeta {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1680` `fn default() -> Self {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1697` `pub struct SessionMetaLine {`
+- `enum` `codex-rs/protocol/src/protocol.rs:1706` `pub enum RolloutItem {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1715` `pub struct CompactedItem {`
+- `impl` `codex-rs/protocol/src/protocol.rs:1721` `impl From<CompactedItem> for ResponseItem {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1722` `fn from(value: CompactedItem) -> Self {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1736` `pub struct TurnContextItem {`
+- `enum` `codex-rs/protocol/src/protocol.rs:1760` `pub enum TruncationPolicy {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1766` `pub struct RolloutLine {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1773` `pub struct GitInfo {`
+- `enum` `codex-rs/protocol/src/protocol.rs:1787` `pub enum ReviewDelivery {`
+- `enum` `codex-rs/protocol/src/protocol.rs:1795` `pub enum ReviewTarget {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1821` `pub struct ReviewRequest {`
+- `struct` `codex-rs/protocol/src/protocol.rs:1830` `pub struct ReviewOutputEvent {`
+- `impl` `codex-rs/protocol/src/protocol.rs:1837` `impl Default for ReviewOutputEvent {`
+- `fn` `codex-rs/protocol/src/protocol.rs:1838` `fn default() -> Self {`
+- (… 79 more definitions omitted; see symbol indexes under `docs/workdocjcl/spec/13_Indexes/`)
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -304,4 +304,4 @@ Source file implementing exported/public items listed below.
 - uses Rust panic/expect/unwrap-style failure paths
 
 ## Spec Links
-- `workdocjcl/spec/02_Data/ROLLOUT_FORMAT.md`
+- `docs/workdocjcl/spec/02_Data/ROLLOUT_FORMAT.md`

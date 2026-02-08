@@ -8,7 +8,7 @@
 - 同样的依赖提示行为（仅 `env_var` 依赖会触发 `request_user_input`）
 - 同样的协议输出（`Op::ListSkills` / `ListSkillsResponseEvent`）
 
-“Skills”在 Codex 中的作用不是“工具调用”，而是 **额外的本地指令来源**：模型只在用户显式 mention 时才会看到某个 skill 的全文。与此同时，Codex 会把“可用 skills 的列表清单”始终注入到 `UserInstructions` 中，让模型知道有哪些 skills 可被 `$name` 引用（见 `workdocjcl/spec/04_Business_Logic/PROMPT_ASSEMBLY.md`）。
+“Skills”在 Codex 中的作用不是“工具调用”，而是 **额外的本地指令来源**：模型只在用户显式 mention 时才会看到某个 skill 的全文。与此同时，Codex 会把“可用 skills 的列表清单”始终注入到 `UserInstructions` 中，让模型知道有哪些 skills 可被 `$name` 引用（见 `docs/workdocjcl/spec/04_Business_Logic/PROMPT_ASSEMBLY.md`）。
 
 ---
 
@@ -189,7 +189,7 @@ Codex 编译时内置了一组 system skills（样例/系统工作流），运�
 ### 6.1 配置入口
 技能启用/禁用只读 **User config layer** 的 `skills` 配置（更高优先级 layers 会被忽略）。
 
-配置结构（概念；schema 见 `workdocjcl/spec/01_Configuration/CONFIG_SCHEMA_REFERENCE.md` 的 `skills`）：
+配置结构（概念；schema 见 `docs/workdocjcl/spec/01_Configuration/CONFIG_SCHEMA_REFERENCE.md` 的 `skills`）：
 - `skills.config[]`：
   - `path: PathBuf`（指向某个 SKILL.md）
   - `enabled: bool`

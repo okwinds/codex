@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `41542`
-- sha256: `fcf749b355d9edbdab88776e6847156bd7be9389e291d963abe129a730cb9b61`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `43591`
+- sha256: `60d73c7be303d083d0c9344630e445253ecf0d6c785986f680c1bf199ed34434`
+- generated_utc: `2026-02-08T10:45:31Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -98,20 +98,24 @@ Source file implementing exported/public items listed below.
 - `fn` `codex-rs/core/src/config/service.rs:686` `fn find_effective_layer(`
 - `use` `codex-rs/core/src/config/service.rs:701` `use super::*;`
 - `use` `codex-rs/core/src/config/service.rs:702` `use anyhow::Result;`
-- `use` `codex-rs/core/src/config/service.rs:703` `use codex_app_server_protocol::AskForApproval;`
-- `use` `codex-rs/core/src/config/service.rs:704` `use codex_utils_absolute_path::AbsolutePathBuf;`
-- `use` `codex-rs/core/src/config/service.rs:705` `use pretty_assertions::assert_eq;`
-- `use` `codex-rs/core/src/config/service.rs:706` `use tempfile::tempdir;`
-- `fn` `codex-rs/core/src/config/service.rs:709` `fn toml_value_to_item_handles_nested_config_tables() {`
-- `fn` `codex-rs/core/src/config/service.rs:758` `async fn write_value_preserves_comments_and_order() -> Result<()> {`
-- `fn` `codex-rs/core/src/config/service.rs:804` `async fn read_includes_origins_and_layers() {`
-- `fn` `codex-rs/core/src/config/service.rs:885` `async fn write_value_reports_override() {`
-- `fn` `codex-rs/core/src/config/service.rs:946` `async fn version_conflict_rejected() {`
-- `fn` `codex-rs/core/src/config/service.rs:970` `async fn write_value_defaults_to_user_config_path() {`
-- `fn` `codex-rs/core/src/config/service.rs:995` `async fn invalid_user_value_rejected_even_if_overridden_by_managed() {`
-- `fn` `codex-rs/core/src/config/service.rs:1036` `async fn read_reports_managed_overrides_user_and_session_flags() {`
-- `fn` `codex-rs/core/src/config/service.rs:1091` `async fn write_value_reports_managed_override() {`
-- `fn` `codex-rs/core/src/config/service.rs:1132` `async fn upsert_merges_tables_replace_overwrites() -> Result<()> {`
+- `use` `codex-rs/core/src/config/service.rs:703` `use codex_app_server_protocol::AppConfig;`
+- `use` `codex-rs/core/src/config/service.rs:704` `use codex_app_server_protocol::AppDisabledReason;`
+- `use` `codex-rs/core/src/config/service.rs:705` `use codex_app_server_protocol::AppsConfig;`
+- `use` `codex-rs/core/src/config/service.rs:706` `use codex_app_server_protocol::AskForApproval;`
+- `use` `codex-rs/core/src/config/service.rs:707` `use codex_utils_absolute_path::AbsolutePathBuf;`
+- `use` `codex-rs/core/src/config/service.rs:708` `use pretty_assertions::assert_eq;`
+- `use` `codex-rs/core/src/config/service.rs:709` `use tempfile::tempdir;`
+- `fn` `codex-rs/core/src/config/service.rs:712` `fn toml_value_to_item_handles_nested_config_tables() {`
+- `fn` `codex-rs/core/src/config/service.rs:761` `async fn write_value_preserves_comments_and_order() -> Result<()> {`
+- `fn` `codex-rs/core/src/config/service.rs:807` `async fn write_value_supports_nested_app_paths() -> Result<()> {`
+- `fn` `codex-rs/core/src/config/service.rs:863` `async fn read_includes_origins_and_layers() {`
+- `fn` `codex-rs/core/src/config/service.rs:944` `async fn write_value_reports_override() {`
+- `fn` `codex-rs/core/src/config/service.rs:1005` `async fn version_conflict_rejected() {`
+- `fn` `codex-rs/core/src/config/service.rs:1029` `async fn write_value_defaults_to_user_config_path() {`
+- `fn` `codex-rs/core/src/config/service.rs:1054` `async fn invalid_user_value_rejected_even_if_overridden_by_managed() {`
+- `fn` `codex-rs/core/src/config/service.rs:1095` `async fn read_reports_managed_overrides_user_and_session_flags() {`
+- `fn` `codex-rs/core/src/config/service.rs:1150` `async fn write_value_reports_managed_override() {`
+- `fn` `codex-rs/core/src/config/service.rs:1191` `async fn upsert_merges_tables_replace_overwrites() -> Result<()> {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -144,4 +148,4 @@ Source file implementing exported/public items listed below.
 - uses Rust panic/expect/unwrap-style failure paths
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

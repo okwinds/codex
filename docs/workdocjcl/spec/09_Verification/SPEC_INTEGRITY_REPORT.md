@@ -1,0 +1,14 @@
+# Spec Integrity Report
+
+- generated_utc: `2026-02-08T10:52:05Z`
+- head: `7f567b11ecb56a92a105b9a624dabadc44147ddd`
+
+## Summary
+- spec_index_links_total: `68`
+- spec_index_links_missing: `0`
+- code_to_spec_rows_total: `98`
+- code_to_spec_code_missing: `0`
+- code_to_spec_spec_missing: `0`
+
+## Findings
+- (none)

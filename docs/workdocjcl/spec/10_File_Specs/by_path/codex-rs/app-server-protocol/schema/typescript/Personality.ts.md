@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.ts`
-- size_bytes: `205`
-- sha256: `d35f937dee4074dd1c6ce922a33363bdfb772258257465d7e6d1999ba9100ea3`
-- generated_utc: `2026-02-03T16:08:28Z`
+- size_bytes: `214`
+- sha256: `51eee5332b3af52cce2117922688523e90808390eec477434d9a089b36a21163`
+- generated_utc: `2026-02-08T10:45:14Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -18,14 +18,14 @@ Source file implementing exported/public items listed below.
 - (no obvious side effects detected by heuristic)
 
 ## Public Surface (auto)
-- `export type Personality = "friendly" | "pragmatic";`
+- `export type Personality = "none" | "friendly" | "pragmatic";`
 
 ## Definitions (auto, per-file)
-- `export` `codex-rs/app-server-protocol/schema/typescript/Personality.ts:5` `export type Personality = "friendly" | "pragmatic";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/Personality.ts:5` `export type Personality = "none" | "friendly" | "pragmatic";`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
-- `export type Personality = "friendly" | "pragmatic";`
+- `export type Personality = "none" | "friendly" | "pragmatic";`
 ### Referenced env vars
 - (none detected)
 

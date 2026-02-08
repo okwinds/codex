@@ -5,7 +5,7 @@
 - ext: `.png`
 - size_bytes: `1563`
 - sha256: `a4024b0306ddb05847e1012879d37aaf1e658205199da596f5145ed7a88d9162`
-- generated_utc: `2026-02-03T16:08:29Z`
+- generated_utc: `2026-02-08T10:45:33Z`
 
 ## Purpose (Why)
 Asset file (image/font/etc.) used by docs or UI.
@@ -33,4 +33,4 @@ Asset file (image/font/etc.) used by docs or UI.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

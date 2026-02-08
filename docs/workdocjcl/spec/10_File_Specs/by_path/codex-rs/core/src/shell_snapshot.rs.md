@@ -5,7 +5,7 @@
 - ext: `.rs`
 - size_bytes: `26875`
 - sha256: `6d95b89535ab66c51022ccd0e8407e2d47df21a42ff0ee512a17c54c84c48265`
-- generated_utc: `2026-02-03T16:08:29Z`
+- generated_utc: `2026-02-08T10:45:33Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -133,4 +133,4 @@ Source file implementing exported/public items listed below.
 - uses Rust panic/expect/unwrap-style failure paths
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

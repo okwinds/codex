@@ -5,7 +5,7 @@
 - ext: `.rs`
 - size_bytes: `7249`
 - sha256: `09da1c570a6b967f575dd7ec984f54de513685ccfed060d109dbdcc8df2cb03b`
-- generated_utc: `2026-02-03T16:08:31Z`
+- generated_utc: `2026-02-08T10:45:41Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -78,4 +78,4 @@ Source file implementing exported/public items listed below.
 - returns structured errors (Result/ErrorKind)
 
 ## Spec Links
-- `workdocjcl/spec/06_UI/TUI.md`
+- `docs/workdocjcl/spec/06_UI/TUI.md`

@@ -5,7 +5,7 @@
 - ext: `.sse`
 - size_bytes: `365`
 - sha256: `d0e0a296ca577912c68f9cc2b3317ad3a3e98b534e2045416f906b47b1eade9a`
-- generated_utc: `2026-02-03T16:08:29Z`
+- generated_utc: `2026-02-08T10:45:34Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -33,4 +33,4 @@ Test or snapshot file used for automated verification.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

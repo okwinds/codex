@@ -5,7 +5,7 @@
 - ext: `.snap`
 - size_bytes: `379`
 - sha256: `687c0ca673fedd6f54d20d2dc02d16f886e4d5347262642b01b7027618fd2cce`
-- generated_utc: `2026-02-03T16:08:30Z`
+- generated_utc: `2026-02-08T10:45:40Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -33,4 +33,4 @@ Test or snapshot file used for automated verification.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/06_UI/TUI.md`
+- `docs/workdocjcl/spec/06_UI/TUI.md`

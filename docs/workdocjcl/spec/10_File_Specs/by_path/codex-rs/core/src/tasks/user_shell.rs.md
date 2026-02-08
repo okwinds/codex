@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `10235`
-- sha256: `a108fd351fe622ba02134ce8cd0fefa557eb82e7d5b3bf17435b42e34f4a7d51`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `11530`
+- sha256: `9fbaac1cc74031f04f6ad413288c4a206370c075d929ca6ccf03b319c7582c26`
+- generated_utc: `2026-02-08T10:45:33Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -52,11 +52,15 @@ Source file (no public surface detected by heuristic).
 - `use` `codex-rs/core/src/tasks/user_shell.rs:31` `use crate::user_shell_command::user_shell_command_record_item;`
 - `use` `codex-rs/core/src/tasks/user_shell.rs:33` `use super::SessionTask;`
 - `use` `codex-rs/core/src/tasks/user_shell.rs:34` `use super::SessionTaskContext;`
-- `const` `codex-rs/core/src/tasks/user_shell.rs:36` `const USER_SHELL_TIMEOUT_MS: u64 = 60 * 60 * 1000; // 1 hour`
-- `impl` `codex-rs/core/src/tasks/user_shell.rs:43` `impl UserShellCommandTask {`
-- `impl` `codex-rs/core/src/tasks/user_shell.rs:50` `impl SessionTask for UserShellCommandTask {`
-- `fn` `codex-rs/core/src/tasks/user_shell.rs:51` `fn kind(&self) -> TaskKind {`
-- `fn` `codex-rs/core/src/tasks/user_shell.rs:55` `async fn run(`
+- `use` `codex-rs/core/src/tasks/user_shell.rs:35` `use crate::codex::Session;`
+- `use` `codex-rs/core/src/tasks/user_shell.rs:36` `use codex_protocol::models::ResponseInputItem;`
+- `use` `codex-rs/core/src/tasks/user_shell.rs:37` `use codex_protocol::models::ResponseItem;`
+- `const` `codex-rs/core/src/tasks/user_shell.rs:39` `const USER_SHELL_TIMEOUT_MS: u64 = 60 * 60 * 1000; // 1 hour`
+- `impl` `codex-rs/core/src/tasks/user_shell.rs:56` `impl UserShellCommandTask {`
+- `impl` `codex-rs/core/src/tasks/user_shell.rs:63` `impl SessionTask for UserShellCommandTask {`
+- `fn` `codex-rs/core/src/tasks/user_shell.rs:64` `fn kind(&self) -> TaskKind {`
+- `fn` `codex-rs/core/src/tasks/user_shell.rs:68` `async fn run(`
+- `fn` `codex-rs/core/src/tasks/user_shell.rs:284` `async fn persist_user_shell_output(`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -85,6 +89,7 @@ Source file (no public surface detected by heuristic).
 
 ## Error Handling / Edge Cases
 - has retry/timeout/backoff logic
+- uses Rust panic/expect/unwrap-style failure paths
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

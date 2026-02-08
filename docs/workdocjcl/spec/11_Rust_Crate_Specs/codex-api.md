@@ -1,7 +1,7 @@
 # `codex-api`
 
 - path: `codex-rs/codex-api`
-- generated_utc: `2026-02-03T09:48:37Z`
+- generated_utc: `2026-02-08T10:45:13Z`
 - role: crate
 
 ## Build Targets
@@ -18,6 +18,7 @@
 - `futures`
 - `http`
 - `regex-lite`
+- `rustls`
 - `serde`
 - `serde_json`
 - `thiserror`
@@ -25,6 +26,7 @@
 - `tokio-tungstenite`
 - `tokio-util`
 - `tracing`
+- `tungstenite`
 - `url`
 
 ## Features
@@ -46,6 +48,10 @@
 - `pub use codex_client::TransportError;`
 - `pub use crate::auth::AuthProvider;`
 - `pub use crate::common::CompactionInput;`
+- `pub use crate::common::MemoryTrace;`
+- `pub use crate::common::MemoryTraceMetadata;`
+- `pub use crate::common::MemoryTraceSummarizeInput;`
+- `pub use crate::common::MemoryTraceSummaryOutput;`
 - `pub use crate::common::Prompt;`
 - `pub use crate::common::ResponseAppendWsRequest;`
 - `pub use crate::common::ResponseCreateWsRequest;`
@@ -53,9 +59,9 @@
 - `pub use crate::common::ResponseStream;`
 - `pub use crate::common::ResponsesApiRequest;`
 - `pub use crate::common::create_text_param_for_request;`
-- `pub use crate::endpoint::chat::AggregateStreamExt;`
-- `pub use crate::endpoint::chat::ChatClient;`
+- `pub use crate::endpoint::aggregate::AggregateStreamExt;`
 - `pub use crate::endpoint::compact::CompactClient;`
+- `pub use crate::endpoint::memories::MemoriesClient;`
 - `pub use crate::endpoint::models::ModelsClient;`
 - `pub use crate::endpoint::responses::ResponsesClient;`
 - `pub use crate::endpoint::responses::ResponsesOptions;`
@@ -63,10 +69,7 @@
 - `pub use crate::endpoint::responses_websocket::ResponsesWebsocketConnection;`
 - `pub use crate::error::ApiError;`
 - `pub use crate::provider::Provider;`
-- `pub use crate::provider::WireApi;`
 - `pub use crate::provider::is_azure_responses_wire_base_url;`
-- `pub use crate::requests::ChatRequest;`
-- `pub use crate::requests::ChatRequestBuilder;`
 - `pub use crate::requests::ResponsesRequest;`
 - `pub use crate::requests::ResponsesRequestBuilder;`
 - `pub use crate::sse::stream_from_fixture;`
@@ -74,5 +77,5 @@
 - `pub use crate::telemetry::WebsocketTelemetry;`
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/MODULE_MAP.md`
-- `workdocjcl/spec/09_Verification/CODE_TO_SPEC_MAP.md`
+- `docs/workdocjcl/spec/00_Overview/MODULE_MAP.md`
+- `docs/workdocjcl/spec/09_Verification/CODE_TO_SPEC_MAP.md`

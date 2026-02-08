@@ -30,7 +30,7 @@
   - 仍会走审批/沙箱/exec_policy 等统一路径
 
 ## 4. 输出与错误
-见公共封装：`workdocjcl/spec/05_Integrations/TOOLS_DETAILED/_COMMON_OUTPUT_ENVELOPE.md`
+见公共封装：`docs/workdocjcl/spec/05_Integrations/TOOLS_DETAILED/_COMMON_OUTPUT_ENVELOPE.md`
 
 ## 5. 代码映射
 - tool call 转换：`codex-rs/core/src/tools/router.rs::ToolRouter::build_tool_call`

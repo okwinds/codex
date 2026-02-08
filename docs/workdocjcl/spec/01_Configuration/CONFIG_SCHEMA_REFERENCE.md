@@ -1,6 +1,6 @@
 # config.toml JSON Schema Reference (Flattened)
 
-- generated_utc: `2026-02-03T16:05:44Z`
+- generated_utc: `2026-02-08T10:34:52Z`
 - schema_source: `codex-rs/core/config.schema.json`
 
 本文件把 `config.schema.json` 展平为 `dot.path` 形式，作为“无遗漏”配置键参考。
@@ -12,6 +12,10 @@
 | `analytics` | `allOf` | When `false`, disables analytics across Codex product surfaces in this machine. Defaults to `true`. |
 | `analytics.enabled` | `boolean` | When `false`, disables analytics across Codex product surfaces in this profile. |
 | `approval_policy` | `allOf` | Default approval policy for executing commands. |
+| `apps` | `allOf` | Settings for app-specific controls. |
+| `apps.<key>` | `object` | Config values for a single app/connector. |
+| `apps.<key>.disabled_reason` | `allOf` | Reason this app was disabled. |
+| `apps.<key>.enabled` | `boolean` | When `false`, Codex does not surface this app. |
 | `chatgpt_base_url` | `string` | Base URL for requests to ChatGPT (as opposed to the OpenAI API). |
 | `check_for_update_on_startup` | `boolean` | When `true`, checks for Codex updates on startup and surfaces update prompts. Set to `false` only if your Codex updates are centrally managed. Defaults to `true`. |
 | `cli_auth_credentials_store` | `allOf` | Preferred backend for storing CLI auth credentials. file (default): Use a file in the Codex home directory. keyring: Use an OS-specific keyring service. auto: Use the keyring if available, otherwise use a file. |
@@ -31,17 +35,17 @@
 | `features.elevated_windows_sandbox` | `boolean` |  |
 | `features.enable_experimental_windows_sandbox` | `boolean` |  |
 | `features.enable_request_compression` | `boolean` |  |
-| `features.exec_policy` | `boolean` |  |
 | `features.experimental_use_freeform_apply_patch` | `boolean` |  |
 | `features.experimental_use_unified_exec_tool` | `boolean` |  |
 | `features.experimental_windows_sandbox` | `boolean` |  |
 | `features.include_apply_patch_tool` | `boolean` |  |
+| `features.memory_tool` | `boolean` |  |
 | `features.personality` | `boolean` |  |
 | `features.powershell_utf8` | `boolean` |  |
-| `features.remote_compaction` | `boolean` |  |
 | `features.remote_models` | `boolean` |  |
 | `features.request_rule` | `boolean` |  |
 | `features.responses_websockets` | `boolean` |  |
+| `features.responses_websockets_v2` | `boolean` |  |
 | `features.runtime_metrics` | `boolean` |  |
 | `features.shell_snapshot` | `boolean` |  |
 | `features.shell_tool` | `boolean` |  |
@@ -51,6 +55,7 @@
 | `features.steer` | `boolean` |  |
 | `features.undo` | `boolean` |  |
 | `features.unified_exec` | `boolean` |  |
+| `features.use_linux_sandbox_bwrap` | `boolean` |  |
 | `features.web_search` | `boolean` |  |
 | `features.web_search_cached` | `boolean` |  |
 | `features.web_search_request` | `boolean` |  |
@@ -68,6 +73,7 @@
 | `history.max_bytes` | `integer` | If set, the maximum size of the history file in bytes. The oldest entries are dropped once the file exceeds this limit. |
 | `history.persistence` | `allOf` | If true, history entries will not be written to disk. |
 | `instructions` | `string` | System instructions. |
+| `log_dir` | `allOf` | Directory where Codex writes log files, for example `codex-tui.log`. Defaults to `$CODEX_HOME/log`. |
 | `mcp_oauth_callback_port` | `integer` | Optional fixed port for the local HTTP callback server used during MCP OAuth login. When unset, Codex will bind to an ephemeral port chosen by the OS. |
 | `mcp_oauth_credentials_store` | `allOf` | Preferred backend for storing MCP OAuth credentials. keyring: Use an OS-specific keyring service. https://github.com/openai/codex/blob/main/codex-rs/rmcp-client/src/oauth.rs#L2 file: Use a file in the Codex home directory. auto (default): Use the OS-specific keyring service if available, otherwise use a file. |
 | `mcp_servers` | `object` | Definition for MCP servers that Codex can reach out to for tool calls. |
@@ -91,6 +97,7 @@
 | `mcp_servers.<key>.env_vars[]` | `string` |  |
 | `mcp_servers.<key>.http_headers` | `object` |  |
 | `mcp_servers.<key>.http_headers.<key>` | `string` |  |
+| `mcp_servers.<key>.required` | `boolean` |  |
 | `mcp_servers.<key>.scopes` | `array` |  |
 | `mcp_servers.<key>.scopes[]` | `string` |  |
 | `mcp_servers.<key>.startup_timeout_ms` | `integer` |  |
@@ -135,7 +142,7 @@
 | `notice.model_migrations.<key>` | `string` |  |
 | `notify` | `array` | Optional external command to spawn for end-user notifications. |
 | `notify[]` | `string` |  |
-| `oss_provider` | `string` | Preferred OSS provider for local models, e.g. "lmstudio", "ollama", or "ollama-chat". |
+| `oss_provider` | `string` | Preferred OSS provider for local models, e.g. "lmstudio" or "ollama". |
 | `otel` | `allOf` | OTEL configuration. |
 | `otel.environment` | `string` | Mark traces with environment (dev, staging, prod, test). Defaults to dev. |
 | `otel.exporter` | `allOf` | Optional log exporter |
@@ -196,17 +203,17 @@
 | `profiles.<key>.features.elevated_windows_sandbox` | `boolean` |  |
 | `profiles.<key>.features.enable_experimental_windows_sandbox` | `boolean` |  |
 | `profiles.<key>.features.enable_request_compression` | `boolean` |  |
-| `profiles.<key>.features.exec_policy` | `boolean` |  |
 | `profiles.<key>.features.experimental_use_freeform_apply_patch` | `boolean` |  |
 | `profiles.<key>.features.experimental_use_unified_exec_tool` | `boolean` |  |
 | `profiles.<key>.features.experimental_windows_sandbox` | `boolean` |  |
 | `profiles.<key>.features.include_apply_patch_tool` | `boolean` |  |
+| `profiles.<key>.features.memory_tool` | `boolean` |  |
 | `profiles.<key>.features.personality` | `boolean` |  |
 | `profiles.<key>.features.powershell_utf8` | `boolean` |  |
-| `profiles.<key>.features.remote_compaction` | `boolean` |  |
 | `profiles.<key>.features.remote_models` | `boolean` |  |
 | `profiles.<key>.features.request_rule` | `boolean` |  |
 | `profiles.<key>.features.responses_websockets` | `boolean` |  |
+| `profiles.<key>.features.responses_websockets_v2` | `boolean` |  |
 | `profiles.<key>.features.runtime_metrics` | `boolean` |  |
 | `profiles.<key>.features.shell_snapshot` | `boolean` |  |
 | `profiles.<key>.features.shell_tool` | `boolean` |  |
@@ -216,6 +223,7 @@
 | `profiles.<key>.features.steer` | `boolean` |  |
 | `profiles.<key>.features.undo` | `boolean` |  |
 | `profiles.<key>.features.unified_exec` | `boolean` |  |
+| `profiles.<key>.features.use_linux_sandbox_bwrap` | `boolean` |  |
 | `profiles.<key>.features.web_search` | `boolean` |  |
 | `profiles.<key>.features.web_search_cached` | `boolean` |  |
 | `profiles.<key>.features.web_search_request` | `boolean` |  |
@@ -272,10 +280,12 @@
 | `tui` | `allOf` | Collection of settings that are specific to the TUI. |
 | `tui.alternate_screen` | `allOf` | Controls whether the TUI uses the terminal's alternate screen buffer.  - `auto` (default): Disable alternate screen in Zellij, enable elsewhere. - `always`: Always use alternate screen (original behavior). - `never`: Never use alternate screen (inline mode only, preserves scrollback).  Using alternate screen provides a cleaner fullscreen experience but prevents scrollback in terminal multiplexers like Zellij that follow the xterm spec. |
 | `tui.animations` | `boolean` | Enable animations (welcome screen, shimmer effects, spinners). Defaults to `true`. |
-| `tui.experimental_mode` | `allOf` | Start the TUI in the specified collaboration mode (plan/execute/etc.). Defaults to unset. |
+| `tui.experimental_mode` | `allOf` | Start the TUI in the specified collaboration mode (plan/default). Defaults to unset. |
 | `tui.notification_method` | `allOf` | Notification method to use for unfocused terminal notifications. Defaults to `auto`. |
 | `tui.notifications` | `allOf` | Enable desktop notifications from the TUI when the terminal is unfocused. Defaults to `true`. |
 | `tui.notifications[]` | `string` |  |
 | `tui.show_tooltips` | `boolean` | Show startup tooltips in the TUI welcome screen. Defaults to `true`. |
+| `tui.status_line` | `array` | Ordered list of status line item identifiers.  When set, the TUI renders the selected items as the status line. |
+| `tui.status_line[]` | `string` |  |
 | `web_search` | `allOf` | Controls the web search tool mode: disabled, cached, or live. |
 | `windows_wsl_setup_acknowledged` | `boolean` | Tracks whether the Windows onboarding screen has been acknowledged. |

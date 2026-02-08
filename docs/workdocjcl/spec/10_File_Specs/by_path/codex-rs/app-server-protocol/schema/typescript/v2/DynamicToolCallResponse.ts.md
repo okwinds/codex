@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.ts`
-- size_bytes: `230`
-- sha256: `eb6564083905a7c27dbc28842d0ba86471a2d61aeab26f5e1574e8f016dbfd12`
-- generated_utc: `2026-02-03T16:08:28Z`
+- size_bytes: `361`
+- sha256: `df53cf5e967d26aa59615db06f4179a7b2330f44df4298a8393eaf9f48f7e115`
+- generated_utc: `2026-02-08T10:45:14Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -18,14 +18,16 @@ Source file implementing exported/public items listed below.
 - (no obvious side effects detected by heuristic)
 
 ## Public Surface (auto)
-- `export type DynamicToolCallResponse = { output: string, success: boolean, };`
+- `export type DynamicToolCallResponse = { contentItems: Array<DynamicToolCallOutputContentItem>, success: boolean, };`
 
 ## Definitions (auto, per-file)
-- `export` `codex-rs/app-server-protocol/schema/typescript/v2/DynamicToolCallResponse.ts:5` `export type DynamicToolCallResponse = { output: string, success: boolean, };`
+- `import` `codex-rs/app-server-protocol/schema/typescript/v2/DynamicToolCallResponse.ts:4` `import type { DynamicToolCallOutputContentItem } from "./DynamicToolCallOutputContentItem";`
+- `export` `codex-rs/app-server-protocol/schema/typescript/v2/DynamicToolCallResponse.ts:6` `export type DynamicToolCallResponse = { contentItems: Array<DynamicToolCallOutputContentItem>, success: boolean, };`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
-- `export type DynamicToolCallResponse = { output: string, success: boolean, };`
+- `import type { DynamicToolCallOutputContentItem } from "./DynamicToolCallOutputContentItem";`
+- `export type DynamicToolCallResponse = { contentItems: Array<DynamicToolCallOutputContentItem>, success: boolean, };`
 ### Referenced env vars
 - (none detected)
 

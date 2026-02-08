@@ -3,9 +3,9 @@
 ## Identity
 - kind: `test`
 - ext: `.rs`
-- size_bytes: `18049`
-- sha256: `d8a851cb9348a6b25d0e1d26b0dacf9926c910ef925a1b4950d8b7ce7f9ad898`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `42942`
+- sha256: `3d40c3beeb276c925672189dad1c5aeeea30f5b50ad696859289792e9aa69434`
+- generated_utc: `2026-02-08T10:45:36Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -28,7 +28,6 @@ Test or snapshot file used for automated verification.
 - `use std::fs;`
 - `use anyhow::Result;`
 - `use codex_core::CodexAuth;`
-- `use codex_core::features::Feature;`
 - `use codex_core::protocol::EventMsg;`
 - `use codex_core::protocol::ItemCompletedEvent;`
 - `use codex_core::protocol::ItemStartedEvent;`
@@ -45,6 +44,7 @@ Test or snapshot file used for automated verification.
 - `use core_test_support::skip_if_no_network;`
 - `use core_test_support::test_codex::TestCodexHarness;`
 - `use core_test_support::test_codex::test_codex;`
+- `use core_test_support::wait_for_event;`
 ### Referenced env vars
 - (none detected)
 
@@ -52,4 +52,4 @@ Test or snapshot file used for automated verification.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

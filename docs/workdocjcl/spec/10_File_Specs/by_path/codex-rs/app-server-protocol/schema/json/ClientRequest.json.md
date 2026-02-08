@@ -3,9 +3,9 @@
 ## Identity
 - kind: `config`
 - ext: `.json`
-- size_bytes: `101858`
-- sha256: `ee3bc98c64d29410dcc41bb46d1793c48e8ab39d0f0eca1acfab3c3324f48b90`
-- generated_utc: `2026-02-03T16:08:28Z`
+- size_bytes: `105153`
+- sha256: `d6295b3ced131dac076c7fdd2685669f0a855c93ab35f6956cd250601430dde2`
+- generated_utc: `2026-02-08T10:45:14Z`
 
 ## Purpose (Why)
 Configuration file for build/tooling/runtime.

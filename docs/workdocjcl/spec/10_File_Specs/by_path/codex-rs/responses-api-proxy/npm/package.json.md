@@ -5,7 +5,7 @@
 - ext: `.json`
 - size_bytes: `608`
 - sha256: `424f932026846b3dc5e58ed2b429142d67eb466d80d52ca541e448c70d35fb80`
-- generated_utc: `2026-02-03T16:08:30Z`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Node package manifest (name/scripts/dependencies/exports).

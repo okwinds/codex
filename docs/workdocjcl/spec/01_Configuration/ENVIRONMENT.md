@@ -3,7 +3,7 @@
 本章目标是“可复刻”：列出 Codex CLI 直接或间接依赖的环境变量，并说明其默认行为与实现位置。
 
 > 说明：本仓库支持“配置文件中声明 env var 名称”（例如 provider 的 `env_key`、HTTP header 的 `env_http_headers`）。因此，**可被读取的 env var 名称集合在理论上是开放的**。本章分两部分：
-> 1) **代码中直接读取/引用的 env vars**（来自扫描，见 `workdocjcl/inventory/env_vars_detected.txt`）
+> 1) **代码中直接读取/引用的 env vars**（来自扫描，见 `docs/workdocjcl/inventory/env_vars_detected.txt`）
 > 2) **配置驱动的 env vars**（名称由 config.toml 指定，无法静态穷举）
 
 ## 1. Codex 配置目录与文件布局（核心）
@@ -96,8 +96,8 @@
 - 在解析 config 后，根据 config 中出现的 env var 名称去读取 `process env` 并按语义注入（请求 header / token / credential 等）。
 
 ## 7. 参考清单（自动生成）
-- 代码直读变量清单：`workdocjcl/inventory/env_vars_detected.txt`
-- 变量位置采样：`workdocjcl/inventory/env_var_usages.md`
+- 代码直读变量清单：`docs/workdocjcl/inventory/env_vars_detected.txt`
+- 变量位置采样：`docs/workdocjcl/inventory/env_var_usages.md`
 
 ## 8. 来源（Source）
 - `CODEX_HOME`：`codex-rs/utils/home-dir/src/lib.rs`

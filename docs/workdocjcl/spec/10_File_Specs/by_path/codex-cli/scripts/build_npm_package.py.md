@@ -5,7 +5,7 @@
 - ext: `.py`
 - size_bytes: `11227`
 - sha256: `150afa9a25aa542a3db086b7c4692f551f968c28bd9175cf783050ff480bfc85`
-- generated_utc: `2026-02-03T16:08:28Z`
+- generated_utc: `2026-02-08T10:45:14Z`
 
 ## Purpose (Why)
 Source file implementing exported/public items listed below.
@@ -64,4 +64,4 @@ Source file implementing exported/public items listed below.
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/07_Infrastructure/PACKAGING.md`
+- `docs/workdocjcl/spec/07_Infrastructure/PACKAGING.md`

@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `2258`
-- sha256: `992ba02451d2e28a31ead2841fa98ed8ef73533c5db8637aa512e96b5e7d55ab`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `3462`
+- sha256: `be18e4562dd9c80d44aafdea5f650ef7c17cfdd7e68784d68cd3ba352b3c0886`
+- generated_utc: `2026-02-08T10:45:32Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -28,6 +28,9 @@ Source file (no public surface detected by heuristic).
 - `use` `codex-rs/core/src/landlock.rs:5` `use std::path::Path;`
 - `use` `codex-rs/core/src/landlock.rs:6` `use std::path::PathBuf;`
 - `use` `codex-rs/core/src/landlock.rs:7` `use tokio::process::Child;`
+- `use` `codex-rs/core/src/landlock.rs:92` `use super::*;`
+- `use` `codex-rs/core/src/landlock.rs:93` `use pretty_assertions::assert_eq;`
+- `fn` `codex-rs/core/src/landlock.rs:96` `fn bwrap_flags_are_feature_gated() {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -38,6 +41,8 @@ Source file (no public surface detected by heuristic).
 - `use std::path::Path;`
 - `use std::path::PathBuf;`
 - `use tokio::process::Child;`
+- `use super::*;`
+- `use pretty_assertions::assert_eq;`
 ### Referenced env vars
 - (none detected)
 
@@ -46,4 +51,4 @@ Source file (no public surface detected by heuristic).
 - uses Rust panic/expect/unwrap-style failure paths
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

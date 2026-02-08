@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `9192`
-- sha256: `7bd661afac77870f1e4ea1885e9f523082b60fd885ff3582f6472ee40fa198ef`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `9254`
+- sha256: `fcebb8fc4f2864e71c674197183307280bf8453bf67c5e3e912e4ec2a1bba2a8`
+- generated_utc: `2026-02-08T10:45:33Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -35,12 +35,13 @@ Source file (no public surface detected by heuristic).
 - `use` `codex-rs/core/src/stream_events_utils.rs:14` `use crate::proposed_plan_parser::strip_proposed_plan_blocks;`
 - `use` `codex-rs/core/src/stream_events_utils.rs:15` `use crate::tools::parallel::ToolCallRuntime;`
 - `use` `codex-rs/core/src/stream_events_utils.rs:16` `use crate::tools::router::ToolRouter;`
-- `use` `codex-rs/core/src/stream_events_utils.rs:17` `use codex_protocol::models::FunctionCallOutputPayload;`
-- `use` `codex-rs/core/src/stream_events_utils.rs:18` `use codex_protocol::models::ResponseInputItem;`
-- `use` `codex-rs/core/src/stream_events_utils.rs:19` `use codex_protocol::models::ResponseItem;`
-- `use` `codex-rs/core/src/stream_events_utils.rs:20` `use futures::Future;`
-- `use` `codex-rs/core/src/stream_events_utils.rs:21` `use tracing::debug;`
-- `use` `codex-rs/core/src/stream_events_utils.rs:22` `use tracing::instrument;`
+- `use` `codex-rs/core/src/stream_events_utils.rs:17` `use codex_protocol::models::FunctionCallOutputBody;`
+- `use` `codex-rs/core/src/stream_events_utils.rs:18` `use codex_protocol::models::FunctionCallOutputPayload;`
+- `use` `codex-rs/core/src/stream_events_utils.rs:19` `use codex_protocol::models::ResponseInputItem;`
+- `use` `codex-rs/core/src/stream_events_utils.rs:20` `use codex_protocol::models::ResponseItem;`
+- `use` `codex-rs/core/src/stream_events_utils.rs:21` `use futures::Future;`
+- `use` `codex-rs/core/src/stream_events_utils.rs:22` `use tracing::debug;`
+- `use` `codex-rs/core/src/stream_events_utils.rs:23` `use tracing::instrument;`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -58,12 +59,12 @@ Source file (no public surface detected by heuristic).
 - `use crate::proposed_plan_parser::strip_proposed_plan_blocks;`
 - `use crate::tools::parallel::ToolCallRuntime;`
 - `use crate::tools::router::ToolRouter;`
+- `use codex_protocol::models::FunctionCallOutputBody;`
 - `use codex_protocol::models::FunctionCallOutputPayload;`
 - `use codex_protocol::models::ResponseInputItem;`
 - `use codex_protocol::models::ResponseItem;`
 - `use futures::Future;`
 - `use tracing::debug;`
-- `use tracing::instrument;`
 ### Referenced env vars
 - (none detected)
 
@@ -71,4 +72,4 @@ Source file (no public surface detected by heuristic).
 - returns structured errors (Result/ErrorKind)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

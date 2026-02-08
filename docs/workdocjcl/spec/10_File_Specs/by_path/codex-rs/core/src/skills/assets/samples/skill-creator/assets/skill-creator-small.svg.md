@@ -5,7 +5,7 @@
 - ext: `.svg`
 - size_bytes: `1319`
 - sha256: `6591bf8ea9bb9435890dbdea299e0d2bd05f3aa893a335d26e4c535e93c8e7fb`
-- generated_utc: `2026-02-03T16:08:29Z`
+- generated_utc: `2026-02-08T10:45:33Z`
 
 ## Purpose (Why)
 Asset file (image/font/etc.) used by docs or UI.
@@ -33,4 +33,4 @@ Asset file (image/font/etc.) used by docs or UI.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

@@ -5,7 +5,7 @@
 - ext: `.json`
 - size_bytes: `525`
 - sha256: `ce146215125e5f25a660cd296ae554ceebae55bceae92d9efed22d761a16dfe8`
-- generated_utc: `2026-02-03T16:08:28Z`
+- generated_utc: `2026-02-08T10:45:14Z`
 
 ## Purpose (Why)
 Node package manifest (name/scripts/dependencies/exports).
@@ -33,4 +33,4 @@ Node package manifest (name/scripts/dependencies/exports).
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/07_Infrastructure/PACKAGING.md`
+- `docs/workdocjcl/spec/07_Infrastructure/PACKAGING.md`

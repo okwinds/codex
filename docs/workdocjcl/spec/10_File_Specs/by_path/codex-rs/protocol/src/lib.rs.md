@@ -5,7 +5,7 @@
 - ext: `.rs`
 - size_bytes: `369`
 - sha256: `b7da1f7e6300fb40a470872e655b87f3e39aeb882c4393f54ec0af60226d8d96`
-- generated_utc: `2026-02-03T16:08:30Z`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -49,4 +49,4 @@ Source file (no public surface detected by heuristic).
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/02_Data/ROLLOUT_FORMAT.md`
+- `docs/workdocjcl/spec/02_Data/ROLLOUT_FORMAT.md`

@@ -3,9 +3,9 @@
 ## Identity
 - kind: `test`
 - ext: `.rs`
-- size_bytes: `19273`
-- sha256: `a71f91caadffca75a257244d016c1e3d0b1a046f69a73dbfd8d571c96e03eab8`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `15057`
+- sha256: `15bbaf7cc3cd8b45cc14119e57e37d928e8501b732f7069d743bcc38a7431137`
+- generated_utc: `2026-02-08T10:45:34Z`
 
 ## Purpose (Why)
 Test or snapshot file used for automated verification.
@@ -27,7 +27,6 @@ Test or snapshot file used for automated verification.
 ### Imports / Includes
 - `use std::process::Command;`
 - `use std::sync::Arc;`
-- `use codex_app_server_protocol::AuthMode;`
 - `use codex_core::AuthManager;`
 - `use codex_core::CodexAuth;`
 - `use codex_core::ContentItem;`
@@ -36,15 +35,16 @@ Test or snapshot file used for automated verification.
 - `use codex_core::Prompt;`
 - `use codex_core::ResponseEvent;`
 - `use codex_core::ResponseItem;`
-- `use codex_core::TransportManager;`
-- `use codex_core::WEB_SEARCH_ELIGIBLE_HEADER;`
 - `use codex_core::WireApi;`
 - `use codex_core::models_manager::manager::ModelsManager;`
 - `use codex_otel::OtelManager;`
+- `use codex_otel::TelemetryAuthMode;`
 - `use codex_protocol::ThreadId;`
 - `use codex_protocol::config_types::ReasoningSummary;`
-- `use codex_protocol::config_types::WebSearchMode;`
 - `use codex_protocol::protocol::SessionSource;`
+- `use codex_protocol::protocol::SubAgentSource;`
+- `use core_test_support::load_default_config_for_test;`
+- `use core_test_support::responses;`
 ### Referenced env vars
 - (none detected)
 
@@ -52,4 +52,4 @@ Test or snapshot file used for automated verification.
 - (none detected)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

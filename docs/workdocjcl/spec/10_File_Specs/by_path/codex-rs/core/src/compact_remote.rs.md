@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `4075`
-- sha256: `95201f60e5bfd859af75aa90c41f127cea52704899e1cda2c204745a3befce6f`
-- generated_utc: `2026-02-03T16:08:29Z`
+- size_bytes: `4584`
+- sha256: `5f5f778a4189dc73caf85384e2317a30c598126dca9f2a1ec7fed5aacb49e449`
+- generated_utc: `2026-02-08T10:45:28Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -34,11 +34,12 @@ Source file (no public surface detected by heuristic).
 - `use` `codex-rs/core/src/compact_remote.rs:12` `use crate::protocol::TurnStartedEvent;`
 - `use` `codex-rs/core/src/compact_remote.rs:13` `use codex_protocol::items::ContextCompactionItem;`
 - `use` `codex-rs/core/src/compact_remote.rs:14` `use codex_protocol::items::TurnItem;`
-- `use` `codex-rs/core/src/compact_remote.rs:15` `use codex_protocol::models::ResponseItem;`
-- `use` `codex-rs/core/src/compact_remote.rs:16` `use tracing::info;`
-- `fn` `codex-rs/core/src/compact_remote.rs:35` `async fn run_remote_compact_task_inner(sess: &Arc<Session>, turn_context: &Arc<TurnContext>) {`
-- `fn` `codex-rs/core/src/compact_remote.rs:44` `async fn run_remote_compact_task_inner_impl(`
-- `fn` `codex-rs/core/src/compact_remote.rs:102` `fn trim_function_call_history_to_fit_context_window(`
+- `use` `codex-rs/core/src/compact_remote.rs:15` `use codex_protocol::models::BaseInstructions;`
+- `use` `codex-rs/core/src/compact_remote.rs:16` `use codex_protocol::models::ResponseItem;`
+- `use` `codex-rs/core/src/compact_remote.rs:17` `use tracing::info;`
+- `fn` `codex-rs/core/src/compact_remote.rs:40` `async fn run_remote_compact_task_inner(`
+- `fn` `codex-rs/core/src/compact_remote.rs:54` `async fn run_remote_compact_task_inner_impl(`
+- `fn` `codex-rs/core/src/compact_remote.rs:124` `fn trim_function_call_history_to_fit_context_window(`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -55,6 +56,7 @@ Source file (no public surface detected by heuristic).
 - `use crate::protocol::TurnStartedEvent;`
 - `use codex_protocol::items::ContextCompactionItem;`
 - `use codex_protocol::items::TurnItem;`
+- `use codex_protocol::models::BaseInstructions;`
 - `use codex_protocol::models::ResponseItem;`
 - `use tracing::info;`
 ### Referenced env vars
@@ -64,4 +66,4 @@ Source file (no public surface detected by heuristic).
 - returns structured errors (Result/ErrorKind)
 
 ## Spec Links
-- `workdocjcl/spec/00_Overview/ARCHITECTURE.md`
+- `docs/workdocjcl/spec/00_Overview/ARCHITECTURE.md`

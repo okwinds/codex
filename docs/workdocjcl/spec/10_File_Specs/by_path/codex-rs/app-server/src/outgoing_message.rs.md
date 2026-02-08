@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `12163`
-- sha256: `a04998e419bdddaa6575c8a80e4c2534a5fe1b554bc51622ab554f96443aee83`
-- generated_utc: `2026-02-03T16:08:28Z`
+- size_bytes: `16452`
+- sha256: `33c6417ba67503df2adb06845630ac7532af40df7647ef77ca0c58dbb83e8e27`
+- generated_utc: `2026-02-08T10:45:15Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -37,24 +37,28 @@ Source file (no public surface detected by heuristic).
 - `use` `codex-rs/app-server/src/outgoing_message.rs:15` `use tracing::warn;`
 - `use` `codex-rs/app-server/src/outgoing_message.rs:17` `use crate::error_code::INTERNAL_ERROR_CODE;`
 - `use` `codex-rs/app-server/src/outgoing_message.rs:20` `use codex_protocol::account::PlanType;`
-- `impl` `codex-rs/app-server/src/outgoing_message.rs:29` `impl OutgoingMessageSender {`
-- `use` `codex-rs/app-server/src/outgoing_message.rs:193` `use codex_app_server_protocol::AccountLoginCompletedNotification;`
-- `use` `codex-rs/app-server/src/outgoing_message.rs:194` `use codex_app_server_protocol::AccountRateLimitsUpdatedNotification;`
-- `use` `codex-rs/app-server/src/outgoing_message.rs:195` `use codex_app_server_protocol::AccountUpdatedNotification;`
-- `use` `codex-rs/app-server/src/outgoing_message.rs:196` `use codex_app_server_protocol::AuthMode;`
-- `use` `codex-rs/app-server/src/outgoing_message.rs:197` `use codex_app_server_protocol::ConfigWarningNotification;`
-- `use` `codex-rs/app-server/src/outgoing_message.rs:198` `use codex_app_server_protocol::LoginChatGptCompleteNotification;`
-- `use` `codex-rs/app-server/src/outgoing_message.rs:199` `use codex_app_server_protocol::RateLimitSnapshot;`
-- `use` `codex-rs/app-server/src/outgoing_message.rs:200` `use codex_app_server_protocol::RateLimitWindow;`
-- `use` `codex-rs/app-server/src/outgoing_message.rs:201` `use pretty_assertions::assert_eq;`
-- `use` `codex-rs/app-server/src/outgoing_message.rs:202` `use serde_json::json;`
-- `use` `codex-rs/app-server/src/outgoing_message.rs:203` `use uuid::Uuid;`
-- `use` `codex-rs/app-server/src/outgoing_message.rs:205` `use super::*;`
-- `fn` `codex-rs/app-server/src/outgoing_message.rs:208` `fn verify_server_notification_serialization() {`
-- `fn` `codex-rs/app-server/src/outgoing_message.rs:233` `fn verify_account_login_completed_notification_serialization() {`
-- `fn` `codex-rs/app-server/src/outgoing_message.rs:258` `fn verify_account_rate_limits_notification_serialization() {`
-- `fn` `codex-rs/app-server/src/outgoing_message.rs:297` `fn verify_account_updated_notification_serialization() {`
-- `fn` `codex-rs/app-server/src/outgoing_message.rs:317` `fn verify_config_warning_notification_serialization() {`
+- `impl` `codex-rs/app-server/src/outgoing_message.rs:51` `impl OutgoingMessageSender {`
+- `use` `codex-rs/app-server/src/outgoing_message.rs:257` `use std::time::Duration;`
+- `use` `codex-rs/app-server/src/outgoing_message.rs:259` `use codex_app_server_protocol::AccountLoginCompletedNotification;`
+- `use` `codex-rs/app-server/src/outgoing_message.rs:260` `use codex_app_server_protocol::AccountRateLimitsUpdatedNotification;`
+- `use` `codex-rs/app-server/src/outgoing_message.rs:261` `use codex_app_server_protocol::AccountUpdatedNotification;`
+- `use` `codex-rs/app-server/src/outgoing_message.rs:262` `use codex_app_server_protocol::AuthMode;`
+- `use` `codex-rs/app-server/src/outgoing_message.rs:263` `use codex_app_server_protocol::ConfigWarningNotification;`
+- `use` `codex-rs/app-server/src/outgoing_message.rs:264` `use codex_app_server_protocol::LoginChatGptCompleteNotification;`
+- `use` `codex-rs/app-server/src/outgoing_message.rs:265` `use codex_app_server_protocol::RateLimitSnapshot;`
+- `use` `codex-rs/app-server/src/outgoing_message.rs:266` `use codex_app_server_protocol::RateLimitWindow;`
+- `use` `codex-rs/app-server/src/outgoing_message.rs:267` `use pretty_assertions::assert_eq;`
+- `use` `codex-rs/app-server/src/outgoing_message.rs:268` `use serde_json::json;`
+- `use` `codex-rs/app-server/src/outgoing_message.rs:269` `use tokio::time::timeout;`
+- `use` `codex-rs/app-server/src/outgoing_message.rs:270` `use uuid::Uuid;`
+- `use` `codex-rs/app-server/src/outgoing_message.rs:272` `use super::*;`
+- `fn` `codex-rs/app-server/src/outgoing_message.rs:275` `fn verify_server_notification_serialization() {`
+- `fn` `codex-rs/app-server/src/outgoing_message.rs:300` `fn verify_account_login_completed_notification_serialization() {`
+- `fn` `codex-rs/app-server/src/outgoing_message.rs:325` `fn verify_account_rate_limits_notification_serialization() {`
+- `fn` `codex-rs/app-server/src/outgoing_message.rs:364` `fn verify_account_updated_notification_serialization() {`
+- `fn` `codex-rs/app-server/src/outgoing_message.rs:384` `fn verify_config_warning_notification_serialization() {`
+- `fn` `codex-rs/app-server/src/outgoing_message.rs:408` `async fn send_response_routes_to_target_connection() {`
+- `fn` `codex-rs/app-server/src/outgoing_message.rs:442` `async fn send_error_routes_to_target_connection() {`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -74,14 +78,15 @@ Source file (no public surface detected by heuristic).
 - `use tracing::warn;`
 - `use crate::error_code::INTERNAL_ERROR_CODE;`
 - `use codex_protocol::account::PlanType;`
+- `use std::time::Duration;`
 - `use codex_app_server_protocol::AccountLoginCompletedNotification;`
 - `use codex_app_server_protocol::AccountRateLimitsUpdatedNotification;`
 - `use codex_app_server_protocol::AccountUpdatedNotification;`
-- `use codex_app_server_protocol::AuthMode;`
 ### Referenced env vars
 - (none detected)
 
 ## Error Handling / Edge Cases
+- has retry/timeout/backoff logic
 - uses Rust panic/expect/unwrap-style failure paths
 
 ## Spec Links

@@ -3,9 +3,9 @@
 ## Identity
 - kind: `source`
 - ext: `.rs`
-- size_bytes: `529`
-- sha256: `28581eaca293634cd902f53dd05c415e6cf4bae11ad6472130f0c17c5af044e8`
-- generated_utc: `2026-02-03T16:08:30Z`
+- size_bytes: `731`
+- sha256: `60d31e5e973355f040914c778fb3e46189e00a3bb80a841cd4292d8f98e50be5`
+- generated_utc: `2026-02-08T10:45:38Z`
 
 ## Purpose (Why)
 Source file (no public surface detected by heuristic).
@@ -21,8 +21,10 @@ Source file (no public surface detected by heuristic).
 - (none detected)
 
 ## Definitions (auto, per-file)
-- `mod` `codex-rs/state/src/model/mod.rs:1` `mod log;`
-- `mod` `codex-rs/state/src/model/mod.rs:2` `mod thread_metadata;`
+- `mod` `codex-rs/state/src/model/mod.rs:1` `mod backfill_state;`
+- `mod` `codex-rs/state/src/model/mod.rs:2` `mod log;`
+- `mod` `codex-rs/state/src/model/mod.rs:3` `mod thread_memory;`
+- `mod` `codex-rs/state/src/model/mod.rs:4` `mod thread_metadata;`
 
 ## Dependencies (auto sample)
 ### Imports / Includes
@@ -34,4 +36,4 @@ Source file (no public surface detected by heuristic).
 - (no obvious error-handling patterns detected by heuristic)
 
 ## Spec Links
-- `workdocjcl/spec/02_Data/ENTITIES.md`
+- `docs/workdocjcl/spec/02_Data/ENTITIES.md`
