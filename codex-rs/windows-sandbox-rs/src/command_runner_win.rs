@@ -27,6 +27,7 @@ use windows_sys::Win32::Storage::FileSystem::CreateFileW;
 use windows_sys::Win32::Storage::FileSystem::FILE_GENERIC_READ;
 use windows_sys::Win32::Storage::FileSystem::FILE_GENERIC_WRITE;
 use windows_sys::Win32::Storage::FileSystem::OPEN_EXISTING;
+use windows_sys::Win32::System::Diagnostics::Debug::SetErrorMode;
 use windows_sys::Win32::System::JobObjects::AssignProcessToJobObject;
 use windows_sys::Win32::System::JobObjects::CreateJobObjectW;
 use windows_sys::Win32::System::JobObjects::JobObjectExtendedLimitInformation;
@@ -55,6 +56,7 @@ struct RunnerRequest {
     cwd: PathBuf,
     env_map: HashMap<String, String>,
     timeout_ms: Option<u64>,
+    use_private_desktop: bool,
     stdin_pipe: String,
     stdout_pipe: String,
     stderr_pipe: String,
@@ -103,6 +105,8 @@ pub fn main() -> Result<()> {
     let req: RunnerRequest = serde_json::from_str(&input).context("parse runner request json")?;
     let log_dir = Some(req.codex_home.as_path());
     hide_current_user_profile_dir(req.codex_home.as_path());
+    // Suppress Windows error UI from sandboxed child crashes so callers only observe exit codes.
+    let _ = unsafe { SetErrorMode(0x0001 | 0x0002) }; // SEM_FAILCRITICALERRORS | SEM_NOGPFAULTERRORBOX
     log_note(
         &format!(
             "runner start cwd={} cmd={:?} real_codex_home={}",
@@ -114,6 +118,11 @@ pub fn main() -> Result<()> {
     );
 
     let policy = parse_policy(&req.policy_json_or_preset).context("parse policy_json_or_preset")?;
+    if !policy.has_full_disk_read_access() {
+        anyhow::bail!(
+            "Restricted read-only access is not yet supported by the Windows sandbox backend"
+        );
+    }
     let mut cap_psids: Vec<*mut c_void> = Vec::new();
     for sid in &req.cap_sids {
         let Some(psid) = (unsafe { convert_string_sid_to_sid(sid) }) else {
@@ -129,7 +138,9 @@ pub fn main() -> Result<()> {
     let base = unsafe { get_current_token_for_restriction()? };
     let token_res: Result<HANDLE> = unsafe {
         match &policy {
-            SandboxPolicy::ReadOnly => create_readonly_token_with_caps_from(base, &cap_psids),
+            SandboxPolicy::ReadOnly { .. } => {
+                create_readonly_token_with_caps_from(base, &cap_psids)
+            }
             SandboxPolicy::WorkspaceWrite { .. } => {
                 create_workspace_write_token_with_caps_from(base, &cap_psids)
             }
@@ -226,9 +237,10 @@ pub fn main() -> Result<()> {
             &req.env_map,
             Some(&req.codex_home),
             stdio,
+            req.use_private_desktop,
         )
     };
-    let (proc_info, _si) = match spawn_result {
+    let created = match spawn_result {
         Ok(v) => v,
         Err(e) => {
             log_note(&format!("runner: spawn failed: {e:?}"), log_dir);
@@ -241,6 +253,8 @@ pub fn main() -> Result<()> {
             return Err(e);
         }
     };
+    let proc_info = created.process_info;
+    let _desktop = created;
 
     // Optional job kill on close.
     let h_job = unsafe { create_job_kill_on_close().ok() };

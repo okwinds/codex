@@ -4,32 +4,32 @@ use std::path::PathBuf;
 use crate::ModelClient;
 use crate::error::CodexErr;
 use crate::error::Result;
-use codex_api::MemoryTrace as ApiMemoryTrace;
-use codex_api::MemoryTraceMetadata as ApiMemoryTraceMetadata;
-use codex_otel::OtelManager;
+use codex_api::RawMemory as ApiRawMemory;
+use codex_api::RawMemoryMetadata as ApiRawMemoryMetadata;
+use codex_otel::SessionTelemetry;
 use codex_protocol::openai_models::ModelInfo;
 use codex_protocol::openai_models::ReasoningEffort as ReasoningEffortConfig;
 use serde_json::Map;
 use serde_json::Value;
 
 #[derive(Debug, Clone, PartialEq, Eq)]
-pub struct BuiltTraceMemory {
-    pub trace_id: String,
+pub struct BuiltMemory {
+    pub memory_id: String,
     pub source_path: PathBuf,
-    pub trace_summary: String,
+    pub raw_memory: String,
     pub memory_summary: String,
 }
 
 struct PreparedTrace {
-    trace_id: String,
+    memory_id: String,
     source_path: PathBuf,
-    payload: ApiMemoryTrace,
+    payload: ApiRawMemory,
 }
 
-/// Loads raw trace files, normalizes trace items, and builds memory summaries.
+/// Loads raw trace files, normalizes items, and builds memory summaries.
 ///
-/// The request/response wiring mirrors the memory trace summarize E2E flow:
-/// `/v1/memories/trace_summarize` with one output object per input trace.
+/// The request/response wiring mirrors the memory summarize E2E flow:
+/// `/v1/memories/trace_summarize` with one output object per input raw memory.
 ///
 /// The caller provides the model selection, reasoning effort, and telemetry context explicitly so
 /// the session-scoped [`ModelClient`] can be reused across turns.
@@ -38,8 +38,8 @@ pub async fn build_memories_from_trace_files(
     trace_paths: &[PathBuf],
     model_info: &ModelInfo,
     effort: Option<ReasoningEffortConfig>,
-    otel_manager: &OtelManager,
-) -> Result<Vec<BuiltTraceMemory>> {
+    session_telemetry: &SessionTelemetry,
+) -> Result<Vec<BuiltMemory>> {
     if trace_paths.is_empty() {
         return Ok(Vec::new());
     }
@@ -49,9 +49,9 @@ pub async fn build_memories_from_trace_files(
         prepared.push(prepare_trace(index + 1, path).await?);
     }
 
-    let traces = prepared.iter().map(|trace| trace.payload.clone()).collect();
+    let raw_memories = prepared.iter().map(|trace| trace.payload.clone()).collect();
     let output = client
-        .summarize_memory_traces(traces, model_info, effort, otel_manager)
+        .summarize_memories(raw_memories, model_info, effort, session_telemetry)
         .await?;
     if output.len() != prepared.len() {
         return Err(CodexErr::InvalidRequest(format!(
@@ -64,10 +64,10 @@ pub async fn build_memories_from_trace_files(
     Ok(prepared
         .into_iter()
         .zip(output)
-        .map(|(trace, summary)| BuiltTraceMemory {
-            trace_id: trace.trace_id,
+        .map(|(trace, summary)| BuiltMemory {
+            memory_id: trace.memory_id,
             source_path: trace.source_path,
-            trace_summary: summary.trace_summary,
+            raw_memory: summary.raw_memory,
             memory_summary: summary.memory_summary,
         })
         .collect())
@@ -76,15 +76,15 @@ pub async fn build_memories_from_trace_files(
 async fn prepare_trace(index: usize, path: &Path) -> Result<PreparedTrace> {
     let text = load_trace_text(path).await?;
     let items = load_trace_items(path, &text)?;
-    let trace_id = build_trace_id(index, path);
+    let memory_id = build_memory_id(index, path);
     let source_path = path.to_path_buf();
 
     Ok(PreparedTrace {
-        trace_id: trace_id.clone(),
+        memory_id: memory_id.clone(),
         source_path: source_path.clone(),
-        payload: ApiMemoryTrace {
-            id: trace_id,
-            metadata: ApiMemoryTraceMetadata {
+        payload: ApiRawMemory {
+            id: memory_id,
+            metadata: ApiRawMemoryMetadata {
                 source_path: source_path.display().to_string(),
             },
             items,
@@ -216,88 +216,15 @@ fn is_allowed_trace_item(item: &Map<String, Value>) -> bool {
     true
 }
 
-fn build_trace_id(index: usize, path: &Path) -> String {
+fn build_memory_id(index: usize, path: &Path) -> String {
     let stem = path
         .file_stem()
         .map(|stem| stem.to_string_lossy().into_owned())
         .filter(|stem| !stem.is_empty())
-        .unwrap_or_else(|| "trace".to_string());
-    format!("trace_{index}_{stem}")
+        .unwrap_or_else(|| "memory".to_string());
+    format!("memory_{index}_{stem}")
 }
 
 #[cfg(test)]
-mod tests {
-    use super::*;
-    use pretty_assertions::assert_eq;
-    use tempfile::tempdir;
-
-    #[test]
-    fn normalize_trace_items_handles_payload_wrapper_and_message_role_filtering() {
-        let items = vec![
-            serde_json::json!({
-                "type": "response_item",
-                "payload": {"type": "message", "role": "assistant", "content": []}
-            }),
-            serde_json::json!({
-                "type": "response_item",
-                "payload": [
-                    {"type": "message", "role": "user", "content": []},
-                    {"type": "message", "role": "tool", "content": []},
-                    {"type": "function_call", "name": "shell", "arguments": "{}", "call_id": "c1"}
-                ]
-            }),
-            serde_json::json!({
-                "type": "not_response_item",
-                "payload": {"type": "message", "role": "assistant", "content": []}
-            }),
-            serde_json::json!({
-                "type": "message",
-                "role": "developer",
-                "content": []
-            }),
-        ];
-
-        let normalized = normalize_trace_items(items, Path::new("trace.json")).expect("normalize");
-        let expected = vec![
-            serde_json::json!({"type": "message", "role": "assistant", "content": []}),
-            serde_json::json!({"type": "message", "role": "user", "content": []}),
-            serde_json::json!({"type": "function_call", "name": "shell", "arguments": "{}", "call_id": "c1"}),
-            serde_json::json!({"type": "message", "role": "developer", "content": []}),
-        ];
-        assert_eq!(normalized, expected);
-    }
-
-    #[test]
-    fn load_trace_items_supports_jsonl_arrays_and_objects() {
-        let text = r#"
-{"type":"response_item","payload":{"type":"message","role":"assistant","content":[]}}
-[{"type":"message","role":"user","content":[]},{"type":"message","role":"tool","content":[]}]
-"#;
-        let loaded = load_trace_items(Path::new("trace.jsonl"), text).expect("load");
-        let expected = vec![
-            serde_json::json!({"type":"message","role":"assistant","content":[]}),
-            serde_json::json!({"type":"message","role":"user","content":[]}),
-        ];
-        assert_eq!(loaded, expected);
-    }
-
-    #[tokio::test]
-    async fn load_trace_text_decodes_utf8_sig() {
-        let dir = tempdir().expect("tempdir");
-        let path = dir.path().join("trace.json");
-        tokio::fs::write(
-            &path,
-            [
-                0xEF, 0xBB, 0xBF, b'[', b'{', b'"', b't', b'y', b'p', b'e', b'"', b':', b'"', b'm',
-                b'e', b's', b's', b'a', b'g', b'e', b'"', b',', b'"', b'r', b'o', b'l', b'e', b'"',
-                b':', b'"', b'u', b's', b'e', b'r', b'"', b',', b'"', b'c', b'o', b'n', b't', b'e',
-                b'n', b't', b'"', b':', b'[', b']', b'}', b']',
-            ],
-        )
-        .await
-        .expect("write");
-
-        let text = load_trace_text(&path).await.expect("decode");
-        assert!(text.starts_with('['));
-    }
-}
+#[path = "memory_trace_tests.rs"]
+mod tests;

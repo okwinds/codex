@@ -1,4 +1,5 @@
 use crate::exec::ExecToolCallOutput;
+use crate::network_policy_decision::NetworkPolicyDecisionPayload;
 use crate::token_data::KnownPlan;
 use crate::token_data::PlanType;
 use crate::truncate::TruncationPolicy;
@@ -31,7 +32,10 @@ pub enum SandboxErr {
         "sandbox denied exec error, exit code: {}, stdout: {}, stderr: {}",
         .output.exit_code, .output.stdout.text, .output.stderr.text
     )]
-    Denied { output: Box<ExecToolCallOutput> },
+    Denied {
+        output: Box<ExecToolCallOutput>,
+        network_policy_decision: Option<NetworkPolicyDecisionPayload>,
+    },
 
     /// Error from linux seccomp filter setup
     #[cfg(target_os = "linux")]
@@ -113,8 +117,8 @@ pub enum CodexErr {
     #[error("{0}")]
     UsageLimitReached(UsageLimitReachedError),
 
-    #[error("{0}")]
-    ModelCap(ModelCapError),
+    #[error("Selected model is at capacity. Please try a different model.")]
+    ServerOverloaded,
 
     #[error("{0}")]
     ResponseStreamFailed(ResponseStreamFailed),
@@ -209,7 +213,7 @@ impl CodexErr {
             | CodexErr::Spawn
             | CodexErr::SessionConfiguredNotFirstEvent
             | CodexErr::UsageLimitReached(_)
-            | CodexErr::ModelCap(_) => false,
+            | CodexErr::ServerOverloaded => false,
             CodexErr::Stream(..)
             | CodexErr::Timeout
             | CodexErr::UnexpectedStatus(_)
@@ -288,6 +292,8 @@ pub struct UnexpectedResponseError {
     pub url: Option<String>,
     pub cf_ray: Option<String>,
     pub request_id: Option<String>,
+    pub identity_authorization_error: Option<String>,
+    pub identity_error_code: Option<String>,
 }
 
 const CLOUDFLARE_BLOCKED_MESSAGE: &str =
@@ -342,6 +348,12 @@ impl UnexpectedResponseError {
         if let Some(id) = &self.request_id {
             message.push_str(&format!(", request id: {id}"));
         }
+        if let Some(auth_error) = &self.identity_authorization_error {
+            message.push_str(&format!(", auth error: {auth_error}"));
+        }
+        if let Some(error_code) = &self.identity_error_code {
+            message.push_str(&format!(", auth error code: {error_code}"));
+        }
 
         Some(message)
     }
@@ -363,6 +375,12 @@ impl std::fmt::Display for UnexpectedResponseError {
             }
             if let Some(id) = &self.request_id {
                 message.push_str(&format!(", request id: {id}"));
+            }
+            if let Some(auth_error) = &self.identity_authorization_error {
+                message.push_str(&format!(", auth error: {auth_error}"));
+            }
+            if let Some(error_code) = &self.identity_error_code {
+                message.push_str(&format!(", auth error code: {error_code}"));
             }
             write!(f, "{message}")
         }
@@ -409,12 +427,27 @@ impl std::fmt::Display for RetryLimitReachedError {
 pub struct UsageLimitReachedError {
     pub(crate) plan_type: Option<PlanType>,
     pub(crate) resets_at: Option<DateTime<Utc>>,
-    pub(crate) rate_limits: Option<RateLimitSnapshot>,
+    pub(crate) rate_limits: Option<Box<RateLimitSnapshot>>,
     pub(crate) promo_message: Option<String>,
 }
 
 impl std::fmt::Display for UsageLimitReachedError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        if let Some(limit_name) = self
+            .rate_limits
+            .as_ref()
+            .and_then(|snapshot| snapshot.limit_name.as_deref())
+            .map(str::trim)
+            .filter(|name| !name.is_empty())
+            && !limit_name.eq_ignore_ascii_case("codex")
+        {
+            return write!(
+                f,
+                "You've hit your usage limit for {limit_name}. Switch to another model now,{}",
+                retry_suffix_after_or(self.resets_at.as_ref())
+            );
+        }
+
         if let Some(promo_message) = &self.promo_message {
             return write!(
                 f,
@@ -459,30 +492,6 @@ impl std::fmt::Display for UsageLimitReachedError {
     }
 }
 
-#[derive(Debug)]
-pub struct ModelCapError {
-    pub(crate) model: String,
-    pub(crate) reset_after_seconds: Option<u64>,
-}
-
-impl std::fmt::Display for ModelCapError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut message = format!(
-            "Model {} is at capacity. Please try a different model.",
-            self.model
-        );
-        if let Some(seconds) = self.reset_after_seconds {
-            message.push_str(&format!(
-                " Try again in {}.",
-                format_duration_short(seconds)
-            ));
-        } else {
-            message.push_str(" Try again later.");
-        }
-        write!(f, "{message}")
-    }
-}
-
 fn retry_suffix(resets_at: Option<&DateTime<Utc>>) -> String {
     if let Some(resets_at) = resets_at {
         let formatted = format_retry_timestamp(resets_at);
@@ -511,18 +520,6 @@ fn format_retry_timestamp(resets_at: &DateTime<Utc>) -> String {
         local_reset
             .format(&format!("%b %-d{suffix}, %Y %-I:%M %p"))
             .to_string()
-    }
-}
-
-fn format_duration_short(seconds: u64) -> String {
-    if seconds < 60 {
-        "less than a minute".to_string()
-    } else if seconds < 3600 {
-        format!("{}m", seconds / 60)
-    } else if seconds < 86_400 {
-        format!("{}h", seconds / 3600)
-    } else {
-        format!("{}d", seconds / 86_400)
     }
 }
 
@@ -589,10 +586,7 @@ impl CodexErr {
             CodexErr::UsageLimitReached(_)
             | CodexErr::QuotaExceeded
             | CodexErr::UsageNotIncluded => CodexErrorInfo::UsageLimitExceeded,
-            CodexErr::ModelCap(err) => CodexErrorInfo::ModelCap {
-                model: err.model.clone(),
-                reset_after_seconds: err.reset_after_seconds,
-            },
+            CodexErr::ServerOverloaded => CodexErrorInfo::ServerOverloaded,
             CodexErr::RetryLimit(_) => CodexErrorInfo::ResponseTooManyFailedAttempts {
                 http_status_code: self.http_status_code_value(),
             },
@@ -640,7 +634,7 @@ impl CodexErr {
 
 pub fn get_error_message_ui(e: &CodexErr) -> String {
     let message = match e {
-        CodexErr::Sandbox(SandboxErr::Denied { output }) => {
+        CodexErr::Sandbox(SandboxErr::Denied { output, .. }) => {
             let aggregated = output.aggregated_output.text.trim();
             if !aggregated.is_empty() {
                 output.aggregated_output.text.clone()
@@ -675,490 +669,5 @@ pub fn get_error_message_ui(e: &CodexErr) -> String {
 }
 
 #[cfg(test)]
-mod tests {
-    use super::*;
-    use crate::exec::StreamOutput;
-    use chrono::DateTime;
-    use chrono::Duration as ChronoDuration;
-    use chrono::TimeZone;
-    use chrono::Utc;
-    use codex_protocol::protocol::RateLimitWindow;
-    use pretty_assertions::assert_eq;
-    use reqwest::Response;
-    use reqwest::ResponseBuilderExt;
-    use reqwest::StatusCode;
-    use reqwest::Url;
-
-    fn rate_limit_snapshot() -> RateLimitSnapshot {
-        let primary_reset_at = Utc
-            .with_ymd_and_hms(2024, 1, 1, 1, 0, 0)
-            .unwrap()
-            .timestamp();
-        let secondary_reset_at = Utc
-            .with_ymd_and_hms(2024, 1, 1, 2, 0, 0)
-            .unwrap()
-            .timestamp();
-        RateLimitSnapshot {
-            primary: Some(RateLimitWindow {
-                used_percent: 50.0,
-                window_minutes: Some(60),
-                resets_at: Some(primary_reset_at),
-            }),
-            secondary: Some(RateLimitWindow {
-                used_percent: 30.0,
-                window_minutes: Some(120),
-                resets_at: Some(secondary_reset_at),
-            }),
-            credits: None,
-            plan_type: None,
-        }
-    }
-
-    fn with_now_override<T>(now: DateTime<Utc>, f: impl FnOnce() -> T) -> T {
-        NOW_OVERRIDE.with(|cell| {
-            *cell.borrow_mut() = Some(now);
-            let result = f();
-            *cell.borrow_mut() = None;
-            result
-        })
-    }
-
-    #[test]
-    fn usage_limit_reached_error_formats_plus_plan() {
-        let err = UsageLimitReachedError {
-            plan_type: Some(PlanType::Known(KnownPlan::Plus)),
-            resets_at: None,
-            rate_limits: Some(rate_limit_snapshot()),
-            promo_message: None,
-        };
-        assert_eq!(
-            err.to_string(),
-            "You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again later."
-        );
-    }
-
-    #[test]
-    fn model_cap_error_formats_message() {
-        let err = ModelCapError {
-            model: "boomslang".to_string(),
-            reset_after_seconds: Some(120),
-        };
-        assert_eq!(
-            err.to_string(),
-            "Model boomslang is at capacity. Please try a different model. Try again in 2m."
-        );
-    }
-
-    #[test]
-    fn model_cap_error_formats_message_without_reset() {
-        let err = ModelCapError {
-            model: "boomslang".to_string(),
-            reset_after_seconds: None,
-        };
-        assert_eq!(
-            err.to_string(),
-            "Model boomslang is at capacity. Please try a different model. Try again later."
-        );
-    }
-
-    #[test]
-    fn model_cap_error_maps_to_protocol() {
-        let err = CodexErr::ModelCap(ModelCapError {
-            model: "boomslang".to_string(),
-            reset_after_seconds: Some(30),
-        });
-        assert_eq!(
-            err.to_codex_protocol_error(),
-            CodexErrorInfo::ModelCap {
-                model: "boomslang".to_string(),
-                reset_after_seconds: Some(30),
-            }
-        );
-    }
-
-    #[test]
-    fn sandbox_denied_uses_aggregated_output_when_stderr_empty() {
-        let output = ExecToolCallOutput {
-            exit_code: 77,
-            stdout: StreamOutput::new(String::new()),
-            stderr: StreamOutput::new(String::new()),
-            aggregated_output: StreamOutput::new("aggregate detail".to_string()),
-            duration: Duration::from_millis(10),
-            timed_out: false,
-        };
-        let err = CodexErr::Sandbox(SandboxErr::Denied {
-            output: Box::new(output),
-        });
-        assert_eq!(get_error_message_ui(&err), "aggregate detail");
-    }
-
-    #[test]
-    fn sandbox_denied_reports_both_streams_when_available() {
-        let output = ExecToolCallOutput {
-            exit_code: 9,
-            stdout: StreamOutput::new("stdout detail".to_string()),
-            stderr: StreamOutput::new("stderr detail".to_string()),
-            aggregated_output: StreamOutput::new(String::new()),
-            duration: Duration::from_millis(10),
-            timed_out: false,
-        };
-        let err = CodexErr::Sandbox(SandboxErr::Denied {
-            output: Box::new(output),
-        });
-        assert_eq!(get_error_message_ui(&err), "stderr detail\nstdout detail");
-    }
-
-    #[test]
-    fn sandbox_denied_reports_stdout_when_no_stderr() {
-        let output = ExecToolCallOutput {
-            exit_code: 11,
-            stdout: StreamOutput::new("stdout only".to_string()),
-            stderr: StreamOutput::new(String::new()),
-            aggregated_output: StreamOutput::new(String::new()),
-            duration: Duration::from_millis(8),
-            timed_out: false,
-        };
-        let err = CodexErr::Sandbox(SandboxErr::Denied {
-            output: Box::new(output),
-        });
-        assert_eq!(get_error_message_ui(&err), "stdout only");
-    }
-
-    #[test]
-    fn to_error_event_handles_response_stream_failed() {
-        let response = http::Response::builder()
-            .status(StatusCode::TOO_MANY_REQUESTS)
-            .url(Url::parse("http://example.com").unwrap())
-            .body("")
-            .unwrap();
-        let source = Response::from(response).error_for_status_ref().unwrap_err();
-        let err = CodexErr::ResponseStreamFailed(ResponseStreamFailed {
-            source,
-            request_id: Some("req-123".to_string()),
-        });
-
-        let event = err.to_error_event(Some("prefix".to_string()));
-
-        assert_eq!(
-            event.message,
-            "prefix: Error while reading the server response: HTTP status client error (429 Too Many Requests) for url (http://example.com/), request id: req-123"
-        );
-        assert_eq!(
-            event.codex_error_info,
-            Some(CodexErrorInfo::ResponseStreamConnectionFailed {
-                http_status_code: Some(429)
-            })
-        );
-    }
-
-    #[test]
-    fn sandbox_denied_reports_exit_code_when_no_output_available() {
-        let output = ExecToolCallOutput {
-            exit_code: 13,
-            stdout: StreamOutput::new(String::new()),
-            stderr: StreamOutput::new(String::new()),
-            aggregated_output: StreamOutput::new(String::new()),
-            duration: Duration::from_millis(5),
-            timed_out: false,
-        };
-        let err = CodexErr::Sandbox(SandboxErr::Denied {
-            output: Box::new(output),
-        });
-        assert_eq!(
-            get_error_message_ui(&err),
-            "command failed inside sandbox with exit code 13"
-        );
-    }
-
-    #[test]
-    fn usage_limit_reached_error_formats_free_plan() {
-        let err = UsageLimitReachedError {
-            plan_type: Some(PlanType::Known(KnownPlan::Free)),
-            resets_at: None,
-            rate_limits: Some(rate_limit_snapshot()),
-            promo_message: None,
-        };
-        assert_eq!(
-            err.to_string(),
-            "You've hit your usage limit. Upgrade to Plus to continue using Codex (https://chatgpt.com/explore/plus), or try again later."
-        );
-    }
-
-    #[test]
-    fn usage_limit_reached_error_formats_go_plan() {
-        let err = UsageLimitReachedError {
-            plan_type: Some(PlanType::Known(KnownPlan::Go)),
-            resets_at: None,
-            rate_limits: Some(rate_limit_snapshot()),
-            promo_message: None,
-        };
-        assert_eq!(
-            err.to_string(),
-            "You've hit your usage limit. Upgrade to Plus to continue using Codex (https://chatgpt.com/explore/plus), or try again later."
-        );
-    }
-
-    #[test]
-    fn usage_limit_reached_error_formats_default_when_none() {
-        let err = UsageLimitReachedError {
-            plan_type: None,
-            resets_at: None,
-            rate_limits: Some(rate_limit_snapshot()),
-            promo_message: None,
-        };
-        assert_eq!(
-            err.to_string(),
-            "You've hit your usage limit. Try again later."
-        );
-    }
-
-    #[test]
-    fn usage_limit_reached_error_formats_team_plan() {
-        let base = Utc.with_ymd_and_hms(2024, 1, 1, 0, 0, 0).unwrap();
-        let resets_at = base + ChronoDuration::hours(1);
-        with_now_override(base, move || {
-            let expected_time = format_retry_timestamp(&resets_at);
-            let err = UsageLimitReachedError {
-                plan_type: Some(PlanType::Known(KnownPlan::Team)),
-                resets_at: Some(resets_at),
-                rate_limits: Some(rate_limit_snapshot()),
-                promo_message: None,
-            };
-            let expected = format!(
-                "You've hit your usage limit. To get more access now, send a request to your admin or try again at {expected_time}."
-            );
-            assert_eq!(err.to_string(), expected);
-        });
-    }
-
-    #[test]
-    fn usage_limit_reached_error_formats_business_plan_without_reset() {
-        let err = UsageLimitReachedError {
-            plan_type: Some(PlanType::Known(KnownPlan::Business)),
-            resets_at: None,
-            rate_limits: Some(rate_limit_snapshot()),
-            promo_message: None,
-        };
-        assert_eq!(
-            err.to_string(),
-            "You've hit your usage limit. To get more access now, send a request to your admin or try again later."
-        );
-    }
-
-    #[test]
-    fn usage_limit_reached_error_formats_default_for_other_plans() {
-        let err = UsageLimitReachedError {
-            plan_type: Some(PlanType::Known(KnownPlan::Enterprise)),
-            resets_at: None,
-            rate_limits: Some(rate_limit_snapshot()),
-            promo_message: None,
-        };
-        assert_eq!(
-            err.to_string(),
-            "You've hit your usage limit. Try again later."
-        );
-    }
-
-    #[test]
-    fn usage_limit_reached_error_formats_pro_plan_with_reset() {
-        let base = Utc.with_ymd_and_hms(2024, 1, 1, 0, 0, 0).unwrap();
-        let resets_at = base + ChronoDuration::hours(1);
-        with_now_override(base, move || {
-            let expected_time = format_retry_timestamp(&resets_at);
-            let err = UsageLimitReachedError {
-                plan_type: Some(PlanType::Known(KnownPlan::Pro)),
-                resets_at: Some(resets_at),
-                rate_limits: Some(rate_limit_snapshot()),
-                promo_message: None,
-            };
-            let expected = format!(
-                "You've hit your usage limit. Visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at {expected_time}."
-            );
-            assert_eq!(err.to_string(), expected);
-        });
-    }
-
-    #[test]
-    fn usage_limit_reached_includes_minutes_when_available() {
-        let base = Utc.with_ymd_and_hms(2024, 1, 1, 0, 0, 0).unwrap();
-        let resets_at = base + ChronoDuration::minutes(5);
-        with_now_override(base, move || {
-            let expected_time = format_retry_timestamp(&resets_at);
-            let err = UsageLimitReachedError {
-                plan_type: None,
-                resets_at: Some(resets_at),
-                rate_limits: Some(rate_limit_snapshot()),
-                promo_message: None,
-            };
-            let expected = format!("You've hit your usage limit. Try again at {expected_time}.");
-            assert_eq!(err.to_string(), expected);
-        });
-    }
-
-    #[test]
-    fn unexpected_status_cloudflare_html_is_simplified() {
-        let err = UnexpectedResponseError {
-            status: StatusCode::FORBIDDEN,
-            body: "<html><body>Cloudflare error: Sorry, you have been blocked</body></html>"
-                .to_string(),
-            url: Some("http://example.com/blocked".to_string()),
-            cf_ray: Some("ray-id".to_string()),
-            request_id: None,
-        };
-        let status = StatusCode::FORBIDDEN.to_string();
-        let url = "http://example.com/blocked";
-        assert_eq!(
-            err.to_string(),
-            format!("{CLOUDFLARE_BLOCKED_MESSAGE} (status {status}), url: {url}, cf-ray: ray-id")
-        );
-    }
-
-    #[test]
-    fn unexpected_status_non_html_is_unchanged() {
-        let err = UnexpectedResponseError {
-            status: StatusCode::FORBIDDEN,
-            body: "plain text error".to_string(),
-            url: Some("http://example.com/plain".to_string()),
-            cf_ray: None,
-            request_id: None,
-        };
-        let status = StatusCode::FORBIDDEN.to_string();
-        let url = "http://example.com/plain";
-        assert_eq!(
-            err.to_string(),
-            format!("unexpected status {status}: plain text error, url: {url}")
-        );
-    }
-
-    #[test]
-    fn unexpected_status_prefers_error_message_when_present() {
-        let err = UnexpectedResponseError {
-            status: StatusCode::UNAUTHORIZED,
-            body: r#"{"error":{"message":"Workspace is not authorized in this region."},"status":401}"#
-                .to_string(),
-            url: Some("https://chatgpt.com/backend-api/codex/responses".to_string()),
-            cf_ray: None,
-            request_id: Some("req-123".to_string()),
-        };
-        let status = StatusCode::UNAUTHORIZED.to_string();
-        assert_eq!(
-            err.to_string(),
-            format!(
-                "unexpected status {status}: Workspace is not authorized in this region., url: https://chatgpt.com/backend-api/codex/responses, request id: req-123"
-            )
-        );
-    }
-
-    #[test]
-    fn unexpected_status_truncates_long_body_with_ellipsis() {
-        let long_body = "x".repeat(UNEXPECTED_RESPONSE_BODY_MAX_BYTES + 10);
-        let err = UnexpectedResponseError {
-            status: StatusCode::BAD_GATEWAY,
-            body: long_body,
-            url: Some("http://example.com/long".to_string()),
-            cf_ray: None,
-            request_id: Some("req-long".to_string()),
-        };
-        let status = StatusCode::BAD_GATEWAY.to_string();
-        let expected_body = format!("{}...", "x".repeat(UNEXPECTED_RESPONSE_BODY_MAX_BYTES));
-        assert_eq!(
-            err.to_string(),
-            format!(
-                "unexpected status {status}: {expected_body}, url: http://example.com/long, request id: req-long"
-            )
-        );
-    }
-
-    #[test]
-    fn unexpected_status_includes_cf_ray_and_request_id() {
-        let err = UnexpectedResponseError {
-            status: StatusCode::UNAUTHORIZED,
-            body: "plain text error".to_string(),
-            url: Some("https://chatgpt.com/backend-api/codex/responses".to_string()),
-            cf_ray: Some("9c81f9f18f2fa49d-LHR".to_string()),
-            request_id: Some("req-xyz".to_string()),
-        };
-        let status = StatusCode::UNAUTHORIZED.to_string();
-        assert_eq!(
-            err.to_string(),
-            format!(
-                "unexpected status {status}: plain text error, url: https://chatgpt.com/backend-api/codex/responses, cf-ray: 9c81f9f18f2fa49d-LHR, request id: req-xyz"
-            )
-        );
-    }
-
-    #[test]
-    fn usage_limit_reached_includes_hours_and_minutes() {
-        let base = Utc.with_ymd_and_hms(2024, 1, 1, 0, 0, 0).unwrap();
-        let resets_at = base + ChronoDuration::hours(3) + ChronoDuration::minutes(32);
-        with_now_override(base, move || {
-            let expected_time = format_retry_timestamp(&resets_at);
-            let err = UsageLimitReachedError {
-                plan_type: Some(PlanType::Known(KnownPlan::Plus)),
-                resets_at: Some(resets_at),
-                rate_limits: Some(rate_limit_snapshot()),
-                promo_message: None,
-            };
-            let expected = format!(
-                "You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at {expected_time}."
-            );
-            assert_eq!(err.to_string(), expected);
-        });
-    }
-
-    #[test]
-    fn usage_limit_reached_includes_days_hours_minutes() {
-        let base = Utc.with_ymd_and_hms(2024, 1, 1, 0, 0, 0).unwrap();
-        let resets_at =
-            base + ChronoDuration::days(2) + ChronoDuration::hours(3) + ChronoDuration::minutes(5);
-        with_now_override(base, move || {
-            let expected_time = format_retry_timestamp(&resets_at);
-            let err = UsageLimitReachedError {
-                plan_type: None,
-                resets_at: Some(resets_at),
-                rate_limits: Some(rate_limit_snapshot()),
-                promo_message: None,
-            };
-            let expected = format!("You've hit your usage limit. Try again at {expected_time}.");
-            assert_eq!(err.to_string(), expected);
-        });
-    }
-
-    #[test]
-    fn usage_limit_reached_less_than_minute() {
-        let base = Utc.with_ymd_and_hms(2024, 1, 1, 0, 0, 0).unwrap();
-        let resets_at = base + ChronoDuration::seconds(30);
-        with_now_override(base, move || {
-            let expected_time = format_retry_timestamp(&resets_at);
-            let err = UsageLimitReachedError {
-                plan_type: None,
-                resets_at: Some(resets_at),
-                rate_limits: Some(rate_limit_snapshot()),
-                promo_message: None,
-            };
-            let expected = format!("You've hit your usage limit. Try again at {expected_time}.");
-            assert_eq!(err.to_string(), expected);
-        });
-    }
-
-    #[test]
-    fn usage_limit_reached_with_promo_message() {
-        let base = Utc.with_ymd_and_hms(2024, 1, 1, 0, 0, 0).unwrap();
-        let resets_at = base + ChronoDuration::seconds(30);
-        with_now_override(base, move || {
-            let expected_time = format_retry_timestamp(&resets_at);
-            let err = UsageLimitReachedError {
-                plan_type: None,
-                resets_at: Some(resets_at),
-                rate_limits: Some(rate_limit_snapshot()),
-                promo_message: Some(
-                    "To continue using Codex, start a free trial of <PLAN> today".to_string(),
-                ),
-            };
-            let expected = format!(
-                "You've hit your usage limit. To continue using Codex, start a free trial of <PLAN> today, or try again at {expected_time}."
-            );
-            assert_eq!(err.to_string(), expected);
-        });
-    }
-}
+#[path = "error_tests.rs"]
+mod tests;
